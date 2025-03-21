@@ -95,10 +95,6 @@ type DeploymentInitParameters struct {
 	// Selector for a Key in kms to populate kmsKeyIdentifier.
 	// +kubebuilder:validation:Optional
 	KMSKeyIdentifierSelector *v1.Selector `json:"kmsKeyIdentifierSelector,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type DeploymentObservation struct {
@@ -116,7 +112,7 @@ type DeploymentObservation struct {
 	ConfigurationVersion *string `json:"configurationVersion,omitempty" tf:"configuration_version,omitempty"`
 
 	// Deployment number.
-	DeploymentNumber *float64 `json:"deploymentNumber,omitempty" tf:"deployment_number,omitempty"`
+	DeploymentNumber *int64 `json:"deploymentNumber,omitempty" tf:"deployment_number,omitempty"`
 
 	// Deployment strategy ID or name of a predefined deployment strategy. See Predefined Deployment Strategies for more details.
 	DeploymentStrategyID *string `json:"deploymentStrategyId,omitempty" tf:"deployment_strategy_id,omitempty"`
@@ -242,11 +238,6 @@ type DeploymentParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // DeploymentSpec defines the desired state of Deployment

@@ -2773,12 +2773,6 @@ spec:
                       type: string
                     type: array
                     x-kubernetes-list-type: set
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   url:
                     description: '- URL of the service endpoint used to authenticate
                       users with an identity_provider_type of API_GATEWAY.'
@@ -3508,12 +3502,6 @@ spec:
                       type: string
                     type: array
                     x-kubernetes-list-type: set
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   url:
                     description: '- URL of the service endpoint used to authenticate
                       users with an identity_provider_type of API_GATEWAY.'

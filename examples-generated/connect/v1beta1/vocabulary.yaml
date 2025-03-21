@@ -16,5 +16,3 @@ spec:
     languageCode: en-US
     name: example
     region: us-west-1
-    tags:
-      Key1: Value1

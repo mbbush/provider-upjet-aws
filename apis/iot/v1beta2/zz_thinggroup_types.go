@@ -110,10 +110,6 @@ type ThingGroupInitParameters struct {
 
 	// The Thing Group properties. Defined below.
 	Properties *PropertiesInitParameters `json:"properties,omitempty" tf:"properties,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type ThingGroupObservation struct {
@@ -140,7 +136,7 @@ type ThingGroupObservation struct {
 	TagsAll map[string]*string `json:"tagsAll,omitempty" tf:"tags_all,omitempty"`
 
 	// The current version of the Thing Group record in the registry.
-	Version *float64 `json:"version,omitempty" tf:"version,omitempty"`
+	Version *int64 `json:"version,omitempty" tf:"version,omitempty"`
 }
 
 type ThingGroupParameters struct {
@@ -166,11 +162,6 @@ type ThingGroupParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // ThingGroupSpec defines the desired state of ThingGroup

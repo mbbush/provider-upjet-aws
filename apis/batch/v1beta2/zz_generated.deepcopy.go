@@ -560,12 +560,12 @@ func (in *FairSharePolicyInitParameters) DeepCopyInto(out *FairSharePolicyInitPa
 	*out = *in
 	if in.ComputeReservation != nil {
 		in, out := &in.ComputeReservation, &out.ComputeReservation
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ShareDecaySeconds != nil {
 		in, out := &in.ShareDecaySeconds, &out.ShareDecaySeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ShareDistribution != nil {
@@ -592,12 +592,12 @@ func (in *FairSharePolicyObservation) DeepCopyInto(out *FairSharePolicyObservati
 	*out = *in
 	if in.ComputeReservation != nil {
 		in, out := &in.ComputeReservation, &out.ComputeReservation
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ShareDecaySeconds != nil {
 		in, out := &in.ShareDecaySeconds, &out.ShareDecaySeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ShareDistribution != nil {
@@ -624,12 +624,12 @@ func (in *FairSharePolicyParameters) DeepCopyInto(out *FairSharePolicyParameters
 	*out = *in
 	if in.ComputeReservation != nil {
 		in, out := &in.ComputeReservation, &out.ComputeReservation
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ShareDecaySeconds != nil {
 		in, out := &in.ShareDecaySeconds, &out.ShareDecaySeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ShareDistribution != nil {
@@ -1230,7 +1230,7 @@ func (in *InitContainersSecurityContextInitParameters) DeepCopyInto(out *InitCon
 	}
 	if in.RunAsGroup != nil {
 		in, out := &in.RunAsGroup, &out.RunAsGroup
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.RunAsNonRoot != nil {
@@ -1240,7 +1240,7 @@ func (in *InitContainersSecurityContextInitParameters) DeepCopyInto(out *InitCon
 	}
 	if in.RunAsUser != nil {
 		in, out := &in.RunAsUser, &out.RunAsUser
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1270,7 +1270,7 @@ func (in *InitContainersSecurityContextObservation) DeepCopyInto(out *InitContai
 	}
 	if in.RunAsGroup != nil {
 		in, out := &in.RunAsGroup, &out.RunAsGroup
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.RunAsNonRoot != nil {
@@ -1280,7 +1280,7 @@ func (in *InitContainersSecurityContextObservation) DeepCopyInto(out *InitContai
 	}
 	if in.RunAsUser != nil {
 		in, out := &in.RunAsUser, &out.RunAsUser
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1310,7 +1310,7 @@ func (in *InitContainersSecurityContextParameters) DeepCopyInto(out *InitContain
 	}
 	if in.RunAsGroup != nil {
 		in, out := &in.RunAsGroup, &out.RunAsGroup
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.RunAsNonRoot != nil {
@@ -1320,7 +1320,7 @@ func (in *InitContainersSecurityContextParameters) DeepCopyInto(out *InitContain
 	}
 	if in.RunAsUser != nil {
 		in, out := &in.RunAsUser, &out.RunAsUser
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1524,24 +1524,8 @@ func (in *JobDefinitionInitParameters) DeepCopyInto(out *JobDefinitionInitParame
 	}
 	if in.SchedulingPriority != nil {
 		in, out := &in.SchedulingPriority, &out.SchedulingPriority
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.Timeout != nil {
 		in, out := &in.Timeout, &out.Timeout
@@ -1684,12 +1668,12 @@ func (in *JobDefinitionObservation) DeepCopyInto(out *JobDefinitionObservation) 
 	}
 	if in.Revision != nil {
 		in, out := &in.Revision, &out.Revision
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.SchedulingPriority != nil {
 		in, out := &in.SchedulingPriority, &out.SchedulingPriority
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Tags != nil {
@@ -1823,24 +1807,8 @@ func (in *JobDefinitionParameters) DeepCopyInto(out *JobDefinitionParameters) {
 	}
 	if in.SchedulingPriority != nil {
 		in, out := &in.SchedulingPriority, &out.SchedulingPriority
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.Timeout != nil {
 		in, out := &in.Timeout, &out.Timeout
@@ -2342,7 +2310,7 @@ func (in *RetryStrategyInitParameters) DeepCopyInto(out *RetryStrategyInitParame
 	*out = *in
 	if in.Attempts != nil {
 		in, out := &in.Attempts, &out.Attempts
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.EvaluateOnExit != nil {
@@ -2369,7 +2337,7 @@ func (in *RetryStrategyObservation) DeepCopyInto(out *RetryStrategyObservation) 
 	*out = *in
 	if in.Attempts != nil {
 		in, out := &in.Attempts, &out.Attempts
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.EvaluateOnExit != nil {
@@ -2396,7 +2364,7 @@ func (in *RetryStrategyParameters) DeepCopyInto(out *RetryStrategyParameters) {
 	*out = *in
 	if in.Attempts != nil {
 		in, out := &in.Attempts, &out.Attempts
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.EvaluateOnExit != nil {
@@ -2452,22 +2420,6 @@ func (in *SchedulingPolicyInitParameters) DeepCopyInto(out *SchedulingPolicyInit
 		in, out := &in.FairSharePolicy, &out.FairSharePolicy
 		*out = new(FairSharePolicyInitParameters)
 		(*in).DeepCopyInto(*out)
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 }
 
@@ -2587,22 +2539,6 @@ func (in *SchedulingPolicyParameters) DeepCopyInto(out *SchedulingPolicyParamete
 		in, out := &in.Region, &out.Region
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 }
 
@@ -2741,7 +2677,7 @@ func (in *SecurityContextInitParameters) DeepCopyInto(out *SecurityContextInitPa
 	}
 	if in.RunAsGroup != nil {
 		in, out := &in.RunAsGroup, &out.RunAsGroup
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.RunAsNonRoot != nil {
@@ -2751,7 +2687,7 @@ func (in *SecurityContextInitParameters) DeepCopyInto(out *SecurityContextInitPa
 	}
 	if in.RunAsUser != nil {
 		in, out := &in.RunAsUser, &out.RunAsUser
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2781,7 +2717,7 @@ func (in *SecurityContextObservation) DeepCopyInto(out *SecurityContextObservati
 	}
 	if in.RunAsGroup != nil {
 		in, out := &in.RunAsGroup, &out.RunAsGroup
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.RunAsNonRoot != nil {
@@ -2791,7 +2727,7 @@ func (in *SecurityContextObservation) DeepCopyInto(out *SecurityContextObservati
 	}
 	if in.RunAsUser != nil {
 		in, out := &in.RunAsUser, &out.RunAsUser
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2821,7 +2757,7 @@ func (in *SecurityContextParameters) DeepCopyInto(out *SecurityContextParameters
 	}
 	if in.RunAsGroup != nil {
 		in, out := &in.RunAsGroup, &out.RunAsGroup
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.RunAsNonRoot != nil {
@@ -2831,7 +2767,7 @@ func (in *SecurityContextParameters) DeepCopyInto(out *SecurityContextParameters
 	}
 	if in.RunAsUser != nil {
 		in, out := &in.RunAsUser, &out.RunAsUser
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2926,7 +2862,7 @@ func (in *TimeoutInitParameters) DeepCopyInto(out *TimeoutInitParameters) {
 	*out = *in
 	if in.AttemptDurationSeconds != nil {
 		in, out := &in.AttemptDurationSeconds, &out.AttemptDurationSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2946,7 +2882,7 @@ func (in *TimeoutObservation) DeepCopyInto(out *TimeoutObservation) {
 	*out = *in
 	if in.AttemptDurationSeconds != nil {
 		in, out := &in.AttemptDurationSeconds, &out.AttemptDurationSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2966,7 +2902,7 @@ func (in *TimeoutParameters) DeepCopyInto(out *TimeoutParameters) {
 	*out = *in
 	if in.AttemptDurationSeconds != nil {
 		in, out := &in.AttemptDurationSeconds, &out.AttemptDurationSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }

@@ -101,10 +101,6 @@ type StreamInitParameters struct {
 
 	// The name that you want to assign to the QLDB journal stream. User-defined names can help identify and indicate the purpose of a stream.  Your stream name must be unique among other active streams for a given ledger. Stream names have the same naming constraints as ledger names, as defined in the Amazon QLDB Developer Guide.
 	StreamName *string `json:"streamName,omitempty" tf:"stream_name,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type StreamObservation struct {
@@ -192,11 +188,6 @@ type StreamParameters struct {
 	// The name that you want to assign to the QLDB journal stream. User-defined names can help identify and indicate the purpose of a stream.  Your stream name must be unique among other active streams for a given ledger. Stream names have the same naming constraints as ledger names, as defined in the Amazon QLDB Developer Guide.
 	// +kubebuilder:validation:Optional
 	StreamName *string `json:"streamName,omitempty" tf:"stream_name,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // StreamSpec defines the desired state of Stream

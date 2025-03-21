@@ -37,5 +37,3 @@ spec:
     region: us-west-1
     snapshotOptions:
     - automatedSnapshotStartHour: 23
-    tags:
-      Domain: TestDomain

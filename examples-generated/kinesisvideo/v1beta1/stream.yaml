@@ -13,5 +13,3 @@ spec:
     mediaType: video/h264
     name: terraform-kinesis-video-stream
     region: us-west-1
-    tags:
-      Name: terraform-kinesis-video-stream

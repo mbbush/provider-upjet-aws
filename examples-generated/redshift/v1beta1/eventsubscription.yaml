@@ -21,8 +21,6 @@ spec:
     sourceIdsRefs:
     - name: default
     sourceType: cluster
-    tags:
-      Name: default
 
 ---
 

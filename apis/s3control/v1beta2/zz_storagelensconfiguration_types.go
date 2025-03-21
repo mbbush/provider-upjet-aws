@@ -583,7 +583,7 @@ type SelectionCriteriaInitParameters struct {
 	Delimiter *string `json:"delimiter,omitempty" tf:"delimiter,omitempty"`
 
 	// The max depth of the selection criteria.
-	MaxDepth *float64 `json:"maxDepth,omitempty" tf:"max_depth,omitempty"`
+	MaxDepth *int64 `json:"maxDepth,omitempty" tf:"max_depth,omitempty"`
 
 	// The minimum number of storage bytes percentage whose metrics will be selected.
 	MinStorageBytesPercentage *float64 `json:"minStorageBytesPercentage,omitempty" tf:"min_storage_bytes_percentage,omitempty"`
@@ -595,7 +595,7 @@ type SelectionCriteriaObservation struct {
 	Delimiter *string `json:"delimiter,omitempty" tf:"delimiter,omitempty"`
 
 	// The max depth of the selection criteria.
-	MaxDepth *float64 `json:"maxDepth,omitempty" tf:"max_depth,omitempty"`
+	MaxDepth *int64 `json:"maxDepth,omitempty" tf:"max_depth,omitempty"`
 
 	// The minimum number of storage bytes percentage whose metrics will be selected.
 	MinStorageBytesPercentage *float64 `json:"minStorageBytesPercentage,omitempty" tf:"min_storage_bytes_percentage,omitempty"`
@@ -609,7 +609,7 @@ type SelectionCriteriaParameters struct {
 
 	// The max depth of the selection criteria.
 	// +kubebuilder:validation:Optional
-	MaxDepth *float64 `json:"maxDepth,omitempty" tf:"max_depth,omitempty"`
+	MaxDepth *int64 `json:"maxDepth,omitempty" tf:"max_depth,omitempty"`
 
 	// The minimum number of storage bytes percentage whose metrics will be selected.
 	// +kubebuilder:validation:Optional
@@ -654,10 +654,6 @@ type StorageLensConfigurationInitParameters struct {
 
 	// The S3 Storage Lens configuration. See Storage Lens Configuration below for more details.
 	StorageLensConfiguration *StorageLensConfigurationStorageLensConfigurationInitParameters `json:"storageLensConfiguration,omitempty" tf:"storage_lens_configuration,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type StorageLensConfigurationObservation struct {
@@ -703,11 +699,6 @@ type StorageLensConfigurationParameters struct {
 	// The S3 Storage Lens configuration. See Storage Lens Configuration below for more details.
 	// +kubebuilder:validation:Optional
 	StorageLensConfiguration *StorageLensConfigurationStorageLensConfigurationParameters `json:"storageLensConfiguration,omitempty" tf:"storage_lens_configuration,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type StorageLensConfigurationStorageLensConfigurationInitParameters struct {

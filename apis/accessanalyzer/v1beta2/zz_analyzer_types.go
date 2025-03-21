@@ -18,10 +18,6 @@ type AnalyzerInitParameters struct {
 	// A block that specifies the configuration of the analyzer. Documented below
 	Configuration *ConfigurationInitParameters `json:"configuration,omitempty" tf:"configuration,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Type of Analyzer. Valid values are ACCOUNT, ORGANIZATION, ACCOUNT_UNUSED_ACCESS , ORGANIZATION_UNUSED_ACCESS. Defaults to ACCOUNT.
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
 }
@@ -60,11 +56,6 @@ type AnalyzerParameters struct {
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
 
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Type of Analyzer. Valid values are ACCOUNT, ORGANIZATION, ACCOUNT_UNUSED_ACCESS , ORGANIZATION_UNUSED_ACCESS. Defaults to ACCOUNT.
 	// +kubebuilder:validation:Optional
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
@@ -92,20 +83,20 @@ type ConfigurationParameters struct {
 type UnusedAccessInitParameters struct {
 
 	// The specified access age in days for which to generate findings for unused access.
-	UnusedAccessAge *float64 `json:"unusedAccessAge,omitempty" tf:"unused_access_age,omitempty"`
+	UnusedAccessAge *int64 `json:"unusedAccessAge,omitempty" tf:"unused_access_age,omitempty"`
 }
 
 type UnusedAccessObservation struct {
 
 	// The specified access age in days for which to generate findings for unused access.
-	UnusedAccessAge *float64 `json:"unusedAccessAge,omitempty" tf:"unused_access_age,omitempty"`
+	UnusedAccessAge *int64 `json:"unusedAccessAge,omitempty" tf:"unused_access_age,omitempty"`
 }
 
 type UnusedAccessParameters struct {
 
 	// The specified access age in days for which to generate findings for unused access.
 	// +kubebuilder:validation:Optional
-	UnusedAccessAge *float64 `json:"unusedAccessAge,omitempty" tf:"unused_access_age,omitempty"`
+	UnusedAccessAge *int64 `json:"unusedAccessAge,omitempty" tf:"unused_access_age,omitempty"`
 }
 
 // AnalyzerSpec defines the desired state of Analyzer

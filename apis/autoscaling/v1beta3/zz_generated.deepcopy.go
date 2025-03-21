@@ -18,12 +18,12 @@ func (in *AcceleratorCountInitParameters) DeepCopyInto(out *AcceleratorCountInit
 	*out = *in
 	if in.Max != nil {
 		in, out := &in.Max, &out.Max
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Min != nil {
 		in, out := &in.Min, &out.Min
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -43,12 +43,12 @@ func (in *AcceleratorCountObservation) DeepCopyInto(out *AcceleratorCountObserva
 	*out = *in
 	if in.Max != nil {
 		in, out := &in.Max, &out.Max
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Min != nil {
 		in, out := &in.Min, &out.Min
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -68,12 +68,12 @@ func (in *AcceleratorCountParameters) DeepCopyInto(out *AcceleratorCountParamete
 	*out = *in
 	if in.Max != nil {
 		in, out := &in.Max, &out.Max
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Min != nil {
 		in, out := &in.Min, &out.Min
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -93,12 +93,12 @@ func (in *AcceleratorTotalMemoryMibInitParameters) DeepCopyInto(out *Accelerator
 	*out = *in
 	if in.Max != nil {
 		in, out := &in.Max, &out.Max
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Min != nil {
 		in, out := &in.Min, &out.Min
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -118,12 +118,12 @@ func (in *AcceleratorTotalMemoryMibObservation) DeepCopyInto(out *AcceleratorTot
 	*out = *in
 	if in.Max != nil {
 		in, out := &in.Max, &out.Max
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Min != nil {
 		in, out := &in.Min, &out.Min
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -143,12 +143,12 @@ func (in *AcceleratorTotalMemoryMibParameters) DeepCopyInto(out *AcceleratorTota
 	*out = *in
 	if in.Max != nil {
 		in, out := &in.Max, &out.Max
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Min != nil {
 		in, out := &in.Min, &out.Min
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -299,17 +299,17 @@ func (in *AutoscalingGroupInitParameters) DeepCopyInto(out *AutoscalingGroupInit
 	}
 	if in.DefaultCooldown != nil {
 		in, out := &in.DefaultCooldown, &out.DefaultCooldown
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.DefaultInstanceWarmup != nil {
 		in, out := &in.DefaultInstanceWarmup, &out.DefaultInstanceWarmup
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.DesiredCapacity != nil {
 		in, out := &in.DesiredCapacity, &out.DesiredCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.DesiredCapacityType != nil {
@@ -340,7 +340,7 @@ func (in *AutoscalingGroupInitParameters) DeepCopyInto(out *AutoscalingGroupInit
 	}
 	if in.HealthCheckGracePeriod != nil {
 		in, out := &in.HealthCheckGracePeriod, &out.HealthCheckGracePeriod
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.HealthCheckType != nil {
@@ -392,12 +392,12 @@ func (in *AutoscalingGroupInitParameters) DeepCopyInto(out *AutoscalingGroupInit
 	}
 	if in.MaxInstanceLifetime != nil {
 		in, out := &in.MaxInstanceLifetime, &out.MaxInstanceLifetime
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaxSize != nil {
 		in, out := &in.MaxSize, &out.MaxSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MetricsGranularity != nil {
@@ -407,12 +407,12 @@ func (in *AutoscalingGroupInitParameters) DeepCopyInto(out *AutoscalingGroupInit
 	}
 	if in.MinELBCapacity != nil {
 		in, out := &in.MinELBCapacity, &out.MinELBCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MinSize != nil {
 		in, out := &in.MinSize, &out.MinSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MixedInstancesPolicy != nil {
@@ -521,7 +521,7 @@ func (in *AutoscalingGroupInitParameters) DeepCopyInto(out *AutoscalingGroupInit
 	}
 	if in.WaitForELBCapacity != nil {
 		in, out := &in.WaitForELBCapacity, &out.WaitForELBCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.WarmPool != nil {
@@ -609,17 +609,17 @@ func (in *AutoscalingGroupObservation) DeepCopyInto(out *AutoscalingGroupObserva
 	}
 	if in.DefaultCooldown != nil {
 		in, out := &in.DefaultCooldown, &out.DefaultCooldown
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.DefaultInstanceWarmup != nil {
 		in, out := &in.DefaultInstanceWarmup, &out.DefaultInstanceWarmup
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.DesiredCapacity != nil {
 		in, out := &in.DesiredCapacity, &out.DesiredCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.DesiredCapacityType != nil {
@@ -650,7 +650,7 @@ func (in *AutoscalingGroupObservation) DeepCopyInto(out *AutoscalingGroupObserva
 	}
 	if in.HealthCheckGracePeriod != nil {
 		in, out := &in.HealthCheckGracePeriod, &out.HealthCheckGracePeriod
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.HealthCheckType != nil {
@@ -708,12 +708,12 @@ func (in *AutoscalingGroupObservation) DeepCopyInto(out *AutoscalingGroupObserva
 	}
 	if in.MaxInstanceLifetime != nil {
 		in, out := &in.MaxInstanceLifetime, &out.MaxInstanceLifetime
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaxSize != nil {
 		in, out := &in.MaxSize, &out.MaxSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MetricsGranularity != nil {
@@ -723,12 +723,12 @@ func (in *AutoscalingGroupObservation) DeepCopyInto(out *AutoscalingGroupObserva
 	}
 	if in.MinELBCapacity != nil {
 		in, out := &in.MinELBCapacity, &out.MinELBCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MinSize != nil {
 		in, out := &in.MinSize, &out.MinSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MixedInstancesPolicy != nil {
@@ -743,7 +743,7 @@ func (in *AutoscalingGroupObservation) DeepCopyInto(out *AutoscalingGroupObserva
 	}
 	if in.PredictedCapacity != nil {
 		in, out := &in.PredictedCapacity, &out.PredictedCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ProtectFromScaleIn != nil {
@@ -821,7 +821,7 @@ func (in *AutoscalingGroupObservation) DeepCopyInto(out *AutoscalingGroupObserva
 	}
 	if in.WaitForELBCapacity != nil {
 		in, out := &in.WaitForELBCapacity, &out.WaitForELBCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.WarmPool != nil {
@@ -831,7 +831,7 @@ func (in *AutoscalingGroupObservation) DeepCopyInto(out *AutoscalingGroupObserva
 	}
 	if in.WarmPoolSize != nil {
 		in, out := &in.WarmPoolSize, &out.WarmPoolSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -877,17 +877,17 @@ func (in *AutoscalingGroupParameters) DeepCopyInto(out *AutoscalingGroupParamete
 	}
 	if in.DefaultCooldown != nil {
 		in, out := &in.DefaultCooldown, &out.DefaultCooldown
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.DefaultInstanceWarmup != nil {
 		in, out := &in.DefaultInstanceWarmup, &out.DefaultInstanceWarmup
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.DesiredCapacity != nil {
 		in, out := &in.DesiredCapacity, &out.DesiredCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.DesiredCapacityType != nil {
@@ -918,7 +918,7 @@ func (in *AutoscalingGroupParameters) DeepCopyInto(out *AutoscalingGroupParamete
 	}
 	if in.HealthCheckGracePeriod != nil {
 		in, out := &in.HealthCheckGracePeriod, &out.HealthCheckGracePeriod
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.HealthCheckType != nil {
@@ -970,12 +970,12 @@ func (in *AutoscalingGroupParameters) DeepCopyInto(out *AutoscalingGroupParamete
 	}
 	if in.MaxInstanceLifetime != nil {
 		in, out := &in.MaxInstanceLifetime, &out.MaxInstanceLifetime
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaxSize != nil {
 		in, out := &in.MaxSize, &out.MaxSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MetricsGranularity != nil {
@@ -985,12 +985,12 @@ func (in *AutoscalingGroupParameters) DeepCopyInto(out *AutoscalingGroupParamete
 	}
 	if in.MinELBCapacity != nil {
 		in, out := &in.MinELBCapacity, &out.MinELBCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MinSize != nil {
 		in, out := &in.MinSize, &out.MinSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MixedInstancesPolicy != nil {
@@ -1104,7 +1104,7 @@ func (in *AutoscalingGroupParameters) DeepCopyInto(out *AutoscalingGroupParamete
 	}
 	if in.WaitForELBCapacity != nil {
 		in, out := &in.WaitForELBCapacity, &out.WaitForELBCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.WarmPool != nil {
@@ -1224,12 +1224,12 @@ func (in *BaselineEBSBandwidthMbpsInitParameters) DeepCopyInto(out *BaselineEBSB
 	*out = *in
 	if in.Max != nil {
 		in, out := &in.Max, &out.Max
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Min != nil {
 		in, out := &in.Min, &out.Min
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1249,12 +1249,12 @@ func (in *BaselineEBSBandwidthMbpsObservation) DeepCopyInto(out *BaselineEBSBand
 	*out = *in
 	if in.Max != nil {
 		in, out := &in.Max, &out.Max
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Min != nil {
 		in, out := &in.Min, &out.Min
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1274,12 +1274,12 @@ func (in *BaselineEBSBandwidthMbpsParameters) DeepCopyInto(out *BaselineEBSBandw
 	*out = *in
 	if in.Max != nil {
 		in, out := &in.Max, &out.Max
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Min != nil {
 		in, out := &in.Min, &out.Min
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1304,7 +1304,7 @@ func (in *InitialLifecycleHookInitParameters) DeepCopyInto(out *InitialLifecycle
 	}
 	if in.HeartbeatTimeout != nil {
 		in, out := &in.HeartbeatTimeout, &out.HeartbeatTimeout
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.LifecycleTransition != nil {
@@ -1354,7 +1354,7 @@ func (in *InitialLifecycleHookObservation) DeepCopyInto(out *InitialLifecycleHoo
 	}
 	if in.HeartbeatTimeout != nil {
 		in, out := &in.HeartbeatTimeout, &out.HeartbeatTimeout
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.LifecycleTransition != nil {
@@ -1404,7 +1404,7 @@ func (in *InitialLifecycleHookParameters) DeepCopyInto(out *InitialLifecycleHook
 	}
 	if in.HeartbeatTimeout != nil {
 		in, out := &in.HeartbeatTimeout, &out.HeartbeatTimeout
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.LifecycleTransition != nil {
@@ -1449,12 +1449,12 @@ func (in *InstanceMaintenancePolicyInitParameters) DeepCopyInto(out *InstanceMai
 	*out = *in
 	if in.MaxHealthyPercentage != nil {
 		in, out := &in.MaxHealthyPercentage, &out.MaxHealthyPercentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MinHealthyPercentage != nil {
 		in, out := &in.MinHealthyPercentage, &out.MinHealthyPercentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1474,12 +1474,12 @@ func (in *InstanceMaintenancePolicyObservation) DeepCopyInto(out *InstanceMainte
 	*out = *in
 	if in.MaxHealthyPercentage != nil {
 		in, out := &in.MaxHealthyPercentage, &out.MaxHealthyPercentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MinHealthyPercentage != nil {
 		in, out := &in.MinHealthyPercentage, &out.MinHealthyPercentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1499,12 +1499,12 @@ func (in *InstanceMaintenancePolicyParameters) DeepCopyInto(out *InstanceMainten
 	*out = *in
 	if in.MaxHealthyPercentage != nil {
 		in, out := &in.MaxHealthyPercentage, &out.MaxHealthyPercentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MinHealthyPercentage != nil {
 		in, out := &in.MinHealthyPercentage, &out.MinHealthyPercentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1750,7 +1750,7 @@ func (in *InstanceRequirementsInitParameters) DeepCopyInto(out *InstanceRequirem
 	}
 	if in.MaxSpotPriceAsPercentageOfOptimalOnDemandPrice != nil {
 		in, out := &in.MaxSpotPriceAsPercentageOfOptimalOnDemandPrice, &out.MaxSpotPriceAsPercentageOfOptimalOnDemandPrice
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MemoryGibPerVcpu != nil {
@@ -1775,7 +1775,7 @@ func (in *InstanceRequirementsInitParameters) DeepCopyInto(out *InstanceRequirem
 	}
 	if in.OnDemandMaxPricePercentageOverLowestPrice != nil {
 		in, out := &in.OnDemandMaxPricePercentageOverLowestPrice, &out.OnDemandMaxPricePercentageOverLowestPrice
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.RequireHibernateSupport != nil {
@@ -1785,7 +1785,7 @@ func (in *InstanceRequirementsInitParameters) DeepCopyInto(out *InstanceRequirem
 	}
 	if in.SpotMaxPricePercentageOverLowestPrice != nil {
 		in, out := &in.SpotMaxPricePercentageOverLowestPrice, &out.SpotMaxPricePercentageOverLowestPrice
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.TotalLocalStorageGb != nil {
@@ -1933,7 +1933,7 @@ func (in *InstanceRequirementsObservation) DeepCopyInto(out *InstanceRequirement
 	}
 	if in.MaxSpotPriceAsPercentageOfOptimalOnDemandPrice != nil {
 		in, out := &in.MaxSpotPriceAsPercentageOfOptimalOnDemandPrice, &out.MaxSpotPriceAsPercentageOfOptimalOnDemandPrice
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MemoryGibPerVcpu != nil {
@@ -1958,7 +1958,7 @@ func (in *InstanceRequirementsObservation) DeepCopyInto(out *InstanceRequirement
 	}
 	if in.OnDemandMaxPricePercentageOverLowestPrice != nil {
 		in, out := &in.OnDemandMaxPricePercentageOverLowestPrice, &out.OnDemandMaxPricePercentageOverLowestPrice
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.RequireHibernateSupport != nil {
@@ -1968,7 +1968,7 @@ func (in *InstanceRequirementsObservation) DeepCopyInto(out *InstanceRequirement
 	}
 	if in.SpotMaxPricePercentageOverLowestPrice != nil {
 		in, out := &in.SpotMaxPricePercentageOverLowestPrice, &out.SpotMaxPricePercentageOverLowestPrice
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.TotalLocalStorageGb != nil {
@@ -2116,7 +2116,7 @@ func (in *InstanceRequirementsParameters) DeepCopyInto(out *InstanceRequirements
 	}
 	if in.MaxSpotPriceAsPercentageOfOptimalOnDemandPrice != nil {
 		in, out := &in.MaxSpotPriceAsPercentageOfOptimalOnDemandPrice, &out.MaxSpotPriceAsPercentageOfOptimalOnDemandPrice
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MemoryGibPerVcpu != nil {
@@ -2141,7 +2141,7 @@ func (in *InstanceRequirementsParameters) DeepCopyInto(out *InstanceRequirements
 	}
 	if in.OnDemandMaxPricePercentageOverLowestPrice != nil {
 		in, out := &in.OnDemandMaxPricePercentageOverLowestPrice, &out.OnDemandMaxPricePercentageOverLowestPrice
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.RequireHibernateSupport != nil {
@@ -2151,7 +2151,7 @@ func (in *InstanceRequirementsParameters) DeepCopyInto(out *InstanceRequirements
 	}
 	if in.SpotMaxPricePercentageOverLowestPrice != nil {
 		in, out := &in.SpotMaxPricePercentageOverLowestPrice, &out.SpotMaxPricePercentageOverLowestPrice
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.TotalLocalStorageGb != nil {
@@ -2246,12 +2246,12 @@ func (in *InstancesDistributionInitParameters) DeepCopyInto(out *InstancesDistri
 	}
 	if in.OnDemandBaseCapacity != nil {
 		in, out := &in.OnDemandBaseCapacity, &out.OnDemandBaseCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.OnDemandPercentageAboveBaseCapacity != nil {
 		in, out := &in.OnDemandPercentageAboveBaseCapacity, &out.OnDemandPercentageAboveBaseCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.SpotAllocationStrategy != nil {
@@ -2261,7 +2261,7 @@ func (in *InstancesDistributionInitParameters) DeepCopyInto(out *InstancesDistri
 	}
 	if in.SpotInstancePools != nil {
 		in, out := &in.SpotInstancePools, &out.SpotInstancePools
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.SpotMaxPrice != nil {
@@ -2291,12 +2291,12 @@ func (in *InstancesDistributionObservation) DeepCopyInto(out *InstancesDistribut
 	}
 	if in.OnDemandBaseCapacity != nil {
 		in, out := &in.OnDemandBaseCapacity, &out.OnDemandBaseCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.OnDemandPercentageAboveBaseCapacity != nil {
 		in, out := &in.OnDemandPercentageAboveBaseCapacity, &out.OnDemandPercentageAboveBaseCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.SpotAllocationStrategy != nil {
@@ -2306,7 +2306,7 @@ func (in *InstancesDistributionObservation) DeepCopyInto(out *InstancesDistribut
 	}
 	if in.SpotInstancePools != nil {
 		in, out := &in.SpotInstancePools, &out.SpotInstancePools
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.SpotMaxPrice != nil {
@@ -2336,12 +2336,12 @@ func (in *InstancesDistributionParameters) DeepCopyInto(out *InstancesDistributi
 	}
 	if in.OnDemandBaseCapacity != nil {
 		in, out := &in.OnDemandBaseCapacity, &out.OnDemandBaseCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.OnDemandPercentageAboveBaseCapacity != nil {
 		in, out := &in.OnDemandPercentageAboveBaseCapacity, &out.OnDemandPercentageAboveBaseCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.SpotAllocationStrategy != nil {
@@ -2351,7 +2351,7 @@ func (in *InstancesDistributionParameters) DeepCopyInto(out *InstancesDistributi
 	}
 	if in.SpotInstancePools != nil {
 		in, out := &in.SpotInstancePools, &out.SpotInstancePools
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.SpotMaxPrice != nil {
@@ -2671,12 +2671,12 @@ func (in *MemoryMibInitParameters) DeepCopyInto(out *MemoryMibInitParameters) {
 	*out = *in
 	if in.Max != nil {
 		in, out := &in.Max, &out.Max
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Min != nil {
 		in, out := &in.Min, &out.Min
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2696,12 +2696,12 @@ func (in *MemoryMibObservation) DeepCopyInto(out *MemoryMibObservation) {
 	*out = *in
 	if in.Max != nil {
 		in, out := &in.Max, &out.Max
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Min != nil {
 		in, out := &in.Min, &out.Min
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2721,12 +2721,12 @@ func (in *MemoryMibParameters) DeepCopyInto(out *MemoryMibParameters) {
 	*out = *in
 	if in.Max != nil {
 		in, out := &in.Max, &out.Max
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Min != nil {
 		in, out := &in.Min, &out.Min
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2977,12 +2977,12 @@ func (in *NetworkInterfaceCountInitParameters) DeepCopyInto(out *NetworkInterfac
 	*out = *in
 	if in.Max != nil {
 		in, out := &in.Max, &out.Max
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Min != nil {
 		in, out := &in.Min, &out.Min
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -3002,12 +3002,12 @@ func (in *NetworkInterfaceCountObservation) DeepCopyInto(out *NetworkInterfaceCo
 	*out = *in
 	if in.Max != nil {
 		in, out := &in.Max, &out.Max
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Min != nil {
 		in, out := &in.Min, &out.Min
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -3027,12 +3027,12 @@ func (in *NetworkInterfaceCountParameters) DeepCopyInto(out *NetworkInterfaceCou
 	*out = *in
 	if in.Max != nil {
 		in, out := &in.Max, &out.Max
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Min != nil {
 		in, out := &in.Min, &out.Min
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -3282,11 +3282,11 @@ func (in *PreferencesInitParameters) DeepCopyInto(out *PreferencesInitParameters
 	}
 	if in.CheckpointPercentages != nil {
 		in, out := &in.CheckpointPercentages, &out.CheckpointPercentages
-		*out = make([]*float64, len(*in))
+		*out = make([]*int64, len(*in))
 		for i := range *in {
 			if (*in)[i] != nil {
 				in, out := &(*in)[i], &(*out)[i]
-				*out = new(float64)
+				*out = new(int64)
 				**out = **in
 			}
 		}
@@ -3298,12 +3298,12 @@ func (in *PreferencesInitParameters) DeepCopyInto(out *PreferencesInitParameters
 	}
 	if in.MaxHealthyPercentage != nil {
 		in, out := &in.MaxHealthyPercentage, &out.MaxHealthyPercentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MinHealthyPercentage != nil {
 		in, out := &in.MinHealthyPercentage, &out.MinHealthyPercentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ScaleInProtectedInstances != nil {
@@ -3353,11 +3353,11 @@ func (in *PreferencesObservation) DeepCopyInto(out *PreferencesObservation) {
 	}
 	if in.CheckpointPercentages != nil {
 		in, out := &in.CheckpointPercentages, &out.CheckpointPercentages
-		*out = make([]*float64, len(*in))
+		*out = make([]*int64, len(*in))
 		for i := range *in {
 			if (*in)[i] != nil {
 				in, out := &(*in)[i], &(*out)[i]
-				*out = new(float64)
+				*out = new(int64)
 				**out = **in
 			}
 		}
@@ -3369,12 +3369,12 @@ func (in *PreferencesObservation) DeepCopyInto(out *PreferencesObservation) {
 	}
 	if in.MaxHealthyPercentage != nil {
 		in, out := &in.MaxHealthyPercentage, &out.MaxHealthyPercentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MinHealthyPercentage != nil {
 		in, out := &in.MinHealthyPercentage, &out.MinHealthyPercentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ScaleInProtectedInstances != nil {
@@ -3424,11 +3424,11 @@ func (in *PreferencesParameters) DeepCopyInto(out *PreferencesParameters) {
 	}
 	if in.CheckpointPercentages != nil {
 		in, out := &in.CheckpointPercentages, &out.CheckpointPercentages
-		*out = make([]*float64, len(*in))
+		*out = make([]*int64, len(*in))
 		for i := range *in {
 			if (*in)[i] != nil {
 				in, out := &(*in)[i], &(*out)[i]
-				*out = new(float64)
+				*out = new(int64)
 				**out = **in
 			}
 		}
@@ -3440,12 +3440,12 @@ func (in *PreferencesParameters) DeepCopyInto(out *PreferencesParameters) {
 	}
 	if in.MaxHealthyPercentage != nil {
 		in, out := &in.MaxHealthyPercentage, &out.MaxHealthyPercentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MinHealthyPercentage != nil {
 		in, out := &in.MinHealthyPercentage, &out.MinHealthyPercentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ScaleInProtectedInstances != nil {
@@ -3720,12 +3720,12 @@ func (in *VcpuCountInitParameters) DeepCopyInto(out *VcpuCountInitParameters) {
 	*out = *in
 	if in.Max != nil {
 		in, out := &in.Max, &out.Max
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Min != nil {
 		in, out := &in.Min, &out.Min
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -3745,12 +3745,12 @@ func (in *VcpuCountObservation) DeepCopyInto(out *VcpuCountObservation) {
 	*out = *in
 	if in.Max != nil {
 		in, out := &in.Max, &out.Max
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Min != nil {
 		in, out := &in.Min, &out.Min
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -3770,12 +3770,12 @@ func (in *VcpuCountParameters) DeepCopyInto(out *VcpuCountParameters) {
 	*out = *in
 	if in.Max != nil {
 		in, out := &in.Max, &out.Max
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Min != nil {
 		in, out := &in.Min, &out.Min
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -3800,12 +3800,12 @@ func (in *WarmPoolInitParameters) DeepCopyInto(out *WarmPoolInitParameters) {
 	}
 	if in.MaxGroupPreparedCapacity != nil {
 		in, out := &in.MaxGroupPreparedCapacity, &out.MaxGroupPreparedCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MinSize != nil {
 		in, out := &in.MinSize, &out.MinSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.PoolState != nil {
@@ -3835,12 +3835,12 @@ func (in *WarmPoolObservation) DeepCopyInto(out *WarmPoolObservation) {
 	}
 	if in.MaxGroupPreparedCapacity != nil {
 		in, out := &in.MaxGroupPreparedCapacity, &out.MaxGroupPreparedCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MinSize != nil {
 		in, out := &in.MinSize, &out.MinSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.PoolState != nil {
@@ -3870,12 +3870,12 @@ func (in *WarmPoolParameters) DeepCopyInto(out *WarmPoolParameters) {
 	}
 	if in.MaxGroupPreparedCapacity != nil {
 		in, out := &in.MaxGroupPreparedCapacity, &out.MaxGroupPreparedCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MinSize != nil {
 		in, out := &in.MinSize, &out.MinSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.PoolState != nil {

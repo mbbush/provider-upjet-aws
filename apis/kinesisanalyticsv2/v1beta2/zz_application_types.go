@@ -156,10 +156,6 @@ type ApplicationInitParameters struct {
 
 	// Whether to start or stop the application.
 	StartApplication *bool `json:"startApplication,omitempty" tf:"start_application,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type ApplicationObservation struct {
@@ -212,7 +208,7 @@ type ApplicationObservation struct {
 	TagsAll map[string]*string `json:"tagsAll,omitempty" tf:"tags_all,omitempty"`
 
 	// The current application version. Kinesis Data Analytics updates the version_id each time the application is updated.
-	VersionID *float64 `json:"versionId,omitempty" tf:"version_id,omitempty"`
+	VersionID *int64 `json:"versionId,omitempty" tf:"version_id,omitempty"`
 }
 
 type ApplicationParameters struct {
@@ -263,11 +259,6 @@ type ApplicationParameters struct {
 	// Whether to start or stop the application.
 	// +kubebuilder:validation:Optional
 	StartApplication *bool `json:"startApplication,omitempty" tf:"start_application,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type ApplicationRestoreConfigurationInitParameters struct {
@@ -321,7 +312,7 @@ type ApplicationSnapshotConfigurationParameters struct {
 type CheckpointConfigurationInitParameters struct {
 
 	// Describes the interval in milliseconds between checkpoint operations.
-	CheckpointInterval *float64 `json:"checkpointInterval,omitempty" tf:"checkpoint_interval,omitempty"`
+	CheckpointInterval *int64 `json:"checkpointInterval,omitempty" tf:"checkpoint_interval,omitempty"`
 
 	// Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.
 	CheckpointingEnabled *bool `json:"checkpointingEnabled,omitempty" tf:"checkpointing_enabled,omitempty"`
@@ -330,13 +321,13 @@ type CheckpointConfigurationInitParameters struct {
 	ConfigurationType *string `json:"configurationType,omitempty" tf:"configuration_type,omitempty"`
 
 	// Describes the minimum time in milliseconds after a checkpoint operation completes that a new checkpoint operation can start.
-	MinPauseBetweenCheckpoints *float64 `json:"minPauseBetweenCheckpoints,omitempty" tf:"min_pause_between_checkpoints,omitempty"`
+	MinPauseBetweenCheckpoints *int64 `json:"minPauseBetweenCheckpoints,omitempty" tf:"min_pause_between_checkpoints,omitempty"`
 }
 
 type CheckpointConfigurationObservation struct {
 
 	// Describes the interval in milliseconds between checkpoint operations.
-	CheckpointInterval *float64 `json:"checkpointInterval,omitempty" tf:"checkpoint_interval,omitempty"`
+	CheckpointInterval *int64 `json:"checkpointInterval,omitempty" tf:"checkpoint_interval,omitempty"`
 
 	// Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.
 	CheckpointingEnabled *bool `json:"checkpointingEnabled,omitempty" tf:"checkpointing_enabled,omitempty"`
@@ -345,14 +336,14 @@ type CheckpointConfigurationObservation struct {
 	ConfigurationType *string `json:"configurationType,omitempty" tf:"configuration_type,omitempty"`
 
 	// Describes the minimum time in milliseconds after a checkpoint operation completes that a new checkpoint operation can start.
-	MinPauseBetweenCheckpoints *float64 `json:"minPauseBetweenCheckpoints,omitempty" tf:"min_pause_between_checkpoints,omitempty"`
+	MinPauseBetweenCheckpoints *int64 `json:"minPauseBetweenCheckpoints,omitempty" tf:"min_pause_between_checkpoints,omitempty"`
 }
 
 type CheckpointConfigurationParameters struct {
 
 	// Describes the interval in milliseconds between checkpoint operations.
 	// +kubebuilder:validation:Optional
-	CheckpointInterval *float64 `json:"checkpointInterval,omitempty" tf:"checkpoint_interval,omitempty"`
+	CheckpointInterval *int64 `json:"checkpointInterval,omitempty" tf:"checkpoint_interval,omitempty"`
 
 	// Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.
 	// +kubebuilder:validation:Optional
@@ -364,7 +355,7 @@ type CheckpointConfigurationParameters struct {
 
 	// Describes the minimum time in milliseconds after a checkpoint operation completes that a new checkpoint operation can start.
 	// +kubebuilder:validation:Optional
-	MinPauseBetweenCheckpoints *float64 `json:"minPauseBetweenCheckpoints,omitempty" tf:"min_pause_between_checkpoints,omitempty"`
+	MinPauseBetweenCheckpoints *int64 `json:"minPauseBetweenCheckpoints,omitempty" tf:"min_pause_between_checkpoints,omitempty"`
 }
 
 type CloudwatchLoggingOptionsInitParameters struct {
@@ -639,20 +630,20 @@ type InputObservation struct {
 type InputParallelismInitParameters struct {
 
 	// The number of in-application streams to create.
-	Count *float64 `json:"count,omitempty" tf:"count,omitempty"`
+	Count *int64 `json:"count,omitempty" tf:"count,omitempty"`
 }
 
 type InputParallelismObservation struct {
 
 	// The number of in-application streams to create.
-	Count *float64 `json:"count,omitempty" tf:"count,omitempty"`
+	Count *int64 `json:"count,omitempty" tf:"count,omitempty"`
 }
 
 type InputParallelismParameters struct {
 
 	// The number of in-application streams to create.
 	// +kubebuilder:validation:Optional
-	Count *float64 `json:"count,omitempty" tf:"count,omitempty"`
+	Count *int64 `json:"count,omitempty" tf:"count,omitempty"`
 }
 
 type InputParameters struct {
@@ -1125,10 +1116,10 @@ type ParallelismConfigurationInitParameters struct {
 	ConfigurationType *string `json:"configurationType,omitempty" tf:"configuration_type,omitempty"`
 
 	// Describes the initial number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform.
-	Parallelism *float64 `json:"parallelism,omitempty" tf:"parallelism,omitempty"`
+	Parallelism *int64 `json:"parallelism,omitempty" tf:"parallelism,omitempty"`
 
 	// Describes the number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform per Kinesis Processing Unit (KPU) used by the application.
-	ParallelismPerKpu *float64 `json:"parallelismPerKpu,omitempty" tf:"parallelism_per_kpu,omitempty"`
+	ParallelismPerKpu *int64 `json:"parallelismPerKpu,omitempty" tf:"parallelism_per_kpu,omitempty"`
 }
 
 type ParallelismConfigurationObservation struct {
@@ -1140,10 +1131,10 @@ type ParallelismConfigurationObservation struct {
 	ConfigurationType *string `json:"configurationType,omitempty" tf:"configuration_type,omitempty"`
 
 	// Describes the initial number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform.
-	Parallelism *float64 `json:"parallelism,omitempty" tf:"parallelism,omitempty"`
+	Parallelism *int64 `json:"parallelism,omitempty" tf:"parallelism,omitempty"`
 
 	// Describes the number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform per Kinesis Processing Unit (KPU) used by the application.
-	ParallelismPerKpu *float64 `json:"parallelismPerKpu,omitempty" tf:"parallelism_per_kpu,omitempty"`
+	ParallelismPerKpu *int64 `json:"parallelismPerKpu,omitempty" tf:"parallelism_per_kpu,omitempty"`
 }
 
 type ParallelismConfigurationParameters struct {
@@ -1158,11 +1149,11 @@ type ParallelismConfigurationParameters struct {
 
 	// Describes the initial number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform.
 	// +kubebuilder:validation:Optional
-	Parallelism *float64 `json:"parallelism,omitempty" tf:"parallelism,omitempty"`
+	Parallelism *int64 `json:"parallelism,omitempty" tf:"parallelism,omitempty"`
 
 	// Describes the number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform per Kinesis Processing Unit (KPU) used by the application.
 	// +kubebuilder:validation:Optional
-	ParallelismPerKpu *float64 `json:"parallelismPerKpu,omitempty" tf:"parallelism_per_kpu,omitempty"`
+	ParallelismPerKpu *int64 `json:"parallelismPerKpu,omitempty" tf:"parallelism_per_kpu,omitempty"`
 }
 
 type PropertyGroupInitParameters struct {

@@ -11,6 +11,4 @@ spec:
     bgpAsn: 65000
     ipAddress: 172.83.124.10
     region: us-west-1
-    tags:
-      Name: main-customer-gateway
     type: ipsec.1

@@ -49,7 +49,7 @@ func (in *AuthenticationModeObservation) DeepCopyInto(out *AuthenticationModeObs
 	*out = *in
 	if in.PasswordCount != nil {
 		in, out := &in.PasswordCount, &out.PasswordCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Type != nil {
@@ -137,22 +137,6 @@ func (in *UserInitParameters) DeepCopyInto(out *UserInitParameters) {
 		in, out := &in.AuthenticationMode, &out.AuthenticationMode
 		*out = new(AuthenticationModeInitParameters)
 		(*in).DeepCopyInto(*out)
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 }
 
@@ -287,22 +271,6 @@ func (in *UserParameters) DeepCopyInto(out *UserParameters) {
 		in, out := &in.Region, &out.Region
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 }
 

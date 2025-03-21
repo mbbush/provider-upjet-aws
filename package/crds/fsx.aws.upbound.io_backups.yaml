@@ -156,12 +156,6 @@ spec:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   volumeId:
                     description: The ID of the volume to back up. Required if backing
                       up a ONTAP Volume.
@@ -262,12 +256,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   volumeId:
                     description: The ID of the volume to back up. Required if backing
                       up a ONTAP Volume.

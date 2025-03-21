@@ -50,10 +50,6 @@ type EventSubscriptionInitParameters struct {
 
 	// Type of source for events. Valid values: replication-instance or replication-task
 	SourceType *string `json:"sourceType,omitempty" tf:"source_type,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type EventSubscriptionObservation struct {
@@ -136,11 +132,6 @@ type EventSubscriptionParameters struct {
 	// Type of source for events. Valid values: replication-instance or replication-task
 	// +kubebuilder:validation:Optional
 	SourceType *string `json:"sourceType,omitempty" tf:"source_type,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // EventSubscriptionSpec defines the desired state of EventSubscription

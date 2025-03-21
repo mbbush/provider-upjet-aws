@@ -79,10 +79,6 @@ type InstanceInitParameters struct {
 	// Lightsail console (cannot use aws_key_pair at this time)
 	KeyPairName *string `json:"keyPairName,omitempty" tf:"key_pair_name,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Single lined launch script as a string to configure server with additional user data
 	UserData *string `json:"userData,omitempty" tf:"user_data,omitempty"`
 }
@@ -111,7 +107,7 @@ type InstanceObservation struct {
 	BundleID *string `json:"bundleId,omitempty" tf:"bundle_id,omitempty"`
 
 	// The number of vCPUs the instance has.
-	CPUCount *float64 `json:"cpuCount,omitempty" tf:"cpu_count,omitempty"`
+	CPUCount *int64 `json:"cpuCount,omitempty" tf:"cpu_count,omitempty"`
 
 	// The timestamp when the instance was created.
 	CreatedAt *string `json:"createdAt,omitempty" tf:"created_at,omitempty"`
@@ -193,11 +189,6 @@ type InstanceParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Single lined launch script as a string to configure server with additional user data
 	// +kubebuilder:validation:Optional

@@ -19,10 +19,10 @@ type ActionsSuppressorInitParameters struct {
 	Alarm *string `json:"alarm,omitempty" tf:"alarm,omitempty"`
 
 	// The maximum time in seconds that the composite alarm waits after suppressor alarm goes out of the ALARM state. After this time, the composite alarm performs its actions.
-	ExtensionPeriod *float64 `json:"extensionPeriod,omitempty" tf:"extension_period,omitempty"`
+	ExtensionPeriod *int64 `json:"extensionPeriod,omitempty" tf:"extension_period,omitempty"`
 
 	// The maximum time in seconds that the composite alarm waits for the suppressor alarm to go into the ALARM state. After this time, the composite alarm performs its actions.
-	WaitPeriod *float64 `json:"waitPeriod,omitempty" tf:"wait_period,omitempty"`
+	WaitPeriod *int64 `json:"waitPeriod,omitempty" tf:"wait_period,omitempty"`
 }
 
 type ActionsSuppressorObservation struct {
@@ -31,10 +31,10 @@ type ActionsSuppressorObservation struct {
 	Alarm *string `json:"alarm,omitempty" tf:"alarm,omitempty"`
 
 	// The maximum time in seconds that the composite alarm waits after suppressor alarm goes out of the ALARM state. After this time, the composite alarm performs its actions.
-	ExtensionPeriod *float64 `json:"extensionPeriod,omitempty" tf:"extension_period,omitempty"`
+	ExtensionPeriod *int64 `json:"extensionPeriod,omitempty" tf:"extension_period,omitempty"`
 
 	// The maximum time in seconds that the composite alarm waits for the suppressor alarm to go into the ALARM state. After this time, the composite alarm performs its actions.
-	WaitPeriod *float64 `json:"waitPeriod,omitempty" tf:"wait_period,omitempty"`
+	WaitPeriod *int64 `json:"waitPeriod,omitempty" tf:"wait_period,omitempty"`
 }
 
 type ActionsSuppressorParameters struct {
@@ -45,11 +45,11 @@ type ActionsSuppressorParameters struct {
 
 	// The maximum time in seconds that the composite alarm waits after suppressor alarm goes out of the ALARM state. After this time, the composite alarm performs its actions.
 	// +kubebuilder:validation:Optional
-	ExtensionPeriod *float64 `json:"extensionPeriod" tf:"extension_period,omitempty"`
+	ExtensionPeriod *int64 `json:"extensionPeriod" tf:"extension_period,omitempty"`
 
 	// The maximum time in seconds that the composite alarm waits for the suppressor alarm to go into the ALARM state. After this time, the composite alarm performs its actions.
 	// +kubebuilder:validation:Optional
-	WaitPeriod *float64 `json:"waitPeriod" tf:"wait_period,omitempty"`
+	WaitPeriod *int64 `json:"waitPeriod" tf:"wait_period,omitempty"`
 }
 
 type CompositeAlarmInitParameters struct {
@@ -97,10 +97,6 @@ type CompositeAlarmInitParameters struct {
 	// Selector for a list of Topic in sns to populate okActions.
 	// +kubebuilder:validation:Optional
 	OkActionsSelector *v1.Selector `json:"okActionsSelector,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type CompositeAlarmObservation struct {
@@ -201,11 +197,6 @@ type CompositeAlarmParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // CompositeAlarmSpec defines the desired state of CompositeAlarm

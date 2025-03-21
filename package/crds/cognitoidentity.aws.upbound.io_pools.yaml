@@ -285,12 +285,6 @@ spec:
                       app IDs.
                     type: object
                     x-kubernetes-map-type: granular
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -513,12 +507,6 @@ spec:
                       type: string
                     description: Key-Value pairs mapping provider names to provider
                       app IDs.
-                    type: object
-                    x-kubernetes-map-type: granular
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
                     type: object
                     x-kubernetes-map-type: granular
                 type: object

@@ -106,10 +106,6 @@ type BrokerInitParameters struct {
 	// +listType=set
 	SubnetIds []*string `json:"subnetIds,omitempty" tf:"subnet_ids,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Configuration block for broker users. For engine_type of RabbitMQ, Amazon MQ does not return broker users preventing this resource from making user updates and drift detection. Detailed below.
 	User []UserInitParameters `json:"user,omitempty" tf:"user,omitempty"`
 }
@@ -316,11 +312,6 @@ type BrokerParameters struct {
 	// +listType=set
 	SubnetIds []*string `json:"subnetIds,omitempty" tf:"subnet_ids,omitempty"`
 
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Configuration block for broker users. For engine_type of RabbitMQ, Amazon MQ does not return broker users preventing this resource from making user updates and drift detection. Detailed below.
 	// +kubebuilder:validation:Optional
 	User []UserParameters `json:"user,omitempty" tf:"user,omitempty"`
@@ -342,7 +333,7 @@ type ConfigurationInitParameters struct {
 	IDSelector *v1.Selector `json:"idSelector,omitempty" tf:"-"`
 
 	// Revision of the Configuration.
-	Revision *float64 `json:"revision,omitempty" tf:"revision,omitempty"`
+	Revision *int64 `json:"revision,omitempty" tf:"revision,omitempty"`
 }
 
 type ConfigurationObservation struct {
@@ -351,7 +342,7 @@ type ConfigurationObservation struct {
 	ID *string `json:"id,omitempty" tf:"id,omitempty"`
 
 	// Revision of the Configuration.
-	Revision *float64 `json:"revision,omitempty" tf:"revision,omitempty"`
+	Revision *int64 `json:"revision,omitempty" tf:"revision,omitempty"`
 }
 
 type ConfigurationParameters struct {
@@ -372,7 +363,7 @@ type ConfigurationParameters struct {
 
 	// Revision of the Configuration.
 	// +kubebuilder:validation:Optional
-	Revision *float64 `json:"revision,omitempty" tf:"revision,omitempty"`
+	Revision *int64 `json:"revision,omitempty" tf:"revision,omitempty"`
 }
 
 type EncryptionOptionsInitParameters struct {

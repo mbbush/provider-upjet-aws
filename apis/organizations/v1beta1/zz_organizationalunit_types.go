@@ -41,10 +41,6 @@ type OrganizationalUnitInitParameters struct {
 
 	// ID of the parent organizational unit, which may be the root
 	ParentID *string `json:"parentId,omitempty" tf:"parent_id,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type OrganizationalUnitObservation struct {
@@ -87,11 +83,6 @@ type OrganizationalUnitParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // OrganizationalUnitSpec defines the desired state of OrganizationalUnit

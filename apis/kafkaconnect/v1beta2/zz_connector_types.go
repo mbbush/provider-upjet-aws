@@ -45,13 +45,13 @@ type ApacheKafkaClusterParameters struct {
 type AutoscalingInitParameters struct {
 
 	// The maximum number of workers allocated to the connector.
-	MaxWorkerCount *float64 `json:"maxWorkerCount,omitempty" tf:"max_worker_count,omitempty"`
+	MaxWorkerCount *int64 `json:"maxWorkerCount,omitempty" tf:"max_worker_count,omitempty"`
 
 	// The number of microcontroller units (MCUs) allocated to each connector worker. Valid values: 1, 2, 4, 8. The default value is 1.
-	McuCount *float64 `json:"mcuCount,omitempty" tf:"mcu_count,omitempty"`
+	McuCount *int64 `json:"mcuCount,omitempty" tf:"mcu_count,omitempty"`
 
 	// The minimum number of workers allocated to the connector.
-	MinWorkerCount *float64 `json:"minWorkerCount,omitempty" tf:"min_worker_count,omitempty"`
+	MinWorkerCount *int64 `json:"minWorkerCount,omitempty" tf:"min_worker_count,omitempty"`
 
 	// The scale-in policy for the connector. See scale_in_policy Block for details.
 	ScaleInPolicy *ScaleInPolicyInitParameters `json:"scaleInPolicy,omitempty" tf:"scale_in_policy,omitempty"`
@@ -63,13 +63,13 @@ type AutoscalingInitParameters struct {
 type AutoscalingObservation struct {
 
 	// The maximum number of workers allocated to the connector.
-	MaxWorkerCount *float64 `json:"maxWorkerCount,omitempty" tf:"max_worker_count,omitempty"`
+	MaxWorkerCount *int64 `json:"maxWorkerCount,omitempty" tf:"max_worker_count,omitempty"`
 
 	// The number of microcontroller units (MCUs) allocated to each connector worker. Valid values: 1, 2, 4, 8. The default value is 1.
-	McuCount *float64 `json:"mcuCount,omitempty" tf:"mcu_count,omitempty"`
+	McuCount *int64 `json:"mcuCount,omitempty" tf:"mcu_count,omitempty"`
 
 	// The minimum number of workers allocated to the connector.
-	MinWorkerCount *float64 `json:"minWorkerCount,omitempty" tf:"min_worker_count,omitempty"`
+	MinWorkerCount *int64 `json:"minWorkerCount,omitempty" tf:"min_worker_count,omitempty"`
 
 	// The scale-in policy for the connector. See scale_in_policy Block for details.
 	ScaleInPolicy *ScaleInPolicyObservation `json:"scaleInPolicy,omitempty" tf:"scale_in_policy,omitempty"`
@@ -82,15 +82,15 @@ type AutoscalingParameters struct {
 
 	// The maximum number of workers allocated to the connector.
 	// +kubebuilder:validation:Optional
-	MaxWorkerCount *float64 `json:"maxWorkerCount" tf:"max_worker_count,omitempty"`
+	MaxWorkerCount *int64 `json:"maxWorkerCount" tf:"max_worker_count,omitempty"`
 
 	// The number of microcontroller units (MCUs) allocated to each connector worker. Valid values: 1, 2, 4, 8. The default value is 1.
 	// +kubebuilder:validation:Optional
-	McuCount *float64 `json:"mcuCount,omitempty" tf:"mcu_count,omitempty"`
+	McuCount *int64 `json:"mcuCount,omitempty" tf:"mcu_count,omitempty"`
 
 	// The minimum number of workers allocated to the connector.
 	// +kubebuilder:validation:Optional
-	MinWorkerCount *float64 `json:"minWorkerCount" tf:"min_worker_count,omitempty"`
+	MinWorkerCount *int64 `json:"minWorkerCount" tf:"min_worker_count,omitempty"`
 
 	// The scale-in policy for the connector. See scale_in_policy Block for details.
 	// +kubebuilder:validation:Optional
@@ -220,10 +220,6 @@ type ConnectorInitParameters struct {
 	// +kubebuilder:validation:Optional
 	ServiceExecutionRoleArnSelector *v1.Selector `json:"serviceExecutionRoleArnSelector,omitempty" tf:"-"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Specifies which worker configuration to use with the connector. See worker_configuration Block for details.
 	WorkerConfiguration *WorkerConfigurationInitParameters `json:"workerConfiguration,omitempty" tf:"worker_configuration,omitempty"`
 }
@@ -346,11 +342,6 @@ type ConnectorParameters struct {
 	// +kubebuilder:validation:Optional
 	ServiceExecutionRoleArnSelector *v1.Selector `json:"serviceExecutionRoleArnSelector,omitempty" tf:"-"`
 
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Specifies which worker configuration to use with the connector. See worker_configuration Block for details.
 	// +kubebuilder:validation:Optional
 	WorkerConfiguration *WorkerConfigurationParameters `json:"workerConfiguration,omitempty" tf:"worker_configuration,omitempty"`
@@ -372,7 +363,7 @@ type CustomPluginInitParameters struct {
 	ArnSelector *v1.Selector `json:"arnSelector,omitempty" tf:"-"`
 
 	// The revision of the custom plugin.
-	Revision *float64 `json:"revision,omitempty" tf:"revision,omitempty"`
+	Revision *int64 `json:"revision,omitempty" tf:"revision,omitempty"`
 }
 
 type CustomPluginObservation struct {
@@ -381,7 +372,7 @@ type CustomPluginObservation struct {
 	Arn *string `json:"arn,omitempty" tf:"arn,omitempty"`
 
 	// The revision of the custom plugin.
-	Revision *float64 `json:"revision,omitempty" tf:"revision,omitempty"`
+	Revision *int64 `json:"revision,omitempty" tf:"revision,omitempty"`
 }
 
 type CustomPluginParameters struct {
@@ -402,7 +393,7 @@ type CustomPluginParameters struct {
 
 	// The revision of the custom plugin.
 	// +kubebuilder:validation:Optional
-	Revision *float64 `json:"revision" tf:"revision,omitempty"`
+	Revision *int64 `json:"revision" tf:"revision,omitempty"`
 }
 
 type FirehoseInitParameters struct {
@@ -552,30 +543,30 @@ type PluginParameters struct {
 type ProvisionedCapacityInitParameters struct {
 
 	// The number of microcontroller units (MCUs) allocated to each connector worker. Valid values: 1, 2, 4, 8. The default value is 1.
-	McuCount *float64 `json:"mcuCount,omitempty" tf:"mcu_count,omitempty"`
+	McuCount *int64 `json:"mcuCount,omitempty" tf:"mcu_count,omitempty"`
 
 	// The number of workers that are allocated to the connector.
-	WorkerCount *float64 `json:"workerCount,omitempty" tf:"worker_count,omitempty"`
+	WorkerCount *int64 `json:"workerCount,omitempty" tf:"worker_count,omitempty"`
 }
 
 type ProvisionedCapacityObservation struct {
 
 	// The number of microcontroller units (MCUs) allocated to each connector worker. Valid values: 1, 2, 4, 8. The default value is 1.
-	McuCount *float64 `json:"mcuCount,omitempty" tf:"mcu_count,omitempty"`
+	McuCount *int64 `json:"mcuCount,omitempty" tf:"mcu_count,omitempty"`
 
 	// The number of workers that are allocated to the connector.
-	WorkerCount *float64 `json:"workerCount,omitempty" tf:"worker_count,omitempty"`
+	WorkerCount *int64 `json:"workerCount,omitempty" tf:"worker_count,omitempty"`
 }
 
 type ProvisionedCapacityParameters struct {
 
 	// The number of microcontroller units (MCUs) allocated to each connector worker. Valid values: 1, 2, 4, 8. The default value is 1.
 	// +kubebuilder:validation:Optional
-	McuCount *float64 `json:"mcuCount,omitempty" tf:"mcu_count,omitempty"`
+	McuCount *int64 `json:"mcuCount,omitempty" tf:"mcu_count,omitempty"`
 
 	// The number of workers that are allocated to the connector.
 	// +kubebuilder:validation:Optional
-	WorkerCount *float64 `json:"workerCount" tf:"worker_count,omitempty"`
+	WorkerCount *int64 `json:"workerCount" tf:"worker_count,omitempty"`
 }
 
 type S3InitParameters struct {
@@ -638,39 +629,39 @@ type S3Parameters struct {
 type ScaleInPolicyInitParameters struct {
 
 	// Specifies the CPU utilization percentage threshold at which you want connector scale in to be triggered.
-	CPUUtilizationPercentage *float64 `json:"cpuUtilizationPercentage,omitempty" tf:"cpu_utilization_percentage,omitempty"`
+	CPUUtilizationPercentage *int64 `json:"cpuUtilizationPercentage,omitempty" tf:"cpu_utilization_percentage,omitempty"`
 }
 
 type ScaleInPolicyObservation struct {
 
 	// Specifies the CPU utilization percentage threshold at which you want connector scale in to be triggered.
-	CPUUtilizationPercentage *float64 `json:"cpuUtilizationPercentage,omitempty" tf:"cpu_utilization_percentage,omitempty"`
+	CPUUtilizationPercentage *int64 `json:"cpuUtilizationPercentage,omitempty" tf:"cpu_utilization_percentage,omitempty"`
 }
 
 type ScaleInPolicyParameters struct {
 
 	// Specifies the CPU utilization percentage threshold at which you want connector scale in to be triggered.
 	// +kubebuilder:validation:Optional
-	CPUUtilizationPercentage *float64 `json:"cpuUtilizationPercentage,omitempty" tf:"cpu_utilization_percentage,omitempty"`
+	CPUUtilizationPercentage *int64 `json:"cpuUtilizationPercentage,omitempty" tf:"cpu_utilization_percentage,omitempty"`
 }
 
 type ScaleOutPolicyInitParameters struct {
 
 	// The CPU utilization percentage threshold at which you want connector scale out to be triggered.
-	CPUUtilizationPercentage *float64 `json:"cpuUtilizationPercentage,omitempty" tf:"cpu_utilization_percentage,omitempty"`
+	CPUUtilizationPercentage *int64 `json:"cpuUtilizationPercentage,omitempty" tf:"cpu_utilization_percentage,omitempty"`
 }
 
 type ScaleOutPolicyObservation struct {
 
 	// The CPU utilization percentage threshold at which you want connector scale out to be triggered.
-	CPUUtilizationPercentage *float64 `json:"cpuUtilizationPercentage,omitempty" tf:"cpu_utilization_percentage,omitempty"`
+	CPUUtilizationPercentage *int64 `json:"cpuUtilizationPercentage,omitempty" tf:"cpu_utilization_percentage,omitempty"`
 }
 
 type ScaleOutPolicyParameters struct {
 
 	// The CPU utilization percentage threshold at which you want connector scale out to be triggered.
 	// +kubebuilder:validation:Optional
-	CPUUtilizationPercentage *float64 `json:"cpuUtilizationPercentage,omitempty" tf:"cpu_utilization_percentage,omitempty"`
+	CPUUtilizationPercentage *int64 `json:"cpuUtilizationPercentage,omitempty" tf:"cpu_utilization_percentage,omitempty"`
 }
 
 type VPCInitParameters struct {
@@ -768,7 +759,7 @@ type WorkerConfigurationInitParameters struct {
 	ArnSelector *v1.Selector `json:"arnSelector,omitempty" tf:"-"`
 
 	// The revision of the worker configuration.
-	Revision *float64 `json:"revision,omitempty" tf:"revision,omitempty"`
+	Revision *int64 `json:"revision,omitempty" tf:"revision,omitempty"`
 }
 
 type WorkerConfigurationObservation struct {
@@ -777,7 +768,7 @@ type WorkerConfigurationObservation struct {
 	Arn *string `json:"arn,omitempty" tf:"arn,omitempty"`
 
 	// The revision of the worker configuration.
-	Revision *float64 `json:"revision,omitempty" tf:"revision,omitempty"`
+	Revision *int64 `json:"revision,omitempty" tf:"revision,omitempty"`
 }
 
 type WorkerConfigurationParameters struct {
@@ -798,7 +789,7 @@ type WorkerConfigurationParameters struct {
 
 	// The revision of the worker configuration.
 	// +kubebuilder:validation:Optional
-	Revision *float64 `json:"revision" tf:"revision,omitempty"`
+	Revision *int64 `json:"revision" tf:"revision,omitempty"`
 }
 
 type WorkerLogDeliveryInitParameters struct {

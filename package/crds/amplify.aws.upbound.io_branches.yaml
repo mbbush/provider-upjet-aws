@@ -213,12 +213,6 @@ spec:
                     description: 'Describes the current stage for the branch. Valid
                       values: PRODUCTION, BETA, DEVELOPMENT, EXPERIMENTAL, PULL_REQUEST.'
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   ttl:
                     description: Content Time To Live (TTL) for the website in seconds.
                     type: string
@@ -297,12 +291,6 @@ spec:
                     description: 'Describes the current stage for the branch. Valid
                       values: PRODUCTION, BETA, DEVELOPMENT, EXPERIMENTAL, PULL_REQUEST.'
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   ttl:
                     description: Content Time To Live (TTL) for the website in seconds.
                     type: string

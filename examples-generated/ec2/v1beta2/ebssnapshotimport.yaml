@@ -15,5 +15,3 @@ spec:
         s3Key: source.vhd
     region: us-west-1
     roleName: disk-image-import
-    tags:
-      Name: HelloWorld

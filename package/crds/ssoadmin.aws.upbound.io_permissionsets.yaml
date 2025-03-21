@@ -95,12 +95,6 @@ spec:
                     description: 'The length of time that the application user sessions
                       are valid in the ISO-8601 standard. Default: PT1H.'
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -135,12 +129,6 @@ spec:
                     description: 'The length of time that the application user sessions
                       are valid in the ISO-8601 standard. Default: PT1H.'
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:

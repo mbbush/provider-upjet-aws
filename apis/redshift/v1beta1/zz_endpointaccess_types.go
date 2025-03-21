@@ -71,7 +71,7 @@ type EndpointAccessObservation struct {
 	ID *string `json:"id,omitempty" tf:"id,omitempty"`
 
 	// The port number on which the cluster accepts incoming connections.
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// The Amazon Web Services account ID of the owner of the cluster. This is only required if the cluster is in another Amazon Web Services account.
 	ResourceOwner *string `json:"resourceOwner,omitempty" tf:"resource_owner,omitempty"`

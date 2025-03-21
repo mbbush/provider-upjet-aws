@@ -70,7 +70,7 @@ type BasicAuthenticationInitParameters struct {
 	Host *string `json:"host,omitempty" tf:"host,omitempty"`
 
 	// The port number of the website host you want to connect to using authentication credentials. For example, the port for https://a.example.com/page1.html is 443, the standard port for HTTPS.
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 }
 
 type BasicAuthenticationObservation struct {
@@ -82,7 +82,7 @@ type BasicAuthenticationObservation struct {
 	Host *string `json:"host,omitempty" tf:"host,omitempty"`
 
 	// The port number of the website host you want to connect to using authentication credentials. For example, the port for https://a.example.com/page1.html is 443, the standard port for HTTPS.
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 }
 
 type BasicAuthenticationParameters struct {
@@ -107,7 +107,7 @@ type BasicAuthenticationParameters struct {
 
 	// The port number of the website host you want to connect to using authentication credentials. For example, the port for https://a.example.com/page1.html is 443, the standard port for HTTPS.
 	// +kubebuilder:validation:Optional
-	Port *float64 `json:"port" tf:"port,omitempty"`
+	Port *int64 `json:"port" tf:"port,omitempty"`
 }
 
 type ConditionInitParameters struct {
@@ -140,7 +140,7 @@ type ConditionOnValueInitParameters struct {
 	DateValue *string `json:"dateValue,omitempty" tf:"date_value,omitempty"`
 
 	// A long integer value.
-	LongValue *float64 `json:"longValue,omitempty" tf:"long_value,omitempty"`
+	LongValue *int64 `json:"longValue,omitempty" tf:"long_value,omitempty"`
 
 	// A list of strings.
 	// +listType=set
@@ -155,7 +155,7 @@ type ConditionOnValueObservation struct {
 	DateValue *string `json:"dateValue,omitempty" tf:"date_value,omitempty"`
 
 	// A long integer value.
-	LongValue *float64 `json:"longValue,omitempty" tf:"long_value,omitempty"`
+	LongValue *int64 `json:"longValue,omitempty" tf:"long_value,omitempty"`
 
 	// A list of strings.
 	// +listType=set
@@ -172,7 +172,7 @@ type ConditionOnValueParameters struct {
 
 	// A long integer value.
 	// +kubebuilder:validation:Optional
-	LongValue *float64 `json:"longValue,omitempty" tf:"long_value,omitempty"`
+	LongValue *int64 `json:"longValue,omitempty" tf:"long_value,omitempty"`
 
 	// A list of strings.
 	// +kubebuilder:validation:Optional
@@ -322,10 +322,6 @@ type DataSourceInitParameters struct {
 	// Sets the frequency for Amazon Kendra to check the documents in your Data Source repository and update the index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the StartDataSourceSyncJob API to update the index.
 	Schedule *string `json:"schedule,omitempty" tf:"schedule,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// The type of data source repository. For an updated list of values, refer to Valid Values for Type.
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
 }
@@ -448,11 +444,6 @@ type DataSourceParameters struct {
 	// +kubebuilder:validation:Optional
 	Schedule *string `json:"schedule,omitempty" tf:"schedule,omitempty"`
 
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// The type of data source repository. For an updated list of values, refer to Valid Values for Type.
 	// +kubebuilder:validation:Optional
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
@@ -522,7 +513,7 @@ type InvocationConditionConditionOnValueInitParameters struct {
 	DateValue *string `json:"dateValue,omitempty" tf:"date_value,omitempty"`
 
 	// A long integer value.
-	LongValue *float64 `json:"longValue,omitempty" tf:"long_value,omitempty"`
+	LongValue *int64 `json:"longValue,omitempty" tf:"long_value,omitempty"`
 
 	// A list of strings.
 	// +listType=set
@@ -537,7 +528,7 @@ type InvocationConditionConditionOnValueObservation struct {
 	DateValue *string `json:"dateValue,omitempty" tf:"date_value,omitempty"`
 
 	// A long integer value.
-	LongValue *float64 `json:"longValue,omitempty" tf:"long_value,omitempty"`
+	LongValue *int64 `json:"longValue,omitempty" tf:"long_value,omitempty"`
 
 	// A list of strings.
 	// +listType=set
@@ -554,7 +545,7 @@ type InvocationConditionConditionOnValueParameters struct {
 
 	// A long integer value.
 	// +kubebuilder:validation:Optional
-	LongValue *float64 `json:"longValue,omitempty" tf:"long_value,omitempty"`
+	LongValue *int64 `json:"longValue,omitempty" tf:"long_value,omitempty"`
 
 	// A list of strings.
 	// +kubebuilder:validation:Optional
@@ -661,7 +652,7 @@ type PreExtractionHookConfigurationInvocationConditionConditionOnValueInitParame
 	DateValue *string `json:"dateValue,omitempty" tf:"date_value,omitempty"`
 
 	// A long integer value.
-	LongValue *float64 `json:"longValue,omitempty" tf:"long_value,omitempty"`
+	LongValue *int64 `json:"longValue,omitempty" tf:"long_value,omitempty"`
 
 	// A list of strings.
 	// +listType=set
@@ -676,7 +667,7 @@ type PreExtractionHookConfigurationInvocationConditionConditionOnValueObservatio
 	DateValue *string `json:"dateValue,omitempty" tf:"date_value,omitempty"`
 
 	// A long integer value.
-	LongValue *float64 `json:"longValue,omitempty" tf:"long_value,omitempty"`
+	LongValue *int64 `json:"longValue,omitempty" tf:"long_value,omitempty"`
 
 	// A list of strings.
 	// +listType=set
@@ -693,7 +684,7 @@ type PreExtractionHookConfigurationInvocationConditionConditionOnValueParameters
 
 	// A long integer value.
 	// +kubebuilder:validation:Optional
-	LongValue *float64 `json:"longValue,omitempty" tf:"long_value,omitempty"`
+	LongValue *int64 `json:"longValue,omitempty" tf:"long_value,omitempty"`
 
 	// A list of strings.
 	// +kubebuilder:validation:Optional
@@ -789,7 +780,7 @@ type ProxyConfigurationInitParameters struct {
 	Host *string `json:"host,omitempty" tf:"host,omitempty"`
 
 	// The port number of the website host you want to connect to using authentication credentials. For example, the port for https://a.example.com/page1.html is 443, the standard port for HTTPS.
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 }
 
 type ProxyConfigurationObservation struct {
@@ -801,7 +792,7 @@ type ProxyConfigurationObservation struct {
 	Host *string `json:"host,omitempty" tf:"host,omitempty"`
 
 	// The port number of the website host you want to connect to using authentication credentials. For example, the port for https://a.example.com/page1.html is 443, the standard port for HTTPS.
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 }
 
 type ProxyConfigurationParameters struct {
@@ -826,7 +817,7 @@ type ProxyConfigurationParameters struct {
 
 	// The port number of the website host you want to connect to using authentication credentials. For example, the port for https://a.example.com/page1.html is 443, the standard port for HTTPS.
 	// +kubebuilder:validation:Optional
-	Port *float64 `json:"port" tf:"port,omitempty"`
+	Port *int64 `json:"port" tf:"port,omitempty"`
 }
 
 type S3ConfigurationInitParameters struct {
@@ -987,7 +978,7 @@ type TargetDocumentAttributeValueInitParameters struct {
 	DateValue *string `json:"dateValue,omitempty" tf:"date_value,omitempty"`
 
 	// A long integer value.
-	LongValue *float64 `json:"longValue,omitempty" tf:"long_value,omitempty"`
+	LongValue *int64 `json:"longValue,omitempty" tf:"long_value,omitempty"`
 
 	// A list of strings.
 	// +listType=set
@@ -1002,7 +993,7 @@ type TargetDocumentAttributeValueObservation struct {
 	DateValue *string `json:"dateValue,omitempty" tf:"date_value,omitempty"`
 
 	// A long integer value.
-	LongValue *float64 `json:"longValue,omitempty" tf:"long_value,omitempty"`
+	LongValue *int64 `json:"longValue,omitempty" tf:"long_value,omitempty"`
 
 	// A list of strings.
 	// +listType=set
@@ -1019,7 +1010,7 @@ type TargetDocumentAttributeValueParameters struct {
 
 	// A long integer value.
 	// +kubebuilder:validation:Optional
-	LongValue *float64 `json:"longValue,omitempty" tf:"long_value,omitempty"`
+	LongValue *int64 `json:"longValue,omitempty" tf:"long_value,omitempty"`
 
 	// A list of strings.
 	// +kubebuilder:validation:Optional
@@ -1104,16 +1095,16 @@ type WebCrawlerConfigurationInitParameters struct {
 	AuthenticationConfiguration *AuthenticationConfigurationInitParameters `json:"authenticationConfiguration,omitempty" tf:"authentication_configuration,omitempty"`
 
 	// Specifies the number of levels in a website that you want to crawl. The first level begins from the website seed or starting point URL. For example, if a website has 3 levels – index level (i.e. seed in this example), sections level, and subsections level – and you are only interested in crawling information up to the sections level (i.e. levels 0-1), you can set your depth to 1. The default crawl depth is set to 2. Minimum value of 0. Maximum value of 10.
-	CrawlDepth *float64 `json:"crawlDepth,omitempty" tf:"crawl_depth,omitempty"`
+	CrawlDepth *int64 `json:"crawlDepth,omitempty" tf:"crawl_depth,omitempty"`
 
 	// The maximum size (in MB) of a webpage or attachment to crawl. Files larger than this size (in MB) are skipped/not crawled. The default maximum size of a webpage or attachment is set to 50 MB. Minimum value of 1.0e-06. Maximum value of 50.
 	MaxContentSizePerPageInMegaBytes *float64 `json:"maxContentSizePerPageInMegaBytes,omitempty" tf:"max_content_size_per_page_in_mega_bytes,omitempty"`
 
 	// The maximum number of URLs on a webpage to include when crawling a website. This number is per webpage. As a website’s webpages are crawled, any URLs the webpages link to are also crawled. URLs on a webpage are crawled in order of appearance. The default maximum links per page is 100. Minimum value of 1. Maximum value of 1000.
-	MaxLinksPerPage *float64 `json:"maxLinksPerPage,omitempty" tf:"max_links_per_page,omitempty"`
+	MaxLinksPerPage *int64 `json:"maxLinksPerPage,omitempty" tf:"max_links_per_page,omitempty"`
 
 	// The maximum number of URLs crawled per website host per minute. The default maximum number of URLs crawled per website host per minute is 300. Minimum value of 1. Maximum value of 300.
-	MaxUrlsPerMinuteCrawlRate *float64 `json:"maxUrlsPerMinuteCrawlRate,omitempty" tf:"max_urls_per_minute_crawl_rate,omitempty"`
+	MaxUrlsPerMinuteCrawlRate *int64 `json:"maxUrlsPerMinuteCrawlRate,omitempty" tf:"max_urls_per_minute_crawl_rate,omitempty"`
 
 	// Configuration information required to connect to your internal websites via a web proxy. You must provide the website host name and port number. For example, the host name of https://a.example.com/page1.html is "a.example.com" and the port is 443, the standard port for HTTPS. Web proxy credentials are optional and you can use them to connect to a web proxy server that requires basic authentication. To store web proxy credentials, you use a secret in AWS Secrets Manager. Detailed below.
 	ProxyConfiguration *ProxyConfigurationInitParameters `json:"proxyConfiguration,omitempty" tf:"proxy_configuration,omitempty"`
@@ -1136,16 +1127,16 @@ type WebCrawlerConfigurationObservation struct {
 	AuthenticationConfiguration *AuthenticationConfigurationObservation `json:"authenticationConfiguration,omitempty" tf:"authentication_configuration,omitempty"`
 
 	// Specifies the number of levels in a website that you want to crawl. The first level begins from the website seed or starting point URL. For example, if a website has 3 levels – index level (i.e. seed in this example), sections level, and subsections level – and you are only interested in crawling information up to the sections level (i.e. levels 0-1), you can set your depth to 1. The default crawl depth is set to 2. Minimum value of 0. Maximum value of 10.
-	CrawlDepth *float64 `json:"crawlDepth,omitempty" tf:"crawl_depth,omitempty"`
+	CrawlDepth *int64 `json:"crawlDepth,omitempty" tf:"crawl_depth,omitempty"`
 
 	// The maximum size (in MB) of a webpage or attachment to crawl. Files larger than this size (in MB) are skipped/not crawled. The default maximum size of a webpage or attachment is set to 50 MB. Minimum value of 1.0e-06. Maximum value of 50.
 	MaxContentSizePerPageInMegaBytes *float64 `json:"maxContentSizePerPageInMegaBytes,omitempty" tf:"max_content_size_per_page_in_mega_bytes,omitempty"`
 
 	// The maximum number of URLs on a webpage to include when crawling a website. This number is per webpage. As a website’s webpages are crawled, any URLs the webpages link to are also crawled. URLs on a webpage are crawled in order of appearance. The default maximum links per page is 100. Minimum value of 1. Maximum value of 1000.
-	MaxLinksPerPage *float64 `json:"maxLinksPerPage,omitempty" tf:"max_links_per_page,omitempty"`
+	MaxLinksPerPage *int64 `json:"maxLinksPerPage,omitempty" tf:"max_links_per_page,omitempty"`
 
 	// The maximum number of URLs crawled per website host per minute. The default maximum number of URLs crawled per website host per minute is 300. Minimum value of 1. Maximum value of 300.
-	MaxUrlsPerMinuteCrawlRate *float64 `json:"maxUrlsPerMinuteCrawlRate,omitempty" tf:"max_urls_per_minute_crawl_rate,omitempty"`
+	MaxUrlsPerMinuteCrawlRate *int64 `json:"maxUrlsPerMinuteCrawlRate,omitempty" tf:"max_urls_per_minute_crawl_rate,omitempty"`
 
 	// Configuration information required to connect to your internal websites via a web proxy. You must provide the website host name and port number. For example, the host name of https://a.example.com/page1.html is "a.example.com" and the port is 443, the standard port for HTTPS. Web proxy credentials are optional and you can use them to connect to a web proxy server that requires basic authentication. To store web proxy credentials, you use a secret in AWS Secrets Manager. Detailed below.
 	ProxyConfiguration *ProxyConfigurationObservation `json:"proxyConfiguration,omitempty" tf:"proxy_configuration,omitempty"`
@@ -1170,7 +1161,7 @@ type WebCrawlerConfigurationParameters struct {
 
 	// Specifies the number of levels in a website that you want to crawl. The first level begins from the website seed or starting point URL. For example, if a website has 3 levels – index level (i.e. seed in this example), sections level, and subsections level – and you are only interested in crawling information up to the sections level (i.e. levels 0-1), you can set your depth to 1. The default crawl depth is set to 2. Minimum value of 0. Maximum value of 10.
 	// +kubebuilder:validation:Optional
-	CrawlDepth *float64 `json:"crawlDepth,omitempty" tf:"crawl_depth,omitempty"`
+	CrawlDepth *int64 `json:"crawlDepth,omitempty" tf:"crawl_depth,omitempty"`
 
 	// The maximum size (in MB) of a webpage or attachment to crawl. Files larger than this size (in MB) are skipped/not crawled. The default maximum size of a webpage or attachment is set to 50 MB. Minimum value of 1.0e-06. Maximum value of 50.
 	// +kubebuilder:validation:Optional
@@ -1178,11 +1169,11 @@ type WebCrawlerConfigurationParameters struct {
 
 	// The maximum number of URLs on a webpage to include when crawling a website. This number is per webpage. As a website’s webpages are crawled, any URLs the webpages link to are also crawled. URLs on a webpage are crawled in order of appearance. The default maximum links per page is 100. Minimum value of 1. Maximum value of 1000.
 	// +kubebuilder:validation:Optional
-	MaxLinksPerPage *float64 `json:"maxLinksPerPage,omitempty" tf:"max_links_per_page,omitempty"`
+	MaxLinksPerPage *int64 `json:"maxLinksPerPage,omitempty" tf:"max_links_per_page,omitempty"`
 
 	// The maximum number of URLs crawled per website host per minute. The default maximum number of URLs crawled per website host per minute is 300. Minimum value of 1. Maximum value of 300.
 	// +kubebuilder:validation:Optional
-	MaxUrlsPerMinuteCrawlRate *float64 `json:"maxUrlsPerMinuteCrawlRate,omitempty" tf:"max_urls_per_minute_crawl_rate,omitempty"`
+	MaxUrlsPerMinuteCrawlRate *int64 `json:"maxUrlsPerMinuteCrawlRate,omitempty" tf:"max_urls_per_minute_crawl_rate,omitempty"`
 
 	// Configuration information required to connect to your internal websites via a web proxy. You must provide the website host name and port number. For example, the host name of https://a.example.com/page1.html is "a.example.com" and the port is 443, the standard port for HTTPS. Web proxy credentials are optional and you can use them to connect to a web proxy server that requires basic authentication. To store web proxy credentials, you use a secret in AWS Secrets Manager. Detailed below.
 	// +kubebuilder:validation:Optional

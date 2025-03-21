@@ -24,10 +24,6 @@ type BuildInitParameters struct {
 	// Information indicating where your game build files are stored. See below.
 	StorageLocation *StorageLocationInitParameters `json:"storageLocation,omitempty" tf:"storage_location,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Version that is associated with this build.
 	Version *string `json:"version,omitempty" tf:"version,omitempty"`
 }
@@ -79,11 +75,6 @@ type BuildParameters struct {
 	// Information indicating where your game build files are stored. See below.
 	// +kubebuilder:validation:Optional
 	StorageLocation *StorageLocationParameters `json:"storageLocation,omitempty" tf:"storage_location,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Version that is associated with this build.
 	// +kubebuilder:validation:Optional

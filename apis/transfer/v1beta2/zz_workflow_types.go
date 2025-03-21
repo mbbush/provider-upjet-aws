@@ -161,7 +161,7 @@ type CustomStepDetailsInitParameters struct {
 	Target *string `json:"target,omitempty" tf:"target,omitempty"`
 
 	// Timeout, in seconds, for the step.
-	TimeoutSeconds *float64 `json:"timeoutSeconds,omitempty" tf:"timeout_seconds,omitempty"`
+	TimeoutSeconds *int64 `json:"timeoutSeconds,omitempty" tf:"timeout_seconds,omitempty"`
 }
 
 type CustomStepDetailsObservation struct {
@@ -176,7 +176,7 @@ type CustomStepDetailsObservation struct {
 	Target *string `json:"target,omitempty" tf:"target,omitempty"`
 
 	// Timeout, in seconds, for the step.
-	TimeoutSeconds *float64 `json:"timeoutSeconds,omitempty" tf:"timeout_seconds,omitempty"`
+	TimeoutSeconds *int64 `json:"timeoutSeconds,omitempty" tf:"timeout_seconds,omitempty"`
 }
 
 type CustomStepDetailsParameters struct {
@@ -195,7 +195,7 @@ type CustomStepDetailsParameters struct {
 
 	// Timeout, in seconds, for the step.
 	// +kubebuilder:validation:Optional
-	TimeoutSeconds *float64 `json:"timeoutSeconds,omitempty" tf:"timeout_seconds,omitempty"`
+	TimeoutSeconds *int64 `json:"timeoutSeconds,omitempty" tf:"timeout_seconds,omitempty"`
 }
 
 type DecryptStepDetailsDestinationFileLocationEFSFileLocationInitParameters struct {
@@ -658,7 +658,7 @@ type StepsCustomStepDetailsInitParameters struct {
 	TargetSelector *v1.Selector `json:"targetSelector,omitempty" tf:"-"`
 
 	// Timeout, in seconds, for the step.
-	TimeoutSeconds *float64 `json:"timeoutSeconds,omitempty" tf:"timeout_seconds,omitempty"`
+	TimeoutSeconds *int64 `json:"timeoutSeconds,omitempty" tf:"timeout_seconds,omitempty"`
 }
 
 type StepsCustomStepDetailsObservation struct {
@@ -673,7 +673,7 @@ type StepsCustomStepDetailsObservation struct {
 	Target *string `json:"target,omitempty" tf:"target,omitempty"`
 
 	// Timeout, in seconds, for the step.
-	TimeoutSeconds *float64 `json:"timeoutSeconds,omitempty" tf:"timeout_seconds,omitempty"`
+	TimeoutSeconds *int64 `json:"timeoutSeconds,omitempty" tf:"timeout_seconds,omitempty"`
 }
 
 type StepsCustomStepDetailsParameters struct {
@@ -702,7 +702,7 @@ type StepsCustomStepDetailsParameters struct {
 
 	// Timeout, in seconds, for the step.
 	// +kubebuilder:validation:Optional
-	TimeoutSeconds *float64 `json:"timeoutSeconds,omitempty" tf:"timeout_seconds,omitempty"`
+	TimeoutSeconds *int64 `json:"timeoutSeconds,omitempty" tf:"timeout_seconds,omitempty"`
 }
 
 type StepsDecryptStepDetailsDestinationFileLocationInitParameters struct {
@@ -1037,10 +1037,6 @@ type WorkflowInitParameters struct {
 
 	// Specifies the details for the steps that are in the specified workflow. See Workflow Steps below.
 	Steps []StepsInitParameters `json:"steps,omitempty" tf:"steps,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type WorkflowObservation struct {
@@ -1087,11 +1083,6 @@ type WorkflowParameters struct {
 	// Specifies the details for the steps that are in the specified workflow. See Workflow Steps below.
 	// +kubebuilder:validation:Optional
 	Steps []StepsParameters `json:"steps,omitempty" tf:"steps,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // WorkflowSpec defines the desired state of Workflow

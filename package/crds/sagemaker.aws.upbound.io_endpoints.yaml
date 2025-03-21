@@ -1142,13 +1142,15 @@ spec:
                               total waiting time specified in termination_wait_in_seconds
                               and wait_interval_in_seconds. Valid values are between
                               600 and 14400.
-                            type: number
+                            format: int64
+                            type: integer
                           terminationWaitInSeconds:
                             description: Additional waiting time in seconds after
                               the completion of an endpoint deployment before terminating
                               the old endpoint fleet. Default is 0. Valid values are
                               between 0 and 3600.
-                            type: number
+                            format: int64
+                            type: integer
                           trafficRoutingConfiguration:
                             description: Defines the traffic routing strategy to shift
                               traffic from the old fleet to the new fleet during an
@@ -1167,7 +1169,8 @@ spec:
                                   value:
                                     description: Defines the capacity size, either
                                       as a number of instances or a capacity percentage.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                               linearStepSize:
                                 description: Batch size for each step to turn on traffic
@@ -1182,7 +1185,8 @@ spec:
                                   value:
                                     description: Defines the capacity size, either
                                       as a number of instances or a capacity percentage.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                               type:
                                 description: 'Traffic routing strategy type. Valid
@@ -1192,7 +1196,8 @@ spec:
                                 description: The length of the baking period, during
                                   which SageMaker monitors alarms for each batch on
                                   the new fleet. Valid values are between 0 and 3600.
-                                type: number
+                                format: int64
+                                type: integer
                             type: object
                         type: object
                       rollingUpdatePolicy:
@@ -1213,7 +1218,8 @@ spec:
                               value:
                                 description: Defines the capacity size, either as
                                   a number of instances or a capacity percentage.
-                                type: number
+                                format: int64
+                                type: integer
                             type: object
                           maximumExecutionTimeoutInSeconds:
                             description: Maximum execution timeout for the deployment.
@@ -1221,7 +1227,8 @@ spec:
                               total waiting time specified in termination_wait_in_seconds
                               and wait_interval_in_seconds. Valid values are between
                               600 and 14400.
-                            type: number
+                            format: int64
+                            type: integer
                           rollbackMaximumBatchSize:
                             description: Batch size for rollback to the old endpoint
                               fleet. Each rolling step to provision capacity and turn
@@ -1239,13 +1246,15 @@ spec:
                               value:
                                 description: Defines the capacity size, either as
                                   a number of instances or a capacity percentage.
-                                type: number
+                                format: int64
+                                type: integer
                             type: object
                           waitIntervalInSeconds:
                             description: The length of the baking period, during which
                               SageMaker monitors alarms for each batch on the new
                               fleet. Valid values are between 0 and 3600.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                     type: object
                   endpointConfigName:
@@ -1331,12 +1340,6 @@ spec:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -1394,13 +1397,15 @@ spec:
                               total waiting time specified in termination_wait_in_seconds
                               and wait_interval_in_seconds. Valid values are between
                               600 and 14400.
-                            type: number
+                            format: int64
+                            type: integer
                           terminationWaitInSeconds:
                             description: Additional waiting time in seconds after
                               the completion of an endpoint deployment before terminating
                               the old endpoint fleet. Default is 0. Valid values are
                               between 0 and 3600.
-                            type: number
+                            format: int64
+                            type: integer
                           trafficRoutingConfiguration:
                             description: Defines the traffic routing strategy to shift
                               traffic from the old fleet to the new fleet during an
@@ -1419,7 +1424,8 @@ spec:
                                   value:
                                     description: Defines the capacity size, either
                                       as a number of instances or a capacity percentage.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                               linearStepSize:
                                 description: Batch size for each step to turn on traffic
@@ -1434,7 +1440,8 @@ spec:
                                   value:
                                     description: Defines the capacity size, either
                                       as a number of instances or a capacity percentage.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                               type:
                                 description: 'Traffic routing strategy type. Valid
@@ -1444,7 +1451,8 @@ spec:
                                 description: The length of the baking period, during
                                   which SageMaker monitors alarms for each batch on
                                   the new fleet. Valid values are between 0 and 3600.
-                                type: number
+                                format: int64
+                                type: integer
                             type: object
                         type: object
                       rollingUpdatePolicy:
@@ -1465,7 +1473,8 @@ spec:
                               value:
                                 description: Defines the capacity size, either as
                                   a number of instances or a capacity percentage.
-                                type: number
+                                format: int64
+                                type: integer
                             type: object
                           maximumExecutionTimeoutInSeconds:
                             description: Maximum execution timeout for the deployment.
@@ -1473,7 +1482,8 @@ spec:
                               total waiting time specified in termination_wait_in_seconds
                               and wait_interval_in_seconds. Valid values are between
                               600 and 14400.
-                            type: number
+                            format: int64
+                            type: integer
                           rollbackMaximumBatchSize:
                             description: Batch size for rollback to the old endpoint
                               fleet. Each rolling step to provision capacity and turn
@@ -1491,13 +1501,15 @@ spec:
                               value:
                                 description: Defines the capacity size, either as
                                   a number of instances or a capacity percentage.
-                                type: number
+                                format: int64
+                                type: integer
                             type: object
                           waitIntervalInSeconds:
                             description: The length of the baking period, during which
                               SageMaker monitors alarms for each batch on the new
                               fleet. Valid values are between 0 and 3600.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                     type: object
                   endpointConfigName:
@@ -1579,12 +1591,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -1803,13 +1809,15 @@ spec:
                               total waiting time specified in termination_wait_in_seconds
                               and wait_interval_in_seconds. Valid values are between
                               600 and 14400.
-                            type: number
+                            format: int64
+                            type: integer
                           terminationWaitInSeconds:
                             description: Additional waiting time in seconds after
                               the completion of an endpoint deployment before terminating
                               the old endpoint fleet. Default is 0. Valid values are
                               between 0 and 3600.
-                            type: number
+                            format: int64
+                            type: integer
                           trafficRoutingConfiguration:
                             description: Defines the traffic routing strategy to shift
                               traffic from the old fleet to the new fleet during an
@@ -1828,7 +1836,8 @@ spec:
                                   value:
                                     description: Defines the capacity size, either
                                       as a number of instances or a capacity percentage.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                               linearStepSize:
                                 description: Batch size for each step to turn on traffic
@@ -1843,7 +1852,8 @@ spec:
                                   value:
                                     description: Defines the capacity size, either
                                       as a number of instances or a capacity percentage.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                               type:
                                 description: 'Traffic routing strategy type. Valid
@@ -1853,7 +1863,8 @@ spec:
                                 description: The length of the baking period, during
                                   which SageMaker monitors alarms for each batch on
                                   the new fleet. Valid values are between 0 and 3600.
-                                type: number
+                                format: int64
+                                type: integer
                             type: object
                         type: object
                       rollingUpdatePolicy:
@@ -1874,7 +1885,8 @@ spec:
                               value:
                                 description: Defines the capacity size, either as
                                   a number of instances or a capacity percentage.
-                                type: number
+                                format: int64
+                                type: integer
                             type: object
                           maximumExecutionTimeoutInSeconds:
                             description: Maximum execution timeout for the deployment.
@@ -1882,7 +1894,8 @@ spec:
                               total waiting time specified in termination_wait_in_seconds
                               and wait_interval_in_seconds. Valid values are between
                               600 and 14400.
-                            type: number
+                            format: int64
+                            type: integer
                           rollbackMaximumBatchSize:
                             description: Batch size for rollback to the old endpoint
                               fleet. Each rolling step to provision capacity and turn
@@ -1900,13 +1913,15 @@ spec:
                               value:
                                 description: Defines the capacity size, either as
                                   a number of instances or a capacity percentage.
-                                type: number
+                                format: int64
+                                type: integer
                             type: object
                           waitIntervalInSeconds:
                             description: The length of the baking period, during which
                               SageMaker monitors alarms for each batch on the new
                               fleet. Valid values are between 0 and 3600.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                     type: object
                   endpointConfigName:

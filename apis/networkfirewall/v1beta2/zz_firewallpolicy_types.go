@@ -204,10 +204,6 @@ type FirewallPolicyInitParameters struct {
 
 	// A configuration block describing the rule groups and policy actions to use in the firewall policy. See Firewall Policy below for details.
 	FirewallPolicy *FirewallPolicyFirewallPolicyInitParameters `json:"firewallPolicy,omitempty" tf:"firewall_policy,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type FirewallPolicyObservation struct {
@@ -257,30 +253,25 @@ type FirewallPolicyParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type FlowTimeoutsInitParameters struct {
 
 	// Number of seconds that can pass without any TCP traffic sent through the firewall before the firewall determines that the connection is idle. After the idle timeout passes, data packets are dropped, however, the next TCP SYN packet is considered a new flow and is processed by the firewall. Clients or targets can use TCP keepalive packets to reset the idle timeout. Default value: 350.
-	TCPIdleTimeoutSeconds *float64 `json:"tcpIdleTimeoutSeconds,omitempty" tf:"tcp_idle_timeout_seconds,omitempty"`
+	TCPIdleTimeoutSeconds *int64 `json:"tcpIdleTimeoutSeconds,omitempty" tf:"tcp_idle_timeout_seconds,omitempty"`
 }
 
 type FlowTimeoutsObservation struct {
 
 	// Number of seconds that can pass without any TCP traffic sent through the firewall before the firewall determines that the connection is idle. After the idle timeout passes, data packets are dropped, however, the next TCP SYN packet is considered a new flow and is processed by the firewall. Clients or targets can use TCP keepalive packets to reset the idle timeout. Default value: 350.
-	TCPIdleTimeoutSeconds *float64 `json:"tcpIdleTimeoutSeconds,omitempty" tf:"tcp_idle_timeout_seconds,omitempty"`
+	TCPIdleTimeoutSeconds *int64 `json:"tcpIdleTimeoutSeconds,omitempty" tf:"tcp_idle_timeout_seconds,omitempty"`
 }
 
 type FlowTimeoutsParameters struct {
 
 	// Number of seconds that can pass without any TCP traffic sent through the firewall before the firewall determines that the connection is idle. After the idle timeout passes, data packets are dropped, however, the next TCP SYN packet is considered a new flow and is processed by the firewall. Clients or targets can use TCP keepalive packets to reset the idle timeout. Default value: 350.
 	// +kubebuilder:validation:Optional
-	TCPIdleTimeoutSeconds *float64 `json:"tcpIdleTimeoutSeconds,omitempty" tf:"tcp_idle_timeout_seconds,omitempty"`
+	TCPIdleTimeoutSeconds *int64 `json:"tcpIdleTimeoutSeconds,omitempty" tf:"tcp_idle_timeout_seconds,omitempty"`
 }
 
 type IPSetInitParameters struct {
@@ -431,7 +422,7 @@ type StatefulRuleGroupReferenceInitParameters struct {
 	Override *OverrideInitParameters `json:"override,omitempty" tf:"override,omitempty"`
 
 	// An integer setting that indicates the order in which to run the stateless rule groups in a single policy. AWS Network Firewall applies each stateless rule group to a packet starting with the group that has the lowest priority setting.
-	Priority *float64 `json:"priority,omitempty" tf:"priority,omitempty"`
+	Priority *int64 `json:"priority,omitempty" tf:"priority,omitempty"`
 
 	// The Amazon Resource Name (ARN) of the stateless rule group.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/networkfirewall/v1beta2.RuleGroup
@@ -453,7 +444,7 @@ type StatefulRuleGroupReferenceObservation struct {
 	Override *OverrideObservation `json:"override,omitempty" tf:"override,omitempty"`
 
 	// An integer setting that indicates the order in which to run the stateless rule groups in a single policy. AWS Network Firewall applies each stateless rule group to a packet starting with the group that has the lowest priority setting.
-	Priority *float64 `json:"priority,omitempty" tf:"priority,omitempty"`
+	Priority *int64 `json:"priority,omitempty" tf:"priority,omitempty"`
 
 	// The Amazon Resource Name (ARN) of the stateless rule group.
 	ResourceArn *string `json:"resourceArn,omitempty" tf:"resource_arn,omitempty"`
@@ -467,7 +458,7 @@ type StatefulRuleGroupReferenceParameters struct {
 
 	// An integer setting that indicates the order in which to run the stateless rule groups in a single policy. AWS Network Firewall applies each stateless rule group to a packet starting with the group that has the lowest priority setting.
 	// +kubebuilder:validation:Optional
-	Priority *float64 `json:"priority,omitempty" tf:"priority,omitempty"`
+	Priority *int64 `json:"priority,omitempty" tf:"priority,omitempty"`
 
 	// The Amazon Resource Name (ARN) of the stateless rule group.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/networkfirewall/v1beta2.RuleGroup
@@ -516,7 +507,7 @@ type StatelessCustomActionParameters struct {
 type StatelessRuleGroupReferenceInitParameters struct {
 
 	// An integer setting that indicates the order in which to run the stateless rule groups in a single policy. AWS Network Firewall applies each stateless rule group to a packet starting with the group that has the lowest priority setting.
-	Priority *float64 `json:"priority,omitempty" tf:"priority,omitempty"`
+	Priority *int64 `json:"priority,omitempty" tf:"priority,omitempty"`
 
 	// The Amazon Resource Name (ARN) of the stateless rule group.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/networkfirewall/v1beta2.RuleGroup
@@ -535,7 +526,7 @@ type StatelessRuleGroupReferenceInitParameters struct {
 type StatelessRuleGroupReferenceObservation struct {
 
 	// An integer setting that indicates the order in which to run the stateless rule groups in a single policy. AWS Network Firewall applies each stateless rule group to a packet starting with the group that has the lowest priority setting.
-	Priority *float64 `json:"priority,omitempty" tf:"priority,omitempty"`
+	Priority *int64 `json:"priority,omitempty" tf:"priority,omitempty"`
 
 	// The Amazon Resource Name (ARN) of the stateless rule group.
 	ResourceArn *string `json:"resourceArn,omitempty" tf:"resource_arn,omitempty"`
@@ -545,7 +536,7 @@ type StatelessRuleGroupReferenceParameters struct {
 
 	// An integer setting that indicates the order in which to run the stateless rule groups in a single policy. AWS Network Firewall applies each stateless rule group to a packet starting with the group that has the lowest priority setting.
 	// +kubebuilder:validation:Optional
-	Priority *float64 `json:"priority" tf:"priority,omitempty"`
+	Priority *int64 `json:"priority" tf:"priority,omitempty"`
 
 	// The Amazon Resource Name (ARN) of the stateless rule group.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/networkfirewall/v1beta2.RuleGroup

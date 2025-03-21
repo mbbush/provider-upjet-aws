@@ -36,10 +36,6 @@ type SchemaInitParameters struct {
 	// +kubebuilder:validation:Optional
 	RegistryNameSelector *v1.Selector `json:"registryNameSelector,omitempty" tf:"-"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// The type of the schema. Valid values: OpenApi3 or JSONSchemaDraft4.
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
 }
@@ -115,11 +111,6 @@ type SchemaParameters struct {
 	// Selector for a Registry in schemas to populate registryName.
 	// +kubebuilder:validation:Optional
 	RegistryNameSelector *v1.Selector `json:"registryNameSelector,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// The type of the schema. Valid values: OpenApi3 or JSONSchemaDraft4.
 	// +kubebuilder:validation:Optional

@@ -80,13 +80,15 @@ spec:
                   cutoff:
                     description: The number of hours before the end of the Maintenance
                       Window that Systems Manager stops scheduling new tasks for execution.
-                    type: number
+                    format: int64
+                    type: integer
                   description:
                     description: A description for the maintenance window.
                     type: string
                   duration:
                     description: The duration of the Maintenance Window in hours.
-                    type: number
+                    format: int64
+                    type: integer
                   enabled:
                     description: 'Whether the maintenance window is enabled. Default:
                       true.'
@@ -110,7 +112,8 @@ spec:
                     description: The number of days to wait after the date and time
                       specified by a CRON expression before running the maintenance
                       window.
-                    type: number
+                    format: int64
+                    type: integer
                   scheduleTimezone:
                     description: 'Timezone for schedule in Internet Assigned Numbers
                       Authority (IANA) Time Zone Database format. For example: America/Los_Angeles,
@@ -120,12 +123,6 @@ spec:
                     description: Timestamp in ISO-8601 extended format when to begin
                       the maintenance window.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -149,13 +146,15 @@ spec:
                   cutoff:
                     description: The number of hours before the end of the Maintenance
                       Window that Systems Manager stops scheduling new tasks for execution.
-                    type: number
+                    format: int64
+                    type: integer
                   description:
                     description: A description for the maintenance window.
                     type: string
                   duration:
                     description: The duration of the Maintenance Window in hours.
-                    type: number
+                    format: int64
+                    type: integer
                   enabled:
                     description: 'Whether the maintenance window is enabled. Default:
                       true.'
@@ -175,7 +174,8 @@ spec:
                     description: The number of days to wait after the date and time
                       specified by a CRON expression before running the maintenance
                       window.
-                    type: number
+                    format: int64
+                    type: integer
                   scheduleTimezone:
                     description: 'Timezone for schedule in Internet Assigned Numbers
                       Authority (IANA) Time Zone Database format. For example: America/Los_Angeles,
@@ -185,12 +185,6 @@ spec:
                     description: Timestamp in ISO-8601 extended format when to begin
                       the maintenance window.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -388,13 +382,15 @@ spec:
                   cutoff:
                     description: The number of hours before the end of the Maintenance
                       Window that Systems Manager stops scheduling new tasks for execution.
-                    type: number
+                    format: int64
+                    type: integer
                   description:
                     description: A description for the maintenance window.
                     type: string
                   duration:
                     description: The duration of the Maintenance Window in hours.
-                    type: number
+                    format: int64
+                    type: integer
                   enabled:
                     description: 'Whether the maintenance window is enabled. Default:
                       true.'
@@ -417,7 +413,8 @@ spec:
                     description: The number of days to wait after the date and time
                       specified by a CRON expression before running the maintenance
                       window.
-                    type: number
+                    format: int64
+                    type: integer
                   scheduleTimezone:
                     description: 'Timezone for schedule in Internet Assigned Numbers
                       Authority (IANA) Time Zone Database format. For example: America/Los_Angeles,

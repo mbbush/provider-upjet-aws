@@ -95,10 +95,6 @@ type DomainNameInitParameters struct {
 
 	// Mutual TLS authentication configuration for the domain name.
 	MutualTLSAuthentication *MutualTLSAuthenticationInitParameters `json:"mutualTlsAuthentication,omitempty" tf:"mutual_tls_authentication,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type DomainNameObservation struct {
@@ -141,11 +137,6 @@ type DomainNameParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type MutualTLSAuthenticationInitParameters struct {

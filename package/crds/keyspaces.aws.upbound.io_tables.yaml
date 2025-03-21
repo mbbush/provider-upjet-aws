@@ -1020,7 +1020,8 @@ spec:
                       readCapacityUnits:
                         description: The throughput capacity specified for read operations
                           defined in read capacity units (RCUs).
-                        type: number
+                        format: int64
+                        type: integer
                       throughputMode:
                         description: 'The read/write throughput capacity mode for
                           a table. Valid values: PAY_PER_REQUEST, PROVISIONED. The
@@ -1029,7 +1030,8 @@ spec:
                       writeCapacityUnits:
                         description: The throughput capacity specified for write operations
                           defined in write capacity units (WCUs).
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   clientSideTimestamps:
                     description: Enables client-side timestamps for the table. By
@@ -1050,7 +1052,8 @@ spec:
                   defaultTimeToLive:
                     description: The default Time to Live setting in seconds for the
                       table. More information can be found in the Developer Guide.
-                    type: number
+                    format: int64
+                    type: integer
                   encryptionSpecification:
                     description: Specifies how the encryption key for encryption at
                       rest is managed for the table. More information can be found
@@ -1216,12 +1219,6 @@ spec:
                   tableName:
                     description: The name of the table.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   ttl:
                     description: Enables Time to Live custom settings for the table.
                       More information can be found in the Developer Guide.
@@ -1254,7 +1251,8 @@ spec:
                       readCapacityUnits:
                         description: The throughput capacity specified for read operations
                           defined in read capacity units (RCUs).
-                        type: number
+                        format: int64
+                        type: integer
                       throughputMode:
                         description: 'The read/write throughput capacity mode for
                           a table. Valid values: PAY_PER_REQUEST, PROVISIONED. The
@@ -1263,7 +1261,8 @@ spec:
                       writeCapacityUnits:
                         description: The throughput capacity specified for write operations
                           defined in write capacity units (WCUs).
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   clientSideTimestamps:
                     description: Enables client-side timestamps for the table. By
@@ -1284,7 +1283,8 @@ spec:
                   defaultTimeToLive:
                     description: The default Time to Live setting in seconds for the
                       table. More information can be found in the Developer Guide.
-                    type: number
+                    format: int64
+                    type: integer
                   encryptionSpecification:
                     description: Specifies how the encryption key for encryption at
                       rest is managed for the table. More information can be found
@@ -1446,12 +1446,6 @@ spec:
                   tableName:
                     description: The name of the table.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   ttl:
                     description: Enables Time to Live custom settings for the table.
                       More information can be found in the Developer Guide.
@@ -1653,7 +1647,8 @@ spec:
                       readCapacityUnits:
                         description: The throughput capacity specified for read operations
                           defined in read capacity units (RCUs).
-                        type: number
+                        format: int64
+                        type: integer
                       throughputMode:
                         description: 'The read/write throughput capacity mode for
                           a table. Valid values: PAY_PER_REQUEST, PROVISIONED. The
@@ -1662,7 +1657,8 @@ spec:
                       writeCapacityUnits:
                         description: The throughput capacity specified for write operations
                           defined in write capacity units (WCUs).
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   clientSideTimestamps:
                     description: Enables client-side timestamps for the table. By
@@ -1683,7 +1679,8 @@ spec:
                   defaultTimeToLive:
                     description: The default Time to Live setting in seconds for the
                       table. More information can be found in the Developer Guide.
-                    type: number
+                    format: int64
+                    type: integer
                   encryptionSpecification:
                     description: Specifies how the encryption key for encryption at
                       rest is managed for the table. More information can be found

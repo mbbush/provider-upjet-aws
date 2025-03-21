@@ -59,10 +59,6 @@ type ConfigurationAggregatorInitParameters struct {
 
 	// The organization to aggregate config data from as documented below.
 	OrganizationAggregationSource *OrganizationAggregationSourceInitParameters `json:"organizationAggregationSource,omitempty" tf:"organization_aggregation_source,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type ConfigurationAggregatorObservation struct {
@@ -101,11 +97,6 @@ type ConfigurationAggregatorParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type OrganizationAggregationSourceInitParameters struct {

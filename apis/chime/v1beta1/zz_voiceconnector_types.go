@@ -20,10 +20,6 @@ type VoiceConnectorInitParameters struct {
 
 	// When enabled, requires encryption for the Amazon Chime Voice Connector.
 	RequireEncryption *bool `json:"requireEncryption,omitempty" tf:"require_encryption,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type VoiceConnectorObservation struct {
@@ -65,11 +61,6 @@ type VoiceConnectorParameters struct {
 	// When enabled, requires encryption for the Amazon Chime Voice Connector.
 	// +kubebuilder:validation:Optional
 	RequireEncryption *bool `json:"requireEncryption,omitempty" tf:"require_encryption,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // VoiceConnectorSpec defines the desired state of VoiceConnector

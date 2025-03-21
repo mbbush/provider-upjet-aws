@@ -1337,11 +1337,14 @@ spec:
                         items:
                           properties:
                             batchCount:
-                              type: number
+                              format: int64
+                              type: integer
                             batchSize:
-                              type: number
+                              format: int64
+                              type: integer
                             bufferDuration:
-                              type: number
+                              format: int64
+                              type: integer
                             datetimeFormat:
                               type: string
                             encoding:
@@ -1487,20 +1490,23 @@ spec:
                           type: boolean
                         iops:
                           description: For PIOPS volumes, the IOPS per disk.
-                          type: number
+                          format: int64
+                          type: integer
                         mountPoint:
                           description: The path to mount the EBS volume on the layer's
                             instances.
                           type: string
                         numberOfDisks:
                           description: The number of disks to use for the EBS volume.
-                          type: number
+                          format: int64
+                          type: integer
                         raidLevel:
                           description: The RAID level to use for the volume.
                           type: string
                         size:
                           description: The size of the volume in gigabytes.
-                          type: number
+                          format: int64
+                          type: integer
                         type:
                           description: The type of volume to create. This may be standard
                             (the default), io1 or gp2.
@@ -1518,7 +1524,8 @@ spec:
                   instanceShutdownTimeout:
                     description: The time, in seconds, that OpsWorks will wait for
                       Chef to complete after triggering the Shutdown event.
-                    type: number
+                    format: int64
+                    type: integer
                   loadBasedAutoScaling:
                     properties:
                       downscaling:
@@ -1530,15 +1537,18 @@ spec:
                           cpuThreshold:
                             type: number
                           ignoreMetricsTime:
-                            type: number
+                            format: int64
+                            type: integer
                           instanceCount:
-                            type: number
+                            format: int64
+                            type: integer
                           loadThreshold:
                             type: number
                           memoryThreshold:
                             type: number
                           thresholdsWaitTime:
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       enable:
                         type: boolean
@@ -1551,15 +1561,18 @@ spec:
                           cpuThreshold:
                             type: number
                           ignoreMetricsTime:
-                            type: number
+                            format: int64
+                            type: integer
                           instanceCount:
-                            type: number
+                            format: int64
+                            type: integer
                           loadThreshold:
                             type: number
                           memoryThreshold:
                             type: number
                           thresholdsWaitTime:
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                     type: object
                   name:
@@ -1652,12 +1665,6 @@ spec:
                       type: string
                     type: array
                     x-kubernetes-list-type: set
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   url:
                     description: The URL path to use for Ganglia. Defaults to "/ganglia".
                     type: string
@@ -1701,11 +1708,14 @@ spec:
                         items:
                           properties:
                             batchCount:
-                              type: number
+                              format: int64
+                              type: integer
                             batchSize:
-                              type: number
+                              format: int64
+                              type: integer
                             bufferDuration:
-                              type: number
+                              format: int64
+                              type: integer
                             datetimeFormat:
                               type: string
                             encoding:
@@ -1851,20 +1861,23 @@ spec:
                           type: boolean
                         iops:
                           description: For PIOPS volumes, the IOPS per disk.
-                          type: number
+                          format: int64
+                          type: integer
                         mountPoint:
                           description: The path to mount the EBS volume on the layer's
                             instances.
                           type: string
                         numberOfDisks:
                           description: The number of disks to use for the EBS volume.
-                          type: number
+                          format: int64
+                          type: integer
                         raidLevel:
                           description: The RAID level to use for the volume.
                           type: string
                         size:
                           description: The size of the volume in gigabytes.
-                          type: number
+                          format: int64
+                          type: integer
                         type:
                           description: The type of volume to create. This may be standard
                             (the default), io1 or gp2.
@@ -1882,7 +1895,8 @@ spec:
                   instanceShutdownTimeout:
                     description: The time, in seconds, that OpsWorks will wait for
                       Chef to complete after triggering the Shutdown event.
-                    type: number
+                    format: int64
+                    type: integer
                   loadBasedAutoScaling:
                     properties:
                       downscaling:
@@ -1894,15 +1908,18 @@ spec:
                           cpuThreshold:
                             type: number
                           ignoreMetricsTime:
-                            type: number
+                            format: int64
+                            type: integer
                           instanceCount:
-                            type: number
+                            format: int64
+                            type: integer
                           loadThreshold:
                             type: number
                           memoryThreshold:
                             type: number
                           thresholdsWaitTime:
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       enable:
                         type: boolean
@@ -1915,15 +1932,18 @@ spec:
                           cpuThreshold:
                             type: number
                           ignoreMetricsTime:
-                            type: number
+                            format: int64
+                            type: integer
                           instanceCount:
-                            type: number
+                            format: int64
+                            type: integer
                           loadThreshold:
                             type: number
                           memoryThreshold:
                             type: number
                           thresholdsWaitTime:
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                     type: object
                   name:
@@ -2016,12 +2036,6 @@ spec:
                       type: string
                     type: array
                     x-kubernetes-list-type: set
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   url:
                     description: The URL path to use for Ganglia. Defaults to "/ganglia".
                     type: string
@@ -2232,11 +2246,14 @@ spec:
                         items:
                           properties:
                             batchCount:
-                              type: number
+                              format: int64
+                              type: integer
                             batchSize:
-                              type: number
+                              format: int64
+                              type: integer
                             bufferDuration:
-                              type: number
+                              format: int64
+                              type: integer
                             datetimeFormat:
                               type: string
                             encoding:
@@ -2304,20 +2321,23 @@ spec:
                           type: boolean
                         iops:
                           description: For PIOPS volumes, the IOPS per disk.
-                          type: number
+                          format: int64
+                          type: integer
                         mountPoint:
                           description: The path to mount the EBS volume on the layer's
                             instances.
                           type: string
                         numberOfDisks:
                           description: The number of disks to use for the EBS volume.
-                          type: number
+                          format: int64
+                          type: integer
                         raidLevel:
                           description: The RAID level to use for the volume.
                           type: string
                         size:
                           description: The size of the volume in gigabytes.
-                          type: number
+                          format: int64
+                          type: integer
                         type:
                           description: The type of volume to create. This may be standard
                             (the default), io1 or gp2.
@@ -2338,7 +2358,8 @@ spec:
                   instanceShutdownTimeout:
                     description: The time, in seconds, that OpsWorks will wait for
                       Chef to complete after triggering the Shutdown event.
-                    type: number
+                    format: int64
+                    type: integer
                   loadBasedAutoScaling:
                     properties:
                       downscaling:
@@ -2350,15 +2371,18 @@ spec:
                           cpuThreshold:
                             type: number
                           ignoreMetricsTime:
-                            type: number
+                            format: int64
+                            type: integer
                           instanceCount:
-                            type: number
+                            format: int64
+                            type: integer
                           loadThreshold:
                             type: number
                           memoryThreshold:
                             type: number
                           thresholdsWaitTime:
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       enable:
                         type: boolean
@@ -2371,15 +2395,18 @@ spec:
                           cpuThreshold:
                             type: number
                           ignoreMetricsTime:
-                            type: number
+                            format: int64
+                            type: integer
                           instanceCount:
-                            type: number
+                            format: int64
+                            type: integer
                           loadThreshold:
                             type: number
                           memoryThreshold:
                             type: number
                           thresholdsWaitTime:
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                     type: object
                   name:

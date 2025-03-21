@@ -32,6 +32,3 @@ spec:
     signatureValidityPeriod:
     - type: YEARS
       value: 5
-    tags:
-      tag1: value1
-      tag2: value2

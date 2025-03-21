@@ -176,12 +176,6 @@ spec:
                   repository:
                     description: The name of the repository to create.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   upstream:
                     description: A list of upstream repositories to associate with
                       the repository. The order of the upstream repositories in the
@@ -306,12 +300,6 @@ spec:
                   repository:
                     description: The name of the repository to create.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   upstream:
                     description: A list of upstream repositories to associate with
                       the repository. The order of the upstream repositories in the

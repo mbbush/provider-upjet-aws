@@ -62,8 +62,6 @@ spec:
   forProvider:
     identityProviderType: SERVICE_MANAGED
     region: us-west-1
-    tags:
-      NAME: tf-acc-test-transfer-server
 
 ---
 
@@ -84,5 +82,3 @@ spec:
     serverIdSelector:
       matchLabels:
         testing.upbound.io/example-name: example
-    tags:
-      NAME: tftestuser

@@ -1713,7 +1713,8 @@ spec:
                                           maxDepth:
                                             description: The max depth of the selection
                                               criteria.
-                                            type: number
+                                            format: int64
+                                            type: integer
                                           minStorageBytesPercentage:
                                             description: The minimum number of storage
                                               bytes percentage whose metrics will
@@ -1997,12 +1998,6 @@ spec:
                             x-kubernetes-list-type: set
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -2127,7 +2122,8 @@ spec:
                                           maxDepth:
                                             description: The max depth of the selection
                                               criteria.
-                                            type: number
+                                            format: int64
+                                            type: integer
                                           minStorageBytesPercentage:
                                             description: The minimum number of storage
                                               bytes percentage whose metrics will
@@ -2411,12 +2407,6 @@ spec:
                             x-kubernetes-list-type: set
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -2714,7 +2704,8 @@ spec:
                                           maxDepth:
                                             description: The max depth of the selection
                                               criteria.
-                                            type: number
+                                            format: int64
+                                            type: integer
                                           minStorageBytesPercentage:
                                             description: The minimum number of storage
                                               bytes percentage whose metrics will

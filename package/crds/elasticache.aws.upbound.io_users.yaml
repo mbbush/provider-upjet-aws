@@ -617,12 +617,6 @@ spec:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   userName:
                     description: The username of the user.
                     type: string
@@ -669,12 +663,6 @@ spec:
                     items:
                       type: string
                     type: array
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   userName:
                     description: The username of the user.
                     type: string
@@ -876,7 +864,8 @@ spec:
                       below.
                     properties:
                       passwordCount:
-                        type: number
+                        format: int64
+                        type: integer
                       type:
                         description: 'Specifies the authentication type. Possible
                           options are: password, no-password-required or iam.'

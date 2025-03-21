@@ -78,7 +78,8 @@ spec:
                       be healthy for Route 53 to consider the parent health check
                       to be healthy. Valid values are integers between 0 and 256,
                       inclusive
-                    type: number
+                    format: int64
+                    type: integer
                   childHealthchecks:
                     description: For a specified parent health check, a list of HealthCheckId
                       values for the associated child health checks.
@@ -263,7 +264,8 @@ spec:
                   failureThreshold:
                     description: The number of consecutive health checks that an endpoint
                       must pass or fail.
-                    type: number
+                    format: int64
+                    type: integer
                   fqdn:
                     description: The fully qualified domain name of the endpoint to
                       be checked. If a value is set for ip_address, the value set
@@ -291,7 +293,8 @@ spec:
                     type: boolean
                   port:
                     description: The port of the endpoint to be checked.
-                    type: number
+                    format: int64
+                    type: integer
                   referenceName:
                     description: |-
                       This is a reference name used in Caller Reference
@@ -312,7 +315,8 @@ spec:
                     description: The number of seconds between the time that Amazon
                       Route 53 gets a response from your endpoint and the time that
                       it sends the next health-check request.
-                    type: number
+                    format: int64
+                    type: integer
                   resourcePath:
                     description: The path that you want Amazon Route 53 to request
                       when performing health checks.
@@ -327,12 +331,6 @@ spec:
                       body for check to be considered healthy. Only valid with HTTP_STR_MATCH
                       and HTTPS_STR_MATCH.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   type:
                     description: The protocol to use when performing health checks.
                       Valid values are HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH,
@@ -359,7 +357,8 @@ spec:
                       be healthy for Route 53 to consider the parent health check
                       to be healthy. Valid values are integers between 0 and 256,
                       inclusive
-                    type: number
+                    format: int64
+                    type: integer
                   childHealthchecks:
                     description: For a specified parent health check, a list of HealthCheckId
                       values for the associated child health checks.
@@ -544,7 +543,8 @@ spec:
                   failureThreshold:
                     description: The number of consecutive health checks that an endpoint
                       must pass or fail.
-                    type: number
+                    format: int64
+                    type: integer
                   fqdn:
                     description: The fully qualified domain name of the endpoint to
                       be checked. If a value is set for ip_address, the value set
@@ -572,7 +572,8 @@ spec:
                     type: boolean
                   port:
                     description: The port of the endpoint to be checked.
-                    type: number
+                    format: int64
+                    type: integer
                   referenceName:
                     description: |-
                       This is a reference name used in Caller Reference
@@ -589,7 +590,8 @@ spec:
                     description: The number of seconds between the time that Amazon
                       Route 53 gets a response from your endpoint and the time that
                       it sends the next health-check request.
-                    type: number
+                    format: int64
+                    type: integer
                   resourcePath:
                     description: The path that you want Amazon Route 53 to request
                       when performing health checks.
@@ -604,12 +606,6 @@ spec:
                       body for check to be considered healthy. Only valid with HTTP_STR_MATCH
                       and HTTPS_STR_MATCH.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   type:
                     description: The protocol to use when performing health checks.
                       Valid values are HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH,
@@ -801,7 +797,8 @@ spec:
                       be healthy for Route 53 to consider the parent health check
                       to be healthy. Valid values are integers between 0 and 256,
                       inclusive
-                    type: number
+                    format: int64
+                    type: integer
                   childHealthchecks:
                     description: For a specified parent health check, a list of HealthCheckId
                       values for the associated child health checks.
@@ -831,7 +828,8 @@ spec:
                   failureThreshold:
                     description: The number of consecutive health checks that an endpoint
                       must pass or fail.
-                    type: number
+                    format: int64
+                    type: integer
                   fqdn:
                     description: The fully qualified domain name of the endpoint to
                       be checked. If a value is set for ip_address, the value set
@@ -862,7 +860,8 @@ spec:
                     type: boolean
                   port:
                     description: The port of the endpoint to be checked.
-                    type: number
+                    format: int64
+                    type: integer
                   referenceName:
                     description: |-
                       This is a reference name used in Caller Reference
@@ -879,7 +878,8 @@ spec:
                     description: The number of seconds between the time that Amazon
                       Route 53 gets a response from your endpoint and the time that
                       it sends the next health-check request.
-                    type: number
+                    format: int64
+                    type: integer
                   resourcePath:
                     description: The path that you want Amazon Route 53 to request
                       when performing health checks.

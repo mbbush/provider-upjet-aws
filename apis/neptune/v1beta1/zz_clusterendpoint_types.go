@@ -37,10 +37,6 @@ type ClusterEndpointInitParameters struct {
 	// List of DB instance identifiers that are part of the custom endpoint group.
 	// +listType=set
 	StaticMembers []*string `json:"staticMembers,omitempty" tf:"static_members,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type ClusterEndpointObservation struct {
@@ -110,11 +106,6 @@ type ClusterEndpointParameters struct {
 	// +kubebuilder:validation:Optional
 	// +listType=set
 	StaticMembers []*string `json:"staticMembers,omitempty" tf:"static_members,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // ClusterEndpointSpec defines the desired state of ClusterEndpoint

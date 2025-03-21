@@ -29,9 +29,6 @@ spec:
     rangeKey: GameTitle
     readCapacity: 20
     region: us-west-1
-    tags:
-      Environment: production
-      Name: dynamodb-table-1
     ttl:
     - attributeName: TimeToExist
       enabled: true

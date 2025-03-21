@@ -93,17 +93,17 @@ func (in *AutoscalingInitParameters) DeepCopyInto(out *AutoscalingInitParameters
 	*out = *in
 	if in.MaxWorkerCount != nil {
 		in, out := &in.MaxWorkerCount, &out.MaxWorkerCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.McuCount != nil {
 		in, out := &in.McuCount, &out.McuCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MinWorkerCount != nil {
 		in, out := &in.MinWorkerCount, &out.MinWorkerCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ScaleInPolicy != nil {
@@ -133,17 +133,17 @@ func (in *AutoscalingObservation) DeepCopyInto(out *AutoscalingObservation) {
 	*out = *in
 	if in.MaxWorkerCount != nil {
 		in, out := &in.MaxWorkerCount, &out.MaxWorkerCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.McuCount != nil {
 		in, out := &in.McuCount, &out.McuCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MinWorkerCount != nil {
 		in, out := &in.MinWorkerCount, &out.MinWorkerCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ScaleInPolicy != nil {
@@ -173,17 +173,17 @@ func (in *AutoscalingParameters) DeepCopyInto(out *AutoscalingParameters) {
 	*out = *in
 	if in.MaxWorkerCount != nil {
 		in, out := &in.MaxWorkerCount, &out.MaxWorkerCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.McuCount != nil {
 		in, out := &in.McuCount, &out.McuCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MinWorkerCount != nil {
 		in, out := &in.MinWorkerCount, &out.MinWorkerCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ScaleInPolicy != nil {
@@ -481,22 +481,6 @@ func (in *ConnectorInitParameters) DeepCopyInto(out *ConnectorInitParameters) {
 		*out = new(v1.Selector)
 		(*in).DeepCopyInto(*out)
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.WorkerConfiguration != nil {
 		in, out := &in.WorkerConfiguration, &out.WorkerConfiguration
 		*out = new(WorkerConfigurationInitParameters)
@@ -767,22 +751,6 @@ func (in *ConnectorParameters) DeepCopyInto(out *ConnectorParameters) {
 		*out = new(v1.Selector)
 		(*in).DeepCopyInto(*out)
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.WorkerConfiguration != nil {
 		in, out := &in.WorkerConfiguration, &out.WorkerConfiguration
 		*out = new(WorkerConfigurationParameters)
@@ -882,7 +850,7 @@ func (in *CustomPluginInitParameters) DeepCopyInto(out *CustomPluginInitParamete
 	}
 	if in.Revision != nil {
 		in, out := &in.Revision, &out.Revision
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -914,22 +882,6 @@ func (in *CustomPluginInitParameters_2) DeepCopyInto(out *CustomPluginInitParame
 		in, out := &in.Location, &out.Location
 		*out = new(LocationInitParameters)
 		(*in).DeepCopyInto(*out)
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 }
 
@@ -985,7 +937,7 @@ func (in *CustomPluginObservation) DeepCopyInto(out *CustomPluginObservation) {
 	}
 	if in.Revision != nil {
 		in, out := &in.Revision, &out.Revision
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1025,7 +977,7 @@ func (in *CustomPluginObservation_2) DeepCopyInto(out *CustomPluginObservation_2
 	}
 	if in.LatestRevision != nil {
 		in, out := &in.LatestRevision, &out.LatestRevision
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Location != nil {
@@ -1107,7 +1059,7 @@ func (in *CustomPluginParameters) DeepCopyInto(out *CustomPluginParameters) {
 	}
 	if in.Revision != nil {
 		in, out := &in.Revision, &out.Revision
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1149,22 +1101,6 @@ func (in *CustomPluginParameters_2) DeepCopyInto(out *CustomPluginParameters_2) 
 		in, out := &in.Region, &out.Region
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 }
 
@@ -1803,12 +1739,12 @@ func (in *ProvisionedCapacityInitParameters) DeepCopyInto(out *ProvisionedCapaci
 	*out = *in
 	if in.McuCount != nil {
 		in, out := &in.McuCount, &out.McuCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.WorkerCount != nil {
 		in, out := &in.WorkerCount, &out.WorkerCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1828,12 +1764,12 @@ func (in *ProvisionedCapacityObservation) DeepCopyInto(out *ProvisionedCapacityO
 	*out = *in
 	if in.McuCount != nil {
 		in, out := &in.McuCount, &out.McuCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.WorkerCount != nil {
 		in, out := &in.WorkerCount, &out.WorkerCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1853,12 +1789,12 @@ func (in *ProvisionedCapacityParameters) DeepCopyInto(out *ProvisionedCapacityPa
 	*out = *in
 	if in.McuCount != nil {
 		in, out := &in.McuCount, &out.McuCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.WorkerCount != nil {
 		in, out := &in.WorkerCount, &out.WorkerCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1988,7 +1924,7 @@ func (in *ScaleInPolicyInitParameters) DeepCopyInto(out *ScaleInPolicyInitParame
 	*out = *in
 	if in.CPUUtilizationPercentage != nil {
 		in, out := &in.CPUUtilizationPercentage, &out.CPUUtilizationPercentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2008,7 +1944,7 @@ func (in *ScaleInPolicyObservation) DeepCopyInto(out *ScaleInPolicyObservation) 
 	*out = *in
 	if in.CPUUtilizationPercentage != nil {
 		in, out := &in.CPUUtilizationPercentage, &out.CPUUtilizationPercentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2028,7 +1964,7 @@ func (in *ScaleInPolicyParameters) DeepCopyInto(out *ScaleInPolicyParameters) {
 	*out = *in
 	if in.CPUUtilizationPercentage != nil {
 		in, out := &in.CPUUtilizationPercentage, &out.CPUUtilizationPercentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2048,7 +1984,7 @@ func (in *ScaleOutPolicyInitParameters) DeepCopyInto(out *ScaleOutPolicyInitPara
 	*out = *in
 	if in.CPUUtilizationPercentage != nil {
 		in, out := &in.CPUUtilizationPercentage, &out.CPUUtilizationPercentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2068,7 +2004,7 @@ func (in *ScaleOutPolicyObservation) DeepCopyInto(out *ScaleOutPolicyObservation
 	*out = *in
 	if in.CPUUtilizationPercentage != nil {
 		in, out := &in.CPUUtilizationPercentage, &out.CPUUtilizationPercentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2088,7 +2024,7 @@ func (in *ScaleOutPolicyParameters) DeepCopyInto(out *ScaleOutPolicyParameters) 
 	*out = *in
 	if in.CPUUtilizationPercentage != nil {
 		in, out := &in.CPUUtilizationPercentage, &out.CPUUtilizationPercentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2282,7 +2218,7 @@ func (in *WorkerConfigurationInitParameters) DeepCopyInto(out *WorkerConfigurati
 	}
 	if in.Revision != nil {
 		in, out := &in.Revision, &out.Revision
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2307,7 +2243,7 @@ func (in *WorkerConfigurationObservation) DeepCopyInto(out *WorkerConfigurationO
 	}
 	if in.Revision != nil {
 		in, out := &in.Revision, &out.Revision
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2342,7 +2278,7 @@ func (in *WorkerConfigurationParameters) DeepCopyInto(out *WorkerConfigurationPa
 	}
 	if in.Revision != nil {
 		in, out := &in.Revision, &out.Revision
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }

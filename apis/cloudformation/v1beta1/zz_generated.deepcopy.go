@@ -545,22 +545,6 @@ func (in *StackInitParameters) DeepCopyInto(out *StackInitParameters) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.TemplateBody != nil {
 		in, out := &in.TemplateBody, &out.TemplateBody
 		*out = new(string)
@@ -573,7 +557,7 @@ func (in *StackInitParameters) DeepCopyInto(out *StackInitParameters) {
 	}
 	if in.TimeoutInMinutes != nil {
 		in, out := &in.TimeoutInMinutes, &out.TimeoutInMinutes
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -816,7 +800,7 @@ func (in *StackObservation) DeepCopyInto(out *StackObservation) {
 	}
 	if in.TimeoutInMinutes != nil {
 		in, out := &in.TimeoutInMinutes, &out.TimeoutInMinutes
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -917,22 +901,6 @@ func (in *StackParameters) DeepCopyInto(out *StackParameters) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.TemplateBody != nil {
 		in, out := &in.TemplateBody, &out.TemplateBody
 		*out = new(string)
@@ -945,7 +913,7 @@ func (in *StackParameters) DeepCopyInto(out *StackParameters) {
 	}
 	if in.TimeoutInMinutes != nil {
 		in, out := &in.TimeoutInMinutes, &out.TimeoutInMinutes
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }

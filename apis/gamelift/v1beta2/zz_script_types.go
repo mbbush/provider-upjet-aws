@@ -21,10 +21,6 @@ type ScriptInitParameters struct {
 	// Information indicating where your game script files are stored. See below.
 	StorageLocation *ScriptStorageLocationInitParameters `json:"storageLocation,omitempty" tf:"storage_location,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Version that is associated with this script.
 	Version *string `json:"version,omitempty" tf:"version,omitempty"`
 
@@ -75,11 +71,6 @@ type ScriptParameters struct {
 	// Information indicating where your game script files are stored. See below.
 	// +kubebuilder:validation:Optional
 	StorageLocation *ScriptStorageLocationParameters `json:"storageLocation,omitempty" tf:"storage_location,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Version that is associated with this script.
 	// +kubebuilder:validation:Optional

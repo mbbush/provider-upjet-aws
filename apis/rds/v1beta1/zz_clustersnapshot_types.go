@@ -34,16 +34,12 @@ type ClusterSnapshotInitParameters struct {
 	// List of AWS Account IDs to share the snapshot with. Use all to make the snapshot public.
 	// +listType=set
 	SharedAccounts []*string `json:"sharedAccounts,omitempty" tf:"shared_accounts,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type ClusterSnapshotObservation struct {
 
 	// Allocated storage size in gigabytes (GB).
-	AllocatedStorage *float64 `json:"allocatedStorage,omitempty" tf:"allocated_storage,omitempty"`
+	AllocatedStorage *int64 `json:"allocatedStorage,omitempty" tf:"allocated_storage,omitempty"`
 
 	// List of EC2 Availability Zones that instances in the DB cluster snapshot can be restored in.
 	AvailabilityZones []*string `json:"availabilityZones,omitempty" tf:"availability_zones,omitempty"`
@@ -72,7 +68,7 @@ type ClusterSnapshotObservation struct {
 	LicenseModel *string `json:"licenseModel,omitempty" tf:"license_model,omitempty"`
 
 	// Port that the DB cluster was listening on at the time of the snapshot.
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// List of AWS Account IDs to share the snapshot with. Use all to make the snapshot public.
 	// +listType=set
@@ -130,11 +126,6 @@ type ClusterSnapshotParameters struct {
 	// +kubebuilder:validation:Optional
 	// +listType=set
 	SharedAccounts []*string `json:"sharedAccounts,omitempty" tf:"shared_accounts,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // ClusterSnapshotSpec defines the desired state of ClusterSnapshot

@@ -140,10 +140,6 @@ type FeatureGroupInitParameters struct {
 	// +kubebuilder:validation:Optional
 	RoleArnSelector *v1.Selector `json:"roleArnSelector,omitempty" tf:"-"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	ThroughputConfig *ThroughputConfigInitParameters `json:"throughputConfig,omitempty" tf:"throughput_config,omitempty"`
 }
 
@@ -230,11 +226,6 @@ type FeatureGroupParameters struct {
 	// Selector for a Role in iam to populate roleArn.
 	// +kubebuilder:validation:Optional
 	RoleArnSelector *v1.Selector `json:"roleArnSelector,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// +kubebuilder:validation:Optional
 	ThroughputConfig *ThroughputConfigParameters `json:"throughputConfig,omitempty" tf:"throughput_config,omitempty"`
@@ -402,7 +393,7 @@ type TTLDurationInitParameters struct {
 	Unit *string `json:"unit,omitempty" tf:"unit,omitempty"`
 
 	// TtlDuration time value.
-	Value *float64 `json:"value,omitempty" tf:"value,omitempty"`
+	Value *int64 `json:"value,omitempty" tf:"value,omitempty"`
 }
 
 type TTLDurationObservation struct {
@@ -411,7 +402,7 @@ type TTLDurationObservation struct {
 	Unit *string `json:"unit,omitempty" tf:"unit,omitempty"`
 
 	// TtlDuration time value.
-	Value *float64 `json:"value,omitempty" tf:"value,omitempty"`
+	Value *int64 `json:"value,omitempty" tf:"value,omitempty"`
 }
 
 type TTLDurationParameters struct {
@@ -422,21 +413,21 @@ type TTLDurationParameters struct {
 
 	// TtlDuration time value.
 	// +kubebuilder:validation:Optional
-	Value *float64 `json:"value,omitempty" tf:"value,omitempty"`
+	Value *int64 `json:"value,omitempty" tf:"value,omitempty"`
 }
 
 type ThroughputConfigInitParameters struct {
-	ProvisionedReadCapacityUnits *float64 `json:"provisionedReadCapacityUnits,omitempty" tf:"provisioned_read_capacity_units,omitempty"`
+	ProvisionedReadCapacityUnits *int64 `json:"provisionedReadCapacityUnits,omitempty" tf:"provisioned_read_capacity_units,omitempty"`
 
-	ProvisionedWriteCapacityUnits *float64 `json:"provisionedWriteCapacityUnits,omitempty" tf:"provisioned_write_capacity_units,omitempty"`
+	ProvisionedWriteCapacityUnits *int64 `json:"provisionedWriteCapacityUnits,omitempty" tf:"provisioned_write_capacity_units,omitempty"`
 
 	ThroughputMode *string `json:"throughputMode,omitempty" tf:"throughput_mode,omitempty"`
 }
 
 type ThroughputConfigObservation struct {
-	ProvisionedReadCapacityUnits *float64 `json:"provisionedReadCapacityUnits,omitempty" tf:"provisioned_read_capacity_units,omitempty"`
+	ProvisionedReadCapacityUnits *int64 `json:"provisionedReadCapacityUnits,omitempty" tf:"provisioned_read_capacity_units,omitempty"`
 
-	ProvisionedWriteCapacityUnits *float64 `json:"provisionedWriteCapacityUnits,omitempty" tf:"provisioned_write_capacity_units,omitempty"`
+	ProvisionedWriteCapacityUnits *int64 `json:"provisionedWriteCapacityUnits,omitempty" tf:"provisioned_write_capacity_units,omitempty"`
 
 	ThroughputMode *string `json:"throughputMode,omitempty" tf:"throughput_mode,omitempty"`
 }
@@ -444,27 +435,27 @@ type ThroughputConfigObservation struct {
 type ThroughputConfigParameters struct {
 
 	// +kubebuilder:validation:Optional
-	ProvisionedReadCapacityUnits *float64 `json:"provisionedReadCapacityUnits,omitempty" tf:"provisioned_read_capacity_units,omitempty"`
+	ProvisionedReadCapacityUnits *int64 `json:"provisionedReadCapacityUnits,omitempty" tf:"provisioned_read_capacity_units,omitempty"`
 
 	// +kubebuilder:validation:Optional
-	ProvisionedWriteCapacityUnits *float64 `json:"provisionedWriteCapacityUnits,omitempty" tf:"provisioned_write_capacity_units,omitempty"`
+	ProvisionedWriteCapacityUnits *int64 `json:"provisionedWriteCapacityUnits,omitempty" tf:"provisioned_write_capacity_units,omitempty"`
 
 	// +kubebuilder:validation:Optional
 	ThroughputMode *string `json:"throughputMode,omitempty" tf:"throughput_mode,omitempty"`
 }
 
 type VectorConfigInitParameters struct {
-	Dimension *float64 `json:"dimension,omitempty" tf:"dimension,omitempty"`
+	Dimension *int64 `json:"dimension,omitempty" tf:"dimension,omitempty"`
 }
 
 type VectorConfigObservation struct {
-	Dimension *float64 `json:"dimension,omitempty" tf:"dimension,omitempty"`
+	Dimension *int64 `json:"dimension,omitempty" tf:"dimension,omitempty"`
 }
 
 type VectorConfigParameters struct {
 
 	// +kubebuilder:validation:Optional
-	Dimension *float64 `json:"dimension,omitempty" tf:"dimension,omitempty"`
+	Dimension *int64 `json:"dimension,omitempty" tf:"dimension,omitempty"`
 }
 
 // FeatureGroupSpec defines the desired state of FeatureGroup

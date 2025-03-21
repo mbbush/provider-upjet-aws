@@ -29,6 +29,4 @@ spec:
         testing.upbound.io/example-name: example
     name: Office Hours
     region: us-west-1
-    tags:
-      Name: Example Hours of Operation
     timeZone: EST

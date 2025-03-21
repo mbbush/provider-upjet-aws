@@ -19,7 +19,7 @@ type SignatureValidityPeriodInitParameters struct {
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
 
 	// The numerical value of the time unit for signature validity.
-	Value *float64 `json:"value,omitempty" tf:"value,omitempty"`
+	Value *int64 `json:"value,omitempty" tf:"value,omitempty"`
 }
 
 type SignatureValidityPeriodObservation struct {
@@ -28,7 +28,7 @@ type SignatureValidityPeriodObservation struct {
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
 
 	// The numerical value of the time unit for signature validity.
-	Value *float64 `json:"value,omitempty" tf:"value,omitempty"`
+	Value *int64 `json:"value,omitempty" tf:"value,omitempty"`
 }
 
 type SignatureValidityPeriodParameters struct {
@@ -39,7 +39,7 @@ type SignatureValidityPeriodParameters struct {
 
 	// The numerical value of the time unit for signature validity.
 	// +kubebuilder:validation:Optional
-	Value *float64 `json:"value" tf:"value,omitempty"`
+	Value *int64 `json:"value" tf:"value,omitempty"`
 }
 
 type SigningMaterialInitParameters struct {
@@ -71,10 +71,6 @@ type SigningProfileInitParameters struct {
 
 	// The AWS Certificate Manager certificate that will be used to sign code with the new signing profile. See signing_material Block below for details.
 	SigningMaterial *SigningMaterialInitParameters `json:"signingMaterial,omitempty" tf:"signing_material,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type SigningProfileObservation struct {
@@ -135,11 +131,6 @@ type SigningProfileParameters struct {
 	// The AWS Certificate Manager certificate that will be used to sign code with the new signing profile. See signing_material Block below for details.
 	// +kubebuilder:validation:Optional
 	SigningMaterial *SigningMaterialParameters `json:"signingMaterial,omitempty" tf:"signing_material,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type SigningProfileRevocationRecordInitParameters struct {

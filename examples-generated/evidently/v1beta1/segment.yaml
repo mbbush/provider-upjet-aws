@@ -10,5 +10,3 @@ spec:
   forProvider:
     pattern: '{"Price":[{"numeric":[">",10,"<=",20]}]}'
     region: us-west-1
-    tags:
-      Key1: example Segment

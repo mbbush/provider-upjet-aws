@@ -1803,7 +1803,8 @@ spec:
                         description: 'Limits the bandwidth utilized. For example,
                           to set a maximum of 1 MB, set this value to 1048576. Value
                           values: -1 or greater. Default: -1 (unlimited).'
-                        type: number
+                        format: int64
+                        type: integer
                       gid:
                         description: 'Group identifier of the file''s owners. Valid
                           values: BOTH, INT_VALUE, NAME, NONE. Default: INT_VALUE
@@ -1979,12 +1980,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   taskReportConfig:
                     description: Configuration block containing the configuration
                       of a DataSync Task Report. See task_report_config below.
@@ -2282,7 +2277,8 @@ spec:
                         description: 'Limits the bandwidth utilized. For example,
                           to set a maximum of 1 MB, set this value to 1048576. Value
                           values: -1 or greater. Default: -1 (unlimited).'
-                        type: number
+                        format: int64
+                        type: integer
                       gid:
                         description: 'Group identifier of the file''s owners. Valid
                           values: BOTH, INT_VALUE, NAME, NONE. Default: INT_VALUE
@@ -2454,12 +2450,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   taskReportConfig:
                     description: Configuration block containing the configuration
                       of a DataSync Task Report. See task_report_config below.
@@ -2768,7 +2758,8 @@ spec:
                         description: 'Limits the bandwidth utilized. For example,
                           to set a maximum of 1 MB, set this value to 1048576. Value
                           values: -1 or greater. Default: -1 (unlimited).'
-                        type: number
+                        format: int64
+                        type: integer
                       gid:
                         description: 'Group identifier of the file''s owners. Valid
                           values: BOTH, INT_VALUE, NAME, NONE. Default: INT_VALUE

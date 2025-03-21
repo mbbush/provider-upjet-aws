@@ -1409,7 +1409,8 @@ spec:
                   datapointsToAlarm:
                     description: The number of datapoints that must be breaching to
                       trigger the alarm.
-                    type: number
+                    format: int64
+                    type: integer
                   dimensions:
                     additionalProperties:
                       type: string
@@ -1427,7 +1428,8 @@ spec:
                   evaluationPeriods:
                     description: The number of periods over which data is compared
                       to the specified threshold.
-                    type: number
+                    format: int64
+                    type: integer
                   extendedStatistic:
                     description: The percentile statistic for the metric associated
                       with the alarm. Specify a value between p0.0 and p100.
@@ -1506,7 +1508,8 @@ spec:
                                 Granularity in seconds of returned data points.
                                 For metrics with regular resolution, valid values are any multiple of 60.
                                 For high-resolution metrics, valid values are 1, 5, 10, 30, or any multiple of 60.
-                              type: number
+                              format: int64
+                              type: integer
                             stat:
                               description: |-
                                 The statistic to apply to this metric.
@@ -1521,7 +1524,8 @@ spec:
                             Granularity in seconds of returned data points.
                             For metrics with regular resolution, valid values are any multiple of 60.
                             For high-resolution metrics, valid values are 1, 5, 10, 30, or any multiple of 60.
-                          type: number
+                          format: int64
+                          type: integer
                         returnData:
                           description: Specify exactly one metric_query to be true
                             to use that metric_query result as the alarm.
@@ -1622,7 +1626,8 @@ spec:
                     description: |-
                       The period in seconds over which the specified statistic is applied.
                       Valid values are 10, 30, or any multiple of 60.
-                    type: number
+                    format: int64
+                    type: integer
                   region:
                     description: Region is the region you'd like your resource to
                       be created in.
@@ -1632,12 +1637,6 @@ spec:
                       The statistic to apply to the alarm's associated metric.
                       Either of the following is supported: SampleCount, Average, Sum, Minimum, Maximum
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   threshold:
                     description: The value against which the specified statistic is
                       compared. This parameter is required for alarms based on static
@@ -1778,7 +1777,8 @@ spec:
                   datapointsToAlarm:
                     description: The number of datapoints that must be breaching to
                       trigger the alarm.
-                    type: number
+                    format: int64
+                    type: integer
                   dimensions:
                     additionalProperties:
                       type: string
@@ -1796,7 +1796,8 @@ spec:
                   evaluationPeriods:
                     description: The number of periods over which data is compared
                       to the specified threshold.
-                    type: number
+                    format: int64
+                    type: integer
                   extendedStatistic:
                     description: The percentile statistic for the metric associated
                       with the alarm. Specify a value between p0.0 and p100.
@@ -1875,7 +1876,8 @@ spec:
                                 Granularity in seconds of returned data points.
                                 For metrics with regular resolution, valid values are any multiple of 60.
                                 For high-resolution metrics, valid values are 1, 5, 10, 30, or any multiple of 60.
-                              type: number
+                              format: int64
+                              type: integer
                             stat:
                               description: |-
                                 The statistic to apply to this metric.
@@ -1890,7 +1892,8 @@ spec:
                             Granularity in seconds of returned data points.
                             For metrics with regular resolution, valid values are any multiple of 60.
                             For high-resolution metrics, valid values are 1, 5, 10, 30, or any multiple of 60.
-                          type: number
+                          format: int64
+                          type: integer
                         returnData:
                           description: Specify exactly one metric_query to be true
                             to use that metric_query result as the alarm.
@@ -1991,18 +1994,13 @@ spec:
                     description: |-
                       The period in seconds over which the specified statistic is applied.
                       Valid values are 10, 30, or any multiple of 60.
-                    type: number
+                    format: int64
+                    type: integer
                   statistic:
                     description: |-
                       The statistic to apply to the alarm's associated metric.
                       Either of the following is supported: SampleCount, Average, Sum, Minimum, Maximum
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   threshold:
                     description: The value against which the specified statistic is
                       compared. This parameter is required for alarms based on static
@@ -2234,7 +2232,8 @@ spec:
                   datapointsToAlarm:
                     description: The number of datapoints that must be breaching to
                       trigger the alarm.
-                    type: number
+                    format: int64
+                    type: integer
                   dimensions:
                     additionalProperties:
                       type: string
@@ -2252,7 +2251,8 @@ spec:
                   evaluationPeriods:
                     description: The number of periods over which data is compared
                       to the specified threshold.
-                    type: number
+                    format: int64
+                    type: integer
                   extendedStatistic:
                     description: The percentile statistic for the metric associated
                       with the alarm. Specify a value between p0.0 and p100.
@@ -2334,7 +2334,8 @@ spec:
                                 Granularity in seconds of returned data points.
                                 For metrics with regular resolution, valid values are any multiple of 60.
                                 For high-resolution metrics, valid values are 1, 5, 10, 30, or any multiple of 60.
-                              type: number
+                              format: int64
+                              type: integer
                             stat:
                               description: |-
                                 The statistic to apply to this metric.
@@ -2349,7 +2350,8 @@ spec:
                             Granularity in seconds of returned data points.
                             For metrics with regular resolution, valid values are any multiple of 60.
                             For high-resolution metrics, valid values are 1, 5, 10, 30, or any multiple of 60.
-                          type: number
+                          format: int64
+                          type: integer
                         returnData:
                           description: Specify exactly one metric_query to be true
                             to use that metric_query result as the alarm.
@@ -2373,7 +2375,8 @@ spec:
                     description: |-
                       The period in seconds over which the specified statistic is applied.
                       Valid values are 10, 30, or any multiple of 60.
-                    type: number
+                    format: int64
+                    type: integer
                   statistic:
                     description: |-
                       The statistic to apply to the alarm's associated metric.

@@ -144,17 +144,13 @@ type GraphQLAPIInitParameters struct {
 	OpenIDConnectConfig *GraphQLAPIOpenIDConnectConfigInitParameters `json:"openidConnectConfig,omitempty" tf:"openid_connect_config,omitempty"`
 
 	// The maximum depth a query can have in a single request. Depth refers to the amount of nested levels allowed in the body of query. The default value is 0 (or unspecified), which indicates there's no depth limit. If you set a limit, it can be between 1 and 75 nested levels. This field will produce a limit error if the operation falls out of bounds.
-	QueryDepthLimit *float64 `json:"queryDepthLimit,omitempty" tf:"query_depth_limit,omitempty"`
+	QueryDepthLimit *int64 `json:"queryDepthLimit,omitempty" tf:"query_depth_limit,omitempty"`
 
 	// The maximum number of resolvers that can be invoked in a single request. The default value is 0 (or unspecified), which will set the limit to 10000. When specified, the limit value can be between 1 and 10000. This field will produce a limit error if the operation falls out of bounds.
-	ResolverCountLimit *float64 `json:"resolverCountLimit,omitempty" tf:"resolver_count_limit,omitempty"`
+	ResolverCountLimit *int64 `json:"resolverCountLimit,omitempty" tf:"resolver_count_limit,omitempty"`
 
 	// Schema definition, in GraphQL schema language format.
 	Schema *string `json:"schema,omitempty" tf:"schema,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Amazon Cognito User Pool configuration. See user_pool_config Block for details.
 	UserPoolConfig *GraphQLAPIUserPoolConfigInitParameters `json:"userPoolConfig,omitempty" tf:"user_pool_config,omitempty"`
@@ -169,7 +165,7 @@ type GraphQLAPIInitParameters struct {
 type GraphQLAPILambdaAuthorizerConfigInitParameters struct {
 
 	// Number of seconds a response should be cached for. The default is 5 minutes (300 seconds). The Lambda function can override this by returning a ttlOverride key in its response. A value of 0 disables caching of responses. Minimum value of 0. Maximum value of 3600.
-	AuthorizerResultTTLInSeconds *float64 `json:"authorizerResultTtlInSeconds,omitempty" tf:"authorizer_result_ttl_in_seconds,omitempty"`
+	AuthorizerResultTTLInSeconds *int64 `json:"authorizerResultTtlInSeconds,omitempty" tf:"authorizer_result_ttl_in_seconds,omitempty"`
 
 	// ARN of the Lambda function to be called for authorization. Note: This Lambda function must have a resource-based policy assigned to it, to allow lambda:InvokeFunction from service principal appsync.amazonaws.com.
 	AuthorizerURI *string `json:"authorizerUri,omitempty" tf:"authorizer_uri,omitempty"`
@@ -181,7 +177,7 @@ type GraphQLAPILambdaAuthorizerConfigInitParameters struct {
 type GraphQLAPILambdaAuthorizerConfigObservation struct {
 
 	// Number of seconds a response should be cached for. The default is 5 minutes (300 seconds). The Lambda function can override this by returning a ttlOverride key in its response. A value of 0 disables caching of responses. Minimum value of 0. Maximum value of 3600.
-	AuthorizerResultTTLInSeconds *float64 `json:"authorizerResultTtlInSeconds,omitempty" tf:"authorizer_result_ttl_in_seconds,omitempty"`
+	AuthorizerResultTTLInSeconds *int64 `json:"authorizerResultTtlInSeconds,omitempty" tf:"authorizer_result_ttl_in_seconds,omitempty"`
 
 	// ARN of the Lambda function to be called for authorization. Note: This Lambda function must have a resource-based policy assigned to it, to allow lambda:InvokeFunction from service principal appsync.amazonaws.com.
 	AuthorizerURI *string `json:"authorizerUri,omitempty" tf:"authorizer_uri,omitempty"`
@@ -194,7 +190,7 @@ type GraphQLAPILambdaAuthorizerConfigParameters struct {
 
 	// Number of seconds a response should be cached for. The default is 5 minutes (300 seconds). The Lambda function can override this by returning a ttlOverride key in its response. A value of 0 disables caching of responses. Minimum value of 0. Maximum value of 3600.
 	// +kubebuilder:validation:Optional
-	AuthorizerResultTTLInSeconds *float64 `json:"authorizerResultTtlInSeconds,omitempty" tf:"authorizer_result_ttl_in_seconds,omitempty"`
+	AuthorizerResultTTLInSeconds *int64 `json:"authorizerResultTtlInSeconds,omitempty" tf:"authorizer_result_ttl_in_seconds,omitempty"`
 
 	// ARN of the Lambda function to be called for authorization. Note: This Lambda function must have a resource-based policy assigned to it, to allow lambda:InvokeFunction from service principal appsync.amazonaws.com.
 	// +kubebuilder:validation:Optional
@@ -244,10 +240,10 @@ type GraphQLAPIObservation struct {
 	OpenIDConnectConfig *GraphQLAPIOpenIDConnectConfigObservation `json:"openidConnectConfig,omitempty" tf:"openid_connect_config,omitempty"`
 
 	// The maximum depth a query can have in a single request. Depth refers to the amount of nested levels allowed in the body of query. The default value is 0 (or unspecified), which indicates there's no depth limit. If you set a limit, it can be between 1 and 75 nested levels. This field will produce a limit error if the operation falls out of bounds.
-	QueryDepthLimit *float64 `json:"queryDepthLimit,omitempty" tf:"query_depth_limit,omitempty"`
+	QueryDepthLimit *int64 `json:"queryDepthLimit,omitempty" tf:"query_depth_limit,omitempty"`
 
 	// The maximum number of resolvers that can be invoked in a single request. The default value is 0 (or unspecified), which will set the limit to 10000. When specified, the limit value can be between 1 and 10000. This field will produce a limit error if the operation falls out of bounds.
-	ResolverCountLimit *float64 `json:"resolverCountLimit,omitempty" tf:"resolver_count_limit,omitempty"`
+	ResolverCountLimit *int64 `json:"resolverCountLimit,omitempty" tf:"resolver_count_limit,omitempty"`
 
 	// Schema definition, in GraphQL schema language format.
 	Schema *string `json:"schema,omitempty" tf:"schema,omitempty"`
@@ -277,13 +273,13 @@ type GraphQLAPIObservation struct {
 type GraphQLAPIOpenIDConnectConfigInitParameters struct {
 
 	// Number of milliseconds a token is valid after being authenticated.
-	AuthTTL *float64 `json:"authTtl,omitempty" tf:"auth_ttl,omitempty"`
+	AuthTTL *int64 `json:"authTtl,omitempty" tf:"auth_ttl,omitempty"`
 
 	// Client identifier of the Relying party at the OpenID identity provider. This identifier is typically obtained when the Relying party is registered with the OpenID identity provider. You can specify a regular expression so the AWS AppSync can validate against multiple client identifiers at a time.
 	ClientID *string `json:"clientId,omitempty" tf:"client_id,omitempty"`
 
 	// Number of milliseconds a token is valid after being issued to a user.
-	IatTTL *float64 `json:"iatTtl,omitempty" tf:"iat_ttl,omitempty"`
+	IatTTL *int64 `json:"iatTtl,omitempty" tf:"iat_ttl,omitempty"`
 
 	// Issuer for the OpenID Connect configuration. The issuer returned by discovery MUST exactly match the value of iss in the ID Token.
 	Issuer *string `json:"issuer,omitempty" tf:"issuer,omitempty"`
@@ -292,13 +288,13 @@ type GraphQLAPIOpenIDConnectConfigInitParameters struct {
 type GraphQLAPIOpenIDConnectConfigObservation struct {
 
 	// Number of milliseconds a token is valid after being authenticated.
-	AuthTTL *float64 `json:"authTtl,omitempty" tf:"auth_ttl,omitempty"`
+	AuthTTL *int64 `json:"authTtl,omitempty" tf:"auth_ttl,omitempty"`
 
 	// Client identifier of the Relying party at the OpenID identity provider. This identifier is typically obtained when the Relying party is registered with the OpenID identity provider. You can specify a regular expression so the AWS AppSync can validate against multiple client identifiers at a time.
 	ClientID *string `json:"clientId,omitempty" tf:"client_id,omitempty"`
 
 	// Number of milliseconds a token is valid after being issued to a user.
-	IatTTL *float64 `json:"iatTtl,omitempty" tf:"iat_ttl,omitempty"`
+	IatTTL *int64 `json:"iatTtl,omitempty" tf:"iat_ttl,omitempty"`
 
 	// Issuer for the OpenID Connect configuration. The issuer returned by discovery MUST exactly match the value of iss in the ID Token.
 	Issuer *string `json:"issuer,omitempty" tf:"issuer,omitempty"`
@@ -308,7 +304,7 @@ type GraphQLAPIOpenIDConnectConfigParameters struct {
 
 	// Number of milliseconds a token is valid after being authenticated.
 	// +kubebuilder:validation:Optional
-	AuthTTL *float64 `json:"authTtl,omitempty" tf:"auth_ttl,omitempty"`
+	AuthTTL *int64 `json:"authTtl,omitempty" tf:"auth_ttl,omitempty"`
 
 	// Client identifier of the Relying party at the OpenID identity provider. This identifier is typically obtained when the Relying party is registered with the OpenID identity provider. You can specify a regular expression so the AWS AppSync can validate against multiple client identifiers at a time.
 	// +kubebuilder:validation:Optional
@@ -316,7 +312,7 @@ type GraphQLAPIOpenIDConnectConfigParameters struct {
 
 	// Number of milliseconds a token is valid after being issued to a user.
 	// +kubebuilder:validation:Optional
-	IatTTL *float64 `json:"iatTtl,omitempty" tf:"iat_ttl,omitempty"`
+	IatTTL *int64 `json:"iatTtl,omitempty" tf:"iat_ttl,omitempty"`
 
 	// Issuer for the OpenID Connect configuration. The issuer returned by discovery MUST exactly match the value of iss in the ID Token.
 	// +kubebuilder:validation:Optional
@@ -377,7 +373,7 @@ type GraphQLAPIParameters struct {
 
 	// The maximum depth a query can have in a single request. Depth refers to the amount of nested levels allowed in the body of query. The default value is 0 (or unspecified), which indicates there's no depth limit. If you set a limit, it can be between 1 and 75 nested levels. This field will produce a limit error if the operation falls out of bounds.
 	// +kubebuilder:validation:Optional
-	QueryDepthLimit *float64 `json:"queryDepthLimit,omitempty" tf:"query_depth_limit,omitempty"`
+	QueryDepthLimit *int64 `json:"queryDepthLimit,omitempty" tf:"query_depth_limit,omitempty"`
 
 	// Region is the region you'd like your resource to be created in.
 	// +upjet:crd:field:TFTag=-
@@ -386,16 +382,11 @@ type GraphQLAPIParameters struct {
 
 	// The maximum number of resolvers that can be invoked in a single request. The default value is 0 (or unspecified), which will set the limit to 10000. When specified, the limit value can be between 1 and 10000. This field will produce a limit error if the operation falls out of bounds.
 	// +kubebuilder:validation:Optional
-	ResolverCountLimit *float64 `json:"resolverCountLimit,omitempty" tf:"resolver_count_limit,omitempty"`
+	ResolverCountLimit *int64 `json:"resolverCountLimit,omitempty" tf:"resolver_count_limit,omitempty"`
 
 	// Schema definition, in GraphQL schema language format.
 	// +kubebuilder:validation:Optional
 	Schema *string `json:"schema,omitempty" tf:"schema,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Amazon Cognito User Pool configuration. See user_pool_config Block for details.
 	// +kubebuilder:validation:Optional
@@ -482,7 +473,7 @@ type GraphQLAPIUserPoolConfigParameters struct {
 type LambdaAuthorizerConfigInitParameters struct {
 
 	// Number of seconds a response should be cached for. The default is 5 minutes (300 seconds). The Lambda function can override this by returning a ttlOverride key in its response. A value of 0 disables caching of responses. Minimum value of 0. Maximum value of 3600.
-	AuthorizerResultTTLInSeconds *float64 `json:"authorizerResultTtlInSeconds,omitempty" tf:"authorizer_result_ttl_in_seconds,omitempty"`
+	AuthorizerResultTTLInSeconds *int64 `json:"authorizerResultTtlInSeconds,omitempty" tf:"authorizer_result_ttl_in_seconds,omitempty"`
 
 	// ARN of the Lambda function to be called for authorization. Note: This Lambda function must have a resource-based policy assigned to it, to allow lambda:InvokeFunction from service principal appsync.amazonaws.com.
 	AuthorizerURI *string `json:"authorizerUri,omitempty" tf:"authorizer_uri,omitempty"`
@@ -494,7 +485,7 @@ type LambdaAuthorizerConfigInitParameters struct {
 type LambdaAuthorizerConfigObservation struct {
 
 	// Number of seconds a response should be cached for. The default is 5 minutes (300 seconds). The Lambda function can override this by returning a ttlOverride key in its response. A value of 0 disables caching of responses. Minimum value of 0. Maximum value of 3600.
-	AuthorizerResultTTLInSeconds *float64 `json:"authorizerResultTtlInSeconds,omitempty" tf:"authorizer_result_ttl_in_seconds,omitempty"`
+	AuthorizerResultTTLInSeconds *int64 `json:"authorizerResultTtlInSeconds,omitempty" tf:"authorizer_result_ttl_in_seconds,omitempty"`
 
 	// ARN of the Lambda function to be called for authorization. Note: This Lambda function must have a resource-based policy assigned to it, to allow lambda:InvokeFunction from service principal appsync.amazonaws.com.
 	AuthorizerURI *string `json:"authorizerUri,omitempty" tf:"authorizer_uri,omitempty"`
@@ -507,7 +498,7 @@ type LambdaAuthorizerConfigParameters struct {
 
 	// Number of seconds a response should be cached for. The default is 5 minutes (300 seconds). The Lambda function can override this by returning a ttlOverride key in its response. A value of 0 disables caching of responses. Minimum value of 0. Maximum value of 3600.
 	// +kubebuilder:validation:Optional
-	AuthorizerResultTTLInSeconds *float64 `json:"authorizerResultTtlInSeconds,omitempty" tf:"authorizer_result_ttl_in_seconds,omitempty"`
+	AuthorizerResultTTLInSeconds *int64 `json:"authorizerResultTtlInSeconds,omitempty" tf:"authorizer_result_ttl_in_seconds,omitempty"`
 
 	// ARN of the Lambda function to be called for authorization. Note: This Lambda function must have a resource-based policy assigned to it, to allow lambda:InvokeFunction from service principal appsync.amazonaws.com.
 	// +kubebuilder:validation:Optional
@@ -580,13 +571,13 @@ type LogConfigParameters struct {
 type OpenIDConnectConfigInitParameters struct {
 
 	// Number of milliseconds a token is valid after being authenticated.
-	AuthTTL *float64 `json:"authTtl,omitempty" tf:"auth_ttl,omitempty"`
+	AuthTTL *int64 `json:"authTtl,omitempty" tf:"auth_ttl,omitempty"`
 
 	// Client identifier of the Relying party at the OpenID identity provider. This identifier is typically obtained when the Relying party is registered with the OpenID identity provider. You can specify a regular expression so the AWS AppSync can validate against multiple client identifiers at a time.
 	ClientID *string `json:"clientId,omitempty" tf:"client_id,omitempty"`
 
 	// Number of milliseconds a token is valid after being issued to a user.
-	IatTTL *float64 `json:"iatTtl,omitempty" tf:"iat_ttl,omitempty"`
+	IatTTL *int64 `json:"iatTtl,omitempty" tf:"iat_ttl,omitempty"`
 
 	// Issuer for the OpenID Connect configuration. The issuer returned by discovery MUST exactly match the value of iss in the ID Token.
 	Issuer *string `json:"issuer,omitempty" tf:"issuer,omitempty"`
@@ -595,13 +586,13 @@ type OpenIDConnectConfigInitParameters struct {
 type OpenIDConnectConfigObservation struct {
 
 	// Number of milliseconds a token is valid after being authenticated.
-	AuthTTL *float64 `json:"authTtl,omitempty" tf:"auth_ttl,omitempty"`
+	AuthTTL *int64 `json:"authTtl,omitempty" tf:"auth_ttl,omitempty"`
 
 	// Client identifier of the Relying party at the OpenID identity provider. This identifier is typically obtained when the Relying party is registered with the OpenID identity provider. You can specify a regular expression so the AWS AppSync can validate against multiple client identifiers at a time.
 	ClientID *string `json:"clientId,omitempty" tf:"client_id,omitempty"`
 
 	// Number of milliseconds a token is valid after being issued to a user.
-	IatTTL *float64 `json:"iatTtl,omitempty" tf:"iat_ttl,omitempty"`
+	IatTTL *int64 `json:"iatTtl,omitempty" tf:"iat_ttl,omitempty"`
 
 	// Issuer for the OpenID Connect configuration. The issuer returned by discovery MUST exactly match the value of iss in the ID Token.
 	Issuer *string `json:"issuer,omitempty" tf:"issuer,omitempty"`
@@ -611,7 +602,7 @@ type OpenIDConnectConfigParameters struct {
 
 	// Number of milliseconds a token is valid after being authenticated.
 	// +kubebuilder:validation:Optional
-	AuthTTL *float64 `json:"authTtl,omitempty" tf:"auth_ttl,omitempty"`
+	AuthTTL *int64 `json:"authTtl,omitempty" tf:"auth_ttl,omitempty"`
 
 	// Client identifier of the Relying party at the OpenID identity provider. This identifier is typically obtained when the Relying party is registered with the OpenID identity provider. You can specify a regular expression so the AWS AppSync can validate against multiple client identifiers at a time.
 	// +kubebuilder:validation:Optional
@@ -619,7 +610,7 @@ type OpenIDConnectConfigParameters struct {
 
 	// Number of milliseconds a token is valid after being issued to a user.
 	// +kubebuilder:validation:Optional
-	IatTTL *float64 `json:"iatTtl,omitempty" tf:"iat_ttl,omitempty"`
+	IatTTL *int64 `json:"iatTtl,omitempty" tf:"iat_ttl,omitempty"`
 
 	// Issuer for the OpenID Connect configuration. The issuer returned by discovery MUST exactly match the value of iss in the ID Token.
 	// +kubebuilder:validation:Optional

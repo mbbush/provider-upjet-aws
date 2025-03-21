@@ -247,24 +247,8 @@ func (in *ContainerServiceInitParameters) DeepCopyInto(out *ContainerServiceInit
 	}
 	if in.Scale != nil {
 		in, out := &in.Scale, &out.Scale
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 }
 
@@ -375,7 +359,7 @@ func (in *ContainerServiceObservation) DeepCopyInto(out *ContainerServiceObserva
 	}
 	if in.Scale != nil {
 		in, out := &in.Scale, &out.Scale
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.State != nil {
@@ -462,24 +446,8 @@ func (in *ContainerServiceParameters) DeepCopyInto(out *ContainerServiceParamete
 	}
 	if in.Scale != nil {
 		in, out := &in.Scale, &out.Scale
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 }
 
@@ -653,22 +621,6 @@ func (in *InstanceInitParameters) DeepCopyInto(out *InstanceInitParameters) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.UserData != nil {
 		in, out := &in.UserData, &out.UserData
 		*out = new(string)
@@ -748,7 +700,7 @@ func (in *InstanceObservation) DeepCopyInto(out *InstanceObservation) {
 	}
 	if in.CPUCount != nil {
 		in, out := &in.CPUCount, &out.CPUCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.CreatedAt != nil {
@@ -893,22 +845,6 @@ func (in *InstanceParameters) DeepCopyInto(out *InstanceParameters) {
 		in, out := &in.Region, &out.Region
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.UserData != nil {
 		in, out := &in.UserData, &out.UserData

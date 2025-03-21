@@ -10,9 +10,6 @@ spec:
   forProvider:
     languageCode: en-US
     region: us-west-1
-    tags:
-      tag1: value1
-      tag2: value3
     words:
     - cars
     - bucket

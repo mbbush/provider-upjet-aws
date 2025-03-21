@@ -16,7 +16,7 @@ import (
 type AssessmentTemplateInitParameters struct {
 
 	// The duration of the inspector run.
-	Duration *float64 `json:"duration,omitempty" tf:"duration,omitempty"`
+	Duration *int64 `json:"duration,omitempty" tf:"duration,omitempty"`
 
 	// A block that enables sending notifications about a specified assessment template event to a designated SNS topic. See Event Subscriptions for details.
 	EventSubscription []EventSubscriptionInitParameters `json:"eventSubscription,omitempty" tf:"event_subscription,omitempty"`
@@ -27,10 +27,6 @@ type AssessmentTemplateInitParameters struct {
 	// The rules to be used during the run.
 	// +listType=set
 	RulesPackageArns []*string `json:"rulesPackageArns,omitempty" tf:"rules_package_arns,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// The assessment target ARN to attach the template to.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/inspector/v1beta1.AssessmentTarget
@@ -52,7 +48,7 @@ type AssessmentTemplateObservation struct {
 	Arn *string `json:"arn,omitempty" tf:"arn,omitempty"`
 
 	// The duration of the inspector run.
-	Duration *float64 `json:"duration,omitempty" tf:"duration,omitempty"`
+	Duration *int64 `json:"duration,omitempty" tf:"duration,omitempty"`
 
 	// A block that enables sending notifications about a specified assessment template event to a designated SNS topic. See Event Subscriptions for details.
 	EventSubscription []EventSubscriptionObservation `json:"eventSubscription,omitempty" tf:"event_subscription,omitempty"`
@@ -82,7 +78,7 @@ type AssessmentTemplateParameters struct {
 
 	// The duration of the inspector run.
 	// +kubebuilder:validation:Optional
-	Duration *float64 `json:"duration,omitempty" tf:"duration,omitempty"`
+	Duration *int64 `json:"duration,omitempty" tf:"duration,omitempty"`
 
 	// A block that enables sending notifications about a specified assessment template event to a designated SNS topic. See Event Subscriptions for details.
 	// +kubebuilder:validation:Optional
@@ -101,11 +97,6 @@ type AssessmentTemplateParameters struct {
 	// +kubebuilder:validation:Optional
 	// +listType=set
 	RulesPackageArns []*string `json:"rulesPackageArns,omitempty" tf:"rules_package_arns,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// The assessment target ARN to attach the template to.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/inspector/v1beta1.AssessmentTarget

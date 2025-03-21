@@ -12,5 +12,3 @@ spec:
     operatingRegions:
     - regionName: ${data.aws_region.current.name}
     region: us-west-1
-    tags:
-      Test: Main

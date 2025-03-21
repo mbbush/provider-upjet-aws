@@ -25,7 +25,7 @@ type EBSVolumeInitParameters struct {
 	FinalSnapshot *bool `json:"finalSnapshot,omitempty" tf:"final_snapshot,omitempty"`
 
 	// The amount of IOPS to provision for the disk. Only valid for type of io1, io2 or gp3.
-	Iops *float64 `json:"iops,omitempty" tf:"iops,omitempty"`
+	Iops *int64 `json:"iops,omitempty" tf:"iops,omitempty"`
 
 	// The ARN for the KMS encryption key. When specifying kms_key_id, encrypted needs to be set to true.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/kms/v1beta1.Key
@@ -46,17 +46,13 @@ type EBSVolumeInitParameters struct {
 	OutpostArn *string `json:"outpostArn,omitempty" tf:"outpost_arn,omitempty"`
 
 	// The size of the drive in GiBs.
-	Size *float64 `json:"size,omitempty" tf:"size,omitempty"`
+	Size *int64 `json:"size,omitempty" tf:"size,omitempty"`
 
 	// A snapshot to base the EBS volume off of.
 	SnapshotID *string `json:"snapshotId,omitempty" tf:"snapshot_id,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// The throughput that the volume supports, in MiB/s. Only valid for type of gp3.
-	Throughput *float64 `json:"throughput,omitempty" tf:"throughput,omitempty"`
+	Throughput *int64 `json:"throughput,omitempty" tf:"throughput,omitempty"`
 
 	// The type of EBS volume. Can be standard, gp2, gp3, io1, io2, sc1 or st1 (Default: gp2).
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
@@ -80,7 +76,7 @@ type EBSVolumeObservation struct {
 	ID *string `json:"id,omitempty" tf:"id,omitempty"`
 
 	// The amount of IOPS to provision for the disk. Only valid for type of io1, io2 or gp3.
-	Iops *float64 `json:"iops,omitempty" tf:"iops,omitempty"`
+	Iops *int64 `json:"iops,omitempty" tf:"iops,omitempty"`
 
 	// The ARN for the KMS encryption key. When specifying kms_key_id, encrypted needs to be set to true.
 	KMSKeyID *string `json:"kmsKeyId,omitempty" tf:"kms_key_id,omitempty"`
@@ -92,7 +88,7 @@ type EBSVolumeObservation struct {
 	OutpostArn *string `json:"outpostArn,omitempty" tf:"outpost_arn,omitempty"`
 
 	// The size of the drive in GiBs.
-	Size *float64 `json:"size,omitempty" tf:"size,omitempty"`
+	Size *int64 `json:"size,omitempty" tf:"size,omitempty"`
 
 	// A snapshot to base the EBS volume off of.
 	SnapshotID *string `json:"snapshotId,omitempty" tf:"snapshot_id,omitempty"`
@@ -106,7 +102,7 @@ type EBSVolumeObservation struct {
 	TagsAll map[string]*string `json:"tagsAll,omitempty" tf:"tags_all,omitempty"`
 
 	// The throughput that the volume supports, in MiB/s. Only valid for type of gp3.
-	Throughput *float64 `json:"throughput,omitempty" tf:"throughput,omitempty"`
+	Throughput *int64 `json:"throughput,omitempty" tf:"throughput,omitempty"`
 
 	// The type of EBS volume. Can be standard, gp2, gp3, io1, io2, sc1 or st1 (Default: gp2).
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
@@ -128,7 +124,7 @@ type EBSVolumeParameters struct {
 
 	// The amount of IOPS to provision for the disk. Only valid for type of io1, io2 or gp3.
 	// +kubebuilder:validation:Optional
-	Iops *float64 `json:"iops,omitempty" tf:"iops,omitempty"`
+	Iops *int64 `json:"iops,omitempty" tf:"iops,omitempty"`
 
 	// The ARN for the KMS encryption key. When specifying kms_key_id, encrypted needs to be set to true.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/kms/v1beta1.Key
@@ -158,20 +154,15 @@ type EBSVolumeParameters struct {
 
 	// The size of the drive in GiBs.
 	// +kubebuilder:validation:Optional
-	Size *float64 `json:"size,omitempty" tf:"size,omitempty"`
+	Size *int64 `json:"size,omitempty" tf:"size,omitempty"`
 
 	// A snapshot to base the EBS volume off of.
 	// +kubebuilder:validation:Optional
 	SnapshotID *string `json:"snapshotId,omitempty" tf:"snapshot_id,omitempty"`
 
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// The throughput that the volume supports, in MiB/s. Only valid for type of gp3.
 	// +kubebuilder:validation:Optional
-	Throughput *float64 `json:"throughput,omitempty" tf:"throughput,omitempty"`
+	Throughput *int64 `json:"throughput,omitempty" tf:"throughput,omitempty"`
 
 	// The type of EBS volume. Can be standard, gp2, gp3, io1, io2, sc1 or st1 (Default: gp2).
 	// +kubebuilder:validation:Optional

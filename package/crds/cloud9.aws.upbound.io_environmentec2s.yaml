@@ -76,7 +76,8 @@ spec:
                   automaticStopTimeMinutes:
                     description: The number of minutes until the running instance
                       is shut down after the environment has last been used.
-                    type: number
+                    format: int64
+                    type: integer
                   connectionType:
                     description: The connection type used for connecting to an Amazon
                       EC2 environment. Valid values are CONNECT_SSH and CONNECT_SSM.
@@ -182,12 +183,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -207,7 +202,8 @@ spec:
                   automaticStopTimeMinutes:
                     description: The number of minutes until the running instance
                       is shut down after the environment has last been used.
-                    type: number
+                    format: int64
+                    type: integer
                   connectionType:
                     description: The connection type used for connecting to an Amazon
                       EC2 environment. Valid values are CONNECT_SSH and CONNECT_SSM.
@@ -309,12 +305,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -507,7 +497,8 @@ spec:
                   automaticStopTimeMinutes:
                     description: The number of minutes until the running instance
                       is shut down after the environment has last been used.
-                    type: number
+                    format: int64
+                    type: integer
                   connectionType:
                     description: The connection type used for connecting to an Amazon
                       EC2 environment. Valid values are CONNECT_SSH and CONNECT_SSM.

@@ -149,10 +149,6 @@ type StageInitParameters struct {
 	// Name of the stage
 	StageName *string `json:"stageName,omitempty" tf:"stage_name,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Map that defines the stage variables
 	// +mapType=granular
 	Variables map[string]*string `json:"variables,omitempty" tf:"variables,omitempty"`
@@ -293,11 +289,6 @@ type StageParameters struct {
 	// Name of the stage
 	// +kubebuilder:validation:Optional
 	StageName *string `json:"stageName,omitempty" tf:"stage_name,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Map that defines the stage variables
 	// +kubebuilder:validation:Optional

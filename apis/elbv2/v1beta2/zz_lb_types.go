@@ -115,7 +115,7 @@ type LBInitParameters struct {
 	AccessLogs *AccessLogsInitParameters `json:"accessLogs,omitempty" tf:"access_logs,omitempty"`
 
 	// Client keep alive value in seconds. The valid range is 60-604800 seconds. The default is 3600 seconds.
-	ClientKeepAlive *float64 `json:"clientKeepAlive,omitempty" tf:"client_keep_alive,omitempty"`
+	ClientKeepAlive *int64 `json:"clientKeepAlive,omitempty" tf:"client_keep_alive,omitempty"`
 
 	// Connection Logs block. See below. Only valid for Load Balancers of type application.
 	ConnectionLogs *ConnectionLogsInitParameters `json:"connectionLogs,omitempty" tf:"connection_logs,omitempty"`
@@ -160,7 +160,7 @@ type LBInitParameters struct {
 	IPAddressType *string `json:"ipAddressType,omitempty" tf:"ip_address_type,omitempty"`
 
 	// Time in seconds that the connection is allowed to be idle. Only valid for Load Balancers of type application. Default: 60.
-	IdleTimeout *float64 `json:"idleTimeout,omitempty" tf:"idle_timeout,omitempty"`
+	IdleTimeout *int64 `json:"idleTimeout,omitempty" tf:"idle_timeout,omitempty"`
 
 	// If true, the LB will be internal. Defaults to false.
 	Internal *bool `json:"internal,omitempty" tf:"internal,omitempty"`
@@ -207,10 +207,6 @@ type LBInitParameters struct {
 	// +listType=set
 	Subnets []*string `json:"subnets,omitempty" tf:"subnets,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Determines how the load balancer modifies the X-Forwarded-For header in the HTTP request before sending the request to the target. The possible values are append, preserve, and remove. Only valid for Load Balancers of type application. The default is append.
 	XffHeaderProcessingMode *string `json:"xffHeaderProcessingMode,omitempty" tf:"xff_header_processing_mode,omitempty"`
 }
@@ -227,7 +223,7 @@ type LBObservation struct {
 	ArnSuffix *string `json:"arnSuffix,omitempty" tf:"arn_suffix,omitempty"`
 
 	// Client keep alive value in seconds. The valid range is 60-604800 seconds. The default is 3600 seconds.
-	ClientKeepAlive *float64 `json:"clientKeepAlive,omitempty" tf:"client_keep_alive,omitempty"`
+	ClientKeepAlive *int64 `json:"clientKeepAlive,omitempty" tf:"client_keep_alive,omitempty"`
 
 	// Connection Logs block. See below. Only valid for Load Balancers of type application.
 	ConnectionLogs *ConnectionLogsObservation `json:"connectionLogs,omitempty" tf:"connection_logs,omitempty"`
@@ -278,7 +274,7 @@ type LBObservation struct {
 	IPAddressType *string `json:"ipAddressType,omitempty" tf:"ip_address_type,omitempty"`
 
 	// Time in seconds that the connection is allowed to be idle. Only valid for Load Balancers of type application. Default: 60.
-	IdleTimeout *float64 `json:"idleTimeout,omitempty" tf:"idle_timeout,omitempty"`
+	IdleTimeout *int64 `json:"idleTimeout,omitempty" tf:"idle_timeout,omitempty"`
 
 	// If true, the LB will be internal. Defaults to false.
 	Internal *bool `json:"internal,omitempty" tf:"internal,omitempty"`
@@ -329,7 +325,7 @@ type LBParameters struct {
 
 	// Client keep alive value in seconds. The valid range is 60-604800 seconds. The default is 3600 seconds.
 	// +kubebuilder:validation:Optional
-	ClientKeepAlive *float64 `json:"clientKeepAlive,omitempty" tf:"client_keep_alive,omitempty"`
+	ClientKeepAlive *int64 `json:"clientKeepAlive,omitempty" tf:"client_keep_alive,omitempty"`
 
 	// Connection Logs block. See below. Only valid for Load Balancers of type application.
 	// +kubebuilder:validation:Optional
@@ -389,7 +385,7 @@ type LBParameters struct {
 
 	// Time in seconds that the connection is allowed to be idle. Only valid for Load Balancers of type application. Default: 60.
 	// +kubebuilder:validation:Optional
-	IdleTimeout *float64 `json:"idleTimeout,omitempty" tf:"idle_timeout,omitempty"`
+	IdleTimeout *int64 `json:"idleTimeout,omitempty" tf:"idle_timeout,omitempty"`
 
 	// If true, the LB will be internal. Defaults to false.
 	// +kubebuilder:validation:Optional
@@ -447,11 +443,6 @@ type LBParameters struct {
 	// +kubebuilder:validation:Optional
 	// +listType=set
 	Subnets []*string `json:"subnets,omitempty" tf:"subnets,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Determines how the load balancer modifies the X-Forwarded-For header in the HTTP request before sending the request to the target. The possible values are append, preserve, and remove. Only valid for Load Balancers of type application. The default is append.
 	// +kubebuilder:validation:Optional

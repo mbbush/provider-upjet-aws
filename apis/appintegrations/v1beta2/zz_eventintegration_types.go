@@ -42,10 +42,6 @@ type EventIntegrationInitParameters struct {
 
 	// EventBridge bus.
 	EventbridgeBus *string `json:"eventbridgeBus,omitempty" tf:"eventbridge_bus,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type EventIntegrationObservation struct {
@@ -92,11 +88,6 @@ type EventIntegrationParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // EventIntegrationSpec defines the desired state of EventIntegration

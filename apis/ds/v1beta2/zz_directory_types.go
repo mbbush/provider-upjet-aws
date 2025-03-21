@@ -125,7 +125,7 @@ type DirectoryInitParameters struct {
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
 
 	// The number of domain controllers desired in the directory. Minimum value of 2. Scaling of domain controllers is only supported for MicrosoftAD directories.
-	DesiredNumberOfDomainControllers *float64 `json:"desiredNumberOfDomainControllers,omitempty" tf:"desired_number_of_domain_controllers,omitempty"`
+	DesiredNumberOfDomainControllers *int64 `json:"desiredNumberOfDomainControllers,omitempty" tf:"desired_number_of_domain_controllers,omitempty"`
 
 	// The MicrosoftAD edition (Standard or Enterprise). Defaults to Enterprise.
 	Edition *string `json:"edition,omitempty" tf:"edition,omitempty"`
@@ -144,10 +144,6 @@ type DirectoryInitParameters struct {
 
 	// (For SimpleAD and ADConnector types) The size of the directory (Small or Large are accepted values). Large by default.
 	Size *string `json:"size,omitempty" tf:"size,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// The directory type (SimpleAD, ADConnector or MicrosoftAD are accepted values). Defaults to SimpleAD.
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
@@ -175,7 +171,7 @@ type DirectoryObservation struct {
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
 
 	// The number of domain controllers desired in the directory. Minimum value of 2. Scaling of domain controllers is only supported for MicrosoftAD directories.
-	DesiredNumberOfDomainControllers *float64 `json:"desiredNumberOfDomainControllers,omitempty" tf:"desired_number_of_domain_controllers,omitempty"`
+	DesiredNumberOfDomainControllers *int64 `json:"desiredNumberOfDomainControllers,omitempty" tf:"desired_number_of_domain_controllers,omitempty"`
 
 	// The MicrosoftAD edition (Standard or Enterprise). Defaults to Enterprise.
 	Edition *string `json:"edition,omitempty" tf:"edition,omitempty"`
@@ -229,7 +225,7 @@ type DirectoryParameters struct {
 
 	// The number of domain controllers desired in the directory. Minimum value of 2. Scaling of domain controllers is only supported for MicrosoftAD directories.
 	// +kubebuilder:validation:Optional
-	DesiredNumberOfDomainControllers *float64 `json:"desiredNumberOfDomainControllers,omitempty" tf:"desired_number_of_domain_controllers,omitempty"`
+	DesiredNumberOfDomainControllers *int64 `json:"desiredNumberOfDomainControllers,omitempty" tf:"desired_number_of_domain_controllers,omitempty"`
 
 	// The MicrosoftAD edition (Standard or Enterprise). Defaults to Enterprise.
 	// +kubebuilder:validation:Optional
@@ -259,11 +255,6 @@ type DirectoryParameters struct {
 	// (For SimpleAD and ADConnector types) The size of the directory (Small or Large are accepted values). Large by default.
 	// +kubebuilder:validation:Optional
 	Size *string `json:"size,omitempty" tf:"size,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// The directory type (SimpleAD, ADConnector or MicrosoftAD are accepted values). Defaults to SimpleAD.
 	// +kubebuilder:validation:Optional

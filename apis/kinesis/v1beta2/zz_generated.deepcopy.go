@@ -70,12 +70,12 @@ func (in *StreamInitParameters) DeepCopyInto(out *StreamInitParameters) {
 	}
 	if in.RetentionPeriod != nil {
 		in, out := &in.RetentionPeriod, &out.RetentionPeriod
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ShardCount != nil {
 		in, out := &in.ShardCount, &out.ShardCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ShardLevelMetrics != nil {
@@ -93,22 +93,6 @@ func (in *StreamInitParameters) DeepCopyInto(out *StreamInitParameters) {
 		in, out := &in.StreamModeDetails, &out.StreamModeDetails
 		*out = new(StreamModeDetailsInitParameters)
 		(*in).DeepCopyInto(*out)
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 }
 
@@ -244,12 +228,12 @@ func (in *StreamObservation) DeepCopyInto(out *StreamObservation) {
 	}
 	if in.RetentionPeriod != nil {
 		in, out := &in.RetentionPeriod, &out.RetentionPeriod
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ShardCount != nil {
 		in, out := &in.ShardCount, &out.ShardCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ShardLevelMetrics != nil {
@@ -347,12 +331,12 @@ func (in *StreamParameters) DeepCopyInto(out *StreamParameters) {
 	}
 	if in.RetentionPeriod != nil {
 		in, out := &in.RetentionPeriod, &out.RetentionPeriod
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ShardCount != nil {
 		in, out := &in.ShardCount, &out.ShardCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ShardLevelMetrics != nil {
@@ -370,22 +354,6 @@ func (in *StreamParameters) DeepCopyInto(out *StreamParameters) {
 		in, out := &in.StreamModeDetails, &out.StreamModeDetails
 		*out = new(StreamModeDetailsParameters)
 		(*in).DeepCopyInto(*out)
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 }
 

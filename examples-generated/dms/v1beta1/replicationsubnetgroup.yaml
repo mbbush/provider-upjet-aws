@@ -13,5 +13,3 @@ spec:
     subnetIdRefs:
     - name: example
     - name: example
-    tags:
-      Name: example

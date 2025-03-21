@@ -137,10 +137,6 @@ type AppMonitorInitParameters struct {
 
 	// The top-level internet domain name for which your application has administrative authority.
 	Domain *string `json:"domain,omitempty" tf:"domain,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type AppMonitorObservation struct {
@@ -200,11 +196,6 @@ type AppMonitorParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type CustomEventsInitParameters struct {

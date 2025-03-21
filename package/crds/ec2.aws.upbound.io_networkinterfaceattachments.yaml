@@ -76,7 +76,8 @@ spec:
                 properties:
                   deviceIndex:
                     description: Network interface index (int).
-                    type: number
+                    format: int64
+                    type: integer
                   instanceId:
                     description: Instance ID to attach.
                     type: string
@@ -255,7 +256,8 @@ spec:
                 properties:
                   deviceIndex:
                     description: Network interface index (int).
-                    type: number
+                    format: int64
+                    type: integer
                   instanceId:
                     description: Instance ID to attach.
                     type: string
@@ -596,7 +598,8 @@ spec:
                     type: string
                   deviceIndex:
                     description: Network interface index (int).
-                    type: number
+                    format: int64
+                    type: integer
                   id:
                     type: string
                   instanceId:

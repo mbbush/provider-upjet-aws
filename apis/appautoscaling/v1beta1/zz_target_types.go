@@ -55,10 +55,10 @@ type SuspendedStateParameters struct {
 type TargetInitParameters struct {
 
 	// Max capacity of the scalable target.
-	MaxCapacity *float64 `json:"maxCapacity,omitempty" tf:"max_capacity,omitempty"`
+	MaxCapacity *int64 `json:"maxCapacity,omitempty" tf:"max_capacity,omitempty"`
 
 	// Min capacity of the scalable target.
-	MinCapacity *float64 `json:"minCapacity,omitempty" tf:"min_capacity,omitempty"`
+	MinCapacity *int64 `json:"minCapacity,omitempty" tf:"min_capacity,omitempty"`
 
 	// Resource type and unique identifier string for the resource associated with the scaling policy. Documentation can be found in the ResourceId parameter at: AWS Application Auto Scaling API Reference
 	ResourceID *string `json:"resourceId,omitempty" tf:"resource_id,omitempty"`
@@ -84,10 +84,6 @@ type TargetInitParameters struct {
 
 	// Specifies whether the scaling activities for a scalable target are in a suspended state.
 	SuspendedState *SuspendedStateInitParameters `json:"suspendedState,omitempty" tf:"suspended_state,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type TargetObservation struct {
@@ -98,10 +94,10 @@ type TargetObservation struct {
 	ID *string `json:"id,omitempty" tf:"id,omitempty"`
 
 	// Max capacity of the scalable target.
-	MaxCapacity *float64 `json:"maxCapacity,omitempty" tf:"max_capacity,omitempty"`
+	MaxCapacity *int64 `json:"maxCapacity,omitempty" tf:"max_capacity,omitempty"`
 
 	// Min capacity of the scalable target.
-	MinCapacity *float64 `json:"minCapacity,omitempty" tf:"min_capacity,omitempty"`
+	MinCapacity *int64 `json:"minCapacity,omitempty" tf:"min_capacity,omitempty"`
 
 	// Resource type and unique identifier string for the resource associated with the scaling policy. Documentation can be found in the ResourceId parameter at: AWS Application Auto Scaling API Reference
 	ResourceID *string `json:"resourceId,omitempty" tf:"resource_id,omitempty"`
@@ -131,11 +127,11 @@ type TargetParameters struct {
 
 	// Max capacity of the scalable target.
 	// +kubebuilder:validation:Optional
-	MaxCapacity *float64 `json:"maxCapacity,omitempty" tf:"max_capacity,omitempty"`
+	MaxCapacity *int64 `json:"maxCapacity,omitempty" tf:"max_capacity,omitempty"`
 
 	// Min capacity of the scalable target.
 	// +kubebuilder:validation:Optional
-	MinCapacity *float64 `json:"minCapacity,omitempty" tf:"min_capacity,omitempty"`
+	MinCapacity *int64 `json:"minCapacity,omitempty" tf:"min_capacity,omitempty"`
 
 	// Region is the region you'd like your resource to be created in.
 	// +upjet:crd:field:TFTag=-
@@ -171,11 +167,6 @@ type TargetParameters struct {
 	// Specifies whether the scaling activities for a scalable target are in a suspended state.
 	// +kubebuilder:validation:Optional
 	SuspendedState *SuspendedStateParameters `json:"suspendedState,omitempty" tf:"suspended_state,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // TargetSpec defines the desired state of Target

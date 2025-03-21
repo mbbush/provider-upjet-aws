@@ -2740,7 +2740,8 @@ spec:
                         properties:
                           count:
                             description: The Count of streams.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       processingConfiguration:
                         description: |-
@@ -3130,12 +3131,6 @@ spec:
                       Whether to start or stop the Kinesis Analytics Application. To start an application, an input with a defined starting_position must be configured.
                       To modify an application's starting position, first stop the application by setting start_application = false, then update starting_position and set start_application = true.
                     type: boolean
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -3510,7 +3505,8 @@ spec:
                         properties:
                           count:
                             description: The Count of streams.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       processingConfiguration:
                         description: |-
@@ -3896,12 +3892,6 @@ spec:
                       Whether to start or stop the Kinesis Analytics Application. To start an application, an input with a defined starting_position must be configured.
                       To modify an application's starting position, first stop the application by setting start_application = false, then update starting_position and set start_application = true.
                     type: boolean
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -4148,7 +4138,8 @@ spec:
                         properties:
                           count:
                             description: The Count of streams.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       processingConfiguration:
                         description: |-
@@ -4422,7 +4413,8 @@ spec:
                     x-kubernetes-map-type: granular
                   version:
                     description: The Version of the application.
-                    type: number
+                    format: int64
+                    type: integer
                 type: object
               conditions:
                 description: Conditions of the resource.

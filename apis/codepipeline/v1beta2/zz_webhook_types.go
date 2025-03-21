@@ -79,10 +79,6 @@ type WebhookInitParameters struct {
 	// One or more filter blocks. Filter blocks are documented below.
 	Filter []FilterInitParameters `json:"filter,omitempty" tf:"filter,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// The name of the action in a pipeline you want to connect to the webhook. The action must be from the source (first) stage of the pipeline.
 	TargetAction *string `json:"targetAction,omitempty" tf:"target_action,omitempty"`
 
@@ -152,11 +148,6 @@ type WebhookParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// The name of the action in a pipeline you want to connect to the webhook. The action must be from the source (first) stage of the pipeline.
 	// +kubebuilder:validation:Optional

@@ -23,10 +23,6 @@ type ServiceLinkedRoleInitParameters struct {
 
 	// The description of the role.
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type ServiceLinkedRoleObservation struct {
@@ -80,11 +76,6 @@ type ServiceLinkedRoleParameters struct {
 	// The description of the role.
 	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // ServiceLinkedRoleSpec defines the desired state of ServiceLinkedRole

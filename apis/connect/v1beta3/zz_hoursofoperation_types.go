@@ -55,30 +55,30 @@ type ConfigParameters struct {
 type EndTimeInitParameters struct {
 
 	// Specifies the hour of closing.
-	Hours *float64 `json:"hours,omitempty" tf:"hours,omitempty"`
+	Hours *int64 `json:"hours,omitempty" tf:"hours,omitempty"`
 
 	// Specifies the minute of closing.
-	Minutes *float64 `json:"minutes,omitempty" tf:"minutes,omitempty"`
+	Minutes *int64 `json:"minutes,omitempty" tf:"minutes,omitempty"`
 }
 
 type EndTimeObservation struct {
 
 	// Specifies the hour of closing.
-	Hours *float64 `json:"hours,omitempty" tf:"hours,omitempty"`
+	Hours *int64 `json:"hours,omitempty" tf:"hours,omitempty"`
 
 	// Specifies the minute of closing.
-	Minutes *float64 `json:"minutes,omitempty" tf:"minutes,omitempty"`
+	Minutes *int64 `json:"minutes,omitempty" tf:"minutes,omitempty"`
 }
 
 type EndTimeParameters struct {
 
 	// Specifies the hour of closing.
 	// +kubebuilder:validation:Optional
-	Hours *float64 `json:"hours" tf:"hours,omitempty"`
+	Hours *int64 `json:"hours" tf:"hours,omitempty"`
 
 	// Specifies the minute of closing.
 	// +kubebuilder:validation:Optional
-	Minutes *float64 `json:"minutes" tf:"minutes,omitempty"`
+	Minutes *int64 `json:"minutes" tf:"minutes,omitempty"`
 }
 
 type HoursOfOperationInitParameters struct {
@@ -104,10 +104,6 @@ type HoursOfOperationInitParameters struct {
 
 	// Specifies the name of the Hours of Operation.
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Specifies the time zone of the Hours of Operation.
 	TimeZone *string `json:"timeZone,omitempty" tf:"time_zone,omitempty"`
@@ -181,11 +177,6 @@ type HoursOfOperationParameters struct {
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
 
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Specifies the time zone of the Hours of Operation.
 	// +kubebuilder:validation:Optional
 	TimeZone *string `json:"timeZone,omitempty" tf:"time_zone,omitempty"`
@@ -194,30 +185,30 @@ type HoursOfOperationParameters struct {
 type StartTimeInitParameters struct {
 
 	// Specifies the hour of opening.
-	Hours *float64 `json:"hours,omitempty" tf:"hours,omitempty"`
+	Hours *int64 `json:"hours,omitempty" tf:"hours,omitempty"`
 
 	// Specifies the minute of opening.
-	Minutes *float64 `json:"minutes,omitempty" tf:"minutes,omitempty"`
+	Minutes *int64 `json:"minutes,omitempty" tf:"minutes,omitempty"`
 }
 
 type StartTimeObservation struct {
 
 	// Specifies the hour of opening.
-	Hours *float64 `json:"hours,omitempty" tf:"hours,omitempty"`
+	Hours *int64 `json:"hours,omitempty" tf:"hours,omitempty"`
 
 	// Specifies the minute of opening.
-	Minutes *float64 `json:"minutes,omitempty" tf:"minutes,omitempty"`
+	Minutes *int64 `json:"minutes,omitempty" tf:"minutes,omitempty"`
 }
 
 type StartTimeParameters struct {
 
 	// Specifies the hour of opening.
 	// +kubebuilder:validation:Optional
-	Hours *float64 `json:"hours" tf:"hours,omitempty"`
+	Hours *int64 `json:"hours" tf:"hours,omitempty"`
 
 	// Specifies the minute of opening.
 	// +kubebuilder:validation:Optional
-	Minutes *float64 `json:"minutes" tf:"minutes,omitempty"`
+	Minutes *int64 `json:"minutes" tf:"minutes,omitempty"`
 }
 
 // HoursOfOperationSpec defines the desired state of HoursOfOperation

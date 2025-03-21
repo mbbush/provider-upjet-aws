@@ -10,8 +10,6 @@ spec:
   forProvider:
     region: us-west-1
     staticSourcesSupport: enable
-    tags:
-      Name: Transit_Gateway_Multicast_Domain_Example
     transitGatewayIdSelector:
       matchLabels:
         testing.upbound.io/example-name: tgw

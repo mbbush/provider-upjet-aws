@@ -36,10 +36,6 @@ type ParameterInitParameters_2 struct {
 	// Overwrite an existing parameter.
 	Overwrite *bool `json:"overwrite,omitempty" tf:"overwrite,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Parameter tier to assign to the parameter. If not specified, will use the default parameter tier for the region. Valid tiers are Standard, Advanced, and Intelligent-Tiering. Downgrading an Advanced tier parameter to Standard will recreate the resource. For more information on parameter tiers, see the AWS SSM Parameter tier comparison and guide.
 	Tier *string `json:"tier,omitempty" tf:"tier,omitempty"`
 
@@ -90,7 +86,7 @@ type ParameterObservation_2 struct {
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
 
 	// Version of the parameter.
-	Version *float64 `json:"version,omitempty" tf:"version,omitempty"`
+	Version *int64 `json:"version,omitempty" tf:"version,omitempty"`
 }
 
 type ParameterParameters_2 struct {
@@ -127,11 +123,6 @@ type ParameterParameters_2 struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Parameter tier to assign to the parameter. If not specified, will use the default parameter tier for the region. Valid tiers are Standard, Advanced, and Intelligent-Tiering. Downgrading an Advanced tier parameter to Standard will recreate the resource. For more information on parameter tiers, see the AWS SSM Parameter tier comparison and guide.
 	// +kubebuilder:validation:Optional

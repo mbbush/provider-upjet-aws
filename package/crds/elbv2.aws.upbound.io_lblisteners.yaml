@@ -1737,7 +1737,8 @@ spec:
                             sessionTimeout:
                               description: Maximum duration of the authentication
                                 session, in seconds.
-                              type: number
+                              format: int64
+                              type: integer
                             userPoolArn:
                               description: ARN of the Cognito user pool.
                               type: string
@@ -1802,7 +1803,8 @@ spec:
                             sessionTimeout:
                               description: Maximum duration of the authentication
                                 session, in seconds.
-                              type: number
+                              format: int64
+                              type: integer
                             tokenEndpoint:
                               description: Token endpoint of the IdP.
                               type: string
@@ -1840,7 +1842,8 @@ spec:
                                     requests from a client should be routed to the
                                     same target group. The range is 1-604800 seconds
                                     (7 days).
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 enabled:
                                   description: Whether target group stickiness is
                                     enabled. Default is false.
@@ -1931,7 +1934,8 @@ spec:
                                     type: object
                                   weight:
                                     description: Weight. The range is 0 to 999.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                               type: array
                           type: object
@@ -1939,7 +1943,8 @@ spec:
                           description: Order for the action. The action with the lowest
                             value for order is performed first. Valid values are between
                             1 and 50000. Defaults to the position in the list of actions.
-                          type: number
+                          format: int64
+                          type: integer
                         redirect:
                           description: Configuration block for creating a redirect
                             action. Required if type is redirect. See below.
@@ -2159,7 +2164,8 @@ spec:
                   port:
                     description: Port on which the load balancer is listening. Not
                       valid for Gateway Load Balancers.
-                    type: number
+                    format: int64
+                    type: integer
                   protocol:
                     description: Protocol for connections from clients to the load
                       balancer. For Application Load Balancers, valid values are HTTP
@@ -2176,18 +2182,13 @@ spec:
                     description: Name of the SSL Policy for the listener. Required
                       if protocol is HTTPS or TLS. Default is ELBSecurityPolicy-2016-08.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   tcpIdleTimeoutSeconds:
                     description: 'TCP idle timeout value in seconds. Can only be set
                       if protocol is TCP on Network Load Balancer, or with a Gateway
                       Load Balancer. Not supported for Application Load Balancers.
                       Valid values are between 60 and 6000 inclusive. Default: 350.'
-                    type: number
+                    format: int64
+                    type: integer
                 required:
                 - region
                 type: object
@@ -2247,7 +2248,8 @@ spec:
                             sessionTimeout:
                               description: Maximum duration of the authentication
                                 session, in seconds.
-                              type: number
+                              format: int64
+                              type: integer
                             userPoolArn:
                               description: ARN of the Cognito user pool.
                               type: string
@@ -2312,7 +2314,8 @@ spec:
                             sessionTimeout:
                               description: Maximum duration of the authentication
                                 session, in seconds.
-                              type: number
+                              format: int64
+                              type: integer
                             tokenEndpoint:
                               description: Token endpoint of the IdP.
                               type: string
@@ -2352,7 +2355,8 @@ spec:
                                     requests from a client should be routed to the
                                     same target group. The range is 1-604800 seconds
                                     (7 days).
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 enabled:
                                   description: Whether target group stickiness is
                                     enabled. Default is false.
@@ -2443,7 +2447,8 @@ spec:
                                     type: object
                                   weight:
                                     description: Weight. The range is 0 to 999.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                               type: array
                           type: object
@@ -2451,7 +2456,8 @@ spec:
                           description: Order for the action. The action with the lowest
                             value for order is performed first. Valid values are between
                             1 and 50000. Defaults to the position in the list of actions.
-                          type: number
+                          format: int64
+                          type: integer
                         redirect:
                           description: Configuration block for creating a redirect
                             action. Required if type is redirect. See below.
@@ -2671,7 +2677,8 @@ spec:
                   port:
                     description: Port on which the load balancer is listening. Not
                       valid for Gateway Load Balancers.
-                    type: number
+                    format: int64
+                    type: integer
                   protocol:
                     description: Protocol for connections from clients to the load
                       balancer. For Application Load Balancers, valid values are HTTP
@@ -2684,18 +2691,13 @@ spec:
                     description: Name of the SSL Policy for the listener. Required
                       if protocol is HTTPS or TLS. Default is ELBSecurityPolicy-2016-08.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   tcpIdleTimeoutSeconds:
                     description: 'TCP idle timeout value in seconds. Can only be set
                       if protocol is TCP on Network Load Balancer, or with a Gateway
                       Load Balancer. Not supported for Application Load Balancers.
                       Valid values are between 60 and 6000 inclusive. Default: 350.'
-                    type: number
+                    format: int64
+                    type: integer
                 type: object
               managementPolicies:
                 default:
@@ -2920,7 +2922,8 @@ spec:
                             sessionTimeout:
                               description: Maximum duration of the authentication
                                 session, in seconds.
-                              type: number
+                              format: int64
+                              type: integer
                             userPoolArn:
                               description: ARN of the Cognito user pool.
                               type: string
@@ -2968,7 +2971,8 @@ spec:
                             sessionTimeout:
                               description: Maximum duration of the authentication
                                 session, in seconds.
-                              type: number
+                              format: int64
+                              type: integer
                             tokenEndpoint:
                               description: Token endpoint of the IdP.
                               type: string
@@ -3006,7 +3010,8 @@ spec:
                                     requests from a client should be routed to the
                                     same target group. The range is 1-604800 seconds
                                     (7 days).
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 enabled:
                                   description: Whether target group stickiness is
                                     enabled. Default is false.
@@ -3021,7 +3026,8 @@ spec:
                                     type: string
                                   weight:
                                     description: Weight. The range is 0 to 999.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                               type: array
                           type: object
@@ -3029,7 +3035,8 @@ spec:
                           description: Order for the action. The action with the lowest
                             value for order is performed first. Valid values are between
                             1 and 50000. Defaults to the position in the list of actions.
-                          type: number
+                          format: int64
+                          type: integer
                         redirect:
                           description: Configuration block for creating a redirect
                             action. Required if type is redirect. See below.
@@ -3102,7 +3109,8 @@ spec:
                   port:
                     description: Port on which the load balancer is listening. Not
                       valid for Gateway Load Balancers.
-                    type: number
+                    format: int64
+                    type: integer
                   protocol:
                     description: Protocol for connections from clients to the load
                       balancer. For Application Load Balancers, valid values are HTTP
@@ -3134,7 +3142,8 @@ spec:
                       if protocol is TCP on Network Load Balancer, or with a Gateway
                       Load Balancer. Not supported for Application Load Balancers.
                       Valid values are between 60 and 6000 inclusive. Default: 350.'
-                    type: number
+                    format: int64
+                    type: integer
                 type: object
               conditions:
                 description: Conditions of the resource.

@@ -84,7 +84,8 @@ spec:
                   bgpAsn:
                     description: The autonomous system (AS) number for Border Gateway
                       Protocol (BGP) configuration.
-                    type: number
+                    format: int64
+                    type: integer
                   bgpAuthKey:
                     description: The authentication key for BGP configuration.
                     type: string
@@ -191,7 +192,8 @@ spec:
                     x-kubernetes-list-type: set
                   vlan:
                     description: The VLAN ID.
-                    type: number
+                    format: int64
+                    type: integer
                 required:
                 - region
                 type: object
@@ -218,7 +220,8 @@ spec:
                   bgpAsn:
                     description: The autonomous system (AS) number for Border Gateway
                       Protocol (BGP) configuration.
-                    type: number
+                    format: int64
+                    type: integer
                   bgpAuthKey:
                     description: The authentication key for BGP configuration.
                     type: string
@@ -321,7 +324,8 @@ spec:
                     x-kubernetes-list-type: set
                   vlan:
                     description: The VLAN ID.
-                    type: number
+                    format: int64
+                    type: integer
                 type: object
               managementPolicies:
                 default:
@@ -540,7 +544,8 @@ spec:
                   bgpAsn:
                     description: The autonomous system (AS) number for Border Gateway
                       Protocol (BGP) configuration.
-                    type: number
+                    format: int64
+                    type: integer
                   bgpAuthKey:
                     description: The authentication key for BGP configuration.
                     type: string
@@ -570,7 +575,8 @@ spec:
                     x-kubernetes-list-type: set
                   vlan:
                     description: The VLAN ID.
-                    type: number
+                    format: int64
+                    type: integer
                 type: object
               conditions:
                 description: Conditions of the resource.

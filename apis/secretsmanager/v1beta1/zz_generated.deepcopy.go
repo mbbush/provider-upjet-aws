@@ -250,7 +250,7 @@ func (in *SecretInitParameters) DeepCopyInto(out *SecretInitParameters) {
 	}
 	if in.RecoveryWindowInDays != nil {
 		in, out := &in.RecoveryWindowInDays, &out.RecoveryWindowInDays
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Replica != nil {
@@ -258,22 +258,6 @@ func (in *SecretInitParameters) DeepCopyInto(out *SecretInitParameters) {
 		*out = make([]ReplicaInitParameters, len(*in))
 		for i := range *in {
 			(*in)[i].DeepCopyInto(&(*out)[i])
-		}
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
 		}
 	}
 }
@@ -360,7 +344,7 @@ func (in *SecretObservation) DeepCopyInto(out *SecretObservation) {
 	}
 	if in.RecoveryWindowInDays != nil {
 		in, out := &in.RecoveryWindowInDays, &out.RecoveryWindowInDays
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Replica != nil {
@@ -449,7 +433,7 @@ func (in *SecretParameters) DeepCopyInto(out *SecretParameters) {
 	}
 	if in.RecoveryWindowInDays != nil {
 		in, out := &in.RecoveryWindowInDays, &out.RecoveryWindowInDays
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Region != nil {
@@ -462,22 +446,6 @@ func (in *SecretParameters) DeepCopyInto(out *SecretParameters) {
 		*out = make([]ReplicaParameters, len(*in))
 		for i := range *in {
 			(*in)[i].DeepCopyInto(&(*out)[i])
-		}
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
 		}
 	}
 }

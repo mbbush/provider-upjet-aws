@@ -114,22 +114,6 @@ func (in *DirectoryInitParameters) DeepCopyInto(out *DirectoryInitParameters) {
 			}
 		}
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.WorkspaceAccessProperties != nil {
 		in, out := &in.WorkspaceAccessProperties, &out.WorkspaceAccessProperties
 		*out = new(WorkspaceAccessPropertiesInitParameters)
@@ -406,22 +390,6 @@ func (in *DirectoryParameters) DeepCopyInto(out *DirectoryParameters) {
 				*out = new(string)
 				**out = **in
 			}
-		}
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
 		}
 	}
 	if in.WorkspaceAccessProperties != nil {

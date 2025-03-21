@@ -1534,7 +1534,8 @@ spec:
                       this to 0 disables automatic backups. You can retain automatic
                       backups for a maximum of 90 days. only valid for PERSISTENT_1
                       and PERSISTENT_2 deployment_type.
-                    type: number
+                    format: int64
+                    type: integer
                   backupId:
                     description: The ID of the source backup to create the filesystem
                       from.
@@ -1587,13 +1588,6 @@ spec:
                       and PERSISTENT_1 deployment types. Valid values for 2.12 include
                       all deployment types.
                     type: string
-                  finalBackupTags:
-                    additionalProperties:
-                      type: string
-                    description: A map of tags to apply to the file system's final
-                      backup.
-                    type: object
-                    x-kubernetes-map-type: granular
                   importPath:
                     description: S3 URI (with optional prefix) that you're using as
                       the data repository for your FSx for Lustre file system. For
@@ -1607,7 +1601,8 @@ spec:
                       with import_path argument. Defaults to 1024. Minimum of 1 and
                       maximum of 512000. Only supported on PERSISTENT_1 deployment
                       types.
-                    type: number
+                    format: int64
+                    type: integer
                   kmsKeyId:
                     description: ARN for the KMS Key to encrypt the file system at
                       rest, applicable for PERSISTENT_1 and PERSISTENT_2 deployment_type.
@@ -1720,7 +1715,8 @@ spec:
                           parameter should only be used when the mode is set to USER_PROVISIONED.
                           Valid Values are 1500,3000,6000 and 12000 through 192000
                           in increments of 12000.
-                        type: number
+                        format: int64
+                        type: integer
                       mode:
                         description: Mode for the metadata configuration of the file
                           system. Valid values are AUTOMATIC, and USER_PROVISIONED.
@@ -1734,7 +1730,8 @@ spec:
                       100, 200. Valid values for PERSISTENT_1 deployment_type and
                       HDD storage_type are 12, 40. Valid values for PERSISTENT_2 deployment_type
                       and  SSD storage_type are 125, 250, 500, 1000.'
-                    type: number
+                    format: int64
+                    type: integer
                   region:
                     description: Region is the region you'd like your resource to
                       be created in.
@@ -1867,7 +1864,8 @@ spec:
                       and PERSISTENT_2 deployment types, See more details at Fsx Storage
                       Capacity Update. Required when not creating filesystem for a
                       backup.
-                    type: number
+                    format: int64
+                    type: integer
                   storageType:
                     description: '- The filesystem storage type. Either SSD or HDD,
                       defaults to SSD. HDD is only supported on PERSISTENT_1 deployment
@@ -1959,12 +1957,6 @@ spec:
                     items:
                       type: string
                     type: array
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   weeklyMaintenanceStartTime:
                     description: The preferred start time (in d:HH:MM format) to perform
                       weekly maintenance, in the UTC time zone.
@@ -1996,7 +1988,8 @@ spec:
                       this to 0 disables automatic backups. You can retain automatic
                       backups for a maximum of 90 days. only valid for PERSISTENT_1
                       and PERSISTENT_2 deployment_type.
-                    type: number
+                    format: int64
+                    type: integer
                   backupId:
                     description: The ID of the source backup to create the filesystem
                       from.
@@ -2049,13 +2042,6 @@ spec:
                       and PERSISTENT_1 deployment types. Valid values for 2.12 include
                       all deployment types.
                     type: string
-                  finalBackupTags:
-                    additionalProperties:
-                      type: string
-                    description: A map of tags to apply to the file system's final
-                      backup.
-                    type: object
-                    x-kubernetes-map-type: granular
                   importPath:
                     description: S3 URI (with optional prefix) that you're using as
                       the data repository for your FSx for Lustre file system. For
@@ -2069,7 +2055,8 @@ spec:
                       with import_path argument. Defaults to 1024. Minimum of 1 and
                       maximum of 512000. Only supported on PERSISTENT_1 deployment
                       types.
-                    type: number
+                    format: int64
+                    type: integer
                   kmsKeyId:
                     description: ARN for the KMS Key to encrypt the file system at
                       rest, applicable for PERSISTENT_1 and PERSISTENT_2 deployment_type.
@@ -2182,7 +2169,8 @@ spec:
                           parameter should only be used when the mode is set to USER_PROVISIONED.
                           Valid Values are 1500,3000,6000 and 12000 through 192000
                           in increments of 12000.
-                        type: number
+                        format: int64
+                        type: integer
                       mode:
                         description: Mode for the metadata configuration of the file
                           system. Valid values are AUTOMATIC, and USER_PROVISIONED.
@@ -2196,7 +2184,8 @@ spec:
                       100, 200. Valid values for PERSISTENT_1 deployment_type and
                       HDD storage_type are 12, 40. Valid values for PERSISTENT_2 deployment_type
                       and  SSD storage_type are 125, 250, 500, 1000.'
-                    type: number
+                    format: int64
+                    type: integer
                   rootSquashConfiguration:
                     description: The Lustre root squash configuration used when creating
                       an Amazon FSx for Lustre file system. When enabled, root squash
@@ -2325,7 +2314,8 @@ spec:
                       and PERSISTENT_2 deployment types, See more details at Fsx Storage
                       Capacity Update. Required when not creating filesystem for a
                       backup.
-                    type: number
+                    format: int64
+                    type: integer
                   storageType:
                     description: '- The filesystem storage type. Either SSD or HDD,
                       defaults to SSD. HDD is only supported on PERSISTENT_1 deployment
@@ -2417,12 +2407,6 @@ spec:
                     items:
                       type: string
                     type: array
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   weeklyMaintenanceStartTime:
                     description: The preferred start time (in d:HH:MM format) to perform
                       weekly maintenance, in the UTC time zone.
@@ -2614,7 +2598,8 @@ spec:
                       this to 0 disables automatic backups. You can retain automatic
                       backups for a maximum of 90 days. only valid for PERSISTENT_1
                       and PERSISTENT_2 deployment_type.
-                    type: number
+                    format: int64
+                    type: integer
                   backupId:
                     description: The ID of the source backup to create the filesystem
                       from.
@@ -2693,7 +2678,8 @@ spec:
                       with import_path argument. Defaults to 1024. Minimum of 1 and
                       maximum of 512000. Only supported on PERSISTENT_1 deployment
                       types.
-                    type: number
+                    format: int64
+                    type: integer
                   kmsKeyId:
                     description: ARN for the KMS Key to encrypt the file system at
                       rest, applicable for PERSISTENT_1 and PERSISTENT_2 deployment_type.
@@ -2732,7 +2718,8 @@ spec:
                           parameter should only be used when the mode is set to USER_PROVISIONED.
                           Valid Values are 1500,3000,6000 and 12000 through 192000
                           in increments of 12000.
-                        type: number
+                        format: int64
+                        type: integer
                       mode:
                         description: Mode for the metadata configuration of the file
                           system. Valid values are AUTOMATIC, and USER_PROVISIONED.
@@ -2760,7 +2747,8 @@ spec:
                       100, 200. Valid values for PERSISTENT_1 deployment_type and
                       HDD storage_type are 12, 40. Valid values for PERSISTENT_2 deployment_type
                       and  SSD storage_type are 125, 250, 500, 1000.'
-                    type: number
+                    format: int64
+                    type: integer
                   rootSquashConfiguration:
                     description: The Lustre root squash configuration used when creating
                       an Amazon FSx for Lustre file system. When enabled, root squash
@@ -2811,7 +2799,8 @@ spec:
                       and PERSISTENT_2 deployment types, See more details at Fsx Storage
                       Capacity Update. Required when not creating filesystem for a
                       backup.
-                    type: number
+                    format: int64
+                    type: integer
                   storageType:
                     description: '- The filesystem storage type. Either SSD or HDD,
                       defaults to SSD. HDD is only supported on PERSISTENT_1 deployment

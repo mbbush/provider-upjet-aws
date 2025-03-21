@@ -28,10 +28,6 @@ type BackupInitParameters struct {
 	// +kubebuilder:validation:Optional
 	FileSystemIDSelector *v1.Selector `json:"fileSystemIdSelector,omitempty" tf:"-"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// The ID of the volume to back up. Required if backing up a ONTAP Volume.
 	VolumeID *string `json:"volumeId,omitempty" tf:"volume_id,omitempty"`
 }
@@ -88,11 +84,6 @@ type BackupParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// The ID of the volume to back up. Required if backing up a ONTAP Volume.
 	// +kubebuilder:validation:Optional

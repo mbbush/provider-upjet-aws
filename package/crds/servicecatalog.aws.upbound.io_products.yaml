@@ -698,12 +698,6 @@ spec:
                   supportUrl:
                     description: Contact URL for product support.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   type:
                     description: Type of product. See AWS Docs for valid list of values.
                     type: string
@@ -782,12 +776,6 @@ spec:
                   supportUrl:
                     description: Contact URL for product support.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   type:
                     description: Type of product. See AWS Docs for valid list of values.
                     type: string

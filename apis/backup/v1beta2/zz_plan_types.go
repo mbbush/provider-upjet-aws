@@ -77,10 +77,10 @@ type CopyActionParameters struct {
 type LifecycleInitParameters struct {
 
 	// Specifies the number of days after creation that a recovery point is moved to cold storage.
-	ColdStorageAfter *float64 `json:"coldStorageAfter,omitempty" tf:"cold_storage_after,omitempty"`
+	ColdStorageAfter *int64 `json:"coldStorageAfter,omitempty" tf:"cold_storage_after,omitempty"`
 
 	// Specifies the number of days after creation that a recovery point is deleted. Must be 90 days greater than cold_storage_after.
-	DeleteAfter *float64 `json:"deleteAfter,omitempty" tf:"delete_after,omitempty"`
+	DeleteAfter *int64 `json:"deleteAfter,omitempty" tf:"delete_after,omitempty"`
 
 	// This setting will instruct your backup plan to transition supported resources to archive (cold) storage tier in accordance with your lifecycle settings.
 	OptInToArchiveForSupportedResources *bool `json:"optInToArchiveForSupportedResources,omitempty" tf:"opt_in_to_archive_for_supported_resources,omitempty"`
@@ -89,10 +89,10 @@ type LifecycleInitParameters struct {
 type LifecycleObservation struct {
 
 	// Specifies the number of days after creation that a recovery point is moved to cold storage.
-	ColdStorageAfter *float64 `json:"coldStorageAfter,omitempty" tf:"cold_storage_after,omitempty"`
+	ColdStorageAfter *int64 `json:"coldStorageAfter,omitempty" tf:"cold_storage_after,omitempty"`
 
 	// Specifies the number of days after creation that a recovery point is deleted. Must be 90 days greater than cold_storage_after.
-	DeleteAfter *float64 `json:"deleteAfter,omitempty" tf:"delete_after,omitempty"`
+	DeleteAfter *int64 `json:"deleteAfter,omitempty" tf:"delete_after,omitempty"`
 
 	// This setting will instruct your backup plan to transition supported resources to archive (cold) storage tier in accordance with your lifecycle settings.
 	OptInToArchiveForSupportedResources *bool `json:"optInToArchiveForSupportedResources,omitempty" tf:"opt_in_to_archive_for_supported_resources,omitempty"`
@@ -102,11 +102,11 @@ type LifecycleParameters struct {
 
 	// Specifies the number of days after creation that a recovery point is moved to cold storage.
 	// +kubebuilder:validation:Optional
-	ColdStorageAfter *float64 `json:"coldStorageAfter,omitempty" tf:"cold_storage_after,omitempty"`
+	ColdStorageAfter *int64 `json:"coldStorageAfter,omitempty" tf:"cold_storage_after,omitempty"`
 
 	// Specifies the number of days after creation that a recovery point is deleted. Must be 90 days greater than cold_storage_after.
 	// +kubebuilder:validation:Optional
-	DeleteAfter *float64 `json:"deleteAfter,omitempty" tf:"delete_after,omitempty"`
+	DeleteAfter *int64 `json:"deleteAfter,omitempty" tf:"delete_after,omitempty"`
 
 	// This setting will instruct your backup plan to transition supported resources to archive (cold) storage tier in accordance with your lifecycle settings.
 	// +kubebuilder:validation:Optional
@@ -123,10 +123,6 @@ type PlanInitParameters struct {
 
 	// A rule object that specifies a scheduled task that is used to back up a selection of resources.
 	Rule []RuleInitParameters `json:"rule,omitempty" tf:"rule,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type PlanObservation struct {
@@ -176,17 +172,12 @@ type PlanParameters struct {
 	// A rule object that specifies a scheduled task that is used to back up a selection of resources.
 	// +kubebuilder:validation:Optional
 	Rule []RuleParameters `json:"rule,omitempty" tf:"rule,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type RuleInitParameters struct {
 
 	// The amount of time in minutes AWS Backup attempts a backup before canceling the job and returning an error.
-	CompletionWindow *float64 `json:"completionWindow,omitempty" tf:"completion_window,omitempty"`
+	CompletionWindow *int64 `json:"completionWindow,omitempty" tf:"completion_window,omitempty"`
 
 	// Configuration block(s) with copy operation settings. Detailed below.
 	CopyAction []CopyActionInitParameters `json:"copyAction,omitempty" tf:"copy_action,omitempty"`
@@ -196,10 +187,6 @@ type RuleInitParameters struct {
 
 	// The lifecycle defines when a protected resource is transitioned to cold storage and when it expires.  Fields documented below.
 	Lifecycle *RuleLifecycleInitParameters `json:"lifecycle,omitempty" tf:"lifecycle,omitempty"`
-
-	// Metadata that you can assign to help organize the resources that you create.
-	// +mapType=granular
-	RecoveryPointTags map[string]*string `json:"recoveryPointTags,omitempty" tf:"recovery_point_tags,omitempty"`
 
 	// An display name for a backup rule.
 	RuleName *string `json:"ruleName,omitempty" tf:"rule_name,omitempty"`
@@ -211,7 +198,7 @@ type RuleInitParameters struct {
 	ScheduleExpressionTimezone *string `json:"scheduleExpressionTimezone,omitempty" tf:"schedule_expression_timezone,omitempty"`
 
 	// The amount of time in minutes before beginning a backup.
-	StartWindow *float64 `json:"startWindow,omitempty" tf:"start_window,omitempty"`
+	StartWindow *int64 `json:"startWindow,omitempty" tf:"start_window,omitempty"`
 
 	// The name of a logical container where backups are stored.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/backup/v1beta1.Vault
@@ -229,10 +216,10 @@ type RuleInitParameters struct {
 type RuleLifecycleInitParameters struct {
 
 	// Specifies the number of days after creation that a recovery point is moved to cold storage.
-	ColdStorageAfter *float64 `json:"coldStorageAfter,omitempty" tf:"cold_storage_after,omitempty"`
+	ColdStorageAfter *int64 `json:"coldStorageAfter,omitempty" tf:"cold_storage_after,omitempty"`
 
 	// Specifies the number of days after creation that a recovery point is deleted. Must be 90 days greater than cold_storage_after.
-	DeleteAfter *float64 `json:"deleteAfter,omitempty" tf:"delete_after,omitempty"`
+	DeleteAfter *int64 `json:"deleteAfter,omitempty" tf:"delete_after,omitempty"`
 
 	// This setting will instruct your backup plan to transition supported resources to archive (cold) storage tier in accordance with your lifecycle settings.
 	OptInToArchiveForSupportedResources *bool `json:"optInToArchiveForSupportedResources,omitempty" tf:"opt_in_to_archive_for_supported_resources,omitempty"`
@@ -241,10 +228,10 @@ type RuleLifecycleInitParameters struct {
 type RuleLifecycleObservation struct {
 
 	// Specifies the number of days after creation that a recovery point is moved to cold storage.
-	ColdStorageAfter *float64 `json:"coldStorageAfter,omitempty" tf:"cold_storage_after,omitempty"`
+	ColdStorageAfter *int64 `json:"coldStorageAfter,omitempty" tf:"cold_storage_after,omitempty"`
 
 	// Specifies the number of days after creation that a recovery point is deleted. Must be 90 days greater than cold_storage_after.
-	DeleteAfter *float64 `json:"deleteAfter,omitempty" tf:"delete_after,omitempty"`
+	DeleteAfter *int64 `json:"deleteAfter,omitempty" tf:"delete_after,omitempty"`
 
 	// This setting will instruct your backup plan to transition supported resources to archive (cold) storage tier in accordance with your lifecycle settings.
 	OptInToArchiveForSupportedResources *bool `json:"optInToArchiveForSupportedResources,omitempty" tf:"opt_in_to_archive_for_supported_resources,omitempty"`
@@ -254,11 +241,11 @@ type RuleLifecycleParameters struct {
 
 	// Specifies the number of days after creation that a recovery point is moved to cold storage.
 	// +kubebuilder:validation:Optional
-	ColdStorageAfter *float64 `json:"coldStorageAfter,omitempty" tf:"cold_storage_after,omitempty"`
+	ColdStorageAfter *int64 `json:"coldStorageAfter,omitempty" tf:"cold_storage_after,omitempty"`
 
 	// Specifies the number of days after creation that a recovery point is deleted. Must be 90 days greater than cold_storage_after.
 	// +kubebuilder:validation:Optional
-	DeleteAfter *float64 `json:"deleteAfter,omitempty" tf:"delete_after,omitempty"`
+	DeleteAfter *int64 `json:"deleteAfter,omitempty" tf:"delete_after,omitempty"`
 
 	// This setting will instruct your backup plan to transition supported resources to archive (cold) storage tier in accordance with your lifecycle settings.
 	// +kubebuilder:validation:Optional
@@ -268,7 +255,7 @@ type RuleLifecycleParameters struct {
 type RuleObservation struct {
 
 	// The amount of time in minutes AWS Backup attempts a backup before canceling the job and returning an error.
-	CompletionWindow *float64 `json:"completionWindow,omitempty" tf:"completion_window,omitempty"`
+	CompletionWindow *int64 `json:"completionWindow,omitempty" tf:"completion_window,omitempty"`
 
 	// Configuration block(s) with copy operation settings. Detailed below.
 	CopyAction []CopyActionObservation `json:"copyAction,omitempty" tf:"copy_action,omitempty"`
@@ -293,7 +280,7 @@ type RuleObservation struct {
 	ScheduleExpressionTimezone *string `json:"scheduleExpressionTimezone,omitempty" tf:"schedule_expression_timezone,omitempty"`
 
 	// The amount of time in minutes before beginning a backup.
-	StartWindow *float64 `json:"startWindow,omitempty" tf:"start_window,omitempty"`
+	StartWindow *int64 `json:"startWindow,omitempty" tf:"start_window,omitempty"`
 
 	// The name of a logical container where backups are stored.
 	TargetVaultName *string `json:"targetVaultName,omitempty" tf:"target_vault_name,omitempty"`
@@ -303,7 +290,7 @@ type RuleParameters struct {
 
 	// The amount of time in minutes AWS Backup attempts a backup before canceling the job and returning an error.
 	// +kubebuilder:validation:Optional
-	CompletionWindow *float64 `json:"completionWindow,omitempty" tf:"completion_window,omitempty"`
+	CompletionWindow *int64 `json:"completionWindow,omitempty" tf:"completion_window,omitempty"`
 
 	// Configuration block(s) with copy operation settings. Detailed below.
 	// +kubebuilder:validation:Optional
@@ -316,11 +303,6 @@ type RuleParameters struct {
 	// The lifecycle defines when a protected resource is transitioned to cold storage and when it expires.  Fields documented below.
 	// +kubebuilder:validation:Optional
 	Lifecycle *RuleLifecycleParameters `json:"lifecycle,omitempty" tf:"lifecycle,omitempty"`
-
-	// Metadata that you can assign to help organize the resources that you create.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	RecoveryPointTags map[string]*string `json:"recoveryPointTags,omitempty" tf:"recovery_point_tags,omitempty"`
 
 	// An display name for a backup rule.
 	// +kubebuilder:validation:Optional
@@ -336,7 +318,7 @@ type RuleParameters struct {
 
 	// The amount of time in minutes before beginning a backup.
 	// +kubebuilder:validation:Optional
-	StartWindow *float64 `json:"startWindow,omitempty" tf:"start_window,omitempty"`
+	StartWindow *int64 `json:"startWindow,omitempty" tf:"start_window,omitempty"`
 
 	// The name of a logical container where backups are stored.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/backup/v1beta1.Vault

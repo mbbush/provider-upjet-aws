@@ -134,7 +134,7 @@ func (in *DNSRecordsInitParameters) DeepCopyInto(out *DNSRecordsInitParameters) 
 	*out = *in
 	if in.TTL != nil {
 		in, out := &in.TTL, &out.TTL
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Type != nil {
@@ -159,7 +159,7 @@ func (in *DNSRecordsObservation) DeepCopyInto(out *DNSRecordsObservation) {
 	*out = *in
 	if in.TTL != nil {
 		in, out := &in.TTL, &out.TTL
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Type != nil {
@@ -184,7 +184,7 @@ func (in *DNSRecordsParameters) DeepCopyInto(out *DNSRecordsParameters) {
 	*out = *in
 	if in.TTL != nil {
 		in, out := &in.TTL, &out.TTL
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Type != nil {
@@ -209,7 +209,7 @@ func (in *HealthCheckConfigInitParameters) DeepCopyInto(out *HealthCheckConfigIn
 	*out = *in
 	if in.FailureThreshold != nil {
 		in, out := &in.FailureThreshold, &out.FailureThreshold
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ResourcePath != nil {
@@ -239,7 +239,7 @@ func (in *HealthCheckConfigObservation) DeepCopyInto(out *HealthCheckConfigObser
 	*out = *in
 	if in.FailureThreshold != nil {
 		in, out := &in.FailureThreshold, &out.FailureThreshold
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ResourcePath != nil {
@@ -269,7 +269,7 @@ func (in *HealthCheckConfigParameters) DeepCopyInto(out *HealthCheckConfigParame
 	*out = *in
 	if in.FailureThreshold != nil {
 		in, out := &in.FailureThreshold, &out.FailureThreshold
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ResourcePath != nil {
@@ -299,7 +299,7 @@ func (in *HealthCheckCustomConfigInitParameters) DeepCopyInto(out *HealthCheckCu
 	*out = *in
 	if in.FailureThreshold != nil {
 		in, out := &in.FailureThreshold, &out.FailureThreshold
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -319,7 +319,7 @@ func (in *HealthCheckCustomConfigObservation) DeepCopyInto(out *HealthCheckCusto
 	*out = *in
 	if in.FailureThreshold != nil {
 		in, out := &in.FailureThreshold, &out.FailureThreshold
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -339,7 +339,7 @@ func (in *HealthCheckCustomConfigParameters) DeepCopyInto(out *HealthCheckCustom
 	*out = *in
 	if in.FailureThreshold != nil {
 		in, out := &in.FailureThreshold, &out.FailureThreshold
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -418,22 +418,6 @@ func (in *ServiceInitParameters) DeepCopyInto(out *ServiceInitParameters) {
 		in, out := &in.NamespaceID, &out.NamespaceID
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.Type != nil {
 		in, out := &in.Type, &out.Type
@@ -623,22 +607,6 @@ func (in *ServiceParameters) DeepCopyInto(out *ServiceParameters) {
 		in, out := &in.Region, &out.Region
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.Type != nil {
 		in, out := &in.Type, &out.Type

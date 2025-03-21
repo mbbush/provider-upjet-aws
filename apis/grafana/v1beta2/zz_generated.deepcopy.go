@@ -369,22 +369,6 @@ func (in *WorkspaceInitParameters) DeepCopyInto(out *WorkspaceInitParameters) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.VPCConfiguration != nil {
 		in, out := &in.VPCConfiguration, &out.VPCConfiguration
 		*out = new(VPCConfigurationInitParameters)
@@ -711,22 +695,6 @@ func (in *WorkspaceParameters) DeepCopyInto(out *WorkspaceParameters) {
 		in, out := &in.StackSetName, &out.StackSetName
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.VPCConfiguration != nil {
 		in, out := &in.VPCConfiguration, &out.VPCConfiguration

@@ -31,7 +31,7 @@ type TrafficPolicyInstanceInitParameters struct {
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
 
 	// TTL that you want Amazon Route 53 to assign to all the resource record sets that it creates in the specified hosted zone.
-	TTL *float64 `json:"ttl,omitempty" tf:"ttl,omitempty"`
+	TTL *int64 `json:"ttl,omitempty" tf:"ttl,omitempty"`
 
 	// ID of the traffic policy that you want to use to create resource record sets in the specified hosted zone.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/route53/v1beta1.TrafficPolicy
@@ -46,7 +46,7 @@ type TrafficPolicyInstanceInitParameters struct {
 	TrafficPolicyIDSelector *v1.Selector `json:"trafficPolicyIdSelector,omitempty" tf:"-"`
 
 	// Version of the traffic policy
-	TrafficPolicyVersion *float64 `json:"trafficPolicyVersion,omitempty" tf:"traffic_policy_version,omitempty"`
+	TrafficPolicyVersion *int64 `json:"trafficPolicyVersion,omitempty" tf:"traffic_policy_version,omitempty"`
 }
 
 type TrafficPolicyInstanceObservation struct {
@@ -61,13 +61,13 @@ type TrafficPolicyInstanceObservation struct {
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
 
 	// TTL that you want Amazon Route 53 to assign to all the resource record sets that it creates in the specified hosted zone.
-	TTL *float64 `json:"ttl,omitempty" tf:"ttl,omitempty"`
+	TTL *int64 `json:"ttl,omitempty" tf:"ttl,omitempty"`
 
 	// ID of the traffic policy that you want to use to create resource record sets in the specified hosted zone.
 	TrafficPolicyID *string `json:"trafficPolicyId,omitempty" tf:"traffic_policy_id,omitempty"`
 
 	// Version of the traffic policy
-	TrafficPolicyVersion *float64 `json:"trafficPolicyVersion,omitempty" tf:"traffic_policy_version,omitempty"`
+	TrafficPolicyVersion *int64 `json:"trafficPolicyVersion,omitempty" tf:"traffic_policy_version,omitempty"`
 }
 
 type TrafficPolicyInstanceParameters struct {
@@ -96,7 +96,7 @@ type TrafficPolicyInstanceParameters struct {
 
 	// TTL that you want Amazon Route 53 to assign to all the resource record sets that it creates in the specified hosted zone.
 	// +kubebuilder:validation:Optional
-	TTL *float64 `json:"ttl,omitempty" tf:"ttl,omitempty"`
+	TTL *int64 `json:"ttl,omitempty" tf:"ttl,omitempty"`
 
 	// ID of the traffic policy that you want to use to create resource record sets in the specified hosted zone.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/route53/v1beta1.TrafficPolicy
@@ -113,7 +113,7 @@ type TrafficPolicyInstanceParameters struct {
 
 	// Version of the traffic policy
 	// +kubebuilder:validation:Optional
-	TrafficPolicyVersion *float64 `json:"trafficPolicyVersion,omitempty" tf:"traffic_policy_version,omitempty"`
+	TrafficPolicyVersion *int64 `json:"trafficPolicyVersion,omitempty" tf:"traffic_policy_version,omitempty"`
 }
 
 // TrafficPolicyInstanceSpec defines the desired state of TrafficPolicyInstance

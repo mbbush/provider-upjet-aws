@@ -851,12 +851,6 @@ spec:
                           Valid values are TCP and UDP.
                         type: string
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   userSettings:
                     description: |-
                       Configuration block for the actions that are enabled or disabled for users during their streaming sessions. If not provided, these settings are configured automatically by AWS.
@@ -981,12 +975,6 @@ spec:
                           Valid values are TCP and UDP.
                         type: string
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   userSettings:
                     description: |-
                       Configuration block for the actions that are enabled or disabled for users during their streaming sessions. If not provided, these settings are configured automatically by AWS.

@@ -166,7 +166,7 @@ type GeoproximityRoutingPolicyInitParameters struct {
 	AwsRegion *string `json:"awsRegion,omitempty" tf:"aws_region,omitempty"`
 
 	// Route more traffic or less traffic to the resource by specifying a value ranges between -90 to 90. See https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-geoproximity.html for bias details.
-	Bias *float64 `json:"bias,omitempty" tf:"bias,omitempty"`
+	Bias *int64 `json:"bias,omitempty" tf:"bias,omitempty"`
 
 	// Specify latitude and longitude for routing traffic to non-AWS resources.
 	Coordinates []CoordinatesInitParameters `json:"coordinates,omitempty" tf:"coordinates,omitempty"`
@@ -181,7 +181,7 @@ type GeoproximityRoutingPolicyObservation struct {
 	AwsRegion *string `json:"awsRegion,omitempty" tf:"aws_region,omitempty"`
 
 	// Route more traffic or less traffic to the resource by specifying a value ranges between -90 to 90. See https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-geoproximity.html for bias details.
-	Bias *float64 `json:"bias,omitempty" tf:"bias,omitempty"`
+	Bias *int64 `json:"bias,omitempty" tf:"bias,omitempty"`
 
 	// Specify latitude and longitude for routing traffic to non-AWS resources.
 	Coordinates []CoordinatesObservation `json:"coordinates,omitempty" tf:"coordinates,omitempty"`
@@ -198,7 +198,7 @@ type GeoproximityRoutingPolicyParameters struct {
 
 	// Route more traffic or less traffic to the resource by specifying a value ranges between -90 to 90. See https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-geoproximity.html for bias details.
 	// +kubebuilder:validation:Optional
-	Bias *float64 `json:"bias,omitempty" tf:"bias,omitempty"`
+	Bias *int64 `json:"bias,omitempty" tf:"bias,omitempty"`
 
 	// Specify latitude and longitude for routing traffic to non-AWS resources.
 	// +kubebuilder:validation:Optional
@@ -285,7 +285,7 @@ type RecordInitParameters struct {
 	SetIdentifier *string `json:"setIdentifier,omitempty" tf:"set_identifier,omitempty"`
 
 	// The TTL of the record.
-	TTL *float64 `json:"ttl,omitempty" tf:"ttl,omitempty"`
+	TTL *int64 `json:"ttl,omitempty" tf:"ttl,omitempty"`
 
 	// The record type. Valid values are A, AAAA, CAA, CNAME, DS, MX, NAPTR, NS, PTR, SOA, SPF, SRV and TXT.
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
@@ -352,7 +352,7 @@ type RecordObservation struct {
 	SetIdentifier *string `json:"setIdentifier,omitempty" tf:"set_identifier,omitempty"`
 
 	// The TTL of the record.
-	TTL *float64 `json:"ttl,omitempty" tf:"ttl,omitempty"`
+	TTL *int64 `json:"ttl,omitempty" tf:"ttl,omitempty"`
 
 	// The record type. Valid values are A, AAAA, CAA, CNAME, DS, MX, NAPTR, NS, PTR, SOA, SPF, SRV and TXT.
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
@@ -443,7 +443,7 @@ type RecordParameters struct {
 
 	// The TTL of the record.
 	// +kubebuilder:validation:Optional
-	TTL *float64 `json:"ttl,omitempty" tf:"ttl,omitempty"`
+	TTL *int64 `json:"ttl,omitempty" tf:"ttl,omitempty"`
 
 	// The record type. Valid values are A, AAAA, CAA, CNAME, DS, MX, NAPTR, NS, PTR, SOA, SPF, SRV and TXT.
 	// +kubebuilder:validation:Optional
@@ -470,20 +470,20 @@ type RecordParameters struct {
 type WeightedRoutingPolicyInitParameters struct {
 
 	// A numeric value indicating the relative weight of the record. See http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted.
-	Weight *float64 `json:"weight,omitempty" tf:"weight,omitempty"`
+	Weight *int64 `json:"weight,omitempty" tf:"weight,omitempty"`
 }
 
 type WeightedRoutingPolicyObservation struct {
 
 	// A numeric value indicating the relative weight of the record. See http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted.
-	Weight *float64 `json:"weight,omitempty" tf:"weight,omitempty"`
+	Weight *int64 `json:"weight,omitempty" tf:"weight,omitempty"`
 }
 
 type WeightedRoutingPolicyParameters struct {
 
 	// A numeric value indicating the relative weight of the record. See http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted.
 	// +kubebuilder:validation:Optional
-	Weight *float64 `json:"weight" tf:"weight,omitempty"`
+	Weight *int64 `json:"weight" tf:"weight,omitempty"`
 }
 
 // RecordSpec defines the desired state of Record

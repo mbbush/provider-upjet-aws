@@ -33,5 +33,3 @@ spec:
         sourceCodeVersion:
         - type: BRANCH
           value: main
-    tags:
-      Name: example-apprunner-service

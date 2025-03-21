@@ -29,10 +29,6 @@ type PermissionSetInitParameters struct {
 
 	// The length of time that the application user sessions are valid in the ISO-8601 standard. Default: PT1H.
 	SessionDuration *string `json:"sessionDuration,omitempty" tf:"session_duration,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type PermissionSetObservation struct {
@@ -96,11 +92,6 @@ type PermissionSetParameters struct {
 	// The length of time that the application user sessions are valid in the ISO-8601 standard. Default: PT1H.
 	// +kubebuilder:validation:Optional
 	SessionDuration *string `json:"sessionDuration,omitempty" tf:"session_duration,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // PermissionSetSpec defines the desired state of PermissionSet

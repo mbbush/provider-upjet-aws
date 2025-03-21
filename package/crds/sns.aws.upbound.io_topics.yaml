@@ -230,7 +230,8 @@ spec:
                     type: object
                   applicationSuccessFeedbackSampleRate:
                     description: Percentage of success to sample
-                    type: number
+                    format: int64
+                    type: integer
                   archivePolicy:
                     description: The message archive policy for FIFO topics. More
                       details in the AWS documentation.
@@ -410,7 +411,8 @@ spec:
                     type: object
                   firehoseSuccessFeedbackSampleRate:
                     description: Percentage of success to sample
-                    type: number
+                    format: int64
+                    type: integer
                   httpFailureFeedbackRoleArn:
                     description: IAM role for failure feedback
                     type: string
@@ -568,7 +570,8 @@ spec:
                     type: object
                   httpSuccessFeedbackSampleRate:
                     description: Percentage of success to sample
-                    type: number
+                    format: int64
+                    type: integer
                   kmsMasterKeyId:
                     description: The ID of an AWS-managed customer master key (CMK)
                       for Amazon SNS or a custom CMK. For more information, see Key
@@ -731,7 +734,8 @@ spec:
                     type: object
                   lambdaSuccessFeedbackSampleRate:
                     description: Percentage of success to sample
-                    type: number
+                    format: int64
+                    type: integer
                   policy:
                     description: The fully-formed AWS policy as JSON.
                     type: string
@@ -745,7 +749,8 @@ spec:
                       while creating the signature of the notifications, subscription
                       confirmations, or unsubscribe confirmation messages sent by
                       Amazon SNS.
-                    type: number
+                    format: int64
+                    type: integer
                   sqsFailureFeedbackRoleArn:
                     description: IAM role for failure feedback
                     type: string
@@ -903,13 +908,8 @@ spec:
                     type: object
                   sqsSuccessFeedbackSampleRate:
                     description: Percentage of success to sample
-                    type: number
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
+                    format: int64
+                    type: integer
                   tracingConfig:
                     description: 'Tracing mode of an Amazon SNS topic. Valid values:
                       "PassThrough", "Active".'
@@ -1087,7 +1087,8 @@ spec:
                     type: object
                   applicationSuccessFeedbackSampleRate:
                     description: Percentage of success to sample
-                    type: number
+                    format: int64
+                    type: integer
                   archivePolicy:
                     description: The message archive policy for FIFO topics. More
                       details in the AWS documentation.
@@ -1267,7 +1268,8 @@ spec:
                     type: object
                   firehoseSuccessFeedbackSampleRate:
                     description: Percentage of success to sample
-                    type: number
+                    format: int64
+                    type: integer
                   httpFailureFeedbackRoleArn:
                     description: IAM role for failure feedback
                     type: string
@@ -1425,7 +1427,8 @@ spec:
                     type: object
                   httpSuccessFeedbackSampleRate:
                     description: Percentage of success to sample
-                    type: number
+                    format: int64
+                    type: integer
                   kmsMasterKeyId:
                     description: The ID of an AWS-managed customer master key (CMK)
                       for Amazon SNS or a custom CMK. For more information, see Key
@@ -1588,7 +1591,8 @@ spec:
                     type: object
                   lambdaSuccessFeedbackSampleRate:
                     description: Percentage of success to sample
-                    type: number
+                    format: int64
+                    type: integer
                   policy:
                     description: The fully-formed AWS policy as JSON.
                     type: string
@@ -1598,7 +1602,8 @@ spec:
                       while creating the signature of the notifications, subscription
                       confirmations, or unsubscribe confirmation messages sent by
                       Amazon SNS.
-                    type: number
+                    format: int64
+                    type: integer
                   sqsFailureFeedbackRoleArn:
                     description: IAM role for failure feedback
                     type: string
@@ -1756,13 +1761,8 @@ spec:
                     type: object
                   sqsSuccessFeedbackSampleRate:
                     description: Percentage of success to sample
-                    type: number
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
+                    format: int64
+                    type: integer
                   tracingConfig:
                     description: 'Tracing mode of an Amazon SNS topic. Valid values:
                       "PassThrough", "Active".'
@@ -1949,7 +1949,8 @@ spec:
                     type: string
                   applicationSuccessFeedbackSampleRate:
                     description: Percentage of success to sample
-                    type: number
+                    format: int64
+                    type: integer
                   archivePolicy:
                     description: The message archive policy for FIFO topics. More
                       details in the AWS documentation.
@@ -1989,7 +1990,8 @@ spec:
                     type: string
                   firehoseSuccessFeedbackSampleRate:
                     description: Percentage of success to sample
-                    type: number
+                    format: int64
+                    type: integer
                   httpFailureFeedbackRoleArn:
                     description: IAM role for failure feedback
                     type: string
@@ -1999,7 +2001,8 @@ spec:
                     type: string
                   httpSuccessFeedbackSampleRate:
                     description: Percentage of success to sample
-                    type: number
+                    format: int64
+                    type: integer
                   id:
                     description: The ARN of the SNS topic
                     type: string
@@ -2017,7 +2020,8 @@ spec:
                     type: string
                   lambdaSuccessFeedbackSampleRate:
                     description: Percentage of success to sample
-                    type: number
+                    format: int64
+                    type: integer
                   owner:
                     description: The AWS Account ID of the SNS topic owner
                     type: string
@@ -2030,7 +2034,8 @@ spec:
                       while creating the signature of the notifications, subscription
                       confirmations, or unsubscribe confirmation messages sent by
                       Amazon SNS.
-                    type: number
+                    format: int64
+                    type: integer
                   sqsFailureFeedbackRoleArn:
                     description: IAM role for failure feedback
                     type: string
@@ -2040,7 +2045,8 @@ spec:
                     type: string
                   sqsSuccessFeedbackSampleRate:
                     description: Percentage of success to sample
-                    type: number
+                    format: int64
+                    type: integer
                   tags:
                     additionalProperties:
                       type: string

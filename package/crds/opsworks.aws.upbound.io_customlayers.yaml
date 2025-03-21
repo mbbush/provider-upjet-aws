@@ -1584,17 +1584,20 @@ spec:
                             batchCount:
                               description: Specifies the max number of log events
                                 in a batch, up to 10000. The default value is 1000.
-                              type: number
+                              format: int64
+                              type: integer
                             batchSize:
                               description: Specifies the maximum size of log events
                                 in a batch, in bytes, up to 1048576 bytes. The default
                                 value is 32768 bytes.
-                              type: number
+                              format: int64
+                              type: integer
                             bufferDuration:
                               description: Specifies the time duration for the batching
                                 of log events. The minimum value is 5000 and default
                                 value is 5000.
-                              type: number
+                              format: int64
+                              type: integer
                             datetimeFormat:
                               description: Specifies how the timestamp is extracted
                                 from logs. For more information, see the CloudWatch
@@ -1762,20 +1765,23 @@ spec:
                           type: boolean
                         iops:
                           description: For PIOPS volumes, the IOPS per disk.
-                          type: number
+                          format: int64
+                          type: integer
                         mountPoint:
                           description: The path to mount the EBS volume on the layer's
                             instances.
                           type: string
                         numberOfDisks:
                           description: The number of disks to use for the EBS volume.
-                          type: number
+                          format: int64
+                          type: integer
                         raidLevel:
                           description: The RAID level to use for the volume.
                           type: string
                         size:
                           description: The size of the volume in gigabytes.
-                          type: number
+                          format: int64
+                          type: integer
                         type:
                           description: The type of volume to create. This may be standard
                             (the default), io1 or gp2.
@@ -1793,7 +1799,8 @@ spec:
                   instanceShutdownTimeout:
                     description: The time, in seconds, that OpsWorks will wait for
                       Chef to complete after triggering the Shutdown event.
-                    type: number
+                    format: int64
+                    type: integer
                   loadBasedAutoScaling:
                     description: Load-based auto scaling configuration. See Load Based
                       AutoScaling
@@ -1818,11 +1825,13 @@ spec:
                             description: The amount of time (in minutes) after a scaling
                               event occurs that AWS OpsWorks Stacks should ignore
                               metrics and suppress additional scaling events.
-                            type: number
+                            format: int64
+                            type: integer
                           instanceCount:
                             description: The number of instances to add or remove
                               when the load exceeds a threshold.
-                            type: number
+                            format: int64
+                            type: integer
                           loadThreshold:
                             description: The load threshold. A value of -1 disables
                               the threshold.
@@ -1836,7 +1845,8 @@ spec:
                             description: The amount of time, in minutes, that the
                               load must exceed a threshold before more instances are
                               added or removed.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       enable:
                         description: Whether load-based auto scaling is enabled for
@@ -1862,11 +1872,13 @@ spec:
                             description: The amount of time (in minutes) after a scaling
                               event occurs that AWS OpsWorks Stacks should ignore
                               metrics and suppress additional scaling events.
-                            type: number
+                            format: int64
+                            type: integer
                           instanceCount:
                             description: The number of instances to add or remove
                               when the load exceeds a threshold.
-                            type: number
+                            format: int64
+                            type: integer
                           loadThreshold:
                             description: The load threshold. A value of -1 disables
                               the threshold.
@@ -1880,7 +1892,8 @@ spec:
                             description: The amount of time, in minutes, that the
                               load must exceed a threshold before more instances are
                               added or removed.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                     type: object
                   name:
@@ -1974,12 +1987,6 @@ spec:
                       type: string
                     type: array
                     x-kubernetes-list-type: set
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   useEbsOptimizedInstances:
                     description: Whether to use EBS-optimized instances.
                     type: boolean
@@ -2022,17 +2029,20 @@ spec:
                             batchCount:
                               description: Specifies the max number of log events
                                 in a batch, up to 10000. The default value is 1000.
-                              type: number
+                              format: int64
+                              type: integer
                             batchSize:
                               description: Specifies the maximum size of log events
                                 in a batch, in bytes, up to 1048576 bytes. The default
                                 value is 32768 bytes.
-                              type: number
+                              format: int64
+                              type: integer
                             bufferDuration:
                               description: Specifies the time duration for the batching
                                 of log events. The minimum value is 5000 and default
                                 value is 5000.
-                              type: number
+                              format: int64
+                              type: integer
                             datetimeFormat:
                               description: Specifies how the timestamp is extracted
                                 from logs. For more information, see the CloudWatch
@@ -2200,20 +2210,23 @@ spec:
                           type: boolean
                         iops:
                           description: For PIOPS volumes, the IOPS per disk.
-                          type: number
+                          format: int64
+                          type: integer
                         mountPoint:
                           description: The path to mount the EBS volume on the layer's
                             instances.
                           type: string
                         numberOfDisks:
                           description: The number of disks to use for the EBS volume.
-                          type: number
+                          format: int64
+                          type: integer
                         raidLevel:
                           description: The RAID level to use for the volume.
                           type: string
                         size:
                           description: The size of the volume in gigabytes.
-                          type: number
+                          format: int64
+                          type: integer
                         type:
                           description: The type of volume to create. This may be standard
                             (the default), io1 or gp2.
@@ -2231,7 +2244,8 @@ spec:
                   instanceShutdownTimeout:
                     description: The time, in seconds, that OpsWorks will wait for
                       Chef to complete after triggering the Shutdown event.
-                    type: number
+                    format: int64
+                    type: integer
                   loadBasedAutoScaling:
                     description: Load-based auto scaling configuration. See Load Based
                       AutoScaling
@@ -2256,11 +2270,13 @@ spec:
                             description: The amount of time (in minutes) after a scaling
                               event occurs that AWS OpsWorks Stacks should ignore
                               metrics and suppress additional scaling events.
-                            type: number
+                            format: int64
+                            type: integer
                           instanceCount:
                             description: The number of instances to add or remove
                               when the load exceeds a threshold.
-                            type: number
+                            format: int64
+                            type: integer
                           loadThreshold:
                             description: The load threshold. A value of -1 disables
                               the threshold.
@@ -2274,7 +2290,8 @@ spec:
                             description: The amount of time, in minutes, that the
                               load must exceed a threshold before more instances are
                               added or removed.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       enable:
                         description: Whether load-based auto scaling is enabled for
@@ -2300,11 +2317,13 @@ spec:
                             description: The amount of time (in minutes) after a scaling
                               event occurs that AWS OpsWorks Stacks should ignore
                               metrics and suppress additional scaling events.
-                            type: number
+                            format: int64
+                            type: integer
                           instanceCount:
                             description: The number of instances to add or remove
                               when the load exceeds a threshold.
-                            type: number
+                            format: int64
+                            type: integer
                           loadThreshold:
                             description: The load threshold. A value of -1 disables
                               the threshold.
@@ -2318,7 +2337,8 @@ spec:
                             description: The amount of time, in minutes, that the
                               load must exceed a threshold before more instances are
                               added or removed.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                     type: object
                   name:
@@ -2412,12 +2432,6 @@ spec:
                       type: string
                     type: array
                     x-kubernetes-list-type: set
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   useEbsOptimizedInstances:
                     description: Whether to use EBS-optimized instances.
                     type: boolean
@@ -2631,17 +2645,20 @@ spec:
                             batchCount:
                               description: Specifies the max number of log events
                                 in a batch, up to 10000. The default value is 1000.
-                              type: number
+                              format: int64
+                              type: integer
                             batchSize:
                               description: Specifies the maximum size of log events
                                 in a batch, in bytes, up to 1048576 bytes. The default
                                 value is 32768 bytes.
-                              type: number
+                              format: int64
+                              type: integer
                             bufferDuration:
                               description: Specifies the time duration for the batching
                                 of log events. The minimum value is 5000 and default
                                 value is 5000.
-                              type: number
+                              format: int64
+                              type: integer
                             datetimeFormat:
                               description: Specifies how the timestamp is extracted
                                 from logs. For more information, see the CloudWatch
@@ -2731,20 +2748,23 @@ spec:
                           type: boolean
                         iops:
                           description: For PIOPS volumes, the IOPS per disk.
-                          type: number
+                          format: int64
+                          type: integer
                         mountPoint:
                           description: The path to mount the EBS volume on the layer's
                             instances.
                           type: string
                         numberOfDisks:
                           description: The number of disks to use for the EBS volume.
-                          type: number
+                          format: int64
+                          type: integer
                         raidLevel:
                           description: The RAID level to use for the volume.
                           type: string
                         size:
                           description: The size of the volume in gigabytes.
-                          type: number
+                          format: int64
+                          type: integer
                         type:
                           description: The type of volume to create. This may be standard
                             (the default), io1 or gp2.
@@ -2765,7 +2785,8 @@ spec:
                   instanceShutdownTimeout:
                     description: The time, in seconds, that OpsWorks will wait for
                       Chef to complete after triggering the Shutdown event.
-                    type: number
+                    format: int64
+                    type: integer
                   loadBasedAutoScaling:
                     description: Load-based auto scaling configuration. See Load Based
                       AutoScaling
@@ -2790,11 +2811,13 @@ spec:
                             description: The amount of time (in minutes) after a scaling
                               event occurs that AWS OpsWorks Stacks should ignore
                               metrics and suppress additional scaling events.
-                            type: number
+                            format: int64
+                            type: integer
                           instanceCount:
                             description: The number of instances to add or remove
                               when the load exceeds a threshold.
-                            type: number
+                            format: int64
+                            type: integer
                           loadThreshold:
                             description: The load threshold. A value of -1 disables
                               the threshold.
@@ -2808,7 +2831,8 @@ spec:
                             description: The amount of time, in minutes, that the
                               load must exceed a threshold before more instances are
                               added or removed.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       enable:
                         description: Whether load-based auto scaling is enabled for
@@ -2834,11 +2858,13 @@ spec:
                             description: The amount of time (in minutes) after a scaling
                               event occurs that AWS OpsWorks Stacks should ignore
                               metrics and suppress additional scaling events.
-                            type: number
+                            format: int64
+                            type: integer
                           instanceCount:
                             description: The number of instances to add or remove
                               when the load exceeds a threshold.
-                            type: number
+                            format: int64
+                            type: integer
                           loadThreshold:
                             description: The load threshold. A value of -1 disables
                               the threshold.
@@ -2852,7 +2878,8 @@ spec:
                             description: The amount of time, in minutes, that the
                               load must exceed a threshold before more instances are
                               added or removed.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                     type: object
                   name:

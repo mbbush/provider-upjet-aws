@@ -1137,7 +1137,8 @@ spec:
                     description: Number of days to make a CA restorable after it has
                       been deleted, must be between 7 to 30 days, with default to
                       30 days.
-                    type: number
+                    format: int64
+                    type: integer
                   region:
                     description: Region is the region you'd like your resource to
                       be created in.
@@ -1165,7 +1166,8 @@ spec:
                           expirationInDays:
                             description: Number of days until a certificate expires.
                               Must be between 1 and 5000.
-                            type: number
+                            format: int64
+                            type: integer
                           s3BucketName:
                             description: Name of the S3 bucket that contains the CRL.
                               If you do not provide a value for the custom_cname argument,
@@ -1197,12 +1199,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   type:
                     description: 'Type of the certificate authority. Defaults to SUBORDINATE.
                       Valid values: ROOT and SUBORDINATE.'
@@ -1340,7 +1336,8 @@ spec:
                     description: Number of days to make a CA restorable after it has
                       been deleted, must be between 7 to 30 days, with default to
                       30 days.
-                    type: number
+                    format: int64
+                    type: integer
                   revocationConfiguration:
                     description: Nested argument containing revocation configuration.
                       Defined below.
@@ -1364,7 +1361,8 @@ spec:
                           expirationInDays:
                             description: Number of days until a certificate expires.
                               Must be between 1 and 5000.
-                            type: number
+                            format: int64
+                            type: integer
                           s3BucketName:
                             description: Name of the S3 bucket that contains the CRL.
                               If you do not provide a value for the custom_cname argument,
@@ -1396,12 +1394,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   type:
                     description: 'Type of the certificate authority. Defaults to SUBORDINATE.
                       Valid values: ROOT and SUBORDINATE.'
@@ -1736,7 +1728,8 @@ spec:
                     description: Number of days to make a CA restorable after it has
                       been deleted, must be between 7 to 30 days, with default to
                       30 days.
-                    type: number
+                    format: int64
+                    type: integer
                   revocationConfiguration:
                     description: Nested argument containing revocation configuration.
                       Defined below.
@@ -1760,7 +1753,8 @@ spec:
                           expirationInDays:
                             description: Number of days until a certificate expires.
                               Must be between 1 and 5000.
-                            type: number
+                            format: int64
+                            type: integer
                           s3BucketName:
                             description: Name of the S3 bucket that contains the CRL.
                               If you do not provide a value for the custom_cname argument,

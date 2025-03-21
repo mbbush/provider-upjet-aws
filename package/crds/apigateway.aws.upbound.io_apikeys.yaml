@@ -91,12 +91,6 @@ spec:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   valueSecretRef:
                     description: Value of the API key. If specified, the value must
                       be an alphanumeric string between 20 and 128 characters. If
@@ -147,12 +141,6 @@ spec:
                   name:
                     description: Name of the API key.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   valueSecretRef:
                     description: Value of the API key. If specified, the value must
                       be an alphanumeric string between 20 and 128 characters. If

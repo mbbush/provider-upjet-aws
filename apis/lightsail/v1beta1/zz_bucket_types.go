@@ -20,10 +20,6 @@ type BucketInitParameters struct {
 
 	// AWS by default will not delete an s3 bucket which is not empty, to prevent losing bucket data and affecting other resources in lightsail. If force_delete is set to true the bucket will be deleted even when not empty.
 	ForceDelete *bool `json:"forceDelete,omitempty" tf:"force_delete,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type BucketObservation struct {
@@ -79,11 +75,6 @@ type BucketParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // BucketSpec defines the desired state of Bucket

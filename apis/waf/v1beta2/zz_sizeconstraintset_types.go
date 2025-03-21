@@ -91,7 +91,7 @@ type SizeConstraintsInitParameters struct {
 	FieldToMatch *SizeConstraintsFieldToMatchInitParameters `json:"fieldToMatch,omitempty" tf:"field_to_match,omitempty"`
 
 	// Size in bytes that you want to compare against the size of the specified field_to_match. Valid values for size are between 0 and 21474836480 bytes (0 and 20 GB).
-	Size *float64 `json:"size,omitempty" tf:"size,omitempty"`
+	Size *int64 `json:"size,omitempty" tf:"size,omitempty"`
 
 	// Parameter is used to eliminate unusual formatting that attackers may use in web requests to bypass AWS WAF. When a transformation is specified, AWS WAF performs the transformation on the field_to_match before inspecting the request for a match. Some examples of supported transformations are CMD_LINE, HTML_ENTITY_DECODE, and NONE. You can find a complete list of supported values in the AWS WAF API Reference.
 	// Note: If you choose BODY as the type, you must also choose NONE because CloudFront only forwards the first 8192 bytes for inspection.
@@ -107,7 +107,7 @@ type SizeConstraintsObservation struct {
 	FieldToMatch *SizeConstraintsFieldToMatchObservation `json:"fieldToMatch,omitempty" tf:"field_to_match,omitempty"`
 
 	// Size in bytes that you want to compare against the size of the specified field_to_match. Valid values for size are between 0 and 21474836480 bytes (0 and 20 GB).
-	Size *float64 `json:"size,omitempty" tf:"size,omitempty"`
+	Size *int64 `json:"size,omitempty" tf:"size,omitempty"`
 
 	// Parameter is used to eliminate unusual formatting that attackers may use in web requests to bypass AWS WAF. When a transformation is specified, AWS WAF performs the transformation on the field_to_match before inspecting the request for a match. Some examples of supported transformations are CMD_LINE, HTML_ENTITY_DECODE, and NONE. You can find a complete list of supported values in the AWS WAF API Reference.
 	// Note: If you choose BODY as the type, you must also choose NONE because CloudFront only forwards the first 8192 bytes for inspection.
@@ -126,7 +126,7 @@ type SizeConstraintsParameters struct {
 
 	// Size in bytes that you want to compare against the size of the specified field_to_match. Valid values for size are between 0 and 21474836480 bytes (0 and 20 GB).
 	// +kubebuilder:validation:Optional
-	Size *float64 `json:"size" tf:"size,omitempty"`
+	Size *int64 `json:"size" tf:"size,omitempty"`
 
 	// Parameter is used to eliminate unusual formatting that attackers may use in web requests to bypass AWS WAF. When a transformation is specified, AWS WAF performs the transformation on the field_to_match before inspecting the request for a match. Some examples of supported transformations are CMD_LINE, HTML_ENTITY_DECODE, and NONE. You can find a complete list of supported values in the AWS WAF API Reference.
 	// Note: If you choose BODY as the type, you must also choose NONE because CloudFront only forwards the first 8192 bytes for inspection.

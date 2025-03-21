@@ -51,7 +51,7 @@ type EndpointObservation struct {
 	Address *string `json:"address,omitempty" tf:"address,omitempty"`
 
 	// The port number on which the cluster accepts incoming connections.
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// The VPC endpoint or the Redshift Serverless workgroup. See VPC Endpoint below.
 	VPCEndpoint []EndpointVPCEndpointObservation `json:"vpcEndpoint,omitempty" tf:"vpc_endpoint,omitempty"`
@@ -102,7 +102,7 @@ type VPCEndpointNetworkInterfaceParameters struct {
 type WorkgroupInitParameters struct {
 
 	// The base data warehouse capacity of the workgroup in Redshift Processing Units (RPUs).
-	BaseCapacity *float64 `json:"baseCapacity,omitempty" tf:"base_capacity,omitempty"`
+	BaseCapacity *int64 `json:"baseCapacity,omitempty" tf:"base_capacity,omitempty"`
 
 	// An array of parameters to set for more control over a serverless database. See Config Parameter below.
 	ConfigParameter []ConfigParameterInitParameters `json:"configParameter,omitempty" tf:"config_parameter,omitempty"`
@@ -111,13 +111,13 @@ type WorkgroupInitParameters struct {
 	EnhancedVPCRouting *bool `json:"enhancedVpcRouting,omitempty" tf:"enhanced_vpc_routing,omitempty"`
 
 	// The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries, specified in Redshift Processing Units (RPUs).
-	MaxCapacity *float64 `json:"maxCapacity,omitempty" tf:"max_capacity,omitempty"`
+	MaxCapacity *int64 `json:"maxCapacity,omitempty" tf:"max_capacity,omitempty"`
 
 	// The name of the namespace.
 	NamespaceName *string `json:"namespaceName,omitempty" tf:"namespace_name,omitempty"`
 
 	// The port number on which the cluster accepts incoming connections.
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// A value that specifies whether the workgroup can be accessed from a public network.
 	PubliclyAccessible *bool `json:"publiclyAccessible,omitempty" tf:"publicly_accessible,omitempty"`
@@ -151,10 +151,6 @@ type WorkgroupInitParameters struct {
 	// +crossplane:generate:reference:selectorFieldName=SubnetIDSelector
 	// +listType=set
 	SubnetIds []*string `json:"subnetIds,omitempty" tf:"subnet_ids,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type WorkgroupObservation struct {
@@ -163,7 +159,7 @@ type WorkgroupObservation struct {
 	Arn *string `json:"arn,omitempty" tf:"arn,omitempty"`
 
 	// The base data warehouse capacity of the workgroup in Redshift Processing Units (RPUs).
-	BaseCapacity *float64 `json:"baseCapacity,omitempty" tf:"base_capacity,omitempty"`
+	BaseCapacity *int64 `json:"baseCapacity,omitempty" tf:"base_capacity,omitempty"`
 
 	// An array of parameters to set for more control over a serverless database. See Config Parameter below.
 	ConfigParameter []ConfigParameterObservation `json:"configParameter,omitempty" tf:"config_parameter,omitempty"`
@@ -178,13 +174,13 @@ type WorkgroupObservation struct {
 	ID *string `json:"id,omitempty" tf:"id,omitempty"`
 
 	// The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries, specified in Redshift Processing Units (RPUs).
-	MaxCapacity *float64 `json:"maxCapacity,omitempty" tf:"max_capacity,omitempty"`
+	MaxCapacity *int64 `json:"maxCapacity,omitempty" tf:"max_capacity,omitempty"`
 
 	// The name of the namespace.
 	NamespaceName *string `json:"namespaceName,omitempty" tf:"namespace_name,omitempty"`
 
 	// The port number on which the cluster accepts incoming connections.
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// A value that specifies whether the workgroup can be accessed from a public network.
 	PubliclyAccessible *bool `json:"publiclyAccessible,omitempty" tf:"publicly_accessible,omitempty"`
@@ -213,7 +209,7 @@ type WorkgroupParameters struct {
 
 	// The base data warehouse capacity of the workgroup in Redshift Processing Units (RPUs).
 	// +kubebuilder:validation:Optional
-	BaseCapacity *float64 `json:"baseCapacity,omitempty" tf:"base_capacity,omitempty"`
+	BaseCapacity *int64 `json:"baseCapacity,omitempty" tf:"base_capacity,omitempty"`
 
 	// An array of parameters to set for more control over a serverless database. See Config Parameter below.
 	// +kubebuilder:validation:Optional
@@ -225,7 +221,7 @@ type WorkgroupParameters struct {
 
 	// The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries, specified in Redshift Processing Units (RPUs).
 	// +kubebuilder:validation:Optional
-	MaxCapacity *float64 `json:"maxCapacity,omitempty" tf:"max_capacity,omitempty"`
+	MaxCapacity *int64 `json:"maxCapacity,omitempty" tf:"max_capacity,omitempty"`
 
 	// The name of the namespace.
 	// +kubebuilder:validation:Optional
@@ -233,7 +229,7 @@ type WorkgroupParameters struct {
 
 	// The port number on which the cluster accepts incoming connections.
 	// +kubebuilder:validation:Optional
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// A value that specifies whether the workgroup can be accessed from a public network.
 	// +kubebuilder:validation:Optional
@@ -275,11 +271,6 @@ type WorkgroupParameters struct {
 	// +kubebuilder:validation:Optional
 	// +listType=set
 	SubnetIds []*string `json:"subnetIds,omitempty" tf:"subnet_ids,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // WorkgroupSpec defines the desired state of Workgroup

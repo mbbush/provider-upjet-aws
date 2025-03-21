@@ -56,10 +56,6 @@ type CertificateInitParameters struct {
 	// +listType=set
 	SubjectAlternativeNames []*string `json:"subjectAlternativeNames,omitempty" tf:"subject_alternative_names,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Which method to use for validation. DNS or EMAIL are valid.
 	ValidationMethod *string `json:"validationMethod,omitempty" tf:"validation_method,omitempty"`
 
@@ -204,11 +200,6 @@ type CertificateParameters struct {
 	// +kubebuilder:validation:Optional
 	// +listType=set
 	SubjectAlternativeNames []*string `json:"subjectAlternativeNames,omitempty" tf:"subject_alternative_names,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Which method to use for validation. DNS or EMAIL are valid.
 	// +kubebuilder:validation:Optional

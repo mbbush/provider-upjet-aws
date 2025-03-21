@@ -260,10 +260,6 @@ type WorkteamInitParameters struct {
 	// Configures notification of workers regarding available or expiring work items. see Notification Configuration details below.
 	NotificationConfiguration *NotificationConfigurationInitParameters `json:"notificationConfiguration,omitempty" tf:"notification_configuration,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Use this optional parameter to constrain access to an Amazon S3 resource based on the IP address using supported IAM global condition keys. The Amazon S3 resource is accessed in the worker portal using a Amazon S3 presigned URL. see Worker Access Configuration details below.
 	WorkerAccessConfiguration *WorkerAccessConfigurationInitParameters `json:"workerAccessConfiguration,omitempty" tf:"worker_access_configuration,omitempty"`
 
@@ -334,11 +330,6 @@ type WorkteamParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Use this optional parameter to constrain access to an Amazon S3 resource based on the IP address using supported IAM global condition keys. The Amazon S3 resource is accessed in the worker portal using a Amazon S3 presigned URL. see Worker Access Configuration details below.
 	// +kubebuilder:validation:Optional

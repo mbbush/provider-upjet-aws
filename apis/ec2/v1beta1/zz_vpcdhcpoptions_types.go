@@ -32,10 +32,6 @@ type VPCDHCPOptionsInitParameters struct {
 
 	// List of NTP servers to configure.
 	NtpServers []*string `json:"ntpServers,omitempty" tf:"ntp_servers,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type VPCDHCPOptionsObservation struct {
@@ -106,11 +102,6 @@ type VPCDHCPOptionsParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // VPCDHCPOptionsSpec defines the desired state of VPCDHCPOptions

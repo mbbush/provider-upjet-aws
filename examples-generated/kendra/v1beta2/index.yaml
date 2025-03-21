@@ -15,5 +15,3 @@ spec:
     roleArnSelector:
       matchLabels:
         testing.upbound.io/example-name: this
-    tags:
-      Key1: Value1

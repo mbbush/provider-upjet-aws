@@ -85,10 +85,6 @@ type DeviceInitParameters struct {
 	// +kubebuilder:validation:Optional
 	SiteIDSelector *v1.Selector `json:"siteIdSelector,omitempty" tf:"-"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// The type of device.
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
 
@@ -193,11 +189,6 @@ type DeviceParameters struct {
 	// Selector for a Site in networkmanager to populate siteId.
 	// +kubebuilder:validation:Optional
 	SiteIDSelector *v1.Selector `json:"siteIdSelector,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// The type of device.
 	// +kubebuilder:validation:Optional

@@ -2525,7 +2525,8 @@ spec:
                           represented in MB. The minimum supported ephemeral_storage
                           value defaults to 512MB and the maximum supported value
                           is 10240MB.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   fileSystemConfig:
                     description: Configuration block. Detailed below.
@@ -2833,7 +2834,8 @@ spec:
                   memorySize:
                     description: Amount of memory in MB your Lambda Function can use
                       at runtime. Defaults to 128. See Limits
-                    type: number
+                    format: int64
+                    type: integer
                   packageType:
                     description: Lambda deployment package type. Valid values are
                       Zip and Image. Defaults to Zip.
@@ -2944,7 +2946,8 @@ spec:
                       lambda function. A value of 0 disables lambda from being triggered
                       and -1 removes any concurrency limitations. Defaults to Unreserved
                       Concurrency Limits -1. See Managing Concurrency
-                    type: number
+                    format: int64
+                    type: integer
                   role:
                     description: Amazon Resource Name (ARN) of the function's execution
                       role. The role provides the function's identity and access to
@@ -3134,16 +3137,11 @@ spec:
                       it should be the actual (computed) hash of the underlying lambda
                       function specified in the filename, image_uri, s3_bucket fields.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   timeout:
                     description: Amount of time your Lambda Function has to run in
                       seconds. Defaults to 3. See Limits.
-                    type: number
+                    format: int64
+                    type: integer
                   tracingConfig:
                     description: Configuration block. Detailed below.
                     properties:
@@ -3404,7 +3402,8 @@ spec:
                           represented in MB. The minimum supported ephemeral_storage
                           value defaults to 512MB and the maximum supported value
                           is 10240MB.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   fileSystemConfig:
                     description: Configuration block. Detailed below.
@@ -3712,7 +3711,8 @@ spec:
                   memorySize:
                     description: Amount of memory in MB your Lambda Function can use
                       at runtime. Defaults to 128. See Limits
-                    type: number
+                    format: int64
+                    type: integer
                   packageType:
                     description: Lambda deployment package type. Valid values are
                       Zip and Image. Defaults to Zip.
@@ -3819,7 +3819,8 @@ spec:
                       lambda function. A value of 0 disables lambda from being triggered
                       and -1 removes any concurrency limitations. Defaults to Unreserved
                       Concurrency Limits -1. See Managing Concurrency
-                    type: number
+                    format: int64
+                    type: integer
                   role:
                     description: Amazon Resource Name (ARN) of the function's execution
                       role. The role provides the function's identity and access to
@@ -4009,16 +4010,11 @@ spec:
                       it should be the actual (computed) hash of the underlying lambda
                       function specified in the filename, image_uri, s3_bucket fields.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   timeout:
                     description: Amount of time your Lambda Function has to run in
                       seconds. Defaults to 3. See Limits.
-                    type: number
+                    format: int64
+                    type: integer
                   tracingConfig:
                     description: Configuration block. Detailed below.
                     properties:
@@ -4444,7 +4440,8 @@ spec:
                           represented in MB. The minimum supported ephemeral_storage
                           value defaults to 512MB and the maximum supported value
                           is 10240MB.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   fileSystemConfig:
                     description: Configuration block. Detailed below.
@@ -4532,7 +4529,8 @@ spec:
                   memorySize:
                     description: Amount of memory in MB your Lambda Function can use
                       at runtime. Defaults to 128. See Limits
-                    type: number
+                    format: int64
+                    type: integer
                   packageType:
                     description: Lambda deployment package type. Valid values are
                       Zip and Image. Defaults to Zip.
@@ -4570,7 +4568,8 @@ spec:
                       lambda function. A value of 0 disables lambda from being triggered
                       and -1 removes any concurrency limitations. Defaults to Unreserved
                       Concurrency Limits -1. See Managing Concurrency
-                    type: number
+                    format: int64
+                    type: integer
                   role:
                     description: Amazon Resource Name (ARN) of the function's execution
                       role. The role provides the function's identity and access to
@@ -4624,7 +4623,8 @@ spec:
                     type: string
                   sourceCodeSize:
                     description: Size in bytes of the function .zip file.
-                    type: number
+                    format: int64
+                    type: integer
                   tags:
                     additionalProperties:
                       type: string
@@ -4642,7 +4642,8 @@ spec:
                   timeout:
                     description: Amount of time your Lambda Function has to run in
                       seconds. Defaults to 3. See Limits.
-                    type: number
+                    format: int64
+                    type: integer
                   tracingConfig:
                     description: Configuration block. Detailed below.
                     properties:

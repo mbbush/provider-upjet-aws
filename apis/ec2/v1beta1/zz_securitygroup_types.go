@@ -25,7 +25,7 @@ type SecurityGroupEgressObservation struct {
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
 
 	// Start port (or ICMP type number if protocol is icmp or icmpv6).
-	FromPort *float64 `json:"fromPort,omitempty" tf:"from_port,omitempty"`
+	FromPort *int64 `json:"fromPort,omitempty" tf:"from_port,omitempty"`
 
 	// List of IPv6 CIDR blocks.
 	IPv6CidrBlocks []*string `json:"ipv6CidrBlocks,omitempty" tf:"ipv6_cidr_blocks,omitempty"`
@@ -44,7 +44,7 @@ type SecurityGroupEgressObservation struct {
 	Self *bool `json:"self,omitempty" tf:"self,omitempty"`
 
 	// End range port (or ICMP code if protocol is icmp).
-	ToPort *float64 `json:"toPort,omitempty" tf:"to_port,omitempty"`
+	ToPort *int64 `json:"toPort,omitempty" tf:"to_port,omitempty"`
 }
 
 type SecurityGroupEgressParameters struct {
@@ -62,7 +62,7 @@ type SecurityGroupIngressObservation struct {
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
 
 	// Start port (or ICMP type number if protocol is icmp or icmpv6).
-	FromPort *float64 `json:"fromPort,omitempty" tf:"from_port,omitempty"`
+	FromPort *int64 `json:"fromPort,omitempty" tf:"from_port,omitempty"`
 
 	// List of IPv6 CIDR blocks.
 	IPv6CidrBlocks []*string `json:"ipv6CidrBlocks,omitempty" tf:"ipv6_cidr_blocks,omitempty"`
@@ -81,7 +81,7 @@ type SecurityGroupIngressObservation struct {
 	Self *bool `json:"self,omitempty" tf:"self,omitempty"`
 
 	// End range port (or ICMP code if protocol is icmp).
-	ToPort *float64 `json:"toPort,omitempty" tf:"to_port,omitempty"`
+	ToPort *int64 `json:"toPort,omitempty" tf:"to_port,omitempty"`
 }
 
 type SecurityGroupIngressParameters struct {
@@ -97,10 +97,6 @@ type SecurityGroupInitParameters_2 struct {
 
 	// This is normally not needed, however certain AWS services such as Elastic Map Reduce may automatically add required rules to security groups used with the service, and those rules may contain a cyclic dependency that prevent the security groups from being destroyed without removing the dependency first. Default false.
 	RevokeRulesOnDelete *bool `json:"revokeRulesOnDelete,omitempty" tf:"revoke_rules_on_delete,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// VPC ID. Defaults to the region's default VPC.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/ec2/v1beta1.VPC
@@ -171,11 +167,6 @@ type SecurityGroupParameters_2 struct {
 	// This is normally not needed, however certain AWS services such as Elastic Map Reduce may automatically add required rules to security groups used with the service, and those rules may contain a cyclic dependency that prevent the security groups from being destroyed without removing the dependency first. Default false.
 	// +kubebuilder:validation:Optional
 	RevokeRulesOnDelete *bool `json:"revokeRulesOnDelete,omitempty" tf:"revoke_rules_on_delete,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// VPC ID. Defaults to the region's default VPC.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/ec2/v1beta1.VPC

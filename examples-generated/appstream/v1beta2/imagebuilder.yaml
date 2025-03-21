@@ -13,8 +13,6 @@ spec:
     enableDefaultInternetAccess: false
     instanceType: stream.standard.large
     region: us-west-1
-    tags:
-      Name: Example Image Builder
     vpcConfig:
     - subnetIdRefs:
       - name: example

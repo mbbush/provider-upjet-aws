@@ -27,10 +27,6 @@ type ConnectionInitParameters struct {
 
 	// Map of physical connection requirements, such as VPC and SecurityGroup. See physical_connection_requirements Block for details.
 	PhysicalConnectionRequirements *PhysicalConnectionRequirementsInitParameters `json:"physicalConnectionRequirements,omitempty" tf:"physical_connection_requirements,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type ConnectionObservation struct {
@@ -95,11 +91,6 @@ type ConnectionParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type PhysicalConnectionRequirementsInitParameters struct {

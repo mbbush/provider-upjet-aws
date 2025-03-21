@@ -379,7 +379,7 @@ type LogConfigurationInitParameters struct {
 	CloudwatchLogsConfiguration *CloudwatchLogsConfigurationInitParameters `json:"cloudwatchLogsConfiguration,omitempty" tf:"cloudwatch_logs_configuration,omitempty"`
 
 	// The schema version. See documentation for the list of schema versions.
-	LogSchemaVersion *float64 `json:"logSchemaVersion,omitempty" tf:"log_schema_version,omitempty"`
+	LogSchemaVersion *int64 `json:"logSchemaVersion,omitempty" tf:"log_schema_version,omitempty"`
 
 	// The configuration for experiment logging to Amazon S3. See below.
 	S3Configuration *S3ConfigurationInitParameters `json:"s3Configuration,omitempty" tf:"s3_configuration,omitempty"`
@@ -391,7 +391,7 @@ type LogConfigurationObservation struct {
 	CloudwatchLogsConfiguration *CloudwatchLogsConfigurationObservation `json:"cloudwatchLogsConfiguration,omitempty" tf:"cloudwatch_logs_configuration,omitempty"`
 
 	// The schema version. See documentation for the list of schema versions.
-	LogSchemaVersion *float64 `json:"logSchemaVersion,omitempty" tf:"log_schema_version,omitempty"`
+	LogSchemaVersion *int64 `json:"logSchemaVersion,omitempty" tf:"log_schema_version,omitempty"`
 
 	// The configuration for experiment logging to Amazon S3. See below.
 	S3Configuration *S3ConfigurationObservation `json:"s3Configuration,omitempty" tf:"s3_configuration,omitempty"`
@@ -405,7 +405,7 @@ type LogConfigurationParameters struct {
 
 	// The schema version. See documentation for the list of schema versions.
 	// +kubebuilder:validation:Optional
-	LogSchemaVersion *float64 `json:"logSchemaVersion" tf:"log_schema_version,omitempty"`
+	LogSchemaVersion *int64 `json:"logSchemaVersion" tf:"log_schema_version,omitempty"`
 
 	// The configuration for experiment logging to Amazon S3. See below.
 	// +kubebuilder:validation:Optional

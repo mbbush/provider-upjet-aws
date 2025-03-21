@@ -15,8 +15,6 @@ spec:
     locationUri: hosted
     name: example-configuration-profile-tf
     region: us-west-1
-    tags:
-      Type: AppConfig Configuration Profile
     validator:
     - contentSecretRef:
         key: attribute.arn

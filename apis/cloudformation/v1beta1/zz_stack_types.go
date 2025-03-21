@@ -57,10 +57,6 @@ type StackInitParameters struct {
 	// Conflicts w/ policy_body.
 	PolicyURL *string `json:"policyUrl,omitempty" tf:"policy_url,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Structure containing the template body (max size: 51,200 bytes).
 	TemplateBody *string `json:"templateBody,omitempty" tf:"template_body,omitempty"`
 
@@ -68,7 +64,7 @@ type StackInitParameters struct {
 	TemplateURL *string `json:"templateUrl,omitempty" tf:"template_url,omitempty"`
 
 	// The amount of time that can pass before the stack status becomes CREATE_FAILED.
-	TimeoutInMinutes *float64 `json:"timeoutInMinutes,omitempty" tf:"timeout_in_minutes,omitempty"`
+	TimeoutInMinutes *int64 `json:"timeoutInMinutes,omitempty" tf:"timeout_in_minutes,omitempty"`
 }
 
 type StackObservation struct {
@@ -130,7 +126,7 @@ type StackObservation struct {
 	TemplateURL *string `json:"templateUrl,omitempty" tf:"template_url,omitempty"`
 
 	// The amount of time that can pass before the stack status becomes CREATE_FAILED.
-	TimeoutInMinutes *float64 `json:"timeoutInMinutes,omitempty" tf:"timeout_in_minutes,omitempty"`
+	TimeoutInMinutes *int64 `json:"timeoutInMinutes,omitempty" tf:"timeout_in_minutes,omitempty"`
 }
 
 type StackParameters struct {
@@ -194,11 +190,6 @@ type StackParameters struct {
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
 
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Structure containing the template body (max size: 51,200 bytes).
 	// +kubebuilder:validation:Optional
 	TemplateBody *string `json:"templateBody,omitempty" tf:"template_body,omitempty"`
@@ -209,7 +200,7 @@ type StackParameters struct {
 
 	// The amount of time that can pass before the stack status becomes CREATE_FAILED.
 	// +kubebuilder:validation:Optional
-	TimeoutInMinutes *float64 `json:"timeoutInMinutes,omitempty" tf:"timeout_in_minutes,omitempty"`
+	TimeoutInMinutes *int64 `json:"timeoutInMinutes,omitempty" tf:"timeout_in_minutes,omitempty"`
 }
 
 // StackSpec defines the desired state of Stack

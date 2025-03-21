@@ -23,10 +23,6 @@ type ClusterParameterGroupInitParameters struct {
 
 	// A list of DB parameters to apply. Note that parameters may differ from a family to an other. Full list of all parameters can be discovered via aws rds describe-db-cluster-parameters after initial creation of the group.
 	Parameter []ClusterParameterGroupParameterInitParameters `json:"parameter,omitempty" tf:"parameter,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type ClusterParameterGroupObservation struct {
@@ -118,11 +114,6 @@ type ClusterParameterGroupParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // ClusterParameterGroupSpec defines the desired state of ClusterParameterGroup

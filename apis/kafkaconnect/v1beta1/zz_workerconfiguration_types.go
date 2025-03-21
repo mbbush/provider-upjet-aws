@@ -20,10 +20,6 @@ type WorkerConfigurationInitParameters_2 struct {
 
 	// Contents of connect-distributed.properties file. The value can be either base64 encoded or in raw format.
 	PropertiesFileContent *string `json:"propertiesFileContent,omitempty" tf:"properties_file_content,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type WorkerConfigurationObservation_2 struct {
@@ -37,7 +33,7 @@ type WorkerConfigurationObservation_2 struct {
 	ID *string `json:"id,omitempty" tf:"id,omitempty"`
 
 	// an ID of the latest successfully created revision of the worker configuration.
-	LatestRevision *float64 `json:"latestRevision,omitempty" tf:"latest_revision,omitempty"`
+	LatestRevision *int64 `json:"latestRevision,omitempty" tf:"latest_revision,omitempty"`
 
 	// The name of the worker configuration.
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
@@ -72,11 +68,6 @@ type WorkerConfigurationParameters_2 struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // WorkerConfigurationSpec defines the desired state of WorkerConfiguration

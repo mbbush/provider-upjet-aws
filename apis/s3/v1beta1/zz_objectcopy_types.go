@@ -188,10 +188,6 @@ type ObjectCopyInitParameters struct {
 	// Specifies whether the object tag-set are copied from the source object or replaced with tag-set provided in the request. Valid values are COPY and REPLACE.
 	TaggingDirective *string `json:"taggingDirective,omitempty" tf:"tagging_directive,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Specifies a target URL for website redirect.
 	WebsiteRedirect *string `json:"websiteRedirect,omitempty" tf:"website_redirect,omitempty"`
 }
@@ -499,11 +495,6 @@ type ObjectCopyParameters struct {
 	// Specifies whether the object tag-set are copied from the source object or replaced with tag-set provided in the request. Valid values are COPY and REPLACE.
 	// +kubebuilder:validation:Optional
 	TaggingDirective *string `json:"taggingDirective,omitempty" tf:"tagging_directive,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Specifies a target URL for website redirect.
 	// +kubebuilder:validation:Optional

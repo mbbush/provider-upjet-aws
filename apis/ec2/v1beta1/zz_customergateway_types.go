@@ -30,10 +30,6 @@ type CustomerGatewayInitParameters struct {
 	// The IPv4 address for the customer gateway device's outside interface.
 	IPAddress *string `json:"ipAddress,omitempty" tf:"ip_address,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// The type of customer gateway. The only type AWS
 	// supports at this time is "ipsec.1".
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
@@ -101,11 +97,6 @@ type CustomerGatewayParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// The type of customer gateway. The only type AWS
 	// supports at this time is "ipsec.1".

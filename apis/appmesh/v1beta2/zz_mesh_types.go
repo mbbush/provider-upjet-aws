@@ -36,10 +36,6 @@ type MeshInitParameters struct {
 
 	// Service mesh specification to apply.
 	Spec *MeshSpecInitParameters `json:"spec,omitempty" tf:"spec,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type MeshObservation struct {
@@ -84,11 +80,6 @@ type MeshParameters struct {
 	// Service mesh specification to apply.
 	// +kubebuilder:validation:Optional
 	Spec *MeshSpecParameters `json:"spec,omitempty" tf:"spec,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type MeshSpecInitParameters struct {

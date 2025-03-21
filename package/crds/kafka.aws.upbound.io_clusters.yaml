@@ -5211,13 +5211,15 @@ spec:
                                       You can refer to the valid values for the maximum
                                       volume throughput at the following documentation
                                       on throughput bottlenecks
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                               volumeSize:
                                 description: The size in GiB of the EBS volume for
                                   the data drive on each broker node. Minimum value
                                   of 1 and maximum value of 16384.
-                                type: number
+                                format: int64
+                                type: integer
                             type: object
                         type: object
                     type: object
@@ -5342,7 +5344,8 @@ spec:
                       revision:
                         description: Revision of the MSK Configuration to use in the
                           cluster.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   encryptionInfo:
                     description: Configuration block for specifying encryption. See
@@ -5726,7 +5729,8 @@ spec:
                     description: The desired total number of broker nodes in the kafka
                       cluster.  It must be a multiple of the number of specified client
                       subnets.
-                    type: number
+                    format: int64
+                    type: integer
                   openMonitoring:
                     description: Configuration block for JMX and Node monitoring for
                       the MSK cluster. See below.
@@ -5763,12 +5767,6 @@ spec:
                     description: 'Controls storage mode for supported storage tiers.
                       Valid values are: LOCAL or TIERED.'
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -6041,13 +6039,15 @@ spec:
                                       You can refer to the valid values for the maximum
                                       volume throughput at the following documentation
                                       on throughput bottlenecks
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                               volumeSize:
                                 description: The size in GiB of the EBS volume for
                                   the data drive on each broker node. Minimum value
                                   of 1 and maximum value of 16384.
-                                type: number
+                                format: int64
+                                type: integer
                             type: object
                         type: object
                     type: object
@@ -6172,7 +6172,8 @@ spec:
                       revision:
                         description: Revision of the MSK Configuration to use in the
                           cluster.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   encryptionInfo:
                     description: Configuration block for specifying encryption. See
@@ -6556,7 +6557,8 @@ spec:
                     description: The desired total number of broker nodes in the kafka
                       cluster.  It must be a multiple of the number of specified client
                       subnets.
-                    type: number
+                    format: int64
+                    type: integer
                   openMonitoring:
                     description: Configuration block for JMX and Node monitoring for
                       the MSK cluster. See below.
@@ -6589,12 +6591,6 @@ spec:
                     description: 'Controls storage mode for supported storage tiers.
                       Valid values are: LOCAL or TIERED.'
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -6972,13 +6968,15 @@ spec:
                                       You can refer to the valid values for the maximum
                                       volume throughput at the following documentation
                                       on throughput bottlenecks
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                               volumeSize:
                                 description: The size in GiB of the EBS volume for
                                   the data drive on each broker node. Minimum value
                                   of 1 and maximum value of 16384.
-                                type: number
+                                format: int64
+                                type: integer
                             type: object
                         type: object
                     type: object
@@ -7030,7 +7028,8 @@ spec:
                       revision:
                         description: Revision of the MSK Configuration to use in the
                           cluster.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   currentVersion:
                     description: Current version of the MSK Cluster used for updates,
@@ -7118,7 +7117,8 @@ spec:
                     description: The desired total number of broker nodes in the kafka
                       cluster.  It must be a multiple of the number of specified client
                       subnets.
-                    type: number
+                    format: int64
+                    type: integer
                   openMonitoring:
                     description: Configuration block for JMX and Node monitoring for
                       the MSK cluster. See below.

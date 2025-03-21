@@ -2436,16 +2436,19 @@ spec:
                           maxWorkerCount:
                             description: The maximum number of workers allocated to
                               the connector.
-                            type: number
+                            format: int64
+                            type: integer
                           mcuCount:
                             description: 'The number of microcontroller units (MCUs)
                               allocated to each connector worker. Valid values: 1,
                               2, 4, 8. The default value is 1.'
-                            type: number
+                            format: int64
+                            type: integer
                           minWorkerCount:
                             description: The minimum number of workers allocated to
                               the connector.
-                            type: number
+                            format: int64
+                            type: integer
                           scaleInPolicy:
                             description: The scale-in policy for the connector. See
                               scale_in_policy Block for details.
@@ -2454,7 +2457,8 @@ spec:
                                 description: Specifies the CPU utilization percentage
                                   threshold at which you want connector scale in to
                                   be triggered.
-                                type: number
+                                format: int64
+                                type: integer
                             type: object
                           scaleOutPolicy:
                             description: The scale-out policy for the connector. See
@@ -2463,7 +2467,8 @@ spec:
                               cpuUtilizationPercentage:
                                 description: The CPU utilization percentage threshold
                                   at which you want connector scale out to be triggered.
-                                type: number
+                                format: int64
+                                type: integer
                             type: object
                         type: object
                       provisionedCapacity:
@@ -2474,11 +2479,13 @@ spec:
                             description: 'The number of microcontroller units (MCUs)
                               allocated to each connector worker. Valid values: 1,
                               2, 4, 8. The default value is 1.'
-                            type: number
+                            format: int64
+                            type: integer
                           workerCount:
                             description: The number of workers that are allocated
                               to the connector.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                     type: object
                   connectorConfiguration:
@@ -3084,7 +3091,8 @@ spec:
                               type: object
                             revision:
                               description: The revision of the custom plugin.
-                              type: number
+                              format: int64
+                              type: integer
                           type: object
                       type: object
                     type: array
@@ -3174,12 +3182,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   workerConfiguration:
                     description: Specifies which worker configuration to use with
                       the connector. See worker_configuration Block for details.
@@ -3266,7 +3268,8 @@ spec:
                         type: object
                       revision:
                         description: The revision of the worker configuration.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                 required:
                 - name
@@ -3296,16 +3299,19 @@ spec:
                           maxWorkerCount:
                             description: The maximum number of workers allocated to
                               the connector.
-                            type: number
+                            format: int64
+                            type: integer
                           mcuCount:
                             description: 'The number of microcontroller units (MCUs)
                               allocated to each connector worker. Valid values: 1,
                               2, 4, 8. The default value is 1.'
-                            type: number
+                            format: int64
+                            type: integer
                           minWorkerCount:
                             description: The minimum number of workers allocated to
                               the connector.
-                            type: number
+                            format: int64
+                            type: integer
                           scaleInPolicy:
                             description: The scale-in policy for the connector. See
                               scale_in_policy Block for details.
@@ -3314,7 +3320,8 @@ spec:
                                 description: Specifies the CPU utilization percentage
                                   threshold at which you want connector scale in to
                                   be triggered.
-                                type: number
+                                format: int64
+                                type: integer
                             type: object
                           scaleOutPolicy:
                             description: The scale-out policy for the connector. See
@@ -3323,7 +3330,8 @@ spec:
                               cpuUtilizationPercentage:
                                 description: The CPU utilization percentage threshold
                                   at which you want connector scale out to be triggered.
-                                type: number
+                                format: int64
+                                type: integer
                             type: object
                         type: object
                       provisionedCapacity:
@@ -3334,11 +3342,13 @@ spec:
                             description: 'The number of microcontroller units (MCUs)
                               allocated to each connector worker. Valid values: 1,
                               2, 4, 8. The default value is 1.'
-                            type: number
+                            format: int64
+                            type: integer
                           workerCount:
                             description: The number of workers that are allocated
                               to the connector.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                     type: object
                   connectorConfiguration:
@@ -3941,7 +3951,8 @@ spec:
                               type: object
                             revision:
                               description: The revision of the custom plugin.
-                              type: number
+                              format: int64
+                              type: integer
                           type: object
                       type: object
                     type: array
@@ -4027,12 +4038,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   workerConfiguration:
                     description: Specifies which worker configuration to use with
                       the connector. See worker_configuration Block for details.
@@ -4119,7 +4124,8 @@ spec:
                         type: object
                       revision:
                         description: The revision of the worker configuration.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                 type: object
               managementPolicies:
@@ -4339,16 +4345,19 @@ spec:
                           maxWorkerCount:
                             description: The maximum number of workers allocated to
                               the connector.
-                            type: number
+                            format: int64
+                            type: integer
                           mcuCount:
                             description: 'The number of microcontroller units (MCUs)
                               allocated to each connector worker. Valid values: 1,
                               2, 4, 8. The default value is 1.'
-                            type: number
+                            format: int64
+                            type: integer
                           minWorkerCount:
                             description: The minimum number of workers allocated to
                               the connector.
-                            type: number
+                            format: int64
+                            type: integer
                           scaleInPolicy:
                             description: The scale-in policy for the connector. See
                               scale_in_policy Block for details.
@@ -4357,7 +4366,8 @@ spec:
                                 description: Specifies the CPU utilization percentage
                                   threshold at which you want connector scale in to
                                   be triggered.
-                                type: number
+                                format: int64
+                                type: integer
                             type: object
                           scaleOutPolicy:
                             description: The scale-out policy for the connector. See
@@ -4366,7 +4376,8 @@ spec:
                               cpuUtilizationPercentage:
                                 description: The CPU utilization percentage threshold
                                   at which you want connector scale out to be triggered.
-                                type: number
+                                format: int64
+                                type: integer
                             type: object
                         type: object
                       provisionedCapacity:
@@ -4377,11 +4388,13 @@ spec:
                             description: 'The number of microcontroller units (MCUs)
                               allocated to each connector worker. Valid values: 1,
                               2, 4, 8. The default value is 1.'
-                            type: number
+                            format: int64
+                            type: integer
                           workerCount:
                             description: The number of workers that are allocated
                               to the connector.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                     type: object
                   connectorConfiguration:
@@ -4527,7 +4540,8 @@ spec:
                               type: string
                             revision:
                               description: The revision of the custom plugin.
-                              type: number
+                              format: int64
+                              type: integer
                           type: object
                       type: object
                     type: array
@@ -4566,7 +4580,8 @@ spec:
                         type: string
                       revision:
                         description: The revision of the worker configuration.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                 type: object
               conditions:

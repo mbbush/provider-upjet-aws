@@ -930,13 +930,15 @@ spec:
                           alarm waits after suppressor alarm goes out of the ALARM
                           state. After this time, the composite alarm performs its
                           actions.
-                        type: number
+                        format: int64
+                        type: integer
                       waitPeriod:
                         description: The maximum time in seconds that the composite
                           alarm waits for the suppressor alarm to go into the ALARM
                           state. After this time, the composite alarm performs its
                           actions.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   alarmActions:
                     description: The set of actions to execute when this alarm transitions
@@ -1129,12 +1131,6 @@ spec:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -1169,13 +1165,15 @@ spec:
                           alarm waits after suppressor alarm goes out of the ALARM
                           state. After this time, the composite alarm performs its
                           actions.
-                        type: number
+                        format: int64
+                        type: integer
                       waitPeriod:
                         description: The maximum time in seconds that the composite
                           alarm waits for the suppressor alarm to go into the ALARM
                           state. After this time, the composite alarm performs its
                           actions.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   alarmActions:
                     description: The set of actions to execute when this alarm transitions
@@ -1364,12 +1362,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -1566,13 +1558,15 @@ spec:
                           alarm waits after suppressor alarm goes out of the ALARM
                           state. After this time, the composite alarm performs its
                           actions.
-                        type: number
+                        format: int64
+                        type: integer
                       waitPeriod:
                         description: The maximum time in seconds that the composite
                           alarm waits for the suppressor alarm to go into the ALARM
                           state. After this time, the composite alarm performs its
                           actions.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   alarmActions:
                     description: The set of actions to execute when this alarm transitions

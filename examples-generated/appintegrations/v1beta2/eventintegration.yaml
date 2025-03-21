@@ -13,5 +13,3 @@ spec:
     - source: aws.partner/examplepartner.com
     eventbridgeBus: default
     region: us-west-1
-    tags:
-      Name: Example Event Integration

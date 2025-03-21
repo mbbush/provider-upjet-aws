@@ -62,10 +62,6 @@ type ReplicationTaskInitParameters struct {
 	// Escaped JSON string that contains the table mappings. For information on table mapping see Using Table Mapping with an AWS Database Migration Service Task to Select and Filter Data
 	TableMappings *string `json:"tableMappings,omitempty" tf:"table_mappings,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// ARN that uniquely identifies the target endpoint.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/dms/v1beta2.Endpoint
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractParamPath("endpoint_arn",true)
@@ -191,11 +187,6 @@ type ReplicationTaskParameters struct {
 	// Escaped JSON string that contains the table mappings. For information on table mapping see Using Table Mapping with an AWS Database Migration Service Task to Select and Filter Data
 	// +kubebuilder:validation:Optional
 	TableMappings *string `json:"tableMappings,omitempty" tf:"table_mappings,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// ARN that uniquely identifies the target endpoint.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/dms/v1beta2.Endpoint

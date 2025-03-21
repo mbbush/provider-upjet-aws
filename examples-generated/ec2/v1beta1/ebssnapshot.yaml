@@ -9,8 +9,6 @@ metadata:
 spec:
   forProvider:
     region: us-west-1
-    tags:
-      Name: HelloWorld_snap
     volumeIdSelector:
       matchLabels:
         testing.upbound.io/example-name: example
@@ -30,5 +28,3 @@ spec:
     availabilityZone: us-west-2a
     region: us-west-1
     size: 40
-    tags:
-      Name: HelloWorld

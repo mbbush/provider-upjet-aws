@@ -21,10 +21,6 @@ type VocabularyInitParameters struct {
 	// - A list of terms to include in the vocabulary. Conflicts with vocabulary_file_uri
 	Phrases []*string `json:"phrases,omitempty" tf:"phrases,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// The Amazon S3 location (URI) of the text file that contains your custom vocabulary.
 	VocabularyFileURI *string `json:"vocabularyFileUri,omitempty" tf:"vocabulary_file_uri,omitempty"`
 }
@@ -71,11 +67,6 @@ type VocabularyParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// The Amazon S3 location (URI) of the text file that contains your custom vocabulary.
 	// +kubebuilder:validation:Optional

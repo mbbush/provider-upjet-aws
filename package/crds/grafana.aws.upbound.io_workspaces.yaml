@@ -1076,12 +1076,6 @@ spec:
                     description: The AWS CloudFormation stack set name that provisions
                       IAM roles to be used by the workspace.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   vpcConfiguration:
                     description: The configuration settings for an Amazon VPC that
                       contains data sources for your Grafana workspace to connect
@@ -1279,12 +1273,6 @@ spec:
                     description: The AWS CloudFormation stack set name that provisions
                       IAM roles to be used by the workspace.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   vpcConfiguration:
                     description: The configuration settings for an Amazon VPC that
                       contains data sources for your Grafana workspace to connect

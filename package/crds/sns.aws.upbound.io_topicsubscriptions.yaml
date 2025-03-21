@@ -77,7 +77,8 @@ spec:
                     description: Integer indicating number of minutes to wait in retrying
                       mode for fetching subscription arn before marking it as failure.
                       Only applicable for http and https protocols. Default is 1.
-                    type: number
+                    format: int64
+                    type: integer
                   deliveryPolicy:
                     description: JSON String with the delivery policy (retries, backoff,
                       etc.) that will be used in the subscription - this only applies
@@ -373,7 +374,8 @@ spec:
                     description: Integer indicating number of minutes to wait in retrying
                       mode for fetching subscription arn before marking it as failure.
                       Only applicable for http and https protocols. Default is 1.
-                    type: number
+                    format: int64
+                    type: integer
                   deliveryPolicy:
                     description: JSON String with the delivery policy (retries, backoff,
                       etc.) that will be used in the subscription - this only applies
@@ -830,7 +832,8 @@ spec:
                     description: Integer indicating number of minutes to wait in retrying
                       mode for fetching subscription arn before marking it as failure.
                       Only applicable for http and https protocols. Default is 1.
-                    type: number
+                    format: int64
+                    type: integer
                   confirmationWasAuthenticated:
                     description: Whether the subscription confirmation request was
                       authenticated.

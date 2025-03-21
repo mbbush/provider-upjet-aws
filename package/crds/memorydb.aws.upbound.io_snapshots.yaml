@@ -232,12 +232,6 @@ spec:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -409,12 +403,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -618,18 +606,21 @@ spec:
                           type: string
                         numShards:
                           description: Number of shards in the cluster.
-                          type: number
+                          format: int64
+                          type: integer
                         parameterGroupName:
                           description: Name of the parameter group associated with
                             the cluster.
                           type: string
                         port:
                           description: Port number on which the cluster accepts connections.
-                          type: number
+                          format: int64
+                          type: integer
                         snapshotRetentionLimit:
                           description: Number of days for which MemoryDB retains automatic
                             snapshots before deleting them.
-                          type: number
+                          format: int64
+                          type: integer
                         snapshotWindow:
                           description: The daily time range (in UTC) during which
                             MemoryDB begins taking a daily snapshot of the shard.

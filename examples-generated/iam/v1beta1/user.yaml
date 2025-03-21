@@ -9,8 +9,6 @@ metadata:
 spec:
   forProvider:
     path: /system/
-    tags:
-      tag-key: tag-value
 
 ---
 

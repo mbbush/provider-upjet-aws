@@ -856,7 +856,8 @@ spec:
                               description: The amount of time, in seconds, that you
                                 want DNS resolvers to cache the settings for this
                                 resource record set.
-                              type: number
+                              format: int64
+                              type: integer
                             type:
                               description: 'The type of the resource, which indicates
                                 the value that Amazon Route 53 returns in response
@@ -963,7 +964,8 @@ spec:
                       failureThreshold:
                         description: The number of consecutive health checks. Maximum
                           value of 10.
-                        type: number
+                        format: int64
+                        type: integer
                       resourcePath:
                         description: The path that you want Route 53 to request when
                           performing health checks. Route 53 automatically adds the
@@ -984,7 +986,8 @@ spec:
                         description: The number of 30-second intervals that you want
                           service discovery to wait before it changes the health status
                           of a service instance.  Maximum value of 10.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   name:
                     description: The name of the service.
@@ -997,12 +1000,6 @@ spec:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   type:
                     description: If present, specifies that the service instances
                       are only discoverable using the DiscoverInstances API operation.
@@ -1042,7 +1039,8 @@ spec:
                               description: The amount of time, in seconds, that you
                                 want DNS resolvers to cache the settings for this
                                 resource record set.
-                              type: number
+                              format: int64
+                              type: integer
                             type:
                               description: 'The type of the resource, which indicates
                                 the value that Amazon Route 53 returns in response
@@ -1149,7 +1147,8 @@ spec:
                       failureThreshold:
                         description: The number of consecutive health checks. Maximum
                           value of 10.
-                        type: number
+                        format: int64
+                        type: integer
                       resourcePath:
                         description: The path that you want Route 53 to request when
                           performing health checks. Route 53 automatically adds the
@@ -1170,7 +1169,8 @@ spec:
                         description: The number of 30-second intervals that you want
                           service discovery to wait before it changes the health status
                           of a service instance.  Maximum value of 10.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   name:
                     description: The name of the service.
@@ -1179,12 +1179,6 @@ spec:
                     description: The ID of the namespace that you want to use to create
                       the service.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   type:
                     description: If present, specifies that the service instances
                       are only discoverable using the DiscoverInstances API operation.
@@ -1389,7 +1383,8 @@ spec:
                               description: The amount of time, in seconds, that you
                                 want DNS resolvers to cache the settings for this
                                 resource record set.
-                              type: number
+                              format: int64
+                              type: integer
                             type:
                               description: 'The type of the resource, which indicates
                                 the value that Amazon Route 53 returns in response
@@ -1420,7 +1415,8 @@ spec:
                       failureThreshold:
                         description: The number of consecutive health checks. Maximum
                           value of 10.
-                        type: number
+                        format: int64
+                        type: integer
                       resourcePath:
                         description: The path that you want Route 53 to request when
                           performing health checks. Route 53 automatically adds the
@@ -1441,7 +1437,8 @@ spec:
                         description: The number of 30-second intervals that you want
                           service discovery to wait before it changes the health status
                           of a service instance.  Maximum value of 10.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   id:
                     description: The ID of the service.

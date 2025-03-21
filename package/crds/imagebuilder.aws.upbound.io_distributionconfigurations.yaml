@@ -1122,13 +1122,6 @@ spec:
                           description: Configuration block with Amazon Machine Image
                             (AMI) distribution settings. Detailed below.
                           properties:
-                            amiTags:
-                              additionalProperties:
-                                type: string
-                              description: Key-value map of tags to apply to the distributed
-                                AMI.
-                              type: object
-                              x-kubernetes-map-type: granular
                             description:
                               description: Description to apply to the distributed
                                 AMI.
@@ -1246,7 +1239,8 @@ spec:
                               maxParallelLaunches:
                                 description: The maximum number of parallel instances
                                   that are launched for creating resources.
-                                type: number
+                                format: int64
+                                type: integer
                               snapshotConfiguration:
                                 description: Configuration block for managing the
                                   number of snapshots that are created from pre-provisioned
@@ -1257,7 +1251,8 @@ spec:
                                     description: The number of pre-provisioned snapshots
                                       to keep on hand for a fast-launch enabled Windows
                                       AMI.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                             type: object
                           type: array
@@ -1323,12 +1318,6 @@ spec:
                       AWS Region for the distribution.
                       Region is the region you'd like your resource to be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -1357,13 +1346,6 @@ spec:
                           description: Configuration block with Amazon Machine Image
                             (AMI) distribution settings. Detailed below.
                           properties:
-                            amiTags:
-                              additionalProperties:
-                                type: string
-                              description: Key-value map of tags to apply to the distributed
-                                AMI.
-                              type: object
-                              x-kubernetes-map-type: granular
                             description:
                               description: Description to apply to the distributed
                                 AMI.
@@ -1481,7 +1463,8 @@ spec:
                               maxParallelLaunches:
                                 description: The maximum number of parallel instances
                                   that are launched for creating resources.
-                                type: number
+                                format: int64
+                                type: integer
                               snapshotConfiguration:
                                 description: Configuration block for managing the
                                   number of snapshots that are created from pre-provisioned
@@ -1492,7 +1475,8 @@ spec:
                                     description: The number of pre-provisioned snapshots
                                       to keep on hand for a fast-launch enabled Windows
                                       AMI.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                             type: object
                           type: array
@@ -1548,12 +1532,6 @@ spec:
                   name:
                     description: Name of the distribution configuration.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -1882,7 +1860,8 @@ spec:
                               maxParallelLaunches:
                                 description: The maximum number of parallel instances
                                   that are launched for creating resources.
-                                type: number
+                                format: int64
+                                type: integer
                               snapshotConfiguration:
                                 description: Configuration block for managing the
                                   number of snapshots that are created from pre-provisioned
@@ -1893,7 +1872,8 @@ spec:
                                     description: The number of pre-provisioned snapshots
                                       to keep on hand for a fast-launch enabled Windows
                                       AMI.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                             type: object
                           type: array

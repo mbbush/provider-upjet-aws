@@ -12,5 +12,3 @@ spec:
     subnetIdsRefs:
     - name: frontend
     - name: backend
-    tags:
-      Name: My docdb subnet group

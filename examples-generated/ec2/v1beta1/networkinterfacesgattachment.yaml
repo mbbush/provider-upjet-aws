@@ -31,8 +31,6 @@ spec:
     ami: ${data.aws_ami.ami.id}
     instanceType: t2.micro
     region: us-west-1
-    tags:
-      type: terraform-test-instance
 
 ---
 
@@ -47,5 +45,3 @@ metadata:
 spec:
   forProvider:
     region: us-west-1
-    tags:
-      type: terraform-test-security-group

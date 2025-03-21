@@ -47,10 +47,6 @@ type BucketInitParameters struct {
 
 	// Indicates whether this bucket has an Object Lock configuration enabled. Valid values are true or false. This argument is not supported in all regions or partitions.
 	ObjectLockEnabled *bool `json:"objectLockEnabled,omitempty" tf:"object_lock_enabled,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type BucketObservation struct {
@@ -160,11 +156,6 @@ type BucketParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type CorsRuleInitParameters struct {
@@ -185,7 +176,7 @@ type CorsRuleObservation struct {
 	ExposeHeaders []*string `json:"exposeHeaders,omitempty" tf:"expose_headers,omitempty"`
 
 	// Specifies time in seconds that browser can cache the response for a preflight request.
-	MaxAgeSeconds *float64 `json:"maxAgeSeconds,omitempty" tf:"max_age_seconds,omitempty"`
+	MaxAgeSeconds *int64 `json:"maxAgeSeconds,omitempty" tf:"max_age_seconds,omitempty"`
 }
 
 type CorsRuleParameters struct {
@@ -197,13 +188,13 @@ type DefaultRetentionInitParameters struct {
 type DefaultRetentionObservation struct {
 
 	// Number of days that you want to specify for the default retention period.
-	Days *float64 `json:"days,omitempty" tf:"days,omitempty"`
+	Days *int64 `json:"days,omitempty" tf:"days,omitempty"`
 
 	// Default Object Lock retention mode you want to apply to new objects placed in this bucket. Valid values are GOVERNANCE and COMPLIANCE.
 	Mode *string `json:"mode,omitempty" tf:"mode,omitempty"`
 
 	// Number of years that you want to specify for the default retention period.
-	Years *float64 `json:"years,omitempty" tf:"years,omitempty"`
+	Years *int64 `json:"years,omitempty" tf:"years,omitempty"`
 }
 
 type DefaultRetentionParameters struct {
@@ -249,7 +240,7 @@ type ExpirationObservation struct {
 	Date *string `json:"date,omitempty" tf:"date,omitempty"`
 
 	// Specifies the number of days after object creation when the specific rule action takes effect.
-	Days *float64 `json:"days,omitempty" tf:"days,omitempty"`
+	Days *int64 `json:"days,omitempty" tf:"days,omitempty"`
 
 	// On a versioned bucket (versioning-enabled or versioning-suspended bucket), you can add this element in the lifecycle configuration to direct Amazon S3 to delete expired object delete markers. This cannot be specified with Days or Date in a Lifecycle Expiration Policy.
 	ExpiredObjectDeleteMarker *bool `json:"expiredObjectDeleteMarker,omitempty" tf:"expired_object_delete_marker,omitempty"`
@@ -303,7 +294,7 @@ type LifecycleRuleInitParameters struct {
 type LifecycleRuleObservation struct {
 
 	// Specifies the number of days after initiating a multipart upload when the multipart upload must be completed.
-	AbortIncompleteMultipartUploadDays *float64 `json:"abortIncompleteMultipartUploadDays,omitempty" tf:"abort_incomplete_multipart_upload_days,omitempty"`
+	AbortIncompleteMultipartUploadDays *int64 `json:"abortIncompleteMultipartUploadDays,omitempty" tf:"abort_incomplete_multipart_upload_days,omitempty"`
 
 	// Specifies lifecycle rule status.
 	Enabled *bool `json:"enabled,omitempty" tf:"enabled,omitempty"`
@@ -355,7 +346,7 @@ type MetricsInitParameters struct {
 type MetricsObservation struct {
 
 	// Threshold within which objects are to be replicated. The only valid value is 15.
-	Minutes *float64 `json:"minutes,omitempty" tf:"minutes,omitempty"`
+	Minutes *int64 `json:"minutes,omitempty" tf:"minutes,omitempty"`
 
 	// Status of RTC. Either Enabled or Disabled.
 	Status *string `json:"status,omitempty" tf:"status,omitempty"`
@@ -370,7 +361,7 @@ type NoncurrentVersionExpirationInitParameters struct {
 type NoncurrentVersionExpirationObservation struct {
 
 	// Specifies the number of days after object creation when the specific rule action takes effect.
-	Days *float64 `json:"days,omitempty" tf:"days,omitempty"`
+	Days *int64 `json:"days,omitempty" tf:"days,omitempty"`
 }
 
 type NoncurrentVersionExpirationParameters struct {
@@ -382,7 +373,7 @@ type NoncurrentVersionTransitionInitParameters struct {
 type NoncurrentVersionTransitionObservation struct {
 
 	// Specifies the number of days after object creation when the specific rule action takes effect.
-	Days *float64 `json:"days,omitempty" tf:"days,omitempty"`
+	Days *int64 `json:"days,omitempty" tf:"days,omitempty"`
 
 	// Specifies the Amazon S3 storage class to which you want the object to transition.
 	StorageClass *string `json:"storageClass,omitempty" tf:"storage_class,omitempty"`
@@ -427,7 +418,7 @@ type ReplicationTimeInitParameters struct {
 type ReplicationTimeObservation struct {
 
 	// Threshold within which objects are to be replicated. The only valid value is 15.
-	Minutes *float64 `json:"minutes,omitempty" tf:"minutes,omitempty"`
+	Minutes *int64 `json:"minutes,omitempty" tf:"minutes,omitempty"`
 
 	// Status of RTC. Either Enabled or Disabled.
 	Status *string `json:"status,omitempty" tf:"status,omitempty"`
@@ -469,7 +460,7 @@ type RulesObservation struct {
 	Prefix *string `json:"prefix,omitempty" tf:"prefix,omitempty"`
 
 	// Priority associated with the rule. Priority should only be set if filter is configured. If not provided, defaults to 0. Priority must be unique between multiple rules.
-	Priority *float64 `json:"priority,omitempty" tf:"priority,omitempty"`
+	Priority *int64 `json:"priority,omitempty" tf:"priority,omitempty"`
 
 	// Specifies special object selection criteria (documented below).
 	SourceSelectionCriteria *SourceSelectionCriteriaObservation `json:"sourceSelectionCriteria,omitempty" tf:"source_selection_criteria,omitempty"`
@@ -542,7 +533,7 @@ type TransitionObservation struct {
 	Date *string `json:"date,omitempty" tf:"date,omitempty"`
 
 	// Specifies the number of days after object creation when the specific rule action takes effect.
-	Days *float64 `json:"days,omitempty" tf:"days,omitempty"`
+	Days *int64 `json:"days,omitempty" tf:"days,omitempty"`
 
 	// Specifies the Amazon S3 storage class to which you want the object to transition.
 	StorageClass *string `json:"storageClass,omitempty" tf:"storage_class,omitempty"`

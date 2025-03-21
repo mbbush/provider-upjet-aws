@@ -184,22 +184,6 @@ func (in *BrokerInitParameters) DeepCopyInto(out *BrokerInitParameters) {
 			}
 		}
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.User != nil {
 		in, out := &in.User, &out.User
 		*out = make([]UserInitParameters, len(*in))
@@ -583,22 +567,6 @@ func (in *BrokerParameters) DeepCopyInto(out *BrokerParameters) {
 			}
 		}
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.User != nil {
 		in, out := &in.User, &out.User
 		*out = make([]UserParameters, len(*in))
@@ -673,7 +641,7 @@ func (in *ConfigurationInitParameters) DeepCopyInto(out *ConfigurationInitParame
 	}
 	if in.Revision != nil {
 		in, out := &in.Revision, &out.Revision
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -698,7 +666,7 @@ func (in *ConfigurationObservation) DeepCopyInto(out *ConfigurationObservation) 
 	}
 	if in.Revision != nil {
 		in, out := &in.Revision, &out.Revision
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -733,7 +701,7 @@ func (in *ConfigurationParameters) DeepCopyInto(out *ConfigurationParameters) {
 	}
 	if in.Revision != nil {
 		in, out := &in.Revision, &out.Revision
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }

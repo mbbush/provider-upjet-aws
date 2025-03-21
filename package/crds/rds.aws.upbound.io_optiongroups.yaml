@@ -117,7 +117,8 @@ spec:
                             configuration means that the AWS provider will ignore
                             a previously set value, a value set by AWS, and any port
                             changes.
-                          type: number
+                          format: int64
+                          type: integer
                         version:
                           description: Version of the option (e.g., 13.1.0.0). Leaving
                             out or removing version from your configuration does not
@@ -145,12 +146,6 @@ spec:
                     type: string
                   skipDestroy:
                     type: boolean
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -211,7 +206,8 @@ spec:
                             configuration means that the AWS provider will ignore
                             a previously set value, a value set by AWS, and any port
                             changes.
-                          type: number
+                          format: int64
+                          type: integer
                         version:
                           description: Version of the option (e.g., 13.1.0.0). Leaving
                             out or removing version from your configuration does not
@@ -235,12 +231,6 @@ spec:
                     type: string
                   skipDestroy:
                     type: boolean
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -473,7 +463,8 @@ spec:
                             configuration means that the AWS provider will ignore
                             a previously set value, a value set by AWS, and any port
                             changes.
-                          type: number
+                          format: int64
+                          type: integer
                         version:
                           description: Version of the option (e.g., 13.1.0.0). Leaving
                             out or removing version from your configuration does not

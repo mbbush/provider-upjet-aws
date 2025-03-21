@@ -117,10 +117,6 @@ type StackInitParameters struct {
 	// See streaming_experience_settings below.
 	StreamingExperienceSettings *StreamingExperienceSettingsInitParameters `json:"streamingExperienceSettings,omitempty" tf:"streaming_experience_settings,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Configuration block for the actions that are enabled or disabled for users during their streaming sessions. If not provided, these settings are configured automatically by AWS.
 	// See user_settings below.
 	UserSettings []UserSettingsInitParameters `json:"userSettings,omitempty" tf:"user_settings,omitempty"`
@@ -235,11 +231,6 @@ type StackParameters struct {
 	// See streaming_experience_settings below.
 	// +kubebuilder:validation:Optional
 	StreamingExperienceSettings *StreamingExperienceSettingsParameters `json:"streamingExperienceSettings,omitempty" tf:"streaming_experience_settings,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Configuration block for the actions that are enabled or disabled for users during their streaming sessions. If not provided, these settings are configured automatically by AWS.
 	// See user_settings below.

@@ -137,10 +137,6 @@ type OntapStorageVirtualMachineInitParameters struct {
 
 	// Specifies the password to use when logging on to the SVM using a secure shell (SSH) connection to the SVM's management endpoint. Doing so enables you to manage the SVM using the NetApp ONTAP CLI or REST API. If you do not specify a password, you can still use the file system's fsxadmin user to manage the SVM.
 	SvmAdminPasswordSecretRef *v1.SecretKeySelector `json:"svmAdminPasswordSecretRef,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type OntapStorageVirtualMachineObservation struct {
@@ -217,11 +213,6 @@ type OntapStorageVirtualMachineParameters struct {
 	// Specifies the password to use when logging on to the SVM using a secure shell (SSH) connection to the SVM's management endpoint. Doing so enables you to manage the SVM using the NetApp ONTAP CLI or REST API. If you do not specify a password, you can still use the file system's fsxadmin user to manage the SVM.
 	// +kubebuilder:validation:Optional
 	SvmAdminPasswordSecretRef *v1.SecretKeySelector `json:"svmAdminPasswordSecretRef,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type SMBInitParameters struct {

@@ -1063,11 +1063,13 @@ spec:
                     properties:
                       desiredInstances:
                         description: Desired number of streaming instances.
-                        type: number
+                        format: int64
+                        type: integer
                       desiredSessions:
                         description: Desired number of user sessions for a multi-session
                           fleet. This is not allowed for single-session fleets.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   description:
                     description: Description to display.
@@ -1075,7 +1077,8 @@ spec:
                   disconnectTimeoutInSeconds:
                     description: Amount of time that a streaming session remains active
                       after users disconnect.
-                    type: number
+                    format: int64
+                    type: integer
                   displayName:
                     description: Human-readable friendly name for the AppStream fleet.
                     type: string
@@ -1182,7 +1185,8 @@ spec:
                       before they are disconnected from their streaming session and
                       the disconnect_timeout_in_seconds time interval begins. Defaults
                       to 0. Valid value is between 60 and 3600 seconds.
-                    type: number
+                    format: int64
+                    type: integer
                   imageArn:
                     description: ARN of the public, private, or shared image to use.
                     type: string
@@ -1195,11 +1199,13 @@ spec:
                   maxSessionsPerInstance:
                     description: The maximum number of user sessions on an instance.
                       This only applies to multi-session fleets.
-                    type: number
+                    format: int64
+                    type: integer
                   maxUserDurationInSeconds:
                     description: Maximum amount of time that a streaming session can
                       remain active, in seconds.
-                    type: number
+                    format: int64
+                    type: integer
                   name:
                     description: Unique name for the fleet.
                     type: string
@@ -1214,12 +1220,6 @@ spec:
                       is specified, the standard desktop that is provided by the operating
                       system displays. If not specified, defaults to APP.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   vpcConfig:
                     description: Configuration block for the VPC configuration for
                       the image builder. See below.
@@ -1338,11 +1338,13 @@ spec:
                     properties:
                       desiredInstances:
                         description: Desired number of streaming instances.
-                        type: number
+                        format: int64
+                        type: integer
                       desiredSessions:
                         description: Desired number of user sessions for a multi-session
                           fleet. This is not allowed for single-session fleets.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   description:
                     description: Description to display.
@@ -1350,7 +1352,8 @@ spec:
                   disconnectTimeoutInSeconds:
                     description: Amount of time that a streaming session remains active
                       after users disconnect.
-                    type: number
+                    format: int64
+                    type: integer
                   displayName:
                     description: Human-readable friendly name for the AppStream fleet.
                     type: string
@@ -1457,7 +1460,8 @@ spec:
                       before they are disconnected from their streaming session and
                       the disconnect_timeout_in_seconds time interval begins. Defaults
                       to 0. Valid value is between 60 and 3600 seconds.
-                    type: number
+                    format: int64
+                    type: integer
                   imageArn:
                     description: ARN of the public, private, or shared image to use.
                     type: string
@@ -1470,11 +1474,13 @@ spec:
                   maxSessionsPerInstance:
                     description: The maximum number of user sessions on an instance.
                       This only applies to multi-session fleets.
-                    type: number
+                    format: int64
+                    type: integer
                   maxUserDurationInSeconds:
                     description: Maximum amount of time that a streaming session can
                       remain active, in seconds.
-                    type: number
+                    format: int64
+                    type: integer
                   name:
                     description: Unique name for the fleet.
                     type: string
@@ -1485,12 +1491,6 @@ spec:
                       is specified, the standard desktop that is provided by the operating
                       system displays. If not specified, defaults to APP.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   vpcConfig:
                     description: Configuration block for the VPC configuration for
                       the image builder. See below.
@@ -1783,21 +1783,26 @@ spec:
                       available:
                         description: Number of currently available instances that
                           can be used to stream sessions.
-                        type: number
+                        format: int64
+                        type: integer
                       desiredInstances:
                         description: Desired number of streaming instances.
-                        type: number
+                        format: int64
+                        type: integer
                       desiredSessions:
                         description: Desired number of user sessions for a multi-session
                           fleet. This is not allowed for single-session fleets.
-                        type: number
+                        format: int64
+                        type: integer
                       inUse:
                         description: Number of instances in use for streaming.
-                        type: number
+                        format: int64
+                        type: integer
                       running:
                         description: Total number of simultaneous streaming instances
                           that are running.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   createdTime:
                     description: Date and time, in UTC and extended RFC 3339 format,
@@ -1809,7 +1814,8 @@ spec:
                   disconnectTimeoutInSeconds:
                     description: Amount of time that a streaming session remains active
                       after users disconnect.
-                    type: number
+                    format: int64
+                    type: integer
                   displayName:
                     description: Human-readable friendly name for the AppStream fleet.
                     type: string
@@ -1845,7 +1851,8 @@ spec:
                       before they are disconnected from their streaming session and
                       the disconnect_timeout_in_seconds time interval begins. Defaults
                       to 0. Valid value is between 60 and 3600 seconds.
-                    type: number
+                    format: int64
+                    type: integer
                   imageArn:
                     description: ARN of the public, private, or shared image to use.
                     type: string
@@ -1858,11 +1865,13 @@ spec:
                   maxSessionsPerInstance:
                     description: The maximum number of user sessions on an instance.
                       This only applies to multi-session fleets.
-                    type: number
+                    format: int64
+                    type: integer
                   maxUserDurationInSeconds:
                     description: Maximum amount of time that a streaming session can
                       remain active, in seconds.
-                    type: number
+                    format: int64
+                    type: integer
                   name:
                     description: Unique name for the fleet.
                     type: string

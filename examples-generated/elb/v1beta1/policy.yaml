@@ -41,8 +41,6 @@ spec:
       lbProtocol: https
       sslCertificateId: arn:aws:iam::000000000000:server-certificate/wu-tang.net
     region: us-west-1
-    tags:
-      Name: wu-tang
 
 ---
 

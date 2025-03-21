@@ -1182,12 +1182,6 @@ spec:
                     description: The mode for generating association compliance. You
                       can specify AUTO or MANUAL.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   targets:
                     description: A block containing the targets of the SSM association.
                       Targets are documented below. AWS currently supports a maximum
@@ -1288,7 +1282,8 @@ spec:
                     description: The number of seconds to wait for the association
                       status to be Success. If Success status is not reached within
                       the given time, create opration will fail.
-                    type: number
+                    format: int64
+                    type: integer
                 required:
                 - region
                 type: object
@@ -1456,12 +1451,6 @@ spec:
                     description: The mode for generating association compliance. You
                       can specify AUTO or MANUAL.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   targets:
                     description: A block containing the targets of the SSM association.
                       Targets are documented below. AWS currently supports a maximum
@@ -1562,7 +1551,8 @@ spec:
                     description: The number of seconds to wait for the association
                       status to be Success. If Success status is not reached within
                       the given time, create opration will fail.
-                    type: number
+                    format: int64
+                    type: integer
                 type: object
               managementPolicies:
                 default:
@@ -1857,7 +1847,8 @@ spec:
                     description: The number of seconds to wait for the association
                       status to be Success. If Success status is not reached within
                       the given time, create opration will fail.
-                    type: number
+                    format: int64
+                    type: integer
                 type: object
               conditions:
                 description: Conditions of the resource.

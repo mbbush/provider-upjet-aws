@@ -84,7 +84,8 @@ spec:
                   bgpAsn:
                     description: The autonomous system (AS) number for Border Gateway
                       Protocol (BGP) configuration.
-                    type: number
+                    format: int64
+                    type: integer
                   bgpAuthKey:
                     description: The authentication key for BGP configuration.
                     type: string
@@ -204,7 +205,8 @@ spec:
                   bgpAsn:
                     description: The autonomous system (AS) number for Border Gateway
                       Protocol (BGP) configuration.
-                    type: number
+                    format: int64
+                    type: integer
                   bgpAuthKey:
                     description: The authentication key for BGP configuration.
                     type: string
@@ -490,7 +492,8 @@ spec:
                   bgpAsn:
                     description: The autonomous system (AS) number for Border Gateway
                       Protocol (BGP) configuration.
-                    type: number
+                    format: int64
+                    type: integer
                   bgpAuthKey:
                     description: The authentication key for BGP configuration.
                     type: string

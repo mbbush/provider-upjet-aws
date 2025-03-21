@@ -55,8 +55,6 @@ spec:
     region: us-west-1
     tagSpecifications:
     - resourceType: instance
-      tags:
-        Name: test
     userData: ${filebase64("${path.module}/example.sh")}
     vpcSecurityGroupIdRefs:
     - name: example

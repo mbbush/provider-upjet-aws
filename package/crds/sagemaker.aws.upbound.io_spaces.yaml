@@ -1622,7 +1622,8 @@ spec:
                                     description: The time that SageMaker waits after
                                       the application becomes idle before shutting
                                       it down. Valid values are between 60 and 525600.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                             type: object
                           defaultResourceSpec:
@@ -1683,7 +1684,8 @@ spec:
                                     description: The time that SageMaker waits after
                                       the application becomes idle before shutting
                                       it down. Valid values are between 60 and 525600.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                             type: object
                           codeRepository:
@@ -1787,7 +1789,8 @@ spec:
                                   type: string
                                 imageVersionNumber:
                                   description: The version number of the Custom Image.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             type: array
                           defaultResourceSpec:
@@ -1833,7 +1836,8 @@ spec:
                               ebsVolumeSizeInGb:
                                 description: The size of an EBS storage volume for
                                   a space.
-                                type: number
+                                format: int64
+                                type: integer
                             type: object
                         type: object
                     type: object
@@ -1847,12 +1851,6 @@ spec:
                           values are Private and Shared.
                         type: string
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -1986,7 +1984,8 @@ spec:
                                     description: The time that SageMaker waits after
                                       the application becomes idle before shutting
                                       it down. Valid values are between 60 and 525600.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                             type: object
                           defaultResourceSpec:
@@ -2047,7 +2046,8 @@ spec:
                                     description: The time that SageMaker waits after
                                       the application becomes idle before shutting
                                       it down. Valid values are between 60 and 525600.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                             type: object
                           codeRepository:
@@ -2151,7 +2151,8 @@ spec:
                                   type: string
                                 imageVersionNumber:
                                   description: The version number of the Custom Image.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             type: array
                           defaultResourceSpec:
@@ -2197,7 +2198,8 @@ spec:
                               ebsVolumeSizeInGb:
                                 description: The size of an EBS storage volume for
                                   a space.
-                                type: number
+                                format: int64
+                                type: integer
                             type: object
                         type: object
                     type: object
@@ -2211,12 +2213,6 @@ spec:
                           values are Private and Shared.
                         type: string
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -2448,7 +2444,8 @@ spec:
                                     description: The time that SageMaker waits after
                                       the application becomes idle before shutting
                                       it down. Valid values are between 60 and 525600.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                             type: object
                           defaultResourceSpec:
@@ -2509,7 +2506,8 @@ spec:
                                     description: The time that SageMaker waits after
                                       the application becomes idle before shutting
                                       it down. Valid values are between 60 and 525600.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                             type: object
                           codeRepository:
@@ -2613,7 +2611,8 @@ spec:
                                   type: string
                                 imageVersionNumber:
                                   description: The version number of the Custom Image.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             type: array
                           defaultResourceSpec:
@@ -2659,7 +2658,8 @@ spec:
                               ebsVolumeSizeInGb:
                                 description: The size of an EBS storage volume for
                                   a space.
-                                type: number
+                                format: int64
+                                type: integer
                             type: object
                         type: object
                     type: object

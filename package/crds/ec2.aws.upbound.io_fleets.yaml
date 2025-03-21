@@ -311,11 +311,13 @@ spec:
                                       max:
                                         description: The maximum number of vCPUs.
                                           To specify no maximum limit, omit this parameter.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                       min:
                                         description: The minimum number of vCPUs.
                                           To specify no minimum limit, specify 0.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                     type: object
                                   acceleratorManufacturers:
                                     description: List of accelerator manufacturer
@@ -339,11 +341,13 @@ spec:
                                       max:
                                         description: The maximum number of vCPUs.
                                           To specify no maximum limit, omit this parameter.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                       min:
                                         description: The minimum number of vCPUs.
                                           To specify no minimum limit, specify 0.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                     type: object
                                   acceleratorTypes:
                                     description: The accelerator types that must be
@@ -386,11 +390,13 @@ spec:
                                       max:
                                         description: The maximum number of vCPUs.
                                           To specify no maximum limit, omit this parameter.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                       min:
                                         description: The minimum number of vCPUs.
                                           To specify no minimum limit, specify 0.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                     type: object
                                   burstablePerformance:
                                     description: Indicates whether burstable performance
@@ -458,7 +464,8 @@ spec:
                                       Auto Scaling interprets as a percentage. To
                                       turn off price protection, specify a high value,
                                       such as 999999. Conflicts with spot_max_price_percentage_over_lowest_price
-                                    type: number
+                                    format: int64
+                                    type: integer
                                   memoryGibPerVcpu:
                                     description: Block describing the minimum and
                                       maximum amount of memory (GiB) per vCPU. Default
@@ -481,11 +488,13 @@ spec:
                                       max:
                                         description: The maximum number of vCPUs.
                                           To specify no maximum limit, omit this parameter.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                       min:
                                         description: The minimum number of vCPUs.
                                           To specify no minimum limit, specify 0.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                     type: object
                                   networkBandwidthGbps:
                                     description: The minimum and maximum amount of
@@ -509,11 +518,13 @@ spec:
                                       max:
                                         description: The maximum number of vCPUs.
                                           To specify no maximum limit, omit this parameter.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                       min:
                                         description: The minimum number of vCPUs.
                                           To specify no minimum limit, specify 0.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                     type: object
                                   onDemandMaxPricePercentageOverLowestPrice:
                                     description: The price protection threshold for
@@ -529,7 +540,8 @@ spec:
                                       a percentage. To turn off price protection,
                                       specify a high value, such as 999999. Default
                                       is 20.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                   requireHibernateSupport:
                                     description: Indicate whether instance types must
                                       support On-Demand Instance Hibernation, either
@@ -549,7 +561,8 @@ spec:
                                       turn off price protection, specify a high value,
                                       such as 999999. Default is 100. Conflicts with
                                       max_spot_price_as_percentage_of_optimal_on_demand_price
-                                    type: number
+                                    format: int64
+                                    type: integer
                                   totalLocalStorageGb:
                                     description: Block describing the minimum and
                                       maximum total local storage (GB). Default is
@@ -571,11 +584,13 @@ spec:
                                       max:
                                         description: The maximum number of vCPUs.
                                           To specify no maximum limit, omit this parameter.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                       min:
                                         description: The minimum number of vCPUs.
                                           To specify no minimum limit, specify 0.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                     type: object
                                 type: object
                               instanceType:
@@ -635,7 +650,8 @@ spec:
                         description: |-
                           The minimum target capacity for On-Demand Instances in the fleet. If the minimum target capacity is not reached, the fleet launches no instances. Supported only for fleets of type instant.
                           If you specify min_target_capacity, at least one of the following must be specified: single_availability_zone or single_instance_type.
-                        type: number
+                        format: int64
+                        type: integer
                       singleAvailabilityZone:
                         description: Indicates that the fleet launches all On-Demand
                           Instances into a single Availability Zone. Supported only
@@ -673,7 +689,8 @@ spec:
                         description: 'Number of Spot pools across which to allocate
                           your target Spot capacity. Valid only when Spot allocation_strategy
                           is set to lowestPrice. Default: 1.'
-                        type: number
+                        format: int64
+                        type: integer
                       maintenanceStrategies:
                         description: Nested argument containing maintenance strategies
                           for managing your Spot Instances that are at an elevated
@@ -689,16 +706,11 @@ spec:
                                   values: launch.'
                                 type: string
                               terminationDelay:
-                                type: number
+                                format: int64
+                                type: integer
                             type: object
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   targetCapacitySpecification:
                     description: Nested argument containing target capacity configurations.
                       Defined below.
@@ -709,10 +721,12 @@ spec:
                         type: string
                       onDemandTargetCapacity:
                         description: The number of On-Demand units to request.
-                        type: number
+                        format: int64
+                        type: integer
                       spotTargetCapacity:
                         description: The number of Spot units to request.
-                        type: number
+                        format: int64
+                        type: integer
                       targetCapacityUnitType:
                         description: |-
                           The unit for the target capacity.
@@ -721,7 +735,8 @@ spec:
                       totalTargetCapacity:
                         description: The number of units to request, filled using
                           default_target_capacity_type.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   terminateInstances:
                     description: Whether to terminate instances for an EC2 Fleet if
@@ -1002,11 +1017,13 @@ spec:
                                       max:
                                         description: The maximum number of vCPUs.
                                           To specify no maximum limit, omit this parameter.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                       min:
                                         description: The minimum number of vCPUs.
                                           To specify no minimum limit, specify 0.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                     type: object
                                   acceleratorManufacturers:
                                     description: List of accelerator manufacturer
@@ -1030,11 +1047,13 @@ spec:
                                       max:
                                         description: The maximum number of vCPUs.
                                           To specify no maximum limit, omit this parameter.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                       min:
                                         description: The minimum number of vCPUs.
                                           To specify no minimum limit, specify 0.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                     type: object
                                   acceleratorTypes:
                                     description: The accelerator types that must be
@@ -1077,11 +1096,13 @@ spec:
                                       max:
                                         description: The maximum number of vCPUs.
                                           To specify no maximum limit, omit this parameter.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                       min:
                                         description: The minimum number of vCPUs.
                                           To specify no minimum limit, specify 0.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                     type: object
                                   burstablePerformance:
                                     description: Indicates whether burstable performance
@@ -1149,7 +1170,8 @@ spec:
                                       Auto Scaling interprets as a percentage. To
                                       turn off price protection, specify a high value,
                                       such as 999999. Conflicts with spot_max_price_percentage_over_lowest_price
-                                    type: number
+                                    format: int64
+                                    type: integer
                                   memoryGibPerVcpu:
                                     description: Block describing the minimum and
                                       maximum amount of memory (GiB) per vCPU. Default
@@ -1172,11 +1194,13 @@ spec:
                                       max:
                                         description: The maximum number of vCPUs.
                                           To specify no maximum limit, omit this parameter.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                       min:
                                         description: The minimum number of vCPUs.
                                           To specify no minimum limit, specify 0.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                     type: object
                                   networkBandwidthGbps:
                                     description: The minimum and maximum amount of
@@ -1200,11 +1224,13 @@ spec:
                                       max:
                                         description: The maximum number of vCPUs.
                                           To specify no maximum limit, omit this parameter.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                       min:
                                         description: The minimum number of vCPUs.
                                           To specify no minimum limit, specify 0.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                     type: object
                                   onDemandMaxPricePercentageOverLowestPrice:
                                     description: The price protection threshold for
@@ -1220,7 +1246,8 @@ spec:
                                       a percentage. To turn off price protection,
                                       specify a high value, such as 999999. Default
                                       is 20.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                   requireHibernateSupport:
                                     description: Indicate whether instance types must
                                       support On-Demand Instance Hibernation, either
@@ -1240,7 +1267,8 @@ spec:
                                       turn off price protection, specify a high value,
                                       such as 999999. Default is 100. Conflicts with
                                       max_spot_price_as_percentage_of_optimal_on_demand_price
-                                    type: number
+                                    format: int64
+                                    type: integer
                                   totalLocalStorageGb:
                                     description: Block describing the minimum and
                                       maximum total local storage (GB). Default is
@@ -1262,11 +1290,13 @@ spec:
                                       max:
                                         description: The maximum number of vCPUs.
                                           To specify no maximum limit, omit this parameter.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                       min:
                                         description: The minimum number of vCPUs.
                                           To specify no minimum limit, specify 0.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                     type: object
                                 type: object
                               instanceType:
@@ -1326,7 +1356,8 @@ spec:
                         description: |-
                           The minimum target capacity for On-Demand Instances in the fleet. If the minimum target capacity is not reached, the fleet launches no instances. Supported only for fleets of type instant.
                           If you specify min_target_capacity, at least one of the following must be specified: single_availability_zone or single_instance_type.
-                        type: number
+                        format: int64
+                        type: integer
                       singleAvailabilityZone:
                         description: Indicates that the fleet launches all On-Demand
                           Instances into a single Availability Zone. Supported only
@@ -1360,7 +1391,8 @@ spec:
                         description: 'Number of Spot pools across which to allocate
                           your target Spot capacity. Valid only when Spot allocation_strategy
                           is set to lowestPrice. Default: 1.'
-                        type: number
+                        format: int64
+                        type: integer
                       maintenanceStrategies:
                         description: Nested argument containing maintenance strategies
                           for managing your Spot Instances that are at an elevated
@@ -1376,16 +1408,11 @@ spec:
                                   values: launch.'
                                 type: string
                               terminationDelay:
-                                type: number
+                                format: int64
+                                type: integer
                             type: object
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   targetCapacitySpecification:
                     description: Nested argument containing target capacity configurations.
                       Defined below.
@@ -1396,10 +1423,12 @@ spec:
                         type: string
                       onDemandTargetCapacity:
                         description: The number of On-Demand units to request.
-                        type: number
+                        format: int64
+                        type: integer
                       spotTargetCapacity:
                         description: The number of Spot units to request.
-                        type: number
+                        format: int64
+                        type: integer
                       targetCapacityUnitType:
                         description: |-
                           The unit for the target capacity.
@@ -1408,7 +1437,8 @@ spec:
                       totalTargetCapacity:
                         description: The number of units to request, filled using
                           default_target_capacity_type.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   terminateInstances:
                     description: Whether to terminate instances for an EC2 Fleet if
@@ -1710,11 +1740,13 @@ spec:
                                       max:
                                         description: The maximum number of vCPUs.
                                           To specify no maximum limit, omit this parameter.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                       min:
                                         description: The minimum number of vCPUs.
                                           To specify no minimum limit, specify 0.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                     type: object
                                   acceleratorManufacturers:
                                     description: List of accelerator manufacturer
@@ -1738,11 +1770,13 @@ spec:
                                       max:
                                         description: The maximum number of vCPUs.
                                           To specify no maximum limit, omit this parameter.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                       min:
                                         description: The minimum number of vCPUs.
                                           To specify no minimum limit, specify 0.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                     type: object
                                   acceleratorTypes:
                                     description: The accelerator types that must be
@@ -1785,11 +1819,13 @@ spec:
                                       max:
                                         description: The maximum number of vCPUs.
                                           To specify no maximum limit, omit this parameter.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                       min:
                                         description: The minimum number of vCPUs.
                                           To specify no minimum limit, specify 0.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                     type: object
                                   burstablePerformance:
                                     description: Indicates whether burstable performance
@@ -1857,7 +1893,8 @@ spec:
                                       Auto Scaling interprets as a percentage. To
                                       turn off price protection, specify a high value,
                                       such as 999999. Conflicts with spot_max_price_percentage_over_lowest_price
-                                    type: number
+                                    format: int64
+                                    type: integer
                                   memoryGibPerVcpu:
                                     description: Block describing the minimum and
                                       maximum amount of memory (GiB) per vCPU. Default
@@ -1880,11 +1917,13 @@ spec:
                                       max:
                                         description: The maximum number of vCPUs.
                                           To specify no maximum limit, omit this parameter.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                       min:
                                         description: The minimum number of vCPUs.
                                           To specify no minimum limit, specify 0.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                     type: object
                                   networkBandwidthGbps:
                                     description: The minimum and maximum amount of
@@ -1908,11 +1947,13 @@ spec:
                                       max:
                                         description: The maximum number of vCPUs.
                                           To specify no maximum limit, omit this parameter.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                       min:
                                         description: The minimum number of vCPUs.
                                           To specify no minimum limit, specify 0.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                     type: object
                                   onDemandMaxPricePercentageOverLowestPrice:
                                     description: The price protection threshold for
@@ -1928,7 +1969,8 @@ spec:
                                       a percentage. To turn off price protection,
                                       specify a high value, such as 999999. Default
                                       is 20.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                   requireHibernateSupport:
                                     description: Indicate whether instance types must
                                       support On-Demand Instance Hibernation, either
@@ -1948,7 +1990,8 @@ spec:
                                       turn off price protection, specify a high value,
                                       such as 999999. Default is 100. Conflicts with
                                       max_spot_price_as_percentage_of_optimal_on_demand_price
-                                    type: number
+                                    format: int64
+                                    type: integer
                                   totalLocalStorageGb:
                                     description: Block describing the minimum and
                                       maximum total local storage (GB). Default is
@@ -1970,11 +2013,13 @@ spec:
                                       max:
                                         description: The maximum number of vCPUs.
                                           To specify no maximum limit, omit this parameter.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                       min:
                                         description: The minimum number of vCPUs.
                                           To specify no minimum limit, specify 0.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                     type: object
                                 type: object
                               instanceType:
@@ -2034,7 +2079,8 @@ spec:
                         description: |-
                           The minimum target capacity for On-Demand Instances in the fleet. If the minimum target capacity is not reached, the fleet launches no instances. Supported only for fleets of type instant.
                           If you specify min_target_capacity, at least one of the following must be specified: single_availability_zone or single_instance_type.
-                        type: number
+                        format: int64
+                        type: integer
                       singleAvailabilityZone:
                         description: Indicates that the fleet launches all On-Demand
                           Instances into a single Availability Zone. Supported only
@@ -2068,7 +2114,8 @@ spec:
                         description: 'Number of Spot pools across which to allocate
                           your target Spot capacity. Valid only when Spot allocation_strategy
                           is set to lowestPrice. Default: 1.'
-                        type: number
+                        format: int64
+                        type: integer
                       maintenanceStrategies:
                         description: Nested argument containing maintenance strategies
                           for managing your Spot Instances that are at an elevated
@@ -2084,7 +2131,8 @@ spec:
                                   values: launch.'
                                 type: string
                               terminationDelay:
-                                type: number
+                                format: int64
+                                type: integer
                             type: object
                         type: object
                     type: object
@@ -2112,10 +2160,12 @@ spec:
                         type: string
                       onDemandTargetCapacity:
                         description: The number of On-Demand units to request.
-                        type: number
+                        format: int64
+                        type: integer
                       spotTargetCapacity:
                         description: The number of Spot units to request.
-                        type: number
+                        format: int64
+                        type: integer
                       targetCapacityUnitType:
                         description: |-
                           The unit for the target capacity.
@@ -2124,7 +2174,8 @@ spec:
                       totalTargetCapacity:
                         description: The number of units to request, filled using
                           default_target_capacity_type.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   terminateInstances:
                     description: Whether to terminate instances for an EC2 Fleet if

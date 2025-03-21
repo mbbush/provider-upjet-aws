@@ -23,10 +23,6 @@ type PolicyInitParameters struct {
 
 	// Policy document. This is a JSON formatted string
 	Policy *string `json:"policy,omitempty" tf:"policy,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type PolicyObservation struct {
@@ -35,7 +31,7 @@ type PolicyObservation struct {
 	Arn *string `json:"arn,omitempty" tf:"arn,omitempty"`
 
 	// Number of entities (users, groups, and roles) that the policy is attached to.
-	AttachmentCount *float64 `json:"attachmentCount,omitempty" tf:"attachment_count,omitempty"`
+	AttachmentCount *int64 `json:"attachmentCount,omitempty" tf:"attachment_count,omitempty"`
 
 	// Description of the IAM policy.
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
@@ -74,11 +70,6 @@ type PolicyParameters struct {
 	// Policy document. This is a JSON formatted string
 	// +kubebuilder:validation:Optional
 	Policy *string `json:"policy,omitempty" tf:"policy,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // PolicySpec defines the desired state of Policy

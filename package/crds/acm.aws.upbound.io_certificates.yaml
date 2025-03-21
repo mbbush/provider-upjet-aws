@@ -1008,12 +1008,6 @@ spec:
                       type: string
                     type: array
                     x-kubernetes-list-type: set
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   validationMethod:
                     description: Which method to use for validation. DNS or EMAIL
                       are valid.
@@ -1189,12 +1183,6 @@ spec:
                       type: string
                     type: array
                     x-kubernetes-list-type: set
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   validationMethod:
                     description: Which method to use for validation. DNS or EMAIL
                       are valid.

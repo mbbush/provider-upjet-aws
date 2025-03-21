@@ -96,11 +96,7 @@ type RateBasedRuleInitParameters struct {
 	RateKey *string `json:"rateKey,omitempty" tf:"rate_key,omitempty"`
 
 	// The maximum number of requests, which have an identical value in the field specified by the RateKey, allowed in a five-minute period. Minimum value is 100.
-	RateLimit *float64 `json:"rateLimit,omitempty" tf:"rate_limit,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
+	RateLimit *int64 `json:"rateLimit,omitempty" tf:"rate_limit,omitempty"`
 }
 
 type RateBasedRuleObservation struct {
@@ -124,7 +120,7 @@ type RateBasedRuleObservation struct {
 	RateKey *string `json:"rateKey,omitempty" tf:"rate_key,omitempty"`
 
 	// The maximum number of requests, which have an identical value in the field specified by the RateKey, allowed in a five-minute period. Minimum value is 100.
-	RateLimit *float64 `json:"rateLimit,omitempty" tf:"rate_limit,omitempty"`
+	RateLimit *int64 `json:"rateLimit,omitempty" tf:"rate_limit,omitempty"`
 
 	// Key-value map of resource tags.
 	// +mapType=granular
@@ -155,17 +151,12 @@ type RateBasedRuleParameters struct {
 
 	// The maximum number of requests, which have an identical value in the field specified by the RateKey, allowed in a five-minute period. Minimum value is 100.
 	// +kubebuilder:validation:Optional
-	RateLimit *float64 `json:"rateLimit,omitempty" tf:"rate_limit,omitempty"`
+	RateLimit *int64 `json:"rateLimit,omitempty" tf:"rate_limit,omitempty"`
 
 	// Region is the region you'd like your resource to be created in.
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // RateBasedRuleSpec defines the desired state of RateBasedRule

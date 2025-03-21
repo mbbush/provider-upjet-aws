@@ -89,12 +89,6 @@ spec:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   type:
                     description: 'Channel type, which determines the allowable resolution
                       and bitrate. Valid values: STANDARD, BASIC.'
@@ -128,12 +122,6 @@ spec:
                   recordingConfigurationArn:
                     description: Recording configuration ARN.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   type:
                     description: 'Channel type, which determines the allowable resolution
                       and bitrate. Valid values: STANDARD, BASIC.'

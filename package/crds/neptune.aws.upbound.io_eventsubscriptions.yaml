@@ -260,12 +260,6 @@ spec:
                       db-snapshot, db-cluster or db-cluster-snapshot. If not set,
                       all sources will be subscribed to.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -465,12 +459,6 @@ spec:
                       db-snapshot, db-cluster or db-cluster-snapshot. If not set,
                       all sources will be subscribed to.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:

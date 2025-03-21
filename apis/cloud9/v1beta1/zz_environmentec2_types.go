@@ -16,7 +16,7 @@ import (
 type EnvironmentEC2InitParameters struct {
 
 	// The number of minutes until the running instance is shut down after the environment has last been used.
-	AutomaticStopTimeMinutes *float64 `json:"automaticStopTimeMinutes,omitempty" tf:"automatic_stop_time_minutes,omitempty"`
+	AutomaticStopTimeMinutes *int64 `json:"automaticStopTimeMinutes,omitempty" tf:"automatic_stop_time_minutes,omitempty"`
 
 	// The connection type used for connecting to an Amazon EC2 environment. Valid values are CONNECT_SSH and CONNECT_SSM. For more information please refer AWS documentation for Cloud9.
 	ConnectionType *string `json:"connectionType,omitempty" tf:"connection_type,omitempty"`
@@ -47,10 +47,6 @@ type EnvironmentEC2InitParameters struct {
 	// Selector for a Subnet in ec2 to populate subnetId.
 	// +kubebuilder:validation:Optional
 	SubnetIDSelector *v1.Selector `json:"subnetIdSelector,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type EnvironmentEC2Observation struct {
@@ -59,7 +55,7 @@ type EnvironmentEC2Observation struct {
 	Arn *string `json:"arn,omitempty" tf:"arn,omitempty"`
 
 	// The number of minutes until the running instance is shut down after the environment has last been used.
-	AutomaticStopTimeMinutes *float64 `json:"automaticStopTimeMinutes,omitempty" tf:"automatic_stop_time_minutes,omitempty"`
+	AutomaticStopTimeMinutes *int64 `json:"automaticStopTimeMinutes,omitempty" tf:"automatic_stop_time_minutes,omitempty"`
 
 	// The connection type used for connecting to an Amazon EC2 environment. Valid values are CONNECT_SSH and CONNECT_SSM. For more information please refer AWS documentation for Cloud9.
 	ConnectionType *string `json:"connectionType,omitempty" tf:"connection_type,omitempty"`
@@ -101,7 +97,7 @@ type EnvironmentEC2Parameters struct {
 
 	// The number of minutes until the running instance is shut down after the environment has last been used.
 	// +kubebuilder:validation:Optional
-	AutomaticStopTimeMinutes *float64 `json:"automaticStopTimeMinutes,omitempty" tf:"automatic_stop_time_minutes,omitempty"`
+	AutomaticStopTimeMinutes *int64 `json:"automaticStopTimeMinutes,omitempty" tf:"automatic_stop_time_minutes,omitempty"`
 
 	// The connection type used for connecting to an Amazon EC2 environment. Valid values are CONNECT_SSH and CONNECT_SSM. For more information please refer AWS documentation for Cloud9.
 	// +kubebuilder:validation:Optional
@@ -144,11 +140,6 @@ type EnvironmentEC2Parameters struct {
 	// Selector for a Subnet in ec2 to populate subnetId.
 	// +kubebuilder:validation:Optional
 	SubnetIDSelector *v1.Selector `json:"subnetIdSelector,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // EnvironmentEC2Spec defines the desired state of EnvironmentEC2

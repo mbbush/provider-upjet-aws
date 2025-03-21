@@ -1653,7 +1653,8 @@ spec:
                                 a ttlOverride key in its response. A value of 0 disables
                                 caching of responses. Minimum value of 0. Maximum
                                 value of 3600.
-                              type: number
+                              format: int64
+                              type: integer
                             authorizerUri:
                               description: 'ARN of the Lambda function to be called
                                 for authorization. Note: This Lambda function must
@@ -1672,7 +1673,8 @@ spec:
                             authTtl:
                               description: Number of milliseconds a token is valid
                                 after being authenticated.
-                              type: number
+                              format: int64
+                              type: integer
                             clientId:
                               description: Client identifier of the Relying party
                                 at the OpenID identity provider. This identifier is
@@ -1684,7 +1686,8 @@ spec:
                             iatTtl:
                               description: Number of milliseconds a token is valid
                                 after being issued to a user.
-                              type: number
+                              format: int64
+                              type: integer
                             issuer:
                               description: Issuer for the OpenID Connect configuration.
                                 The issuer returned by discovery MUST exactly match
@@ -1751,7 +1754,8 @@ spec:
                           function can override this by returning a ttlOverride key
                           in its response. A value of 0 disables caching of responses.
                           Minimum value of 0. Maximum value of 3600.
-                        type: number
+                        format: int64
+                        type: integer
                       authorizerUri:
                         description: 'ARN of the Lambda function to be called for
                           authorization. Note: This Lambda function must have a resource-based
@@ -1945,7 +1949,8 @@ spec:
                       authTtl:
                         description: Number of milliseconds a token is valid after
                           being authenticated.
-                        type: number
+                        format: int64
+                        type: integer
                       clientId:
                         description: Client identifier of the Relying party at the
                           OpenID identity provider. This identifier is typically obtained
@@ -1957,7 +1962,8 @@ spec:
                       iatTtl:
                         description: Number of milliseconds a token is valid after
                           being issued to a user.
-                        type: number
+                        format: int64
+                        type: integer
                       issuer:
                         description: Issuer for the OpenID Connect configuration.
                           The issuer returned by discovery MUST exactly match the
@@ -1971,7 +1977,8 @@ spec:
                       there's no depth limit. If you set a limit, it can be between
                       1 and 75 nested levels. This field will produce a limit error
                       if the operation falls out of bounds.
-                    type: number
+                    format: int64
+                    type: integer
                   region:
                     description: Region is the region you'd like your resource to
                       be created in.
@@ -1982,16 +1989,11 @@ spec:
                       which will set the limit to 10000. When specified, the limit
                       value can be between 1 and 10000. This field will produce a
                       limit error if the operation falls out of bounds.
-                    type: number
+                    format: int64
+                    type: integer
                   schema:
                     description: Schema definition, in GraphQL schema language format.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   userPoolConfig:
                     description: Amazon Cognito User Pool configuration. See user_pool_config
                       Block for details.
@@ -2137,7 +2139,8 @@ spec:
                                 a ttlOverride key in its response. A value of 0 disables
                                 caching of responses. Minimum value of 0. Maximum
                                 value of 3600.
-                              type: number
+                              format: int64
+                              type: integer
                             authorizerUri:
                               description: 'ARN of the Lambda function to be called
                                 for authorization. Note: This Lambda function must
@@ -2156,7 +2159,8 @@ spec:
                             authTtl:
                               description: Number of milliseconds a token is valid
                                 after being authenticated.
-                              type: number
+                              format: int64
+                              type: integer
                             clientId:
                               description: Client identifier of the Relying party
                                 at the OpenID identity provider. This identifier is
@@ -2168,7 +2172,8 @@ spec:
                             iatTtl:
                               description: Number of milliseconds a token is valid
                                 after being issued to a user.
-                              type: number
+                              format: int64
+                              type: integer
                             issuer:
                               description: Issuer for the OpenID Connect configuration.
                                 The issuer returned by discovery MUST exactly match
@@ -2235,7 +2240,8 @@ spec:
                           function can override this by returning a ttlOverride key
                           in its response. A value of 0 disables caching of responses.
                           Minimum value of 0. Maximum value of 3600.
-                        type: number
+                        format: int64
+                        type: integer
                       authorizerUri:
                         description: 'ARN of the Lambda function to be called for
                           authorization. Note: This Lambda function must have a resource-based
@@ -2429,7 +2435,8 @@ spec:
                       authTtl:
                         description: Number of milliseconds a token is valid after
                           being authenticated.
-                        type: number
+                        format: int64
+                        type: integer
                       clientId:
                         description: Client identifier of the Relying party at the
                           OpenID identity provider. This identifier is typically obtained
@@ -2441,7 +2448,8 @@ spec:
                       iatTtl:
                         description: Number of milliseconds a token is valid after
                           being issued to a user.
-                        type: number
+                        format: int64
+                        type: integer
                       issuer:
                         description: Issuer for the OpenID Connect configuration.
                           The issuer returned by discovery MUST exactly match the
@@ -2455,23 +2463,19 @@ spec:
                       there's no depth limit. If you set a limit, it can be between
                       1 and 75 nested levels. This field will produce a limit error
                       if the operation falls out of bounds.
-                    type: number
+                    format: int64
+                    type: integer
                   resolverCountLimit:
                     description: The maximum number of resolvers that can be invoked
                       in a single request. The default value is 0 (or unspecified),
                       which will set the limit to 10000. When specified, the limit
                       value can be between 1 and 10000. This field will produce a
                       limit error if the operation falls out of bounds.
-                    type: number
+                    format: int64
+                    type: integer
                   schema:
                     description: Schema definition, in GraphQL schema language format.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   userPoolConfig:
                     description: Amazon Cognito User Pool configuration. See user_pool_config
                       Block for details.
@@ -2783,7 +2787,8 @@ spec:
                                 a ttlOverride key in its response. A value of 0 disables
                                 caching of responses. Minimum value of 0. Maximum
                                 value of 3600.
-                              type: number
+                              format: int64
+                              type: integer
                             authorizerUri:
                               description: 'ARN of the Lambda function to be called
                                 for authorization. Note: This Lambda function must
@@ -2802,7 +2807,8 @@ spec:
                             authTtl:
                               description: Number of milliseconds a token is valid
                                 after being authenticated.
-                              type: number
+                              format: int64
+                              type: integer
                             clientId:
                               description: Client identifier of the Relying party
                                 at the OpenID identity provider. This identifier is
@@ -2814,7 +2820,8 @@ spec:
                             iatTtl:
                               description: Number of milliseconds a token is valid
                                 after being issued to a user.
-                              type: number
+                              format: int64
+                              type: integer
                             issuer:
                               description: Issuer for the OpenID Connect configuration.
                                 The issuer returned by discovery MUST exactly match
@@ -2887,7 +2894,8 @@ spec:
                           function can override this by returning a ttlOverride key
                           in its response. A value of 0 disables caching of responses.
                           Minimum value of 0. Maximum value of 3600.
-                        type: number
+                        format: int64
+                        type: integer
                       authorizerUri:
                         description: 'ARN of the Lambda function to be called for
                           authorization. Note: This Lambda function must have a resource-based
@@ -2933,7 +2941,8 @@ spec:
                       authTtl:
                         description: Number of milliseconds a token is valid after
                           being authenticated.
-                        type: number
+                        format: int64
+                        type: integer
                       clientId:
                         description: Client identifier of the Relying party at the
                           OpenID identity provider. This identifier is typically obtained
@@ -2945,7 +2954,8 @@ spec:
                       iatTtl:
                         description: Number of milliseconds a token is valid after
                           being issued to a user.
-                        type: number
+                        format: int64
+                        type: integer
                       issuer:
                         description: Issuer for the OpenID Connect configuration.
                           The issuer returned by discovery MUST exactly match the
@@ -2959,14 +2969,16 @@ spec:
                       there's no depth limit. If you set a limit, it can be between
                       1 and 75 nested levels. This field will produce a limit error
                       if the operation falls out of bounds.
-                    type: number
+                    format: int64
+                    type: integer
                   resolverCountLimit:
                     description: The maximum number of resolvers that can be invoked
                       in a single request. The default value is 0 (or unspecified),
                       which will set the limit to 10000. When specified, the limit
                       value can be between 1 and 10000. This field will produce a
                       limit error if the operation falls out of bounds.
-                    type: number
+                    format: int64
+                    type: integer
                   schema:
                     description: Schema definition, in GraphQL schema language format.
                     type: string

@@ -70,7 +70,7 @@ func (in *APICacheInitParameters) DeepCopyInto(out *APICacheInitParameters) {
 	}
 	if in.TTL != nil {
 		in, out := &in.TTL, &out.TTL
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.TransitEncryptionEnabled != nil {
@@ -152,7 +152,7 @@ func (in *APICacheObservation) DeepCopyInto(out *APICacheObservation) {
 	}
 	if in.TTL != nil {
 		in, out := &in.TTL, &out.TTL
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.TransitEncryptionEnabled != nil {
@@ -212,7 +212,7 @@ func (in *APICacheParameters) DeepCopyInto(out *APICacheParameters) {
 	}
 	if in.TTL != nil {
 		in, out := &in.TTL, &out.TTL
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.TransitEncryptionEnabled != nil {

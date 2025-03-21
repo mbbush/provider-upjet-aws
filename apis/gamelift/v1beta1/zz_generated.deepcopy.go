@@ -1332,25 +1332,9 @@ func (in *GameSessionQueueInitParameters) DeepCopyInto(out *GameSessionQueueInit
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.TimeoutInSeconds != nil {
 		in, out := &in.TimeoutInSeconds, &out.TimeoutInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1472,7 +1456,7 @@ func (in *GameSessionQueueObservation) DeepCopyInto(out *GameSessionQueueObserva
 	}
 	if in.TimeoutInSeconds != nil {
 		in, out := &in.TimeoutInSeconds, &out.TimeoutInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1545,25 +1529,9 @@ func (in *GameSessionQueueParameters) DeepCopyInto(out *GameSessionQueueParamete
 		*out = new(string)
 		**out = **in
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.TimeoutInSeconds != nil {
 		in, out := &in.TimeoutInSeconds, &out.TimeoutInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1618,12 +1586,12 @@ func (in *PlayerLatencyPolicyInitParameters) DeepCopyInto(out *PlayerLatencyPoli
 	*out = *in
 	if in.MaximumIndividualPlayerLatencyMilliseconds != nil {
 		in, out := &in.MaximumIndividualPlayerLatencyMilliseconds, &out.MaximumIndividualPlayerLatencyMilliseconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.PolicyDurationSeconds != nil {
 		in, out := &in.PolicyDurationSeconds, &out.PolicyDurationSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1643,12 +1611,12 @@ func (in *PlayerLatencyPolicyObservation) DeepCopyInto(out *PlayerLatencyPolicyO
 	*out = *in
 	if in.MaximumIndividualPlayerLatencyMilliseconds != nil {
 		in, out := &in.MaximumIndividualPlayerLatencyMilliseconds, &out.MaximumIndividualPlayerLatencyMilliseconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.PolicyDurationSeconds != nil {
 		in, out := &in.PolicyDurationSeconds, &out.PolicyDurationSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1668,12 +1636,12 @@ func (in *PlayerLatencyPolicyParameters) DeepCopyInto(out *PlayerLatencyPolicyPa
 	*out = *in
 	if in.MaximumIndividualPlayerLatencyMilliseconds != nil {
 		in, out := &in.MaximumIndividualPlayerLatencyMilliseconds, &out.MaximumIndividualPlayerLatencyMilliseconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.PolicyDurationSeconds != nil {
 		in, out := &in.PolicyDurationSeconds, &out.PolicyDurationSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }

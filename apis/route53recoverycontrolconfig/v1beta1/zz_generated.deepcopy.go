@@ -373,7 +373,7 @@ func (in *ControlPanelObservation) DeepCopyInto(out *ControlPanelObservation) {
 	}
 	if in.RoutingControlCount != nil {
 		in, out := &in.RoutingControlCount, &out.RoutingControlCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Status != nil {

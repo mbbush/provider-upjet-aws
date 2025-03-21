@@ -5311,7 +5311,8 @@ spec:
                                   type: string
                                 value:
                                   description: A value for the keyword.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             end:
                               description: An end date for the date filter. Required
@@ -5514,7 +5515,8 @@ spec:
                                   type: string
                                 value:
                                   description: A value for the keyword.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             end:
                               description: An end date for the date filter. Required
@@ -5585,7 +5587,8 @@ spec:
                                   type: string
                                 value:
                                   description: A value for the keyword.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             end:
                               description: An end date for the date filter. Required
@@ -5850,7 +5853,8 @@ spec:
                                   type: string
                                 value:
                                   description: A value for the keyword.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             end:
                               description: An end date for the date filter. Required
@@ -5893,7 +5897,8 @@ spec:
                                   type: string
                                 value:
                                   description: A value for the keyword.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             end:
                               description: An end date for the date filter. Required
@@ -5995,7 +6000,8 @@ spec:
                                   type: string
                                 value:
                                   description: A value for the keyword.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             end:
                               description: An end date for the date filter. Required
@@ -6204,7 +6210,8 @@ spec:
                                   type: string
                                 value:
                                   description: A value for the keyword.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             end:
                               description: An end date for the date filter. Required
@@ -6277,7 +6284,8 @@ spec:
                                   type: string
                                 value:
                                   description: A value for the keyword.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             end:
                               description: An end date for the date filter. Required
@@ -6395,7 +6403,8 @@ spec:
                                   type: string
                                 value:
                                   description: A value for the keyword.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             end:
                               description: An end date for the date filter. Required
@@ -6587,7 +6596,8 @@ spec:
                                   type: string
                                 value:
                                   description: A value for the keyword.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             end:
                               description: An end date for the date filter. Required
@@ -6707,7 +6717,8 @@ spec:
                                   type: string
                                 value:
                                   description: A value for the keyword.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             end:
                               description: An end date for the date filter. Required
@@ -6899,7 +6910,8 @@ spec:
                                   type: string
                                 value:
                                   description: A value for the keyword.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             end:
                               description: An end date for the date filter. Required
@@ -7102,7 +7114,8 @@ spec:
                                   type: string
                                 value:
                                   description: A value for the keyword.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             end:
                               description: An end date for the date filter. Required
@@ -7173,7 +7186,8 @@ spec:
                                   type: string
                                 value:
                                   description: A value for the keyword.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             end:
                               description: An end date for the date filter. Required
@@ -7438,7 +7452,8 @@ spec:
                                   type: string
                                 value:
                                   description: A value for the keyword.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             end:
                               description: An end date for the date filter. Required
@@ -7481,7 +7496,8 @@ spec:
                                   type: string
                                 value:
                                   description: A value for the keyword.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             end:
                               description: An end date for the date filter. Required
@@ -7583,7 +7599,8 @@ spec:
                                   type: string
                                 value:
                                   description: A value for the keyword.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             end:
                               description: An end date for the date filter. Required
@@ -7792,7 +7809,8 @@ spec:
                                   type: string
                                 value:
                                   description: A value for the keyword.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             end:
                               description: An end date for the date filter. Required
@@ -7865,7 +7883,8 @@ spec:
                                   type: string
                                 value:
                                   description: A value for the keyword.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             end:
                               description: An end date for the date filter. Required
@@ -7983,7 +8002,8 @@ spec:
                                   type: string
                                 value:
                                   description: A value for the keyword.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             end:
                               description: An end date for the date filter. Required
@@ -8175,7 +8195,8 @@ spec:
                                   type: string
                                 value:
                                   description: A value for the keyword.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             end:
                               description: An end date for the date filter. Required
@@ -8295,7 +8316,8 @@ spec:
                                   type: string
                                 value:
                                   description: A value for the keyword.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             end:
                               description: An end date for the date filter. Required
@@ -8656,7 +8678,8 @@ spec:
                                   type: string
                                 value:
                                   description: A value for the keyword.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             end:
                               description: An end date for the date filter. Required
@@ -8859,7 +8882,8 @@ spec:
                                   type: string
                                 value:
                                   description: A value for the keyword.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             end:
                               description: An end date for the date filter. Required
@@ -8930,7 +8954,8 @@ spec:
                                   type: string
                                 value:
                                   description: A value for the keyword.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             end:
                               description: An end date for the date filter. Required
@@ -9195,7 +9220,8 @@ spec:
                                   type: string
                                 value:
                                   description: A value for the keyword.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             end:
                               description: An end date for the date filter. Required
@@ -9238,7 +9264,8 @@ spec:
                                   type: string
                                 value:
                                   description: A value for the keyword.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             end:
                               description: An end date for the date filter. Required
@@ -9340,7 +9367,8 @@ spec:
                                   type: string
                                 value:
                                   description: A value for the keyword.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             end:
                               description: An end date for the date filter. Required
@@ -9549,7 +9577,8 @@ spec:
                                   type: string
                                 value:
                                   description: A value for the keyword.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             end:
                               description: An end date for the date filter. Required
@@ -9622,7 +9651,8 @@ spec:
                                   type: string
                                 value:
                                   description: A value for the keyword.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             end:
                               description: An end date for the date filter. Required
@@ -9740,7 +9770,8 @@ spec:
                                   type: string
                                 value:
                                   description: A value for the keyword.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             end:
                               description: An end date for the date filter. Required
@@ -9932,7 +9963,8 @@ spec:
                                   type: string
                                 value:
                                   description: A value for the keyword.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             end:
                               description: An end date for the date filter. Required
@@ -10052,7 +10084,8 @@ spec:
                                   type: string
                                 value:
                                   description: A value for the keyword.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             end:
                               description: An end date for the date filter. Required

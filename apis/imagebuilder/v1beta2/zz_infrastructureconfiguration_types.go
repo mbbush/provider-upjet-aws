@@ -55,10 +55,6 @@ type InfrastructureConfigurationInitParameters struct {
 	// Name for the configuration.
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
 
-	// Key-value map of resource tags to assign to infrastructure created by the configuration.
-	// +mapType=granular
-	ResourceTags map[string]*string `json:"resourceTags,omitempty" tf:"resource_tags,omitempty"`
-
 	// References to SecurityGroup in ec2 to populate securityGroupIds.
 	// +kubebuilder:validation:Optional
 	SecurityGroupIDRefs []v1.Reference `json:"securityGroupIdRefs,omitempty" tf:"-"`
@@ -98,10 +94,6 @@ type InfrastructureConfigurationInitParameters struct {
 	// Selector for a Subnet in ec2 to populate subnetId.
 	// +kubebuilder:validation:Optional
 	SubnetIDSelector *v1.Selector `json:"subnetIdSelector,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Enable if the instance should be terminated when the pipeline fails. Defaults to false.
 	TerminateInstanceOnFailure *bool `json:"terminateInstanceOnFailure,omitempty" tf:"terminate_instance_on_failure,omitempty"`
@@ -223,11 +215,6 @@ type InfrastructureConfigurationParameters struct {
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
 
-	// Key-value map of resource tags to assign to infrastructure created by the configuration.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	ResourceTags map[string]*string `json:"resourceTags,omitempty" tf:"resource_tags,omitempty"`
-
 	// References to SecurityGroup in ec2 to populate securityGroupIds.
 	// +kubebuilder:validation:Optional
 	SecurityGroupIDRefs []v1.Reference `json:"securityGroupIdRefs,omitempty" tf:"-"`
@@ -271,11 +258,6 @@ type InfrastructureConfigurationParameters struct {
 	// +kubebuilder:validation:Optional
 	SubnetIDSelector *v1.Selector `json:"subnetIdSelector,omitempty" tf:"-"`
 
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Enable if the instance should be terminated when the pipeline fails. Defaults to false.
 	// +kubebuilder:validation:Optional
 	TerminateInstanceOnFailure *bool `json:"terminateInstanceOnFailure,omitempty" tf:"terminate_instance_on_failure,omitempty"`
@@ -284,7 +266,7 @@ type InfrastructureConfigurationParameters struct {
 type InstanceMetadataOptionsInitParameters struct {
 
 	// The number of hops that an instance can traverse to reach its destonation.
-	HTTPPutResponseHopLimit *float64 `json:"httpPutResponseHopLimit,omitempty" tf:"http_put_response_hop_limit,omitempty"`
+	HTTPPutResponseHopLimit *int64 `json:"httpPutResponseHopLimit,omitempty" tf:"http_put_response_hop_limit,omitempty"`
 
 	// Whether a signed token is required for instance metadata retrieval requests. Valid values: required, optional.
 	HTTPTokens *string `json:"httpTokens,omitempty" tf:"http_tokens,omitempty"`
@@ -293,7 +275,7 @@ type InstanceMetadataOptionsInitParameters struct {
 type InstanceMetadataOptionsObservation struct {
 
 	// The number of hops that an instance can traverse to reach its destonation.
-	HTTPPutResponseHopLimit *float64 `json:"httpPutResponseHopLimit,omitempty" tf:"http_put_response_hop_limit,omitempty"`
+	HTTPPutResponseHopLimit *int64 `json:"httpPutResponseHopLimit,omitempty" tf:"http_put_response_hop_limit,omitempty"`
 
 	// Whether a signed token is required for instance metadata retrieval requests. Valid values: required, optional.
 	HTTPTokens *string `json:"httpTokens,omitempty" tf:"http_tokens,omitempty"`
@@ -303,7 +285,7 @@ type InstanceMetadataOptionsParameters struct {
 
 	// The number of hops that an instance can traverse to reach its destonation.
 	// +kubebuilder:validation:Optional
-	HTTPPutResponseHopLimit *float64 `json:"httpPutResponseHopLimit,omitempty" tf:"http_put_response_hop_limit,omitempty"`
+	HTTPPutResponseHopLimit *int64 `json:"httpPutResponseHopLimit,omitempty" tf:"http_put_response_hop_limit,omitempty"`
 
 	// Whether a signed token is required for instance metadata retrieval requests. Valid values: required, optional.
 	// +kubebuilder:validation:Optional

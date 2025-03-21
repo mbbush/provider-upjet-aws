@@ -104,12 +104,6 @@ spec:
                       REGIONAL. To work with CloudFront, you must also specify the
                       region us-east-1 (N. Virginia) on the AWS provider.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -153,12 +147,6 @@ spec:
                       REGIONAL. To work with CloudFront, you must also specify the
                       region us-east-1 (N. Virginia) on the AWS provider.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:

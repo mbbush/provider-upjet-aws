@@ -32,10 +32,6 @@ type LagInitParameters struct {
 
 	// The name of the service provider associated with the LAG.
 	ProviderName *string `json:"providerName,omitempty" tf:"provider_name,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type LagObservation struct {
@@ -112,11 +108,6 @@ type LagParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // LagSpec defines the desired state of Lag

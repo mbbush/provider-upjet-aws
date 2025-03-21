@@ -96,10 +96,10 @@ type GlobalSecondaryIndexInitParameters struct {
 	RangeKey *string `json:"rangeKey,omitempty" tf:"range_key,omitempty"`
 
 	// Number of read units for this index. Must be set if billing_mode is set to PROVISIONED.
-	ReadCapacity *float64 `json:"readCapacity,omitempty" tf:"read_capacity,omitempty"`
+	ReadCapacity *int64 `json:"readCapacity,omitempty" tf:"read_capacity,omitempty"`
 
 	// Number of write units for this index. Must be set if billing_mode is set to PROVISIONED.
-	WriteCapacity *float64 `json:"writeCapacity,omitempty" tf:"write_capacity,omitempty"`
+	WriteCapacity *int64 `json:"writeCapacity,omitempty" tf:"write_capacity,omitempty"`
 }
 
 type GlobalSecondaryIndexObservation struct {
@@ -124,10 +124,10 @@ type GlobalSecondaryIndexObservation struct {
 	RangeKey *string `json:"rangeKey,omitempty" tf:"range_key,omitempty"`
 
 	// Number of read units for this index. Must be set if billing_mode is set to PROVISIONED.
-	ReadCapacity *float64 `json:"readCapacity,omitempty" tf:"read_capacity,omitempty"`
+	ReadCapacity *int64 `json:"readCapacity,omitempty" tf:"read_capacity,omitempty"`
 
 	// Number of write units for this index. Must be set if billing_mode is set to PROVISIONED.
-	WriteCapacity *float64 `json:"writeCapacity,omitempty" tf:"write_capacity,omitempty"`
+	WriteCapacity *int64 `json:"writeCapacity,omitempty" tf:"write_capacity,omitempty"`
 }
 
 type GlobalSecondaryIndexParameters struct {
@@ -159,11 +159,11 @@ type GlobalSecondaryIndexParameters struct {
 
 	// Number of read units for this index. Must be set if billing_mode is set to PROVISIONED.
 	// +kubebuilder:validation:Optional
-	ReadCapacity *float64 `json:"readCapacity,omitempty" tf:"read_capacity,omitempty"`
+	ReadCapacity *int64 `json:"readCapacity,omitempty" tf:"read_capacity,omitempty"`
 
 	// Number of write units for this index. Must be set if billing_mode is set to PROVISIONED.
 	// +kubebuilder:validation:Optional
-	WriteCapacity *float64 `json:"writeCapacity,omitempty" tf:"write_capacity,omitempty"`
+	WriteCapacity *int64 `json:"writeCapacity,omitempty" tf:"write_capacity,omitempty"`
 }
 
 type ImportTableInitParameters struct {
@@ -301,30 +301,30 @@ type LocalSecondaryIndexParameters struct {
 type OnDemandThroughputInitParameters struct {
 
 	// Maximum number of read request units for the specified table. To specify set the value greater than or equal to 1. To remove set the value to -1.
-	MaxReadRequestUnits *float64 `json:"maxReadRequestUnits,omitempty" tf:"max_read_request_units,omitempty"`
+	MaxReadRequestUnits *int64 `json:"maxReadRequestUnits,omitempty" tf:"max_read_request_units,omitempty"`
 
 	// Maximum number of write request units for the specified table. To specify set the value greater than or equal to 1. To remove set the value to -1.
-	MaxWriteRequestUnits *float64 `json:"maxWriteRequestUnits,omitempty" tf:"max_write_request_units,omitempty"`
+	MaxWriteRequestUnits *int64 `json:"maxWriteRequestUnits,omitempty" tf:"max_write_request_units,omitempty"`
 }
 
 type OnDemandThroughputObservation struct {
 
 	// Maximum number of read request units for the specified table. To specify set the value greater than or equal to 1. To remove set the value to -1.
-	MaxReadRequestUnits *float64 `json:"maxReadRequestUnits,omitempty" tf:"max_read_request_units,omitempty"`
+	MaxReadRequestUnits *int64 `json:"maxReadRequestUnits,omitempty" tf:"max_read_request_units,omitempty"`
 
 	// Maximum number of write request units for the specified table. To specify set the value greater than or equal to 1. To remove set the value to -1.
-	MaxWriteRequestUnits *float64 `json:"maxWriteRequestUnits,omitempty" tf:"max_write_request_units,omitempty"`
+	MaxWriteRequestUnits *int64 `json:"maxWriteRequestUnits,omitempty" tf:"max_write_request_units,omitempty"`
 }
 
 type OnDemandThroughputParameters struct {
 
 	// Maximum number of read request units for the specified table. To specify set the value greater than or equal to 1. To remove set the value to -1.
 	// +kubebuilder:validation:Optional
-	MaxReadRequestUnits *float64 `json:"maxReadRequestUnits,omitempty" tf:"max_read_request_units,omitempty"`
+	MaxReadRequestUnits *int64 `json:"maxReadRequestUnits,omitempty" tf:"max_read_request_units,omitempty"`
 
 	// Maximum number of write request units for the specified table. To specify set the value greater than or equal to 1. To remove set the value to -1.
 	// +kubebuilder:validation:Optional
-	MaxWriteRequestUnits *float64 `json:"maxWriteRequestUnits,omitempty" tf:"max_write_request_units,omitempty"`
+	MaxWriteRequestUnits *int64 `json:"maxWriteRequestUnits,omitempty" tf:"max_write_request_units,omitempty"`
 }
 
 type PointInTimeRecoveryInitParameters struct {
@@ -540,7 +540,7 @@ type TableInitParameters struct {
 	RangeKey *string `json:"rangeKey,omitempty" tf:"range_key,omitempty"`
 
 	// Number of read units for this table. If the billing_mode is PROVISIONED, this field is required.
-	ReadCapacity *float64 `json:"readCapacity,omitempty" tf:"read_capacity,omitempty"`
+	ReadCapacity *int64 `json:"readCapacity,omitempty" tf:"read_capacity,omitempty"`
 
 	// Configuration block(s) with DynamoDB Global Tables V2 (version 2019.11.21) replication configurations. See below.
 	Replica []ReplicaInitParameters `json:"replica,omitempty" tf:"replica,omitempty"`
@@ -574,12 +574,8 @@ type TableInitParameters struct {
 	// Default value is STANDARD.
 	TableClass *string `json:"tableClass,omitempty" tf:"table_class,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Number of write units for this table. If the billing_mode is PROVISIONED, this field is required.
-	WriteCapacity *float64 `json:"writeCapacity,omitempty" tf:"write_capacity,omitempty"`
+	WriteCapacity *int64 `json:"writeCapacity,omitempty" tf:"write_capacity,omitempty"`
 }
 
 type TableObservation struct {
@@ -621,7 +617,7 @@ type TableObservation struct {
 	RangeKey *string `json:"rangeKey,omitempty" tf:"range_key,omitempty"`
 
 	// Number of read units for this table. If the billing_mode is PROVISIONED, this field is required.
-	ReadCapacity *float64 `json:"readCapacity,omitempty" tf:"read_capacity,omitempty"`
+	ReadCapacity *int64 `json:"readCapacity,omitempty" tf:"read_capacity,omitempty"`
 
 	// Configuration block(s) with DynamoDB Global Tables V2 (version 2019.11.21) replication configurations. See below.
 	Replica []ReplicaObservation `json:"replica,omitempty" tf:"replica,omitempty"`
@@ -670,36 +666,36 @@ type TableObservation struct {
 	TagsAll map[string]*string `json:"tagsAll,omitempty" tf:"tags_all,omitempty"`
 
 	// Number of write units for this table. If the billing_mode is PROVISIONED, this field is required.
-	WriteCapacity *float64 `json:"writeCapacity,omitempty" tf:"write_capacity,omitempty"`
+	WriteCapacity *int64 `json:"writeCapacity,omitempty" tf:"write_capacity,omitempty"`
 }
 
 type TableOnDemandThroughputInitParameters struct {
 
 	// Maximum number of read request units for the specified table. To specify set the value greater than or equal to 1. To remove set the value to -1.
-	MaxReadRequestUnits *float64 `json:"maxReadRequestUnits,omitempty" tf:"max_read_request_units,omitempty"`
+	MaxReadRequestUnits *int64 `json:"maxReadRequestUnits,omitempty" tf:"max_read_request_units,omitempty"`
 
 	// Maximum number of write request units for the specified table. To specify set the value greater than or equal to 1. To remove set the value to -1.
-	MaxWriteRequestUnits *float64 `json:"maxWriteRequestUnits,omitempty" tf:"max_write_request_units,omitempty"`
+	MaxWriteRequestUnits *int64 `json:"maxWriteRequestUnits,omitempty" tf:"max_write_request_units,omitempty"`
 }
 
 type TableOnDemandThroughputObservation struct {
 
 	// Maximum number of read request units for the specified table. To specify set the value greater than or equal to 1. To remove set the value to -1.
-	MaxReadRequestUnits *float64 `json:"maxReadRequestUnits,omitempty" tf:"max_read_request_units,omitempty"`
+	MaxReadRequestUnits *int64 `json:"maxReadRequestUnits,omitempty" tf:"max_read_request_units,omitempty"`
 
 	// Maximum number of write request units for the specified table. To specify set the value greater than or equal to 1. To remove set the value to -1.
-	MaxWriteRequestUnits *float64 `json:"maxWriteRequestUnits,omitempty" tf:"max_write_request_units,omitempty"`
+	MaxWriteRequestUnits *int64 `json:"maxWriteRequestUnits,omitempty" tf:"max_write_request_units,omitempty"`
 }
 
 type TableOnDemandThroughputParameters struct {
 
 	// Maximum number of read request units for the specified table. To specify set the value greater than or equal to 1. To remove set the value to -1.
 	// +kubebuilder:validation:Optional
-	MaxReadRequestUnits *float64 `json:"maxReadRequestUnits,omitempty" tf:"max_read_request_units,omitempty"`
+	MaxReadRequestUnits *int64 `json:"maxReadRequestUnits,omitempty" tf:"max_read_request_units,omitempty"`
 
 	// Maximum number of write request units for the specified table. To specify set the value greater than or equal to 1. To remove set the value to -1.
 	// +kubebuilder:validation:Optional
-	MaxWriteRequestUnits *float64 `json:"maxWriteRequestUnits,omitempty" tf:"max_write_request_units,omitempty"`
+	MaxWriteRequestUnits *int64 `json:"maxWriteRequestUnits,omitempty" tf:"max_write_request_units,omitempty"`
 }
 
 type TableParameters struct {
@@ -746,7 +742,7 @@ type TableParameters struct {
 
 	// Number of read units for this table. If the billing_mode is PROVISIONED, this field is required.
 	// +kubebuilder:validation:Optional
-	ReadCapacity *float64 `json:"readCapacity,omitempty" tf:"read_capacity,omitempty"`
+	ReadCapacity *int64 `json:"readCapacity,omitempty" tf:"read_capacity,omitempty"`
 
 	// Region is the region you'd like your resource to be created in.
 	// +upjet:crd:field:TFTag=-
@@ -795,14 +791,9 @@ type TableParameters struct {
 	// +kubebuilder:validation:Optional
 	TableClass *string `json:"tableClass,omitempty" tf:"table_class,omitempty"`
 
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Number of write units for this table. If the billing_mode is PROVISIONED, this field is required.
 	// +kubebuilder:validation:Optional
-	WriteCapacity *float64 `json:"writeCapacity,omitempty" tf:"write_capacity,omitempty"`
+	WriteCapacity *int64 `json:"writeCapacity,omitempty" tf:"write_capacity,omitempty"`
 }
 
 // TableSpec defines the desired state of Table

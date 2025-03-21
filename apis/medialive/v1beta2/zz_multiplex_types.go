@@ -26,59 +26,55 @@ type MultiplexInitParameters struct {
 
 	// Whether to start the Multiplex. Defaults to false.
 	StartMultiplex *bool `json:"startMultiplex,omitempty" tf:"start_multiplex,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type MultiplexMultiplexSettingsInitParameters struct {
 
 	// Maximum video buffer delay.
-	MaximumVideoBufferDelayMilliseconds *float64 `json:"maximumVideoBufferDelayMilliseconds,omitempty" tf:"maximum_video_buffer_delay_milliseconds,omitempty"`
+	MaximumVideoBufferDelayMilliseconds *int64 `json:"maximumVideoBufferDelayMilliseconds,omitempty" tf:"maximum_video_buffer_delay_milliseconds,omitempty"`
 
 	// Transport stream bit rate.
-	TransportStreamBitrate *float64 `json:"transportStreamBitrate,omitempty" tf:"transport_stream_bitrate,omitempty"`
+	TransportStreamBitrate *int64 `json:"transportStreamBitrate,omitempty" tf:"transport_stream_bitrate,omitempty"`
 
 	// Unique ID for each multiplex.
-	TransportStreamID *float64 `json:"transportStreamId,omitempty" tf:"transport_stream_id,omitempty"`
+	TransportStreamID *int64 `json:"transportStreamId,omitempty" tf:"transport_stream_id,omitempty"`
 
 	// Transport stream reserved bit rate.
-	TransportStreamReservedBitrate *float64 `json:"transportStreamReservedBitrate,omitempty" tf:"transport_stream_reserved_bitrate,omitempty"`
+	TransportStreamReservedBitrate *int64 `json:"transportStreamReservedBitrate,omitempty" tf:"transport_stream_reserved_bitrate,omitempty"`
 }
 
 type MultiplexMultiplexSettingsObservation struct {
 
 	// Maximum video buffer delay.
-	MaximumVideoBufferDelayMilliseconds *float64 `json:"maximumVideoBufferDelayMilliseconds,omitempty" tf:"maximum_video_buffer_delay_milliseconds,omitempty"`
+	MaximumVideoBufferDelayMilliseconds *int64 `json:"maximumVideoBufferDelayMilliseconds,omitempty" tf:"maximum_video_buffer_delay_milliseconds,omitempty"`
 
 	// Transport stream bit rate.
-	TransportStreamBitrate *float64 `json:"transportStreamBitrate,omitempty" tf:"transport_stream_bitrate,omitempty"`
+	TransportStreamBitrate *int64 `json:"transportStreamBitrate,omitempty" tf:"transport_stream_bitrate,omitempty"`
 
 	// Unique ID for each multiplex.
-	TransportStreamID *float64 `json:"transportStreamId,omitempty" tf:"transport_stream_id,omitempty"`
+	TransportStreamID *int64 `json:"transportStreamId,omitempty" tf:"transport_stream_id,omitempty"`
 
 	// Transport stream reserved bit rate.
-	TransportStreamReservedBitrate *float64 `json:"transportStreamReservedBitrate,omitempty" tf:"transport_stream_reserved_bitrate,omitempty"`
+	TransportStreamReservedBitrate *int64 `json:"transportStreamReservedBitrate,omitempty" tf:"transport_stream_reserved_bitrate,omitempty"`
 }
 
 type MultiplexMultiplexSettingsParameters struct {
 
 	// Maximum video buffer delay.
 	// +kubebuilder:validation:Optional
-	MaximumVideoBufferDelayMilliseconds *float64 `json:"maximumVideoBufferDelayMilliseconds,omitempty" tf:"maximum_video_buffer_delay_milliseconds,omitempty"`
+	MaximumVideoBufferDelayMilliseconds *int64 `json:"maximumVideoBufferDelayMilliseconds,omitempty" tf:"maximum_video_buffer_delay_milliseconds,omitempty"`
 
 	// Transport stream bit rate.
 	// +kubebuilder:validation:Optional
-	TransportStreamBitrate *float64 `json:"transportStreamBitrate" tf:"transport_stream_bitrate,omitempty"`
+	TransportStreamBitrate *int64 `json:"transportStreamBitrate" tf:"transport_stream_bitrate,omitempty"`
 
 	// Unique ID for each multiplex.
 	// +kubebuilder:validation:Optional
-	TransportStreamID *float64 `json:"transportStreamId" tf:"transport_stream_id,omitempty"`
+	TransportStreamID *int64 `json:"transportStreamId" tf:"transport_stream_id,omitempty"`
 
 	// Transport stream reserved bit rate.
 	// +kubebuilder:validation:Optional
-	TransportStreamReservedBitrate *float64 `json:"transportStreamReservedBitrate,omitempty" tf:"transport_stream_reserved_bitrate,omitempty"`
+	TransportStreamReservedBitrate *int64 `json:"transportStreamReservedBitrate,omitempty" tf:"transport_stream_reserved_bitrate,omitempty"`
 }
 
 type MultiplexObservation struct {
@@ -130,11 +126,6 @@ type MultiplexParameters struct {
 	// Whether to start the Multiplex. Defaults to false.
 	// +kubebuilder:validation:Optional
 	StartMultiplex *bool `json:"startMultiplex,omitempty" tf:"start_multiplex,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // MultiplexSpec defines the desired state of Multiplex

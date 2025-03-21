@@ -171,12 +171,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   trackingServerSize:
                     description: The size of the tracking server you want to create.
                       You can choose between "Small", "Medium", and "Large". The default
@@ -300,12 +294,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   trackingServerSize:
                     description: The size of the tracking server you want to create.
                       You can choose between "Small", "Medium", and "Large". The default

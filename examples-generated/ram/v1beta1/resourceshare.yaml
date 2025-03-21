@@ -11,5 +11,3 @@ spec:
     allowExternalPrincipals: true
     name: example
     region: us-west-1
-    tags:
-      Environment: Production

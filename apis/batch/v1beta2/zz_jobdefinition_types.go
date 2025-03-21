@@ -438,11 +438,11 @@ type InitContainersSecurityContextInitParameters struct {
 
 	ReadOnlyRootFileSystem *bool `json:"readOnlyRootFileSystem,omitempty" tf:"read_only_root_file_system,omitempty"`
 
-	RunAsGroup *float64 `json:"runAsGroup,omitempty" tf:"run_as_group,omitempty"`
+	RunAsGroup *int64 `json:"runAsGroup,omitempty" tf:"run_as_group,omitempty"`
 
 	RunAsNonRoot *bool `json:"runAsNonRoot,omitempty" tf:"run_as_non_root,omitempty"`
 
-	RunAsUser *float64 `json:"runAsUser,omitempty" tf:"run_as_user,omitempty"`
+	RunAsUser *int64 `json:"runAsUser,omitempty" tf:"run_as_user,omitempty"`
 }
 
 type InitContainersSecurityContextObservation struct {
@@ -450,11 +450,11 @@ type InitContainersSecurityContextObservation struct {
 
 	ReadOnlyRootFileSystem *bool `json:"readOnlyRootFileSystem,omitempty" tf:"read_only_root_file_system,omitempty"`
 
-	RunAsGroup *float64 `json:"runAsGroup,omitempty" tf:"run_as_group,omitempty"`
+	RunAsGroup *int64 `json:"runAsGroup,omitempty" tf:"run_as_group,omitempty"`
 
 	RunAsNonRoot *bool `json:"runAsNonRoot,omitempty" tf:"run_as_non_root,omitempty"`
 
-	RunAsUser *float64 `json:"runAsUser,omitempty" tf:"run_as_user,omitempty"`
+	RunAsUser *int64 `json:"runAsUser,omitempty" tf:"run_as_user,omitempty"`
 }
 
 type InitContainersSecurityContextParameters struct {
@@ -466,13 +466,13 @@ type InitContainersSecurityContextParameters struct {
 	ReadOnlyRootFileSystem *bool `json:"readOnlyRootFileSystem,omitempty" tf:"read_only_root_file_system,omitempty"`
 
 	// +kubebuilder:validation:Optional
-	RunAsGroup *float64 `json:"runAsGroup,omitempty" tf:"run_as_group,omitempty"`
+	RunAsGroup *int64 `json:"runAsGroup,omitempty" tf:"run_as_group,omitempty"`
 
 	// +kubebuilder:validation:Optional
 	RunAsNonRoot *bool `json:"runAsNonRoot,omitempty" tf:"run_as_non_root,omitempty"`
 
 	// +kubebuilder:validation:Optional
-	RunAsUser *float64 `json:"runAsUser,omitempty" tf:"run_as_user,omitempty"`
+	RunAsUser *int64 `json:"runAsUser,omitempty" tf:"run_as_user,omitempty"`
 }
 
 type InitContainersVolumeMountsInitParameters struct {
@@ -546,11 +546,7 @@ type JobDefinitionInitParameters struct {
 	RetryStrategy *RetryStrategyInitParameters `json:"retryStrategy,omitempty" tf:"retry_strategy,omitempty"`
 
 	// Scheduling priority of the job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority. Allowed values 0 through 9999.
-	SchedulingPriority *float64 `json:"schedulingPriority,omitempty" tf:"scheduling_priority,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
+	SchedulingPriority *int64 `json:"schedulingPriority,omitempty" tf:"scheduling_priority,omitempty"`
 
 	// Timeout for jobs so that if a job runs longer, AWS Batch terminates the job. Maximum number of timeout is 1. Defined below.
 	Timeout *TimeoutInitParameters `json:"timeout,omitempty" tf:"timeout,omitempty"`
@@ -602,10 +598,10 @@ type JobDefinitionObservation struct {
 	RetryStrategy *RetryStrategyObservation `json:"retryStrategy,omitempty" tf:"retry_strategy,omitempty"`
 
 	// Revision of the job definition.
-	Revision *float64 `json:"revision,omitempty" tf:"revision,omitempty"`
+	Revision *int64 `json:"revision,omitempty" tf:"revision,omitempty"`
 
 	// Scheduling priority of the job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority. Allowed values 0 through 9999.
-	SchedulingPriority *float64 `json:"schedulingPriority,omitempty" tf:"scheduling_priority,omitempty"`
+	SchedulingPriority *int64 `json:"schedulingPriority,omitempty" tf:"scheduling_priority,omitempty"`
 
 	// Key-value map of resource tags.
 	// +mapType=granular
@@ -673,12 +669,7 @@ type JobDefinitionParameters struct {
 
 	// Scheduling priority of the job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority. Allowed values 0 through 9999.
 	// +kubebuilder:validation:Optional
-	SchedulingPriority *float64 `json:"schedulingPriority,omitempty" tf:"scheduling_priority,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
+	SchedulingPriority *int64 `json:"schedulingPriority,omitempty" tf:"scheduling_priority,omitempty"`
 
 	// Timeout for jobs so that if a job runs longer, AWS Batch terminates the job. Maximum number of timeout is 1. Defined below.
 	// +kubebuilder:validation:Optional
@@ -842,7 +833,7 @@ type ResourcesParameters struct {
 type RetryStrategyInitParameters struct {
 
 	// Number of times to move a job to the RUNNABLE status. You may specify between 1 and 10 attempts.
-	Attempts *float64 `json:"attempts,omitempty" tf:"attempts,omitempty"`
+	Attempts *int64 `json:"attempts,omitempty" tf:"attempts,omitempty"`
 
 	// Evaluate on exit conditions under which the job should be retried or failed. If this parameter is specified, then the attempts parameter must also be specified. You may specify up to 5 configuration blocks.
 	EvaluateOnExit []EvaluateOnExitInitParameters `json:"evaluateOnExit,omitempty" tf:"evaluate_on_exit,omitempty"`
@@ -851,7 +842,7 @@ type RetryStrategyInitParameters struct {
 type RetryStrategyObservation struct {
 
 	// Number of times to move a job to the RUNNABLE status. You may specify between 1 and 10 attempts.
-	Attempts *float64 `json:"attempts,omitempty" tf:"attempts,omitempty"`
+	Attempts *int64 `json:"attempts,omitempty" tf:"attempts,omitempty"`
 
 	// Evaluate on exit conditions under which the job should be retried or failed. If this parameter is specified, then the attempts parameter must also be specified. You may specify up to 5 configuration blocks.
 	EvaluateOnExit []EvaluateOnExitObservation `json:"evaluateOnExit,omitempty" tf:"evaluate_on_exit,omitempty"`
@@ -861,7 +852,7 @@ type RetryStrategyParameters struct {
 
 	// Number of times to move a job to the RUNNABLE status. You may specify between 1 and 10 attempts.
 	// +kubebuilder:validation:Optional
-	Attempts *float64 `json:"attempts,omitempty" tf:"attempts,omitempty"`
+	Attempts *int64 `json:"attempts,omitempty" tf:"attempts,omitempty"`
 
 	// Evaluate on exit conditions under which the job should be retried or failed. If this parameter is specified, then the attempts parameter must also be specified. You may specify up to 5 configuration blocks.
 	// +kubebuilder:validation:Optional
@@ -902,11 +893,11 @@ type SecurityContextInitParameters struct {
 
 	ReadOnlyRootFileSystem *bool `json:"readOnlyRootFileSystem,omitempty" tf:"read_only_root_file_system,omitempty"`
 
-	RunAsGroup *float64 `json:"runAsGroup,omitempty" tf:"run_as_group,omitempty"`
+	RunAsGroup *int64 `json:"runAsGroup,omitempty" tf:"run_as_group,omitempty"`
 
 	RunAsNonRoot *bool `json:"runAsNonRoot,omitempty" tf:"run_as_non_root,omitempty"`
 
-	RunAsUser *float64 `json:"runAsUser,omitempty" tf:"run_as_user,omitempty"`
+	RunAsUser *int64 `json:"runAsUser,omitempty" tf:"run_as_user,omitempty"`
 }
 
 type SecurityContextObservation struct {
@@ -914,11 +905,11 @@ type SecurityContextObservation struct {
 
 	ReadOnlyRootFileSystem *bool `json:"readOnlyRootFileSystem,omitempty" tf:"read_only_root_file_system,omitempty"`
 
-	RunAsGroup *float64 `json:"runAsGroup,omitempty" tf:"run_as_group,omitempty"`
+	RunAsGroup *int64 `json:"runAsGroup,omitempty" tf:"run_as_group,omitempty"`
 
 	RunAsNonRoot *bool `json:"runAsNonRoot,omitempty" tf:"run_as_non_root,omitempty"`
 
-	RunAsUser *float64 `json:"runAsUser,omitempty" tf:"run_as_user,omitempty"`
+	RunAsUser *int64 `json:"runAsUser,omitempty" tf:"run_as_user,omitempty"`
 }
 
 type SecurityContextParameters struct {
@@ -930,32 +921,32 @@ type SecurityContextParameters struct {
 	ReadOnlyRootFileSystem *bool `json:"readOnlyRootFileSystem,omitempty" tf:"read_only_root_file_system,omitempty"`
 
 	// +kubebuilder:validation:Optional
-	RunAsGroup *float64 `json:"runAsGroup,omitempty" tf:"run_as_group,omitempty"`
+	RunAsGroup *int64 `json:"runAsGroup,omitempty" tf:"run_as_group,omitempty"`
 
 	// +kubebuilder:validation:Optional
 	RunAsNonRoot *bool `json:"runAsNonRoot,omitempty" tf:"run_as_non_root,omitempty"`
 
 	// +kubebuilder:validation:Optional
-	RunAsUser *float64 `json:"runAsUser,omitempty" tf:"run_as_user,omitempty"`
+	RunAsUser *int64 `json:"runAsUser,omitempty" tf:"run_as_user,omitempty"`
 }
 
 type TimeoutInitParameters struct {
 
 	// Time duration in seconds after which AWS Batch terminates your jobs if they have not finished. The minimum value for the timeout is 60 seconds.
-	AttemptDurationSeconds *float64 `json:"attemptDurationSeconds,omitempty" tf:"attempt_duration_seconds,omitempty"`
+	AttemptDurationSeconds *int64 `json:"attemptDurationSeconds,omitempty" tf:"attempt_duration_seconds,omitempty"`
 }
 
 type TimeoutObservation struct {
 
 	// Time duration in seconds after which AWS Batch terminates your jobs if they have not finished. The minimum value for the timeout is 60 seconds.
-	AttemptDurationSeconds *float64 `json:"attemptDurationSeconds,omitempty" tf:"attempt_duration_seconds,omitempty"`
+	AttemptDurationSeconds *int64 `json:"attemptDurationSeconds,omitempty" tf:"attempt_duration_seconds,omitempty"`
 }
 
 type TimeoutParameters struct {
 
 	// Time duration in seconds after which AWS Batch terminates your jobs if they have not finished. The minimum value for the timeout is 60 seconds.
 	// +kubebuilder:validation:Optional
-	AttemptDurationSeconds *float64 `json:"attemptDurationSeconds,omitempty" tf:"attempt_duration_seconds,omitempty"`
+	AttemptDurationSeconds *int64 `json:"attemptDurationSeconds,omitempty" tf:"attempt_duration_seconds,omitempty"`
 }
 
 type VolumeMountsInitParameters struct {

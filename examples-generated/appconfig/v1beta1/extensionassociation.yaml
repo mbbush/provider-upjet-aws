@@ -56,8 +56,6 @@ spec:
     description: test description
     name: test
     region: us-west-1
-    tags:
-      Type: AppConfig Extension
 
 ---
 

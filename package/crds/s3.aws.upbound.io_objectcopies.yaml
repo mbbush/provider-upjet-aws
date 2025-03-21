@@ -341,12 +341,6 @@ spec:
                       the source object or replaced with tag-set provided in the request.
                       Valid values are COPY and REPLACE.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   websiteRedirect:
                     description: Specifies a target URL for website redirect.
                     type: string
@@ -630,12 +624,6 @@ spec:
                       the source object or replaced with tag-set provided in the request.
                       Valid values are COPY and REPLACE.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   websiteRedirect:
                     description: Specifies a target URL for website redirect.
                     type: string

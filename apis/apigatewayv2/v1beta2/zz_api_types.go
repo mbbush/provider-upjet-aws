@@ -53,10 +53,6 @@ type APIInitParameters struct {
 	// Defaults to $request.method $request.path.
 	RouteSelectionExpression *string `json:"routeSelectionExpression,omitempty" tf:"route_selection_expression,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Part of quick create. Quick create produces an API with an integration, a default catch-all route, and a default stage which is configured to automatically deploy changes.
 	// For HTTP integrations, specify a fully qualified URL. For Lambda integrations, specify a function ARN.
 	// The type of the integration will be HTTP_PROXY or AWS_PROXY, respectively. Applicable for HTTP APIs.
@@ -193,11 +189,6 @@ type APIParameters struct {
 	// +kubebuilder:validation:Optional
 	RouteSelectionExpression *string `json:"routeSelectionExpression,omitempty" tf:"route_selection_expression,omitempty"`
 
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Part of quick create. Quick create produces an API with an integration, a default catch-all route, and a default stage which is configured to automatically deploy changes.
 	// For HTTP integrations, specify a fully qualified URL. For Lambda integrations, specify a function ARN.
 	// The type of the integration will be HTTP_PROXY or AWS_PROXY, respectively. Applicable for HTTP APIs.
@@ -231,7 +222,7 @@ type CorsConfigurationInitParameters struct {
 	ExposeHeaders []*string `json:"exposeHeaders,omitempty" tf:"expose_headers,omitempty"`
 
 	// Number of seconds that the browser should cache preflight request results.
-	MaxAge *float64 `json:"maxAge,omitempty" tf:"max_age,omitempty"`
+	MaxAge *int64 `json:"maxAge,omitempty" tf:"max_age,omitempty"`
 }
 
 type CorsConfigurationObservation struct {
@@ -256,7 +247,7 @@ type CorsConfigurationObservation struct {
 	ExposeHeaders []*string `json:"exposeHeaders,omitempty" tf:"expose_headers,omitempty"`
 
 	// Number of seconds that the browser should cache preflight request results.
-	MaxAge *float64 `json:"maxAge,omitempty" tf:"max_age,omitempty"`
+	MaxAge *int64 `json:"maxAge,omitempty" tf:"max_age,omitempty"`
 }
 
 type CorsConfigurationParameters struct {
@@ -287,7 +278,7 @@ type CorsConfigurationParameters struct {
 
 	// Number of seconds that the browser should cache preflight request results.
 	// +kubebuilder:validation:Optional
-	MaxAge *float64 `json:"maxAge,omitempty" tf:"max_age,omitempty"`
+	MaxAge *int64 `json:"maxAge,omitempty" tf:"max_age,omitempty"`
 }
 
 // APISpec defines the desired state of API

@@ -16,7 +16,7 @@ import (
 type TransitGatewayInitParameters_2 struct {
 
 	// Private Autonomous System Number (ASN) for the Amazon side of a BGP session. The range is 64512 to 65534 for 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs. Default value: 64512.
-	AmazonSideAsn *float64 `json:"amazonSideAsn,omitempty" tf:"amazon_side_asn,omitempty"`
+	AmazonSideAsn *int64 `json:"amazonSideAsn,omitempty" tf:"amazon_side_asn,omitempty"`
 
 	// Whether resource attachment requests are automatically accepted. Valid values: disable, enable. Default value: disable.
 	AutoAcceptSharedAttachments *string `json:"autoAcceptSharedAttachments,omitempty" tf:"auto_accept_shared_attachments,omitempty"`
@@ -39,10 +39,6 @@ type TransitGatewayInitParameters_2 struct {
 	// Whether Security Group Referencing Support is enabled. Valid values: disable, enable. Default value: disable.
 	SecurityGroupReferencingSupport *string `json:"securityGroupReferencingSupport,omitempty" tf:"security_group_referencing_support,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// One or more IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size /24 CIDR block or larger for IPv4, or a size /64 CIDR block or larger for IPv6.
 	// +listType=set
 	TransitGatewayCidrBlocks []*string `json:"transitGatewayCidrBlocks,omitempty" tf:"transit_gateway_cidr_blocks,omitempty"`
@@ -54,7 +50,7 @@ type TransitGatewayInitParameters_2 struct {
 type TransitGatewayObservation_2 struct {
 
 	// Private Autonomous System Number (ASN) for the Amazon side of a BGP session. The range is 64512 to 65534 for 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs. Default value: 64512.
-	AmazonSideAsn *float64 `json:"amazonSideAsn,omitempty" tf:"amazon_side_asn,omitempty"`
+	AmazonSideAsn *int64 `json:"amazonSideAsn,omitempty" tf:"amazon_side_asn,omitempty"`
 
 	// EC2 Transit Gateway Amazon Resource Name (ARN)
 	Arn *string `json:"arn,omitempty" tf:"arn,omitempty"`
@@ -112,7 +108,7 @@ type TransitGatewayParameters_2 struct {
 
 	// Private Autonomous System Number (ASN) for the Amazon side of a BGP session. The range is 64512 to 65534 for 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs. Default value: 64512.
 	// +kubebuilder:validation:Optional
-	AmazonSideAsn *float64 `json:"amazonSideAsn,omitempty" tf:"amazon_side_asn,omitempty"`
+	AmazonSideAsn *int64 `json:"amazonSideAsn,omitempty" tf:"amazon_side_asn,omitempty"`
 
 	// Whether resource attachment requests are automatically accepted. Valid values: disable, enable. Default value: disable.
 	// +kubebuilder:validation:Optional
@@ -146,11 +142,6 @@ type TransitGatewayParameters_2 struct {
 	// Whether Security Group Referencing Support is enabled. Valid values: disable, enable. Default value: disable.
 	// +kubebuilder:validation:Optional
 	SecurityGroupReferencingSupport *string `json:"securityGroupReferencingSupport,omitempty" tf:"security_group_referencing_support,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// One or more IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size /24 CIDR block or larger for IPv4, or a size /64 CIDR block or larger for IPv6.
 	// +kubebuilder:validation:Optional

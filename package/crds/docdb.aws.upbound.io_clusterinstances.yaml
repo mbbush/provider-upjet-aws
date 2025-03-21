@@ -203,17 +203,12 @@ spec:
                     description: Default 0. Failover Priority setting on instance
                       level. The reader who has lower tier has higher priority to
                       get promoter to writer.
-                    type: number
+                    format: int64
+                    type: integer
                   region:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -360,13 +355,8 @@ spec:
                     description: Default 0. Failover Priority setting on instance
                       level. The reader who has lower tier has higher priority to
                       get promoter to writer.
-                    type: number
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
+                    format: int64
+                    type: integer
                 type: object
               managementPolicies:
                 default:
@@ -616,7 +606,8 @@ spec:
                     type: string
                   port:
                     description: The database port
-                    type: number
+                    format: int64
+                    type: integer
                   preferredBackupWindow:
                     description: The daily time range during which automated backups
                       are created if automated backups are enabled.
@@ -630,7 +621,8 @@ spec:
                     description: Default 0. Failover Priority setting on instance
                       level. The reader who has lower tier has higher priority to
                       get promoter to writer.
-                    type: number
+                    format: int64
+                    type: integer
                   publiclyAccessible:
                     type: boolean
                   storageEncrypted:

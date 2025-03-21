@@ -82,12 +82,6 @@ spec:
                   policy:
                     description: Policy document. This is a JSON formatted string
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               initProvider:
                 description: |-
@@ -112,12 +106,6 @@ spec:
                   policy:
                     description: Policy document. This is a JSON formatted string
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -302,7 +290,8 @@ spec:
                   attachmentCount:
                     description: Number of entities (users, groups, and roles) that
                       the policy is attached to.
-                    type: number
+                    format: int64
+                    type: integer
                   description:
                     description: Description of the IAM policy.
                     type: string

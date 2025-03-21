@@ -890,7 +890,8 @@ spec:
                         description: The amount of idle time in minutes after which
                           your application will automatically stop. Defaults to 15
                           minutes.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   imageConfiguration:
                     description: –  The image configuration applied to all worker
@@ -926,7 +927,8 @@ spec:
                             workerCount:
                               description: The number of workers in the initial capacity
                                 configuration.
-                              type: number
+                              format: int64
+                              type: integer
                           type: object
                         initialCapacityType:
                           description: The worker type for an analytics framework.
@@ -993,12 +995,6 @@ spec:
                   releaseLabel:
                     description: –  The EMR release version associated with the application.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   type:
                     description: –  The type of application you want to start, such
                       as spark or hive.
@@ -1044,7 +1040,8 @@ spec:
                         description: The amount of idle time in minutes after which
                           your application will automatically stop. Defaults to 15
                           minutes.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   imageConfiguration:
                     description: –  The image configuration applied to all worker
@@ -1080,7 +1077,8 @@ spec:
                             workerCount:
                               description: The number of workers in the initial capacity
                                 configuration.
-                              type: number
+                              format: int64
+                              type: integer
                           type: object
                         initialCapacityType:
                           description: The worker type for an analytics framework.
@@ -1143,12 +1141,6 @@ spec:
                   releaseLabel:
                     description: –  The EMR release version associated with the application.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   type:
                     description: –  The type of application you want to start, such
                       as spark or hive.
@@ -1367,7 +1359,8 @@ spec:
                         description: The amount of idle time in minutes after which
                           your application will automatically stop. Defaults to 15
                           minutes.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   id:
                     description: The ID of the cluster.
@@ -1406,7 +1399,8 @@ spec:
                             workerCount:
                               description: The number of workers in the initial capacity
                                 configuration.
-                              type: number
+                              format: int64
+                              type: integer
                           type: object
                         initialCapacityType:
                           description: The worker type for an analytics framework.

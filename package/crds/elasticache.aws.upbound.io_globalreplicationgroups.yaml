@@ -106,7 +106,8 @@ spec:
                   numNodeGroups:
                     description: The number of node groups (shards) on the global
                       replication group.
-                    type: number
+                    format: int64
+                    type: integer
                   parameterGroupName:
                     description: |-
                       An ElastiCache Parameter Group to use for the Global Replication Group.
@@ -248,7 +249,8 @@ spec:
                   numNodeGroups:
                     description: The number of node groups (shards) on the global
                       replication group.
-                    type: number
+                    format: int64
+                    type: integer
                   parameterGroupName:
                     description: |-
                       An ElastiCache Parameter Group to use for the Global Replication Group.
@@ -593,7 +595,8 @@ spec:
                   numNodeGroups:
                     description: The number of node groups (shards) on the global
                       replication group.
-                    type: number
+                    format: int64
+                    type: integer
                   parameterGroupName:
                     description: |-
                       An ElastiCache Parameter Group to use for the Global Replication Group.

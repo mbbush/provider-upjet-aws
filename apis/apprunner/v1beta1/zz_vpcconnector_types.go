@@ -45,10 +45,6 @@ type VPCConnectorInitParameters struct {
 	// +listType=set
 	Subnets []*string `json:"subnets,omitempty" tf:"subnets,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Name for the VPC connector.
 	VPCConnectorName *string `json:"vpcConnectorName,omitempty" tf:"vpc_connector_name,omitempty"`
 }
@@ -83,7 +79,7 @@ type VPCConnectorObservation struct {
 	VPCConnectorName *string `json:"vpcConnectorName,omitempty" tf:"vpc_connector_name,omitempty"`
 
 	// The revision of VPC connector. It's unique among all the active connectors ("Status": "ACTIVE") that share the same Name.
-	VPCConnectorRevision *float64 `json:"vpcConnectorRevision,omitempty" tf:"vpc_connector_revision,omitempty"`
+	VPCConnectorRevision *int64 `json:"vpcConnectorRevision,omitempty" tf:"vpc_connector_revision,omitempty"`
 }
 
 type VPCConnectorParameters struct {
@@ -124,11 +120,6 @@ type VPCConnectorParameters struct {
 	// +kubebuilder:validation:Optional
 	// +listType=set
 	Subnets []*string `json:"subnets,omitempty" tf:"subnets,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Name for the VPC connector.
 	// +kubebuilder:validation:Optional

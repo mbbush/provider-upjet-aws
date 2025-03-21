@@ -18,5 +18,3 @@ spec:
       s3BucketName: example-bucket-name
     reportSetting:
     - reportTemplate: RESTORE_JOB_REPORT
-    tags:
-      Name: Example Report Plan

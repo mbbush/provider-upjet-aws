@@ -54,10 +54,10 @@ type AutoRollbackConfigurationParameters struct {
 type BlueGreenUpdatePolicyInitParameters struct {
 
 	// Maximum execution timeout for the deployment. Note that the timeout value should be larger than the total waiting time specified in termination_wait_in_seconds and wait_interval_in_seconds. Valid values are between 600 and 14400.
-	MaximumExecutionTimeoutInSeconds *float64 `json:"maximumExecutionTimeoutInSeconds,omitempty" tf:"maximum_execution_timeout_in_seconds,omitempty"`
+	MaximumExecutionTimeoutInSeconds *int64 `json:"maximumExecutionTimeoutInSeconds,omitempty" tf:"maximum_execution_timeout_in_seconds,omitempty"`
 
 	// Additional waiting time in seconds after the completion of an endpoint deployment before terminating the old endpoint fleet. Default is 0. Valid values are between 0 and 3600.
-	TerminationWaitInSeconds *float64 `json:"terminationWaitInSeconds,omitempty" tf:"termination_wait_in_seconds,omitempty"`
+	TerminationWaitInSeconds *int64 `json:"terminationWaitInSeconds,omitempty" tf:"termination_wait_in_seconds,omitempty"`
 
 	// Defines the traffic routing strategy to shift traffic from the old fleet to the new fleet during an endpoint deployment. See Traffic Routing Configuration.
 	TrafficRoutingConfiguration *TrafficRoutingConfigurationInitParameters `json:"trafficRoutingConfiguration,omitempty" tf:"traffic_routing_configuration,omitempty"`
@@ -66,10 +66,10 @@ type BlueGreenUpdatePolicyInitParameters struct {
 type BlueGreenUpdatePolicyObservation struct {
 
 	// Maximum execution timeout for the deployment. Note that the timeout value should be larger than the total waiting time specified in termination_wait_in_seconds and wait_interval_in_seconds. Valid values are between 600 and 14400.
-	MaximumExecutionTimeoutInSeconds *float64 `json:"maximumExecutionTimeoutInSeconds,omitempty" tf:"maximum_execution_timeout_in_seconds,omitempty"`
+	MaximumExecutionTimeoutInSeconds *int64 `json:"maximumExecutionTimeoutInSeconds,omitempty" tf:"maximum_execution_timeout_in_seconds,omitempty"`
 
 	// Additional waiting time in seconds after the completion of an endpoint deployment before terminating the old endpoint fleet. Default is 0. Valid values are between 0 and 3600.
-	TerminationWaitInSeconds *float64 `json:"terminationWaitInSeconds,omitempty" tf:"termination_wait_in_seconds,omitempty"`
+	TerminationWaitInSeconds *int64 `json:"terminationWaitInSeconds,omitempty" tf:"termination_wait_in_seconds,omitempty"`
 
 	// Defines the traffic routing strategy to shift traffic from the old fleet to the new fleet during an endpoint deployment. See Traffic Routing Configuration.
 	TrafficRoutingConfiguration *TrafficRoutingConfigurationObservation `json:"trafficRoutingConfiguration,omitempty" tf:"traffic_routing_configuration,omitempty"`
@@ -79,11 +79,11 @@ type BlueGreenUpdatePolicyParameters struct {
 
 	// Maximum execution timeout for the deployment. Note that the timeout value should be larger than the total waiting time specified in termination_wait_in_seconds and wait_interval_in_seconds. Valid values are between 600 and 14400.
 	// +kubebuilder:validation:Optional
-	MaximumExecutionTimeoutInSeconds *float64 `json:"maximumExecutionTimeoutInSeconds,omitempty" tf:"maximum_execution_timeout_in_seconds,omitempty"`
+	MaximumExecutionTimeoutInSeconds *int64 `json:"maximumExecutionTimeoutInSeconds,omitempty" tf:"maximum_execution_timeout_in_seconds,omitempty"`
 
 	// Additional waiting time in seconds after the completion of an endpoint deployment before terminating the old endpoint fleet. Default is 0. Valid values are between 0 and 3600.
 	// +kubebuilder:validation:Optional
-	TerminationWaitInSeconds *float64 `json:"terminationWaitInSeconds,omitempty" tf:"termination_wait_in_seconds,omitempty"`
+	TerminationWaitInSeconds *int64 `json:"terminationWaitInSeconds,omitempty" tf:"termination_wait_in_seconds,omitempty"`
 
 	// Defines the traffic routing strategy to shift traffic from the old fleet to the new fleet during an endpoint deployment. See Traffic Routing Configuration.
 	// +kubebuilder:validation:Optional
@@ -96,7 +96,7 @@ type CanarySizeInitParameters struct {
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
 
 	// Defines the capacity size, either as a number of instances or a capacity percentage.
-	Value *float64 `json:"value,omitempty" tf:"value,omitempty"`
+	Value *int64 `json:"value,omitempty" tf:"value,omitempty"`
 }
 
 type CanarySizeObservation struct {
@@ -105,7 +105,7 @@ type CanarySizeObservation struct {
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
 
 	// Defines the capacity size, either as a number of instances or a capacity percentage.
-	Value *float64 `json:"value,omitempty" tf:"value,omitempty"`
+	Value *int64 `json:"value,omitempty" tf:"value,omitempty"`
 }
 
 type CanarySizeParameters struct {
@@ -116,7 +116,7 @@ type CanarySizeParameters struct {
 
 	// Defines the capacity size, either as a number of instances or a capacity percentage.
 	// +kubebuilder:validation:Optional
-	Value *float64 `json:"value" tf:"value,omitempty"`
+	Value *int64 `json:"value" tf:"value,omitempty"`
 }
 
 type DeploymentConfigInitParameters struct {
@@ -174,10 +174,6 @@ type EndpointInitParameters struct {
 	// Selector for a EndpointConfiguration in sagemaker to populate endpointConfigName.
 	// +kubebuilder:validation:Optional
 	EndpointConfigNameSelector *v1.Selector `json:"endpointConfigNameSelector,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type EndpointObservation struct {
@@ -225,11 +221,6 @@ type EndpointParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type LinearStepSizeInitParameters struct {
@@ -238,7 +229,7 @@ type LinearStepSizeInitParameters struct {
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
 
 	// Defines the capacity size, either as a number of instances or a capacity percentage.
-	Value *float64 `json:"value,omitempty" tf:"value,omitempty"`
+	Value *int64 `json:"value,omitempty" tf:"value,omitempty"`
 }
 
 type LinearStepSizeObservation struct {
@@ -247,7 +238,7 @@ type LinearStepSizeObservation struct {
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
 
 	// Defines the capacity size, either as a number of instances or a capacity percentage.
-	Value *float64 `json:"value,omitempty" tf:"value,omitempty"`
+	Value *int64 `json:"value,omitempty" tf:"value,omitempty"`
 }
 
 type LinearStepSizeParameters struct {
@@ -258,7 +249,7 @@ type LinearStepSizeParameters struct {
 
 	// Defines the capacity size, either as a number of instances or a capacity percentage.
 	// +kubebuilder:validation:Optional
-	Value *float64 `json:"value" tf:"value,omitempty"`
+	Value *int64 `json:"value" tf:"value,omitempty"`
 }
 
 type MaximumBatchSizeInitParameters struct {
@@ -267,7 +258,7 @@ type MaximumBatchSizeInitParameters struct {
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
 
 	// Defines the capacity size, either as a number of instances or a capacity percentage.
-	Value *float64 `json:"value,omitempty" tf:"value,omitempty"`
+	Value *int64 `json:"value,omitempty" tf:"value,omitempty"`
 }
 
 type MaximumBatchSizeObservation struct {
@@ -276,7 +267,7 @@ type MaximumBatchSizeObservation struct {
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
 
 	// Defines the capacity size, either as a number of instances or a capacity percentage.
-	Value *float64 `json:"value,omitempty" tf:"value,omitempty"`
+	Value *int64 `json:"value,omitempty" tf:"value,omitempty"`
 }
 
 type MaximumBatchSizeParameters struct {
@@ -287,7 +278,7 @@ type MaximumBatchSizeParameters struct {
 
 	// Defines the capacity size, either as a number of instances or a capacity percentage.
 	// +kubebuilder:validation:Optional
-	Value *float64 `json:"value" tf:"value,omitempty"`
+	Value *int64 `json:"value" tf:"value,omitempty"`
 }
 
 type RollbackMaximumBatchSizeInitParameters struct {
@@ -296,7 +287,7 @@ type RollbackMaximumBatchSizeInitParameters struct {
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
 
 	// Defines the capacity size, either as a number of instances or a capacity percentage.
-	Value *float64 `json:"value,omitempty" tf:"value,omitempty"`
+	Value *int64 `json:"value,omitempty" tf:"value,omitempty"`
 }
 
 type RollbackMaximumBatchSizeObservation struct {
@@ -305,7 +296,7 @@ type RollbackMaximumBatchSizeObservation struct {
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
 
 	// Defines the capacity size, either as a number of instances or a capacity percentage.
-	Value *float64 `json:"value,omitempty" tf:"value,omitempty"`
+	Value *int64 `json:"value,omitempty" tf:"value,omitempty"`
 }
 
 type RollbackMaximumBatchSizeParameters struct {
@@ -316,7 +307,7 @@ type RollbackMaximumBatchSizeParameters struct {
 
 	// Defines the capacity size, either as a number of instances or a capacity percentage.
 	// +kubebuilder:validation:Optional
-	Value *float64 `json:"value" tf:"value,omitempty"`
+	Value *int64 `json:"value" tf:"value,omitempty"`
 }
 
 type RollingUpdatePolicyInitParameters struct {
@@ -325,13 +316,13 @@ type RollingUpdatePolicyInitParameters struct {
 	MaximumBatchSize *MaximumBatchSizeInitParameters `json:"maximumBatchSize,omitempty" tf:"maximum_batch_size,omitempty"`
 
 	// Maximum execution timeout for the deployment. Note that the timeout value should be larger than the total waiting time specified in termination_wait_in_seconds and wait_interval_in_seconds. Valid values are between 600 and 14400.
-	MaximumExecutionTimeoutInSeconds *float64 `json:"maximumExecutionTimeoutInSeconds,omitempty" tf:"maximum_execution_timeout_in_seconds,omitempty"`
+	MaximumExecutionTimeoutInSeconds *int64 `json:"maximumExecutionTimeoutInSeconds,omitempty" tf:"maximum_execution_timeout_in_seconds,omitempty"`
 
 	// Batch size for rollback to the old endpoint fleet. Each rolling step to provision capacity and turn on traffic on the old endpoint fleet, and terminate capacity on the new endpoint fleet. If this field is absent, the default value will be set to 100% of total capacity which means to bring up the whole capacity of the old fleet at once during rollback. See Rollback Maximum Batch Size.
 	RollbackMaximumBatchSize *RollbackMaximumBatchSizeInitParameters `json:"rollbackMaximumBatchSize,omitempty" tf:"rollback_maximum_batch_size,omitempty"`
 
 	// The length of the baking period, during which SageMaker monitors alarms for each batch on the new fleet. Valid values are between 0 and 3600.
-	WaitIntervalInSeconds *float64 `json:"waitIntervalInSeconds,omitempty" tf:"wait_interval_in_seconds,omitempty"`
+	WaitIntervalInSeconds *int64 `json:"waitIntervalInSeconds,omitempty" tf:"wait_interval_in_seconds,omitempty"`
 }
 
 type RollingUpdatePolicyObservation struct {
@@ -340,13 +331,13 @@ type RollingUpdatePolicyObservation struct {
 	MaximumBatchSize *MaximumBatchSizeObservation `json:"maximumBatchSize,omitempty" tf:"maximum_batch_size,omitempty"`
 
 	// Maximum execution timeout for the deployment. Note that the timeout value should be larger than the total waiting time specified in termination_wait_in_seconds and wait_interval_in_seconds. Valid values are between 600 and 14400.
-	MaximumExecutionTimeoutInSeconds *float64 `json:"maximumExecutionTimeoutInSeconds,omitempty" tf:"maximum_execution_timeout_in_seconds,omitempty"`
+	MaximumExecutionTimeoutInSeconds *int64 `json:"maximumExecutionTimeoutInSeconds,omitempty" tf:"maximum_execution_timeout_in_seconds,omitempty"`
 
 	// Batch size for rollback to the old endpoint fleet. Each rolling step to provision capacity and turn on traffic on the old endpoint fleet, and terminate capacity on the new endpoint fleet. If this field is absent, the default value will be set to 100% of total capacity which means to bring up the whole capacity of the old fleet at once during rollback. See Rollback Maximum Batch Size.
 	RollbackMaximumBatchSize *RollbackMaximumBatchSizeObservation `json:"rollbackMaximumBatchSize,omitempty" tf:"rollback_maximum_batch_size,omitempty"`
 
 	// The length of the baking period, during which SageMaker monitors alarms for each batch on the new fleet. Valid values are between 0 and 3600.
-	WaitIntervalInSeconds *float64 `json:"waitIntervalInSeconds,omitempty" tf:"wait_interval_in_seconds,omitempty"`
+	WaitIntervalInSeconds *int64 `json:"waitIntervalInSeconds,omitempty" tf:"wait_interval_in_seconds,omitempty"`
 }
 
 type RollingUpdatePolicyParameters struct {
@@ -357,7 +348,7 @@ type RollingUpdatePolicyParameters struct {
 
 	// Maximum execution timeout for the deployment. Note that the timeout value should be larger than the total waiting time specified in termination_wait_in_seconds and wait_interval_in_seconds. Valid values are between 600 and 14400.
 	// +kubebuilder:validation:Optional
-	MaximumExecutionTimeoutInSeconds *float64 `json:"maximumExecutionTimeoutInSeconds,omitempty" tf:"maximum_execution_timeout_in_seconds,omitempty"`
+	MaximumExecutionTimeoutInSeconds *int64 `json:"maximumExecutionTimeoutInSeconds,omitempty" tf:"maximum_execution_timeout_in_seconds,omitempty"`
 
 	// Batch size for rollback to the old endpoint fleet. Each rolling step to provision capacity and turn on traffic on the old endpoint fleet, and terminate capacity on the new endpoint fleet. If this field is absent, the default value will be set to 100% of total capacity which means to bring up the whole capacity of the old fleet at once during rollback. See Rollback Maximum Batch Size.
 	// +kubebuilder:validation:Optional
@@ -365,7 +356,7 @@ type RollingUpdatePolicyParameters struct {
 
 	// The length of the baking period, during which SageMaker monitors alarms for each batch on the new fleet. Valid values are between 0 and 3600.
 	// +kubebuilder:validation:Optional
-	WaitIntervalInSeconds *float64 `json:"waitIntervalInSeconds" tf:"wait_interval_in_seconds,omitempty"`
+	WaitIntervalInSeconds *int64 `json:"waitIntervalInSeconds" tf:"wait_interval_in_seconds,omitempty"`
 }
 
 type TrafficRoutingConfigurationInitParameters struct {
@@ -380,7 +371,7 @@ type TrafficRoutingConfigurationInitParameters struct {
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
 
 	// The length of the baking period, during which SageMaker monitors alarms for each batch on the new fleet. Valid values are between 0 and 3600.
-	WaitIntervalInSeconds *float64 `json:"waitIntervalInSeconds,omitempty" tf:"wait_interval_in_seconds,omitempty"`
+	WaitIntervalInSeconds *int64 `json:"waitIntervalInSeconds,omitempty" tf:"wait_interval_in_seconds,omitempty"`
 }
 
 type TrafficRoutingConfigurationObservation struct {
@@ -395,7 +386,7 @@ type TrafficRoutingConfigurationObservation struct {
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
 
 	// The length of the baking period, during which SageMaker monitors alarms for each batch on the new fleet. Valid values are between 0 and 3600.
-	WaitIntervalInSeconds *float64 `json:"waitIntervalInSeconds,omitempty" tf:"wait_interval_in_seconds,omitempty"`
+	WaitIntervalInSeconds *int64 `json:"waitIntervalInSeconds,omitempty" tf:"wait_interval_in_seconds,omitempty"`
 }
 
 type TrafficRoutingConfigurationParameters struct {
@@ -414,7 +405,7 @@ type TrafficRoutingConfigurationParameters struct {
 
 	// The length of the baking period, during which SageMaker monitors alarms for each batch on the new fleet. Valid values are between 0 and 3600.
 	// +kubebuilder:validation:Optional
-	WaitIntervalInSeconds *float64 `json:"waitIntervalInSeconds" tf:"wait_interval_in_seconds,omitempty"`
+	WaitIntervalInSeconds *int64 `json:"waitIntervalInSeconds" tf:"wait_interval_in_seconds,omitempty"`
 }
 
 // EndpointSpec defines the desired state of Endpoint

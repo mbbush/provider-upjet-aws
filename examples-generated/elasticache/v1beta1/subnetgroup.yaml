@@ -27,8 +27,6 @@ spec:
     availabilityZone: us-west-2a
     cidrBlock: 10.0.0.0/24
     region: us-west-1
-    tags:
-      Name: tf-test
     vpcIdSelector:
       matchLabels:
         testing.upbound.io/example-name: foo
@@ -47,5 +45,3 @@ spec:
   forProvider:
     cidrBlock: 10.0.0.0/16
     region: us-west-1
-    tags:
-      Name: tf-test

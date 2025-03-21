@@ -47,22 +47,6 @@ func (in *AnalyzerInitParameters) DeepCopyInto(out *AnalyzerInitParameters) {
 		*out = new(ConfigurationInitParameters)
 		(*in).DeepCopyInto(*out)
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.Type != nil {
 		in, out := &in.Type, &out.Type
 		*out = new(string)
@@ -192,22 +176,6 @@ func (in *AnalyzerParameters) DeepCopyInto(out *AnalyzerParameters) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.Type != nil {
 		in, out := &in.Type, &out.Type
 		*out = new(string)
@@ -325,7 +293,7 @@ func (in *UnusedAccessInitParameters) DeepCopyInto(out *UnusedAccessInitParamete
 	*out = *in
 	if in.UnusedAccessAge != nil {
 		in, out := &in.UnusedAccessAge, &out.UnusedAccessAge
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -345,7 +313,7 @@ func (in *UnusedAccessObservation) DeepCopyInto(out *UnusedAccessObservation) {
 	*out = *in
 	if in.UnusedAccessAge != nil {
 		in, out := &in.UnusedAccessAge, &out.UnusedAccessAge
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -365,7 +333,7 @@ func (in *UnusedAccessParameters) DeepCopyInto(out *UnusedAccessParameters) {
 	*out = *in
 	if in.UnusedAccessAge != nil {
 		in, out := &in.UnusedAccessAge, &out.UnusedAccessAge
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }

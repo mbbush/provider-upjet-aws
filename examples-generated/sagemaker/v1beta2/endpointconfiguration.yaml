@@ -16,5 +16,3 @@ spec:
           testing.upbound.io/example-name: m
       variantName: variant-1
     region: us-west-1
-    tags:
-      Name: foo

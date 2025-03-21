@@ -20,8 +20,6 @@ spec:
     maxUserDurationInSeconds: 600
     name: test-fleet
     region: us-west-1
-    tags:
-      TagName: tag-value
     vpcConfig:
     - subnetIdRefs:
       - name: example

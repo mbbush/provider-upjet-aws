@@ -560,7 +560,8 @@ spec:
                       value:
                         description: The numerical value of the time unit for signature
                           validity.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   signingMaterial:
                     description: The AWS Certificate Manager certificate that will
@@ -572,12 +573,6 @@ spec:
                           that is used to sign your code.
                         type: string
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -609,7 +604,8 @@ spec:
                       value:
                         description: The numerical value of the time unit for signature
                           validity.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   signingMaterial:
                     description: The AWS Certificate Manager certificate that will
@@ -621,12 +617,6 @@ spec:
                           that is used to sign your code.
                         type: string
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -845,7 +835,8 @@ spec:
                       value:
                         description: The numerical value of the time unit for signature
                           validity.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   signingMaterial:
                     description: The AWS Certificate Manager certificate that will

@@ -53,10 +53,6 @@ type ConfigurationProfileInitParameters struct {
 	// +kubebuilder:validation:Optional
 	RetrievalRoleArnSelector *v1.Selector `json:"retrievalRoleArnSelector,omitempty" tf:"-"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Type of configurations contained in the profile. Valid values: AWS.AppConfig.FeatureFlags and AWS.Freeform.  Default: AWS.Freeform.
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
 
@@ -158,11 +154,6 @@ type ConfigurationProfileParameters struct {
 	// Selector for a Role in iam to populate retrievalRoleArn.
 	// +kubebuilder:validation:Optional
 	RetrievalRoleArnSelector *v1.Selector `json:"retrievalRoleArnSelector,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Type of configurations contained in the profile. Valid values: AWS.AppConfig.FeatureFlags and AWS.Freeform.  Default: AWS.Freeform.
 	// +kubebuilder:validation:Optional

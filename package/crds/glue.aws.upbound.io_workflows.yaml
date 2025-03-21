@@ -88,17 +88,12 @@ spec:
                       runs of any of the component jobs. If you leave this parameter
                       blank, there is no limit to the number of concurrent workflow
                       runs.
-                    type: number
+                    format: int64
+                    type: integer
                   region:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -130,13 +125,8 @@ spec:
                       runs of any of the component jobs. If you leave this parameter
                       blank, there is no limit to the number of concurrent workflow
                       runs.
-                    type: number
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
+                    format: int64
+                    type: integer
                 type: object
               managementPolicies:
                 default:
@@ -331,7 +321,8 @@ spec:
                       runs of any of the component jobs. If you leave this parameter
                       blank, there is no limit to the number of concurrent workflow
                       runs.
-                    type: number
+                    format: int64
+                    type: integer
                   tags:
                     additionalProperties:
                       type: string

@@ -46,10 +46,6 @@ type VPCIpamInitParameters struct {
 	// Determines which locales can be chosen when you create pools. Locale is the Region where you want to make an IPAM pool available for allocations. You can only create pools with locales that match the operating Regions of the IPAM. You can only create VPCs from a pool whose locale matches the VPC's Region. You specify a region using the region_name parameter. You must set your provider block region as an operating_region.
 	OperatingRegions []OperatingRegionsInitParameters `json:"operatingRegions,omitempty" tf:"operating_regions,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// specifies the IPAM tier. Valid options include free and advanced. Default is advanced.
 	Tier *string `json:"tier,omitempty" tf:"tier,omitempty"`
 }
@@ -88,7 +84,7 @@ type VPCIpamObservation struct {
 	PublicDefaultScopeID *string `json:"publicDefaultScopeId,omitempty" tf:"public_default_scope_id,omitempty"`
 
 	// The number of scopes in the IPAM.
-	ScopeCount *float64 `json:"scopeCount,omitempty" tf:"scope_count,omitempty"`
+	ScopeCount *int64 `json:"scopeCount,omitempty" tf:"scope_count,omitempty"`
 
 	// Key-value map of resource tags.
 	// +mapType=granular
@@ -124,11 +120,6 @@ type VPCIpamParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// specifies the IPAM tier. Valid options include free and advanced. Default is advanced.
 	// +kubebuilder:validation:Optional

@@ -20,10 +20,6 @@ type SegmentInitParameters struct {
 
 	// The pattern to use for the segment. For more information about pattern syntax, see Segment rule pattern syntax.
 	Pattern *string `json:"pattern,omitempty" tf:"pattern,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type SegmentObservation struct {
@@ -38,7 +34,7 @@ type SegmentObservation struct {
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
 
 	// The number of experiments that this segment is used in. This count includes all current experiments, not just those that are currently running.
-	ExperimentCount *float64 `json:"experimentCount,omitempty" tf:"experiment_count,omitempty"`
+	ExperimentCount *int64 `json:"experimentCount,omitempty" tf:"experiment_count,omitempty"`
 
 	// The ID has the same value as the ARN of the segment.
 	ID *string `json:"id,omitempty" tf:"id,omitempty"`
@@ -47,7 +43,7 @@ type SegmentObservation struct {
 	LastUpdatedTime *string `json:"lastUpdatedTime,omitempty" tf:"last_updated_time,omitempty"`
 
 	// The number of launches that this segment is used in. This count includes all current launches, not just those that are currently running.
-	LaunchCount *float64 `json:"launchCount,omitempty" tf:"launch_count,omitempty"`
+	LaunchCount *int64 `json:"launchCount,omitempty" tf:"launch_count,omitempty"`
 
 	// The pattern to use for the segment. For more information about pattern syntax, see Segment rule pattern syntax.
 	Pattern *string `json:"pattern,omitempty" tf:"pattern,omitempty"`
@@ -75,11 +71,6 @@ type SegmentParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // SegmentSpec defines the desired state of Segment

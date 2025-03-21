@@ -75,7 +75,7 @@ type DNSConfigParameters struct {
 type DNSRecordsInitParameters struct {
 
 	// The amount of time, in seconds, that you want DNS resolvers to cache the settings for this resource record set.
-	TTL *float64 `json:"ttl,omitempty" tf:"ttl,omitempty"`
+	TTL *int64 `json:"ttl,omitempty" tf:"ttl,omitempty"`
 
 	// The type of the resource, which indicates the value that Amazon Route 53 returns in response to DNS queries. Valid Values: A, AAAA, SRV, CNAME
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
@@ -84,7 +84,7 @@ type DNSRecordsInitParameters struct {
 type DNSRecordsObservation struct {
 
 	// The amount of time, in seconds, that you want DNS resolvers to cache the settings for this resource record set.
-	TTL *float64 `json:"ttl,omitempty" tf:"ttl,omitempty"`
+	TTL *int64 `json:"ttl,omitempty" tf:"ttl,omitempty"`
 
 	// The type of the resource, which indicates the value that Amazon Route 53 returns in response to DNS queries. Valid Values: A, AAAA, SRV, CNAME
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
@@ -94,7 +94,7 @@ type DNSRecordsParameters struct {
 
 	// The amount of time, in seconds, that you want DNS resolvers to cache the settings for this resource record set.
 	// +kubebuilder:validation:Optional
-	TTL *float64 `json:"ttl" tf:"ttl,omitempty"`
+	TTL *int64 `json:"ttl" tf:"ttl,omitempty"`
 
 	// The type of the resource, which indicates the value that Amazon Route 53 returns in response to DNS queries. Valid Values: A, AAAA, SRV, CNAME
 	// +kubebuilder:validation:Optional
@@ -104,7 +104,7 @@ type DNSRecordsParameters struct {
 type HealthCheckConfigInitParameters struct {
 
 	// The number of consecutive health checks. Maximum value of 10.
-	FailureThreshold *float64 `json:"failureThreshold,omitempty" tf:"failure_threshold,omitempty"`
+	FailureThreshold *int64 `json:"failureThreshold,omitempty" tf:"failure_threshold,omitempty"`
 
 	// The path that you want Route 53 to request when performing health checks. Route 53 automatically adds the DNS name for the service. If you don't specify a value, the default value is /.
 	ResourcePath *string `json:"resourcePath,omitempty" tf:"resource_path,omitempty"`
@@ -116,7 +116,7 @@ type HealthCheckConfigInitParameters struct {
 type HealthCheckConfigObservation struct {
 
 	// The number of consecutive health checks. Maximum value of 10.
-	FailureThreshold *float64 `json:"failureThreshold,omitempty" tf:"failure_threshold,omitempty"`
+	FailureThreshold *int64 `json:"failureThreshold,omitempty" tf:"failure_threshold,omitempty"`
 
 	// The path that you want Route 53 to request when performing health checks. Route 53 automatically adds the DNS name for the service. If you don't specify a value, the default value is /.
 	ResourcePath *string `json:"resourcePath,omitempty" tf:"resource_path,omitempty"`
@@ -129,7 +129,7 @@ type HealthCheckConfigParameters struct {
 
 	// The number of consecutive health checks. Maximum value of 10.
 	// +kubebuilder:validation:Optional
-	FailureThreshold *float64 `json:"failureThreshold,omitempty" tf:"failure_threshold,omitempty"`
+	FailureThreshold *int64 `json:"failureThreshold,omitempty" tf:"failure_threshold,omitempty"`
 
 	// The path that you want Route 53 to request when performing health checks. Route 53 automatically adds the DNS name for the service. If you don't specify a value, the default value is /.
 	// +kubebuilder:validation:Optional
@@ -143,20 +143,20 @@ type HealthCheckConfigParameters struct {
 type HealthCheckCustomConfigInitParameters struct {
 
 	// The number of 30-second intervals that you want service discovery to wait before it changes the health status of a service instance.  Maximum value of 10.
-	FailureThreshold *float64 `json:"failureThreshold,omitempty" tf:"failure_threshold,omitempty"`
+	FailureThreshold *int64 `json:"failureThreshold,omitempty" tf:"failure_threshold,omitempty"`
 }
 
 type HealthCheckCustomConfigObservation struct {
 
 	// The number of 30-second intervals that you want service discovery to wait before it changes the health status of a service instance.  Maximum value of 10.
-	FailureThreshold *float64 `json:"failureThreshold,omitempty" tf:"failure_threshold,omitempty"`
+	FailureThreshold *int64 `json:"failureThreshold,omitempty" tf:"failure_threshold,omitempty"`
 }
 
 type HealthCheckCustomConfigParameters struct {
 
 	// The number of 30-second intervals that you want service discovery to wait before it changes the health status of a service instance.  Maximum value of 10.
 	// +kubebuilder:validation:Optional
-	FailureThreshold *float64 `json:"failureThreshold,omitempty" tf:"failure_threshold,omitempty"`
+	FailureThreshold *int64 `json:"failureThreshold,omitempty" tf:"failure_threshold,omitempty"`
 }
 
 type ServiceInitParameters struct {
@@ -181,10 +181,6 @@ type ServiceInitParameters struct {
 
 	// The ID of the namespace that you want to use to create the service.
 	NamespaceID *string `json:"namespaceId,omitempty" tf:"namespace_id,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// If present, specifies that the service instances are only discoverable using the DiscoverInstances API operation. No DNS records is registered for the service instances. The only valid value is HTTP.
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
@@ -265,11 +261,6 @@ type ServiceParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// If present, specifies that the service instances are only discoverable using the DiscoverInstances API operation. No DNS records is registered for the service instances. The only valid value is HTTP.
 	// +kubebuilder:validation:Optional

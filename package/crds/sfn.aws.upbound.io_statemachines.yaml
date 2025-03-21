@@ -988,7 +988,8 @@ spec:
                           will call GenerateDataKey. This setting only applies to
                           customer managed KMS key and does not apply when type is
                           AWS_OWNED_KEY.
-                        type: number
+                        format: int64
+                        type: integer
                       kmsKeyId:
                         description: The alias, alias ARN, key ID, or key ARN of the
                           symmetric encryption KMS key that encrypts the data key.
@@ -1183,12 +1184,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   tracingConfiguration:
                     description: Selects whether AWS X-Ray tracing is enabled.
                     properties:
@@ -1236,7 +1231,8 @@ spec:
                           will call GenerateDataKey. This setting only applies to
                           customer managed KMS key and does not apply when type is
                           AWS_OWNED_KEY.
-                        type: number
+                        format: int64
+                        type: integer
                       kmsKeyId:
                         description: The alias, alias ARN, key ID, or key ARN of the
                           symmetric encryption KMS key that encrypts the data key.
@@ -1427,12 +1423,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   tracingConfiguration:
                     description: Selects whether AWS X-Ray tracing is enabled.
                     properties:
@@ -1650,7 +1640,8 @@ spec:
                           will call GenerateDataKey. This setting only applies to
                           customer managed KMS key and does not apply when type is
                           AWS_OWNED_KEY.
-                        type: number
+                        format: int64
+                        type: integer
                       kmsKeyId:
                         description: The alias, alias ARN, key ID, or key ARN of the
                           symmetric encryption KMS key that encrypts the data key.

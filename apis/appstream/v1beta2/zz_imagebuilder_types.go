@@ -110,10 +110,6 @@ type ImageBuilderInitParameters struct {
 	// Instance type to use when launching the image builder.
 	InstanceType *string `json:"instanceType,omitempty" tf:"instance_type,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Configuration block for the VPC configuration for the image builder. See below.
 	VPCConfig *ImageBuilderVPCConfigInitParameters `json:"vpcConfig,omitempty" tf:"vpc_config,omitempty"`
 }
@@ -226,11 +222,6 @@ type ImageBuilderParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Configuration block for the VPC configuration for the image builder. See below.
 	// +kubebuilder:validation:Optional

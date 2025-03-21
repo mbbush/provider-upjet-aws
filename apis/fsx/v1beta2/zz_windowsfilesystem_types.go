@@ -124,7 +124,7 @@ type SelfManagedActiveDirectoryParameters struct {
 type WindowsFileSystemDiskIopsConfigurationInitParameters struct {
 
 	// The total number of SSD IOPS provisioned for the file system.
-	Iops *float64 `json:"iops,omitempty" tf:"iops,omitempty"`
+	Iops *int64 `json:"iops,omitempty" tf:"iops,omitempty"`
 
 	// Specifies whether the number of IOPS for the file system is using the system. Valid values are AUTOMATIC and USER_PROVISIONED. Default value is AUTOMATIC.
 	Mode *string `json:"mode,omitempty" tf:"mode,omitempty"`
@@ -133,7 +133,7 @@ type WindowsFileSystemDiskIopsConfigurationInitParameters struct {
 type WindowsFileSystemDiskIopsConfigurationObservation struct {
 
 	// The total number of SSD IOPS provisioned for the file system.
-	Iops *float64 `json:"iops,omitempty" tf:"iops,omitempty"`
+	Iops *int64 `json:"iops,omitempty" tf:"iops,omitempty"`
 
 	// Specifies whether the number of IOPS for the file system is using the system. Valid values are AUTOMATIC and USER_PROVISIONED. Default value is AUTOMATIC.
 	Mode *string `json:"mode,omitempty" tf:"mode,omitempty"`
@@ -143,7 +143,7 @@ type WindowsFileSystemDiskIopsConfigurationParameters struct {
 
 	// The total number of SSD IOPS provisioned for the file system.
 	// +kubebuilder:validation:Optional
-	Iops *float64 `json:"iops,omitempty" tf:"iops,omitempty"`
+	Iops *int64 `json:"iops,omitempty" tf:"iops,omitempty"`
 
 	// Specifies whether the number of IOPS for the file system is using the system. Valid values are AUTOMATIC and USER_PROVISIONED. Default value is AUTOMATIC.
 	// +kubebuilder:validation:Optional
@@ -173,7 +173,7 @@ type WindowsFileSystemInitParameters struct {
 	AuditLogConfiguration *AuditLogConfigurationInitParameters `json:"auditLogConfiguration,omitempty" tf:"audit_log_configuration,omitempty"`
 
 	// The number of days to retain automatic backups. Minimum of 0 and maximum of 90. Defaults to 7. Set to 0 to disable.
-	AutomaticBackupRetentionDays *float64 `json:"automaticBackupRetentionDays,omitempty" tf:"automatic_backup_retention_days,omitempty"`
+	AutomaticBackupRetentionDays *int64 `json:"automaticBackupRetentionDays,omitempty" tf:"automatic_backup_retention_days,omitempty"`
 
 	// The ID of the source backup to create the filesystem from.
 	BackupID *string `json:"backupId,omitempty" tf:"backup_id,omitempty"`
@@ -189,10 +189,6 @@ type WindowsFileSystemInitParameters struct {
 
 	// The SSD IOPS configuration for the Amazon FSx for Windows File Server file system. See disk_iops_configuration Block for details.
 	DiskIopsConfiguration *WindowsFileSystemDiskIopsConfigurationInitParameters `json:"diskIopsConfiguration,omitempty" tf:"disk_iops_configuration,omitempty"`
-
-	// A map of tags to apply to the file system's final backup.
-	// +mapType=granular
-	FinalBackupTags map[string]*string `json:"finalBackupTags,omitempty" tf:"final_backup_tags,omitempty"`
 
 	// ARN for the KMS Key to encrypt the file system at rest. Defaults to an AWS managed KMS Key.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/kms/v1beta1.Key
@@ -232,7 +228,7 @@ type WindowsFileSystemInitParameters struct {
 	SkipFinalBackup *bool `json:"skipFinalBackup,omitempty" tf:"skip_final_backup,omitempty"`
 
 	// Storage capacity (GiB) of the file system. Minimum of 32 and maximum of 65536. If the storage type is set to HDD the minimum value is 2000. Required when not creating filesystem for a backup.
-	StorageCapacity *float64 `json:"storageCapacity,omitempty" tf:"storage_capacity,omitempty"`
+	StorageCapacity *int64 `json:"storageCapacity,omitempty" tf:"storage_capacity,omitempty"`
 
 	// Specifies the storage type, Valid values are SSD and HDD. HDD is supported on SINGLE_AZ_2 and MULTI_AZ_1 Windows file system deployment types. Default value is SSD.
 	StorageType *string `json:"storageType,omitempty" tf:"storage_type,omitempty"`
@@ -251,12 +247,8 @@ type WindowsFileSystemInitParameters struct {
 	// +crossplane:generate:reference:selectorFieldName=SubnetIDSelector
 	SubnetIds []*string `json:"subnetIds,omitempty" tf:"subnet_ids,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Throughput (megabytes per second) of the file system. For valid values, refer to the AWS documentation.
-	ThroughputCapacity *float64 `json:"throughputCapacity,omitempty" tf:"throughput_capacity,omitempty"`
+	ThroughputCapacity *int64 `json:"throughputCapacity,omitempty" tf:"throughput_capacity,omitempty"`
 
 	// The preferred start time (in d:HH:MM format) to perform weekly maintenance, in the UTC time zone.
 	WeeklyMaintenanceStartTime *string `json:"weeklyMaintenanceStartTime,omitempty" tf:"weekly_maintenance_start_time,omitempty"`
@@ -278,7 +270,7 @@ type WindowsFileSystemObservation struct {
 	AuditLogConfiguration *AuditLogConfigurationObservation `json:"auditLogConfiguration,omitempty" tf:"audit_log_configuration,omitempty"`
 
 	// The number of days to retain automatic backups. Minimum of 0 and maximum of 90. Defaults to 7. Set to 0 to disable.
-	AutomaticBackupRetentionDays *float64 `json:"automaticBackupRetentionDays,omitempty" tf:"automatic_backup_retention_days,omitempty"`
+	AutomaticBackupRetentionDays *int64 `json:"automaticBackupRetentionDays,omitempty" tf:"automatic_backup_retention_days,omitempty"`
 
 	// The ID of the source backup to create the filesystem from.
 	BackupID *string `json:"backupId,omitempty" tf:"backup_id,omitempty"`
@@ -335,7 +327,7 @@ type WindowsFileSystemObservation struct {
 	SkipFinalBackup *bool `json:"skipFinalBackup,omitempty" tf:"skip_final_backup,omitempty"`
 
 	// Storage capacity (GiB) of the file system. Minimum of 32 and maximum of 65536. If the storage type is set to HDD the minimum value is 2000. Required when not creating filesystem for a backup.
-	StorageCapacity *float64 `json:"storageCapacity,omitempty" tf:"storage_capacity,omitempty"`
+	StorageCapacity *int64 `json:"storageCapacity,omitempty" tf:"storage_capacity,omitempty"`
 
 	// Specifies the storage type, Valid values are SSD and HDD. HDD is supported on SINGLE_AZ_2 and MULTI_AZ_1 Windows file system deployment types. Default value is SSD.
 	StorageType *string `json:"storageType,omitempty" tf:"storage_type,omitempty"`
@@ -352,7 +344,7 @@ type WindowsFileSystemObservation struct {
 	TagsAll map[string]*string `json:"tagsAll,omitempty" tf:"tags_all,omitempty"`
 
 	// Throughput (megabytes per second) of the file system. For valid values, refer to the AWS documentation.
-	ThroughputCapacity *float64 `json:"throughputCapacity,omitempty" tf:"throughput_capacity,omitempty"`
+	ThroughputCapacity *int64 `json:"throughputCapacity,omitempty" tf:"throughput_capacity,omitempty"`
 
 	// Identifier of the Virtual Private Cloud for the file system.
 	VPCID *string `json:"vpcId,omitempty" tf:"vpc_id,omitempty"`
@@ -388,7 +380,7 @@ type WindowsFileSystemParameters struct {
 
 	// The number of days to retain automatic backups. Minimum of 0 and maximum of 90. Defaults to 7. Set to 0 to disable.
 	// +kubebuilder:validation:Optional
-	AutomaticBackupRetentionDays *float64 `json:"automaticBackupRetentionDays,omitempty" tf:"automatic_backup_retention_days,omitempty"`
+	AutomaticBackupRetentionDays *int64 `json:"automaticBackupRetentionDays,omitempty" tf:"automatic_backup_retention_days,omitempty"`
 
 	// The ID of the source backup to create the filesystem from.
 	// +kubebuilder:validation:Optional
@@ -409,11 +401,6 @@ type WindowsFileSystemParameters struct {
 	// The SSD IOPS configuration for the Amazon FSx for Windows File Server file system. See disk_iops_configuration Block for details.
 	// +kubebuilder:validation:Optional
 	DiskIopsConfiguration *WindowsFileSystemDiskIopsConfigurationParameters `json:"diskIopsConfiguration,omitempty" tf:"disk_iops_configuration,omitempty"`
-
-	// A map of tags to apply to the file system's final backup.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	FinalBackupTags map[string]*string `json:"finalBackupTags,omitempty" tf:"final_backup_tags,omitempty"`
 
 	// ARN for the KMS Key to encrypt the file system at rest. Defaults to an AWS managed KMS Key.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/kms/v1beta1.Key
@@ -464,7 +451,7 @@ type WindowsFileSystemParameters struct {
 
 	// Storage capacity (GiB) of the file system. Minimum of 32 and maximum of 65536. If the storage type is set to HDD the minimum value is 2000. Required when not creating filesystem for a backup.
 	// +kubebuilder:validation:Optional
-	StorageCapacity *float64 `json:"storageCapacity,omitempty" tf:"storage_capacity,omitempty"`
+	StorageCapacity *int64 `json:"storageCapacity,omitempty" tf:"storage_capacity,omitempty"`
 
 	// Specifies the storage type, Valid values are SSD and HDD. HDD is supported on SINGLE_AZ_2 and MULTI_AZ_1 Windows file system deployment types. Default value is SSD.
 	// +kubebuilder:validation:Optional
@@ -485,14 +472,9 @@ type WindowsFileSystemParameters struct {
 	// +kubebuilder:validation:Optional
 	SubnetIds []*string `json:"subnetIds,omitempty" tf:"subnet_ids,omitempty"`
 
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Throughput (megabytes per second) of the file system. For valid values, refer to the AWS documentation.
 	// +kubebuilder:validation:Optional
-	ThroughputCapacity *float64 `json:"throughputCapacity,omitempty" tf:"throughput_capacity,omitempty"`
+	ThroughputCapacity *int64 `json:"throughputCapacity,omitempty" tf:"throughput_capacity,omitempty"`
 
 	// The preferred start time (in d:HH:MM format) to perform weekly maintenance, in the UTC time zone.
 	// +kubebuilder:validation:Optional

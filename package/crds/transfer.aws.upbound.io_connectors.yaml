@@ -1175,12 +1175,6 @@ spec:
                             type: object
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   url:
                     description: The URL of the partners AS2 endpoint or SFTP endpoint.
                     type: string
@@ -1420,12 +1414,6 @@ spec:
                             type: object
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   url:
                     description: The URL of the partners AS2 endpoint or SFTP endpoint.
                     type: string

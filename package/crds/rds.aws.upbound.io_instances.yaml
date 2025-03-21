@@ -5795,7 +5795,8 @@ spec:
                       allocation and differences from the configuration will be ignored
                       automatically when Storage Autoscaling occurs. If replicate_source_db
                       is set, the value is ignored during the creation of the instance.
-                    type: number
+                    format: int64
+                    type: integer
                   allowMajorVersionUpgrade:
                     description: |-
                       Indicates that major version
@@ -5832,7 +5833,8 @@ spec:
                       Must be greater than 0 if the database is used as a source for a Read Replica,
                       uses low-downtime updates,
                       or will use RDS Blue/Green deployments.
-                    type: number
+                    format: int64
+                    type: integer
                   backupTarget:
                     description: Specifies where automated backups and manual snapshots
                       are stored. Possible values are region (default) and outposts.
@@ -6080,7 +6082,8 @@ spec:
                       storage_type of "io1" or "io2". Can only be set when storage_type is "io1", "io2 or "gp3".
                       Cannot be specified for gp3 storage if the allocated_storage value is below a per-engine threshold.
                       See the RDS User Guide for details.
-                    type: number
+                    format: int64
+                    type: integer
                   kmsKeyId:
                     description: |-
                       The ARN for the KMS encryption key. If creating an
@@ -6263,14 +6266,16 @@ spec:
                       Configuring this will automatically ignore differences to allocated_storage.
                       Must be greater than or equal to allocated_storage or 0 to disable
                       Storage Autoscaling.
-                    type: number
+                    format: int64
+                    type: integer
                   monitoringInterval:
                     description: |-
                       The interval, in seconds, between points
                       when Enhanced Monitoring metrics are collected for the DB instance. To disable
                       collecting Enhanced Monitoring metrics, specify 0. The default is 0. Valid
                       Values: 0, 1, 5, 10, 15, 30, 60.
-                    type: number
+                    format: int64
+                    type: integer
                   monitoringRoleArn:
                     description: |-
                       The ARN for the IAM role that permits RDS
@@ -6482,10 +6487,12 @@ spec:
                       data. Valid values are 7, 731 (2 years) or a multiple of 31.
                       When specifying performance_insights_retention_period, performance_insights_enabled
                       needs to be set to true. Defaults to '7'.
-                    type: number
+                    format: int64
+                    type: integer
                   port:
                     description: The port on which the DB accepts connections.
-                    type: number
+                    format: int64
+                    type: integer
                   publiclyAccessible:
                     description: |-
                       Bool to control if instance is publicly
@@ -6663,7 +6670,8 @@ spec:
                       Can only be set when storage_type is "gp3". Cannot be specified
                       if the allocated_storage value is below a per-engine threshold.
                       See the RDS User Guide for details.
-                    type: number
+                    format: int64
+                    type: integer
                   storageType:
                     description: |-
                       One of "standard" (magnetic), "gp2" (general
@@ -6671,12 +6679,6 @@ spec:
                       "io1" (provisioned IOPS SSD) or "io2" (block express storage provisioned IOPS
                       SSD). The default is "io1" if iops is specified, "gp2" if not.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   timezone:
                     description: |-
                       Time zone of the DB instance. timezone is currently
@@ -6802,7 +6804,8 @@ spec:
                       allocation and differences from the configuration will be ignored
                       automatically when Storage Autoscaling occurs. If replicate_source_db
                       is set, the value is ignored during the creation of the instance.
-                    type: number
+                    format: int64
+                    type: integer
                   allowMajorVersionUpgrade:
                     description: |-
                       Indicates that major version
@@ -6833,7 +6836,8 @@ spec:
                       Must be greater than 0 if the database is used as a source for a Read Replica,
                       uses low-downtime updates,
                       or will use RDS Blue/Green deployments.
-                    type: number
+                    format: int64
+                    type: integer
                   backupTarget:
                     description: Specifies where automated backups and manual snapshots
                       are stored. Possible values are region (default) and outposts.
@@ -7081,7 +7085,8 @@ spec:
                       storage_type of "io1" or "io2". Can only be set when storage_type is "io1", "io2 or "gp3".
                       Cannot be specified for gp3 storage if the allocated_storage value is below a per-engine threshold.
                       See the RDS User Guide for details.
-                    type: number
+                    format: int64
+                    type: integer
                   kmsKeyId:
                     description: |-
                       The ARN for the KMS encryption key. If creating an
@@ -7264,14 +7269,16 @@ spec:
                       Configuring this will automatically ignore differences to allocated_storage.
                       Must be greater than or equal to allocated_storage or 0 to disable
                       Storage Autoscaling.
-                    type: number
+                    format: int64
+                    type: integer
                   monitoringInterval:
                     description: |-
                       The interval, in seconds, between points
                       when Enhanced Monitoring metrics are collected for the DB instance. To disable
                       collecting Enhanced Monitoring metrics, specify 0. The default is 0. Valid
                       Values: 0, 1, 5, 10, 15, 30, 60.
-                    type: number
+                    format: int64
+                    type: integer
                   monitoringRoleArn:
                     description: |-
                       The ARN for the IAM role that permits RDS
@@ -7483,10 +7490,12 @@ spec:
                       data. Valid values are 7, 731 (2 years) or a multiple of 31.
                       When specifying performance_insights_retention_period, performance_insights_enabled
                       needs to be set to true. Defaults to '7'.
-                    type: number
+                    format: int64
+                    type: integer
                   port:
                     description: The port on which the DB accepts connections.
-                    type: number
+                    format: int64
+                    type: integer
                   publiclyAccessible:
                     description: |-
                       Bool to control if instance is publicly
@@ -7660,7 +7669,8 @@ spec:
                       Can only be set when storage_type is "gp3". Cannot be specified
                       if the allocated_storage value is below a per-engine threshold.
                       See the RDS User Guide for details.
-                    type: number
+                    format: int64
+                    type: integer
                   storageType:
                     description: |-
                       One of "standard" (magnetic), "gp2" (general
@@ -7668,12 +7678,6 @@ spec:
                       "io1" (provisioned IOPS SSD) or "io2" (block express storage provisioned IOPS
                       SSD). The default is "io1" if iops is specified, "gp2" if not.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   timezone:
                     description: |-
                       Time zone of the DB instance. timezone is currently
@@ -7965,7 +7969,8 @@ spec:
                       allocation and differences from the configuration will be ignored
                       automatically when Storage Autoscaling occurs. If replicate_source_db
                       is set, the value is ignored during the creation of the instance.
-                    type: number
+                    format: int64
+                    type: integer
                   allowMajorVersionUpgrade:
                     description: |-
                       Indicates that major version
@@ -7999,7 +8004,8 @@ spec:
                       Must be greater than 0 if the database is used as a source for a Read Replica,
                       uses low-downtime updates,
                       or will use RDS Blue/Green deployments.
-                    type: number
+                    format: int64
+                    type: integer
                   backupTarget:
                     description: Specifies where automated backups and manual snapshots
                       are stored. Possible values are region (default) and outposts.
@@ -8187,7 +8193,8 @@ spec:
                       storage_type of "io1" or "io2". Can only be set when storage_type is "io1", "io2 or "gp3".
                       Cannot be specified for gp3 storage if the allocated_storage value is below a per-engine threshold.
                       See the RDS User Guide for details.
-                    type: number
+                    format: int64
+                    type: integer
                   kmsKeyId:
                     description: |-
                       The ARN for the KMS encryption key. If creating an
@@ -8217,7 +8224,8 @@ spec:
                           type: string
                         port:
                           description: The port on which the DB accepts connections.
-                          type: number
+                          format: int64
+                          type: integer
                       type: object
                     type: array
                   maintenanceWindow:
@@ -8264,14 +8272,16 @@ spec:
                       Configuring this will automatically ignore differences to allocated_storage.
                       Must be greater than or equal to allocated_storage or 0 to disable
                       Storage Autoscaling.
-                    type: number
+                    format: int64
+                    type: integer
                   monitoringInterval:
                     description: |-
                       The interval, in seconds, between points
                       when Enhanced Monitoring metrics are collected for the DB instance. To disable
                       collecting Enhanced Monitoring metrics, specify 0. The default is 0. Valid
                       Values: 0, 1, 5, 10, 15, 30, 60.
-                    type: number
+                    format: int64
+                    type: integer
                   monitoringRoleArn:
                     description: |-
                       The ARN for the IAM role that permits RDS
@@ -8313,10 +8323,12 @@ spec:
                       data. Valid values are 7, 731 (2 years) or a multiple of 31.
                       When specifying performance_insights_retention_period, performance_insights_enabled
                       needs to be set to true. Defaults to '7'.
-                    type: number
+                    format: int64
+                    type: integer
                   port:
                     description: The port on which the DB accepts connections.
-                    type: number
+                    format: int64
+                    type: integer
                   publiclyAccessible:
                     description: |-
                       Bool to control if instance is publicly
@@ -8426,7 +8438,8 @@ spec:
                       Can only be set when storage_type is "gp3". Cannot be specified
                       if the allocated_storage value is below a per-engine threshold.
                       See the RDS User Guide for details.
-                    type: number
+                    format: int64
+                    type: integer
                   storageType:
                     description: |-
                       One of "standard" (magnetic), "gp2" (general

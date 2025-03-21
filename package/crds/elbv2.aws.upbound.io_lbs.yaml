@@ -1674,7 +1674,8 @@ spec:
                   clientKeepAlive:
                     description: Client keep alive value in seconds. The valid range
                       is 60-604800 seconds. The default is 3600 seconds.
-                    type: number
+                    format: int64
+                    type: integer
                   connectionLogs:
                     description: Connection Logs block. See below. Only valid for
                       Load Balancers of type application.
@@ -1759,7 +1760,8 @@ spec:
                     description: 'Time in seconds that the connection is allowed to
                       be idle. Only valid for Load Balancers of type application.
                       Default: 60.'
-                    type: number
+                    format: int64
+                    type: integer
                   internal:
                     description: If true, the LB will be internal. Defaults to false.
                     type: boolean
@@ -2064,12 +2066,6 @@ spec:
                       type: string
                     type: array
                     x-kubernetes-list-type: set
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   xffHeaderProcessingMode:
                     description: Determines how the load balancer modifies the X-Forwarded-For
                       header in the HTTP request before sending the request to the
@@ -2185,7 +2181,8 @@ spec:
                   clientKeepAlive:
                     description: Client keep alive value in seconds. The valid range
                       is 60-604800 seconds. The default is 3600 seconds.
-                    type: number
+                    format: int64
+                    type: integer
                   connectionLogs:
                     description: Connection Logs block. See below. Only valid for
                       Load Balancers of type application.
@@ -2270,7 +2267,8 @@ spec:
                     description: 'Time in seconds that the connection is allowed to
                       be idle. Only valid for Load Balancers of type application.
                       Default: 60.'
-                    type: number
+                    format: int64
+                    type: integer
                   internal:
                     description: If true, the LB will be internal. Defaults to false.
                     type: boolean
@@ -2571,12 +2569,6 @@ spec:
                       type: string
                     type: array
                     x-kubernetes-list-type: set
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   xffHeaderProcessingMode:
                     description: Determines how the load balancer modifies the X-Forwarded-For
                       header in the HTTP request before sending the request to the
@@ -2781,7 +2773,8 @@ spec:
                   clientKeepAlive:
                     description: Client keep alive value in seconds. The valid range
                       is 60-604800 seconds. The default is 3600 seconds.
-                    type: number
+                    format: int64
+                    type: integer
                   connectionLogs:
                     description: Connection Logs block. See below. Only valid for
                       Load Balancers of type application.
@@ -2872,7 +2865,8 @@ spec:
                     description: 'Time in seconds that the connection is allowed to
                       be idle. Only valid for Load Balancers of type application.
                       Default: 60.'
-                    type: number
+                    format: int64
+                    type: integer
                   internal:
                     description: If true, the LB will be internal. Defaults to false.
                     type: boolean

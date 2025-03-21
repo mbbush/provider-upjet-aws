@@ -112,10 +112,6 @@ type CustomActionTypeInitParameters struct {
 	// The settings for an action type.
 	Settings *SettingsInitParameters `json:"settings,omitempty" tf:"settings,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// The version identifier of the custom action.
 	Version *string `json:"version,omitempty" tf:"version,omitempty"`
 }
@@ -192,11 +188,6 @@ type CustomActionTypeParameters struct {
 	// +kubebuilder:validation:Optional
 	Settings *SettingsParameters `json:"settings,omitempty" tf:"settings,omitempty"`
 
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// The version identifier of the custom action.
 	// +kubebuilder:validation:Optional
 	Version *string `json:"version,omitempty" tf:"version,omitempty"`
@@ -205,59 +196,59 @@ type CustomActionTypeParameters struct {
 type InputArtifactDetailsInitParameters struct {
 
 	// The maximum number of artifacts allowed for the action type. Min: 0, Max: 5
-	MaximumCount *float64 `json:"maximumCount,omitempty" tf:"maximum_count,omitempty"`
+	MaximumCount *int64 `json:"maximumCount,omitempty" tf:"maximum_count,omitempty"`
 
 	// The minimum number of artifacts allowed for the action type. Min: 0, Max: 5
-	MinimumCount *float64 `json:"minimumCount,omitempty" tf:"minimum_count,omitempty"`
+	MinimumCount *int64 `json:"minimumCount,omitempty" tf:"minimum_count,omitempty"`
 }
 
 type InputArtifactDetailsObservation struct {
 
 	// The maximum number of artifacts allowed for the action type. Min: 0, Max: 5
-	MaximumCount *float64 `json:"maximumCount,omitempty" tf:"maximum_count,omitempty"`
+	MaximumCount *int64 `json:"maximumCount,omitempty" tf:"maximum_count,omitempty"`
 
 	// The minimum number of artifacts allowed for the action type. Min: 0, Max: 5
-	MinimumCount *float64 `json:"minimumCount,omitempty" tf:"minimum_count,omitempty"`
+	MinimumCount *int64 `json:"minimumCount,omitempty" tf:"minimum_count,omitempty"`
 }
 
 type InputArtifactDetailsParameters struct {
 
 	// The maximum number of artifacts allowed for the action type. Min: 0, Max: 5
 	// +kubebuilder:validation:Optional
-	MaximumCount *float64 `json:"maximumCount" tf:"maximum_count,omitempty"`
+	MaximumCount *int64 `json:"maximumCount" tf:"maximum_count,omitempty"`
 
 	// The minimum number of artifacts allowed for the action type. Min: 0, Max: 5
 	// +kubebuilder:validation:Optional
-	MinimumCount *float64 `json:"minimumCount" tf:"minimum_count,omitempty"`
+	MinimumCount *int64 `json:"minimumCount" tf:"minimum_count,omitempty"`
 }
 
 type OutputArtifactDetailsInitParameters struct {
 
 	// The maximum number of artifacts allowed for the action type. Min: 0, Max: 5
-	MaximumCount *float64 `json:"maximumCount,omitempty" tf:"maximum_count,omitempty"`
+	MaximumCount *int64 `json:"maximumCount,omitempty" tf:"maximum_count,omitempty"`
 
 	// The minimum number of artifacts allowed for the action type. Min: 0, Max: 5
-	MinimumCount *float64 `json:"minimumCount,omitempty" tf:"minimum_count,omitempty"`
+	MinimumCount *int64 `json:"minimumCount,omitempty" tf:"minimum_count,omitempty"`
 }
 
 type OutputArtifactDetailsObservation struct {
 
 	// The maximum number of artifacts allowed for the action type. Min: 0, Max: 5
-	MaximumCount *float64 `json:"maximumCount,omitempty" tf:"maximum_count,omitempty"`
+	MaximumCount *int64 `json:"maximumCount,omitempty" tf:"maximum_count,omitempty"`
 
 	// The minimum number of artifacts allowed for the action type. Min: 0, Max: 5
-	MinimumCount *float64 `json:"minimumCount,omitempty" tf:"minimum_count,omitempty"`
+	MinimumCount *int64 `json:"minimumCount,omitempty" tf:"minimum_count,omitempty"`
 }
 
 type OutputArtifactDetailsParameters struct {
 
 	// The maximum number of artifacts allowed for the action type. Min: 0, Max: 5
 	// +kubebuilder:validation:Optional
-	MaximumCount *float64 `json:"maximumCount" tf:"maximum_count,omitempty"`
+	MaximumCount *int64 `json:"maximumCount" tf:"maximum_count,omitempty"`
 
 	// The minimum number of artifacts allowed for the action type. Min: 0, Max: 5
 	// +kubebuilder:validation:Optional
-	MinimumCount *float64 `json:"minimumCount" tf:"minimum_count,omitempty"`
+	MinimumCount *int64 `json:"minimumCount" tf:"minimum_count,omitempty"`
 }
 
 type SettingsInitParameters struct {

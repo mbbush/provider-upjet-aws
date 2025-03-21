@@ -21,7 +21,7 @@ type AuthenticationModeInitParameters struct {
 }
 
 type AuthenticationModeObservation struct {
-	PasswordCount *float64 `json:"passwordCount,omitempty" tf:"password_count,omitempty"`
+	PasswordCount *int64 `json:"passwordCount,omitempty" tf:"password_count,omitempty"`
 
 	// Specifies the authentication type. Possible options are: password, no-password-required or iam.
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
@@ -53,10 +53,6 @@ type UserInitParameters struct {
 	NoPasswordRequired *bool `json:"noPasswordRequired,omitempty" tf:"no_password_required,omitempty"`
 
 	Passwords []*string `json:"passwordsSecretRef,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// The username of the user.
 	UserName *string `json:"userName,omitempty" tf:"user_name,omitempty"`
@@ -118,11 +114,6 @@ type UserParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// The username of the user.
 	// +kubebuilder:validation:Optional

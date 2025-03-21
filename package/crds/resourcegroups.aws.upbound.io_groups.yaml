@@ -589,12 +589,6 @@ spec:
                         description: The type of the resource query. Defaults to TAG_FILTERS_1_0.
                         type: string
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -652,12 +646,6 @@ spec:
                         description: The type of the resource query. Defaults to TAG_FILTERS_1_0.
                         type: string
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:

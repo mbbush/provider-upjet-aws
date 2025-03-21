@@ -1019,12 +1019,6 @@ spec:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - name
                 - region
@@ -1216,12 +1210,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -1419,7 +1407,8 @@ spec:
                   latestRevision:
                     description: an ID of the latest successfully created revision
                       of the custom plugin.
-                    type: number
+                    format: int64
+                    type: integer
                   location:
                     description: Information about the location of a custom plugin.
                       See location Block for details.

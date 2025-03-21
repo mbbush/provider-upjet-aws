@@ -190,7 +190,8 @@ spec:
                   ipv4NetmaskLength:
                     description: The netmask length of the IPv4 CIDR you want to allocate
                       to this VPC. Requires specifying a ipv4_ipam_pool_id.
-                    type: number
+                    format: int64
+                    type: integer
                   ipv6CidrBlock:
                     description: IPv6 CIDR block to request from an IPAM Pool. Can
                       be set explicitly or derived from IPAM using ipv6_netmask_length.
@@ -210,17 +211,12 @@ spec:
                       with ipv6_cidr_block. This can be omitted if IPAM pool as a
                       allocation_default_netmask_length set. Valid values are from
                       44 to 60 in increments of 4.
-                    type: number
+                    format: int64
+                    type: integer
                   region:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -355,7 +351,8 @@ spec:
                   ipv4NetmaskLength:
                     description: The netmask length of the IPv4 CIDR you want to allocate
                       to this VPC. Requires specifying a ipv4_ipam_pool_id.
-                    type: number
+                    format: int64
+                    type: integer
                   ipv6CidrBlock:
                     description: IPv6 CIDR block to request from an IPAM Pool. Can
                       be set explicitly or derived from IPAM using ipv6_netmask_length.
@@ -375,13 +372,8 @@ spec:
                       with ipv6_cidr_block. This can be omitted if IPAM pool as a
                       allocation_default_netmask_length set. Valid values are from
                       44 to 60 in increments of 4.
-                    type: number
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
+                    format: int64
+                    type: integer
                 type: object
               managementPolicies:
                 default:
@@ -620,7 +612,8 @@ spec:
                   ipv4NetmaskLength:
                     description: The netmask length of the IPv4 CIDR you want to allocate
                       to this VPC. Requires specifying a ipv4_ipam_pool_id.
-                    type: number
+                    format: int64
+                    type: integer
                   ipv6AssociationId:
                     description: The association ID for the IPv6 CIDR block.
                     type: string
@@ -643,7 +636,8 @@ spec:
                       with ipv6_cidr_block. This can be omitted if IPAM pool as a
                       allocation_default_netmask_length set. Valid values are from
                       44 to 60 in increments of 4.
-                    type: number
+                    format: int64
+                    type: integer
                   mainRouteTableId:
                     description: |-
                       The ID of the main route table associated with

@@ -4028,7 +4028,8 @@ spec:
                             priority:
                               description: Positive integer specifying priority of
                                 a method with 1 being the highest priority.
-                              type: number
+                              format: int64
+                              type: integer
                           type: object
                         type: array
                     type: object
@@ -5231,7 +5232,8 @@ spec:
                       minimumLength:
                         description: Minimum length of the password policy that you
                           have set.
-                        type: number
+                        format: int64
+                        type: integer
                       passwordHistorySize:
                         description: Number of previous passwords that you want Amazon
                           Cognito to restrict each user from reusing. Users can't
@@ -5239,7 +5241,8 @@ spec:
                           specified by this argument. A value of 0 means that password
                           history is not enforced. Valid values are between 0 and
                           24.
-                        type: number
+                        format: int64
+                        type: integer
                       requireLowercase:
                         description: Whether you have required users to use at least
                           one lowercase letter in their password.
@@ -5261,7 +5264,8 @@ spec:
                           the number of days a temporary password is valid. If the
                           user does not sign-in during this time, their password will
                           need to be reset by an administrator.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   region:
                     description: Region is the region you'd like your resource to
@@ -5449,12 +5453,6 @@ spec:
                           block must be fully removed.
                         type: boolean
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   userAttributeUpdateSettings:
                     description: Configuration block for user attribute update settings.
                       Detailed below.
@@ -5554,7 +5552,8 @@ spec:
                             priority:
                               description: Positive integer specifying priority of
                                 a method with 1 being the highest priority.
-                              type: number
+                              format: int64
+                              type: integer
                           type: object
                         type: array
                     type: object
@@ -6757,7 +6756,8 @@ spec:
                       minimumLength:
                         description: Minimum length of the password policy that you
                           have set.
-                        type: number
+                        format: int64
+                        type: integer
                       passwordHistorySize:
                         description: Number of previous passwords that you want Amazon
                           Cognito to restrict each user from reusing. Users can't
@@ -6765,7 +6765,8 @@ spec:
                           specified by this argument. A value of 0 means that password
                           history is not enforced. Valid values are between 0 and
                           24.
-                        type: number
+                        format: int64
+                        type: integer
                       requireLowercase:
                         description: Whether you have required users to use at least
                           one lowercase letter in their password.
@@ -6787,7 +6788,8 @@ spec:
                           the number of days a temporary password is valid. If the
                           user does not sign-in during this time, their password will
                           need to be reset by an administrator.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   schema:
                     description: Configuration block for the schema attributes of
@@ -6971,12 +6973,6 @@ spec:
                           block must be fully removed.
                         type: boolean
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   userAttributeUpdateSettings:
                     description: Configuration block for user attribute update settings.
                       Detailed below.
@@ -7238,7 +7234,8 @@ spec:
                             priority:
                               description: Positive integer specifying priority of
                                 a method with 1 being the highest priority.
-                              type: number
+                              format: int64
+                              type: integer
                           type: object
                         type: array
                     type: object
@@ -7365,7 +7362,8 @@ spec:
                     type: string
                   estimatedNumberOfUsers:
                     description: A number estimating the size of the user pool.
-                    type: number
+                    format: int64
+                    type: integer
                   id:
                     description: ID of the user pool.
                     type: string
@@ -7484,7 +7482,8 @@ spec:
                       minimumLength:
                         description: Minimum length of the password policy that you
                           have set.
-                        type: number
+                        format: int64
+                        type: integer
                       passwordHistorySize:
                         description: Number of previous passwords that you want Amazon
                           Cognito to restrict each user from reusing. Users can't
@@ -7492,7 +7491,8 @@ spec:
                           specified by this argument. A value of 0 means that password
                           history is not enforced. Valid values are between 0 and
                           24.
-                        type: number
+                        format: int64
+                        type: integer
                       requireLowercase:
                         description: Whether you have required users to use at least
                           one lowercase letter in their password.
@@ -7514,7 +7514,8 @@ spec:
                           the number of days a temporary password is valid. If the
                           user does not sign-in during this time, their password will
                           need to be reset by an administrator.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   schema:
                     description: Configuration block for the schema attributes of

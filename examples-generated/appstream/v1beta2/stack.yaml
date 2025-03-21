@@ -19,8 +19,6 @@ spec:
     region: us-west-1
     storageConnectors:
     - connectorType: HOMEFOLDERS
-    tags:
-      TagName: TagValue
     userSettings:
     - action: AUTO_TIME_ZONE_REDIRECTION
       permission: DISABLED

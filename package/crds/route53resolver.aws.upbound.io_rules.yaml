@@ -169,12 +169,6 @@ spec:
                   ruleType:
                     description: Rule type. Valid values are FORWARD, SYSTEM and RECURSIVE.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   targetIp:
                     description: |-
                       Configuration block(s) indicating the IPs that you want Resolver to forward DNS queries to (documented below).
@@ -192,7 +186,8 @@ spec:
                         port:
                           description: Port at ip that you want to forward DNS queries
                             to. Default value is 53.
-                          type: number
+                          format: int64
+                          type: integer
                         protocol:
                           description: Protocol for the resolver endpoint. Valid values
                             can be found in the AWS documentation. Default value is
@@ -308,12 +303,6 @@ spec:
                   ruleType:
                     description: Rule type. Valid values are FORWARD, SYSTEM and RECURSIVE.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   targetIp:
                     description: |-
                       Configuration block(s) indicating the IPs that you want Resolver to forward DNS queries to (documented below).
@@ -331,7 +320,8 @@ spec:
                         port:
                           description: Port at ip that you want to forward DNS queries
                             to. Default value is 53.
-                          type: number
+                          format: int64
+                          type: integer
                         protocol:
                           description: Protocol for the resolver endpoint. Valid values
                             can be found in the AWS documentation. Default value is
@@ -582,7 +572,8 @@ spec:
                         port:
                           description: Port at ip that you want to forward DNS queries
                             to. Default value is 53.
-                          type: number
+                          format: int64
+                          type: integer
                         protocol:
                           description: Protocol for the resolver endpoint. Valid values
                             can be found in the AWS documentation. Default value is

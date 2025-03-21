@@ -1425,7 +1425,8 @@ spec:
                         description: Route more traffic or less traffic to the resource
                           by specifying a value ranges between -90 to 90. See https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-geoproximity.html
                           for bias details.
-                        type: number
+                        format: int64
+                        type: integer
                       coordinates:
                         description: Specify latitude and longitude for routing traffic
                           to non-AWS resources.
@@ -1639,7 +1640,8 @@ spec:
                     type: string
                   ttl:
                     description: The TTL of the record.
-                    type: number
+                    format: int64
+                    type: integer
                   type:
                     description: The record type. Valid values are A, AAAA, CAA, CNAME,
                       DS, MX, NAPTR, NS, PTR, SOA, SPF, SRV and TXT.
@@ -1651,7 +1653,8 @@ spec:
                       weight:
                         description: A numeric value indicating the relative weight
                           of the record. See http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   zoneId:
                     description: The ID of the hosted zone to contain this record.
@@ -1824,7 +1827,8 @@ spec:
                         description: Route more traffic or less traffic to the resource
                           by specifying a value ranges between -90 to 90. See https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-geoproximity.html
                           for bias details.
-                        type: number
+                        format: int64
+                        type: integer
                       coordinates:
                         description: Specify latitude and longitude for routing traffic
                           to non-AWS resources.
@@ -2026,7 +2030,8 @@ spec:
                     type: string
                   ttl:
                     description: The TTL of the record.
-                    type: number
+                    format: int64
+                    type: integer
                   type:
                     description: The record type. Valid values are A, AAAA, CAA, CNAME,
                       DS, MX, NAPTR, NS, PTR, SOA, SPF, SRV and TXT.
@@ -2038,7 +2043,8 @@ spec:
                       weight:
                         description: A numeric value indicating the relative weight
                           of the record. See http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   zoneId:
                     description: The ID of the hosted zone to contain this record.
@@ -2380,7 +2386,8 @@ spec:
                         description: Route more traffic or less traffic to the resource
                           by specifying a value ranges between -90 to 90. See https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-geoproximity.html
                           for bias details.
-                        type: number
+                        format: int64
+                        type: integer
                       coordinates:
                         description: Specify latitude and longitude for routing traffic
                           to non-AWS resources.
@@ -2436,7 +2443,8 @@ spec:
                     type: string
                   ttl:
                     description: The TTL of the record.
-                    type: number
+                    format: int64
+                    type: integer
                   type:
                     description: The record type. Valid values are A, AAAA, CAA, CNAME,
                       DS, MX, NAPTR, NS, PTR, SOA, SPF, SRV and TXT.
@@ -2448,7 +2456,8 @@ spec:
                       weight:
                         description: A numeric value indicating the relative weight
                           of the record. See http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   zoneId:
                     description: The ID of the hosted zone to contain this record.

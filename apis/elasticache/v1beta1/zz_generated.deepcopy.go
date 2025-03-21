@@ -138,7 +138,7 @@ func (in *CacheNodesObservation) DeepCopyInto(out *CacheNodesObservation) {
 	}
 	if in.Port != nil {
 		in, out := &in.Port, &out.Port
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -354,7 +354,7 @@ func (in *ClusterInitParameters) DeepCopyInto(out *ClusterInitParameters) {
 	}
 	if in.NumCacheNodes != nil {
 		in, out := &in.NumCacheNodes, &out.NumCacheNodes
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.OutpostMode != nil {
@@ -379,7 +379,7 @@ func (in *ClusterInitParameters) DeepCopyInto(out *ClusterInitParameters) {
 	}
 	if in.Port != nil {
 		in, out := &in.Port, &out.Port
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.PreferredAvailabilityZones != nil {
@@ -454,7 +454,7 @@ func (in *ClusterInitParameters) DeepCopyInto(out *ClusterInitParameters) {
 	}
 	if in.SnapshotRetentionLimit != nil {
 		in, out := &in.SnapshotRetentionLimit, &out.SnapshotRetentionLimit
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.SnapshotWindow != nil {
@@ -476,22 +476,6 @@ func (in *ClusterInitParameters) DeepCopyInto(out *ClusterInitParameters) {
 		in, out := &in.SubnetGroupNameSelector, &out.SubnetGroupNameSelector
 		*out = new(v1.Selector)
 		(*in).DeepCopyInto(*out)
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.TransitEncryptionEnabled != nil {
 		in, out := &in.TransitEncryptionEnabled, &out.TransitEncryptionEnabled
@@ -721,7 +705,7 @@ func (in *ClusterObservation) DeepCopyInto(out *ClusterObservation) {
 	}
 	if in.NumCacheNodes != nil {
 		in, out := &in.NumCacheNodes, &out.NumCacheNodes
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.OutpostMode != nil {
@@ -736,7 +720,7 @@ func (in *ClusterObservation) DeepCopyInto(out *ClusterObservation) {
 	}
 	if in.Port != nil {
 		in, out := &in.Port, &out.Port
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.PreferredAvailabilityZones != nil {
@@ -789,7 +773,7 @@ func (in *ClusterObservation) DeepCopyInto(out *ClusterObservation) {
 	}
 	if in.SnapshotRetentionLimit != nil {
 		in, out := &in.SnapshotRetentionLimit, &out.SnapshotRetentionLimit
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.SnapshotWindow != nil {
@@ -923,7 +907,7 @@ func (in *ClusterParameters) DeepCopyInto(out *ClusterParameters) {
 	}
 	if in.NumCacheNodes != nil {
 		in, out := &in.NumCacheNodes, &out.NumCacheNodes
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.OutpostMode != nil {
@@ -948,7 +932,7 @@ func (in *ClusterParameters) DeepCopyInto(out *ClusterParameters) {
 	}
 	if in.Port != nil {
 		in, out := &in.Port, &out.Port
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.PreferredAvailabilityZones != nil {
@@ -1028,7 +1012,7 @@ func (in *ClusterParameters) DeepCopyInto(out *ClusterParameters) {
 	}
 	if in.SnapshotRetentionLimit != nil {
 		in, out := &in.SnapshotRetentionLimit, &out.SnapshotRetentionLimit
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.SnapshotWindow != nil {
@@ -1050,22 +1034,6 @@ func (in *ClusterParameters) DeepCopyInto(out *ClusterParameters) {
 		in, out := &in.SubnetGroupNameSelector, &out.SubnetGroupNameSelector
 		*out = new(v1.Selector)
 		(*in).DeepCopyInto(*out)
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.TransitEncryptionEnabled != nil {
 		in, out := &in.TransitEncryptionEnabled, &out.TransitEncryptionEnabled
@@ -1451,7 +1419,7 @@ func (in *GlobalReplicationGroupInitParameters) DeepCopyInto(out *GlobalReplicat
 	}
 	if in.NumNodeGroups != nil {
 		in, out := &in.NumNodeGroups, &out.NumNodeGroups
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ParameterGroupName != nil {
@@ -1595,7 +1563,7 @@ func (in *GlobalReplicationGroupObservation) DeepCopyInto(out *GlobalReplication
 	}
 	if in.NumNodeGroups != nil {
 		in, out := &in.NumNodeGroups, &out.NumNodeGroups
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ParameterGroupName != nil {
@@ -1655,7 +1623,7 @@ func (in *GlobalReplicationGroupParameters) DeepCopyInto(out *GlobalReplicationG
 	}
 	if in.NumNodeGroups != nil {
 		in, out := &in.NumNodeGroups, &out.NumNodeGroups
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ParameterGroupName != nil {
@@ -1887,22 +1855,6 @@ func (in *ParameterGroupInitParameters) DeepCopyInto(out *ParameterGroupInitPara
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 }
 
 // DeepCopy is an autogenerated deepcopy function, copying the receiver, creating a new ParameterGroupInitParameters.
@@ -2055,22 +2007,6 @@ func (in *ParameterGroupParameters) DeepCopyInto(out *ParameterGroupParameters) 
 		in, out := &in.Region, &out.Region
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 }
 
@@ -4010,22 +3946,6 @@ func (in *SubnetGroupInitParameters) DeepCopyInto(out *SubnetGroupInitParameters
 			}
 		}
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 }
 
 // DeepCopy is an autogenerated deepcopy function, copying the receiver, creating a new SubnetGroupInitParameters.
@@ -4184,22 +4104,6 @@ func (in *SubnetGroupParameters) DeepCopyInto(out *SubnetGroupParameters) {
 			}
 		}
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 }
 
 // DeepCopy is an autogenerated deepcopy function, copying the receiver, creating a new SubnetGroupParameters.
@@ -4308,22 +4212,6 @@ func (in *UserGroupInitParameters) DeepCopyInto(out *UserGroupInitParameters) {
 		in, out := &in.Engine, &out.Engine
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.UserIDRefs != nil {
 		in, out := &in.UserIDRefs, &out.UserIDRefs
@@ -4477,22 +4365,6 @@ func (in *UserGroupParameters) DeepCopyInto(out *UserGroupParameters) {
 		in, out := &in.Region, &out.Region
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.UserIDRefs != nil {
 		in, out := &in.UserIDRefs, &out.UserIDRefs

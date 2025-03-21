@@ -50,26 +50,26 @@ type ActionsInitParameters struct {
 	SecurityConfiguration *string `json:"securityConfiguration,omitempty" tf:"security_configuration,omitempty"`
 
 	// The job run timeout in minutes. It overrides the timeout value of the job.
-	Timeout *float64 `json:"timeout,omitempty" tf:"timeout,omitempty"`
+	Timeout *int64 `json:"timeout,omitempty" tf:"timeout,omitempty"`
 }
 
 type ActionsNotificationPropertyInitParameters struct {
 
 	// After a job run starts, the number of minutes to wait before sending a job run delay notification.
-	NotifyDelayAfter *float64 `json:"notifyDelayAfter,omitempty" tf:"notify_delay_after,omitempty"`
+	NotifyDelayAfter *int64 `json:"notifyDelayAfter,omitempty" tf:"notify_delay_after,omitempty"`
 }
 
 type ActionsNotificationPropertyObservation struct {
 
 	// After a job run starts, the number of minutes to wait before sending a job run delay notification.
-	NotifyDelayAfter *float64 `json:"notifyDelayAfter,omitempty" tf:"notify_delay_after,omitempty"`
+	NotifyDelayAfter *int64 `json:"notifyDelayAfter,omitempty" tf:"notify_delay_after,omitempty"`
 }
 
 type ActionsNotificationPropertyParameters struct {
 
 	// After a job run starts, the number of minutes to wait before sending a job run delay notification.
 	// +kubebuilder:validation:Optional
-	NotifyDelayAfter *float64 `json:"notifyDelayAfter,omitempty" tf:"notify_delay_after,omitempty"`
+	NotifyDelayAfter *int64 `json:"notifyDelayAfter,omitempty" tf:"notify_delay_after,omitempty"`
 }
 
 type ActionsObservation struct {
@@ -91,7 +91,7 @@ type ActionsObservation struct {
 	SecurityConfiguration *string `json:"securityConfiguration,omitempty" tf:"security_configuration,omitempty"`
 
 	// The job run timeout in minutes. It overrides the timeout value of the job.
-	Timeout *float64 `json:"timeout,omitempty" tf:"timeout,omitempty"`
+	Timeout *int64 `json:"timeout,omitempty" tf:"timeout,omitempty"`
 }
 
 type ActionsParameters struct {
@@ -137,7 +137,7 @@ type ActionsParameters struct {
 
 	// The job run timeout in minutes. It overrides the timeout value of the job.
 	// +kubebuilder:validation:Optional
-	Timeout *float64 `json:"timeout,omitempty" tf:"timeout,omitempty"`
+	Timeout *int64 `json:"timeout,omitempty" tf:"timeout,omitempty"`
 }
 
 type ConditionsInitParameters struct {
@@ -238,30 +238,30 @@ type ConditionsParameters struct {
 type EventBatchingConditionInitParameters struct {
 
 	// Number of events that must be received from Amazon EventBridge before EventBridge  event trigger fires.
-	BatchSize *float64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
+	BatchSize *int64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
 
 	// Window of time in seconds after which EventBridge event trigger fires. Window starts when first event is received. Default value is 900.
-	BatchWindow *float64 `json:"batchWindow,omitempty" tf:"batch_window,omitempty"`
+	BatchWindow *int64 `json:"batchWindow,omitempty" tf:"batch_window,omitempty"`
 }
 
 type EventBatchingConditionObservation struct {
 
 	// Number of events that must be received from Amazon EventBridge before EventBridge  event trigger fires.
-	BatchSize *float64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
+	BatchSize *int64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
 
 	// Window of time in seconds after which EventBridge event trigger fires. Window starts when first event is received. Default value is 900.
-	BatchWindow *float64 `json:"batchWindow,omitempty" tf:"batch_window,omitempty"`
+	BatchWindow *int64 `json:"batchWindow,omitempty" tf:"batch_window,omitempty"`
 }
 
 type EventBatchingConditionParameters struct {
 
 	// Number of events that must be received from Amazon EventBridge before EventBridge  event trigger fires.
 	// +kubebuilder:validation:Optional
-	BatchSize *float64 `json:"batchSize" tf:"batch_size,omitempty"`
+	BatchSize *int64 `json:"batchSize" tf:"batch_size,omitempty"`
 
 	// Window of time in seconds after which EventBridge event trigger fires. Window starts when first event is received. Default value is 900.
 	// +kubebuilder:validation:Optional
-	BatchWindow *float64 `json:"batchWindow,omitempty" tf:"batch_window,omitempty"`
+	BatchWindow *int64 `json:"batchWindow,omitempty" tf:"batch_window,omitempty"`
 }
 
 type PredicateInitParameters struct {
@@ -315,10 +315,6 @@ type TriggerInitParameters struct {
 
 	// –  Set to true to start SCHEDULED and CONDITIONAL triggers when created. True is not supported for ON_DEMAND triggers.
 	StartOnCreation *bool `json:"startOnCreation,omitempty" tf:"start_on_creation,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// –  The type of trigger. Valid values are CONDITIONAL, EVENT, ON_DEMAND, and SCHEDULED.
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
@@ -408,11 +404,6 @@ type TriggerParameters struct {
 	// –  Set to true to start SCHEDULED and CONDITIONAL triggers when created. True is not supported for ON_DEMAND triggers.
 	// +kubebuilder:validation:Optional
 	StartOnCreation *bool `json:"startOnCreation,omitempty" tf:"start_on_creation,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// –  The type of trigger. Valid values are CONDITIONAL, EVENT, ON_DEMAND, and SCHEDULED.
 	// +kubebuilder:validation:Optional

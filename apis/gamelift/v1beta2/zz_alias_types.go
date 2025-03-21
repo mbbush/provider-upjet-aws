@@ -23,10 +23,6 @@ type AliasInitParameters struct {
 
 	// Specifies the fleet and/or routing type to use for the alias.
 	RoutingStrategy *RoutingStrategyInitParameters `json:"routingStrategy,omitempty" tf:"routing_strategy,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type AliasObservation struct {
@@ -73,11 +69,6 @@ type AliasParameters struct {
 	// Specifies the fleet and/or routing type to use for the alias.
 	// +kubebuilder:validation:Optional
 	RoutingStrategy *RoutingStrategyParameters `json:"routingStrategy,omitempty" tf:"routing_strategy,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type RoutingStrategyInitParameters struct {

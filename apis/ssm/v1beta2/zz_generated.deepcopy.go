@@ -129,22 +129,6 @@ func (in *AssociationInitParameters) DeepCopyInto(out *AssociationInitParameters
 		*out = new(string)
 		**out = **in
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.Targets != nil {
 		in, out := &in.Targets, &out.Targets
 		*out = make([]TargetsInitParameters, len(*in))
@@ -154,7 +138,7 @@ func (in *AssociationInitParameters) DeepCopyInto(out *AssociationInitParameters
 	}
 	if in.WaitForSuccessTimeoutSeconds != nil {
 		in, out := &in.WaitForSuccessTimeoutSeconds, &out.WaitForSuccessTimeoutSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -336,7 +320,7 @@ func (in *AssociationObservation) DeepCopyInto(out *AssociationObservation) {
 	}
 	if in.WaitForSuccessTimeoutSeconds != nil {
 		in, out := &in.WaitForSuccessTimeoutSeconds, &out.WaitForSuccessTimeoutSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -445,22 +429,6 @@ func (in *AssociationParameters) DeepCopyInto(out *AssociationParameters) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.Targets != nil {
 		in, out := &in.Targets, &out.Targets
 		*out = make([]TargetsParameters, len(*in))
@@ -470,7 +438,7 @@ func (in *AssociationParameters) DeepCopyInto(out *AssociationParameters) {
 	}
 	if in.WaitForSuccessTimeoutSeconds != nil {
 		in, out := &in.WaitForSuccessTimeoutSeconds, &out.WaitForSuccessTimeoutSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -818,7 +786,7 @@ func (in *MaintenanceWindowTaskInitParameters) DeepCopyInto(out *MaintenanceWind
 	}
 	if in.Priority != nil {
 		in, out := &in.Priority, &out.Priority
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ServiceRoleArn != nil {
@@ -967,7 +935,7 @@ func (in *MaintenanceWindowTaskObservation) DeepCopyInto(out *MaintenanceWindowT
 	}
 	if in.Priority != nil {
 		in, out := &in.Priority, &out.Priority
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ServiceRoleArn != nil {
@@ -1049,7 +1017,7 @@ func (in *MaintenanceWindowTaskParameters) DeepCopyInto(out *MaintenanceWindowTa
 	}
 	if in.Priority != nil {
 		in, out := &in.Priority, &out.Priority
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Region != nil {
@@ -1859,7 +1827,7 @@ func (in *RunCommandParametersInitParameters) DeepCopyInto(out *RunCommandParame
 	}
 	if in.TimeoutSeconds != nil {
 		in, out := &in.TimeoutSeconds, &out.TimeoutSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1931,7 +1899,7 @@ func (in *RunCommandParametersObservation) DeepCopyInto(out *RunCommandParameter
 	}
 	if in.TimeoutSeconds != nil {
 		in, out := &in.TimeoutSeconds, &out.TimeoutSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2116,7 +2084,7 @@ func (in *RunCommandParametersParameters) DeepCopyInto(out *RunCommandParameters
 	}
 	if in.TimeoutSeconds != nil {
 		in, out := &in.TimeoutSeconds, &out.TimeoutSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }

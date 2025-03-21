@@ -75,7 +75,7 @@ func (in *ActivationInitParameters) DeepCopyInto(out *ActivationInitParameters) 
 	}
 	if in.RegistrationLimit != nil {
 		in, out := &in.RegistrationLimit, &out.RegistrationLimit
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Tags != nil {
@@ -178,12 +178,12 @@ func (in *ActivationObservation) DeepCopyInto(out *ActivationObservation) {
 	}
 	if in.RegistrationCount != nil {
 		in, out := &in.RegistrationCount, &out.RegistrationCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.RegistrationLimit != nil {
 		in, out := &in.RegistrationLimit, &out.RegistrationLimit
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Tags != nil {
@@ -270,7 +270,7 @@ func (in *ActivationParameters) DeepCopyInto(out *ActivationParameters) {
 	}
 	if in.RegistrationLimit != nil {
 		in, out := &in.RegistrationLimit, &out.RegistrationLimit
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Tags != nil {
@@ -341,7 +341,7 @@ func (in *ApprovalRuleInitParameters) DeepCopyInto(out *ApprovalRuleInitParamete
 	*out = *in
 	if in.ApproveAfterDays != nil {
 		in, out := &in.ApproveAfterDays, &out.ApproveAfterDays
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ApproveUntilDate != nil {
@@ -383,7 +383,7 @@ func (in *ApprovalRuleObservation) DeepCopyInto(out *ApprovalRuleObservation) {
 	*out = *in
 	if in.ApproveAfterDays != nil {
 		in, out := &in.ApproveAfterDays, &out.ApproveAfterDays
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ApproveUntilDate != nil {
@@ -425,7 +425,7 @@ func (in *ApprovalRuleParameters) DeepCopyInto(out *ApprovalRuleParameters) {
 	*out = *in
 	if in.ApproveAfterDays != nil {
 		in, out := &in.ApproveAfterDays, &out.ApproveAfterDays
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ApproveUntilDate != nil {
@@ -1643,22 +1643,6 @@ func (in *DocumentInitParameters) DeepCopyInto(out *DocumentInitParameters) {
 			(*out)[key] = outVal
 		}
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.TargetType != nil {
 		in, out := &in.TargetType, &out.TargetType
 		*out = new(string)
@@ -1932,22 +1916,6 @@ func (in *DocumentParameters) DeepCopyInto(out *DocumentParameters) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.TargetType != nil {
 		in, out := &in.TargetType, &out.TargetType
 		*out = new(string)
@@ -2220,7 +2188,7 @@ func (in *MaintenanceWindowInitParameters) DeepCopyInto(out *MaintenanceWindowIn
 	}
 	if in.Cutoff != nil {
 		in, out := &in.Cutoff, &out.Cutoff
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Description != nil {
@@ -2230,7 +2198,7 @@ func (in *MaintenanceWindowInitParameters) DeepCopyInto(out *MaintenanceWindowIn
 	}
 	if in.Duration != nil {
 		in, out := &in.Duration, &out.Duration
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -2255,7 +2223,7 @@ func (in *MaintenanceWindowInitParameters) DeepCopyInto(out *MaintenanceWindowIn
 	}
 	if in.ScheduleOffset != nil {
 		in, out := &in.ScheduleOffset, &out.ScheduleOffset
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ScheduleTimezone != nil {
@@ -2267,22 +2235,6 @@ func (in *MaintenanceWindowInitParameters) DeepCopyInto(out *MaintenanceWindowIn
 		in, out := &in.StartDate, &out.StartDate
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 }
 
@@ -2338,7 +2290,7 @@ func (in *MaintenanceWindowObservation) DeepCopyInto(out *MaintenanceWindowObser
 	}
 	if in.Cutoff != nil {
 		in, out := &in.Cutoff, &out.Cutoff
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Description != nil {
@@ -2348,7 +2300,7 @@ func (in *MaintenanceWindowObservation) DeepCopyInto(out *MaintenanceWindowObser
 	}
 	if in.Duration != nil {
 		in, out := &in.Duration, &out.Duration
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -2378,7 +2330,7 @@ func (in *MaintenanceWindowObservation) DeepCopyInto(out *MaintenanceWindowObser
 	}
 	if in.ScheduleOffset != nil {
 		in, out := &in.ScheduleOffset, &out.ScheduleOffset
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ScheduleTimezone != nil {
@@ -2445,7 +2397,7 @@ func (in *MaintenanceWindowParameters) DeepCopyInto(out *MaintenanceWindowParame
 	}
 	if in.Cutoff != nil {
 		in, out := &in.Cutoff, &out.Cutoff
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Description != nil {
@@ -2455,7 +2407,7 @@ func (in *MaintenanceWindowParameters) DeepCopyInto(out *MaintenanceWindowParame
 	}
 	if in.Duration != nil {
 		in, out := &in.Duration, &out.Duration
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -2485,7 +2437,7 @@ func (in *MaintenanceWindowParameters) DeepCopyInto(out *MaintenanceWindowParame
 	}
 	if in.ScheduleOffset != nil {
 		in, out := &in.ScheduleOffset, &out.ScheduleOffset
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ScheduleTimezone != nil {
@@ -2497,22 +2449,6 @@ func (in *MaintenanceWindowParameters) DeepCopyInto(out *MaintenanceWindowParame
 		in, out := &in.StartDate, &out.StartDate
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 }
 
@@ -3745,22 +3681,6 @@ func (in *ParameterInitParameters_2) DeepCopyInto(out *ParameterInitParameters_2
 		*out = new(bool)
 		**out = **in
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.Tier != nil {
 		in, out := &in.Tier, &out.Tier
 		*out = new(string)
@@ -3942,7 +3862,7 @@ func (in *ParameterObservation_2) DeepCopyInto(out *ParameterObservation_2) {
 	}
 	if in.Version != nil {
 		in, out := &in.Version, &out.Version
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -4014,22 +3934,6 @@ func (in *ParameterParameters_2) DeepCopyInto(out *ParameterParameters_2) {
 		in, out := &in.Region, &out.Region
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.Tier != nil {
 		in, out := &in.Tier, &out.Tier
@@ -4194,22 +4098,6 @@ func (in *PatchBaselineInitParameters) DeepCopyInto(out *PatchBaselineInitParame
 		*out = make([]SourceInitParameters, len(*in))
 		for i := range *in {
 			(*in)[i].DeepCopyInto(&(*out)[i])
-		}
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
 		}
 	}
 }
@@ -4470,22 +4358,6 @@ func (in *PatchBaselineParameters) DeepCopyInto(out *PatchBaselineParameters) {
 		*out = make([]SourceParameters, len(*in))
 		for i := range *in {
 			(*in)[i].DeepCopyInto(&(*out)[i])
-		}
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
 		}
 	}
 }

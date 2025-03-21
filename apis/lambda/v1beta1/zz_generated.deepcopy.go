@@ -4541,7 +4541,7 @@ func (in *LayerVersionObservation) DeepCopyInto(out *LayerVersionObservation) {
 	}
 	if in.SourceCodeSize != nil {
 		in, out := &in.SourceCodeSize, &out.SourceCodeSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Version != nil {
@@ -4710,7 +4710,7 @@ func (in *LayerVersionPermissionInitParameters) DeepCopyInto(out *LayerVersionPe
 	}
 	if in.VersionNumber != nil {
 		in, out := &in.VersionNumber, &out.VersionNumber
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -4807,7 +4807,7 @@ func (in *LayerVersionPermissionObservation) DeepCopyInto(out *LayerVersionPermi
 	}
 	if in.VersionNumber != nil {
 		in, out := &in.VersionNumber, &out.VersionNumber
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -4862,7 +4862,7 @@ func (in *LayerVersionPermissionParameters) DeepCopyInto(out *LayerVersionPermis
 	}
 	if in.VersionNumber != nil {
 		in, out := &in.VersionNumber, &out.VersionNumber
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -5721,7 +5721,7 @@ func (in *ProvisionedConcurrencyConfigInitParameters) DeepCopyInto(out *Provisio
 	}
 	if in.ProvisionedConcurrentExecutions != nil {
 		in, out := &in.ProvisionedConcurrentExecutions, &out.ProvisionedConcurrentExecutions
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Qualifier != nil {
@@ -5793,7 +5793,7 @@ func (in *ProvisionedConcurrencyConfigObservation) DeepCopyInto(out *Provisioned
 	}
 	if in.ProvisionedConcurrentExecutions != nil {
 		in, out := &in.ProvisionedConcurrentExecutions, &out.ProvisionedConcurrentExecutions
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Qualifier != nil {
@@ -5828,7 +5828,7 @@ func (in *ProvisionedConcurrencyConfigParameters) DeepCopyInto(out *ProvisionedC
 	}
 	if in.ProvisionedConcurrentExecutions != nil {
 		in, out := &in.ProvisionedConcurrentExecutions, &out.ProvisionedConcurrentExecutions
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Qualifier != nil {

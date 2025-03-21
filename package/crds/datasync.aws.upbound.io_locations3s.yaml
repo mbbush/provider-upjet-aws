@@ -988,12 +988,6 @@ spec:
                   subdirectory:
                     description: Prefix to perform actions as source or destination.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -1185,12 +1179,6 @@ spec:
                   subdirectory:
                     description: Prefix to perform actions as source or destination.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:

@@ -1292,13 +1292,15 @@ spec:
                         description: The amount of extra query capacity for an index
                           and GetQuerySuggestions capacity. For more information,
                           refer to QueryCapacityUnits.
-                        type: number
+                        format: int64
+                        type: integer
                       storageCapacityUnits:
                         description: The amount of extra storage capacity for an index.
                           A single capacity unit provides 30 GB of storage space or
                           100,000 documents, whichever is reached first. Minimum value
                           of 0.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   description:
                     description: The description of the Index.
@@ -1340,14 +1342,16 @@ spec:
                                 the search. Larger numbers provide more of a boost
                                 than smaller numbers. Minimum value of 1. Maximum
                                 value of 10.
-                              type: number
+                              format: int64
+                              type: integer
                             rankOrder:
                               description: Determines how values should be interpreted.
                                 For more information, refer to RankOrder.
                               type: string
                             valuesImportanceMap:
                               additionalProperties:
-                                type: number
+                                format: int64
+                                type: integer
                               description: A list of values that should be given a
                                 different boost when they appear in the result list.
                                 For more information, refer to ValueImportanceMap.
@@ -1495,12 +1499,6 @@ spec:
                           key (CMK). Amazon Kendra doesn't support asymmetric CMKs.
                         type: string
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   userContextPolicy:
                     description: The user context policy. Valid values are ATTRIBUTE_FILTER
                       or USER_TOKEN. For more information, refer to UserContextPolicy.
@@ -1593,13 +1591,15 @@ spec:
                         description: The amount of extra query capacity for an index
                           and GetQuerySuggestions capacity. For more information,
                           refer to QueryCapacityUnits.
-                        type: number
+                        format: int64
+                        type: integer
                       storageCapacityUnits:
                         description: The amount of extra storage capacity for an index.
                           A single capacity unit provides 30 GB of storage space or
                           100,000 documents, whichever is reached first. Minimum value
                           of 0.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   description:
                     description: The description of the Index.
@@ -1641,14 +1641,16 @@ spec:
                                 the search. Larger numbers provide more of a boost
                                 than smaller numbers. Minimum value of 1. Maximum
                                 value of 10.
-                              type: number
+                              format: int64
+                              type: integer
                             rankOrder:
                               description: Determines how values should be interpreted.
                                 For more information, refer to RankOrder.
                               type: string
                             valuesImportanceMap:
                               additionalProperties:
-                                type: number
+                                format: int64
+                                type: integer
                               description: A list of values that should be given a
                                 different boost when they appear in the result list.
                                 For more information, refer to ValueImportanceMap.
@@ -1792,12 +1794,6 @@ spec:
                           key (CMK). Amazon Kendra doesn't support asymmetric CMKs.
                         type: string
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   userContextPolicy:
                     description: The user context policy. Valid values are ATTRIBUTE_FILTER
                       or USER_TOKEN. For more information, refer to UserContextPolicy.
@@ -2055,13 +2051,15 @@ spec:
                         description: The amount of extra query capacity for an index
                           and GetQuerySuggestions capacity. For more information,
                           refer to QueryCapacityUnits.
-                        type: number
+                        format: int64
+                        type: integer
                       storageCapacityUnits:
                         description: The amount of extra storage capacity for an index.
                           A single capacity unit provides 30 GB of storage space or
                           100,000 documents, whichever is reached first. Minimum value
                           of 0.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   createdAt:
                     description: The Unix datetime that the index was created.
@@ -2106,14 +2104,16 @@ spec:
                                 the search. Larger numbers provide more of a boost
                                 than smaller numbers. Minimum value of 1. Maximum
                                 value of 10.
-                              type: number
+                              format: int64
+                              type: integer
                             rankOrder:
                               description: Determines how values should be interpreted.
                                 For more information, refer to RankOrder.
                               type: string
                             valuesImportanceMap:
                               additionalProperties:
-                                type: number
+                                format: int64
+                                type: integer
                               description: A list of values that should be given a
                                 different boost when they appear in the result list.
                                 For more information, refer to ValueImportanceMap.
@@ -2183,7 +2183,8 @@ spec:
                               indexedQuestionAnswersCount:
                                 description: The total number of FAQ questions and
                                   answers contained in the index.
-                                type: number
+                                format: int64
+                                type: integer
                             type: object
                           type: array
                         textDocumentStatistics:
@@ -2194,10 +2195,12 @@ spec:
                               indexedTextBytes:
                                 description: The total size, in bytes, of the indexed
                                   documents.
-                                type: number
+                                format: int64
+                                type: integer
                               indexedTextDocumentsCount:
                                 description: The number of text documents indexed.
-                                type: number
+                                format: int64
+                                type: integer
                             type: object
                           type: array
                       type: object

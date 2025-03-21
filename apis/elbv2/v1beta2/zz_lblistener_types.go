@@ -29,7 +29,7 @@ type AuthenticateCognitoInitParameters struct {
 	SessionCookieName *string `json:"sessionCookieName,omitempty" tf:"session_cookie_name,omitempty"`
 
 	// Maximum duration of the authentication session, in seconds.
-	SessionTimeout *float64 `json:"sessionTimeout,omitempty" tf:"session_timeout,omitempty"`
+	SessionTimeout *int64 `json:"sessionTimeout,omitempty" tf:"session_timeout,omitempty"`
 
 	// ARN of the Cognito user pool.
 	UserPoolArn *string `json:"userPoolArn,omitempty" tf:"user_pool_arn,omitempty"`
@@ -57,7 +57,7 @@ type AuthenticateCognitoObservation struct {
 	SessionCookieName *string `json:"sessionCookieName,omitempty" tf:"session_cookie_name,omitempty"`
 
 	// Maximum duration of the authentication session, in seconds.
-	SessionTimeout *float64 `json:"sessionTimeout,omitempty" tf:"session_timeout,omitempty"`
+	SessionTimeout *int64 `json:"sessionTimeout,omitempty" tf:"session_timeout,omitempty"`
 
 	// ARN of the Cognito user pool.
 	UserPoolArn *string `json:"userPoolArn,omitempty" tf:"user_pool_arn,omitempty"`
@@ -90,7 +90,7 @@ type AuthenticateCognitoParameters struct {
 
 	// Maximum duration of the authentication session, in seconds.
 	// +kubebuilder:validation:Optional
-	SessionTimeout *float64 `json:"sessionTimeout,omitempty" tf:"session_timeout,omitempty"`
+	SessionTimeout *int64 `json:"sessionTimeout,omitempty" tf:"session_timeout,omitempty"`
 
 	// ARN of the Cognito user pool.
 	// +kubebuilder:validation:Optional
@@ -133,7 +133,7 @@ type AuthenticateOidcInitParameters struct {
 	SessionCookieName *string `json:"sessionCookieName,omitempty" tf:"session_cookie_name,omitempty"`
 
 	// Maximum duration of the authentication session, in seconds.
-	SessionTimeout *float64 `json:"sessionTimeout,omitempty" tf:"session_timeout,omitempty"`
+	SessionTimeout *int64 `json:"sessionTimeout,omitempty" tf:"session_timeout,omitempty"`
 
 	// Token endpoint of the IdP.
 	TokenEndpoint *string `json:"tokenEndpoint,omitempty" tf:"token_endpoint,omitempty"`
@@ -167,7 +167,7 @@ type AuthenticateOidcObservation struct {
 	SessionCookieName *string `json:"sessionCookieName,omitempty" tf:"session_cookie_name,omitempty"`
 
 	// Maximum duration of the authentication session, in seconds.
-	SessionTimeout *float64 `json:"sessionTimeout,omitempty" tf:"session_timeout,omitempty"`
+	SessionTimeout *int64 `json:"sessionTimeout,omitempty" tf:"session_timeout,omitempty"`
 
 	// Token endpoint of the IdP.
 	TokenEndpoint *string `json:"tokenEndpoint,omitempty" tf:"token_endpoint,omitempty"`
@@ -213,7 +213,7 @@ type AuthenticateOidcParameters struct {
 
 	// Maximum duration of the authentication session, in seconds.
 	// +kubebuilder:validation:Optional
-	SessionTimeout *float64 `json:"sessionTimeout,omitempty" tf:"session_timeout,omitempty"`
+	SessionTimeout *int64 `json:"sessionTimeout,omitempty" tf:"session_timeout,omitempty"`
 
 	// Token endpoint of the IdP.
 	// +kubebuilder:validation:Optional
@@ -239,7 +239,7 @@ type DefaultActionInitParameters struct {
 	Forward *ForwardInitParameters `json:"forward,omitempty" tf:"forward,omitempty"`
 
 	// Order for the action. The action with the lowest value for order is performed first. Valid values are between 1 and 50000. Defaults to the position in the list of actions.
-	Order *float64 `json:"order,omitempty" tf:"order,omitempty"`
+	Order *int64 `json:"order,omitempty" tf:"order,omitempty"`
 
 	// Configuration block for creating a redirect action. Required if type is redirect. See below.
 	Redirect *RedirectInitParameters `json:"redirect,omitempty" tf:"redirect,omitempty"`
@@ -275,7 +275,7 @@ type DefaultActionObservation struct {
 	Forward *ForwardObservation `json:"forward,omitempty" tf:"forward,omitempty"`
 
 	// Order for the action. The action with the lowest value for order is performed first. Valid values are between 1 and 50000. Defaults to the position in the list of actions.
-	Order *float64 `json:"order,omitempty" tf:"order,omitempty"`
+	Order *int64 `json:"order,omitempty" tf:"order,omitempty"`
 
 	// Configuration block for creating a redirect action. Required if type is redirect. See below.
 	Redirect *RedirectObservation `json:"redirect,omitempty" tf:"redirect,omitempty"`
@@ -307,7 +307,7 @@ type DefaultActionParameters struct {
 
 	// Order for the action. The action with the lowest value for order is performed first. Valid values are between 1 and 50000. Defaults to the position in the list of actions.
 	// +kubebuilder:validation:Optional
-	Order *float64 `json:"order,omitempty" tf:"order,omitempty"`
+	Order *int64 `json:"order,omitempty" tf:"order,omitempty"`
 
 	// Configuration block for creating a redirect action. Required if type is redirect. See below.
 	// +kubebuilder:validation:Optional
@@ -426,7 +426,7 @@ type LBListenerInitParameters struct {
 	MutualAuthentication *MutualAuthenticationInitParameters `json:"mutualAuthentication,omitempty" tf:"mutual_authentication,omitempty"`
 
 	// Port on which the load balancer is listening. Not valid for Gateway Load Balancers.
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// Protocol for connections from clients to the load balancer. For Application Load Balancers, valid values are HTTP and HTTPS, with a default of HTTP. For Network Load Balancers, valid values are TCP, TLS, UDP, and TCP_UDP. Not valid to use UDP or TCP_UDP if dual-stack mode is enabled. Not valid for Gateway Load Balancers.
 	Protocol *string `json:"protocol,omitempty" tf:"protocol,omitempty"`
@@ -435,11 +435,7 @@ type LBListenerInitParameters struct {
 	SSLPolicy *string `json:"sslPolicy,omitempty" tf:"ssl_policy,omitempty"`
 
 	// TCP idle timeout value in seconds. Can only be set if protocol is TCP on Network Load Balancer, or with a Gateway Load Balancer. Not supported for Application Load Balancers. Valid values are between 60 and 6000 inclusive. Default: 350.
-	TCPIdleTimeoutSeconds *float64 `json:"tcpIdleTimeoutSeconds,omitempty" tf:"tcp_idle_timeout_seconds,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
+	TCPIdleTimeoutSeconds *int64 `json:"tcpIdleTimeoutSeconds,omitempty" tf:"tcp_idle_timeout_seconds,omitempty"`
 }
 
 type LBListenerObservation struct {
@@ -466,7 +462,7 @@ type LBListenerObservation struct {
 	MutualAuthentication *MutualAuthenticationObservation `json:"mutualAuthentication,omitempty" tf:"mutual_authentication,omitempty"`
 
 	// Port on which the load balancer is listening. Not valid for Gateway Load Balancers.
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// Protocol for connections from clients to the load balancer. For Application Load Balancers, valid values are HTTP and HTTPS, with a default of HTTP. For Network Load Balancers, valid values are TCP, TLS, UDP, and TCP_UDP. Not valid to use UDP or TCP_UDP if dual-stack mode is enabled. Not valid for Gateway Load Balancers.
 	Protocol *string `json:"protocol,omitempty" tf:"protocol,omitempty"`
@@ -475,7 +471,7 @@ type LBListenerObservation struct {
 	SSLPolicy *string `json:"sslPolicy,omitempty" tf:"ssl_policy,omitempty"`
 
 	// TCP idle timeout value in seconds. Can only be set if protocol is TCP on Network Load Balancer, or with a Gateway Load Balancer. Not supported for Application Load Balancers. Valid values are between 60 and 6000 inclusive. Default: 350.
-	TCPIdleTimeoutSeconds *float64 `json:"tcpIdleTimeoutSeconds,omitempty" tf:"tcp_idle_timeout_seconds,omitempty"`
+	TCPIdleTimeoutSeconds *int64 `json:"tcpIdleTimeoutSeconds,omitempty" tf:"tcp_idle_timeout_seconds,omitempty"`
 
 	// Key-value map of resource tags.
 	// +mapType=granular
@@ -519,7 +515,7 @@ type LBListenerParameters struct {
 
 	// Port on which the load balancer is listening. Not valid for Gateway Load Balancers.
 	// +kubebuilder:validation:Optional
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// Protocol for connections from clients to the load balancer. For Application Load Balancers, valid values are HTTP and HTTPS, with a default of HTTP. For Network Load Balancers, valid values are TCP, TLS, UDP, and TCP_UDP. Not valid to use UDP or TCP_UDP if dual-stack mode is enabled. Not valid for Gateway Load Balancers.
 	// +kubebuilder:validation:Optional
@@ -536,12 +532,7 @@ type LBListenerParameters struct {
 
 	// TCP idle timeout value in seconds. Can only be set if protocol is TCP on Network Load Balancer, or with a Gateway Load Balancer. Not supported for Application Load Balancers. Valid values are between 60 and 6000 inclusive. Default: 350.
 	// +kubebuilder:validation:Optional
-	TCPIdleTimeoutSeconds *float64 `json:"tcpIdleTimeoutSeconds,omitempty" tf:"tcp_idle_timeout_seconds,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
+	TCPIdleTimeoutSeconds *int64 `json:"tcpIdleTimeoutSeconds,omitempty" tf:"tcp_idle_timeout_seconds,omitempty"`
 }
 
 type MutualAuthenticationInitParameters struct {
@@ -665,7 +656,7 @@ type RedirectParameters struct {
 type StickinessInitParameters struct {
 
 	// Time period, in seconds, during which requests from a client should be routed to the same target group. The range is 1-604800 seconds (7 days).
-	Duration *float64 `json:"duration,omitempty" tf:"duration,omitempty"`
+	Duration *int64 `json:"duration,omitempty" tf:"duration,omitempty"`
 
 	// Whether target group stickiness is enabled. Default is false.
 	Enabled *bool `json:"enabled,omitempty" tf:"enabled,omitempty"`
@@ -674,7 +665,7 @@ type StickinessInitParameters struct {
 type StickinessObservation struct {
 
 	// Time period, in seconds, during which requests from a client should be routed to the same target group. The range is 1-604800 seconds (7 days).
-	Duration *float64 `json:"duration,omitempty" tf:"duration,omitempty"`
+	Duration *int64 `json:"duration,omitempty" tf:"duration,omitempty"`
 
 	// Whether target group stickiness is enabled. Default is false.
 	Enabled *bool `json:"enabled,omitempty" tf:"enabled,omitempty"`
@@ -684,7 +675,7 @@ type StickinessParameters struct {
 
 	// Time period, in seconds, during which requests from a client should be routed to the same target group. The range is 1-604800 seconds (7 days).
 	// +kubebuilder:validation:Optional
-	Duration *float64 `json:"duration" tf:"duration,omitempty"`
+	Duration *int64 `json:"duration" tf:"duration,omitempty"`
 
 	// Whether target group stickiness is enabled. Default is false.
 	// +kubebuilder:validation:Optional
@@ -706,7 +697,7 @@ type TargetGroupInitParameters struct {
 	ArnSelector *v1.Selector `json:"arnSelector,omitempty" tf:"-"`
 
 	// Weight. The range is 0 to 999.
-	Weight *float64 `json:"weight,omitempty" tf:"weight,omitempty"`
+	Weight *int64 `json:"weight,omitempty" tf:"weight,omitempty"`
 }
 
 type TargetGroupObservation struct {
@@ -715,7 +706,7 @@ type TargetGroupObservation struct {
 	Arn *string `json:"arn,omitempty" tf:"arn,omitempty"`
 
 	// Weight. The range is 0 to 999.
-	Weight *float64 `json:"weight,omitempty" tf:"weight,omitempty"`
+	Weight *int64 `json:"weight,omitempty" tf:"weight,omitempty"`
 }
 
 type TargetGroupParameters struct {
@@ -735,7 +726,7 @@ type TargetGroupParameters struct {
 
 	// Weight. The range is 0 to 999.
 	// +kubebuilder:validation:Optional
-	Weight *float64 `json:"weight,omitempty" tf:"weight,omitempty"`
+	Weight *int64 `json:"weight,omitempty" tf:"weight,omitempty"`
 }
 
 // LBListenerSpec defines the desired state of LBListener

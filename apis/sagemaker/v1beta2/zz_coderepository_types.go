@@ -17,10 +17,6 @@ type CodeRepositoryInitParameters struct {
 
 	// Specifies details about the repository. see Git Config details below.
 	GitConfig *GitConfigInitParameters `json:"gitConfig,omitempty" tf:"git_config,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type CodeRepositoryObservation struct {
@@ -53,11 +49,6 @@ type CodeRepositoryParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type GitConfigInitParameters struct {

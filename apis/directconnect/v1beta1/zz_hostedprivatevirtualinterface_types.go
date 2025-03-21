@@ -22,7 +22,7 @@ type HostedPrivateVirtualInterfaceInitParameters struct {
 	AmazonAddress *string `json:"amazonAddress,omitempty" tf:"amazon_address,omitempty"`
 
 	// The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
-	BGPAsn *float64 `json:"bgpAsn,omitempty" tf:"bgp_asn,omitempty"`
+	BGPAsn *int64 `json:"bgpAsn,omitempty" tf:"bgp_asn,omitempty"`
 
 	// The authentication key for BGP configuration.
 	BGPAuthKey *string `json:"bgpAuthKey,omitempty" tf:"bgp_auth_key,omitempty"`
@@ -43,7 +43,7 @@ type HostedPrivateVirtualInterfaceInitParameters struct {
 	CustomerAddress *string `json:"customerAddress,omitempty" tf:"customer_address,omitempty"`
 
 	// The maximum transmission unit (MTU) is the size, in bytes, of the largest permissible packet that can be passed over the connection. The MTU of a virtual private interface can be either 1500 or 9001 (jumbo frames). Default is 1500.
-	Mtu *float64 `json:"mtu,omitempty" tf:"mtu,omitempty"`
+	Mtu *int64 `json:"mtu,omitempty" tf:"mtu,omitempty"`
 
 	// The name for the virtual interface.
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
@@ -52,7 +52,7 @@ type HostedPrivateVirtualInterfaceInitParameters struct {
 	OwnerAccountID *string `json:"ownerAccountId,omitempty" tf:"owner_account_id,omitempty"`
 
 	// The VLAN ID.
-	Vlan *float64 `json:"vlan,omitempty" tf:"vlan,omitempty"`
+	Vlan *int64 `json:"vlan,omitempty" tf:"vlan,omitempty"`
 }
 
 type HostedPrivateVirtualInterfaceObservation struct {
@@ -72,7 +72,7 @@ type HostedPrivateVirtualInterfaceObservation struct {
 	AwsDevice *string `json:"awsDevice,omitempty" tf:"aws_device,omitempty"`
 
 	// The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
-	BGPAsn *float64 `json:"bgpAsn,omitempty" tf:"bgp_asn,omitempty"`
+	BGPAsn *int64 `json:"bgpAsn,omitempty" tf:"bgp_asn,omitempty"`
 
 	// The authentication key for BGP configuration.
 	BGPAuthKey *string `json:"bgpAuthKey,omitempty" tf:"bgp_auth_key,omitempty"`
@@ -90,7 +90,7 @@ type HostedPrivateVirtualInterfaceObservation struct {
 	JumboFrameCapable *bool `json:"jumboFrameCapable,omitempty" tf:"jumbo_frame_capable,omitempty"`
 
 	// The maximum transmission unit (MTU) is the size, in bytes, of the largest permissible packet that can be passed over the connection. The MTU of a virtual private interface can be either 1500 or 9001 (jumbo frames). Default is 1500.
-	Mtu *float64 `json:"mtu,omitempty" tf:"mtu,omitempty"`
+	Mtu *int64 `json:"mtu,omitempty" tf:"mtu,omitempty"`
 
 	// The name for the virtual interface.
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
@@ -99,7 +99,7 @@ type HostedPrivateVirtualInterfaceObservation struct {
 	OwnerAccountID *string `json:"ownerAccountId,omitempty" tf:"owner_account_id,omitempty"`
 
 	// The VLAN ID.
-	Vlan *float64 `json:"vlan,omitempty" tf:"vlan,omitempty"`
+	Vlan *int64 `json:"vlan,omitempty" tf:"vlan,omitempty"`
 }
 
 type HostedPrivateVirtualInterfaceParameters struct {
@@ -114,7 +114,7 @@ type HostedPrivateVirtualInterfaceParameters struct {
 
 	// The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
 	// +kubebuilder:validation:Optional
-	BGPAsn *float64 `json:"bgpAsn,omitempty" tf:"bgp_asn,omitempty"`
+	BGPAsn *int64 `json:"bgpAsn,omitempty" tf:"bgp_asn,omitempty"`
 
 	// The authentication key for BGP configuration.
 	// +kubebuilder:validation:Optional
@@ -139,7 +139,7 @@ type HostedPrivateVirtualInterfaceParameters struct {
 
 	// The maximum transmission unit (MTU) is the size, in bytes, of the largest permissible packet that can be passed over the connection. The MTU of a virtual private interface can be either 1500 or 9001 (jumbo frames). Default is 1500.
 	// +kubebuilder:validation:Optional
-	Mtu *float64 `json:"mtu,omitempty" tf:"mtu,omitempty"`
+	Mtu *int64 `json:"mtu,omitempty" tf:"mtu,omitempty"`
 
 	// The name for the virtual interface.
 	// +kubebuilder:validation:Optional
@@ -156,7 +156,7 @@ type HostedPrivateVirtualInterfaceParameters struct {
 
 	// The VLAN ID.
 	// +kubebuilder:validation:Optional
-	Vlan *float64 `json:"vlan,omitempty" tf:"vlan,omitempty"`
+	Vlan *int64 `json:"vlan,omitempty" tf:"vlan,omitempty"`
 }
 
 // HostedPrivateVirtualInterfaceSpec defines the desired state of HostedPrivateVirtualInterface

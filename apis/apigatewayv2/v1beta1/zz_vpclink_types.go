@@ -47,10 +47,6 @@ type VPCLinkInitParameters struct {
 	// +crossplane:generate:reference:selectorFieldName=SubnetIDSelector
 	// +listType=set
 	SubnetIds []*string `json:"subnetIds,omitempty" tf:"subnet_ids,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type VPCLinkObservation struct {
@@ -123,11 +119,6 @@ type VPCLinkParameters struct {
 	// +kubebuilder:validation:Optional
 	// +listType=set
 	SubnetIds []*string `json:"subnetIds,omitempty" tf:"subnet_ids,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // VPCLinkSpec defines the desired state of VPCLink

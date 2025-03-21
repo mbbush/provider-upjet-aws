@@ -37,10 +37,6 @@ type SecurityProfileInitParameters struct {
 	// Specifies a list of permissions assigned to the security profile.
 	// +listType=set
 	Permissions []*string `json:"permissions,omitempty" tf:"permissions,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type SecurityProfileObservation struct {
@@ -112,11 +108,6 @@ type SecurityProfileParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // SecurityProfileSpec defines the desired state of SecurityProfile

@@ -16,13 +16,13 @@ import (
 type ActivemqBrokerParametersInitParameters struct {
 
 	// The maximum number of records to include in each batch. Maximum value of 10000.
-	BatchSize *float64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
+	BatchSize *int64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
 
 	// The credentials needed to access the resource. Detailed below.
 	Credentials *CredentialsInitParameters `json:"credentials,omitempty" tf:"credentials,omitempty"`
 
 	// The maximum length of a time to wait for events. Maximum value of 300.
-	MaximumBatchingWindowInSeconds *float64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
+	MaximumBatchingWindowInSeconds *int64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
 
 	// The name of the destination queue to consume. Maximum length of 1000.
 	QueueName *string `json:"queueName,omitempty" tf:"queue_name,omitempty"`
@@ -31,13 +31,13 @@ type ActivemqBrokerParametersInitParameters struct {
 type ActivemqBrokerParametersObservation struct {
 
 	// The maximum number of records to include in each batch. Maximum value of 10000.
-	BatchSize *float64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
+	BatchSize *int64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
 
 	// The credentials needed to access the resource. Detailed below.
 	Credentials *CredentialsObservation `json:"credentials,omitempty" tf:"credentials,omitempty"`
 
 	// The maximum length of a time to wait for events. Maximum value of 300.
-	MaximumBatchingWindowInSeconds *float64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
+	MaximumBatchingWindowInSeconds *int64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
 
 	// The name of the destination queue to consume. Maximum length of 1000.
 	QueueName *string `json:"queueName,omitempty" tf:"queue_name,omitempty"`
@@ -47,7 +47,7 @@ type ActivemqBrokerParametersParameters struct {
 
 	// The maximum number of records to include in each batch. Maximum value of 10000.
 	// +kubebuilder:validation:Optional
-	BatchSize *float64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
+	BatchSize *int64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
 
 	// The credentials needed to access the resource. Detailed below.
 	// +kubebuilder:validation:Optional
@@ -55,7 +55,7 @@ type ActivemqBrokerParametersParameters struct {
 
 	// The maximum length of a time to wait for events. Maximum value of 300.
 	// +kubebuilder:validation:Optional
-	MaximumBatchingWindowInSeconds *float64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
+	MaximumBatchingWindowInSeconds *int64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
 
 	// The name of the destination queue to consume. Maximum length of 1000.
 	// +kubebuilder:validation:Optional
@@ -65,20 +65,20 @@ type ActivemqBrokerParametersParameters struct {
 type ArrayPropertiesInitParameters struct {
 
 	// The size of the array, if this is an array batch job. Minimum value of 2. Maximum value of 10,000.
-	Size *float64 `json:"size,omitempty" tf:"size,omitempty"`
+	Size *int64 `json:"size,omitempty" tf:"size,omitempty"`
 }
 
 type ArrayPropertiesObservation struct {
 
 	// The size of the array, if this is an array batch job. Minimum value of 2. Maximum value of 10,000.
-	Size *float64 `json:"size,omitempty" tf:"size,omitempty"`
+	Size *int64 `json:"size,omitempty" tf:"size,omitempty"`
 }
 
 type ArrayPropertiesParameters struct {
 
 	// The size of the array, if this is an array batch job. Minimum value of 2. Maximum value of 10,000.
 	// +kubebuilder:validation:Optional
-	Size *float64 `json:"size,omitempty" tf:"size,omitempty"`
+	Size *int64 `json:"size,omitempty" tf:"size,omitempty"`
 }
 
 type AwsVPCConfigurationInitParameters struct {
@@ -211,32 +211,32 @@ type BatchJobParametersParameters struct {
 type CapacityProviderStrategyInitParameters struct {
 
 	// The base value designates how many tasks, at a minimum, to run on the specified capacity provider. Only one capacity provider in a capacity provider strategy can have a base defined. If no value is specified, the default value of 0 is used. Maximum value of 100,000.
-	Base *float64 `json:"base,omitempty" tf:"base,omitempty"`
+	Base *int64 `json:"base,omitempty" tf:"base,omitempty"`
 
 	// The short name of the capacity provider. Maximum value of 255.
 	CapacityProvider *string `json:"capacityProvider,omitempty" tf:"capacity_provider,omitempty"`
 
 	// The weight value designates the relative percentage of the total number of tasks launched that should use the specified capacity provider. The weight value is taken into consideration after the base value, if defined, is satisfied. Maximum value of 1,000.
-	Weight *float64 `json:"weight,omitempty" tf:"weight,omitempty"`
+	Weight *int64 `json:"weight,omitempty" tf:"weight,omitempty"`
 }
 
 type CapacityProviderStrategyObservation struct {
 
 	// The base value designates how many tasks, at a minimum, to run on the specified capacity provider. Only one capacity provider in a capacity provider strategy can have a base defined. If no value is specified, the default value of 0 is used. Maximum value of 100,000.
-	Base *float64 `json:"base,omitempty" tf:"base,omitempty"`
+	Base *int64 `json:"base,omitempty" tf:"base,omitempty"`
 
 	// The short name of the capacity provider. Maximum value of 255.
 	CapacityProvider *string `json:"capacityProvider,omitempty" tf:"capacity_provider,omitempty"`
 
 	// The weight value designates the relative percentage of the total number of tasks launched that should use the specified capacity provider. The weight value is taken into consideration after the base value, if defined, is satisfied. Maximum value of 1,000.
-	Weight *float64 `json:"weight,omitempty" tf:"weight,omitempty"`
+	Weight *int64 `json:"weight,omitempty" tf:"weight,omitempty"`
 }
 
 type CapacityProviderStrategyParameters struct {
 
 	// The base value designates how many tasks, at a minimum, to run on the specified capacity provider. Only one capacity provider in a capacity provider strategy can have a base defined. If no value is specified, the default value of 0 is used. Maximum value of 100,000.
 	// +kubebuilder:validation:Optional
-	Base *float64 `json:"base,omitempty" tf:"base,omitempty"`
+	Base *int64 `json:"base,omitempty" tf:"base,omitempty"`
 
 	// The short name of the capacity provider. Maximum value of 255.
 	// +kubebuilder:validation:Optional
@@ -244,7 +244,7 @@ type CapacityProviderStrategyParameters struct {
 
 	// The weight value designates the relative percentage of the total number of tasks launched that should use the specified capacity provider. The weight value is taken into consideration after the base value, if defined, is satisfied. Maximum value of 1,000.
 	// +kubebuilder:validation:Optional
-	Weight *float64 `json:"weight,omitempty" tf:"weight,omitempty"`
+	Weight *int64 `json:"weight,omitempty" tf:"weight,omitempty"`
 }
 
 type CloudwatchLogsLogDestinationInitParameters struct {
@@ -347,7 +347,7 @@ type ContainerOverrideEnvironmentParameters struct {
 type ContainerOverrideInitParameters struct {
 
 	// The number of cpu units reserved for the container, instead of the default value from the task definition. You must also specify a container name.
-	CPU *float64 `json:"cpu,omitempty" tf:"cpu,omitempty"`
+	CPU *int64 `json:"cpu,omitempty" tf:"cpu,omitempty"`
 
 	// List of commands to send to the container that overrides the default command from the Docker image or the task definition. You must also specify a container name.
 	Command []*string `json:"command,omitempty" tf:"command,omitempty"`
@@ -359,10 +359,10 @@ type ContainerOverrideInitParameters struct {
 	EnvironmentFile []EnvironmentFileInitParameters `json:"environmentFile,omitempty" tf:"environment_file,omitempty"`
 
 	// The hard limit (in MiB) of memory to present to the container, instead of the default value from the task definition. If your container attempts to exceed the memory specified here, the container is killed. You must also specify a container name.
-	Memory *float64 `json:"memory,omitempty" tf:"memory,omitempty"`
+	Memory *int64 `json:"memory,omitempty" tf:"memory,omitempty"`
 
 	// The soft limit (in MiB) of memory to reserve for the container, instead of the default value from the task definition. You must also specify a container name.
-	MemoryReservation *float64 `json:"memoryReservation,omitempty" tf:"memory_reservation,omitempty"`
+	MemoryReservation *int64 `json:"memoryReservation,omitempty" tf:"memory_reservation,omitempty"`
 
 	// The name of the container that receives the override. This parameter is required if any override is specified.
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
@@ -374,7 +374,7 @@ type ContainerOverrideInitParameters struct {
 type ContainerOverrideObservation struct {
 
 	// The number of cpu units reserved for the container, instead of the default value from the task definition. You must also specify a container name.
-	CPU *float64 `json:"cpu,omitempty" tf:"cpu,omitempty"`
+	CPU *int64 `json:"cpu,omitempty" tf:"cpu,omitempty"`
 
 	// List of commands to send to the container that overrides the default command from the Docker image or the task definition. You must also specify a container name.
 	Command []*string `json:"command,omitempty" tf:"command,omitempty"`
@@ -386,10 +386,10 @@ type ContainerOverrideObservation struct {
 	EnvironmentFile []EnvironmentFileObservation `json:"environmentFile,omitempty" tf:"environment_file,omitempty"`
 
 	// The hard limit (in MiB) of memory to present to the container, instead of the default value from the task definition. If your container attempts to exceed the memory specified here, the container is killed. You must also specify a container name.
-	Memory *float64 `json:"memory,omitempty" tf:"memory,omitempty"`
+	Memory *int64 `json:"memory,omitempty" tf:"memory,omitempty"`
 
 	// The soft limit (in MiB) of memory to reserve for the container, instead of the default value from the task definition. You must also specify a container name.
-	MemoryReservation *float64 `json:"memoryReservation,omitempty" tf:"memory_reservation,omitempty"`
+	MemoryReservation *int64 `json:"memoryReservation,omitempty" tf:"memory_reservation,omitempty"`
 
 	// The name of the container that receives the override. This parameter is required if any override is specified.
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
@@ -402,7 +402,7 @@ type ContainerOverrideParameters struct {
 
 	// The number of cpu units reserved for the container, instead of the default value from the task definition. You must also specify a container name.
 	// +kubebuilder:validation:Optional
-	CPU *float64 `json:"cpu,omitempty" tf:"cpu,omitempty"`
+	CPU *int64 `json:"cpu,omitempty" tf:"cpu,omitempty"`
 
 	// List of commands to send to the container that overrides the default command from the Docker image or the task definition. You must also specify a container name.
 	// +kubebuilder:validation:Optional
@@ -418,11 +418,11 @@ type ContainerOverrideParameters struct {
 
 	// The hard limit (in MiB) of memory to present to the container, instead of the default value from the task definition. If your container attempts to exceed the memory specified here, the container is killed. You must also specify a container name.
 	// +kubebuilder:validation:Optional
-	Memory *float64 `json:"memory,omitempty" tf:"memory,omitempty"`
+	Memory *int64 `json:"memory,omitempty" tf:"memory,omitempty"`
 
 	// The soft limit (in MiB) of memory to reserve for the container, instead of the default value from the task definition. You must also specify a container name.
 	// +kubebuilder:validation:Optional
-	MemoryReservation *float64 `json:"memoryReservation,omitempty" tf:"memory_reservation,omitempty"`
+	MemoryReservation *int64 `json:"memoryReservation,omitempty" tf:"memory_reservation,omitempty"`
 
 	// The name of the container that receives the override. This parameter is required if any override is specified.
 	// +kubebuilder:validation:Optional
@@ -581,25 +581,25 @@ type DependsOnParameters struct {
 type DynamodbStreamParametersInitParameters struct {
 
 	// The maximum number of records to include in each batch. Maximum value of 10000.
-	BatchSize *float64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
+	BatchSize *int64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
 
 	// Define the target queue to send dead-letter queue events to. Detailed below.
 	DeadLetterConfig *DeadLetterConfigInitParameters `json:"deadLetterConfig,omitempty" tf:"dead_letter_config,omitempty"`
 
 	// The maximum length of a time to wait for events. Maximum value of 300.
-	MaximumBatchingWindowInSeconds *float64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
+	MaximumBatchingWindowInSeconds *int64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
 
 	// Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, EventBridge never discards old records. Maximum value of 604,800.
-	MaximumRecordAgeInSeconds *float64 `json:"maximumRecordAgeInSeconds,omitempty" tf:"maximum_record_age_in_seconds,omitempty"`
+	MaximumRecordAgeInSeconds *int64 `json:"maximumRecordAgeInSeconds,omitempty" tf:"maximum_record_age_in_seconds,omitempty"`
 
 	// Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, EventBridge retries failed records until the record expires in the event source. Maximum value of 10,000.
-	MaximumRetryAttempts *float64 `json:"maximumRetryAttempts,omitempty" tf:"maximum_retry_attempts,omitempty"`
+	MaximumRetryAttempts *int64 `json:"maximumRetryAttempts,omitempty" tf:"maximum_retry_attempts,omitempty"`
 
 	// Define how to handle item process failures. AUTOMATIC_BISECT halves each batch and retry each half until all the records are processed or there is one failed message left in the batch. Valid values: AUTOMATIC_BISECT.
 	OnPartialBatchItemFailure *string `json:"onPartialBatchItemFailure,omitempty" tf:"on_partial_batch_item_failure,omitempty"`
 
 	// The number of batches to process concurrently from each shard. The default value is 1. Maximum value of 10.
-	ParallelizationFactor *float64 `json:"parallelizationFactor,omitempty" tf:"parallelization_factor,omitempty"`
+	ParallelizationFactor *int64 `json:"parallelizationFactor,omitempty" tf:"parallelization_factor,omitempty"`
 
 	// The position in a stream from which to start reading. Valid values: TRIM_HORIZON, LATEST.
 	StartingPosition *string `json:"startingPosition,omitempty" tf:"starting_position,omitempty"`
@@ -608,25 +608,25 @@ type DynamodbStreamParametersInitParameters struct {
 type DynamodbStreamParametersObservation struct {
 
 	// The maximum number of records to include in each batch. Maximum value of 10000.
-	BatchSize *float64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
+	BatchSize *int64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
 
 	// Define the target queue to send dead-letter queue events to. Detailed below.
 	DeadLetterConfig *DeadLetterConfigObservation `json:"deadLetterConfig,omitempty" tf:"dead_letter_config,omitempty"`
 
 	// The maximum length of a time to wait for events. Maximum value of 300.
-	MaximumBatchingWindowInSeconds *float64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
+	MaximumBatchingWindowInSeconds *int64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
 
 	// Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, EventBridge never discards old records. Maximum value of 604,800.
-	MaximumRecordAgeInSeconds *float64 `json:"maximumRecordAgeInSeconds,omitempty" tf:"maximum_record_age_in_seconds,omitempty"`
+	MaximumRecordAgeInSeconds *int64 `json:"maximumRecordAgeInSeconds,omitempty" tf:"maximum_record_age_in_seconds,omitempty"`
 
 	// Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, EventBridge retries failed records until the record expires in the event source. Maximum value of 10,000.
-	MaximumRetryAttempts *float64 `json:"maximumRetryAttempts,omitempty" tf:"maximum_retry_attempts,omitempty"`
+	MaximumRetryAttempts *int64 `json:"maximumRetryAttempts,omitempty" tf:"maximum_retry_attempts,omitempty"`
 
 	// Define how to handle item process failures. AUTOMATIC_BISECT halves each batch and retry each half until all the records are processed or there is one failed message left in the batch. Valid values: AUTOMATIC_BISECT.
 	OnPartialBatchItemFailure *string `json:"onPartialBatchItemFailure,omitempty" tf:"on_partial_batch_item_failure,omitempty"`
 
 	// The number of batches to process concurrently from each shard. The default value is 1. Maximum value of 10.
-	ParallelizationFactor *float64 `json:"parallelizationFactor,omitempty" tf:"parallelization_factor,omitempty"`
+	ParallelizationFactor *int64 `json:"parallelizationFactor,omitempty" tf:"parallelization_factor,omitempty"`
 
 	// The position in a stream from which to start reading. Valid values: TRIM_HORIZON, LATEST.
 	StartingPosition *string `json:"startingPosition,omitempty" tf:"starting_position,omitempty"`
@@ -636,7 +636,7 @@ type DynamodbStreamParametersParameters struct {
 
 	// The maximum number of records to include in each batch. Maximum value of 10000.
 	// +kubebuilder:validation:Optional
-	BatchSize *float64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
+	BatchSize *int64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
 
 	// Define the target queue to send dead-letter queue events to. Detailed below.
 	// +kubebuilder:validation:Optional
@@ -644,15 +644,15 @@ type DynamodbStreamParametersParameters struct {
 
 	// The maximum length of a time to wait for events. Maximum value of 300.
 	// +kubebuilder:validation:Optional
-	MaximumBatchingWindowInSeconds *float64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
+	MaximumBatchingWindowInSeconds *int64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
 
 	// Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, EventBridge never discards old records. Maximum value of 604,800.
 	// +kubebuilder:validation:Optional
-	MaximumRecordAgeInSeconds *float64 `json:"maximumRecordAgeInSeconds,omitempty" tf:"maximum_record_age_in_seconds,omitempty"`
+	MaximumRecordAgeInSeconds *int64 `json:"maximumRecordAgeInSeconds,omitempty" tf:"maximum_record_age_in_seconds,omitempty"`
 
 	// Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, EventBridge retries failed records until the record expires in the event source. Maximum value of 10,000.
 	// +kubebuilder:validation:Optional
-	MaximumRetryAttempts *float64 `json:"maximumRetryAttempts,omitempty" tf:"maximum_retry_attempts,omitempty"`
+	MaximumRetryAttempts *int64 `json:"maximumRetryAttempts,omitempty" tf:"maximum_retry_attempts,omitempty"`
 
 	// Define how to handle item process failures. AUTOMATIC_BISECT halves each batch and retry each half until all the records are processed or there is one failed message left in the batch. Valid values: AUTOMATIC_BISECT.
 	// +kubebuilder:validation:Optional
@@ -660,7 +660,7 @@ type DynamodbStreamParametersParameters struct {
 
 	// The number of batches to process concurrently from each shard. The default value is 1. Maximum value of 10.
 	// +kubebuilder:validation:Optional
-	ParallelizationFactor *float64 `json:"parallelizationFactor,omitempty" tf:"parallelization_factor,omitempty"`
+	ParallelizationFactor *int64 `json:"parallelizationFactor,omitempty" tf:"parallelization_factor,omitempty"`
 
 	// The position in a stream from which to start reading. Valid values: TRIM_HORIZON, LATEST.
 	// +kubebuilder:validation:Optional
@@ -705,12 +705,8 @@ type EcsTaskParametersInitParameters struct {
 	// The reference ID to use for the task. Maximum length of 1,024.
 	ReferenceID *string `json:"referenceId,omitempty" tf:"reference_id,omitempty"`
 
-	// Key-value map of tags that you apply to the task to help you categorize and organize them.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// The number of tasks to create based on TaskDefinition. The default is 1.
-	TaskCount *float64 `json:"taskCount,omitempty" tf:"task_count,omitempty"`
+	TaskCount *int64 `json:"taskCount,omitempty" tf:"task_count,omitempty"`
 
 	// The ARN of the task definition to use if the event target is an Amazon ECS task.
 	TaskDefinitionArn *string `json:"taskDefinitionArn,omitempty" tf:"task_definition_arn,omitempty"`
@@ -759,7 +755,7 @@ type EcsTaskParametersObservation struct {
 	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// The number of tasks to create based on TaskDefinition. The default is 1.
-	TaskCount *float64 `json:"taskCount,omitempty" tf:"task_count,omitempty"`
+	TaskCount *int64 `json:"taskCount,omitempty" tf:"task_count,omitempty"`
 
 	// The ARN of the task definition to use if the event target is an Amazon ECS task.
 	TaskDefinitionArn *string `json:"taskDefinitionArn,omitempty" tf:"task_definition_arn,omitempty"`
@@ -815,14 +811,9 @@ type EcsTaskParametersParameters struct {
 	// +kubebuilder:validation:Optional
 	ReferenceID *string `json:"referenceId,omitempty" tf:"reference_id,omitempty"`
 
-	// Key-value map of tags that you apply to the task to help you categorize and organize them.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// The number of tasks to create based on TaskDefinition. The default is 1.
 	// +kubebuilder:validation:Optional
-	TaskCount *float64 `json:"taskCount,omitempty" tf:"task_count,omitempty"`
+	TaskCount *int64 `json:"taskCount,omitempty" tf:"task_count,omitempty"`
 
 	// The ARN of the task definition to use if the event target is an Amazon ECS task.
 	// +kubebuilder:validation:Optional
@@ -919,20 +910,20 @@ type EnvironmentParameters struct {
 type EphemeralStorageInitParameters struct {
 
 	// The total amount, in GiB, of ephemeral storage to set for the task. The minimum supported value is 21 GiB and the maximum supported value is 200 GiB.
-	SizeInGib *float64 `json:"sizeInGib,omitempty" tf:"size_in_gib,omitempty"`
+	SizeInGib *int64 `json:"sizeInGib,omitempty" tf:"size_in_gib,omitempty"`
 }
 
 type EphemeralStorageObservation struct {
 
 	// The total amount, in GiB, of ephemeral storage to set for the task. The minimum supported value is 21 GiB and the maximum supported value is 200 GiB.
-	SizeInGib *float64 `json:"sizeInGib,omitempty" tf:"size_in_gib,omitempty"`
+	SizeInGib *int64 `json:"sizeInGib,omitempty" tf:"size_in_gib,omitempty"`
 }
 
 type EphemeralStorageParameters struct {
 
 	// The total amount, in GiB, of ephemeral storage to set for the task. The minimum supported value is 21 GiB and the maximum supported value is 200 GiB.
 	// +kubebuilder:validation:Optional
-	SizeInGib *float64 `json:"sizeInGib" tf:"size_in_gib,omitempty"`
+	SizeInGib *int64 `json:"sizeInGib" tf:"size_in_gib,omitempty"`
 }
 
 type EventbridgeEventBusParametersInitParameters struct {
@@ -1150,25 +1141,25 @@ type KinesisStreamParametersDeadLetterConfigParameters struct {
 type KinesisStreamParametersInitParameters struct {
 
 	// The maximum number of records to include in each batch. Maximum value of 10000.
-	BatchSize *float64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
+	BatchSize *int64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
 
 	// Define the target queue to send dead-letter queue events to. Detailed below.
 	DeadLetterConfig *KinesisStreamParametersDeadLetterConfigInitParameters `json:"deadLetterConfig,omitempty" tf:"dead_letter_config,omitempty"`
 
 	// The maximum length of a time to wait for events. Maximum value of 300.
-	MaximumBatchingWindowInSeconds *float64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
+	MaximumBatchingWindowInSeconds *int64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
 
 	// Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, EventBridge never discards old records. Maximum value of 604,800.
-	MaximumRecordAgeInSeconds *float64 `json:"maximumRecordAgeInSeconds,omitempty" tf:"maximum_record_age_in_seconds,omitempty"`
+	MaximumRecordAgeInSeconds *int64 `json:"maximumRecordAgeInSeconds,omitempty" tf:"maximum_record_age_in_seconds,omitempty"`
 
 	// Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, EventBridge retries failed records until the record expires in the event source. Maximum value of 10,000.
-	MaximumRetryAttempts *float64 `json:"maximumRetryAttempts,omitempty" tf:"maximum_retry_attempts,omitempty"`
+	MaximumRetryAttempts *int64 `json:"maximumRetryAttempts,omitempty" tf:"maximum_retry_attempts,omitempty"`
 
 	// Define how to handle item process failures. AUTOMATIC_BISECT halves each batch and retry each half until all the records are processed or there is one failed message left in the batch. Valid values: AUTOMATIC_BISECT.
 	OnPartialBatchItemFailure *string `json:"onPartialBatchItemFailure,omitempty" tf:"on_partial_batch_item_failure,omitempty"`
 
 	// The number of batches to process concurrently from each shard. The default value is 1. Maximum value of 10.
-	ParallelizationFactor *float64 `json:"parallelizationFactor,omitempty" tf:"parallelization_factor,omitempty"`
+	ParallelizationFactor *int64 `json:"parallelizationFactor,omitempty" tf:"parallelization_factor,omitempty"`
 
 	// The position in a stream from which to start reading. Valid values: TRIM_HORIZON, LATEST, AT_TIMESTAMP.
 	StartingPosition *string `json:"startingPosition,omitempty" tf:"starting_position,omitempty"`
@@ -1180,25 +1171,25 @@ type KinesisStreamParametersInitParameters struct {
 type KinesisStreamParametersObservation struct {
 
 	// The maximum number of records to include in each batch. Maximum value of 10000.
-	BatchSize *float64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
+	BatchSize *int64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
 
 	// Define the target queue to send dead-letter queue events to. Detailed below.
 	DeadLetterConfig *KinesisStreamParametersDeadLetterConfigObservation `json:"deadLetterConfig,omitempty" tf:"dead_letter_config,omitempty"`
 
 	// The maximum length of a time to wait for events. Maximum value of 300.
-	MaximumBatchingWindowInSeconds *float64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
+	MaximumBatchingWindowInSeconds *int64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
 
 	// Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, EventBridge never discards old records. Maximum value of 604,800.
-	MaximumRecordAgeInSeconds *float64 `json:"maximumRecordAgeInSeconds,omitempty" tf:"maximum_record_age_in_seconds,omitempty"`
+	MaximumRecordAgeInSeconds *int64 `json:"maximumRecordAgeInSeconds,omitempty" tf:"maximum_record_age_in_seconds,omitempty"`
 
 	// Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, EventBridge retries failed records until the record expires in the event source. Maximum value of 10,000.
-	MaximumRetryAttempts *float64 `json:"maximumRetryAttempts,omitempty" tf:"maximum_retry_attempts,omitempty"`
+	MaximumRetryAttempts *int64 `json:"maximumRetryAttempts,omitempty" tf:"maximum_retry_attempts,omitempty"`
 
 	// Define how to handle item process failures. AUTOMATIC_BISECT halves each batch and retry each half until all the records are processed or there is one failed message left in the batch. Valid values: AUTOMATIC_BISECT.
 	OnPartialBatchItemFailure *string `json:"onPartialBatchItemFailure,omitempty" tf:"on_partial_batch_item_failure,omitempty"`
 
 	// The number of batches to process concurrently from each shard. The default value is 1. Maximum value of 10.
-	ParallelizationFactor *float64 `json:"parallelizationFactor,omitempty" tf:"parallelization_factor,omitempty"`
+	ParallelizationFactor *int64 `json:"parallelizationFactor,omitempty" tf:"parallelization_factor,omitempty"`
 
 	// The position in a stream from which to start reading. Valid values: TRIM_HORIZON, LATEST, AT_TIMESTAMP.
 	StartingPosition *string `json:"startingPosition,omitempty" tf:"starting_position,omitempty"`
@@ -1211,7 +1202,7 @@ type KinesisStreamParametersParameters struct {
 
 	// The maximum number of records to include in each batch. Maximum value of 10000.
 	// +kubebuilder:validation:Optional
-	BatchSize *float64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
+	BatchSize *int64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
 
 	// Define the target queue to send dead-letter queue events to. Detailed below.
 	// +kubebuilder:validation:Optional
@@ -1219,15 +1210,15 @@ type KinesisStreamParametersParameters struct {
 
 	// The maximum length of a time to wait for events. Maximum value of 300.
 	// +kubebuilder:validation:Optional
-	MaximumBatchingWindowInSeconds *float64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
+	MaximumBatchingWindowInSeconds *int64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
 
 	// Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, EventBridge never discards old records. Maximum value of 604,800.
 	// +kubebuilder:validation:Optional
-	MaximumRecordAgeInSeconds *float64 `json:"maximumRecordAgeInSeconds,omitempty" tf:"maximum_record_age_in_seconds,omitempty"`
+	MaximumRecordAgeInSeconds *int64 `json:"maximumRecordAgeInSeconds,omitempty" tf:"maximum_record_age_in_seconds,omitempty"`
 
 	// Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, EventBridge retries failed records until the record expires in the event source. Maximum value of 10,000.
 	// +kubebuilder:validation:Optional
-	MaximumRetryAttempts *float64 `json:"maximumRetryAttempts,omitempty" tf:"maximum_retry_attempts,omitempty"`
+	MaximumRetryAttempts *int64 `json:"maximumRetryAttempts,omitempty" tf:"maximum_retry_attempts,omitempty"`
 
 	// Define how to handle item process failures. AUTOMATIC_BISECT halves each batch and retry each half until all the records are processed or there is one failed message left in the batch. Valid values: AUTOMATIC_BISECT.
 	// +kubebuilder:validation:Optional
@@ -1235,7 +1226,7 @@ type KinesisStreamParametersParameters struct {
 
 	// The number of batches to process concurrently from each shard. The default value is 1. Maximum value of 10.
 	// +kubebuilder:validation:Optional
-	ParallelizationFactor *float64 `json:"parallelizationFactor,omitempty" tf:"parallelization_factor,omitempty"`
+	ParallelizationFactor *int64 `json:"parallelizationFactor,omitempty" tf:"parallelization_factor,omitempty"`
 
 	// The position in a stream from which to start reading. Valid values: TRIM_HORIZON, LATEST, AT_TIMESTAMP.
 	// +kubebuilder:validation:Optional
@@ -1359,7 +1350,7 @@ type ManagedStreamingKafkaParametersCredentialsParameters struct {
 type ManagedStreamingKafkaParametersInitParameters struct {
 
 	// The maximum number of records to include in each batch. Maximum value of 10000.
-	BatchSize *float64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
+	BatchSize *int64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
 
 	// The name of the destination queue to consume. Maximum value of 200.
 	ConsumerGroupID *string `json:"consumerGroupId,omitempty" tf:"consumer_group_id,omitempty"`
@@ -1368,7 +1359,7 @@ type ManagedStreamingKafkaParametersInitParameters struct {
 	Credentials *ManagedStreamingKafkaParametersCredentialsInitParameters `json:"credentials,omitempty" tf:"credentials,omitempty"`
 
 	// The maximum length of a time to wait for events. Maximum value of 300.
-	MaximumBatchingWindowInSeconds *float64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
+	MaximumBatchingWindowInSeconds *int64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
 
 	// The position in a stream from which to start reading. Valid values: TRIM_HORIZON, LATEST.
 	StartingPosition *string `json:"startingPosition,omitempty" tf:"starting_position,omitempty"`
@@ -1380,7 +1371,7 @@ type ManagedStreamingKafkaParametersInitParameters struct {
 type ManagedStreamingKafkaParametersObservation struct {
 
 	// The maximum number of records to include in each batch. Maximum value of 10000.
-	BatchSize *float64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
+	BatchSize *int64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
 
 	// The name of the destination queue to consume. Maximum value of 200.
 	ConsumerGroupID *string `json:"consumerGroupId,omitempty" tf:"consumer_group_id,omitempty"`
@@ -1389,7 +1380,7 @@ type ManagedStreamingKafkaParametersObservation struct {
 	Credentials *ManagedStreamingKafkaParametersCredentialsObservation `json:"credentials,omitempty" tf:"credentials,omitempty"`
 
 	// The maximum length of a time to wait for events. Maximum value of 300.
-	MaximumBatchingWindowInSeconds *float64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
+	MaximumBatchingWindowInSeconds *int64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
 
 	// The position in a stream from which to start reading. Valid values: TRIM_HORIZON, LATEST.
 	StartingPosition *string `json:"startingPosition,omitempty" tf:"starting_position,omitempty"`
@@ -1402,7 +1393,7 @@ type ManagedStreamingKafkaParametersParameters struct {
 
 	// The maximum number of records to include in each batch. Maximum value of 10000.
 	// +kubebuilder:validation:Optional
-	BatchSize *float64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
+	BatchSize *int64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
 
 	// The name of the destination queue to consume. Maximum value of 200.
 	// +kubebuilder:validation:Optional
@@ -1414,7 +1405,7 @@ type ManagedStreamingKafkaParametersParameters struct {
 
 	// The maximum length of a time to wait for events. Maximum value of 300.
 	// +kubebuilder:validation:Optional
-	MaximumBatchingWindowInSeconds *float64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
+	MaximumBatchingWindowInSeconds *int64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
 
 	// The position in a stream from which to start reading. Valid values: TRIM_HORIZON, LATEST.
 	// +kubebuilder:validation:Optional
@@ -1579,10 +1570,6 @@ type PipeInitParameters struct {
 	// +kubebuilder:validation:Optional
 	SourceSelector *v1.Selector `json:"sourceSelector,omitempty" tf:"-"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Target resource of the pipe (typically an ARN).
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/sqs/v1beta1.Queue
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractParamPath("arn",true)
@@ -1716,11 +1703,6 @@ type PipeParameters struct {
 	// +kubebuilder:validation:Optional
 	SourceSelector *v1.Selector `json:"sourceSelector,omitempty" tf:"-"`
 
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Target resource of the pipe (typically an ARN).
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/sqs/v1beta1.Queue
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractParamPath("arn",true)
@@ -1849,13 +1831,13 @@ type RabbitmqBrokerParametersCredentialsParameters struct {
 type RabbitmqBrokerParametersInitParameters struct {
 
 	// The maximum number of records to include in each batch. Maximum value of 10000.
-	BatchSize *float64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
+	BatchSize *int64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
 
 	// The credentials needed to access the resource. Detailed below.
 	Credentials *RabbitmqBrokerParametersCredentialsInitParameters `json:"credentials,omitempty" tf:"credentials,omitempty"`
 
 	// The maximum length of a time to wait for events. Maximum value of 300.
-	MaximumBatchingWindowInSeconds *float64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
+	MaximumBatchingWindowInSeconds *int64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
 
 	// The name of the destination queue to consume. Maximum length of 1000.
 	QueueName *string `json:"queueName,omitempty" tf:"queue_name,omitempty"`
@@ -1867,13 +1849,13 @@ type RabbitmqBrokerParametersInitParameters struct {
 type RabbitmqBrokerParametersObservation struct {
 
 	// The maximum number of records to include in each batch. Maximum value of 10000.
-	BatchSize *float64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
+	BatchSize *int64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
 
 	// The credentials needed to access the resource. Detailed below.
 	Credentials *RabbitmqBrokerParametersCredentialsObservation `json:"credentials,omitempty" tf:"credentials,omitempty"`
 
 	// The maximum length of a time to wait for events. Maximum value of 300.
-	MaximumBatchingWindowInSeconds *float64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
+	MaximumBatchingWindowInSeconds *int64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
 
 	// The name of the destination queue to consume. Maximum length of 1000.
 	QueueName *string `json:"queueName,omitempty" tf:"queue_name,omitempty"`
@@ -1886,7 +1868,7 @@ type RabbitmqBrokerParametersParameters struct {
 
 	// The maximum number of records to include in each batch. Maximum value of 10000.
 	// +kubebuilder:validation:Optional
-	BatchSize *float64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
+	BatchSize *int64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
 
 	// The credentials needed to access the resource. Detailed below.
 	// +kubebuilder:validation:Optional
@@ -1894,7 +1876,7 @@ type RabbitmqBrokerParametersParameters struct {
 
 	// The maximum length of a time to wait for events. Maximum value of 300.
 	// +kubebuilder:validation:Optional
-	MaximumBatchingWindowInSeconds *float64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
+	MaximumBatchingWindowInSeconds *int64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
 
 	// The name of the destination queue to consume. Maximum length of 1000.
 	// +kubebuilder:validation:Optional
@@ -2009,20 +1991,20 @@ type ResourceRequirementParameters struct {
 type RetryStrategyInitParameters struct {
 
 	// The number of times to move a job to the RUNNABLE status. If the value of attempts is greater than one, the job is retried on failure the same number of attempts as the value. Maximum value of 10.
-	Attempts *float64 `json:"attempts,omitempty" tf:"attempts,omitempty"`
+	Attempts *int64 `json:"attempts,omitempty" tf:"attempts,omitempty"`
 }
 
 type RetryStrategyObservation struct {
 
 	// The number of times to move a job to the RUNNABLE status. If the value of attempts is greater than one, the job is retried on failure the same number of attempts as the value. Maximum value of 10.
-	Attempts *float64 `json:"attempts,omitempty" tf:"attempts,omitempty"`
+	Attempts *int64 `json:"attempts,omitempty" tf:"attempts,omitempty"`
 }
 
 type RetryStrategyParameters struct {
 
 	// The number of times to move a job to the RUNNABLE status. If the value of attempts is greater than one, the job is retried on failure the same number of attempts as the value. Maximum value of 10.
 	// +kubebuilder:validation:Optional
-	Attempts *float64 `json:"attempts,omitempty" tf:"attempts,omitempty"`
+	Attempts *int64 `json:"attempts,omitempty" tf:"attempts,omitempty"`
 }
 
 type S3LogDestinationInitParameters struct {
@@ -2149,7 +2131,7 @@ type SelfManagedKafkaParametersInitParameters struct {
 	AdditionalBootstrapServers []*string `json:"additionalBootstrapServers,omitempty" tf:"additional_bootstrap_servers,omitempty"`
 
 	// The maximum number of records to include in each batch. Maximum value of 10000.
-	BatchSize *float64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
+	BatchSize *int64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
 
 	// The name of the destination queue to consume. Maximum value of 200.
 	ConsumerGroupID *string `json:"consumerGroupId,omitempty" tf:"consumer_group_id,omitempty"`
@@ -2158,7 +2140,7 @@ type SelfManagedKafkaParametersInitParameters struct {
 	Credentials *SelfManagedKafkaParametersCredentialsInitParameters `json:"credentials,omitempty" tf:"credentials,omitempty"`
 
 	// The maximum length of a time to wait for events. Maximum value of 300.
-	MaximumBatchingWindowInSeconds *float64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
+	MaximumBatchingWindowInSeconds *int64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
 
 	// The ARN of the Secrets Manager secret used for certification.
 	ServerRootCACertificate *string `json:"serverRootCaCertificate,omitempty" tf:"server_root_ca_certificate,omitempty"`
@@ -2180,7 +2162,7 @@ type SelfManagedKafkaParametersObservation struct {
 	AdditionalBootstrapServers []*string `json:"additionalBootstrapServers,omitempty" tf:"additional_bootstrap_servers,omitempty"`
 
 	// The maximum number of records to include in each batch. Maximum value of 10000.
-	BatchSize *float64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
+	BatchSize *int64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
 
 	// The name of the destination queue to consume. Maximum value of 200.
 	ConsumerGroupID *string `json:"consumerGroupId,omitempty" tf:"consumer_group_id,omitempty"`
@@ -2189,7 +2171,7 @@ type SelfManagedKafkaParametersObservation struct {
 	Credentials *SelfManagedKafkaParametersCredentialsObservation `json:"credentials,omitempty" tf:"credentials,omitempty"`
 
 	// The maximum length of a time to wait for events. Maximum value of 300.
-	MaximumBatchingWindowInSeconds *float64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
+	MaximumBatchingWindowInSeconds *int64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
 
 	// The ARN of the Secrets Manager secret used for certification.
 	ServerRootCACertificate *string `json:"serverRootCaCertificate,omitempty" tf:"server_root_ca_certificate,omitempty"`
@@ -2213,7 +2195,7 @@ type SelfManagedKafkaParametersParameters struct {
 
 	// The maximum number of records to include in each batch. Maximum value of 10000.
 	// +kubebuilder:validation:Optional
-	BatchSize *float64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
+	BatchSize *int64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
 
 	// The name of the destination queue to consume. Maximum value of 200.
 	// +kubebuilder:validation:Optional
@@ -2225,7 +2207,7 @@ type SelfManagedKafkaParametersParameters struct {
 
 	// The maximum length of a time to wait for events. Maximum value of 300.
 	// +kubebuilder:validation:Optional
-	MaximumBatchingWindowInSeconds *float64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
+	MaximumBatchingWindowInSeconds *int64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
 
 	// The ARN of the Secrets Manager secret used for certification.
 	// +kubebuilder:validation:Optional
@@ -2336,30 +2318,30 @@ type SourceParametersParameters struct {
 type SqsQueueParametersInitParameters struct {
 
 	// The maximum number of records to include in each batch. Maximum value of 10000.
-	BatchSize *float64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
+	BatchSize *int64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
 
 	// The maximum length of a time to wait for events. Maximum value of 300.
-	MaximumBatchingWindowInSeconds *float64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
+	MaximumBatchingWindowInSeconds *int64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
 }
 
 type SqsQueueParametersObservation struct {
 
 	// The maximum number of records to include in each batch. Maximum value of 10000.
-	BatchSize *float64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
+	BatchSize *int64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
 
 	// The maximum length of a time to wait for events. Maximum value of 300.
-	MaximumBatchingWindowInSeconds *float64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
+	MaximumBatchingWindowInSeconds *int64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
 }
 
 type SqsQueueParametersParameters struct {
 
 	// The maximum number of records to include in each batch. Maximum value of 10000.
 	// +kubebuilder:validation:Optional
-	BatchSize *float64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
+	BatchSize *int64 `json:"batchSize,omitempty" tf:"batch_size,omitempty"`
 
 	// The maximum length of a time to wait for events. Maximum value of 300.
 	// +kubebuilder:validation:Optional
-	MaximumBatchingWindowInSeconds *float64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
+	MaximumBatchingWindowInSeconds *int64 `json:"maximumBatchingWindowInSeconds,omitempty" tf:"maximum_batching_window_in_seconds,omitempty"`
 }
 
 type StepFunctionStateMachineParametersInitParameters struct {

@@ -57,7 +57,7 @@ type GlobalReplicationGroupInitParameters struct {
 	GlobalReplicationGroupIDSuffix *string `json:"globalReplicationGroupIdSuffix,omitempty" tf:"global_replication_group_id_suffix,omitempty"`
 
 	// The number of node groups (shards) on the global replication group.
-	NumNodeGroups *float64 `json:"numNodeGroups,omitempty" tf:"num_node_groups,omitempty"`
+	NumNodeGroups *int64 `json:"numNodeGroups,omitempty" tf:"num_node_groups,omitempty"`
 
 	// An ElastiCache Parameter Group to use for the Global Replication Group.
 	// Required when upgrading a major engine version, but will be ignored if left configured after the upgrade is complete.
@@ -136,7 +136,7 @@ type GlobalReplicationGroupObservation struct {
 	ID *string `json:"id,omitempty" tf:"id,omitempty"`
 
 	// The number of node groups (shards) on the global replication group.
-	NumNodeGroups *float64 `json:"numNodeGroups,omitempty" tf:"num_node_groups,omitempty"`
+	NumNodeGroups *int64 `json:"numNodeGroups,omitempty" tf:"num_node_groups,omitempty"`
 
 	// An ElastiCache Parameter Group to use for the Global Replication Group.
 	// Required when upgrading a major engine version, but will be ignored if left configured after the upgrade is complete.
@@ -186,7 +186,7 @@ type GlobalReplicationGroupParameters struct {
 
 	// The number of node groups (shards) on the global replication group.
 	// +kubebuilder:validation:Optional
-	NumNodeGroups *float64 `json:"numNodeGroups,omitempty" tf:"num_node_groups,omitempty"`
+	NumNodeGroups *int64 `json:"numNodeGroups,omitempty" tf:"num_node_groups,omitempty"`
 
 	// An ElastiCache Parameter Group to use for the Global Replication Group.
 	// Required when upgrading a major engine version, but will be ignored if left configured after the upgrade is complete.

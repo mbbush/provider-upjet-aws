@@ -45,7 +45,7 @@ func (in *StreamInitParameters) DeepCopyInto(out *StreamInitParameters) {
 	*out = *in
 	if in.DataRetentionInHours != nil {
 		in, out := &in.DataRetentionInHours, &out.DataRetentionInHours
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.DeviceName != nil {
@@ -77,22 +77,6 @@ func (in *StreamInitParameters) DeepCopyInto(out *StreamInitParameters) {
 		in, out := &in.Name, &out.Name
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 }
 
@@ -153,7 +137,7 @@ func (in *StreamObservation) DeepCopyInto(out *StreamObservation) {
 	}
 	if in.DataRetentionInHours != nil {
 		in, out := &in.DataRetentionInHours, &out.DataRetentionInHours
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.DeviceName != nil {
@@ -235,7 +219,7 @@ func (in *StreamParameters) DeepCopyInto(out *StreamParameters) {
 	*out = *in
 	if in.DataRetentionInHours != nil {
 		in, out := &in.DataRetentionInHours, &out.DataRetentionInHours
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.DeviceName != nil {
@@ -272,22 +256,6 @@ func (in *StreamParameters) DeepCopyInto(out *StreamParameters) {
 		in, out := &in.Region, &out.Region
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 }
 

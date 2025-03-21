@@ -1889,12 +1889,6 @@ spec:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   vpcConfig:
                     description: Specifies the VPC that you want your model to connect
                       to. VpcConfig is used in hosting services and in batch transform.
@@ -2279,12 +2273,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   vpcConfig:
                     description: Specifies the VPC that you want your model to connect
                       to. VpcConfig is used in hosting services and in batch transform.

@@ -243,12 +243,12 @@ func (in *ComputeCapacityInitParameters) DeepCopyInto(out *ComputeCapacityInitPa
 	*out = *in
 	if in.DesiredInstances != nil {
 		in, out := &in.DesiredInstances, &out.DesiredInstances
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.DesiredSessions != nil {
 		in, out := &in.DesiredSessions, &out.DesiredSessions
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -268,27 +268,27 @@ func (in *ComputeCapacityObservation) DeepCopyInto(out *ComputeCapacityObservati
 	*out = *in
 	if in.Available != nil {
 		in, out := &in.Available, &out.Available
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.DesiredInstances != nil {
 		in, out := &in.DesiredInstances, &out.DesiredInstances
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.DesiredSessions != nil {
 		in, out := &in.DesiredSessions, &out.DesiredSessions
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.InUse != nil {
 		in, out := &in.InUse, &out.InUse
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Running != nil {
 		in, out := &in.Running, &out.Running
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -308,12 +308,12 @@ func (in *ComputeCapacityParameters) DeepCopyInto(out *ComputeCapacityParameters
 	*out = *in
 	if in.DesiredInstances != nil {
 		in, out := &in.DesiredInstances, &out.DesiredInstances
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.DesiredSessions != nil {
 		in, out := &in.DesiredSessions, &out.DesiredSessions
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -662,7 +662,7 @@ func (in *FleetInitParameters) DeepCopyInto(out *FleetInitParameters) {
 	}
 	if in.DisconnectTimeoutInSeconds != nil {
 		in, out := &in.DisconnectTimeoutInSeconds, &out.DisconnectTimeoutInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.DisplayName != nil {
@@ -702,7 +702,7 @@ func (in *FleetInitParameters) DeepCopyInto(out *FleetInitParameters) {
 	}
 	if in.IdleDisconnectTimeoutInSeconds != nil {
 		in, out := &in.IdleDisconnectTimeoutInSeconds, &out.IdleDisconnectTimeoutInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ImageArn != nil {
@@ -722,12 +722,12 @@ func (in *FleetInitParameters) DeepCopyInto(out *FleetInitParameters) {
 	}
 	if in.MaxSessionsPerInstance != nil {
 		in, out := &in.MaxSessionsPerInstance, &out.MaxSessionsPerInstance
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaxUserDurationInSeconds != nil {
 		in, out := &in.MaxUserDurationInSeconds, &out.MaxUserDurationInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Name != nil {
@@ -739,22 +739,6 @@ func (in *FleetInitParameters) DeepCopyInto(out *FleetInitParameters) {
 		in, out := &in.StreamView, &out.StreamView
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.VPCConfig != nil {
 		in, out := &in.VPCConfig, &out.VPCConfig
@@ -830,7 +814,7 @@ func (in *FleetObservation) DeepCopyInto(out *FleetObservation) {
 	}
 	if in.DisconnectTimeoutInSeconds != nil {
 		in, out := &in.DisconnectTimeoutInSeconds, &out.DisconnectTimeoutInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.DisplayName != nil {
@@ -865,7 +849,7 @@ func (in *FleetObservation) DeepCopyInto(out *FleetObservation) {
 	}
 	if in.IdleDisconnectTimeoutInSeconds != nil {
 		in, out := &in.IdleDisconnectTimeoutInSeconds, &out.IdleDisconnectTimeoutInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ImageArn != nil {
@@ -885,12 +869,12 @@ func (in *FleetObservation) DeepCopyInto(out *FleetObservation) {
 	}
 	if in.MaxSessionsPerInstance != nil {
 		in, out := &in.MaxSessionsPerInstance, &out.MaxSessionsPerInstance
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaxUserDurationInSeconds != nil {
 		in, out := &in.MaxUserDurationInSeconds, &out.MaxUserDurationInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Name != nil {
@@ -972,7 +956,7 @@ func (in *FleetParameters) DeepCopyInto(out *FleetParameters) {
 	}
 	if in.DisconnectTimeoutInSeconds != nil {
 		in, out := &in.DisconnectTimeoutInSeconds, &out.DisconnectTimeoutInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.DisplayName != nil {
@@ -1012,7 +996,7 @@ func (in *FleetParameters) DeepCopyInto(out *FleetParameters) {
 	}
 	if in.IdleDisconnectTimeoutInSeconds != nil {
 		in, out := &in.IdleDisconnectTimeoutInSeconds, &out.IdleDisconnectTimeoutInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ImageArn != nil {
@@ -1032,12 +1016,12 @@ func (in *FleetParameters) DeepCopyInto(out *FleetParameters) {
 	}
 	if in.MaxSessionsPerInstance != nil {
 		in, out := &in.MaxSessionsPerInstance, &out.MaxSessionsPerInstance
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaxUserDurationInSeconds != nil {
 		in, out := &in.MaxUserDurationInSeconds, &out.MaxUserDurationInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Name != nil {
@@ -1054,22 +1038,6 @@ func (in *FleetParameters) DeepCopyInto(out *FleetParameters) {
 		in, out := &in.StreamView, &out.StreamView
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.VPCConfig != nil {
 		in, out := &in.VPCConfig, &out.VPCConfig
@@ -1284,22 +1252,6 @@ func (in *ImageBuilderInitParameters) DeepCopyInto(out *ImageBuilderInitParamete
 		in, out := &in.InstanceType, &out.InstanceType
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.VPCConfig != nil {
 		in, out := &in.VPCConfig, &out.VPCConfig
@@ -1538,22 +1490,6 @@ func (in *ImageBuilderParameters) DeepCopyInto(out *ImageBuilderParameters) {
 		in, out := &in.Region, &out.Region
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.VPCConfig != nil {
 		in, out := &in.VPCConfig, &out.VPCConfig
@@ -1894,22 +1830,6 @@ func (in *StackInitParameters) DeepCopyInto(out *StackInitParameters) {
 		*out = new(StreamingExperienceSettingsInitParameters)
 		(*in).DeepCopyInto(*out)
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.UserSettings != nil {
 		in, out := &in.UserSettings, &out.UserSettings
 		*out = make([]UserSettingsInitParameters, len(*in))
@@ -2157,22 +2077,6 @@ func (in *StackParameters) DeepCopyInto(out *StackParameters) {
 		in, out := &in.StreamingExperienceSettings, &out.StreamingExperienceSettings
 		*out = new(StreamingExperienceSettingsParameters)
 		(*in).DeepCopyInto(*out)
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.UserSettings != nil {
 		in, out := &in.UserSettings, &out.UserSettings

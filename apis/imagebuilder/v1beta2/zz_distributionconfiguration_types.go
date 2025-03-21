@@ -15,10 +15,6 @@ import (
 
 type AMIDistributionConfigurationInitParameters struct {
 
-	// Key-value map of tags to apply to the distributed AMI.
-	// +mapType=granular
-	AMITags map[string]*string `json:"amiTags,omitempty" tf:"ami_tags,omitempty"`
-
 	// Description to apply to the distributed AMI.
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
 
@@ -60,11 +56,6 @@ type AMIDistributionConfigurationObservation struct {
 }
 
 type AMIDistributionConfigurationParameters struct {
-
-	// Key-value map of tags to apply to the distributed AMI.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	AMITags map[string]*string `json:"amiTags,omitempty" tf:"ami_tags,omitempty"`
 
 	// Description to apply to the distributed AMI.
 	// +kubebuilder:validation:Optional
@@ -169,10 +160,6 @@ type DistributionConfigurationInitParameters struct {
 
 	// Name of the distribution configuration.
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type DistributionConfigurationObservation struct {
@@ -225,11 +212,6 @@ type DistributionConfigurationParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type DistributionInitParameters struct {
@@ -323,7 +305,7 @@ type FastLaunchConfigurationInitParameters struct {
 	LaunchTemplate *LaunchTemplateInitParameters `json:"launchTemplate,omitempty" tf:"launch_template,omitempty"`
 
 	// The maximum number of parallel instances that are launched for creating resources.
-	MaxParallelLaunches *float64 `json:"maxParallelLaunches,omitempty" tf:"max_parallel_launches,omitempty"`
+	MaxParallelLaunches *int64 `json:"maxParallelLaunches,omitempty" tf:"max_parallel_launches,omitempty"`
 
 	// Configuration block for managing the number of snapshots that are created from pre-provisioned instances for the Windows AMI when faster launching is enabled. Detailed below.
 	SnapshotConfiguration *SnapshotConfigurationInitParameters `json:"snapshotConfiguration,omitempty" tf:"snapshot_configuration,omitempty"`
@@ -341,7 +323,7 @@ type FastLaunchConfigurationObservation struct {
 	LaunchTemplate *LaunchTemplateObservation `json:"launchTemplate,omitempty" tf:"launch_template,omitempty"`
 
 	// The maximum number of parallel instances that are launched for creating resources.
-	MaxParallelLaunches *float64 `json:"maxParallelLaunches,omitempty" tf:"max_parallel_launches,omitempty"`
+	MaxParallelLaunches *int64 `json:"maxParallelLaunches,omitempty" tf:"max_parallel_launches,omitempty"`
 
 	// Configuration block for managing the number of snapshots that are created from pre-provisioned instances for the Windows AMI when faster launching is enabled. Detailed below.
 	SnapshotConfiguration *SnapshotConfigurationObservation `json:"snapshotConfiguration,omitempty" tf:"snapshot_configuration,omitempty"`
@@ -363,7 +345,7 @@ type FastLaunchConfigurationParameters struct {
 
 	// The maximum number of parallel instances that are launched for creating resources.
 	// +kubebuilder:validation:Optional
-	MaxParallelLaunches *float64 `json:"maxParallelLaunches,omitempty" tf:"max_parallel_launches,omitempty"`
+	MaxParallelLaunches *int64 `json:"maxParallelLaunches,omitempty" tf:"max_parallel_launches,omitempty"`
 
 	// Configuration block for managing the number of snapshots that are created from pre-provisioned instances for the Windows AMI when faster launching is enabled. Detailed below.
 	// +kubebuilder:validation:Optional
@@ -561,20 +543,20 @@ type S3ExportConfigurationParameters struct {
 type SnapshotConfigurationInitParameters struct {
 
 	// The number of pre-provisioned snapshots to keep on hand for a fast-launch enabled Windows AMI.
-	TargetResourceCount *float64 `json:"targetResourceCount,omitempty" tf:"target_resource_count,omitempty"`
+	TargetResourceCount *int64 `json:"targetResourceCount,omitempty" tf:"target_resource_count,omitempty"`
 }
 
 type SnapshotConfigurationObservation struct {
 
 	// The number of pre-provisioned snapshots to keep on hand for a fast-launch enabled Windows AMI.
-	TargetResourceCount *float64 `json:"targetResourceCount,omitempty" tf:"target_resource_count,omitempty"`
+	TargetResourceCount *int64 `json:"targetResourceCount,omitempty" tf:"target_resource_count,omitempty"`
 }
 
 type SnapshotConfigurationParameters struct {
 
 	// The number of pre-provisioned snapshots to keep on hand for a fast-launch enabled Windows AMI.
 	// +kubebuilder:validation:Optional
-	TargetResourceCount *float64 `json:"targetResourceCount,omitempty" tf:"target_resource_count,omitempty"`
+	TargetResourceCount *int64 `json:"targetResourceCount,omitempty" tf:"target_resource_count,omitempty"`
 }
 
 // DistributionConfigurationSpec defines the desired state of DistributionConfiguration

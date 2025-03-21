@@ -16,5 +16,3 @@ spec:
       - portMapping:
         - port: 8080
           protocol: http
-    tags:
-      Environment: test

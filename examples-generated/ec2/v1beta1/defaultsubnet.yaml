@@ -10,5 +10,3 @@ spec:
   forProvider:
     availabilityZone: us-west-2a
     region: us-west-1
-    tags:
-      Name: Default subnet for us-west-2a

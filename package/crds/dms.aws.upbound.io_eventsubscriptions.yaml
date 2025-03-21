@@ -254,12 +254,6 @@ spec:
                     description: 'Type of source for events. Valid values: replication-instance
                       or replication-task'
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -453,12 +447,6 @@ spec:
                     description: 'Type of source for events. Valid values: replication-instance
                       or replication-task'
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:

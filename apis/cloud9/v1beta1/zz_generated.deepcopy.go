@@ -45,7 +45,7 @@ func (in *EnvironmentEC2InitParameters) DeepCopyInto(out *EnvironmentEC2InitPara
 	*out = *in
 	if in.AutomaticStopTimeMinutes != nil {
 		in, out := &in.AutomaticStopTimeMinutes, &out.AutomaticStopTimeMinutes
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ConnectionType != nil {
@@ -92,22 +92,6 @@ func (in *EnvironmentEC2InitParameters) DeepCopyInto(out *EnvironmentEC2InitPara
 		in, out := &in.SubnetIDSelector, &out.SubnetIDSelector
 		*out = new(v1.Selector)
 		(*in).DeepCopyInto(*out)
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 }
 
@@ -163,7 +147,7 @@ func (in *EnvironmentEC2Observation) DeepCopyInto(out *EnvironmentEC2Observation
 	}
 	if in.AutomaticStopTimeMinutes != nil {
 		in, out := &in.AutomaticStopTimeMinutes, &out.AutomaticStopTimeMinutes
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ConnectionType != nil {
@@ -260,7 +244,7 @@ func (in *EnvironmentEC2Parameters) DeepCopyInto(out *EnvironmentEC2Parameters) 
 	*out = *in
 	if in.AutomaticStopTimeMinutes != nil {
 		in, out := &in.AutomaticStopTimeMinutes, &out.AutomaticStopTimeMinutes
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ConnectionType != nil {
@@ -312,22 +296,6 @@ func (in *EnvironmentEC2Parameters) DeepCopyInto(out *EnvironmentEC2Parameters) 
 		in, out := &in.SubnetIDSelector, &out.SubnetIDSelector
 		*out = new(v1.Selector)
 		(*in).DeepCopyInto(*out)
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 }
 

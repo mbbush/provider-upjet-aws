@@ -16,5 +16,3 @@ spec:
     - OutgoingBytes
     streamModeDetails:
     - streamMode: PROVISIONED
-    tags:
-      Environment: test

@@ -769,11 +769,13 @@ spec:
                       maximumCount:
                         description: 'The maximum number of artifacts allowed for
                           the action type. Min: 0, Max: 5'
-                        type: number
+                        format: int64
+                        type: integer
                       minimumCount:
                         description: 'The minimum number of artifacts allowed for
                           the action type. Min: 0, Max: 5'
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   outputArtifactDetails:
                     description: The details of the output artifact of the action.
@@ -781,11 +783,13 @@ spec:
                       maximumCount:
                         description: 'The maximum number of artifacts allowed for
                           the action type. Min: 0, Max: 5'
-                        type: number
+                        format: int64
+                        type: integer
                       minimumCount:
                         description: 'The minimum number of artifacts allowed for
                           the action type. Min: 0, Max: 5'
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   providerName:
                     description: The provider of the service used in the custom action
@@ -818,12 +822,6 @@ spec:
                           of the action provided by that service.
                         type: string
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   version:
                     description: The version identifier of the custom action.
                     type: string
@@ -885,11 +883,13 @@ spec:
                       maximumCount:
                         description: 'The maximum number of artifacts allowed for
                           the action type. Min: 0, Max: 5'
-                        type: number
+                        format: int64
+                        type: integer
                       minimumCount:
                         description: 'The minimum number of artifacts allowed for
                           the action type. Min: 0, Max: 5'
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   outputArtifactDetails:
                     description: The details of the output artifact of the action.
@@ -897,11 +897,13 @@ spec:
                       maximumCount:
                         description: 'The maximum number of artifacts allowed for
                           the action type. Min: 0, Max: 5'
-                        type: number
+                        format: int64
+                        type: integer
                       minimumCount:
                         description: 'The minimum number of artifacts allowed for
                           the action type. Min: 0, Max: 5'
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   providerName:
                     description: The provider of the service used in the custom action
@@ -930,12 +932,6 @@ spec:
                           of the action provided by that service.
                         type: string
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   version:
                     description: The version identifier of the custom action.
                     type: string
@@ -1181,11 +1177,13 @@ spec:
                       maximumCount:
                         description: 'The maximum number of artifacts allowed for
                           the action type. Min: 0, Max: 5'
-                        type: number
+                        format: int64
+                        type: integer
                       minimumCount:
                         description: 'The minimum number of artifacts allowed for
                           the action type. Min: 0, Max: 5'
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   outputArtifactDetails:
                     description: The details of the output artifact of the action.
@@ -1193,11 +1191,13 @@ spec:
                       maximumCount:
                         description: 'The maximum number of artifacts allowed for
                           the action type. Min: 0, Max: 5'
-                        type: number
+                        format: int64
+                        type: integer
                       minimumCount:
                         description: 'The minimum number of artifacts allowed for
                           the action type. Min: 0, Max: 5'
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   owner:
                     description: The creator of the action being called.

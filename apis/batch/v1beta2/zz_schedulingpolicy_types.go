@@ -16,9 +16,9 @@ import (
 type FairSharePolicyInitParameters struct {
 
 	// A value used to reserve some of the available maximum vCPU for fair share identifiers that have not yet been used. For more information, see FairsharePolicy.
-	ComputeReservation *float64 `json:"computeReservation,omitempty" tf:"compute_reservation,omitempty"`
+	ComputeReservation *int64 `json:"computeReservation,omitempty" tf:"compute_reservation,omitempty"`
 
-	ShareDecaySeconds *float64 `json:"shareDecaySeconds,omitempty" tf:"share_decay_seconds,omitempty"`
+	ShareDecaySeconds *int64 `json:"shareDecaySeconds,omitempty" tf:"share_decay_seconds,omitempty"`
 
 	// One or more share distribution blocks which define the weights for the fair share identifiers for the fair share policy. For more information, see FairsharePolicy. The share_distribution block is documented below.
 	ShareDistribution []ShareDistributionInitParameters `json:"shareDistribution,omitempty" tf:"share_distribution,omitempty"`
@@ -27,9 +27,9 @@ type FairSharePolicyInitParameters struct {
 type FairSharePolicyObservation struct {
 
 	// A value used to reserve some of the available maximum vCPU for fair share identifiers that have not yet been used. For more information, see FairsharePolicy.
-	ComputeReservation *float64 `json:"computeReservation,omitempty" tf:"compute_reservation,omitempty"`
+	ComputeReservation *int64 `json:"computeReservation,omitempty" tf:"compute_reservation,omitempty"`
 
-	ShareDecaySeconds *float64 `json:"shareDecaySeconds,omitempty" tf:"share_decay_seconds,omitempty"`
+	ShareDecaySeconds *int64 `json:"shareDecaySeconds,omitempty" tf:"share_decay_seconds,omitempty"`
 
 	// One or more share distribution blocks which define the weights for the fair share identifiers for the fair share policy. For more information, see FairsharePolicy. The share_distribution block is documented below.
 	ShareDistribution []ShareDistributionObservation `json:"shareDistribution,omitempty" tf:"share_distribution,omitempty"`
@@ -39,10 +39,10 @@ type FairSharePolicyParameters struct {
 
 	// A value used to reserve some of the available maximum vCPU for fair share identifiers that have not yet been used. For more information, see FairsharePolicy.
 	// +kubebuilder:validation:Optional
-	ComputeReservation *float64 `json:"computeReservation,omitempty" tf:"compute_reservation,omitempty"`
+	ComputeReservation *int64 `json:"computeReservation,omitempty" tf:"compute_reservation,omitempty"`
 
 	// +kubebuilder:validation:Optional
-	ShareDecaySeconds *float64 `json:"shareDecaySeconds,omitempty" tf:"share_decay_seconds,omitempty"`
+	ShareDecaySeconds *int64 `json:"shareDecaySeconds,omitempty" tf:"share_decay_seconds,omitempty"`
 
 	// One or more share distribution blocks which define the weights for the fair share identifiers for the fair share policy. For more information, see FairsharePolicy. The share_distribution block is documented below.
 	// +kubebuilder:validation:Optional
@@ -51,10 +51,6 @@ type FairSharePolicyParameters struct {
 
 type SchedulingPolicyInitParameters struct {
 	FairSharePolicy *FairSharePolicyInitParameters `json:"fairSharePolicy,omitempty" tf:"fair_share_policy,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type SchedulingPolicyObservation struct {
@@ -84,11 +80,6 @@ type SchedulingPolicyParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type ShareDistributionInitParameters struct {

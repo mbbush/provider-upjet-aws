@@ -309,10 +309,6 @@ type ModelInitParameters struct {
 	// The primary docker image containing inference code that is used when the model is deployed for predictions.  If not specified, the container argument is required. Fields are documented below.
 	PrimaryContainer *PrimaryContainerInitParameters `json:"primaryContainer,omitempty" tf:"primary_container,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Specifies the VPC that you want your model to connect to. VpcConfig is used in hosting services and in batch transform.
 	VPCConfig *VPCConfigInitParameters `json:"vpcConfig,omitempty" tf:"vpc_config,omitempty"`
 }
@@ -387,11 +383,6 @@ type ModelParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Specifies the VPC that you want your model to connect to. VpcConfig is used in hosting services and in batch transform.
 	// +kubebuilder:validation:Optional

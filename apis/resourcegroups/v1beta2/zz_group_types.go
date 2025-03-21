@@ -52,10 +52,6 @@ type GroupInitParameters struct {
 
 	// A resource_query block. Resource queries are documented below.
 	ResourceQuery *ResourceQueryInitParameters `json:"resourceQuery,omitempty" tf:"resource_query,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type GroupObservation struct {
@@ -101,11 +97,6 @@ type GroupParameters struct {
 	// A resource_query block. Resource queries are documented below.
 	// +kubebuilder:validation:Optional
 	ResourceQuery *ResourceQueryParameters `json:"resourceQuery,omitempty" tf:"resource_query,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type ParametersInitParameters struct {

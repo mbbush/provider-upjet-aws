@@ -1410,13 +1410,15 @@ spec:
                         description: Number of consecutive health check successes
                           required before considering a target healthy. The range
                           is 2-10. Defaults to 3.
-                        type: number
+                        format: int64
+                        type: integer
                       interval:
                         description: Approximate amount of time, in seconds, between
                           health checks of an individual target. The range is 5-300.
                           For lambda target groups, it needs to be greater than the
                           timeout of the underlying lambda. Defaults to 30.
-                        type: number
+                        format: int64
+                        type: integer
                       matcher:
                         description: separated individual values (e.g., "200,202")
                           or a range of values (e.g., "200-299").
@@ -1448,12 +1450,14 @@ spec:
                           of TCP, TLS or HTTPS, the default is 10 seconds. For target
                           groups with a protocol of GENEVE, the default is 5 seconds.
                           If the target type is lambda, the default is 30 seconds.
-                        type: number
+                        format: int64
+                        type: integer
                       unhealthyThreshold:
                         description: Number of consecutive health check failures required
                           before considering a target unhealthy. The range is 2-10.
                           Defaults to 3.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   ipAddressType:
                     description: The type of IP addresses used by the target group,
@@ -1494,7 +1498,8 @@ spec:
                       targets receive traffic, unless overridden when registering
                       a specific target. Required when target_type is instance, ip
                       or alb. Does not apply when target_type is lambda.
-                    type: number
+                    format: int64
+                    type: integer
                   preserveClientIp:
                     description: Whether client IP preservation is enabled. See doc
                       for more information.
@@ -1526,7 +1531,8 @@ spec:
                     description: Amount time for targets to warm up before the load
                       balancer sends them a full share of requests. The range is 30-900
                       seconds or 0 to disable. The default value is 0 seconds.
-                    type: number
+                    format: int64
+                    type: integer
                   stickiness:
                     description: Stickiness configuration block. Detailed below.
                     properties:
@@ -1537,7 +1543,8 @@ spec:
                           expires, the load balancer-generated cookie is considered
                           stale. The range is 1 second to 1 week (604800 seconds).
                           The default value is 1 day (86400 seconds).
-                        type: number
+                        format: int64
+                        type: integer
                       cookieName:
                         description: Name of the application based cookie. AWSALB,
                           AWSALBAPP, and AWSALBTG prefixes are reserved and cannot
@@ -1554,12 +1561,6 @@ spec:
                           for GWLBs.
                         type: string
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   targetFailover:
                     description: Target failover block. Only applicable for Gateway
                       Load Balancer target groups. See target_failover for more information.
@@ -1614,7 +1615,8 @@ spec:
                               value, send traffic to all targets, including unhealthy
                               targets. The possible values are 1 to the maximum number
                               of targets. The default is 1.
-                            type: number
+                            format: int64
+                            type: integer
                           minimumHealthyTargetsPercentage:
                             description: The minimum percentage of targets that must
                               be healthy. If the percentage of healthy targets is
@@ -1640,7 +1642,8 @@ spec:
                             to complete when a target becomes unhealthy. The range
                             is 0-360000. This value has to be set only if enable_unhealthy_connection_termination
                             is set to false. Default: 0.'
-                          type: number
+                          format: int64
+                          type: integer
                       type: object
                     type: array
                   targetType:
@@ -1766,13 +1769,15 @@ spec:
                         description: Number of consecutive health check successes
                           required before considering a target healthy. The range
                           is 2-10. Defaults to 3.
-                        type: number
+                        format: int64
+                        type: integer
                       interval:
                         description: Approximate amount of time, in seconds, between
                           health checks of an individual target. The range is 5-300.
                           For lambda target groups, it needs to be greater than the
                           timeout of the underlying lambda. Defaults to 30.
-                        type: number
+                        format: int64
+                        type: integer
                       matcher:
                         description: separated individual values (e.g., "200,202")
                           or a range of values (e.g., "200-299").
@@ -1804,12 +1809,14 @@ spec:
                           of TCP, TLS or HTTPS, the default is 10 seconds. For target
                           groups with a protocol of GENEVE, the default is 5 seconds.
                           If the target type is lambda, the default is 30 seconds.
-                        type: number
+                        format: int64
+                        type: integer
                       unhealthyThreshold:
                         description: Number of consecutive health check failures required
                           before considering a target unhealthy. The range is 2-10.
                           Defaults to 3.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   ipAddressType:
                     description: The type of IP addresses used by the target group,
@@ -1850,7 +1857,8 @@ spec:
                       targets receive traffic, unless overridden when registering
                       a specific target. Required when target_type is instance, ip
                       or alb. Does not apply when target_type is lambda.
-                    type: number
+                    format: int64
+                    type: integer
                   preserveClientIp:
                     description: Whether client IP preservation is enabled. See doc
                       for more information.
@@ -1878,7 +1886,8 @@ spec:
                     description: Amount time for targets to warm up before the load
                       balancer sends them a full share of requests. The range is 30-900
                       seconds or 0 to disable. The default value is 0 seconds.
-                    type: number
+                    format: int64
+                    type: integer
                   stickiness:
                     description: Stickiness configuration block. Detailed below.
                     properties:
@@ -1889,7 +1898,8 @@ spec:
                           expires, the load balancer-generated cookie is considered
                           stale. The range is 1 second to 1 week (604800 seconds).
                           The default value is 1 day (86400 seconds).
-                        type: number
+                        format: int64
+                        type: integer
                       cookieName:
                         description: Name of the application based cookie. AWSALB,
                           AWSALBAPP, and AWSALBTG prefixes are reserved and cannot
@@ -1906,12 +1916,6 @@ spec:
                           for GWLBs.
                         type: string
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   targetFailover:
                     description: Target failover block. Only applicable for Gateway
                       Load Balancer target groups. See target_failover for more information.
@@ -1966,7 +1970,8 @@ spec:
                               value, send traffic to all targets, including unhealthy
                               targets. The possible values are 1 to the maximum number
                               of targets. The default is 1.
-                            type: number
+                            format: int64
+                            type: integer
                           minimumHealthyTargetsPercentage:
                             description: The minimum percentage of targets that must
                               be healthy. If the percentage of healthy targets is
@@ -1992,7 +1997,8 @@ spec:
                             to complete when a target becomes unhealthy. The range
                             is 0-360000. This value has to be set only if enable_unhealthy_connection_termination
                             is set to false. Default: 0.'
-                          type: number
+                          format: int64
+                          type: integer
                       type: object
                     type: array
                   targetType:
@@ -2286,13 +2292,15 @@ spec:
                         description: Number of consecutive health check successes
                           required before considering a target healthy. The range
                           is 2-10. Defaults to 3.
-                        type: number
+                        format: int64
+                        type: integer
                       interval:
                         description: Approximate amount of time, in seconds, between
                           health checks of an individual target. The range is 5-300.
                           For lambda target groups, it needs to be greater than the
                           timeout of the underlying lambda. Defaults to 30.
-                        type: number
+                        format: int64
+                        type: integer
                       matcher:
                         description: separated individual values (e.g., "200,202")
                           or a range of values (e.g., "200-299").
@@ -2324,12 +2332,14 @@ spec:
                           of TCP, TLS or HTTPS, the default is 10 seconds. For target
                           groups with a protocol of GENEVE, the default is 5 seconds.
                           If the target type is lambda, the default is 30 seconds.
-                        type: number
+                        format: int64
+                        type: integer
                       unhealthyThreshold:
                         description: Number of consecutive health check failures required
                           before considering a target unhealthy. The range is 2-10.
                           Defaults to 3.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   id:
                     description: ARN of the Target Group (matches arn).
@@ -2380,7 +2390,8 @@ spec:
                       targets receive traffic, unless overridden when registering
                       a specific target. Required when target_type is instance, ip
                       or alb. Does not apply when target_type is lambda.
-                    type: number
+                    format: int64
+                    type: integer
                   preserveClientIp:
                     description: Whether client IP preservation is enabled. See doc
                       for more information.
@@ -2408,7 +2419,8 @@ spec:
                     description: Amount time for targets to warm up before the load
                       balancer sends them a full share of requests. The range is 30-900
                       seconds or 0 to disable. The default value is 0 seconds.
-                    type: number
+                    format: int64
+                    type: integer
                   stickiness:
                     description: Stickiness configuration block. Detailed below.
                     properties:
@@ -2419,7 +2431,8 @@ spec:
                           expires, the load balancer-generated cookie is considered
                           stale. The range is 1 second to 1 week (604800 seconds).
                           The default value is 1 day (86400 seconds).
-                        type: number
+                        format: int64
+                        type: integer
                       cookieName:
                         description: Name of the application based cookie. AWSALB,
                           AWSALBAPP, and AWSALBTG prefixes are reserved and cannot
@@ -2504,7 +2517,8 @@ spec:
                               value, send traffic to all targets, including unhealthy
                               targets. The possible values are 1 to the maximum number
                               of targets. The default is 1.
-                            type: number
+                            format: int64
+                            type: integer
                           minimumHealthyTargetsPercentage:
                             description: The minimum percentage of targets that must
                               be healthy. If the percentage of healthy targets is
@@ -2530,7 +2544,8 @@ spec:
                             to complete when a target becomes unhealthy. The range
                             is 0-360000. This value has to be set only if enable_unhealthy_connection_termination
                             is set to false. Default: 0.'
-                          type: number
+                          format: int64
+                          type: integer
                       type: object
                     type: array
                   targetType:

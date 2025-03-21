@@ -3132,12 +3132,6 @@ spec:
                       user in your directory. If the Domain's AuthMode is not SSO,
                       this field cannot be specified.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   userProfileName:
                     description: The name for the User Profile.
                     type: string
@@ -3304,7 +3298,8 @@ spec:
                                     description: The time that SageMaker waits after
                                       the application becomes idle before shutting
                                       it down. Valid values are between 60 and 525600.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                   lifecycleManagement:
                                     description: Indicates whether idle shutdown is
                                       activated for the application type. Valid values
@@ -3314,12 +3309,14 @@ spec:
                                     description: The maximum value in minutes that
                                       custom idle shutdown can be set to by the user.
                                       Valid values are between 60 and 525600.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                   minIdleTimeoutInMinutes:
                                     description: The minimum value in minutes that
                                       custom idle shutdown can be set to by the user.
                                       Valid values are between 60 and 525600.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                             type: object
                           builtInLifecycleConfigArn:
@@ -3341,7 +3338,8 @@ spec:
                                   type: string
                                 imageVersionNumber:
                                   description: The version number of the Custom Image.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             type: array
                           defaultResourceSpec:
@@ -3410,10 +3408,12 @@ spec:
                         properties:
                           gid:
                             description: The POSIX group ID.
-                            type: number
+                            format: int64
+                            type: integer
                           uid:
                             description: The POSIX user ID.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       defaultLandingUri:
                         description: 'The default experience that the user is directed
@@ -3443,7 +3443,8 @@ spec:
                                     description: The time that SageMaker waits after
                                       the application becomes idle before shutting
                                       it down. Valid values are between 60 and 525600.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                   lifecycleManagement:
                                     description: Indicates whether idle shutdown is
                                       activated for the application type. Valid values
@@ -3453,12 +3454,14 @@ spec:
                                     description: The maximum value in minutes that
                                       custom idle shutdown can be set to by the user.
                                       Valid values are between 60 and 525600.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                   minIdleTimeoutInMinutes:
                                     description: The minimum value in minutes that
                                       custom idle shutdown can be set to by the user.
                                       Valid values are between 60 and 525600.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                             type: object
                           builtInLifecycleConfigArn:
@@ -3491,7 +3494,8 @@ spec:
                                   type: string
                                 imageVersionNumber:
                                   description: The version number of the Custom Image.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             type: array
                           defaultResourceSpec:
@@ -3636,7 +3640,8 @@ spec:
                                   type: string
                                 imageVersionNumber:
                                   description: The version number of the Custom Image.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             type: array
                           defaultResourceSpec:
@@ -3691,7 +3696,8 @@ spec:
                                   type: string
                                 imageVersionNumber:
                                   description: The version number of the Custom Image.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             type: array
                           defaultResourceSpec:
@@ -3776,11 +3782,13 @@ spec:
                               defaultEbsVolumeSizeInGb:
                                 description: The default size of the EBS storage volume
                                   for a private space.
-                                type: number
+                                format: int64
+                                type: integer
                               maximumEbsVolumeSizeInGb:
                                 description: The maximum size of the EBS storage volume
                                   for a private space.
-                                type: number
+                                format: int64
+                                type: integer
                             type: object
                         type: object
                       studioWebPortal:
@@ -3953,12 +3961,6 @@ spec:
                       user in your directory. If the Domain's AuthMode is not SSO,
                       this field cannot be specified.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   userProfileName:
                     description: The name for the User Profile.
                     type: string
@@ -4125,7 +4127,8 @@ spec:
                                     description: The time that SageMaker waits after
                                       the application becomes idle before shutting
                                       it down. Valid values are between 60 and 525600.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                   lifecycleManagement:
                                     description: Indicates whether idle shutdown is
                                       activated for the application type. Valid values
@@ -4135,12 +4138,14 @@ spec:
                                     description: The maximum value in minutes that
                                       custom idle shutdown can be set to by the user.
                                       Valid values are between 60 and 525600.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                   minIdleTimeoutInMinutes:
                                     description: The minimum value in minutes that
                                       custom idle shutdown can be set to by the user.
                                       Valid values are between 60 and 525600.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                             type: object
                           builtInLifecycleConfigArn:
@@ -4162,7 +4167,8 @@ spec:
                                   type: string
                                 imageVersionNumber:
                                   description: The version number of the Custom Image.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             type: array
                           defaultResourceSpec:
@@ -4231,10 +4237,12 @@ spec:
                         properties:
                           gid:
                             description: The POSIX group ID.
-                            type: number
+                            format: int64
+                            type: integer
                           uid:
                             description: The POSIX user ID.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       defaultLandingUri:
                         description: 'The default experience that the user is directed
@@ -4264,7 +4272,8 @@ spec:
                                     description: The time that SageMaker waits after
                                       the application becomes idle before shutting
                                       it down. Valid values are between 60 and 525600.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                   lifecycleManagement:
                                     description: Indicates whether idle shutdown is
                                       activated for the application type. Valid values
@@ -4274,12 +4283,14 @@ spec:
                                     description: The maximum value in minutes that
                                       custom idle shutdown can be set to by the user.
                                       Valid values are between 60 and 525600.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                   minIdleTimeoutInMinutes:
                                     description: The minimum value in minutes that
                                       custom idle shutdown can be set to by the user.
                                       Valid values are between 60 and 525600.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                             type: object
                           builtInLifecycleConfigArn:
@@ -4312,7 +4323,8 @@ spec:
                                   type: string
                                 imageVersionNumber:
                                   description: The version number of the Custom Image.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             type: array
                           defaultResourceSpec:
@@ -4457,7 +4469,8 @@ spec:
                                   type: string
                                 imageVersionNumber:
                                   description: The version number of the Custom Image.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             type: array
                           defaultResourceSpec:
@@ -4512,7 +4525,8 @@ spec:
                                   type: string
                                 imageVersionNumber:
                                   description: The version number of the Custom Image.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             type: array
                           defaultResourceSpec:
@@ -4597,11 +4611,13 @@ spec:
                               defaultEbsVolumeSizeInGb:
                                 description: The default size of the EBS storage volume
                                   for a private space.
-                                type: number
+                                format: int64
+                                type: integer
                               maximumEbsVolumeSizeInGb:
                                 description: The maximum size of the EBS storage volume
                                   for a private space.
-                                type: number
+                                format: int64
+                                type: integer
                             type: object
                         type: object
                       studioWebPortal:
@@ -5052,7 +5068,8 @@ spec:
                                     description: The time that SageMaker waits after
                                       the application becomes idle before shutting
                                       it down. Valid values are between 60 and 525600.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                   lifecycleManagement:
                                     description: Indicates whether idle shutdown is
                                       activated for the application type. Valid values
@@ -5062,12 +5079,14 @@ spec:
                                     description: The maximum value in minutes that
                                       custom idle shutdown can be set to by the user.
                                       Valid values are between 60 and 525600.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                   minIdleTimeoutInMinutes:
                                     description: The minimum value in minutes that
                                       custom idle shutdown can be set to by the user.
                                       Valid values are between 60 and 525600.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                             type: object
                           builtInLifecycleConfigArn:
@@ -5089,7 +5108,8 @@ spec:
                                   type: string
                                 imageVersionNumber:
                                   description: The version number of the Custom Image.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             type: array
                           defaultResourceSpec:
@@ -5158,10 +5178,12 @@ spec:
                         properties:
                           gid:
                             description: The POSIX group ID.
-                            type: number
+                            format: int64
+                            type: integer
                           uid:
                             description: The POSIX user ID.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       defaultLandingUri:
                         description: 'The default experience that the user is directed
@@ -5191,7 +5213,8 @@ spec:
                                     description: The time that SageMaker waits after
                                       the application becomes idle before shutting
                                       it down. Valid values are between 60 and 525600.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                   lifecycleManagement:
                                     description: Indicates whether idle shutdown is
                                       activated for the application type. Valid values
@@ -5201,12 +5224,14 @@ spec:
                                     description: The maximum value in minutes that
                                       custom idle shutdown can be set to by the user.
                                       Valid values are between 60 and 525600.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                   minIdleTimeoutInMinutes:
                                     description: The minimum value in minutes that
                                       custom idle shutdown can be set to by the user.
                                       Valid values are between 60 and 525600.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                             type: object
                           builtInLifecycleConfigArn:
@@ -5239,7 +5264,8 @@ spec:
                                   type: string
                                 imageVersionNumber:
                                   description: The version number of the Custom Image.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             type: array
                           defaultResourceSpec:
@@ -5384,7 +5410,8 @@ spec:
                                   type: string
                                 imageVersionNumber:
                                   description: The version number of the Custom Image.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             type: array
                           defaultResourceSpec:
@@ -5439,7 +5466,8 @@ spec:
                                   type: string
                                 imageVersionNumber:
                                   description: The version number of the Custom Image.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             type: array
                           defaultResourceSpec:
@@ -5524,11 +5552,13 @@ spec:
                               defaultEbsVolumeSizeInGb:
                                 description: The default size of the EBS storage volume
                                   for a private space.
-                                type: number
+                                format: int64
+                                type: integer
                               maximumEbsVolumeSizeInGb:
                                 description: The maximum size of the EBS storage volume
                                   for a private space.
-                                type: number
+                                format: int64
+                                type: integer
                             type: object
                         type: object
                       studioWebPortal:

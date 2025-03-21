@@ -92,18 +92,13 @@ spec:
                     description: The name of the storage tier. Valid values are archive
                       and standard. Default value is standard.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   temporaryRestoreDays:
                     description: Specifies the number of days for which to temporarily
                       restore an archived snapshot. Required for temporary restores
                       only. The snapshot will be automatically re-archived after this
                       period.
-                    type: number
+                    format: int64
+                    type: integer
                   volumeId:
                     description: The Volume ID of which to make a snapshot.
                     type: string
@@ -212,18 +207,13 @@ spec:
                     description: The name of the storage tier. Valid values are archive
                       and standard. Default value is standard.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   temporaryRestoreDays:
                     description: Specifies the number of days for which to temporarily
                       restore an archived snapshot. Required for temporary restores
                       only. The snapshot will be automatically re-archived after this
                       period.
-                    type: number
+                    format: int64
+                    type: integer
                   volumeId:
                     description: The Volume ID of which to make a snapshot.
                     type: string
@@ -530,13 +520,15 @@ spec:
                       restore an archived snapshot. Required for temporary restores
                       only. The snapshot will be automatically re-archived after this
                       period.
-                    type: number
+                    format: int64
+                    type: integer
                   volumeId:
                     description: The Volume ID of which to make a snapshot.
                     type: string
                   volumeSize:
                     description: The size of the drive in GiBs.
-                    type: number
+                    format: int64
+                    type: integer
                 type: object
               conditions:
                 description: Conditions of the resource.

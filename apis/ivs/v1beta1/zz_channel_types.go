@@ -27,10 +27,6 @@ type ChannelInitParameters struct {
 	// Recording configuration ARN.
 	RecordingConfigurationArn *string `json:"recordingConfigurationArn,omitempty" tf:"recording_configuration_arn,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Channel type, which determines the allowable resolution and bitrate. Valid values: STANDARD, BASIC.
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
 }
@@ -94,11 +90,6 @@ type ChannelParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Channel type, which determines the allowable resolution and bitrate. Valid values: STANDARD, BASIC.
 	// +kubebuilder:validation:Optional

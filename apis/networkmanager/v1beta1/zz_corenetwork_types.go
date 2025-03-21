@@ -43,10 +43,6 @@ type CoreNetworkInitParameters struct {
 	// Selector for a GlobalNetwork in networkmanager to populate globalNetworkId.
 	// +kubebuilder:validation:Optional
 	GlobalNetworkIDSelector *v1.Selector `json:"globalNetworkIdSelector,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type CoreNetworkObservation struct {
@@ -138,11 +134,6 @@ type CoreNetworkParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type EdgesInitParameters struct {
@@ -151,7 +142,7 @@ type EdgesInitParameters struct {
 type EdgesObservation struct {
 
 	// ASN of a core network edge.
-	Asn *float64 `json:"asn,omitempty" tf:"asn,omitempty"`
+	Asn *int64 `json:"asn,omitempty" tf:"asn,omitempty"`
 
 	// Region where a core network edge is located.
 	EdgeLocation *string `json:"edgeLocation,omitempty" tf:"edge_location,omitempty"`

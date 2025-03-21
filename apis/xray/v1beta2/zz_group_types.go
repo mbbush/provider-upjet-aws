@@ -23,10 +23,6 @@ type GroupInitParameters struct {
 
 	// Configuration options for enabling insights.
 	InsightsConfiguration *InsightsConfigurationInitParameters `json:"insightsConfiguration,omitempty" tf:"insights_configuration,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type GroupObservation struct {
@@ -73,11 +69,6 @@ type GroupParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type InsightsConfigurationInitParameters struct {

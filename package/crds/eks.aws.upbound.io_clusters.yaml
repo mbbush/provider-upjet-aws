@@ -2131,12 +2131,6 @@ spec:
                             type: boolean
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   upgradePolicy:
                     description: Configuration block for the support policy to use
                       for the cluster.  See upgrade_policy for details.
@@ -2645,12 +2639,6 @@ spec:
                             type: boolean
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   upgradePolicy:
                     description: Configuration block for the support policy to use
                       for the cluster.  See upgrade_policy for details.

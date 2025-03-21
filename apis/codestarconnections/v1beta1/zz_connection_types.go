@@ -23,10 +23,6 @@ type ConnectionInitParameters struct {
 
 	// The name of the external provider where your third-party code repository is configured. Valid values are Bitbucket, GitHub, GitHubEnterpriseServer, GitLab or GitLabSelfManaged. Changing provider_type will create a new resource. Conflicts with host_arn
 	ProviderType *string `json:"providerType,omitempty" tf:"provider_type,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type ConnectionObservation struct {
@@ -76,11 +72,6 @@ type ConnectionParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // ConnectionSpec defines the desired state of Connection

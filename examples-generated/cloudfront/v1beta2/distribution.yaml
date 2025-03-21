@@ -96,8 +96,6 @@ spec:
         - GB
         - DE
         restrictionType: whitelist
-    tags:
-      Environment: production
     viewerCertificate:
     - cloudfrontDefaultCertificate: true
 
@@ -115,8 +113,6 @@ metadata:
 spec:
   forProvider:
     region: us-west-1
-    tags:
-      Name: My bucket
 
 ---
 

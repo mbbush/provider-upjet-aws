@@ -2376,7 +2376,8 @@ spec:
                       the lower the number the higher the priority. Tasks in a Maintenance
                       Window are scheduled in priority order with tasks that have
                       the same priority scheduled in parallel.
-                    type: number
+                    format: int64
+                    type: integer
                   region:
                     description: Region is the region you'd like your resource to
                       be created in.
@@ -3089,7 +3090,8 @@ spec:
                           timeoutSeconds:
                             description: If this time is reached and the command has
                               not already started executing, it doesn't run.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       stepFunctionsParameters:
                         description: The parameters for a STEP_FUNCTIONS task type.
@@ -3241,7 +3243,8 @@ spec:
                       the lower the number the higher the priority. Tasks in a Maintenance
                       Window are scheduled in priority order with tasks that have
                       the same priority scheduled in parallel.
-                    type: number
+                    format: int64
+                    type: integer
                   serviceRoleArn:
                     description: The role that should be assumed when executing the
                       task. If a role is not provided, Systems Manager uses your account's
@@ -3950,7 +3953,8 @@ spec:
                           timeoutSeconds:
                             description: If this time is reached and the command has
                               not already started executing, it doesn't run.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       stepFunctionsParameters:
                         description: The parameters for a STEP_FUNCTIONS task type.
@@ -4271,7 +4275,8 @@ spec:
                       the lower the number the higher the priority. Tasks in a Maintenance
                       Window are scheduled in priority order with tasks that have
                       the same priority scheduled in parallel.
-                    type: number
+                    format: int64
+                    type: integer
                   serviceRoleArn:
                     description: The role that should be assumed when executing the
                       task. If a role is not provided, Systems Manager uses your account's
@@ -4433,7 +4438,8 @@ spec:
                           timeoutSeconds:
                             description: If this time is reached and the command has
                               not already started executing, it doesn't run.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       stepFunctionsParameters:
                         description: The parameters for a STEP_FUNCTIONS task type.

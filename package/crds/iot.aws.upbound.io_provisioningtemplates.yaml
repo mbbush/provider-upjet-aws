@@ -776,12 +776,6 @@ spec:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   templateBody:
                     description: The JSON formatted contents of the fleet provisioning
                       template.
@@ -904,12 +898,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   templateBody:
                     description: The JSON formatted contents of the fleet provisioning
                       template.
@@ -1101,7 +1089,8 @@ spec:
                     type: string
                   defaultVersionId:
                     description: The default version of the fleet provisioning template.
-                    type: number
+                    format: int64
+                    type: integer
                   description:
                     description: The description of the fleet provisioning template.
                     type: string

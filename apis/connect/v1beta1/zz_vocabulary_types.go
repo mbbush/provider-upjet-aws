@@ -36,10 +36,6 @@ type VocabularyInitParameters struct {
 
 	// A unique name of the custom vocabulary. Must not be more than 140 characters.
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type VocabularyObservation struct {
@@ -116,11 +112,6 @@ type VocabularyParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // VocabularySpec defines the desired state of Vocabulary

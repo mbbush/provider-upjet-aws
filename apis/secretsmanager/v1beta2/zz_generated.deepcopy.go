@@ -18,7 +18,7 @@ func (in *RotationRulesInitParameters) DeepCopyInto(out *RotationRulesInitParame
 	*out = *in
 	if in.AutomaticallyAfterDays != nil {
 		in, out := &in.AutomaticallyAfterDays, &out.AutomaticallyAfterDays
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Duration != nil {
@@ -48,7 +48,7 @@ func (in *RotationRulesObservation) DeepCopyInto(out *RotationRulesObservation) 
 	*out = *in
 	if in.AutomaticallyAfterDays != nil {
 		in, out := &in.AutomaticallyAfterDays, &out.AutomaticallyAfterDays
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Duration != nil {
@@ -78,7 +78,7 @@ func (in *RotationRulesParameters) DeepCopyInto(out *RotationRulesParameters) {
 	*out = *in
 	if in.AutomaticallyAfterDays != nil {
 		in, out := &in.AutomaticallyAfterDays, &out.AutomaticallyAfterDays
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Duration != nil {

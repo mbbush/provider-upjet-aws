@@ -26,10 +26,6 @@ type UserInitParameters struct {
 
 	// The ARN of the policy that is used to set the permissions boundary for the user.
 	PermissionsBoundary *string `json:"permissionsBoundary,omitempty" tf:"permissions_boundary,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type UserObservation struct {
@@ -80,11 +76,6 @@ type UserParameters struct {
 	// The ARN of the policy that is used to set the permissions boundary for the user.
 	// +kubebuilder:validation:Optional
 	PermissionsBoundary *string `json:"permissionsBoundary,omitempty" tf:"permissions_boundary,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // UserSpec defines the desired state of User

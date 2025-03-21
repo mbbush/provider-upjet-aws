@@ -1091,7 +1091,8 @@ spec:
                     description: |-
                       node cluster, without any read
                       replicas
-                    type: number
+                    format: int64
+                    type: integer
                   securityGroupIdRefs:
                     description: References to SecurityGroup in ec2 to populate securityGroupIds.
                     items:
@@ -1191,12 +1192,6 @@ spec:
                       –  Name of the subnet group to be used for the
                       cluster
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -1333,7 +1328,8 @@ spec:
                     description: |-
                       node cluster, without any read
                       replicas
-                    type: number
+                    format: int64
+                    type: integer
                   securityGroupIdRefs:
                     description: References to SecurityGroup in ec2 to populate securityGroupIds.
                     items:
@@ -1433,12 +1429,6 @@ spec:
                       –  Name of the subnet group to be used for the
                       cluster
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -1684,7 +1674,8 @@ spec:
                           type: string
                         port:
                           description: The port used by the configuration endpoint
-                          type: number
+                          format: int64
+                          type: integer
                       type: object
                     type: array
                   notificationTopicArn:
@@ -1697,12 +1688,14 @@ spec:
                     type: string
                   port:
                     description: The port used by the configuration endpoint
-                    type: number
+                    format: int64
+                    type: integer
                   replicationFactor:
                     description: |-
                       node cluster, without any read
                       replicas
-                    type: number
+                    format: int64
+                    type: integer
                   securityGroupIds:
                     description: |-
                       –  One or more VPC security groups associated

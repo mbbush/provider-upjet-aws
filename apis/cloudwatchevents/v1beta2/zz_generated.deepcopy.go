@@ -307,12 +307,12 @@ func (in *BatchTargetInitParameters) DeepCopyInto(out *BatchTargetInitParameters
 	*out = *in
 	if in.ArraySize != nil {
 		in, out := &in.ArraySize, &out.ArraySize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.JobAttempts != nil {
 		in, out := &in.JobAttempts, &out.JobAttempts
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.JobDefinition != nil {
@@ -342,12 +342,12 @@ func (in *BatchTargetObservation) DeepCopyInto(out *BatchTargetObservation) {
 	*out = *in
 	if in.ArraySize != nil {
 		in, out := &in.ArraySize, &out.ArraySize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.JobAttempts != nil {
 		in, out := &in.JobAttempts, &out.JobAttempts
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.JobDefinition != nil {
@@ -377,12 +377,12 @@ func (in *BatchTargetParameters) DeepCopyInto(out *BatchTargetParameters) {
 	*out = *in
 	if in.ArraySize != nil {
 		in, out := &in.ArraySize, &out.ArraySize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.JobAttempts != nil {
 		in, out := &in.JobAttempts, &out.JobAttempts
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.JobDefinition != nil {
@@ -497,7 +497,7 @@ func (in *CapacityProviderStrategyInitParameters) DeepCopyInto(out *CapacityProv
 	*out = *in
 	if in.Base != nil {
 		in, out := &in.Base, &out.Base
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.CapacityProvider != nil {
@@ -507,7 +507,7 @@ func (in *CapacityProviderStrategyInitParameters) DeepCopyInto(out *CapacityProv
 	}
 	if in.Weight != nil {
 		in, out := &in.Weight, &out.Weight
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -527,7 +527,7 @@ func (in *CapacityProviderStrategyObservation) DeepCopyInto(out *CapacityProvide
 	*out = *in
 	if in.Base != nil {
 		in, out := &in.Base, &out.Base
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.CapacityProvider != nil {
@@ -537,7 +537,7 @@ func (in *CapacityProviderStrategyObservation) DeepCopyInto(out *CapacityProvide
 	}
 	if in.Weight != nil {
 		in, out := &in.Weight, &out.Weight
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -557,7 +557,7 @@ func (in *CapacityProviderStrategyParameters) DeepCopyInto(out *CapacityProvider
 	*out = *in
 	if in.Base != nil {
 		in, out := &in.Base, &out.Base
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.CapacityProvider != nil {
@@ -567,7 +567,7 @@ func (in *CapacityProviderStrategyParameters) DeepCopyInto(out *CapacityProvider
 	}
 	if in.Weight != nil {
 		in, out := &in.Weight, &out.Weight
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1077,25 +1077,9 @@ func (in *EcsTargetInitParameters) DeepCopyInto(out *EcsTargetInitParameters) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.TaskCount != nil {
 		in, out := &in.TaskCount, &out.TaskCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.TaskDefinitionArn != nil {
@@ -1202,7 +1186,7 @@ func (in *EcsTargetObservation) DeepCopyInto(out *EcsTargetObservation) {
 	}
 	if in.TaskCount != nil {
 		in, out := &in.TaskCount, &out.TaskCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.TaskDefinitionArn != nil {
@@ -1281,25 +1265,9 @@ func (in *EcsTargetParameters) DeepCopyInto(out *EcsTargetParameters) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.TaskCount != nil {
 		in, out := &in.TaskCount, &out.TaskCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.TaskDefinitionArn != nil {
@@ -3152,12 +3120,12 @@ func (in *RetryPolicyInitParameters) DeepCopyInto(out *RetryPolicyInitParameters
 	*out = *in
 	if in.MaximumEventAgeInSeconds != nil {
 		in, out := &in.MaximumEventAgeInSeconds, &out.MaximumEventAgeInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaximumRetryAttempts != nil {
 		in, out := &in.MaximumRetryAttempts, &out.MaximumRetryAttempts
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -3177,12 +3145,12 @@ func (in *RetryPolicyObservation) DeepCopyInto(out *RetryPolicyObservation) {
 	*out = *in
 	if in.MaximumEventAgeInSeconds != nil {
 		in, out := &in.MaximumEventAgeInSeconds, &out.MaximumEventAgeInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaximumRetryAttempts != nil {
 		in, out := &in.MaximumRetryAttempts, &out.MaximumRetryAttempts
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -3202,12 +3170,12 @@ func (in *RetryPolicyParameters) DeepCopyInto(out *RetryPolicyParameters) {
 	*out = *in
 	if in.MaximumEventAgeInSeconds != nil {
 		in, out := &in.MaximumEventAgeInSeconds, &out.MaximumEventAgeInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaximumRetryAttempts != nil {
 		in, out := &in.MaximumRetryAttempts, &out.MaximumRetryAttempts
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }

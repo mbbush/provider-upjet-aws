@@ -21,10 +21,6 @@ type PrivateDNSNamespaceInitParameters struct {
 	// The name of the namespace.
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// The ID of VPC that you want to associate the namespace with.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/ec2/v1beta1.VPC
 	VPC *string `json:"vpc,omitempty" tf:"vpc,omitempty"`
@@ -81,11 +77,6 @@ type PrivateDNSNamespaceParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// The ID of VPC that you want to associate the namespace with.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/ec2/v1beta1.VPC

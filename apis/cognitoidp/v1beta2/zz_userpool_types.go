@@ -687,10 +687,10 @@ type NumberAttributeConstraintsParameters struct {
 type PasswordPolicyInitParameters struct {
 
 	// Minimum length of the password policy that you have set.
-	MinimumLength *float64 `json:"minimumLength,omitempty" tf:"minimum_length,omitempty"`
+	MinimumLength *int64 `json:"minimumLength,omitempty" tf:"minimum_length,omitempty"`
 
 	// Number of previous passwords that you want Amazon Cognito to restrict each user from reusing. Users can't set a password that matches any of number of previous passwords specified by this argument. A value of 0 means that password history is not enforced. Valid values are between 0 and 24.
-	PasswordHistorySize *float64 `json:"passwordHistorySize,omitempty" tf:"password_history_size,omitempty"`
+	PasswordHistorySize *int64 `json:"passwordHistorySize,omitempty" tf:"password_history_size,omitempty"`
 
 	// Whether you have required users to use at least one lowercase letter in their password.
 	RequireLowercase *bool `json:"requireLowercase,omitempty" tf:"require_lowercase,omitempty"`
@@ -705,16 +705,16 @@ type PasswordPolicyInitParameters struct {
 	RequireUppercase *bool `json:"requireUppercase,omitempty" tf:"require_uppercase,omitempty"`
 
 	// In the password policy you have set, refers to the number of days a temporary password is valid. If the user does not sign-in during this time, their password will need to be reset by an administrator.
-	TemporaryPasswordValidityDays *float64 `json:"temporaryPasswordValidityDays,omitempty" tf:"temporary_password_validity_days,omitempty"`
+	TemporaryPasswordValidityDays *int64 `json:"temporaryPasswordValidityDays,omitempty" tf:"temporary_password_validity_days,omitempty"`
 }
 
 type PasswordPolicyObservation struct {
 
 	// Minimum length of the password policy that you have set.
-	MinimumLength *float64 `json:"minimumLength,omitempty" tf:"minimum_length,omitempty"`
+	MinimumLength *int64 `json:"minimumLength,omitempty" tf:"minimum_length,omitempty"`
 
 	// Number of previous passwords that you want Amazon Cognito to restrict each user from reusing. Users can't set a password that matches any of number of previous passwords specified by this argument. A value of 0 means that password history is not enforced. Valid values are between 0 and 24.
-	PasswordHistorySize *float64 `json:"passwordHistorySize,omitempty" tf:"password_history_size,omitempty"`
+	PasswordHistorySize *int64 `json:"passwordHistorySize,omitempty" tf:"password_history_size,omitempty"`
 
 	// Whether you have required users to use at least one lowercase letter in their password.
 	RequireLowercase *bool `json:"requireLowercase,omitempty" tf:"require_lowercase,omitempty"`
@@ -729,18 +729,18 @@ type PasswordPolicyObservation struct {
 	RequireUppercase *bool `json:"requireUppercase,omitempty" tf:"require_uppercase,omitempty"`
 
 	// In the password policy you have set, refers to the number of days a temporary password is valid. If the user does not sign-in during this time, their password will need to be reset by an administrator.
-	TemporaryPasswordValidityDays *float64 `json:"temporaryPasswordValidityDays,omitempty" tf:"temporary_password_validity_days,omitempty"`
+	TemporaryPasswordValidityDays *int64 `json:"temporaryPasswordValidityDays,omitempty" tf:"temporary_password_validity_days,omitempty"`
 }
 
 type PasswordPolicyParameters struct {
 
 	// Minimum length of the password policy that you have set.
 	// +kubebuilder:validation:Optional
-	MinimumLength *float64 `json:"minimumLength,omitempty" tf:"minimum_length,omitempty"`
+	MinimumLength *int64 `json:"minimumLength,omitempty" tf:"minimum_length,omitempty"`
 
 	// Number of previous passwords that you want Amazon Cognito to restrict each user from reusing. Users can't set a password that matches any of number of previous passwords specified by this argument. A value of 0 means that password history is not enforced. Valid values are between 0 and 24.
 	// +kubebuilder:validation:Optional
-	PasswordHistorySize *float64 `json:"passwordHistorySize,omitempty" tf:"password_history_size,omitempty"`
+	PasswordHistorySize *int64 `json:"passwordHistorySize,omitempty" tf:"password_history_size,omitempty"`
 
 	// Whether you have required users to use at least one lowercase letter in their password.
 	// +kubebuilder:validation:Optional
@@ -760,7 +760,7 @@ type PasswordPolicyParameters struct {
 
 	// In the password policy you have set, refers to the number of days a temporary password is valid. If the user does not sign-in during this time, their password will need to be reset by an administrator.
 	// +kubebuilder:validation:Optional
-	TemporaryPasswordValidityDays *float64 `json:"temporaryPasswordValidityDays,omitempty" tf:"temporary_password_validity_days,omitempty"`
+	TemporaryPasswordValidityDays *int64 `json:"temporaryPasswordValidityDays,omitempty" tf:"temporary_password_validity_days,omitempty"`
 }
 
 type PreTokenGenerationConfigInitParameters struct {
@@ -798,7 +798,7 @@ type RecoveryMechanismInitParameters struct {
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
 
 	// Positive integer specifying priority of a method with 1 being the highest priority.
-	Priority *float64 `json:"priority,omitempty" tf:"priority,omitempty"`
+	Priority *int64 `json:"priority,omitempty" tf:"priority,omitempty"`
 }
 
 type RecoveryMechanismObservation struct {
@@ -807,7 +807,7 @@ type RecoveryMechanismObservation struct {
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
 
 	// Positive integer specifying priority of a method with 1 being the highest priority.
-	Priority *float64 `json:"priority,omitempty" tf:"priority,omitempty"`
+	Priority *int64 `json:"priority,omitempty" tf:"priority,omitempty"`
 }
 
 type RecoveryMechanismParameters struct {
@@ -818,7 +818,7 @@ type RecoveryMechanismParameters struct {
 
 	// Positive integer specifying priority of a method with 1 being the highest priority.
 	// +kubebuilder:validation:Optional
-	Priority *float64 `json:"priority" tf:"priority,omitempty"`
+	Priority *int64 `json:"priority" tf:"priority,omitempty"`
 }
 
 type SMSConfigurationInitParameters struct {
@@ -1106,10 +1106,6 @@ type UserPoolInitParameters struct {
 	// Configuration block for software token Mult-Factor Authentication (MFA) settings. Detailed below.
 	SoftwareTokenMfaConfiguration *SoftwareTokenMfaConfigurationInitParameters `json:"softwareTokenMfaConfiguration,omitempty" tf:"software_token_mfa_configuration,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Configuration block for user attribute update settings. Detailed below.
 	UserAttributeUpdateSettings *UserAttributeUpdateSettingsInitParameters `json:"userAttributeUpdateSettings,omitempty" tf:"user_attribute_update_settings,omitempty"`
 
@@ -1174,7 +1170,7 @@ type UserPoolObservation struct {
 	Endpoint *string `json:"endpoint,omitempty" tf:"endpoint,omitempty"`
 
 	// A number estimating the size of the user pool.
-	EstimatedNumberOfUsers *float64 `json:"estimatedNumberOfUsers,omitempty" tf:"estimated_number_of_users,omitempty"`
+	EstimatedNumberOfUsers *int64 `json:"estimatedNumberOfUsers,omitempty" tf:"estimated_number_of_users,omitempty"`
 
 	// ID of the user pool.
 	ID *string `json:"id,omitempty" tf:"id,omitempty"`
@@ -1314,11 +1310,6 @@ type UserPoolParameters struct {
 	// Configuration block for software token Mult-Factor Authentication (MFA) settings. Detailed below.
 	// +kubebuilder:validation:Optional
 	SoftwareTokenMfaConfiguration *SoftwareTokenMfaConfigurationParameters `json:"softwareTokenMfaConfiguration,omitempty" tf:"software_token_mfa_configuration,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Configuration block for user attribute update settings. Detailed below.
 	// +kubebuilder:validation:Optional

@@ -103,30 +103,30 @@ type MagneticStoreWritePropertiesParameters struct {
 type RetentionPropertiesInitParameters struct {
 
 	// The duration for which data must be stored in the magnetic store. Minimum value of 1. Maximum value of 73000.
-	MagneticStoreRetentionPeriodInDays *float64 `json:"magneticStoreRetentionPeriodInDays,omitempty" tf:"magnetic_store_retention_period_in_days,omitempty"`
+	MagneticStoreRetentionPeriodInDays *int64 `json:"magneticStoreRetentionPeriodInDays,omitempty" tf:"magnetic_store_retention_period_in_days,omitempty"`
 
 	// The duration for which data must be stored in the memory store. Minimum value of 1. Maximum value of 8766.
-	MemoryStoreRetentionPeriodInHours *float64 `json:"memoryStoreRetentionPeriodInHours,omitempty" tf:"memory_store_retention_period_in_hours,omitempty"`
+	MemoryStoreRetentionPeriodInHours *int64 `json:"memoryStoreRetentionPeriodInHours,omitempty" tf:"memory_store_retention_period_in_hours,omitempty"`
 }
 
 type RetentionPropertiesObservation struct {
 
 	// The duration for which data must be stored in the magnetic store. Minimum value of 1. Maximum value of 73000.
-	MagneticStoreRetentionPeriodInDays *float64 `json:"magneticStoreRetentionPeriodInDays,omitempty" tf:"magnetic_store_retention_period_in_days,omitempty"`
+	MagneticStoreRetentionPeriodInDays *int64 `json:"magneticStoreRetentionPeriodInDays,omitempty" tf:"magnetic_store_retention_period_in_days,omitempty"`
 
 	// The duration for which data must be stored in the memory store. Minimum value of 1. Maximum value of 8766.
-	MemoryStoreRetentionPeriodInHours *float64 `json:"memoryStoreRetentionPeriodInHours,omitempty" tf:"memory_store_retention_period_in_hours,omitempty"`
+	MemoryStoreRetentionPeriodInHours *int64 `json:"memoryStoreRetentionPeriodInHours,omitempty" tf:"memory_store_retention_period_in_hours,omitempty"`
 }
 
 type RetentionPropertiesParameters struct {
 
 	// The duration for which data must be stored in the magnetic store. Minimum value of 1. Maximum value of 73000.
 	// +kubebuilder:validation:Optional
-	MagneticStoreRetentionPeriodInDays *float64 `json:"magneticStoreRetentionPeriodInDays" tf:"magnetic_store_retention_period_in_days,omitempty"`
+	MagneticStoreRetentionPeriodInDays *int64 `json:"magneticStoreRetentionPeriodInDays" tf:"magnetic_store_retention_period_in_days,omitempty"`
 
 	// The duration for which data must be stored in the memory store. Minimum value of 1. Maximum value of 8766.
 	// +kubebuilder:validation:Optional
-	MemoryStoreRetentionPeriodInHours *float64 `json:"memoryStoreRetentionPeriodInHours" tf:"memory_store_retention_period_in_hours,omitempty"`
+	MemoryStoreRetentionPeriodInHours *int64 `json:"memoryStoreRetentionPeriodInHours" tf:"memory_store_retention_period_in_hours,omitempty"`
 }
 
 type S3ConfigurationInitParameters struct {
@@ -207,10 +207,6 @@ type TableInitParameters struct {
 
 	// The schema of the table. See Schema below for more details.
 	Schema *SchemaInitParameters `json:"schema,omitempty" tf:"schema,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type TableObservation struct {
@@ -280,11 +276,6 @@ type TableParameters struct {
 	// The name of the Timestream table.
 	// +kubebuilder:validation:Required
 	TableName *string `json:"tableName" tf:"table_name,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // TableSpec defines the desired state of Table

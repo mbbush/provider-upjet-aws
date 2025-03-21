@@ -74,10 +74,6 @@ type BudgetInitParameters struct {
 	// Object containing Planned Budget Limits. Can be used multiple times to plan more than one budget limit. See PlannedBudgetLimits documentation.
 	PlannedLimit []PlannedLimitInitParameters `json:"plannedLimit,omitempty" tf:"planned_limit,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// The end of the time period covered by the budget. There are no restrictions on the end date. Format: 2017-01-01_12:00.
 	TimePeriodEnd *string `json:"timePeriodEnd,omitempty" tf:"time_period_end,omitempty"`
 
@@ -183,11 +179,6 @@ type BudgetParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// The end of the time period covered by the budget. There are no restrictions on the end date. Format: 2017-01-01_12:00.
 	// +kubebuilder:validation:Optional
@@ -350,23 +341,23 @@ type CostTypesParameters struct {
 type HistoricalOptionsInitParameters struct {
 
 	// The number of budget periods included in the moving-average calculation that determines your auto-adjusted budget amount.
-	BudgetAdjustmentPeriod *float64 `json:"budgetAdjustmentPeriod,omitempty" tf:"budget_adjustment_period,omitempty"`
+	BudgetAdjustmentPeriod *int64 `json:"budgetAdjustmentPeriod,omitempty" tf:"budget_adjustment_period,omitempty"`
 }
 
 type HistoricalOptionsObservation struct {
 
 	// The number of budget periods included in the moving-average calculation that determines your auto-adjusted budget amount.
-	BudgetAdjustmentPeriod *float64 `json:"budgetAdjustmentPeriod,omitempty" tf:"budget_adjustment_period,omitempty"`
+	BudgetAdjustmentPeriod *int64 `json:"budgetAdjustmentPeriod,omitempty" tf:"budget_adjustment_period,omitempty"`
 
 	// The integer that describes how many budget periods in your BudgetAdjustmentPeriod are included in the calculation of your current budget limit. If the first budget period in your BudgetAdjustmentPeriod has no cost data, then that budget period isn’t included in the average that determines your budget limit. You can’t set your own LookBackAvailablePeriods. The value is automatically calculated from the budget_adjustment_period and your historical cost data.
-	LookbackAvailablePeriods *float64 `json:"lookbackAvailablePeriods,omitempty" tf:"lookback_available_periods,omitempty"`
+	LookbackAvailablePeriods *int64 `json:"lookbackAvailablePeriods,omitempty" tf:"lookback_available_periods,omitempty"`
 }
 
 type HistoricalOptionsParameters struct {
 
 	// The number of budget periods included in the moving-average calculation that determines your auto-adjusted budget amount.
 	// +kubebuilder:validation:Optional
-	BudgetAdjustmentPeriod *float64 `json:"budgetAdjustmentPeriod" tf:"budget_adjustment_period,omitempty"`
+	BudgetAdjustmentPeriod *int64 `json:"budgetAdjustmentPeriod" tf:"budget_adjustment_period,omitempty"`
 }
 
 type NotificationInitParameters struct {

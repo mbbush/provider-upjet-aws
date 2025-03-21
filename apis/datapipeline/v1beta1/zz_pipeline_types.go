@@ -20,10 +20,6 @@ type PipelineInitParameters struct {
 
 	// The name of Pipeline.
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type PipelineObservation struct {
@@ -60,11 +56,6 @@ type PipelineParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // PipelineSpec defines the desired state of Pipeline

@@ -77,10 +77,6 @@ type VPCEndpointServiceInitParameters struct {
 	// The set of regions from which service consumers can access the service.
 	// +listType=set
 	SupportedRegions []*string `json:"supportedRegions,omitempty" tf:"supported_regions,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type VPCEndpointServiceObservation struct {
@@ -203,11 +199,6 @@ type VPCEndpointServiceParameters struct {
 	// +kubebuilder:validation:Optional
 	// +listType=set
 	SupportedRegions []*string `json:"supportedRegions,omitempty" tf:"supported_regions,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // VPCEndpointServiceSpec defines the desired state of VPCEndpointService

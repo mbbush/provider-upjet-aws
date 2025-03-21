@@ -18,7 +18,7 @@ func (in *EncryptionConfigurationInitParameters) DeepCopyInto(out *EncryptionCon
 	*out = *in
 	if in.KMSDataKeyReusePeriodSeconds != nil {
 		in, out := &in.KMSDataKeyReusePeriodSeconds, &out.KMSDataKeyReusePeriodSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.KMSKeyID != nil {
@@ -58,7 +58,7 @@ func (in *EncryptionConfigurationObservation) DeepCopyInto(out *EncryptionConfig
 	*out = *in
 	if in.KMSDataKeyReusePeriodSeconds != nil {
 		in, out := &in.KMSDataKeyReusePeriodSeconds, &out.KMSDataKeyReusePeriodSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.KMSKeyID != nil {
@@ -88,7 +88,7 @@ func (in *EncryptionConfigurationParameters) DeepCopyInto(out *EncryptionConfigu
 	*out = *in
 	if in.KMSDataKeyReusePeriodSeconds != nil {
 		in, out := &in.KMSDataKeyReusePeriodSeconds, &out.KMSDataKeyReusePeriodSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.KMSKeyID != nil {
@@ -277,22 +277,6 @@ func (in *StateMachineInitParameters) DeepCopyInto(out *StateMachineInitParamete
 		in, out := &in.RoleArnSelector, &out.RoleArnSelector
 		*out = new(v1.Selector)
 		(*in).DeepCopyInto(*out)
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.TracingConfiguration != nil {
 		in, out := &in.TracingConfiguration, &out.TracingConfiguration
@@ -512,22 +496,6 @@ func (in *StateMachineParameters) DeepCopyInto(out *StateMachineParameters) {
 		in, out := &in.RoleArnSelector, &out.RoleArnSelector
 		*out = new(v1.Selector)
 		(*in).DeepCopyInto(*out)
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.TracingConfiguration != nil {
 		in, out := &in.TracingConfiguration, &out.TracingConfiguration

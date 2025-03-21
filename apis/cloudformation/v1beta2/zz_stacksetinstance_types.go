@@ -164,16 +164,16 @@ type StackSetInstanceOperationPreferencesInitParameters struct {
 	ConcurrencyMode *string `json:"concurrencyMode,omitempty" tf:"concurrency_mode,omitempty"`
 
 	// Number of accounts, per Region, for which this operation can fail before AWS CloudFormation stops the operation in that Region.
-	FailureToleranceCount *float64 `json:"failureToleranceCount,omitempty" tf:"failure_tolerance_count,omitempty"`
+	FailureToleranceCount *int64 `json:"failureToleranceCount,omitempty" tf:"failure_tolerance_count,omitempty"`
 
 	// Percentage of accounts, per Region, for which this stack operation can fail before AWS CloudFormation stops the operation in that Region.
-	FailureTolerancePercentage *float64 `json:"failureTolerancePercentage,omitempty" tf:"failure_tolerance_percentage,omitempty"`
+	FailureTolerancePercentage *int64 `json:"failureTolerancePercentage,omitempty" tf:"failure_tolerance_percentage,omitempty"`
 
 	// Maximum number of accounts in which to perform this operation at one time.
-	MaxConcurrentCount *float64 `json:"maxConcurrentCount,omitempty" tf:"max_concurrent_count,omitempty"`
+	MaxConcurrentCount *int64 `json:"maxConcurrentCount,omitempty" tf:"max_concurrent_count,omitempty"`
 
 	// Maximum percentage of accounts in which to perform this operation at one time.
-	MaxConcurrentPercentage *float64 `json:"maxConcurrentPercentage,omitempty" tf:"max_concurrent_percentage,omitempty"`
+	MaxConcurrentPercentage *int64 `json:"maxConcurrentPercentage,omitempty" tf:"max_concurrent_percentage,omitempty"`
 
 	// Concurrency type of deploying StackSets operations in Regions, could be in parallel or one Region at a time. Valid values are SEQUENTIAL and PARALLEL.
 	RegionConcurrencyType *string `json:"regionConcurrencyType,omitempty" tf:"region_concurrency_type,omitempty"`
@@ -188,16 +188,16 @@ type StackSetInstanceOperationPreferencesObservation struct {
 	ConcurrencyMode *string `json:"concurrencyMode,omitempty" tf:"concurrency_mode,omitempty"`
 
 	// Number of accounts, per Region, for which this operation can fail before AWS CloudFormation stops the operation in that Region.
-	FailureToleranceCount *float64 `json:"failureToleranceCount,omitempty" tf:"failure_tolerance_count,omitempty"`
+	FailureToleranceCount *int64 `json:"failureToleranceCount,omitempty" tf:"failure_tolerance_count,omitempty"`
 
 	// Percentage of accounts, per Region, for which this stack operation can fail before AWS CloudFormation stops the operation in that Region.
-	FailureTolerancePercentage *float64 `json:"failureTolerancePercentage,omitempty" tf:"failure_tolerance_percentage,omitempty"`
+	FailureTolerancePercentage *int64 `json:"failureTolerancePercentage,omitempty" tf:"failure_tolerance_percentage,omitempty"`
 
 	// Maximum number of accounts in which to perform this operation at one time.
-	MaxConcurrentCount *float64 `json:"maxConcurrentCount,omitempty" tf:"max_concurrent_count,omitempty"`
+	MaxConcurrentCount *int64 `json:"maxConcurrentCount,omitempty" tf:"max_concurrent_count,omitempty"`
 
 	// Maximum percentage of accounts in which to perform this operation at one time.
-	MaxConcurrentPercentage *float64 `json:"maxConcurrentPercentage,omitempty" tf:"max_concurrent_percentage,omitempty"`
+	MaxConcurrentPercentage *int64 `json:"maxConcurrentPercentage,omitempty" tf:"max_concurrent_percentage,omitempty"`
 
 	// Concurrency type of deploying StackSets operations in Regions, could be in parallel or one Region at a time. Valid values are SEQUENTIAL and PARALLEL.
 	RegionConcurrencyType *string `json:"regionConcurrencyType,omitempty" tf:"region_concurrency_type,omitempty"`
@@ -214,19 +214,19 @@ type StackSetInstanceOperationPreferencesParameters struct {
 
 	// Number of accounts, per Region, for which this operation can fail before AWS CloudFormation stops the operation in that Region.
 	// +kubebuilder:validation:Optional
-	FailureToleranceCount *float64 `json:"failureToleranceCount,omitempty" tf:"failure_tolerance_count,omitempty"`
+	FailureToleranceCount *int64 `json:"failureToleranceCount,omitempty" tf:"failure_tolerance_count,omitempty"`
 
 	// Percentage of accounts, per Region, for which this stack operation can fail before AWS CloudFormation stops the operation in that Region.
 	// +kubebuilder:validation:Optional
-	FailureTolerancePercentage *float64 `json:"failureTolerancePercentage,omitempty" tf:"failure_tolerance_percentage,omitempty"`
+	FailureTolerancePercentage *int64 `json:"failureTolerancePercentage,omitempty" tf:"failure_tolerance_percentage,omitempty"`
 
 	// Maximum number of accounts in which to perform this operation at one time.
 	// +kubebuilder:validation:Optional
-	MaxConcurrentCount *float64 `json:"maxConcurrentCount,omitempty" tf:"max_concurrent_count,omitempty"`
+	MaxConcurrentCount *int64 `json:"maxConcurrentCount,omitempty" tf:"max_concurrent_count,omitempty"`
 
 	// Maximum percentage of accounts in which to perform this operation at one time.
 	// +kubebuilder:validation:Optional
-	MaxConcurrentPercentage *float64 `json:"maxConcurrentPercentage,omitempty" tf:"max_concurrent_percentage,omitempty"`
+	MaxConcurrentPercentage *int64 `json:"maxConcurrentPercentage,omitempty" tf:"max_concurrent_percentage,omitempty"`
 
 	// Concurrency type of deploying StackSets operations in Regions, could be in parallel or one Region at a time. Valid values are SEQUENTIAL and PARALLEL.
 	// +kubebuilder:validation:Optional

@@ -160,10 +160,6 @@ type StackInitParameters struct {
 	// +kubebuilder:validation:Optional
 	ServiceRoleArnSelector *v1.Selector `json:"serviceRoleArnSelector,omitempty" tf:"-"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Boolean value controlling whether the custom cookbook settings are enabled.
 	UseCustomCookbooks *bool `json:"useCustomCookbooks,omitempty" tf:"use_custom_cookbooks,omitempty"`
 
@@ -372,11 +368,6 @@ type StackParameters struct {
 	// Selector for a Role in iam to populate serviceRoleArn.
 	// +kubebuilder:validation:Optional
 	ServiceRoleArnSelector *v1.Selector `json:"serviceRoleArnSelector,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Boolean value controlling whether the custom cookbook settings are enabled.
 	// +kubebuilder:validation:Optional

@@ -560,12 +560,6 @@ spec:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -1065,12 +1059,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -1261,7 +1249,8 @@ spec:
                     type: string
                   deploymentNumber:
                     description: Deployment number.
-                    type: number
+                    format: int64
+                    type: integer
                   deploymentStrategyId:
                     description: Deployment strategy ID or name of a predefined deployment
                       strategy. See Predefined Deployment Strategies for more details.

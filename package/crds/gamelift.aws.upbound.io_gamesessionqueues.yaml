@@ -247,29 +247,26 @@ spec:
                         maximumIndividualPlayerLatencyMilliseconds:
                           description: Maximum latency value that is allowed for any
                             player.
-                          type: number
+                          format: int64
+                          type: integer
                         policyDurationSeconds:
                           description: Length of time that the policy is enforced
                             while placing a new game session. Absence of value for
                             this attribute means that the policy is enforced until
                             the queue times out.
-                          type: number
+                          format: int64
+                          type: integer
                       type: object
                     type: array
                   region:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   timeoutInSeconds:
                     description: Maximum time a game session request can remain in
                       the queue.
-                    type: number
+                    format: int64
+                    type: integer
                 required:
                 - region
                 type: object
@@ -460,25 +457,22 @@ spec:
                         maximumIndividualPlayerLatencyMilliseconds:
                           description: Maximum latency value that is allowed for any
                             player.
-                          type: number
+                          format: int64
+                          type: integer
                         policyDurationSeconds:
                           description: Length of time that the policy is enforced
                             while placing a new game session. Absence of value for
                             this attribute means that the policy is enforced until
                             the queue times out.
-                          type: number
+                          format: int64
+                          type: integer
                       type: object
                     type: array
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   timeoutInSeconds:
                     description: Maximum time a game session request can remain in
                       the queue.
-                    type: number
+                    format: int64
+                    type: integer
                 type: object
               managementPolicies:
                 default:
@@ -679,13 +673,15 @@ spec:
                         maximumIndividualPlayerLatencyMilliseconds:
                           description: Maximum latency value that is allowed for any
                             player.
-                          type: number
+                          format: int64
+                          type: integer
                         policyDurationSeconds:
                           description: Length of time that the policy is enforced
                             while placing a new game session. Absence of value for
                             this attribute means that the policy is enforced until
                             the queue times out.
-                          type: number
+                          format: int64
+                          type: integer
                       type: object
                     type: array
                   tags:
@@ -705,7 +701,8 @@ spec:
                   timeoutInSeconds:
                     description: Maximum time a game session request can remain in
                       the queue.
-                    type: number
+                    format: int64
+                    type: integer
                 type: object
               conditions:
                 description: Conditions of the resource.

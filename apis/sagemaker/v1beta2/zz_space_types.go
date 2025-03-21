@@ -16,20 +16,20 @@ import (
 type CodeEditorAppSettingsAppLifecycleManagementIdleSettingsInitParameters struct {
 
 	// The time that SageMaker waits after the application becomes idle before shutting it down. Valid values are between 60 and 525600.
-	IdleTimeoutInMinutes *float64 `json:"idleTimeoutInMinutes,omitempty" tf:"idle_timeout_in_minutes,omitempty"`
+	IdleTimeoutInMinutes *int64 `json:"idleTimeoutInMinutes,omitempty" tf:"idle_timeout_in_minutes,omitempty"`
 }
 
 type CodeEditorAppSettingsAppLifecycleManagementIdleSettingsObservation struct {
 
 	// The time that SageMaker waits after the application becomes idle before shutting it down. Valid values are between 60 and 525600.
-	IdleTimeoutInMinutes *float64 `json:"idleTimeoutInMinutes,omitempty" tf:"idle_timeout_in_minutes,omitempty"`
+	IdleTimeoutInMinutes *int64 `json:"idleTimeoutInMinutes,omitempty" tf:"idle_timeout_in_minutes,omitempty"`
 }
 
 type CodeEditorAppSettingsAppLifecycleManagementIdleSettingsParameters struct {
 
 	// The time that SageMaker waits after the application becomes idle before shutting it down. Valid values are between 60 and 525600.
 	// +kubebuilder:validation:Optional
-	IdleTimeoutInMinutes *float64 `json:"idleTimeoutInMinutes,omitempty" tf:"idle_timeout_in_minutes,omitempty"`
+	IdleTimeoutInMinutes *int64 `json:"idleTimeoutInMinutes,omitempty" tf:"idle_timeout_in_minutes,omitempty"`
 }
 
 type CustomFileSystemInitParameters struct {
@@ -54,20 +54,20 @@ type CustomFileSystemParameters struct {
 type EBSStorageSettingsInitParameters struct {
 
 	// The size of an EBS storage volume for a space.
-	EBSVolumeSizeInGb *float64 `json:"ebsVolumeSizeInGb,omitempty" tf:"ebs_volume_size_in_gb,omitempty"`
+	EBSVolumeSizeInGb *int64 `json:"ebsVolumeSizeInGb,omitempty" tf:"ebs_volume_size_in_gb,omitempty"`
 }
 
 type EBSStorageSettingsObservation struct {
 
 	// The size of an EBS storage volume for a space.
-	EBSVolumeSizeInGb *float64 `json:"ebsVolumeSizeInGb,omitempty" tf:"ebs_volume_size_in_gb,omitempty"`
+	EBSVolumeSizeInGb *int64 `json:"ebsVolumeSizeInGb,omitempty" tf:"ebs_volume_size_in_gb,omitempty"`
 }
 
 type EBSStorageSettingsParameters struct {
 
 	// The size of an EBS storage volume for a space.
 	// +kubebuilder:validation:Optional
-	EBSVolumeSizeInGb *float64 `json:"ebsVolumeSizeInGb" tf:"ebs_volume_size_in_gb,omitempty"`
+	EBSVolumeSizeInGb *int64 `json:"ebsVolumeSizeInGb" tf:"ebs_volume_size_in_gb,omitempty"`
 }
 
 type EFSFileSystemInitParameters struct {
@@ -137,10 +137,6 @@ type SpaceInitParameters struct {
 
 	// A collection of space sharing settings. Required if ownership_settings is set. See space_sharing_settings Block below.
 	SpaceSharingSettings *SpaceSharingSettingsInitParameters `json:"spaceSharingSettings,omitempty" tf:"space_sharing_settings,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type SpaceObservation struct {
@@ -224,11 +220,6 @@ type SpaceParameters struct {
 	// A collection of space sharing settings. Required if ownership_settings is set. See space_sharing_settings Block below.
 	// +kubebuilder:validation:Optional
 	SpaceSharingSettings *SpaceSharingSettingsParameters `json:"spaceSharingSettings,omitempty" tf:"space_sharing_settings,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type SpaceSettingsCodeEditorAppSettingsAppLifecycleManagementInitParameters struct {
@@ -365,20 +356,20 @@ type SpaceSettingsInitParameters struct {
 type SpaceSettingsJupyterLabAppSettingsAppLifecycleManagementIdleSettingsInitParameters struct {
 
 	// The time that SageMaker waits after the application becomes idle before shutting it down. Valid values are between 60 and 525600.
-	IdleTimeoutInMinutes *float64 `json:"idleTimeoutInMinutes,omitempty" tf:"idle_timeout_in_minutes,omitempty"`
+	IdleTimeoutInMinutes *int64 `json:"idleTimeoutInMinutes,omitempty" tf:"idle_timeout_in_minutes,omitempty"`
 }
 
 type SpaceSettingsJupyterLabAppSettingsAppLifecycleManagementIdleSettingsObservation struct {
 
 	// The time that SageMaker waits after the application becomes idle before shutting it down. Valid values are between 60 and 525600.
-	IdleTimeoutInMinutes *float64 `json:"idleTimeoutInMinutes,omitempty" tf:"idle_timeout_in_minutes,omitempty"`
+	IdleTimeoutInMinutes *int64 `json:"idleTimeoutInMinutes,omitempty" tf:"idle_timeout_in_minutes,omitempty"`
 }
 
 type SpaceSettingsJupyterLabAppSettingsAppLifecycleManagementIdleSettingsParameters struct {
 
 	// The time that SageMaker waits after the application becomes idle before shutting it down. Valid values are between 60 and 525600.
 	// +kubebuilder:validation:Optional
-	IdleTimeoutInMinutes *float64 `json:"idleTimeoutInMinutes,omitempty" tf:"idle_timeout_in_minutes,omitempty"`
+	IdleTimeoutInMinutes *int64 `json:"idleTimeoutInMinutes,omitempty" tf:"idle_timeout_in_minutes,omitempty"`
 }
 
 type SpaceSettingsJupyterLabAppSettingsAppLifecycleManagementInitParameters struct {
@@ -646,7 +637,7 @@ type SpaceSettingsKernelGatewayAppSettingsCustomImageInitParameters struct {
 	ImageName *string `json:"imageName,omitempty" tf:"image_name,omitempty"`
 
 	// The version number of the Custom Image.
-	ImageVersionNumber *float64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
+	ImageVersionNumber *int64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
 }
 
 type SpaceSettingsKernelGatewayAppSettingsCustomImageObservation struct {
@@ -658,7 +649,7 @@ type SpaceSettingsKernelGatewayAppSettingsCustomImageObservation struct {
 	ImageName *string `json:"imageName,omitempty" tf:"image_name,omitempty"`
 
 	// The version number of the Custom Image.
-	ImageVersionNumber *float64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
+	ImageVersionNumber *int64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
 }
 
 type SpaceSettingsKernelGatewayAppSettingsCustomImageParameters struct {
@@ -673,7 +664,7 @@ type SpaceSettingsKernelGatewayAppSettingsCustomImageParameters struct {
 
 	// The version number of the Custom Image.
 	// +kubebuilder:validation:Optional
-	ImageVersionNumber *float64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
+	ImageVersionNumber *int64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
 }
 
 type SpaceSettingsKernelGatewayAppSettingsDefaultResourceSpecInitParameters struct {

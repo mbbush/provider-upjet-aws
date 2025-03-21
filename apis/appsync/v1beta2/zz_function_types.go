@@ -50,7 +50,7 @@ type FunctionInitParameters struct {
 	FunctionVersion *string `json:"functionVersion,omitempty" tf:"function_version,omitempty"`
 
 	// Maximum batching size for a resolver. Valid values are between 0 and 2000.
-	MaxBatchSize *float64 `json:"maxBatchSize,omitempty" tf:"max_batch_size,omitempty"`
+	MaxBatchSize *int64 `json:"maxBatchSize,omitempty" tf:"max_batch_size,omitempty"`
 
 	// Function name. The function name does not have to be unique.
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
@@ -95,7 +95,7 @@ type FunctionObservation struct {
 	ID *string `json:"id,omitempty" tf:"id,omitempty"`
 
 	// Maximum batching size for a resolver. Valid values are between 0 and 2000.
-	MaxBatchSize *float64 `json:"maxBatchSize,omitempty" tf:"max_batch_size,omitempty"`
+	MaxBatchSize *int64 `json:"maxBatchSize,omitempty" tf:"max_batch_size,omitempty"`
 
 	// Function name. The function name does not have to be unique.
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
@@ -156,7 +156,7 @@ type FunctionParameters struct {
 
 	// Maximum batching size for a resolver. Valid values are between 0 and 2000.
 	// +kubebuilder:validation:Optional
-	MaxBatchSize *float64 `json:"maxBatchSize,omitempty" tf:"max_batch_size,omitempty"`
+	MaxBatchSize *int64 `json:"maxBatchSize,omitempty" tf:"max_batch_size,omitempty"`
 
 	// Function name. The function name does not have to be unique.
 	// +kubebuilder:validation:Optional

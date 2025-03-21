@@ -70,10 +70,6 @@ type DocumentInitParameters struct {
 	// +mapType=granular
 	Permissions map[string]*string `json:"permissions,omitempty" tf:"permissions,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// The target type which defines the kinds of resources the document can run on. For example, /AWS::EC2::Instance. For a list of valid resource types, see AWS resource and property types reference.
 	TargetType *string `json:"targetType,omitempty" tf:"target_type,omitempty"`
 
@@ -183,11 +179,6 @@ type DocumentParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// The target type which defines the kinds of resources the document can run on. For example, /AWS::EC2::Instance. For a list of valid resource types, see AWS resource and property types reference.
 	// +kubebuilder:validation:Optional

@@ -811,7 +811,7 @@ func (in *ClassificationJobInitParameters) DeepCopyInto(out *ClassificationJobIn
 	}
 	if in.SamplingPercentage != nil {
 		in, out := &in.SamplingPercentage, &out.SamplingPercentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ScheduleFrequency != nil {
@@ -945,7 +945,7 @@ func (in *ClassificationJobObservation) DeepCopyInto(out *ClassificationJobObser
 	}
 	if in.SamplingPercentage != nil {
 		in, out := &in.SamplingPercentage, &out.SamplingPercentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ScheduleFrequency != nil {
@@ -1055,7 +1055,7 @@ func (in *ClassificationJobParameters) DeepCopyInto(out *ClassificationJobParame
 	}
 	if in.SamplingPercentage != nil {
 		in, out := &in.SamplingPercentage, &out.SamplingPercentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ScheduleFrequency != nil {
@@ -1604,7 +1604,7 @@ func (in *FindingsFilterInitParameters) DeepCopyInto(out *FindingsFilterInitPara
 	}
 	if in.Position != nil {
 		in, out := &in.Position, &out.Position
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Tags != nil {
@@ -1702,7 +1702,7 @@ func (in *FindingsFilterObservation) DeepCopyInto(out *FindingsFilterObservation
 	}
 	if in.Position != nil {
 		in, out := &in.Position, &out.Position
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Tags != nil {
@@ -1774,7 +1774,7 @@ func (in *FindingsFilterParameters) DeepCopyInto(out *FindingsFilterParameters) 
 	}
 	if in.Position != nil {
 		in, out := &in.Position, &out.Position
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Region != nil {
@@ -2092,7 +2092,7 @@ func (in *ScheduleFrequencyInitParameters) DeepCopyInto(out *ScheduleFrequencyIn
 	}
 	if in.MonthlySchedule != nil {
 		in, out := &in.MonthlySchedule, &out.MonthlySchedule
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.WeeklySchedule != nil {
@@ -2122,7 +2122,7 @@ func (in *ScheduleFrequencyObservation) DeepCopyInto(out *ScheduleFrequencyObser
 	}
 	if in.MonthlySchedule != nil {
 		in, out := &in.MonthlySchedule, &out.MonthlySchedule
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.WeeklySchedule != nil {
@@ -2152,7 +2152,7 @@ func (in *ScheduleFrequencyParameters) DeepCopyInto(out *ScheduleFrequencyParame
 	}
 	if in.MonthlySchedule != nil {
 		in, out := &in.MonthlySchedule, &out.MonthlySchedule
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.WeeklySchedule != nil {

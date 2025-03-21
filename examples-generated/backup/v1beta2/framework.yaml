@@ -48,5 +48,3 @@ spec:
     description: this is an example framework
     name: exampleFramework
     region: us-west-1
-    tags:
-      Name: Example Framework

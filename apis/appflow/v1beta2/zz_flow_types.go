@@ -19,7 +19,7 @@ type AggregationConfigInitParameters struct {
 	AggregationType *string `json:"aggregationType,omitempty" tf:"aggregation_type,omitempty"`
 
 	// The desired file size, in MB, for each output file that Amazon AppFlow writes to the flow destination. Integer value.
-	TargetFileSize *float64 `json:"targetFileSize,omitempty" tf:"target_file_size,omitempty"`
+	TargetFileSize *int64 `json:"targetFileSize,omitempty" tf:"target_file_size,omitempty"`
 }
 
 type AggregationConfigObservation struct {
@@ -28,7 +28,7 @@ type AggregationConfigObservation struct {
 	AggregationType *string `json:"aggregationType,omitempty" tf:"aggregation_type,omitempty"`
 
 	// The desired file size, in MB, for each output file that Amazon AppFlow writes to the flow destination. Integer value.
-	TargetFileSize *float64 `json:"targetFileSize,omitempty" tf:"target_file_size,omitempty"`
+	TargetFileSize *int64 `json:"targetFileSize,omitempty" tf:"target_file_size,omitempty"`
 }
 
 type AggregationConfigParameters struct {
@@ -39,7 +39,7 @@ type AggregationConfigParameters struct {
 
 	// The desired file size, in MB, for each output file that Amazon AppFlow writes to the flow destination. Integer value.
 	// +kubebuilder:validation:Optional
-	TargetFileSize *float64 `json:"targetFileSize,omitempty" tf:"target_file_size,omitempty"`
+	TargetFileSize *int64 `json:"targetFileSize,omitempty" tf:"target_file_size,omitempty"`
 }
 
 type AmplitudeInitParameters struct {
@@ -668,10 +668,6 @@ type FlowInitParameters struct {
 	// The Source Flow Config that controls how Amazon AppFlow retrieves data from the source connector.
 	SourceFlowConfig *SourceFlowConfigInitParameters `json:"sourceFlowConfig,omitempty" tf:"source_flow_config,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// A Task that Amazon AppFlow performs while transferring the data in the flow run.
 	Task []TaskInitParameters `json:"task,omitempty" tf:"task,omitempty"`
 
@@ -745,11 +741,6 @@ type FlowParameters struct {
 	// The Source Flow Config that controls how Amazon AppFlow retrieves data from the source connector.
 	// +kubebuilder:validation:Optional
 	SourceFlowConfig *SourceFlowConfigParameters `json:"sourceFlowConfig,omitempty" tf:"source_flow_config,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// A Task that Amazon AppFlow performs while transferring the data in the flow run.
 	// +kubebuilder:validation:Optional
@@ -1018,39 +1009,39 @@ type MetadataCatalogConfigParameters struct {
 type PaginationConfigInitParameters struct {
 
 	// he maximum number of records that Amazon AppFlow receives in each page of the response from your SAP application.
-	MaxPageSize *float64 `json:"maxPageSize,omitempty" tf:"max_page_size,omitempty"`
+	MaxPageSize *int64 `json:"maxPageSize,omitempty" tf:"max_page_size,omitempty"`
 }
 
 type PaginationConfigObservation struct {
 
 	// he maximum number of records that Amazon AppFlow receives in each page of the response from your SAP application.
-	MaxPageSize *float64 `json:"maxPageSize,omitempty" tf:"max_page_size,omitempty"`
+	MaxPageSize *int64 `json:"maxPageSize,omitempty" tf:"max_page_size,omitempty"`
 }
 
 type PaginationConfigParameters struct {
 
 	// he maximum number of records that Amazon AppFlow receives in each page of the response from your SAP application.
 	// +kubebuilder:validation:Optional
-	MaxPageSize *float64 `json:"maxPageSize" tf:"max_page_size,omitempty"`
+	MaxPageSize *int64 `json:"maxPageSize" tf:"max_page_size,omitempty"`
 }
 
 type ParallelismConfigInitParameters struct {
 
 	// he maximum number of records that Amazon AppFlow receives in each page of the response from your SAP application.
-	MaxPageSize *float64 `json:"maxPageSize,omitempty" tf:"max_page_size,omitempty"`
+	MaxPageSize *int64 `json:"maxPageSize,omitempty" tf:"max_page_size,omitempty"`
 }
 
 type ParallelismConfigObservation struct {
 
 	// he maximum number of records that Amazon AppFlow receives in each page of the response from your SAP application.
-	MaxPageSize *float64 `json:"maxPageSize,omitempty" tf:"max_page_size,omitempty"`
+	MaxPageSize *int64 `json:"maxPageSize,omitempty" tf:"max_page_size,omitempty"`
 }
 
 type ParallelismConfigParameters struct {
 
 	// he maximum number of records that Amazon AppFlow receives in each page of the response from your SAP application.
 	// +kubebuilder:validation:Optional
-	MaxPageSize *float64 `json:"maxPageSize" tf:"max_page_size,omitempty"`
+	MaxPageSize *int64 `json:"maxPageSize" tf:"max_page_size,omitempty"`
 }
 
 type PrefixConfigInitParameters struct {
@@ -1566,7 +1557,7 @@ type ScheduledInitParameters struct {
 	ScheduleExpression *string `json:"scheduleExpression,omitempty" tf:"schedule_expression,omitempty"`
 
 	// Optional offset that is added to the time interval for a schedule-triggered flow. Maximum value of 36000.
-	ScheduleOffset *float64 `json:"scheduleOffset,omitempty" tf:"schedule_offset,omitempty"`
+	ScheduleOffset *int64 `json:"scheduleOffset,omitempty" tf:"schedule_offset,omitempty"`
 
 	// Scheduled start time for a schedule-triggered flow. Must be a valid RFC3339 timestamp.
 	ScheduleStartTime *string `json:"scheduleStartTime,omitempty" tf:"schedule_start_time,omitempty"`
@@ -1590,7 +1581,7 @@ type ScheduledObservation struct {
 	ScheduleExpression *string `json:"scheduleExpression,omitempty" tf:"schedule_expression,omitempty"`
 
 	// Optional offset that is added to the time interval for a schedule-triggered flow. Maximum value of 36000.
-	ScheduleOffset *float64 `json:"scheduleOffset,omitempty" tf:"schedule_offset,omitempty"`
+	ScheduleOffset *int64 `json:"scheduleOffset,omitempty" tf:"schedule_offset,omitempty"`
 
 	// Scheduled start time for a schedule-triggered flow. Must be a valid RFC3339 timestamp.
 	ScheduleStartTime *string `json:"scheduleStartTime,omitempty" tf:"schedule_start_time,omitempty"`
@@ -1619,7 +1610,7 @@ type ScheduledParameters struct {
 
 	// Optional offset that is added to the time interval for a schedule-triggered flow. Maximum value of 36000.
 	// +kubebuilder:validation:Optional
-	ScheduleOffset *float64 `json:"scheduleOffset,omitempty" tf:"schedule_offset,omitempty"`
+	ScheduleOffset *int64 `json:"scheduleOffset,omitempty" tf:"schedule_offset,omitempty"`
 
 	// Scheduled start time for a schedule-triggered flow. Must be a valid RFC3339 timestamp.
 	// +kubebuilder:validation:Optional

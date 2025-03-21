@@ -84,7 +84,7 @@ type QueueInitParameters struct {
 	InstanceIDSelector *v1.Selector `json:"instanceIdSelector,omitempty" tf:"-"`
 
 	// Specifies the maximum number of contacts that can be in the queue before it is considered full. Minimum value of 0.
-	MaxContacts *float64 `json:"maxContacts,omitempty" tf:"max_contacts,omitempty"`
+	MaxContacts *int64 `json:"maxContacts,omitempty" tf:"max_contacts,omitempty"`
 
 	// Specifies the name of the Queue.
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
@@ -98,10 +98,6 @@ type QueueInitParameters struct {
 
 	// Specifies the description of the Queue. Valid values are ENABLED, DISABLED.
 	Status *string `json:"status,omitempty" tf:"status,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type QueueObservation struct {
@@ -122,7 +118,7 @@ type QueueObservation struct {
 	InstanceID *string `json:"instanceId,omitempty" tf:"instance_id,omitempty"`
 
 	// Specifies the maximum number of contacts that can be in the queue before it is considered full. Minimum value of 0.
-	MaxContacts *float64 `json:"maxContacts,omitempty" tf:"max_contacts,omitempty"`
+	MaxContacts *int64 `json:"maxContacts,omitempty" tf:"max_contacts,omitempty"`
 
 	// Specifies the name of the Queue.
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
@@ -185,7 +181,7 @@ type QueueParameters struct {
 
 	// Specifies the maximum number of contacts that can be in the queue before it is considered full. Minimum value of 0.
 	// +kubebuilder:validation:Optional
-	MaxContacts *float64 `json:"maxContacts,omitempty" tf:"max_contacts,omitempty"`
+	MaxContacts *int64 `json:"maxContacts,omitempty" tf:"max_contacts,omitempty"`
 
 	// Specifies the name of the Queue.
 	// +kubebuilder:validation:Optional
@@ -208,11 +204,6 @@ type QueueParameters struct {
 	// Specifies the description of the Queue. Valid values are ENABLED, DISABLED.
 	// +kubebuilder:validation:Optional
 	Status *string `json:"status,omitempty" tf:"status,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // QueueSpec defines the desired state of Queue

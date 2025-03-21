@@ -101,7 +101,8 @@ spec:
                     x-kubernetes-list-type: set
                   backupRetentionPeriod:
                     description: The days to retain backups for. Default 1
-                    type: number
+                    format: int64
+                    type: integer
                   dbClusterParameterGroupName:
                     description: A cluster parameter group to associate with the cluster.
                     type: string
@@ -316,7 +317,8 @@ spec:
                     type: string
                   port:
                     description: The port on which the DB accepts connections
-                    type: number
+                    format: int64
+                    type: integer
                   preferredBackupWindow:
                     description: |-
                       The daily time range during which automated backups are created if automated backups are enabled using the BackupRetentionPeriod parameter.Time in UTC
@@ -380,12 +382,6 @@ spec:
                     description: 'The storage type to associate with the DB cluster.
                       Valid values: standard, iopt1.'
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   vpcSecurityGroupIdRefs:
                     description: References to SecurityGroup in ec2 to populate vpcSecurityGroupIds.
                     items:
@@ -511,7 +507,8 @@ spec:
                     x-kubernetes-list-type: set
                   backupRetentionPeriod:
                     description: The days to retain backups for. Default 1
-                    type: number
+                    format: int64
+                    type: integer
                   dbClusterParameterGroupName:
                     description: A cluster parameter group to associate with the cluster.
                     type: string
@@ -726,7 +723,8 @@ spec:
                     type: string
                   port:
                     description: The port on which the DB accepts connections
-                    type: number
+                    format: int64
+                    type: integer
                   preferredBackupWindow:
                     description: |-
                       The daily time range during which automated backups are created if automated backups are enabled using the BackupRetentionPeriod parameter.Time in UTC
@@ -786,12 +784,6 @@ spec:
                     description: 'The storage type to associate with the DB cluster.
                       Valid values: standard, iopt1.'
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   vpcSecurityGroupIdRefs:
                     description: References to SecurityGroup in ec2 to populate vpcSecurityGroupIds.
                     items:
@@ -1077,7 +1069,8 @@ spec:
                     x-kubernetes-list-type: set
                   backupRetentionPeriod:
                     description: The days to retain backups for. Default 1
-                    type: number
+                    format: int64
+                    type: integer
                   clusterMembers:
                     description: – List of DocumentDB Instances that are a part of
                       this cluster
@@ -1141,7 +1134,8 @@ spec:
                     type: string
                   port:
                     description: The port on which the DB accepts connections
-                    type: number
+                    format: int64
+                    type: integer
                   preferredBackupWindow:
                     description: |-
                       The daily time range during which automated backups are created if automated backups are enabled using the BackupRetentionPeriod parameter.Time in UTC

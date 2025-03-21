@@ -1179,7 +1179,7 @@ func (in *RuleInitParameters) DeepCopyInto(out *RuleInitParameters) {
 	}
 	if in.Priority != nil {
 		in, out := &in.Priority, &out.Priority
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.RuleID != nil {
@@ -1229,7 +1229,7 @@ func (in *RuleObservation) DeepCopyInto(out *RuleObservation) {
 	}
 	if in.Priority != nil {
 		in, out := &in.Priority, &out.Priority
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.RuleID != nil {
@@ -1269,7 +1269,7 @@ func (in *RuleParameters) DeepCopyInto(out *RuleParameters) {
 	}
 	if in.Priority != nil {
 		in, out := &in.Priority, &out.Priority
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.RuleID != nil {
@@ -1919,7 +1919,7 @@ func (in *SizeConstraintsInitParameters) DeepCopyInto(out *SizeConstraintsInitPa
 	}
 	if in.Size != nil {
 		in, out := &in.Size, &out.Size
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.TextTransformation != nil {
@@ -1954,7 +1954,7 @@ func (in *SizeConstraintsObservation) DeepCopyInto(out *SizeConstraintsObservati
 	}
 	if in.Size != nil {
 		in, out := &in.Size, &out.Size
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.TextTransformation != nil {
@@ -1989,7 +1989,7 @@ func (in *SizeConstraintsParameters) DeepCopyInto(out *SizeConstraintsParameters
 	}
 	if in.Size != nil {
 		in, out := &in.Size, &out.Size
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.TextTransformation != nil {
@@ -2064,22 +2064,6 @@ func (in *WebACLInitParameters) DeepCopyInto(out *WebACLInitParameters) {
 		*out = make([]RuleInitParameters, len(*in))
 		for i := range *in {
 			(*in)[i].DeepCopyInto(&(*out)[i])
-		}
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
 		}
 	}
 }
@@ -2243,22 +2227,6 @@ func (in *WebACLParameters) DeepCopyInto(out *WebACLParameters) {
 		*out = make([]RuleParameters, len(*in))
 		for i := range *in {
 			(*in)[i].DeepCopyInto(&(*out)[i])
-		}
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
 		}
 	}
 }

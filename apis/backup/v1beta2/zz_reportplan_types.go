@@ -68,10 +68,6 @@ type ReportPlanInitParameters struct {
 
 	// An object that identifies the report template for the report. Reports are built using a report template. Detailed below.
 	ReportSetting *ReportSettingInitParameters `json:"reportSetting,omitempty" tf:"report_setting,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type ReportPlanObservation struct {
@@ -131,11 +127,6 @@ type ReportPlanParameters struct {
 	// An object that identifies the report template for the report. Reports are built using a report template. Detailed below.
 	// +kubebuilder:validation:Optional
 	ReportSetting *ReportSettingParameters `json:"reportSetting,omitempty" tf:"report_setting,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type ReportSettingInitParameters struct {
@@ -149,7 +140,7 @@ type ReportSettingInitParameters struct {
 	FrameworkArns []*string `json:"frameworkArns,omitempty" tf:"framework_arns,omitempty"`
 
 	// Specifies the number of frameworks a report covers.
-	NumberOfFrameworks *float64 `json:"numberOfFrameworks,omitempty" tf:"number_of_frameworks,omitempty"`
+	NumberOfFrameworks *int64 `json:"numberOfFrameworks,omitempty" tf:"number_of_frameworks,omitempty"`
 
 	// Specifies the list of Organizational Units a report covers.
 	// +listType=set
@@ -174,7 +165,7 @@ type ReportSettingObservation struct {
 	FrameworkArns []*string `json:"frameworkArns,omitempty" tf:"framework_arns,omitempty"`
 
 	// Specifies the number of frameworks a report covers.
-	NumberOfFrameworks *float64 `json:"numberOfFrameworks,omitempty" tf:"number_of_frameworks,omitempty"`
+	NumberOfFrameworks *int64 `json:"numberOfFrameworks,omitempty" tf:"number_of_frameworks,omitempty"`
 
 	// Specifies the list of Organizational Units a report covers.
 	// +listType=set
@@ -202,7 +193,7 @@ type ReportSettingParameters struct {
 
 	// Specifies the number of frameworks a report covers.
 	// +kubebuilder:validation:Optional
-	NumberOfFrameworks *float64 `json:"numberOfFrameworks,omitempty" tf:"number_of_frameworks,omitempty"`
+	NumberOfFrameworks *int64 `json:"numberOfFrameworks,omitempty" tf:"number_of_frameworks,omitempty"`
 
 	// Specifies the list of Organizational Units a report covers.
 	// +kubebuilder:validation:Optional

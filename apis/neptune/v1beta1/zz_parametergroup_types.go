@@ -23,10 +23,6 @@ type ParameterGroupInitParameters struct {
 
 	// A list of Neptune parameters to apply.
 	Parameter []ParameterGroupParameterInitParameters `json:"parameter,omitempty" tf:"parameter,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type ParameterGroupObservation struct {
@@ -112,11 +108,6 @@ type ParameterGroupParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // ParameterGroupSpec defines the desired state of ParameterGroup

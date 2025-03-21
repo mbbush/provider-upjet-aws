@@ -104,11 +104,7 @@ type FilterInitParameters struct {
 	FindingCriteria *FindingCriteriaInitParameters `json:"findingCriteria,omitempty" tf:"finding_criteria,omitempty"`
 
 	// Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.
-	Rank *float64 `json:"rank,omitempty" tf:"rank,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
+	Rank *int64 `json:"rank,omitempty" tf:"rank,omitempty"`
 }
 
 type FilterObservation struct {
@@ -132,7 +128,7 @@ type FilterObservation struct {
 	ID *string `json:"id,omitempty" tf:"id,omitempty"`
 
 	// Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.
-	Rank *float64 `json:"rank,omitempty" tf:"rank,omitempty"`
+	Rank *int64 `json:"rank,omitempty" tf:"rank,omitempty"`
 
 	// Key-value map of resource tags.
 	// +mapType=granular
@@ -173,17 +169,12 @@ type FilterParameters struct {
 
 	// Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.
 	// +kubebuilder:validation:Optional
-	Rank *float64 `json:"rank,omitempty" tf:"rank,omitempty"`
+	Rank *int64 `json:"rank,omitempty" tf:"rank,omitempty"`
 
 	// Region is the region you'd like your resource to be created in.
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type FindingCriteriaInitParameters struct {

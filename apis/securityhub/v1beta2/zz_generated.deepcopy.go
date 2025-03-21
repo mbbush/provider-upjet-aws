@@ -517,7 +517,7 @@ func (in *DateRangeInitParameters) DeepCopyInto(out *DateRangeInitParameters) {
 	}
 	if in.Value != nil {
 		in, out := &in.Value, &out.Value
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -542,7 +542,7 @@ func (in *DateRangeObservation) DeepCopyInto(out *DateRangeObservation) {
 	}
 	if in.Value != nil {
 		in, out := &in.Value, &out.Value
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -567,7 +567,7 @@ func (in *DateRangeParameters) DeepCopyInto(out *DateRangeParameters) {
 	}
 	if in.Value != nil {
 		in, out := &in.Value, &out.Value
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -3115,7 +3115,7 @@ func (in *FirstObservedAtDateRangeInitParameters) DeepCopyInto(out *FirstObserve
 	}
 	if in.Value != nil {
 		in, out := &in.Value, &out.Value
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -3140,7 +3140,7 @@ func (in *FirstObservedAtDateRangeObservation) DeepCopyInto(out *FirstObservedAt
 	}
 	if in.Value != nil {
 		in, out := &in.Value, &out.Value
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -3165,7 +3165,7 @@ func (in *FirstObservedAtDateRangeParameters) DeepCopyInto(out *FirstObservedAtD
 	}
 	if in.Value != nil {
 		in, out := &in.Value, &out.Value
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -3689,7 +3689,7 @@ func (in *LastObservedAtDateRangeInitParameters) DeepCopyInto(out *LastObservedA
 	}
 	if in.Value != nil {
 		in, out := &in.Value, &out.Value
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -3714,7 +3714,7 @@ func (in *LastObservedAtDateRangeObservation) DeepCopyInto(out *LastObservedAtDa
 	}
 	if in.Value != nil {
 		in, out := &in.Value, &out.Value
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -3739,7 +3739,7 @@ func (in *LastObservedAtDateRangeParameters) DeepCopyInto(out *LastObservedAtDat
 	}
 	if in.Value != nil {
 		in, out := &in.Value, &out.Value
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -5024,7 +5024,7 @@ func (in *NoteUpdatedAtDateRangeInitParameters) DeepCopyInto(out *NoteUpdatedAtD
 	}
 	if in.Value != nil {
 		in, out := &in.Value, &out.Value
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -5049,7 +5049,7 @@ func (in *NoteUpdatedAtDateRangeObservation) DeepCopyInto(out *NoteUpdatedAtDate
 	}
 	if in.Value != nil {
 		in, out := &in.Value, &out.Value
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -5074,7 +5074,7 @@ func (in *NoteUpdatedAtDateRangeParameters) DeepCopyInto(out *NoteUpdatedAtDateR
 	}
 	if in.Value != nil {
 		in, out := &in.Value, &out.Value
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -5264,7 +5264,7 @@ func (in *ProcessLaunchedAtDateRangeInitParameters) DeepCopyInto(out *ProcessLau
 	}
 	if in.Value != nil {
 		in, out := &in.Value, &out.Value
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -5289,7 +5289,7 @@ func (in *ProcessLaunchedAtDateRangeObservation) DeepCopyInto(out *ProcessLaunch
 	}
 	if in.Value != nil {
 		in, out := &in.Value, &out.Value
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -5314,7 +5314,7 @@ func (in *ProcessLaunchedAtDateRangeParameters) DeepCopyInto(out *ProcessLaunche
 	}
 	if in.Value != nil {
 		in, out := &in.Value, &out.Value
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -5759,7 +5759,7 @@ func (in *ProcessTerminatedAtDateRangeInitParameters) DeepCopyInto(out *ProcessT
 	}
 	if in.Value != nil {
 		in, out := &in.Value, &out.Value
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -5784,7 +5784,7 @@ func (in *ProcessTerminatedAtDateRangeObservation) DeepCopyInto(out *ProcessTerm
 	}
 	if in.Value != nil {
 		in, out := &in.Value, &out.Value
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -5809,7 +5809,7 @@ func (in *ProcessTerminatedAtDateRangeParameters) DeepCopyInto(out *ProcessTermi
 	}
 	if in.Value != nil {
 		in, out := &in.Value, &out.Value
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -6809,7 +6809,7 @@ func (in *ResourceAwsEC2InstanceLaunchedAtDateRangeInitParameters) DeepCopyInto(
 	}
 	if in.Value != nil {
 		in, out := &in.Value, &out.Value
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -6834,7 +6834,7 @@ func (in *ResourceAwsEC2InstanceLaunchedAtDateRangeObservation) DeepCopyInto(out
 	}
 	if in.Value != nil {
 		in, out := &in.Value, &out.Value
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -6859,7 +6859,7 @@ func (in *ResourceAwsEC2InstanceLaunchedAtDateRangeParameters) DeepCopyInto(out 
 	}
 	if in.Value != nil {
 		in, out := &in.Value, &out.Value
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -7199,7 +7199,7 @@ func (in *ResourceAwsIAMAccessKeyCreatedAtDateRangeInitParameters) DeepCopyInto(
 	}
 	if in.Value != nil {
 		in, out := &in.Value, &out.Value
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -7224,7 +7224,7 @@ func (in *ResourceAwsIAMAccessKeyCreatedAtDateRangeObservation) DeepCopyInto(out
 	}
 	if in.Value != nil {
 		in, out := &in.Value, &out.Value
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -7249,7 +7249,7 @@ func (in *ResourceAwsIAMAccessKeyCreatedAtDateRangeParameters) DeepCopyInto(out 
 	}
 	if in.Value != nil {
 		in, out := &in.Value, &out.Value
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -7814,7 +7814,7 @@ func (in *ResourceContainerLaunchedAtDateRangeInitParameters) DeepCopyInto(out *
 	}
 	if in.Value != nil {
 		in, out := &in.Value, &out.Value
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -7839,7 +7839,7 @@ func (in *ResourceContainerLaunchedAtDateRangeObservation) DeepCopyInto(out *Res
 	}
 	if in.Value != nil {
 		in, out := &in.Value, &out.Value
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -7864,7 +7864,7 @@ func (in *ResourceContainerLaunchedAtDateRangeParameters) DeepCopyInto(out *Reso
 	}
 	if in.Value != nil {
 		in, out := &in.Value, &out.Value
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -8759,7 +8759,7 @@ func (in *ThreatIntelIndicatorLastObservedAtDateRangeInitParameters) DeepCopyInt
 	}
 	if in.Value != nil {
 		in, out := &in.Value, &out.Value
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -8784,7 +8784,7 @@ func (in *ThreatIntelIndicatorLastObservedAtDateRangeObservation) DeepCopyInto(o
 	}
 	if in.Value != nil {
 		in, out := &in.Value, &out.Value
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -8809,7 +8809,7 @@ func (in *ThreatIntelIndicatorLastObservedAtDateRangeParameters) DeepCopyInto(ou
 	}
 	if in.Value != nil {
 		in, out := &in.Value, &out.Value
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -9374,7 +9374,7 @@ func (in *UpdatedAtDateRangeInitParameters) DeepCopyInto(out *UpdatedAtDateRange
 	}
 	if in.Value != nil {
 		in, out := &in.Value, &out.Value
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -9399,7 +9399,7 @@ func (in *UpdatedAtDateRangeObservation) DeepCopyInto(out *UpdatedAtDateRangeObs
 	}
 	if in.Value != nil {
 		in, out := &in.Value, &out.Value
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -9424,7 +9424,7 @@ func (in *UpdatedAtDateRangeParameters) DeepCopyInto(out *UpdatedAtDateRangePara
 	}
 	if in.Value != nil {
 		in, out := &in.Value, &out.Value
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }

@@ -32,10 +32,6 @@ type ApplicationInitParameters struct {
 
 	// SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.
 	OpsItemSnsTopicArn *string `json:"opsItemSnsTopicArn,omitempty" tf:"ops_item_sns_topic_arn,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type ApplicationObservation struct {
@@ -103,11 +99,6 @@ type ApplicationParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // ApplicationSpec defines the desired state of Application

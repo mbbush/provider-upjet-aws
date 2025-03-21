@@ -129,10 +129,6 @@ type ConnectorInitParameters struct {
 	// Either SFTP or AS2 is configured.The parameters to configure for the connector object. Fields documented below.
 	SftpConfig *SftpConfigInitParameters `json:"sftpConfig,omitempty" tf:"sftp_config,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// The URL of the partners AS2 endpoint or SFTP endpoint.
 	URL *string `json:"url,omitempty" tf:"url,omitempty"`
 }
@@ -209,11 +205,6 @@ type ConnectorParameters struct {
 	// Either SFTP or AS2 is configured.The parameters to configure for the connector object. Fields documented below.
 	// +kubebuilder:validation:Optional
 	SftpConfig *SftpConfigParameters `json:"sftpConfig,omitempty" tf:"sftp_config,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// The URL of the partners AS2 endpoint or SFTP endpoint.
 	// +kubebuilder:validation:Optional

@@ -11,5 +11,3 @@ spec:
     description: Example AppConfig Application
     name: example-application-tf
     region: us-west-1
-    tags:
-      Type: AppConfig Application

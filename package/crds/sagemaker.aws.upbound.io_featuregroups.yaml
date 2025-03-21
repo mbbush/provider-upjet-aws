@@ -1047,7 +1047,8 @@ spec:
                             vectorConfig:
                               properties:
                                 dimension:
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                           type: object
                         collectionType:
@@ -1140,7 +1141,8 @@ spec:
                             type: string
                           value:
                             description: TtlDuration time value.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                     type: object
                   recordIdentifierFeatureName:
@@ -1231,18 +1233,14 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   throughputConfig:
                     properties:
                       provisionedReadCapacityUnits:
-                        type: number
+                        format: int64
+                        type: integer
                       provisionedWriteCapacityUnits:
-                        type: number
+                        format: int64
+                        type: integer
                       throughputMode:
                         type: string
                     type: object
@@ -1279,7 +1277,8 @@ spec:
                             vectorConfig:
                               properties:
                                 dimension:
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                           type: object
                         collectionType:
@@ -1372,7 +1371,8 @@ spec:
                             type: string
                           value:
                             description: TtlDuration time value.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                     type: object
                   recordIdentifierFeatureName:
@@ -1459,18 +1459,14 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   throughputConfig:
                     properties:
                       provisionedReadCapacityUnits:
-                        type: number
+                        format: int64
+                        type: integer
                       provisionedWriteCapacityUnits:
-                        type: number
+                        format: int64
+                        type: integer
                       throughputMode:
                         type: string
                     type: object
@@ -1682,7 +1678,8 @@ spec:
                             vectorConfig:
                               properties:
                                 dimension:
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                           type: object
                         collectionType:
@@ -1777,7 +1774,8 @@ spec:
                             type: string
                           value:
                             description: TtlDuration time value.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                     type: object
                   recordIdentifierFeatureName:
@@ -1807,9 +1805,11 @@ spec:
                   throughputConfig:
                     properties:
                       provisionedReadCapacityUnits:
-                        type: number
+                        format: int64
+                        type: integer
                       provisionedWriteCapacityUnits:
-                        type: number
+                        format: int64
+                        type: integer
                       throughputMode:
                         type: string
                     type: object

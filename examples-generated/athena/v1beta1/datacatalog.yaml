@@ -12,6 +12,4 @@ spec:
     parameters:
       function: arn:aws:lambda:eu-central-1:123456789012:function:not-important-lambda-function
     region: us-west-1
-    tags:
-      Name: example-athena-data-catalog
     type: LAMBDA

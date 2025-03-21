@@ -1348,14 +1348,16 @@ spec:
                           baseTableTtl:
                             description: The number of minutes that an Item is stored
                               in the data source.
-                            type: number
+                            format: int64
+                            type: integer
                           deltaSyncTableName:
                             description: The table name.
                             type: string
                           deltaSyncTableTtl:
                             description: The number of minutes that a Delta Sync log
                               entry is stored in the Delta Sync table.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       region:
                         description: AWS region of the DynamoDB table. Defaults to
@@ -1667,14 +1669,16 @@ spec:
                           baseTableTtl:
                             description: The number of minutes that an Item is stored
                               in the data source.
-                            type: number
+                            format: int64
+                            type: integer
                           deltaSyncTableName:
                             description: The table name.
                             type: string
                           deltaSyncTableTtl:
                             description: The number of minutes that a Delta Sync log
                               entry is stored in the Delta Sync table.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       tableName:
                         description: Name of the DynamoDB table.
@@ -2133,14 +2137,16 @@ spec:
                           baseTableTtl:
                             description: The number of minutes that an Item is stored
                               in the data source.
-                            type: number
+                            format: int64
+                            type: integer
                           deltaSyncTableName:
                             description: The table name.
                             type: string
                           deltaSyncTableTtl:
                             description: The number of minutes that a Delta Sync log
                               entry is stored in the Delta Sync table.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       region:
                         description: AWS region of the DynamoDB table. Defaults to

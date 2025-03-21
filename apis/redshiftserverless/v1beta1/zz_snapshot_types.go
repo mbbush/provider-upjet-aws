@@ -29,7 +29,7 @@ type SnapshotInitParameters struct {
 	NamespaceNameSelector *v1.Selector `json:"namespaceNameSelector,omitempty" tf:"-"`
 
 	// How long to retain the created snapshot. Default value is -1.
-	RetentionPeriod *float64 `json:"retentionPeriod,omitempty" tf:"retention_period,omitempty"`
+	RetentionPeriod *int64 `json:"retentionPeriod,omitempty" tf:"retention_period,omitempty"`
 }
 
 type SnapshotObservation struct {
@@ -64,7 +64,7 @@ type SnapshotObservation struct {
 	OwnerAccount *string `json:"ownerAccount,omitempty" tf:"owner_account,omitempty"`
 
 	// How long to retain the created snapshot. Default value is -1.
-	RetentionPeriod *float64 `json:"retentionPeriod,omitempty" tf:"retention_period,omitempty"`
+	RetentionPeriod *int64 `json:"retentionPeriod,omitempty" tf:"retention_period,omitempty"`
 }
 
 type SnapshotParameters struct {
@@ -90,7 +90,7 @@ type SnapshotParameters struct {
 
 	// How long to retain the created snapshot. Default value is -1.
 	// +kubebuilder:validation:Optional
-	RetentionPeriod *float64 `json:"retentionPeriod,omitempty" tf:"retention_period,omitempty"`
+	RetentionPeriod *int64 `json:"retentionPeriod,omitempty" tf:"retention_period,omitempty"`
 }
 
 // SnapshotSpec defines the desired state of Snapshot

@@ -1204,7 +1204,8 @@ spec:
                       logSchemaVersion:
                         description: The schema version. See documentation for the
                           list of schema versions.
-                        type: number
+                        format: int64
+                        type: integer
                       s3Configuration:
                         description: The configuration for experiment logging to Amazon
                           S3. See below.
@@ -1479,7 +1480,8 @@ spec:
                       logSchemaVersion:
                         description: The schema version. See documentation for the
                           list of schema versions.
-                        type: number
+                        format: int64
+                        type: integer
                       s3Configuration:
                         description: The configuration for experiment logging to Amazon
                           S3. See below.
@@ -1923,7 +1925,8 @@ spec:
                       logSchemaVersion:
                         description: The schema version. See documentation for the
                           list of schema versions.
-                        type: number
+                        format: int64
+                        type: integer
                       s3Configuration:
                         description: The configuration for experiment logging to Amazon
                           S3. See below.

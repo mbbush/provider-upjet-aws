@@ -64,11 +64,7 @@ type ContainerServiceInitParameters struct {
 
 	// The scale specification for the container service. The scale specifies the allocated compute
 	// nodes of the container service.
-	Scale *float64 `json:"scale,omitempty" tf:"scale,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
+	Scale *int64 `json:"scale,omitempty" tf:"scale,omitempty"`
 }
 
 type ContainerServiceObservation struct {
@@ -119,7 +115,7 @@ type ContainerServiceObservation struct {
 
 	// The scale specification for the container service. The scale specifies the allocated compute
 	// nodes of the container service.
-	Scale *float64 `json:"scale,omitempty" tf:"scale,omitempty"`
+	Scale *int64 `json:"scale,omitempty" tf:"scale,omitempty"`
 
 	// The current state of the container service.
 	State *string `json:"state,omitempty" tf:"state,omitempty"`
@@ -170,12 +166,7 @@ type ContainerServiceParameters struct {
 	// The scale specification for the container service. The scale specifies the allocated compute
 	// nodes of the container service.
 	// +kubebuilder:validation:Optional
-	Scale *float64 `json:"scale,omitempty" tf:"scale,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
+	Scale *int64 `json:"scale,omitempty" tf:"scale,omitempty"`
 }
 
 type EcrImagePullerRoleInitParameters struct {

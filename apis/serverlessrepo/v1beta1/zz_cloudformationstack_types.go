@@ -31,10 +31,6 @@ type CloudFormationStackInitParameters struct {
 
 	// The version of the application to deploy. If not supplied, deploys the latest version.
 	SemanticVersion *string `json:"semanticVersion,omitempty" tf:"semantic_version,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type CloudFormationStackObservation struct {
@@ -100,11 +96,6 @@ type CloudFormationStackParameters struct {
 	// The version of the application to deploy. If not supplied, deploys the latest version.
 	// +kubebuilder:validation:Optional
 	SemanticVersion *string `json:"semanticVersion,omitempty" tf:"semantic_version,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // CloudFormationStackSpec defines the desired state of CloudFormationStack

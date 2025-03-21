@@ -13,8 +13,6 @@ spec:
         testing.upbound.io/example-name: example
     provider: ${aws.accepter}
     region: us-west-1
-    tags:
-      Side: Accepter
     virtualInterfaceIdSelector:
       matchLabels:
         testing.upbound.io/example-name: creator

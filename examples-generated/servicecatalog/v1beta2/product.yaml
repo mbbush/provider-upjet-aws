@@ -13,6 +13,4 @@ spec:
     provisioningArtifactParameters:
     - templateUrl: https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/temp1.json
     region: us-west-1
-    tags:
-      foo: bar
     type: CLOUD_FORMATION_TEMPLATE

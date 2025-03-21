@@ -42,10 +42,6 @@ type NotificationRuleInitParameters struct {
 	// The status of the notification rule. Possible values are ENABLED and DISABLED, default is ENABLED.
 	Status *string `json:"status,omitempty" tf:"status,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Configuration blocks containing notification target information. Can be specified multiple times. At least one target must be specified on creation.
 	Target []TargetInitParameters `json:"target,omitempty" tf:"target,omitempty"`
 }
@@ -125,11 +121,6 @@ type NotificationRuleParameters struct {
 	// The status of the notification rule. Possible values are ENABLED and DISABLED, default is ENABLED.
 	// +kubebuilder:validation:Optional
 	Status *string `json:"status,omitempty" tf:"status,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Configuration blocks containing notification target information. Can be specified multiple times. At least one target must be specified on creation.
 	// +kubebuilder:validation:Optional

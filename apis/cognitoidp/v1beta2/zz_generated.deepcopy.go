@@ -2132,12 +2132,12 @@ func (in *PasswordPolicyInitParameters) DeepCopyInto(out *PasswordPolicyInitPara
 	*out = *in
 	if in.MinimumLength != nil {
 		in, out := &in.MinimumLength, &out.MinimumLength
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.PasswordHistorySize != nil {
 		in, out := &in.PasswordHistorySize, &out.PasswordHistorySize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.RequireLowercase != nil {
@@ -2162,7 +2162,7 @@ func (in *PasswordPolicyInitParameters) DeepCopyInto(out *PasswordPolicyInitPara
 	}
 	if in.TemporaryPasswordValidityDays != nil {
 		in, out := &in.TemporaryPasswordValidityDays, &out.TemporaryPasswordValidityDays
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2182,12 +2182,12 @@ func (in *PasswordPolicyObservation) DeepCopyInto(out *PasswordPolicyObservation
 	*out = *in
 	if in.MinimumLength != nil {
 		in, out := &in.MinimumLength, &out.MinimumLength
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.PasswordHistorySize != nil {
 		in, out := &in.PasswordHistorySize, &out.PasswordHistorySize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.RequireLowercase != nil {
@@ -2212,7 +2212,7 @@ func (in *PasswordPolicyObservation) DeepCopyInto(out *PasswordPolicyObservation
 	}
 	if in.TemporaryPasswordValidityDays != nil {
 		in, out := &in.TemporaryPasswordValidityDays, &out.TemporaryPasswordValidityDays
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2232,12 +2232,12 @@ func (in *PasswordPolicyParameters) DeepCopyInto(out *PasswordPolicyParameters) 
 	*out = *in
 	if in.MinimumLength != nil {
 		in, out := &in.MinimumLength, &out.MinimumLength
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.PasswordHistorySize != nil {
 		in, out := &in.PasswordHistorySize, &out.PasswordHistorySize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.RequireLowercase != nil {
@@ -2262,7 +2262,7 @@ func (in *PasswordPolicyParameters) DeepCopyInto(out *PasswordPolicyParameters) 
 	}
 	if in.TemporaryPasswordValidityDays != nil {
 		in, out := &in.TemporaryPasswordValidityDays, &out.TemporaryPasswordValidityDays
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2362,7 +2362,7 @@ func (in *RecoveryMechanismInitParameters) DeepCopyInto(out *RecoveryMechanismIn
 	}
 	if in.Priority != nil {
 		in, out := &in.Priority, &out.Priority
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2387,7 +2387,7 @@ func (in *RecoveryMechanismObservation) DeepCopyInto(out *RecoveryMechanismObser
 	}
 	if in.Priority != nil {
 		in, out := &in.Priority, &out.Priority
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2412,7 +2412,7 @@ func (in *RecoveryMechanismParameters) DeepCopyInto(out *RecoveryMechanismParame
 	}
 	if in.Priority != nil {
 		in, out := &in.Priority, &out.Priority
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -3449,22 +3449,6 @@ func (in *UserPoolInitParameters) DeepCopyInto(out *UserPoolInitParameters) {
 		*out = new(SoftwareTokenMfaConfigurationInitParameters)
 		(*in).DeepCopyInto(*out)
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.UserAttributeUpdateSettings != nil {
 		in, out := &in.UserAttributeUpdateSettings, &out.UserAttributeUpdateSettings
 		*out = new(UserAttributeUpdateSettingsInitParameters)
@@ -3627,7 +3611,7 @@ func (in *UserPoolObservation) DeepCopyInto(out *UserPoolObservation) {
 	}
 	if in.EstimatedNumberOfUsers != nil {
 		in, out := &in.EstimatedNumberOfUsers, &out.EstimatedNumberOfUsers
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ID != nil {
@@ -3873,22 +3857,6 @@ func (in *UserPoolParameters) DeepCopyInto(out *UserPoolParameters) {
 		in, out := &in.SoftwareTokenMfaConfiguration, &out.SoftwareTokenMfaConfiguration
 		*out = new(SoftwareTokenMfaConfigurationParameters)
 		(*in).DeepCopyInto(*out)
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.UserAttributeUpdateSettings != nil {
 		in, out := &in.UserAttributeUpdateSettings, &out.UserAttributeUpdateSettings

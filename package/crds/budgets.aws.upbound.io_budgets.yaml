@@ -997,7 +997,8 @@ spec:
                             description: The number of budget periods included in
                               the moving-average calculation that determines your
                               auto-adjusted budget amount.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                     type: object
                   budgetType:
@@ -1136,12 +1137,6 @@ spec:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   timePeriodEnd:
                     description: 'The end of the time period covered by the budget.
                       There are no restrictions on the end date. Format: 2017-01-01_12:00.'
@@ -1196,7 +1191,8 @@ spec:
                             description: The number of budget periods included in
                               the moving-average calculation that determines your
                               auto-adjusted budget amount.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                     type: object
                   budgetType:
@@ -1331,12 +1327,6 @@ spec:
                           type: string
                       type: object
                     type: array
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   timePeriodEnd:
                     description: 'The end of the time period covered by the budget.
                       There are no restrictions on the end date. Format: 2017-01-01_12:00.'
@@ -1560,7 +1550,8 @@ spec:
                             description: The number of budget periods included in
                               the moving-average calculation that determines your
                               auto-adjusted budget amount.
-                            type: number
+                            format: int64
+                            type: integer
                           lookbackAvailablePeriods:
                             description: The integer that describes how many budget
                               periods in your BudgetAdjustmentPeriod are included
@@ -1571,7 +1562,8 @@ spec:
                               can’t set your own LookBackAvailablePeriods. The value
                               is automatically calculated from the budget_adjustment_period
                               and your historical cost data.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       lastAutoAdjustTime:
                         description: The last time that your budget was auto-adjusted.

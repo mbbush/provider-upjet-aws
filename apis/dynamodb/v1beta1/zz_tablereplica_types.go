@@ -48,10 +48,6 @@ type TableReplicaInitParameters_2 struct {
 
 	// Storage class of the table replica. Valid values are STANDARD and STANDARD_INFREQUENT_ACCESS. If not used, the table replica will use the same class as the global table.
 	TableClassOverride *string `json:"tableClassOverride,omitempty" tf:"table_class_override,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type TableReplicaObservation_2 struct {
@@ -131,11 +127,6 @@ type TableReplicaParameters_2 struct {
 	// Storage class of the table replica. Valid values are STANDARD and STANDARD_INFREQUENT_ACCESS. If not used, the table replica will use the same class as the global table.
 	// +kubebuilder:validation:Optional
 	TableClassOverride *string `json:"tableClassOverride,omitempty" tf:"table_class_override,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // TableReplicaSpec defines the desired state of TableReplica

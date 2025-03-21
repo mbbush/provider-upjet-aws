@@ -1538,7 +1538,8 @@ spec:
                               description: |-
                                 Identifies the message group that the message belongs to. When a group
                                 is assigned to a message, Amazon Lex returns one message from each group in the response. Must be a number between 1 and 5 (inclusive).
-                              type: number
+                              format: int64
+                              type: integer
                           type: object
                         type: array
                       responseCard:
@@ -1557,7 +1558,8 @@ spec:
                       maxAttempts:
                         description: The number of times to prompt the user for information.
                           Must be a number between 1 and 5 (inclusive).
-                        type: number
+                        format: int64
+                        type: integer
                       message:
                         description: |-
                           A set of messages, each of which provides a message string and its type.
@@ -1576,7 +1578,8 @@ spec:
                               description: |-
                                 Identifies the message group that the message belongs to. When a group
                                 is assigned to a message, Amazon Lex returns one message from each group in the response. Must be a number between 1 and 5 (inclusive).
-                              type: number
+                              format: int64
+                              type: integer
                           type: object
                         type: array
                       responseCard:
@@ -1625,7 +1628,8 @@ spec:
                           maxAttempts:
                             description: The number of times to prompt the user for
                               information. Must be a number between 1 and 5 (inclusive).
-                            type: number
+                            format: int64
+                            type: integer
                           message:
                             description: |-
                               A set of messages, each of which provides a message string and its type.
@@ -1644,7 +1648,8 @@ spec:
                                   description: |-
                                     Identifies the message group that the message belongs to. When a group
                                     is assigned to a message, Amazon Lex returns one message from each group in the response. Must be a number between 1 and 5 (inclusive).
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             type: array
                           responseCard:
@@ -1678,7 +1683,8 @@ spec:
                                   description: |-
                                     Identifies the message group that the message belongs to. When a group
                                     is assigned to a message, Amazon Lex returns one message from each group in the response. Must be a number between 1 and 5 (inclusive).
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             type: array
                           responseCard:
@@ -1753,7 +1759,8 @@ spec:
                               description: |-
                                 Identifies the message group that the message belongs to. When a group
                                 is assigned to a message, Amazon Lex returns one message from each group in the response. Must be a number between 1 and 5 (inclusive).
-                              type: number
+                              format: int64
+                              type: integer
                           type: object
                         type: array
                       responseCard:
@@ -1793,7 +1800,8 @@ spec:
                             For example, if the intent has two slots with priorities 1 and 2, AWS Lex first elicits a value for
                             the slot with priority 1. If multiple slots share the same priority, the order in which Lex elicits
                             values is arbitrary. Must be between 1 and 100.
-                          type: number
+                          format: int64
+                          type: integer
                         responseCard:
                           description: |-
                             The response card. Amazon Lex will substitute session attributes and
@@ -1829,7 +1837,8 @@ spec:
                               description: The number of times to prompt the user
                                 for information. Must be a number between 1 and 5
                                 (inclusive).
-                              type: number
+                              format: int64
+                              type: integer
                             message:
                               description: |-
                                 A set of messages, each of which provides a message string and its type.
@@ -1848,7 +1857,8 @@ spec:
                                     description: |-
                                       Identifies the message group that the message belongs to. When a group
                                       is assigned to a message, Amazon Lex returns one message from each group in the response. Must be a number between 1 and 5 (inclusive).
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                               type: array
                             responseCard:
@@ -1902,7 +1912,8 @@ spec:
                               description: |-
                                 Identifies the message group that the message belongs to. When a group
                                 is assigned to a message, Amazon Lex returns one message from each group in the response. Must be a number between 1 and 5 (inclusive).
-                              type: number
+                              format: int64
+                              type: integer
                           type: object
                         type: array
                       responseCard:
@@ -1921,7 +1932,8 @@ spec:
                       maxAttempts:
                         description: The number of times to prompt the user for information.
                           Must be a number between 1 and 5 (inclusive).
-                        type: number
+                        format: int64
+                        type: integer
                       message:
                         description: |-
                           A set of messages, each of which provides a message string and its type.
@@ -1940,7 +1952,8 @@ spec:
                               description: |-
                                 Identifies the message group that the message belongs to. When a group
                                 is assigned to a message, Amazon Lex returns one message from each group in the response. Must be a number between 1 and 5 (inclusive).
-                              type: number
+                              format: int64
+                              type: integer
                           type: object
                         type: array
                       responseCard:
@@ -1989,7 +2002,8 @@ spec:
                           maxAttempts:
                             description: The number of times to prompt the user for
                               information. Must be a number between 1 and 5 (inclusive).
-                            type: number
+                            format: int64
+                            type: integer
                           message:
                             description: |-
                               A set of messages, each of which provides a message string and its type.
@@ -2008,7 +2022,8 @@ spec:
                                   description: |-
                                     Identifies the message group that the message belongs to. When a group
                                     is assigned to a message, Amazon Lex returns one message from each group in the response. Must be a number between 1 and 5 (inclusive).
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             type: array
                           responseCard:
@@ -2042,7 +2057,8 @@ spec:
                                   description: |-
                                     Identifies the message group that the message belongs to. When a group
                                     is assigned to a message, Amazon Lex returns one message from each group in the response. Must be a number between 1 and 5 (inclusive).
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             type: array
                           responseCard:
@@ -2113,7 +2129,8 @@ spec:
                               description: |-
                                 Identifies the message group that the message belongs to. When a group
                                 is assigned to a message, Amazon Lex returns one message from each group in the response. Must be a number between 1 and 5 (inclusive).
-                              type: number
+                              format: int64
+                              type: integer
                           type: object
                         type: array
                       responseCard:
@@ -2153,7 +2170,8 @@ spec:
                             For example, if the intent has two slots with priorities 1 and 2, AWS Lex first elicits a value for
                             the slot with priority 1. If multiple slots share the same priority, the order in which Lex elicits
                             values is arbitrary. Must be between 1 and 100.
-                          type: number
+                          format: int64
+                          type: integer
                         responseCard:
                           description: |-
                             The response card. Amazon Lex will substitute session attributes and
@@ -2189,7 +2207,8 @@ spec:
                               description: The number of times to prompt the user
                                 for information. Must be a number between 1 and 5
                                 (inclusive).
-                              type: number
+                              format: int64
+                              type: integer
                             message:
                               description: |-
                                 A set of messages, each of which provides a message string and its type.
@@ -2208,7 +2227,8 @@ spec:
                                     description: |-
                                       Identifies the message group that the message belongs to. When a group
                                       is assigned to a message, Amazon Lex returns one message from each group in the response. Must be a number between 1 and 5 (inclusive).
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                               type: array
                             responseCard:
@@ -2432,7 +2452,8 @@ spec:
                               description: |-
                                 Identifies the message group that the message belongs to. When a group
                                 is assigned to a message, Amazon Lex returns one message from each group in the response. Must be a number between 1 and 5 (inclusive).
-                              type: number
+                              format: int64
+                              type: integer
                           type: object
                         type: array
                       responseCard:
@@ -2451,7 +2472,8 @@ spec:
                       maxAttempts:
                         description: The number of times to prompt the user for information.
                           Must be a number between 1 and 5 (inclusive).
-                        type: number
+                        format: int64
+                        type: integer
                       message:
                         description: |-
                           A set of messages, each of which provides a message string and its type.
@@ -2470,7 +2492,8 @@ spec:
                               description: |-
                                 Identifies the message group that the message belongs to. When a group
                                 is assigned to a message, Amazon Lex returns one message from each group in the response. Must be a number between 1 and 5 (inclusive).
-                              type: number
+                              format: int64
+                              type: integer
                           type: object
                         type: array
                       responseCard:
@@ -2522,7 +2545,8 @@ spec:
                           maxAttempts:
                             description: The number of times to prompt the user for
                               information. Must be a number between 1 and 5 (inclusive).
-                            type: number
+                            format: int64
+                            type: integer
                           message:
                             description: |-
                               A set of messages, each of which provides a message string and its type.
@@ -2541,7 +2565,8 @@ spec:
                                   description: |-
                                     Identifies the message group that the message belongs to. When a group
                                     is assigned to a message, Amazon Lex returns one message from each group in the response. Must be a number between 1 and 5 (inclusive).
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             type: array
                           responseCard:
@@ -2575,7 +2600,8 @@ spec:
                                   description: |-
                                     Identifies the message group that the message belongs to. When a group
                                     is assigned to a message, Amazon Lex returns one message from each group in the response. Must be a number between 1 and 5 (inclusive).
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             type: array
                           responseCard:
@@ -2652,7 +2678,8 @@ spec:
                               description: |-
                                 Identifies the message group that the message belongs to. When a group
                                 is assigned to a message, Amazon Lex returns one message from each group in the response. Must be a number between 1 and 5 (inclusive).
-                              type: number
+                              format: int64
+                              type: integer
                           type: object
                         type: array
                       responseCard:
@@ -2692,7 +2719,8 @@ spec:
                             For example, if the intent has two slots with priorities 1 and 2, AWS Lex first elicits a value for
                             the slot with priority 1. If multiple slots share the same priority, the order in which Lex elicits
                             values is arbitrary. Must be between 1 and 100.
-                          type: number
+                          format: int64
+                          type: integer
                         responseCard:
                           description: |-
                             The response card. Amazon Lex will substitute session attributes and
@@ -2728,7 +2756,8 @@ spec:
                               description: The number of times to prompt the user
                                 for information. Must be a number between 1 and 5
                                 (inclusive).
-                              type: number
+                              format: int64
+                              type: integer
                             message:
                               description: |-
                                 A set of messages, each of which provides a message string and its type.
@@ -2747,7 +2776,8 @@ spec:
                                     description: |-
                                       Identifies the message group that the message belongs to. When a group
                                       is assigned to a message, Amazon Lex returns one message from each group in the response. Must be a number between 1 and 5 (inclusive).
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                               type: array
                             responseCard:

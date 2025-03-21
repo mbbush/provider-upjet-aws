@@ -188,10 +188,6 @@ type CrawlerInitParameters struct {
 
 	// The table prefix used for catalog tables that are created.
 	TablePrefix *string `json:"tablePrefix,omitempty" tf:"table_prefix,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type CrawlerObservation struct {
@@ -376,11 +372,6 @@ type CrawlerParameters struct {
 	// The table prefix used for catalog tables that are created.
 	// +kubebuilder:validation:Optional
 	TablePrefix *string `json:"tablePrefix,omitempty" tf:"table_prefix,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type DeltaTargetInitParameters struct {
@@ -483,7 +474,7 @@ type HudiTargetInitParameters struct {
 	Exclusions []*string `json:"exclusions,omitempty" tf:"exclusions,omitempty"`
 
 	// The maximum depth of Amazon S3 paths that the crawler can traverse to discover the Hudi metadata folder in your Amazon S3 path. Used to limit the crawler run time. Valid values are between 1 and 20.
-	MaximumTraversalDepth *float64 `json:"maximumTraversalDepth,omitempty" tf:"maximum_traversal_depth,omitempty"`
+	MaximumTraversalDepth *int64 `json:"maximumTraversalDepth,omitempty" tf:"maximum_traversal_depth,omitempty"`
 
 	// One or more Amazon S3 paths that contains Hudi metadata folders as s3://bucket/prefix.
 	// +listType=set
@@ -499,7 +490,7 @@ type HudiTargetObservation struct {
 	Exclusions []*string `json:"exclusions,omitempty" tf:"exclusions,omitempty"`
 
 	// The maximum depth of Amazon S3 paths that the crawler can traverse to discover the Hudi metadata folder in your Amazon S3 path. Used to limit the crawler run time. Valid values are between 1 and 20.
-	MaximumTraversalDepth *float64 `json:"maximumTraversalDepth,omitempty" tf:"maximum_traversal_depth,omitempty"`
+	MaximumTraversalDepth *int64 `json:"maximumTraversalDepth,omitempty" tf:"maximum_traversal_depth,omitempty"`
 
 	// One or more Amazon S3 paths that contains Hudi metadata folders as s3://bucket/prefix.
 	// +listType=set
@@ -518,7 +509,7 @@ type HudiTargetParameters struct {
 
 	// The maximum depth of Amazon S3 paths that the crawler can traverse to discover the Hudi metadata folder in your Amazon S3 path. Used to limit the crawler run time. Valid values are between 1 and 20.
 	// +kubebuilder:validation:Optional
-	MaximumTraversalDepth *float64 `json:"maximumTraversalDepth" tf:"maximum_traversal_depth,omitempty"`
+	MaximumTraversalDepth *int64 `json:"maximumTraversalDepth" tf:"maximum_traversal_depth,omitempty"`
 
 	// One or more Amazon S3 paths that contains Hudi metadata folders as s3://bucket/prefix.
 	// +kubebuilder:validation:Optional
@@ -535,7 +526,7 @@ type IcebergTargetInitParameters struct {
 	Exclusions []*string `json:"exclusions,omitempty" tf:"exclusions,omitempty"`
 
 	// The maximum depth of Amazon S3 paths that the crawler can traverse to discover the Hudi metadata folder in your Amazon S3 path. Used to limit the crawler run time. Valid values are between 1 and 20.
-	MaximumTraversalDepth *float64 `json:"maximumTraversalDepth,omitempty" tf:"maximum_traversal_depth,omitempty"`
+	MaximumTraversalDepth *int64 `json:"maximumTraversalDepth,omitempty" tf:"maximum_traversal_depth,omitempty"`
 
 	// One or more Amazon S3 paths that contains Hudi metadata folders as s3://bucket/prefix.
 	// +listType=set
@@ -551,7 +542,7 @@ type IcebergTargetObservation struct {
 	Exclusions []*string `json:"exclusions,omitempty" tf:"exclusions,omitempty"`
 
 	// The maximum depth of Amazon S3 paths that the crawler can traverse to discover the Hudi metadata folder in your Amazon S3 path. Used to limit the crawler run time. Valid values are between 1 and 20.
-	MaximumTraversalDepth *float64 `json:"maximumTraversalDepth,omitempty" tf:"maximum_traversal_depth,omitempty"`
+	MaximumTraversalDepth *int64 `json:"maximumTraversalDepth,omitempty" tf:"maximum_traversal_depth,omitempty"`
 
 	// One or more Amazon S3 paths that contains Hudi metadata folders as s3://bucket/prefix.
 	// +listType=set
@@ -570,7 +561,7 @@ type IcebergTargetParameters struct {
 
 	// The maximum depth of Amazon S3 paths that the crawler can traverse to discover the Hudi metadata folder in your Amazon S3 path. Used to limit the crawler run time. Valid values are between 1 and 20.
 	// +kubebuilder:validation:Optional
-	MaximumTraversalDepth *float64 `json:"maximumTraversalDepth" tf:"maximum_traversal_depth,omitempty"`
+	MaximumTraversalDepth *int64 `json:"maximumTraversalDepth" tf:"maximum_traversal_depth,omitempty"`
 
 	// One or more Amazon S3 paths that contains Hudi metadata folders as s3://bucket/prefix.
 	// +kubebuilder:validation:Optional
@@ -787,7 +778,7 @@ type S3TargetInitParameters struct {
 	Path *string `json:"path,omitempty" tf:"path,omitempty"`
 
 	// Sets the number of files in each leaf folder to be crawled when crawling sample files in a dataset. If not set, all the files are crawled. A valid value is an integer between 1 and 249.
-	SampleSize *float64 `json:"sampleSize,omitempty" tf:"sample_size,omitempty"`
+	SampleSize *int64 `json:"sampleSize,omitempty" tf:"sample_size,omitempty"`
 }
 
 type S3TargetObservation struct {
@@ -808,7 +799,7 @@ type S3TargetObservation struct {
 	Path *string `json:"path,omitempty" tf:"path,omitempty"`
 
 	// Sets the number of files in each leaf folder to be crawled when crawling sample files in a dataset. If not set, all the files are crawled. A valid value is an integer between 1 and 249.
-	SampleSize *float64 `json:"sampleSize,omitempty" tf:"sample_size,omitempty"`
+	SampleSize *int64 `json:"sampleSize,omitempty" tf:"sample_size,omitempty"`
 }
 
 type S3TargetParameters struct {
@@ -835,7 +826,7 @@ type S3TargetParameters struct {
 
 	// Sets the number of files in each leaf folder to be crawled when crawling sample files in a dataset. If not set, all the files are crawled. A valid value is an integer between 1 and 249.
 	// +kubebuilder:validation:Optional
-	SampleSize *float64 `json:"sampleSize,omitempty" tf:"sample_size,omitempty"`
+	SampleSize *int64 `json:"sampleSize,omitempty" tf:"sample_size,omitempty"`
 }
 
 type SchemaChangePolicyInitParameters struct {

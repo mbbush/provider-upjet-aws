@@ -16,7 +16,7 @@ import (
 type ReplicationInstanceInitParameters struct {
 
 	// The amount of storage (in gigabytes) to be initially allocated for the replication instance.
-	AllocatedStorage *float64 `json:"allocatedStorage,omitempty" tf:"allocated_storage,omitempty"`
+	AllocatedStorage *int64 `json:"allocatedStorage,omitempty" tf:"allocated_storage,omitempty"`
 
 	// Indicates that major version upgrades are allowed.
 	AllowMajorVersionUpgrade *bool `json:"allowMajorVersionUpgrade,omitempty" tf:"allow_major_version_upgrade,omitempty"`
@@ -73,10 +73,6 @@ type ReplicationInstanceInitParameters struct {
 	// +kubebuilder:validation:Optional
 	ReplicationSubnetGroupIDSelector *v1.Selector `json:"replicationSubnetGroupIdSelector,omitempty" tf:"-"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// References to SecurityGroup in ec2 to populate vpcSecurityGroupIds.
 	// +kubebuilder:validation:Optional
 	VPCSecurityGroupIDRefs []v1.Reference `json:"vpcSecurityGroupIdRefs,omitempty" tf:"-"`
@@ -96,7 +92,7 @@ type ReplicationInstanceInitParameters struct {
 type ReplicationInstanceObservation struct {
 
 	// The amount of storage (in gigabytes) to be initially allocated for the replication instance.
-	AllocatedStorage *float64 `json:"allocatedStorage,omitempty" tf:"allocated_storage,omitempty"`
+	AllocatedStorage *int64 `json:"allocatedStorage,omitempty" tf:"allocated_storage,omitempty"`
 
 	// Indicates that major version upgrades are allowed.
 	AllowMajorVersionUpgrade *bool `json:"allowMajorVersionUpgrade,omitempty" tf:"allow_major_version_upgrade,omitempty"`
@@ -162,7 +158,7 @@ type ReplicationInstanceParameters struct {
 
 	// The amount of storage (in gigabytes) to be initially allocated for the replication instance.
 	// +kubebuilder:validation:Optional
-	AllocatedStorage *float64 `json:"allocatedStorage,omitempty" tf:"allocated_storage,omitempty"`
+	AllocatedStorage *int64 `json:"allocatedStorage,omitempty" tf:"allocated_storage,omitempty"`
 
 	// Indicates that major version upgrades are allowed.
 	// +kubebuilder:validation:Optional
@@ -235,11 +231,6 @@ type ReplicationInstanceParameters struct {
 	// Selector for a ReplicationSubnetGroup in dms to populate replicationSubnetGroupId.
 	// +kubebuilder:validation:Optional
 	ReplicationSubnetGroupIDSelector *v1.Selector `json:"replicationSubnetGroupIdSelector,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// References to SecurityGroup in ec2 to populate vpcSecurityGroupIds.
 	// +kubebuilder:validation:Optional

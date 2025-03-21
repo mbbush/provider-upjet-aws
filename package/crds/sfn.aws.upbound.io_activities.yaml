@@ -83,7 +83,8 @@ spec:
                           data keys. When the period expires, Activities will call
                           GenerateDataKey. This setting only applies to customer managed
                           KMS key and does not apply to AWS owned KMS key.
-                        type: number
+                        format: int64
+                        type: integer
                       kmsKeyId:
                         description: The alias, alias ARN, key ID, or key ARN of the
                           symmetric encryption KMS key that encrypts the data key.
@@ -174,12 +175,6 @@ spec:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -206,7 +201,8 @@ spec:
                           data keys. When the period expires, Activities will call
                           GenerateDataKey. This setting only applies to customer managed
                           KMS key and does not apply to AWS owned KMS key.
-                        type: number
+                        format: int64
+                        type: integer
                       kmsKeyId:
                         description: The alias, alias ARN, key ID, or key ARN of the
                           symmetric encryption KMS key that encrypts the data key.
@@ -293,12 +289,6 @@ spec:
                           Valid values: AWS_KMS_KEY, CUSTOMER_MANAGED_KMS_KEY'
                         type: string
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -485,7 +475,8 @@ spec:
                           data keys. When the period expires, Activities will call
                           GenerateDataKey. This setting only applies to customer managed
                           KMS key and does not apply to AWS owned KMS key.
-                        type: number
+                        format: int64
+                        type: integer
                       kmsKeyId:
                         description: The alias, alias ARN, key ID, or key ARN of the
                           symmetric encryption KMS key that encrypts the data key.

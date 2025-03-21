@@ -16,7 +16,7 @@ import (
 type EBSSnapshotCopyInitParameters struct {
 
 	// Specifies a completion duration to initiate a time-based snapshot copy. Time-based snapshot copy operations complete within the specified duration.  Value must be between 15 and 2880 minutes, in 15 minute increments only.
-	CompletionDurationMinutes *float64 `json:"completionDurationMinutes,omitempty" tf:"completion_duration_minutes,omitempty"`
+	CompletionDurationMinutes *int64 `json:"completionDurationMinutes,omitempty" tf:"completion_duration_minutes,omitempty"`
 
 	// A description of what the snapshot is.
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
@@ -58,12 +58,8 @@ type EBSSnapshotCopyInitParameters struct {
 	// The name of the storage tier. Valid values are archive and standard. Default value is standard.
 	StorageTier *string `json:"storageTier,omitempty" tf:"storage_tier,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Specifies the number of days for which to temporarily restore an archived snapshot. Required for temporary restores only. The snapshot will be automatically re-archived after this period.
-	TemporaryRestoreDays *float64 `json:"temporaryRestoreDays,omitempty" tf:"temporary_restore_days,omitempty"`
+	TemporaryRestoreDays *int64 `json:"temporaryRestoreDays,omitempty" tf:"temporary_restore_days,omitempty"`
 }
 
 type EBSSnapshotCopyObservation struct {
@@ -72,7 +68,7 @@ type EBSSnapshotCopyObservation struct {
 	Arn *string `json:"arn,omitempty" tf:"arn,omitempty"`
 
 	// Specifies a completion duration to initiate a time-based snapshot copy. Time-based snapshot copy operations complete within the specified duration.  Value must be between 15 and 2880 minutes, in 15 minute increments only.
-	CompletionDurationMinutes *float64 `json:"completionDurationMinutes,omitempty" tf:"completion_duration_minutes,omitempty"`
+	CompletionDurationMinutes *int64 `json:"completionDurationMinutes,omitempty" tf:"completion_duration_minutes,omitempty"`
 
 	// The data encryption key identifier for the snapshot.
 	DataEncryptionKeyID *string `json:"dataEncryptionKeyId,omitempty" tf:"data_encryption_key_id,omitempty"`
@@ -119,20 +115,20 @@ type EBSSnapshotCopyObservation struct {
 	TagsAll map[string]*string `json:"tagsAll,omitempty" tf:"tags_all,omitempty"`
 
 	// Specifies the number of days for which to temporarily restore an archived snapshot. Required for temporary restores only. The snapshot will be automatically re-archived after this period.
-	TemporaryRestoreDays *float64 `json:"temporaryRestoreDays,omitempty" tf:"temporary_restore_days,omitempty"`
+	TemporaryRestoreDays *int64 `json:"temporaryRestoreDays,omitempty" tf:"temporary_restore_days,omitempty"`
 
 	// The snapshot ID (e.g., snap-59fcb34e).
 	VolumeID *string `json:"volumeId,omitempty" tf:"volume_id,omitempty"`
 
 	// The size of the drive in GiBs.
-	VolumeSize *float64 `json:"volumeSize,omitempty" tf:"volume_size,omitempty"`
+	VolumeSize *int64 `json:"volumeSize,omitempty" tf:"volume_size,omitempty"`
 }
 
 type EBSSnapshotCopyParameters struct {
 
 	// Specifies a completion duration to initiate a time-based snapshot copy. Time-based snapshot copy operations complete within the specified duration.  Value must be between 15 and 2880 minutes, in 15 minute increments only.
 	// +kubebuilder:validation:Optional
-	CompletionDurationMinutes *float64 `json:"completionDurationMinutes,omitempty" tf:"completion_duration_minutes,omitempty"`
+	CompletionDurationMinutes *int64 `json:"completionDurationMinutes,omitempty" tf:"completion_duration_minutes,omitempty"`
 
 	// A description of what the snapshot is.
 	// +kubebuilder:validation:Optional
@@ -186,14 +182,9 @@ type EBSSnapshotCopyParameters struct {
 	// +kubebuilder:validation:Optional
 	StorageTier *string `json:"storageTier,omitempty" tf:"storage_tier,omitempty"`
 
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Specifies the number of days for which to temporarily restore an archived snapshot. Required for temporary restores only. The snapshot will be automatically re-archived after this period.
 	// +kubebuilder:validation:Optional
-	TemporaryRestoreDays *float64 `json:"temporaryRestoreDays,omitempty" tf:"temporary_restore_days,omitempty"`
+	TemporaryRestoreDays *int64 `json:"temporaryRestoreDays,omitempty" tf:"temporary_restore_days,omitempty"`
 }
 
 // EBSSnapshotCopySpec defines the desired state of EBSSnapshotCopy

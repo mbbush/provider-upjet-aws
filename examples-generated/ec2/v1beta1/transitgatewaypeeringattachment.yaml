@@ -14,8 +14,6 @@ spec:
       matchLabels:
         testing.upbound.io/example-name: peer
     region: us-west-1
-    tags:
-      Name: TGW Peering Requestor
     transitGatewayIdSelector:
       matchLabels:
         testing.upbound.io/example-name: local
@@ -34,8 +32,6 @@ spec:
   forProvider:
     provider: ${aws.local}
     region: us-west-1
-    tags:
-      Name: Local TGW
 
 ---
 
@@ -51,5 +47,3 @@ spec:
   forProvider:
     provider: ${aws.peer}
     region: us-west-1
-    tags:
-      Name: Peer TGW

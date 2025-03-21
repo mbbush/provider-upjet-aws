@@ -490,12 +490,6 @@ spec:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   traceConfiguration:
                     description: Configuration of the tracing feature within this
                       observability configuration. If you don't specify it, App Runner
@@ -526,12 +520,6 @@ spec:
                   observabilityConfigurationName:
                     description: Name of the observability configuration.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   traceConfiguration:
                     description: Configuration of the tracing feature within this
                       observability configuration. If you don't specify it, App Runner
@@ -738,7 +726,8 @@ spec:
                     type: string
                   observabilityConfigurationRevision:
                     description: The revision of this observability configuration.
-                    type: number
+                    format: int64
+                    type: integer
                   status:
                     description: Current state of the observability configuration.
                       An INACTIVE configuration revision has been deleted and can't

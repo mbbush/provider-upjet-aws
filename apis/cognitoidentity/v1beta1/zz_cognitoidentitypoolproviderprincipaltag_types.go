@@ -41,10 +41,6 @@ type CognitoIdentityPoolProviderPrincipalTagInitParameters struct {
 	// +kubebuilder:validation:Optional
 	IdentityProviderNameSelector *v1.Selector `json:"identityProviderNameSelector,omitempty" tf:"-"`
 
-	// String to string map of variables.
-	// +mapType=granular
-	PrincipalTags map[string]*string `json:"principalTags,omitempty" tf:"principal_tags,omitempty"`
-
 	// :  use default (username and clientID) attribute mappings.
 	UseDefaults *bool `json:"useDefaults,omitempty" tf:"use_defaults,omitempty"`
 }
@@ -95,11 +91,6 @@ type CognitoIdentityPoolProviderPrincipalTagParameters struct {
 	// Selector for a UserPool in cognitoidp to populate identityProviderName.
 	// +kubebuilder:validation:Optional
 	IdentityProviderNameSelector *v1.Selector `json:"identityProviderNameSelector,omitempty" tf:"-"`
-
-	// String to string map of variables.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	PrincipalTags map[string]*string `json:"principalTags,omitempty" tf:"principal_tags,omitempty"`
 
 	// Region is the region you'd like your resource to be created in.
 	// +upjet:crd:field:TFTag=-

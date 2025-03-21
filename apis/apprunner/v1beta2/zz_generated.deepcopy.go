@@ -649,12 +649,12 @@ func (in *HealthCheckConfigurationInitParameters) DeepCopyInto(out *HealthCheckC
 	*out = *in
 	if in.HealthyThreshold != nil {
 		in, out := &in.HealthyThreshold, &out.HealthyThreshold
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Interval != nil {
 		in, out := &in.Interval, &out.Interval
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Path != nil {
@@ -669,12 +669,12 @@ func (in *HealthCheckConfigurationInitParameters) DeepCopyInto(out *HealthCheckC
 	}
 	if in.Timeout != nil {
 		in, out := &in.Timeout, &out.Timeout
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.UnhealthyThreshold != nil {
 		in, out := &in.UnhealthyThreshold, &out.UnhealthyThreshold
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -694,12 +694,12 @@ func (in *HealthCheckConfigurationObservation) DeepCopyInto(out *HealthCheckConf
 	*out = *in
 	if in.HealthyThreshold != nil {
 		in, out := &in.HealthyThreshold, &out.HealthyThreshold
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Interval != nil {
 		in, out := &in.Interval, &out.Interval
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Path != nil {
@@ -714,12 +714,12 @@ func (in *HealthCheckConfigurationObservation) DeepCopyInto(out *HealthCheckConf
 	}
 	if in.Timeout != nil {
 		in, out := &in.Timeout, &out.Timeout
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.UnhealthyThreshold != nil {
 		in, out := &in.UnhealthyThreshold, &out.UnhealthyThreshold
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -739,12 +739,12 @@ func (in *HealthCheckConfigurationParameters) DeepCopyInto(out *HealthCheckConfi
 	*out = *in
 	if in.HealthyThreshold != nil {
 		in, out := &in.HealthyThreshold, &out.HealthyThreshold
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Interval != nil {
 		in, out := &in.Interval, &out.Interval
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Path != nil {
@@ -759,12 +759,12 @@ func (in *HealthCheckConfigurationParameters) DeepCopyInto(out *HealthCheckConfi
 	}
 	if in.Timeout != nil {
 		in, out := &in.Timeout, &out.Timeout
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.UnhealthyThreshold != nil {
 		in, out := &in.UnhealthyThreshold, &out.UnhealthyThreshold
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1315,22 +1315,6 @@ func (in *ObservabilityConfigurationInitParameters) DeepCopyInto(out *Observabil
 		*out = new(string)
 		**out = **in
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.TraceConfiguration != nil {
 		in, out := &in.TraceConfiguration, &out.TraceConfiguration
 		*out = new(TraceConfigurationInitParameters)
@@ -1405,7 +1389,7 @@ func (in *ObservabilityConfigurationObservation) DeepCopyInto(out *Observability
 	}
 	if in.ObservabilityConfigurationRevision != nil {
 		in, out := &in.ObservabilityConfigurationRevision, &out.ObservabilityConfigurationRevision
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Status != nil {
@@ -1474,22 +1458,6 @@ func (in *ObservabilityConfigurationParameters) DeepCopyInto(out *ObservabilityC
 		in, out := &in.Region, &out.Region
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.TraceConfiguration != nil {
 		in, out := &in.TraceConfiguration, &out.TraceConfiguration
@@ -1612,22 +1580,6 @@ func (in *ServiceInitParameters) DeepCopyInto(out *ServiceInitParameters) {
 		in, out := &in.SourceConfiguration, &out.SourceConfiguration
 		*out = new(SourceConfigurationInitParameters)
 		(*in).DeepCopyInto(*out)
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 }
 
@@ -1927,22 +1879,6 @@ func (in *ServiceParameters) DeepCopyInto(out *ServiceParameters) {
 		in, out := &in.SourceConfiguration, &out.SourceConfiguration
 		*out = new(SourceConfigurationParameters)
 		(*in).DeepCopyInto(*out)
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 }
 

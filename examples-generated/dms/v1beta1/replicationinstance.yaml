@@ -24,8 +24,6 @@ spec:
     replicationSubnetGroupIdSelector:
       matchLabels:
         testing.upbound.io/example-name: test-dms-replication-subnet-group-tf
-    tags:
-      Name: test
     vpcSecurityGroupIdRefs:
     - name: example
 

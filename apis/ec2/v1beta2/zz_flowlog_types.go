@@ -102,7 +102,7 @@ type FlowLogInitParameters struct {
 	// during which a flow of packets is captured and aggregated into a flow
 	// log record. Valid Values: 60 seconds (1 minute) or 600 seconds (10
 	// minutes). Default: 600. When transit_gateway_id or transit_gateway_attachment_id is specified, max_aggregation_interval must be 60 seconds (1 minute).
-	MaxAggregationInterval *float64 `json:"maxAggregationInterval,omitempty" tf:"max_aggregation_interval,omitempty"`
+	MaxAggregationInterval *int64 `json:"maxAggregationInterval,omitempty" tf:"max_aggregation_interval,omitempty"`
 
 	// Subnet ID to attach to
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/ec2/v1beta1.Subnet
@@ -115,10 +115,6 @@ type FlowLogInitParameters struct {
 	// Selector for a Subnet in ec2 to populate subnetId.
 	// +kubebuilder:validation:Optional
 	SubnetIDSelector *v1.Selector `json:"subnetIdSelector,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// The type of traffic to capture. Valid values: ACCEPT,REJECT, ALL.
 	TrafficType *string `json:"trafficType,omitempty" tf:"traffic_type,omitempty"`
@@ -178,7 +174,7 @@ type FlowLogObservation struct {
 	// during which a flow of packets is captured and aggregated into a flow
 	// log record. Valid Values: 60 seconds (1 minute) or 600 seconds (10
 	// minutes). Default: 600. When transit_gateway_id or transit_gateway_attachment_id is specified, max_aggregation_interval must be 60 seconds (1 minute).
-	MaxAggregationInterval *float64 `json:"maxAggregationInterval,omitempty" tf:"max_aggregation_interval,omitempty"`
+	MaxAggregationInterval *int64 `json:"maxAggregationInterval,omitempty" tf:"max_aggregation_interval,omitempty"`
 
 	// Subnet ID to attach to
 	SubnetID *string `json:"subnetId,omitempty" tf:"subnet_id,omitempty"`
@@ -263,7 +259,7 @@ type FlowLogParameters struct {
 	// log record. Valid Values: 60 seconds (1 minute) or 600 seconds (10
 	// minutes). Default: 600. When transit_gateway_id or transit_gateway_attachment_id is specified, max_aggregation_interval must be 60 seconds (1 minute).
 	// +kubebuilder:validation:Optional
-	MaxAggregationInterval *float64 `json:"maxAggregationInterval,omitempty" tf:"max_aggregation_interval,omitempty"`
+	MaxAggregationInterval *int64 `json:"maxAggregationInterval,omitempty" tf:"max_aggregation_interval,omitempty"`
 
 	// Region is the region you'd like your resource to be created in.
 	// +upjet:crd:field:TFTag=-
@@ -282,11 +278,6 @@ type FlowLogParameters struct {
 	// Selector for a Subnet in ec2 to populate subnetId.
 	// +kubebuilder:validation:Optional
 	SubnetIDSelector *v1.Selector `json:"subnetIdSelector,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// The type of traffic to capture. Valid values: ACCEPT,REJECT, ALL.
 	// +kubebuilder:validation:Optional

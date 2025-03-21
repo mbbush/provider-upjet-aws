@@ -24,5 +24,3 @@ spec:
     subnetSelector:
       matchLabels:
         testing.upbound.io/example-name: 'public : subnet'
-    tags:
-      Environment: production

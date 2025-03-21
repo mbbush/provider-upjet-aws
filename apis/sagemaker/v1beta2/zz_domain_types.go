@@ -16,38 +16,38 @@ import (
 type AppLifecycleManagementIdleSettingsInitParameters struct {
 
 	// The time that SageMaker waits after the application becomes idle before shutting it down. Valid values are between 60 and 525600.
-	IdleTimeoutInMinutes *float64 `json:"idleTimeoutInMinutes,omitempty" tf:"idle_timeout_in_minutes,omitempty"`
+	IdleTimeoutInMinutes *int64 `json:"idleTimeoutInMinutes,omitempty" tf:"idle_timeout_in_minutes,omitempty"`
 
 	// Indicates whether idle shutdown is activated for the application type. Valid values are ENABLED and DISABLED.
 	LifecycleManagement *string `json:"lifecycleManagement,omitempty" tf:"lifecycle_management,omitempty"`
 
 	// The maximum value in minutes that custom idle shutdown can be set to by the user. Valid values are between 60 and 525600.
-	MaxIdleTimeoutInMinutes *float64 `json:"maxIdleTimeoutInMinutes,omitempty" tf:"max_idle_timeout_in_minutes,omitempty"`
+	MaxIdleTimeoutInMinutes *int64 `json:"maxIdleTimeoutInMinutes,omitempty" tf:"max_idle_timeout_in_minutes,omitempty"`
 
 	// The minimum value in minutes that custom idle shutdown can be set to by the user. Valid values are between 60 and 525600.
-	MinIdleTimeoutInMinutes *float64 `json:"minIdleTimeoutInMinutes,omitempty" tf:"min_idle_timeout_in_minutes,omitempty"`
+	MinIdleTimeoutInMinutes *int64 `json:"minIdleTimeoutInMinutes,omitempty" tf:"min_idle_timeout_in_minutes,omitempty"`
 }
 
 type AppLifecycleManagementIdleSettingsObservation struct {
 
 	// The time that SageMaker waits after the application becomes idle before shutting it down. Valid values are between 60 and 525600.
-	IdleTimeoutInMinutes *float64 `json:"idleTimeoutInMinutes,omitempty" tf:"idle_timeout_in_minutes,omitempty"`
+	IdleTimeoutInMinutes *int64 `json:"idleTimeoutInMinutes,omitempty" tf:"idle_timeout_in_minutes,omitempty"`
 
 	// Indicates whether idle shutdown is activated for the application type. Valid values are ENABLED and DISABLED.
 	LifecycleManagement *string `json:"lifecycleManagement,omitempty" tf:"lifecycle_management,omitempty"`
 
 	// The maximum value in minutes that custom idle shutdown can be set to by the user. Valid values are between 60 and 525600.
-	MaxIdleTimeoutInMinutes *float64 `json:"maxIdleTimeoutInMinutes,omitempty" tf:"max_idle_timeout_in_minutes,omitempty"`
+	MaxIdleTimeoutInMinutes *int64 `json:"maxIdleTimeoutInMinutes,omitempty" tf:"max_idle_timeout_in_minutes,omitempty"`
 
 	// The minimum value in minutes that custom idle shutdown can be set to by the user. Valid values are between 60 and 525600.
-	MinIdleTimeoutInMinutes *float64 `json:"minIdleTimeoutInMinutes,omitempty" tf:"min_idle_timeout_in_minutes,omitempty"`
+	MinIdleTimeoutInMinutes *int64 `json:"minIdleTimeoutInMinutes,omitempty" tf:"min_idle_timeout_in_minutes,omitempty"`
 }
 
 type AppLifecycleManagementIdleSettingsParameters struct {
 
 	// The time that SageMaker waits after the application becomes idle before shutting it down. Valid values are between 60 and 525600.
 	// +kubebuilder:validation:Optional
-	IdleTimeoutInMinutes *float64 `json:"idleTimeoutInMinutes,omitempty" tf:"idle_timeout_in_minutes,omitempty"`
+	IdleTimeoutInMinutes *int64 `json:"idleTimeoutInMinutes,omitempty" tf:"idle_timeout_in_minutes,omitempty"`
 
 	// Indicates whether idle shutdown is activated for the application type. Valid values are ENABLED and DISABLED.
 	// +kubebuilder:validation:Optional
@@ -55,11 +55,11 @@ type AppLifecycleManagementIdleSettingsParameters struct {
 
 	// The maximum value in minutes that custom idle shutdown can be set to by the user. Valid values are between 60 and 525600.
 	// +kubebuilder:validation:Optional
-	MaxIdleTimeoutInMinutes *float64 `json:"maxIdleTimeoutInMinutes,omitempty" tf:"max_idle_timeout_in_minutes,omitempty"`
+	MaxIdleTimeoutInMinutes *int64 `json:"maxIdleTimeoutInMinutes,omitempty" tf:"max_idle_timeout_in_minutes,omitempty"`
 
 	// The minimum value in minutes that custom idle shutdown can be set to by the user. Valid values are between 60 and 525600.
 	// +kubebuilder:validation:Optional
-	MinIdleTimeoutInMinutes *float64 `json:"minIdleTimeoutInMinutes,omitempty" tf:"min_idle_timeout_in_minutes,omitempty"`
+	MinIdleTimeoutInMinutes *int64 `json:"minIdleTimeoutInMinutes,omitempty" tf:"min_idle_timeout_in_minutes,omitempty"`
 }
 
 type AppLifecycleManagementInitParameters struct {
@@ -195,7 +195,7 @@ type CodeEditorAppSettingsCustomImageInitParameters struct {
 	ImageName *string `json:"imageName,omitempty" tf:"image_name,omitempty"`
 
 	// The version number of the Custom Image.
-	ImageVersionNumber *float64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
+	ImageVersionNumber *int64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
 }
 
 type CodeEditorAppSettingsCustomImageObservation struct {
@@ -207,7 +207,7 @@ type CodeEditorAppSettingsCustomImageObservation struct {
 	ImageName *string `json:"imageName,omitempty" tf:"image_name,omitempty"`
 
 	// The version number of the Custom Image.
-	ImageVersionNumber *float64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
+	ImageVersionNumber *int64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
 }
 
 type CodeEditorAppSettingsCustomImageParameters struct {
@@ -222,7 +222,7 @@ type CodeEditorAppSettingsCustomImageParameters struct {
 
 	// The version number of the Custom Image.
 	// +kubebuilder:validation:Optional
-	ImageVersionNumber *float64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
+	ImageVersionNumber *int64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
 }
 
 type CodeEditorAppSettingsDefaultResourceSpecInitParameters struct {
@@ -403,7 +403,7 @@ type CustomImageInitParameters struct {
 	ImageName *string `json:"imageName,omitempty" tf:"image_name,omitempty"`
 
 	// The version number of the Custom Image.
-	ImageVersionNumber *float64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
+	ImageVersionNumber *int64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
 }
 
 type CustomImageObservation struct {
@@ -415,7 +415,7 @@ type CustomImageObservation struct {
 	ImageName *string `json:"imageName,omitempty" tf:"image_name,omitempty"`
 
 	// The version number of the Custom Image.
-	ImageVersionNumber *float64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
+	ImageVersionNumber *int64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
 }
 
 type CustomImageParameters struct {
@@ -430,65 +430,65 @@ type CustomImageParameters struct {
 
 	// The version number of the Custom Image.
 	// +kubebuilder:validation:Optional
-	ImageVersionNumber *float64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
+	ImageVersionNumber *int64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
 }
 
 type CustomPosixUserConfigInitParameters struct {
 
 	// The POSIX group ID.
-	GID *float64 `json:"gid,omitempty" tf:"gid,omitempty"`
+	GID *int64 `json:"gid,omitempty" tf:"gid,omitempty"`
 
 	// The POSIX user ID.
-	UID *float64 `json:"uid,omitempty" tf:"uid,omitempty"`
+	UID *int64 `json:"uid,omitempty" tf:"uid,omitempty"`
 }
 
 type CustomPosixUserConfigObservation struct {
 
 	// The POSIX group ID.
-	GID *float64 `json:"gid,omitempty" tf:"gid,omitempty"`
+	GID *int64 `json:"gid,omitempty" tf:"gid,omitempty"`
 
 	// The POSIX user ID.
-	UID *float64 `json:"uid,omitempty" tf:"uid,omitempty"`
+	UID *int64 `json:"uid,omitempty" tf:"uid,omitempty"`
 }
 
 type CustomPosixUserConfigParameters struct {
 
 	// The POSIX group ID.
 	// +kubebuilder:validation:Optional
-	GID *float64 `json:"gid" tf:"gid,omitempty"`
+	GID *int64 `json:"gid" tf:"gid,omitempty"`
 
 	// The POSIX user ID.
 	// +kubebuilder:validation:Optional
-	UID *float64 `json:"uid" tf:"uid,omitempty"`
+	UID *int64 `json:"uid" tf:"uid,omitempty"`
 }
 
 type DefaultEBSStorageSettingsInitParameters struct {
 
 	// The default size of the EBS storage volume for a private space.
-	DefaultEBSVolumeSizeInGb *float64 `json:"defaultEbsVolumeSizeInGb,omitempty" tf:"default_ebs_volume_size_in_gb,omitempty"`
+	DefaultEBSVolumeSizeInGb *int64 `json:"defaultEbsVolumeSizeInGb,omitempty" tf:"default_ebs_volume_size_in_gb,omitempty"`
 
 	// The maximum size of the EBS storage volume for a private space.
-	MaximumEBSVolumeSizeInGb *float64 `json:"maximumEbsVolumeSizeInGb,omitempty" tf:"maximum_ebs_volume_size_in_gb,omitempty"`
+	MaximumEBSVolumeSizeInGb *int64 `json:"maximumEbsVolumeSizeInGb,omitempty" tf:"maximum_ebs_volume_size_in_gb,omitempty"`
 }
 
 type DefaultEBSStorageSettingsObservation struct {
 
 	// The default size of the EBS storage volume for a private space.
-	DefaultEBSVolumeSizeInGb *float64 `json:"defaultEbsVolumeSizeInGb,omitempty" tf:"default_ebs_volume_size_in_gb,omitempty"`
+	DefaultEBSVolumeSizeInGb *int64 `json:"defaultEbsVolumeSizeInGb,omitempty" tf:"default_ebs_volume_size_in_gb,omitempty"`
 
 	// The maximum size of the EBS storage volume for a private space.
-	MaximumEBSVolumeSizeInGb *float64 `json:"maximumEbsVolumeSizeInGb,omitempty" tf:"maximum_ebs_volume_size_in_gb,omitempty"`
+	MaximumEBSVolumeSizeInGb *int64 `json:"maximumEbsVolumeSizeInGb,omitempty" tf:"maximum_ebs_volume_size_in_gb,omitempty"`
 }
 
 type DefaultEBSStorageSettingsParameters struct {
 
 	// The default size of the EBS storage volume for a private space.
 	// +kubebuilder:validation:Optional
-	DefaultEBSVolumeSizeInGb *float64 `json:"defaultEbsVolumeSizeInGb" tf:"default_ebs_volume_size_in_gb,omitempty"`
+	DefaultEBSVolumeSizeInGb *int64 `json:"defaultEbsVolumeSizeInGb" tf:"default_ebs_volume_size_in_gb,omitempty"`
 
 	// The maximum size of the EBS storage volume for a private space.
 	// +kubebuilder:validation:Optional
-	MaximumEBSVolumeSizeInGb *float64 `json:"maximumEbsVolumeSizeInGb" tf:"maximum_ebs_volume_size_in_gb,omitempty"`
+	MaximumEBSVolumeSizeInGb *int64 `json:"maximumEbsVolumeSizeInGb" tf:"maximum_ebs_volume_size_in_gb,omitempty"`
 }
 
 type DefaultResourceSpecInitParameters struct {
@@ -664,30 +664,30 @@ type DefaultUserSettingsCustomFileSystemConfigParameters struct {
 type DefaultUserSettingsCustomPosixUserConfigInitParameters struct {
 
 	// The POSIX group ID.
-	GID *float64 `json:"gid,omitempty" tf:"gid,omitempty"`
+	GID *int64 `json:"gid,omitempty" tf:"gid,omitempty"`
 
 	// The POSIX user ID.
-	UID *float64 `json:"uid,omitempty" tf:"uid,omitempty"`
+	UID *int64 `json:"uid,omitempty" tf:"uid,omitempty"`
 }
 
 type DefaultUserSettingsCustomPosixUserConfigObservation struct {
 
 	// The POSIX group ID.
-	GID *float64 `json:"gid,omitempty" tf:"gid,omitempty"`
+	GID *int64 `json:"gid,omitempty" tf:"gid,omitempty"`
 
 	// The POSIX user ID.
-	UID *float64 `json:"uid,omitempty" tf:"uid,omitempty"`
+	UID *int64 `json:"uid,omitempty" tf:"uid,omitempty"`
 }
 
 type DefaultUserSettingsCustomPosixUserConfigParameters struct {
 
 	// The POSIX group ID.
 	// +kubebuilder:validation:Optional
-	GID *float64 `json:"gid" tf:"gid,omitempty"`
+	GID *int64 `json:"gid" tf:"gid,omitempty"`
 
 	// The POSIX user ID.
 	// +kubebuilder:validation:Optional
-	UID *float64 `json:"uid" tf:"uid,omitempty"`
+	UID *int64 `json:"uid" tf:"uid,omitempty"`
 }
 
 type DefaultUserSettingsInitParameters struct {
@@ -1007,7 +1007,7 @@ type DefaultUserSettingsKernelGatewayAppSettingsCustomImageInitParameters struct
 	ImageNameSelector *v1.Selector `json:"imageNameSelector,omitempty" tf:"-"`
 
 	// The version number of the Custom Image.
-	ImageVersionNumber *float64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
+	ImageVersionNumber *int64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
 }
 
 type DefaultUserSettingsKernelGatewayAppSettingsCustomImageObservation struct {
@@ -1019,7 +1019,7 @@ type DefaultUserSettingsKernelGatewayAppSettingsCustomImageObservation struct {
 	ImageName *string `json:"imageName,omitempty" tf:"image_name,omitempty"`
 
 	// The version number of the Custom Image.
-	ImageVersionNumber *float64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
+	ImageVersionNumber *int64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
 }
 
 type DefaultUserSettingsKernelGatewayAppSettingsCustomImageParameters struct {
@@ -1053,7 +1053,7 @@ type DefaultUserSettingsKernelGatewayAppSettingsCustomImageParameters struct {
 
 	// The version number of the Custom Image.
 	// +kubebuilder:validation:Optional
-	ImageVersionNumber *float64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
+	ImageVersionNumber *int64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
 }
 
 type DefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecInitParameters struct {
@@ -1427,10 +1427,6 @@ type DomainInitParameters struct {
 	// Indicates whether custom tag propagation is supported for the domain. Defaults to DISABLED. Valid values are: ENABLED and DISABLED.
 	TagPropagation *string `json:"tagPropagation,omitempty" tf:"tag_propagation,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/ec2/v1beta1.VPC
 	VPCID *string `json:"vpcId,omitempty" tf:"vpc_id,omitempty"`
@@ -1584,11 +1580,6 @@ type DomainParameters struct {
 	// Indicates whether custom tag propagation is supported for the domain. Defaults to DISABLED. Valid values are: ENABLED and DISABLED.
 	// +kubebuilder:validation:Optional
 	TagPropagation *string `json:"tagPropagation,omitempty" tf:"tag_propagation,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/ec2/v1beta1.VPC
@@ -1810,38 +1801,38 @@ type IdentityProviderOauthSettingsParameters struct {
 type IdleSettingsInitParameters struct {
 
 	// The time that SageMaker waits after the application becomes idle before shutting it down. Valid values are between 60 and 525600.
-	IdleTimeoutInMinutes *float64 `json:"idleTimeoutInMinutes,omitempty" tf:"idle_timeout_in_minutes,omitempty"`
+	IdleTimeoutInMinutes *int64 `json:"idleTimeoutInMinutes,omitempty" tf:"idle_timeout_in_minutes,omitempty"`
 
 	// Indicates whether idle shutdown is activated for the application type. Valid values are ENABLED and DISABLED.
 	LifecycleManagement *string `json:"lifecycleManagement,omitempty" tf:"lifecycle_management,omitempty"`
 
 	// The maximum value in minutes that custom idle shutdown can be set to by the user. Valid values are between 60 and 525600.
-	MaxIdleTimeoutInMinutes *float64 `json:"maxIdleTimeoutInMinutes,omitempty" tf:"max_idle_timeout_in_minutes,omitempty"`
+	MaxIdleTimeoutInMinutes *int64 `json:"maxIdleTimeoutInMinutes,omitempty" tf:"max_idle_timeout_in_minutes,omitempty"`
 
 	// The minimum value in minutes that custom idle shutdown can be set to by the user. Valid values are between 60 and 525600.
-	MinIdleTimeoutInMinutes *float64 `json:"minIdleTimeoutInMinutes,omitempty" tf:"min_idle_timeout_in_minutes,omitempty"`
+	MinIdleTimeoutInMinutes *int64 `json:"minIdleTimeoutInMinutes,omitempty" tf:"min_idle_timeout_in_minutes,omitempty"`
 }
 
 type IdleSettingsObservation struct {
 
 	// The time that SageMaker waits after the application becomes idle before shutting it down. Valid values are between 60 and 525600.
-	IdleTimeoutInMinutes *float64 `json:"idleTimeoutInMinutes,omitempty" tf:"idle_timeout_in_minutes,omitempty"`
+	IdleTimeoutInMinutes *int64 `json:"idleTimeoutInMinutes,omitempty" tf:"idle_timeout_in_minutes,omitempty"`
 
 	// Indicates whether idle shutdown is activated for the application type. Valid values are ENABLED and DISABLED.
 	LifecycleManagement *string `json:"lifecycleManagement,omitempty" tf:"lifecycle_management,omitempty"`
 
 	// The maximum value in minutes that custom idle shutdown can be set to by the user. Valid values are between 60 and 525600.
-	MaxIdleTimeoutInMinutes *float64 `json:"maxIdleTimeoutInMinutes,omitempty" tf:"max_idle_timeout_in_minutes,omitempty"`
+	MaxIdleTimeoutInMinutes *int64 `json:"maxIdleTimeoutInMinutes,omitempty" tf:"max_idle_timeout_in_minutes,omitempty"`
 
 	// The minimum value in minutes that custom idle shutdown can be set to by the user. Valid values are between 60 and 525600.
-	MinIdleTimeoutInMinutes *float64 `json:"minIdleTimeoutInMinutes,omitempty" tf:"min_idle_timeout_in_minutes,omitempty"`
+	MinIdleTimeoutInMinutes *int64 `json:"minIdleTimeoutInMinutes,omitempty" tf:"min_idle_timeout_in_minutes,omitempty"`
 }
 
 type IdleSettingsParameters struct {
 
 	// The time that SageMaker waits after the application becomes idle before shutting it down. Valid values are between 60 and 525600.
 	// +kubebuilder:validation:Optional
-	IdleTimeoutInMinutes *float64 `json:"idleTimeoutInMinutes,omitempty" tf:"idle_timeout_in_minutes,omitempty"`
+	IdleTimeoutInMinutes *int64 `json:"idleTimeoutInMinutes,omitempty" tf:"idle_timeout_in_minutes,omitempty"`
 
 	// Indicates whether idle shutdown is activated for the application type. Valid values are ENABLED and DISABLED.
 	// +kubebuilder:validation:Optional
@@ -1849,48 +1840,48 @@ type IdleSettingsParameters struct {
 
 	// The maximum value in minutes that custom idle shutdown can be set to by the user. Valid values are between 60 and 525600.
 	// +kubebuilder:validation:Optional
-	MaxIdleTimeoutInMinutes *float64 `json:"maxIdleTimeoutInMinutes,omitempty" tf:"max_idle_timeout_in_minutes,omitempty"`
+	MaxIdleTimeoutInMinutes *int64 `json:"maxIdleTimeoutInMinutes,omitempty" tf:"max_idle_timeout_in_minutes,omitempty"`
 
 	// The minimum value in minutes that custom idle shutdown can be set to by the user. Valid values are between 60 and 525600.
 	// +kubebuilder:validation:Optional
-	MinIdleTimeoutInMinutes *float64 `json:"minIdleTimeoutInMinutes,omitempty" tf:"min_idle_timeout_in_minutes,omitempty"`
+	MinIdleTimeoutInMinutes *int64 `json:"minIdleTimeoutInMinutes,omitempty" tf:"min_idle_timeout_in_minutes,omitempty"`
 }
 
 type JupyterLabAppSettingsAppLifecycleManagementIdleSettingsInitParameters struct {
 
 	// The time that SageMaker waits after the application becomes idle before shutting it down. Valid values are between 60 and 525600.
-	IdleTimeoutInMinutes *float64 `json:"idleTimeoutInMinutes,omitempty" tf:"idle_timeout_in_minutes,omitempty"`
+	IdleTimeoutInMinutes *int64 `json:"idleTimeoutInMinutes,omitempty" tf:"idle_timeout_in_minutes,omitempty"`
 
 	// Indicates whether idle shutdown is activated for the application type. Valid values are ENABLED and DISABLED.
 	LifecycleManagement *string `json:"lifecycleManagement,omitempty" tf:"lifecycle_management,omitempty"`
 
 	// The maximum value in minutes that custom idle shutdown can be set to by the user. Valid values are between 60 and 525600.
-	MaxIdleTimeoutInMinutes *float64 `json:"maxIdleTimeoutInMinutes,omitempty" tf:"max_idle_timeout_in_minutes,omitempty"`
+	MaxIdleTimeoutInMinutes *int64 `json:"maxIdleTimeoutInMinutes,omitempty" tf:"max_idle_timeout_in_minutes,omitempty"`
 
 	// The minimum value in minutes that custom idle shutdown can be set to by the user. Valid values are between 60 and 525600.
-	MinIdleTimeoutInMinutes *float64 `json:"minIdleTimeoutInMinutes,omitempty" tf:"min_idle_timeout_in_minutes,omitempty"`
+	MinIdleTimeoutInMinutes *int64 `json:"minIdleTimeoutInMinutes,omitempty" tf:"min_idle_timeout_in_minutes,omitempty"`
 }
 
 type JupyterLabAppSettingsAppLifecycleManagementIdleSettingsObservation struct {
 
 	// The time that SageMaker waits after the application becomes idle before shutting it down. Valid values are between 60 and 525600.
-	IdleTimeoutInMinutes *float64 `json:"idleTimeoutInMinutes,omitempty" tf:"idle_timeout_in_minutes,omitempty"`
+	IdleTimeoutInMinutes *int64 `json:"idleTimeoutInMinutes,omitempty" tf:"idle_timeout_in_minutes,omitempty"`
 
 	// Indicates whether idle shutdown is activated for the application type. Valid values are ENABLED and DISABLED.
 	LifecycleManagement *string `json:"lifecycleManagement,omitempty" tf:"lifecycle_management,omitempty"`
 
 	// The maximum value in minutes that custom idle shutdown can be set to by the user. Valid values are between 60 and 525600.
-	MaxIdleTimeoutInMinutes *float64 `json:"maxIdleTimeoutInMinutes,omitempty" tf:"max_idle_timeout_in_minutes,omitempty"`
+	MaxIdleTimeoutInMinutes *int64 `json:"maxIdleTimeoutInMinutes,omitempty" tf:"max_idle_timeout_in_minutes,omitempty"`
 
 	// The minimum value in minutes that custom idle shutdown can be set to by the user. Valid values are between 60 and 525600.
-	MinIdleTimeoutInMinutes *float64 `json:"minIdleTimeoutInMinutes,omitempty" tf:"min_idle_timeout_in_minutes,omitempty"`
+	MinIdleTimeoutInMinutes *int64 `json:"minIdleTimeoutInMinutes,omitempty" tf:"min_idle_timeout_in_minutes,omitempty"`
 }
 
 type JupyterLabAppSettingsAppLifecycleManagementIdleSettingsParameters struct {
 
 	// The time that SageMaker waits after the application becomes idle before shutting it down. Valid values are between 60 and 525600.
 	// +kubebuilder:validation:Optional
-	IdleTimeoutInMinutes *float64 `json:"idleTimeoutInMinutes,omitempty" tf:"idle_timeout_in_minutes,omitempty"`
+	IdleTimeoutInMinutes *int64 `json:"idleTimeoutInMinutes,omitempty" tf:"idle_timeout_in_minutes,omitempty"`
 
 	// Indicates whether idle shutdown is activated for the application type. Valid values are ENABLED and DISABLED.
 	// +kubebuilder:validation:Optional
@@ -1898,11 +1889,11 @@ type JupyterLabAppSettingsAppLifecycleManagementIdleSettingsParameters struct {
 
 	// The maximum value in minutes that custom idle shutdown can be set to by the user. Valid values are between 60 and 525600.
 	// +kubebuilder:validation:Optional
-	MaxIdleTimeoutInMinutes *float64 `json:"maxIdleTimeoutInMinutes,omitempty" tf:"max_idle_timeout_in_minutes,omitempty"`
+	MaxIdleTimeoutInMinutes *int64 `json:"maxIdleTimeoutInMinutes,omitempty" tf:"max_idle_timeout_in_minutes,omitempty"`
 
 	// The minimum value in minutes that custom idle shutdown can be set to by the user. Valid values are between 60 and 525600.
 	// +kubebuilder:validation:Optional
-	MinIdleTimeoutInMinutes *float64 `json:"minIdleTimeoutInMinutes,omitempty" tf:"min_idle_timeout_in_minutes,omitempty"`
+	MinIdleTimeoutInMinutes *int64 `json:"minIdleTimeoutInMinutes,omitempty" tf:"min_idle_timeout_in_minutes,omitempty"`
 }
 
 type JupyterLabAppSettingsAppLifecycleManagementInitParameters struct {
@@ -1952,7 +1943,7 @@ type JupyterLabAppSettingsCustomImageInitParameters struct {
 	ImageName *string `json:"imageName,omitempty" tf:"image_name,omitempty"`
 
 	// The version number of the Custom Image.
-	ImageVersionNumber *float64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
+	ImageVersionNumber *int64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
 }
 
 type JupyterLabAppSettingsCustomImageObservation struct {
@@ -1964,7 +1955,7 @@ type JupyterLabAppSettingsCustomImageObservation struct {
 	ImageName *string `json:"imageName,omitempty" tf:"image_name,omitempty"`
 
 	// The version number of the Custom Image.
-	ImageVersionNumber *float64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
+	ImageVersionNumber *int64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
 }
 
 type JupyterLabAppSettingsCustomImageParameters struct {
@@ -1979,7 +1970,7 @@ type JupyterLabAppSettingsCustomImageParameters struct {
 
 	// The version number of the Custom Image.
 	// +kubebuilder:validation:Optional
-	ImageVersionNumber *float64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
+	ImageVersionNumber *int64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
 }
 
 type JupyterLabAppSettingsDefaultResourceSpecInitParameters struct {
@@ -2306,7 +2297,7 @@ type KernelGatewayAppSettingsCustomImageInitParameters struct {
 	ImageName *string `json:"imageName,omitempty" tf:"image_name,omitempty"`
 
 	// The version number of the Custom Image.
-	ImageVersionNumber *float64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
+	ImageVersionNumber *int64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
 }
 
 type KernelGatewayAppSettingsCustomImageObservation struct {
@@ -2318,7 +2309,7 @@ type KernelGatewayAppSettingsCustomImageObservation struct {
 	ImageName *string `json:"imageName,omitempty" tf:"image_name,omitempty"`
 
 	// The version number of the Custom Image.
-	ImageVersionNumber *float64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
+	ImageVersionNumber *int64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
 }
 
 type KernelGatewayAppSettingsCustomImageParameters struct {
@@ -2333,7 +2324,7 @@ type KernelGatewayAppSettingsCustomImageParameters struct {
 
 	// The version number of the Custom Image.
 	// +kubebuilder:validation:Optional
-	ImageVersionNumber *float64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
+	ImageVersionNumber *int64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
 }
 
 type KernelGatewayAppSettingsDefaultResourceSpecInitParameters struct {
@@ -2475,7 +2466,7 @@ type RSessionAppSettingsCustomImageInitParameters struct {
 	ImageName *string `json:"imageName,omitempty" tf:"image_name,omitempty"`
 
 	// The version number of the Custom Image.
-	ImageVersionNumber *float64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
+	ImageVersionNumber *int64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
 }
 
 type RSessionAppSettingsCustomImageObservation struct {
@@ -2487,7 +2478,7 @@ type RSessionAppSettingsCustomImageObservation struct {
 	ImageName *string `json:"imageName,omitempty" tf:"image_name,omitempty"`
 
 	// The version number of the Custom Image.
-	ImageVersionNumber *float64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
+	ImageVersionNumber *int64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
 }
 
 type RSessionAppSettingsCustomImageParameters struct {
@@ -2502,7 +2493,7 @@ type RSessionAppSettingsCustomImageParameters struct {
 
 	// The version number of the Custom Image.
 	// +kubebuilder:validation:Optional
-	ImageVersionNumber *float64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
+	ImageVersionNumber *int64 `json:"imageVersionNumber,omitempty" tf:"image_version_number,omitempty"`
 }
 
 type RSessionAppSettingsDefaultResourceSpecInitParameters struct {
@@ -2791,30 +2782,30 @@ type SharingSettingsParameters struct {
 type SpaceStorageSettingsDefaultEBSStorageSettingsInitParameters struct {
 
 	// The default size of the EBS storage volume for a private space.
-	DefaultEBSVolumeSizeInGb *float64 `json:"defaultEbsVolumeSizeInGb,omitempty" tf:"default_ebs_volume_size_in_gb,omitempty"`
+	DefaultEBSVolumeSizeInGb *int64 `json:"defaultEbsVolumeSizeInGb,omitempty" tf:"default_ebs_volume_size_in_gb,omitempty"`
 
 	// The maximum size of the EBS storage volume for a private space.
-	MaximumEBSVolumeSizeInGb *float64 `json:"maximumEbsVolumeSizeInGb,omitempty" tf:"maximum_ebs_volume_size_in_gb,omitempty"`
+	MaximumEBSVolumeSizeInGb *int64 `json:"maximumEbsVolumeSizeInGb,omitempty" tf:"maximum_ebs_volume_size_in_gb,omitempty"`
 }
 
 type SpaceStorageSettingsDefaultEBSStorageSettingsObservation struct {
 
 	// The default size of the EBS storage volume for a private space.
-	DefaultEBSVolumeSizeInGb *float64 `json:"defaultEbsVolumeSizeInGb,omitempty" tf:"default_ebs_volume_size_in_gb,omitempty"`
+	DefaultEBSVolumeSizeInGb *int64 `json:"defaultEbsVolumeSizeInGb,omitempty" tf:"default_ebs_volume_size_in_gb,omitempty"`
 
 	// The maximum size of the EBS storage volume for a private space.
-	MaximumEBSVolumeSizeInGb *float64 `json:"maximumEbsVolumeSizeInGb,omitempty" tf:"maximum_ebs_volume_size_in_gb,omitempty"`
+	MaximumEBSVolumeSizeInGb *int64 `json:"maximumEbsVolumeSizeInGb,omitempty" tf:"maximum_ebs_volume_size_in_gb,omitempty"`
 }
 
 type SpaceStorageSettingsDefaultEBSStorageSettingsParameters struct {
 
 	// The default size of the EBS storage volume for a private space.
 	// +kubebuilder:validation:Optional
-	DefaultEBSVolumeSizeInGb *float64 `json:"defaultEbsVolumeSizeInGb" tf:"default_ebs_volume_size_in_gb,omitempty"`
+	DefaultEBSVolumeSizeInGb *int64 `json:"defaultEbsVolumeSizeInGb" tf:"default_ebs_volume_size_in_gb,omitempty"`
 
 	// The maximum size of the EBS storage volume for a private space.
 	// +kubebuilder:validation:Optional
-	MaximumEBSVolumeSizeInGb *float64 `json:"maximumEbsVolumeSizeInGb" tf:"maximum_ebs_volume_size_in_gb,omitempty"`
+	MaximumEBSVolumeSizeInGb *int64 `json:"maximumEbsVolumeSizeInGb" tf:"maximum_ebs_volume_size_in_gb,omitempty"`
 }
 
 type SpaceStorageSettingsInitParameters struct {

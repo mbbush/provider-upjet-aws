@@ -30,10 +30,6 @@ type DiscovererInitParameters struct {
 	// Selector for a Bus in cloudwatchevents to populate sourceArn.
 	// +kubebuilder:validation:Optional
 	SourceArnSelector *v1.Selector `json:"sourceArnSelector,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type DiscovererObservation struct {
@@ -83,11 +79,6 @@ type DiscovererParameters struct {
 	// Selector for a Bus in cloudwatchevents to populate sourceArn.
 	// +kubebuilder:validation:Optional
 	SourceArnSelector *v1.Selector `json:"sourceArnSelector,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // DiscovererSpec defines the desired state of Discoverer

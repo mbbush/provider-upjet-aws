@@ -1265,7 +1265,8 @@ spec:
                       timeoutMinutes:
                         description: Number of minutes before image tests time out.
                           Valid values are between 60 and 1440. Defaults to 720.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   infrastructureConfigurationArn:
                     description: Amazon Resource Name (ARN) of the Image Builder Infrastructure
@@ -1382,12 +1383,6 @@ spec:
                     description: Status of the image pipeline. Valid values are DISABLED
                       and ENABLED. Defaults to ENABLED.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   workflow:
                     description: Configuration block with the workflow configuration.
                       Detailed below.
@@ -1566,7 +1561,8 @@ spec:
                       timeoutMinutes:
                         description: Number of minutes before image tests time out.
                           Valid values are between 60 and 1440. Defaults to 720.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   infrastructureConfigurationArn:
                     description: Amazon Resource Name (ARN) of the Image Builder Infrastructure
@@ -1679,12 +1675,6 @@ spec:
                     description: Status of the image pipeline. Valid values are DISABLED
                       and ENABLED. Defaults to ENABLED.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   workflow:
                     description: Configuration block with the workflow configuration.
                       Detailed below.
@@ -1966,7 +1956,8 @@ spec:
                       timeoutMinutes:
                         description: Number of minutes before image tests time out.
                           Valid values are between 60 and 1440. Defaults to 720.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   infrastructureConfigurationArn:
                     description: Amazon Resource Name (ARN) of the Image Builder Infrastructure

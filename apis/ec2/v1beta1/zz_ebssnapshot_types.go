@@ -27,12 +27,8 @@ type EBSSnapshotInitParameters struct {
 	// The name of the storage tier. Valid values are archive and standard. Default value is standard.
 	StorageTier *string `json:"storageTier,omitempty" tf:"storage_tier,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Specifies the number of days for which to temporarily restore an archived snapshot. Required for temporary restores only. The snapshot will be automatically re-archived after this period.
-	TemporaryRestoreDays *float64 `json:"temporaryRestoreDays,omitempty" tf:"temporary_restore_days,omitempty"`
+	TemporaryRestoreDays *int64 `json:"temporaryRestoreDays,omitempty" tf:"temporary_restore_days,omitempty"`
 
 	// The Volume ID of which to make a snapshot.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/ec2/v1beta1.EBSVolume
@@ -92,13 +88,13 @@ type EBSSnapshotObservation struct {
 	TagsAll map[string]*string `json:"tagsAll,omitempty" tf:"tags_all,omitempty"`
 
 	// Specifies the number of days for which to temporarily restore an archived snapshot. Required for temporary restores only. The snapshot will be automatically re-archived after this period.
-	TemporaryRestoreDays *float64 `json:"temporaryRestoreDays,omitempty" tf:"temporary_restore_days,omitempty"`
+	TemporaryRestoreDays *int64 `json:"temporaryRestoreDays,omitempty" tf:"temporary_restore_days,omitempty"`
 
 	// The Volume ID of which to make a snapshot.
 	VolumeID *string `json:"volumeId,omitempty" tf:"volume_id,omitempty"`
 
 	// The size of the drive in GiBs.
-	VolumeSize *float64 `json:"volumeSize,omitempty" tf:"volume_size,omitempty"`
+	VolumeSize *int64 `json:"volumeSize,omitempty" tf:"volume_size,omitempty"`
 }
 
 type EBSSnapshotParameters struct {
@@ -124,14 +120,9 @@ type EBSSnapshotParameters struct {
 	// +kubebuilder:validation:Optional
 	StorageTier *string `json:"storageTier,omitempty" tf:"storage_tier,omitempty"`
 
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Specifies the number of days for which to temporarily restore an archived snapshot. Required for temporary restores only. The snapshot will be automatically re-archived after this period.
 	// +kubebuilder:validation:Optional
-	TemporaryRestoreDays *float64 `json:"temporaryRestoreDays,omitempty" tf:"temporary_restore_days,omitempty"`
+	TemporaryRestoreDays *int64 `json:"temporaryRestoreDays,omitempty" tf:"temporary_restore_days,omitempty"`
 
 	// The Volume ID of which to make a snapshot.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/ec2/v1beta1.EBSVolume

@@ -22,16 +22,16 @@ type NetworkACLRuleInitParameters struct {
 	Egress *bool `json:"egress,omitempty" tf:"egress,omitempty"`
 
 	// The from port to match.
-	FromPort *float64 `json:"fromPort,omitempty" tf:"from_port,omitempty"`
+	FromPort *int64 `json:"fromPort,omitempty" tf:"from_port,omitempty"`
 
 	// The IPv6 CIDR block to allow or deny.
 	IPv6CidrBlock *string `json:"ipv6CidrBlock,omitempty" tf:"ipv6_cidr_block,omitempty"`
 
 	// ICMP protocol: The ICMP code. Required if specifying ICMP for the protocolE.g., -1
-	IcmpCode *float64 `json:"icmpCode,omitempty" tf:"icmp_code,omitempty"`
+	IcmpCode *int64 `json:"icmpCode,omitempty" tf:"icmp_code,omitempty"`
 
 	// ICMP protocol: The ICMP type. Required if specifying ICMP for the protocolE.g., -1
-	IcmpType *float64 `json:"icmpType,omitempty" tf:"icmp_type,omitempty"`
+	IcmpType *int64 `json:"icmpType,omitempty" tf:"icmp_type,omitempty"`
 
 	// The ID of the network ACL.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/ec2/v1beta1.NetworkACL
@@ -53,10 +53,10 @@ type NetworkACLRuleInitParameters struct {
 	RuleAction *string `json:"ruleAction,omitempty" tf:"rule_action,omitempty"`
 
 	// The rule number for the entry (for example, 100). ACL entries are processed in ascending order by rule number.
-	RuleNumber *float64 `json:"ruleNumber,omitempty" tf:"rule_number,omitempty"`
+	RuleNumber *int64 `json:"ruleNumber,omitempty" tf:"rule_number,omitempty"`
 
 	// The to port to match.
-	ToPort *float64 `json:"toPort,omitempty" tf:"to_port,omitempty"`
+	ToPort *int64 `json:"toPort,omitempty" tf:"to_port,omitempty"`
 }
 
 type NetworkACLRuleObservation struct {
@@ -68,7 +68,7 @@ type NetworkACLRuleObservation struct {
 	Egress *bool `json:"egress,omitempty" tf:"egress,omitempty"`
 
 	// The from port to match.
-	FromPort *float64 `json:"fromPort,omitempty" tf:"from_port,omitempty"`
+	FromPort *int64 `json:"fromPort,omitempty" tf:"from_port,omitempty"`
 
 	// The ID of the network ACL Rule
 	ID *string `json:"id,omitempty" tf:"id,omitempty"`
@@ -77,10 +77,10 @@ type NetworkACLRuleObservation struct {
 	IPv6CidrBlock *string `json:"ipv6CidrBlock,omitempty" tf:"ipv6_cidr_block,omitempty"`
 
 	// ICMP protocol: The ICMP code. Required if specifying ICMP for the protocolE.g., -1
-	IcmpCode *float64 `json:"icmpCode,omitempty" tf:"icmp_code,omitempty"`
+	IcmpCode *int64 `json:"icmpCode,omitempty" tf:"icmp_code,omitempty"`
 
 	// ICMP protocol: The ICMP type. Required if specifying ICMP for the protocolE.g., -1
-	IcmpType *float64 `json:"icmpType,omitempty" tf:"icmp_type,omitempty"`
+	IcmpType *int64 `json:"icmpType,omitempty" tf:"icmp_type,omitempty"`
 
 	// The ID of the network ACL.
 	NetworkACLID *string `json:"networkAclId,omitempty" tf:"network_acl_id,omitempty"`
@@ -92,10 +92,10 @@ type NetworkACLRuleObservation struct {
 	RuleAction *string `json:"ruleAction,omitempty" tf:"rule_action,omitempty"`
 
 	// The rule number for the entry (for example, 100). ACL entries are processed in ascending order by rule number.
-	RuleNumber *float64 `json:"ruleNumber,omitempty" tf:"rule_number,omitempty"`
+	RuleNumber *int64 `json:"ruleNumber,omitempty" tf:"rule_number,omitempty"`
 
 	// The to port to match.
-	ToPort *float64 `json:"toPort,omitempty" tf:"to_port,omitempty"`
+	ToPort *int64 `json:"toPort,omitempty" tf:"to_port,omitempty"`
 }
 
 type NetworkACLRuleParameters struct {
@@ -110,7 +110,7 @@ type NetworkACLRuleParameters struct {
 
 	// The from port to match.
 	// +kubebuilder:validation:Optional
-	FromPort *float64 `json:"fromPort,omitempty" tf:"from_port,omitempty"`
+	FromPort *int64 `json:"fromPort,omitempty" tf:"from_port,omitempty"`
 
 	// The IPv6 CIDR block to allow or deny.
 	// +kubebuilder:validation:Optional
@@ -118,11 +118,11 @@ type NetworkACLRuleParameters struct {
 
 	// ICMP protocol: The ICMP code. Required if specifying ICMP for the protocolE.g., -1
 	// +kubebuilder:validation:Optional
-	IcmpCode *float64 `json:"icmpCode,omitempty" tf:"icmp_code,omitempty"`
+	IcmpCode *int64 `json:"icmpCode,omitempty" tf:"icmp_code,omitempty"`
 
 	// ICMP protocol: The ICMP type. Required if specifying ICMP for the protocolE.g., -1
 	// +kubebuilder:validation:Optional
-	IcmpType *float64 `json:"icmpType,omitempty" tf:"icmp_type,omitempty"`
+	IcmpType *int64 `json:"icmpType,omitempty" tf:"icmp_type,omitempty"`
 
 	// The ID of the network ACL.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/ec2/v1beta1.NetworkACL
@@ -153,11 +153,11 @@ type NetworkACLRuleParameters struct {
 
 	// The rule number for the entry (for example, 100). ACL entries are processed in ascending order by rule number.
 	// +kubebuilder:validation:Optional
-	RuleNumber *float64 `json:"ruleNumber,omitempty" tf:"rule_number,omitempty"`
+	RuleNumber *int64 `json:"ruleNumber,omitempty" tf:"rule_number,omitempty"`
 
 	// The to port to match.
 	// +kubebuilder:validation:Optional
-	ToPort *float64 `json:"toPort,omitempty" tf:"to_port,omitempty"`
+	ToPort *int64 `json:"toPort,omitempty" tf:"to_port,omitempty"`
 }
 
 // NetworkACLRuleSpec defines the desired state of NetworkACLRule

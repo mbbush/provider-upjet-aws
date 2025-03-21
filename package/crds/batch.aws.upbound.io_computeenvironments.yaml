@@ -96,12 +96,14 @@ spec:
                           value is 100% of the On-Demand price. This parameter isn't
                           applicable to jobs running on Fargate resources, and shouldn't
                           be specified.
-                        type: number
+                        format: int64
+                        type: integer
                       desiredVcpus:
                         description: The desired number of EC2 vCPUS in the compute
                           environment. This parameter isn't applicable to jobs running
                           on Fargate resources, and shouldn't be specified.
-                        type: number
+                        format: int64
+                        type: integer
                       ec2Configuration:
                         description: Provides information used to select Amazon Machine
                           Images (AMIs) for EC2 instances in the compute environment.
@@ -247,14 +249,16 @@ spec:
                       maxVcpus:
                         description: The maximum number of EC2 vCPUs that an environment
                           can reach.
-                        type: number
+                        format: int64
+                        type: integer
                       minVcpus:
                         description: The minimum number of EC2 vCPUs that an environment
                           should maintain. For EC2 or SPOT compute environments, if
                           the parameter is not explicitly defined, a 0 default value
                           will be set. This parameter isn't applicable to jobs running
                           on Fargate resources, and shouldn't be specified.
-                        type: number
+                        format: int64
+                        type: integer
                       placementGroup:
                         description: The Amazon EC2 placement group to associate with
                           your compute resources.
@@ -514,15 +518,6 @@ spec:
                                 type: string
                             type: object
                         type: object
-                      tags:
-                        additionalProperties:
-                          type: string
-                        description: Key-value pair tags to be applied to resources
-                          that are launched in the compute environment. This parameter
-                          isn't applicable to jobs running on Fargate resources, and
-                          shouldn't be specified.
-                        type: object
-                        x-kubernetes-map-type: granular
                       type:
                         description: The type of compute environment. Valid items
                           are EC2, SPOT, FARGATE or FARGATE_SPOT.
@@ -630,12 +625,6 @@ spec:
                       queue and can scale out automatically based on queues. Valid
                       items are ENABLED or DISABLED. Defaults to ENABLED.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   type:
                     description: The type of the compute environment. Valid items
                       are MANAGED or UNMANAGED.
@@ -647,7 +636,8 @@ spec:
                       jobExecutionTimeoutMinutes:
                         description: Specifies the job timeout (in minutes) when the
                           compute environment infrastructure is updated.
-                        type: number
+                        format: int64
+                        type: integer
                       terminateJobsOnUpdate:
                         description: Specifies whether jobs are automatically terminated
                           when the computer environment infrastructure is updated.
@@ -692,12 +682,14 @@ spec:
                           value is 100% of the On-Demand price. This parameter isn't
                           applicable to jobs running on Fargate resources, and shouldn't
                           be specified.
-                        type: number
+                        format: int64
+                        type: integer
                       desiredVcpus:
                         description: The desired number of EC2 vCPUS in the compute
                           environment. This parameter isn't applicable to jobs running
                           on Fargate resources, and shouldn't be specified.
-                        type: number
+                        format: int64
+                        type: integer
                       ec2Configuration:
                         description: Provides information used to select Amazon Machine
                           Images (AMIs) for EC2 instances in the compute environment.
@@ -843,14 +835,16 @@ spec:
                       maxVcpus:
                         description: The maximum number of EC2 vCPUs that an environment
                           can reach.
-                        type: number
+                        format: int64
+                        type: integer
                       minVcpus:
                         description: The minimum number of EC2 vCPUs that an environment
                           should maintain. For EC2 or SPOT compute environments, if
                           the parameter is not explicitly defined, a 0 default value
                           will be set. This parameter isn't applicable to jobs running
                           on Fargate resources, and shouldn't be specified.
-                        type: number
+                        format: int64
+                        type: integer
                       placementGroup:
                         description: The Amazon EC2 placement group to associate with
                           your compute resources.
@@ -1110,15 +1104,6 @@ spec:
                                 type: string
                             type: object
                         type: object
-                      tags:
-                        additionalProperties:
-                          type: string
-                        description: Key-value pair tags to be applied to resources
-                          that are launched in the compute environment. This parameter
-                          isn't applicable to jobs running on Fargate resources, and
-                          shouldn't be specified.
-                        type: object
-                        x-kubernetes-map-type: granular
                       type:
                         description: The type of compute environment. Valid items
                           are EC2, SPOT, FARGATE or FARGATE_SPOT.
@@ -1222,12 +1207,6 @@ spec:
                       queue and can scale out automatically based on queues. Valid
                       items are ENABLED or DISABLED. Defaults to ENABLED.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   type:
                     description: The type of the compute environment. Valid items
                       are MANAGED or UNMANAGED.
@@ -1239,7 +1218,8 @@ spec:
                       jobExecutionTimeoutMinutes:
                         description: Specifies the job timeout (in minutes) when the
                           compute environment infrastructure is updated.
-                        type: number
+                        format: int64
+                        type: integer
                       terminateJobsOnUpdate:
                         description: Specifies whether jobs are automatically terminated
                           when the computer environment infrastructure is updated.
@@ -1449,12 +1429,14 @@ spec:
                           value is 100% of the On-Demand price. This parameter isn't
                           applicable to jobs running on Fargate resources, and shouldn't
                           be specified.
-                        type: number
+                        format: int64
+                        type: integer
                       desiredVcpus:
                         description: The desired number of EC2 vCPUS in the compute
                           environment. This parameter isn't applicable to jobs running
                           on Fargate resources, and shouldn't be specified.
-                        type: number
+                        format: int64
+                        type: integer
                       ec2Configuration:
                         description: Provides information used to select Amazon Machine
                           Images (AMIs) for EC2 instances in the compute environment.
@@ -1524,14 +1506,16 @@ spec:
                       maxVcpus:
                         description: The maximum number of EC2 vCPUs that an environment
                           can reach.
-                        type: number
+                        format: int64
+                        type: integer
                       minVcpus:
                         description: The minimum number of EC2 vCPUs that an environment
                           should maintain. For EC2 or SPOT compute environments, if
                           the parameter is not explicitly defined, a 0 default value
                           will be set. This parameter isn't applicable to jobs running
                           on Fargate resources, and shouldn't be specified.
-                        type: number
+                        format: int64
+                        type: integer
                       placementGroup:
                         description: The Amazon EC2 placement group to associate with
                           your compute resources.
@@ -1635,7 +1619,8 @@ spec:
                       jobExecutionTimeoutMinutes:
                         description: Specifies the job timeout (in minutes) when the
                           compute environment infrastructure is updated.
-                        type: number
+                        format: int64
+                        type: integer
                       terminateJobsOnUpdate:
                         description: Specifies whether jobs are automatically terminated
                           when the computer environment infrastructure is updated.

@@ -93,12 +93,12 @@ func (in *BandwidthInitParameters) DeepCopyInto(out *BandwidthInitParameters) {
 	*out = *in
 	if in.DownloadSpeed != nil {
 		in, out := &in.DownloadSpeed, &out.DownloadSpeed
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.UploadSpeed != nil {
 		in, out := &in.UploadSpeed, &out.UploadSpeed
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -118,12 +118,12 @@ func (in *BandwidthObservation) DeepCopyInto(out *BandwidthObservation) {
 	*out = *in
 	if in.DownloadSpeed != nil {
 		in, out := &in.DownloadSpeed, &out.DownloadSpeed
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.UploadSpeed != nil {
 		in, out := &in.UploadSpeed, &out.UploadSpeed
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -143,12 +143,12 @@ func (in *BandwidthParameters) DeepCopyInto(out *BandwidthParameters) {
 	*out = *in
 	if in.DownloadSpeed != nil {
 		in, out := &in.DownloadSpeed, &out.DownloadSpeed
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.UploadSpeed != nil {
 		in, out := &in.UploadSpeed, &out.UploadSpeed
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -228,22 +228,6 @@ func (in *ConnectAttachmentInitParameters) DeepCopyInto(out *ConnectAttachmentIn
 		*out = new(OptionsInitParameters)
 		(*in).DeepCopyInto(*out)
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.TransportAttachmentID != nil {
 		in, out := &in.TransportAttachmentID, &out.TransportAttachmentID
 		*out = new(string)
@@ -318,7 +302,7 @@ func (in *ConnectAttachmentObservation) DeepCopyInto(out *ConnectAttachmentObser
 	}
 	if in.AttachmentPolicyRuleNumber != nil {
 		in, out := &in.AttachmentPolicyRuleNumber, &out.AttachmentPolicyRuleNumber
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.AttachmentType != nil {
@@ -462,22 +446,6 @@ func (in *ConnectAttachmentParameters) DeepCopyInto(out *ConnectAttachmentParame
 		in, out := &in.Region, &out.Region
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.TransportAttachmentID != nil {
 		in, out := &in.TransportAttachmentID, &out.TransportAttachmentID
@@ -625,22 +593,6 @@ func (in *DeviceInitParameters) DeepCopyInto(out *DeviceInitParameters) {
 		in, out := &in.SiteIDSelector, &out.SiteIDSelector
 		*out = new(v1.Selector)
 		(*in).DeepCopyInto(*out)
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.Type != nil {
 		in, out := &in.Type, &out.Type
@@ -861,22 +813,6 @@ func (in *DeviceParameters) DeepCopyInto(out *DeviceParameters) {
 		*out = new(v1.Selector)
 		(*in).DeepCopyInto(*out)
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.Type != nil {
 		in, out := &in.Type, &out.Type
 		*out = new(string)
@@ -1008,22 +944,6 @@ func (in *LinkInitParameters) DeepCopyInto(out *LinkInitParameters) {
 		in, out := &in.SiteIDSelector, &out.SiteIDSelector
 		*out = new(v1.Selector)
 		(*in).DeepCopyInto(*out)
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.Type != nil {
 		in, out := &in.Type, &out.Type
@@ -1213,22 +1133,6 @@ func (in *LinkParameters) DeepCopyInto(out *LinkParameters) {
 		in, out := &in.SiteIDSelector, &out.SiteIDSelector
 		*out = new(v1.Selector)
 		(*in).DeepCopyInto(*out)
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.Type != nil {
 		in, out := &in.Type, &out.Type
@@ -1487,22 +1391,6 @@ func (in *SiteInitParameters) DeepCopyInto(out *SiteInitParameters) {
 		*out = new(SiteLocationInitParameters)
 		(*in).DeepCopyInto(*out)
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 }
 
 // DeepCopy is an autogenerated deepcopy function, copying the receiver, creating a new SiteInitParameters.
@@ -1742,22 +1630,6 @@ func (in *SiteParameters) DeepCopyInto(out *SiteParameters) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 }
 
 // DeepCopy is an autogenerated deepcopy function, copying the receiver, creating a new SiteParameters.
@@ -1878,22 +1750,6 @@ func (in *VPCAttachmentInitParameters) DeepCopyInto(out *VPCAttachmentInitParame
 		*out = new(v1.Selector)
 		(*in).DeepCopyInto(*out)
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.VPCArn != nil {
 		in, out := &in.VPCArn, &out.VPCArn
 		*out = new(string)
@@ -1963,7 +1819,7 @@ func (in *VPCAttachmentObservation) DeepCopyInto(out *VPCAttachmentObservation) 
 	}
 	if in.AttachmentPolicyRuleNumber != nil {
 		in, out := &in.AttachmentPolicyRuleNumber, &out.AttachmentPolicyRuleNumber
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.AttachmentType != nil {
@@ -2201,22 +2057,6 @@ func (in *VPCAttachmentParameters) DeepCopyInto(out *VPCAttachmentParameters) {
 		in, out := &in.SubnetArnsSelector, &out.SubnetArnsSelector
 		*out = new(v1.Selector)
 		(*in).DeepCopyInto(*out)
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.VPCArn != nil {
 		in, out := &in.VPCArn, &out.VPCArn

@@ -43,10 +43,6 @@ type ConnectAttachmentInitParameters struct {
 	// Options block. See options for more information.
 	Options *OptionsInitParameters `json:"options,omitempty" tf:"options,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// The ID of the attachment between the two connections.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/networkmanager/v1beta2.VPCAttachment
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
@@ -70,7 +66,7 @@ type ConnectAttachmentObservation struct {
 	AttachmentID *string `json:"attachmentId,omitempty" tf:"attachment_id,omitempty"`
 
 	// The policy rule number associated with the attachment.
-	AttachmentPolicyRuleNumber *float64 `json:"attachmentPolicyRuleNumber,omitempty" tf:"attachment_policy_rule_number,omitempty"`
+	AttachmentPolicyRuleNumber *int64 `json:"attachmentPolicyRuleNumber,omitempty" tf:"attachment_policy_rule_number,omitempty"`
 
 	// The type of attachment.
 	AttachmentType *string `json:"attachmentType,omitempty" tf:"attachment_type,omitempty"`
@@ -151,11 +147,6 @@ type ConnectAttachmentParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// The ID of the attachment between the two connections.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/networkmanager/v1beta2.VPCAttachment

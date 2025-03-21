@@ -340,7 +340,8 @@ spec:
                   port:
                     description: The port on which the DB accepts connections. Defaults
                       to 8182.
-                    type: number
+                    format: int64
+                    type: integer
                   preferredBackupWindow:
                     description: 'The daily time range during which automated backups
                       are created if automated backups are enabled. Eg: "04:00-09:00"'
@@ -354,7 +355,8 @@ spec:
                     description: Default 0. Failover Priority setting on instance
                       level. The reader who has lower tier has higher priority to
                       get promoter to writer.
-                    type: number
+                    format: int64
+                    type: integer
                   publiclyAccessible:
                     description: Bool to control if instance is publicly accessible.
                       Default is false.
@@ -367,12 +369,6 @@ spec:
                     description: Determines whether a final DB snapshot is created
                       before the DB instance is deleted.
                     type: boolean
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -656,7 +652,8 @@ spec:
                   port:
                     description: The port on which the DB accepts connections. Defaults
                       to 8182.
-                    type: number
+                    format: int64
+                    type: integer
                   preferredBackupWindow:
                     description: 'The daily time range during which automated backups
                       are created if automated backups are enabled. Eg: "04:00-09:00"'
@@ -670,7 +667,8 @@ spec:
                     description: Default 0. Failover Priority setting on instance
                       level. The reader who has lower tier has higher priority to
                       get promoter to writer.
-                    type: number
+                    format: int64
+                    type: integer
                   publiclyAccessible:
                     description: Bool to control if instance is publicly accessible.
                       Default is false.
@@ -679,12 +677,6 @@ spec:
                     description: Determines whether a final DB snapshot is created
                       before the DB instance is deleted.
                     type: boolean
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -925,7 +917,8 @@ spec:
                   port:
                     description: The port on which the DB accepts connections. Defaults
                       to 8182.
-                    type: number
+                    format: int64
+                    type: integer
                   preferredBackupWindow:
                     description: 'The daily time range during which automated backups
                       are created if automated backups are enabled. Eg: "04:00-09:00"'
@@ -939,7 +932,8 @@ spec:
                     description: Default 0. Failover Priority setting on instance
                       level. The reader who has lower tier has higher priority to
                       get promoter to writer.
-                    type: number
+                    format: int64
+                    type: integer
                   publiclyAccessible:
                     description: Bool to control if instance is publicly accessible.
                       Default is false.

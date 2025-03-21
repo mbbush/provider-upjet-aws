@@ -745,7 +745,8 @@ spec:
                           a percentage of the total number of instances in the deployment. If you specify FLEET_PERCENT, at the start of the
                           deployment, AWS CodeDeploy converts the percentage to the equivalent number of instance and rounds up fractional instances.
                           When the type is HOST_COUNT, the value represents the minimum number of healthy instances as an absolute value.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   region:
                     description: Region is the region you'd like your resource to
@@ -762,11 +763,13 @@ spec:
                           interval:
                             description: The number of minutes between the first and
                               second traffic shifts of a TimeBasedCanary deployment.
-                            type: number
+                            format: int64
+                            type: integer
                           percentage:
                             description: The percentage of traffic to shift in the
                               first increment of a TimeBasedCanary deployment.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       timeBasedLinear:
                         description: The time based linear configuration information.
@@ -775,11 +778,13 @@ spec:
                           interval:
                             description: The number of minutes between the first and
                               second traffic shifts of a TimeBasedCanary deployment.
-                            type: number
+                            format: int64
+                            type: integer
                           percentage:
                             description: The percentage of traffic to shift in the
                               first increment of a TimeBasedCanary deployment.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       type:
                         description: Type of traffic routing config. One of TimeBasedCanary,
@@ -798,7 +803,8 @@ spec:
                           specify a value for first_zone_monitor_duration_in_seconds,
                           then CodeDeploy uses the monitor_duration_in_seconds value
                           for the first Availability Zone.
-                        type: number
+                        format: int64
+                        type: integer
                       minimumHealthyHostsPerZone:
                         description: The number or percentage of instances that must
                           remain available per Availability Zone during a deployment.
@@ -820,7 +826,8 @@ spec:
                               type is HOST_COUNT, the value represents the minimum
                               number of healthy instances in the Availability Zone
                               as an absolute value.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       monitorDurationInSeconds:
                         description: The period of time, in seconds, that CodeDeploy
@@ -829,7 +836,8 @@ spec:
                           a deployment to the next Availability Zone. If you don't
                           specify a monitor_duration_in_seconds, CodeDeploy starts
                           deploying to the next Availability Zone immediately.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                 required:
                 - region
@@ -864,7 +872,8 @@ spec:
                           a percentage of the total number of instances in the deployment. If you specify FLEET_PERCENT, at the start of the
                           deployment, AWS CodeDeploy converts the percentage to the equivalent number of instance and rounds up fractional instances.
                           When the type is HOST_COUNT, the value represents the minimum number of healthy instances as an absolute value.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   trafficRoutingConfig:
                     description: A traffic_routing_config block. Traffic Routing Config
@@ -877,11 +886,13 @@ spec:
                           interval:
                             description: The number of minutes between the first and
                               second traffic shifts of a TimeBasedCanary deployment.
-                            type: number
+                            format: int64
+                            type: integer
                           percentage:
                             description: The percentage of traffic to shift in the
                               first increment of a TimeBasedCanary deployment.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       timeBasedLinear:
                         description: The time based linear configuration information.
@@ -890,11 +901,13 @@ spec:
                           interval:
                             description: The number of minutes between the first and
                               second traffic shifts of a TimeBasedCanary deployment.
-                            type: number
+                            format: int64
+                            type: integer
                           percentage:
                             description: The percentage of traffic to shift in the
                               first increment of a TimeBasedCanary deployment.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       type:
                         description: Type of traffic routing config. One of TimeBasedCanary,
@@ -913,7 +926,8 @@ spec:
                           specify a value for first_zone_monitor_duration_in_seconds,
                           then CodeDeploy uses the monitor_duration_in_seconds value
                           for the first Availability Zone.
-                        type: number
+                        format: int64
+                        type: integer
                       minimumHealthyHostsPerZone:
                         description: The number or percentage of instances that must
                           remain available per Availability Zone during a deployment.
@@ -935,7 +949,8 @@ spec:
                               type is HOST_COUNT, the value represents the minimum
                               number of healthy instances in the Availability Zone
                               as an absolute value.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       monitorDurationInSeconds:
                         description: The period of time, in seconds, that CodeDeploy
@@ -944,7 +959,8 @@ spec:
                           a deployment to the next Availability Zone. If you don't
                           specify a monitor_duration_in_seconds, CodeDeploy starts
                           deploying to the next Availability Zone immediately.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                 type: object
               managementPolicies:
@@ -1145,7 +1161,8 @@ spec:
                           a percentage of the total number of instances in the deployment. If you specify FLEET_PERCENT, at the start of the
                           deployment, AWS CodeDeploy converts the percentage to the equivalent number of instance and rounds up fractional instances.
                           When the type is HOST_COUNT, the value represents the minimum number of healthy instances as an absolute value.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   trafficRoutingConfig:
                     description: A traffic_routing_config block. Traffic Routing Config
@@ -1158,11 +1175,13 @@ spec:
                           interval:
                             description: The number of minutes between the first and
                               second traffic shifts of a TimeBasedCanary deployment.
-                            type: number
+                            format: int64
+                            type: integer
                           percentage:
                             description: The percentage of traffic to shift in the
                               first increment of a TimeBasedCanary deployment.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       timeBasedLinear:
                         description: The time based linear configuration information.
@@ -1171,11 +1190,13 @@ spec:
                           interval:
                             description: The number of minutes between the first and
                               second traffic shifts of a TimeBasedCanary deployment.
-                            type: number
+                            format: int64
+                            type: integer
                           percentage:
                             description: The percentage of traffic to shift in the
                               first increment of a TimeBasedCanary deployment.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       type:
                         description: Type of traffic routing config. One of TimeBasedCanary,
@@ -1194,7 +1215,8 @@ spec:
                           specify a value for first_zone_monitor_duration_in_seconds,
                           then CodeDeploy uses the monitor_duration_in_seconds value
                           for the first Availability Zone.
-                        type: number
+                        format: int64
+                        type: integer
                       minimumHealthyHostsPerZone:
                         description: The number or percentage of instances that must
                           remain available per Availability Zone during a deployment.
@@ -1216,7 +1238,8 @@ spec:
                               type is HOST_COUNT, the value represents the minimum
                               number of healthy instances in the Availability Zone
                               as an absolute value.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       monitorDurationInSeconds:
                         description: The period of time, in seconds, that CodeDeploy
@@ -1225,7 +1248,8 @@ spec:
                           a deployment to the next Availability Zone. If you don't
                           specify a monitor_duration_in_seconds, CodeDeploy starts
                           deploying to the next Availability Zone immediately.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                 type: object
               conditions:

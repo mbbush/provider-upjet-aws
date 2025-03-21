@@ -67,7 +67,7 @@ type EndpointAccessObservation struct {
 	OwnerAccount *string `json:"ownerAccount,omitempty" tf:"owner_account,omitempty"`
 
 	// The port that Amazon Redshift Serverless listens on.
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// An array of VPC subnet IDs to associate with the endpoint.
 	// +listType=set

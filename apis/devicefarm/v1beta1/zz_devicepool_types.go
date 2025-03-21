@@ -19,7 +19,7 @@ type DevicePoolInitParameters struct {
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
 
 	// The number of devices that Device Farm can add to your device pool.
-	MaxDevices *float64 `json:"maxDevices,omitempty" tf:"max_devices,omitempty"`
+	MaxDevices *int64 `json:"maxDevices,omitempty" tf:"max_devices,omitempty"`
 
 	// The name of the Device Pool
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
@@ -39,10 +39,6 @@ type DevicePoolInitParameters struct {
 
 	// The device pool's rules. See Rule.
 	Rule []RuleInitParameters `json:"rule,omitempty" tf:"rule,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type DevicePoolObservation struct {
@@ -56,7 +52,7 @@ type DevicePoolObservation struct {
 	ID *string `json:"id,omitempty" tf:"id,omitempty"`
 
 	// The number of devices that Device Farm can add to your device pool.
-	MaxDevices *float64 `json:"maxDevices,omitempty" tf:"max_devices,omitempty"`
+	MaxDevices *int64 `json:"maxDevices,omitempty" tf:"max_devices,omitempty"`
 
 	// The name of the Device Pool
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
@@ -86,7 +82,7 @@ type DevicePoolParameters struct {
 
 	// The number of devices that Device Farm can add to your device pool.
 	// +kubebuilder:validation:Optional
-	MaxDevices *float64 `json:"maxDevices,omitempty" tf:"max_devices,omitempty"`
+	MaxDevices *int64 `json:"maxDevices,omitempty" tf:"max_devices,omitempty"`
 
 	// The name of the Device Pool
 	// +kubebuilder:validation:Optional
@@ -114,11 +110,6 @@ type DevicePoolParameters struct {
 	// The device pool's rules. See Rule.
 	// +kubebuilder:validation:Optional
 	Rule []RuleParameters `json:"rule,omitempty" tf:"rule,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type RuleInitParameters struct {

@@ -79,7 +79,7 @@ type PortInfoInitParameters struct {
 	Cidrs []*string `json:"cidrs,omitempty" tf:"cidrs,omitempty"`
 
 	// First port in a range of open ports on an instance.
-	FromPort *float64 `json:"fromPort,omitempty" tf:"from_port,omitempty"`
+	FromPort *int64 `json:"fromPort,omitempty" tf:"from_port,omitempty"`
 
 	// +listType=set
 	IPv6Cidrs []*string `json:"ipv6Cidrs,omitempty" tf:"ipv6_cidrs,omitempty"`
@@ -88,7 +88,7 @@ type PortInfoInitParameters struct {
 	Protocol *string `json:"protocol,omitempty" tf:"protocol,omitempty"`
 
 	// Last port in a range of open ports on an instance.
-	ToPort *float64 `json:"toPort,omitempty" tf:"to_port,omitempty"`
+	ToPort *int64 `json:"toPort,omitempty" tf:"to_port,omitempty"`
 }
 
 type PortInfoObservation struct {
@@ -102,7 +102,7 @@ type PortInfoObservation struct {
 	Cidrs []*string `json:"cidrs,omitempty" tf:"cidrs,omitempty"`
 
 	// First port in a range of open ports on an instance.
-	FromPort *float64 `json:"fromPort,omitempty" tf:"from_port,omitempty"`
+	FromPort *int64 `json:"fromPort,omitempty" tf:"from_port,omitempty"`
 
 	// +listType=set
 	IPv6Cidrs []*string `json:"ipv6Cidrs,omitempty" tf:"ipv6_cidrs,omitempty"`
@@ -111,7 +111,7 @@ type PortInfoObservation struct {
 	Protocol *string `json:"protocol,omitempty" tf:"protocol,omitempty"`
 
 	// Last port in a range of open ports on an instance.
-	ToPort *float64 `json:"toPort,omitempty" tf:"to_port,omitempty"`
+	ToPort *int64 `json:"toPort,omitempty" tf:"to_port,omitempty"`
 }
 
 type PortInfoParameters struct {
@@ -128,7 +128,7 @@ type PortInfoParameters struct {
 
 	// First port in a range of open ports on an instance.
 	// +kubebuilder:validation:Optional
-	FromPort *float64 `json:"fromPort" tf:"from_port,omitempty"`
+	FromPort *int64 `json:"fromPort" tf:"from_port,omitempty"`
 
 	// +kubebuilder:validation:Optional
 	// +listType=set
@@ -140,7 +140,7 @@ type PortInfoParameters struct {
 
 	// Last port in a range of open ports on an instance.
 	// +kubebuilder:validation:Optional
-	ToPort *float64 `json:"toPort" tf:"to_port,omitempty"`
+	ToPort *int64 `json:"toPort" tf:"to_port,omitempty"`
 }
 
 // InstancePublicPortsSpec defines the desired state of InstancePublicPorts

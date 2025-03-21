@@ -26,10 +26,6 @@ type QueueInitParameters struct {
 
 	// A status of the queue. Valid values are ACTIVE or RESERVED. Default to PAUSED.
 	Status *string `json:"status,omitempty" tf:"status,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type QueueObservation struct {
@@ -83,11 +79,6 @@ type QueueParameters struct {
 	// A status of the queue. Valid values are ACTIVE or RESERVED. Default to PAUSED.
 	// +kubebuilder:validation:Optional
 	Status *string `json:"status,omitempty" tf:"status,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type ReservationPlanSettingsInitParameters struct {
@@ -99,7 +90,7 @@ type ReservationPlanSettingsInitParameters struct {
 	RenewalType *string `json:"renewalType,omitempty" tf:"renewal_type,omitempty"`
 
 	// Specifies the number of reserved transcode slots (RTS) for queue.
-	ReservedSlots *float64 `json:"reservedSlots,omitempty" tf:"reserved_slots,omitempty"`
+	ReservedSlots *int64 `json:"reservedSlots,omitempty" tf:"reserved_slots,omitempty"`
 }
 
 type ReservationPlanSettingsObservation struct {
@@ -111,7 +102,7 @@ type ReservationPlanSettingsObservation struct {
 	RenewalType *string `json:"renewalType,omitempty" tf:"renewal_type,omitempty"`
 
 	// Specifies the number of reserved transcode slots (RTS) for queue.
-	ReservedSlots *float64 `json:"reservedSlots,omitempty" tf:"reserved_slots,omitempty"`
+	ReservedSlots *int64 `json:"reservedSlots,omitempty" tf:"reserved_slots,omitempty"`
 }
 
 type ReservationPlanSettingsParameters struct {
@@ -126,7 +117,7 @@ type ReservationPlanSettingsParameters struct {
 
 	// Specifies the number of reserved transcode slots (RTS) for queue.
 	// +kubebuilder:validation:Optional
-	ReservedSlots *float64 `json:"reservedSlots" tf:"reserved_slots,omitempty"`
+	ReservedSlots *int64 `json:"reservedSlots" tf:"reserved_slots,omitempty"`
 }
 
 // QueueSpec defines the desired state of Queue

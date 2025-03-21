@@ -127,10 +127,6 @@ type ResourceSetInitParameters struct {
 
 	// List of resources to add to this resource set. See below.
 	Resources []ResourcesInitParameters `json:"resources,omitempty" tf:"resources,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type ResourceSetObservation struct {
@@ -169,11 +165,6 @@ type ResourceSetParameters struct {
 	// List of resources to add to this resource set. See below.
 	// +kubebuilder:validation:Optional
 	Resources []ResourcesParameters `json:"resources,omitempty" tf:"resources,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type ResourcesInitParameters struct {

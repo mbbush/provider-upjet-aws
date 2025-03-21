@@ -104,7 +104,7 @@ func (in *CreateRuleInitParameters) DeepCopyInto(out *CreateRuleInitParameters) 
 	}
 	if in.Interval != nil {
 		in, out := &in.Interval, &out.Interval
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.IntervalUnit != nil {
@@ -150,7 +150,7 @@ func (in *CreateRuleObservation) DeepCopyInto(out *CreateRuleObservation) {
 	}
 	if in.Interval != nil {
 		in, out := &in.Interval, &out.Interval
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.IntervalUnit != nil {
@@ -196,7 +196,7 @@ func (in *CreateRuleParameters) DeepCopyInto(out *CreateRuleParameters) {
 	}
 	if in.Interval != nil {
 		in, out := &in.Interval, &out.Interval
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.IntervalUnit != nil {
@@ -482,7 +482,7 @@ func (in *CrossRegionCopyRuleRetainRuleInitParameters) DeepCopyInto(out *CrossRe
 	*out = *in
 	if in.Interval != nil {
 		in, out := &in.Interval, &out.Interval
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.IntervalUnit != nil {
@@ -507,7 +507,7 @@ func (in *CrossRegionCopyRuleRetainRuleObservation) DeepCopyInto(out *CrossRegio
 	*out = *in
 	if in.Interval != nil {
 		in, out := &in.Interval, &out.Interval
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.IntervalUnit != nil {
@@ -532,7 +532,7 @@ func (in *CrossRegionCopyRuleRetainRuleParameters) DeepCopyInto(out *CrossRegion
 	*out = *in
 	if in.Interval != nil {
 		in, out := &in.Interval, &out.Interval
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.IntervalUnit != nil {
@@ -557,7 +557,7 @@ func (in *DeprecateRuleInitParameters) DeepCopyInto(out *DeprecateRuleInitParame
 	*out = *in
 	if in.Interval != nil {
 		in, out := &in.Interval, &out.Interval
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.IntervalUnit != nil {
@@ -582,7 +582,7 @@ func (in *DeprecateRuleObservation) DeepCopyInto(out *DeprecateRuleObservation) 
 	*out = *in
 	if in.Interval != nil {
 		in, out := &in.Interval, &out.Interval
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.IntervalUnit != nil {
@@ -607,7 +607,7 @@ func (in *DeprecateRuleParameters) DeepCopyInto(out *DeprecateRuleParameters) {
 	*out = *in
 	if in.Interval != nil {
 		in, out := &in.Interval, &out.Interval
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.IntervalUnit != nil {
@@ -793,12 +793,12 @@ func (in *FastRestoreRuleInitParameters) DeepCopyInto(out *FastRestoreRuleInitPa
 	}
 	if in.Count != nil {
 		in, out := &in.Count, &out.Count
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Interval != nil {
 		in, out := &in.Interval, &out.Interval
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.IntervalUnit != nil {
@@ -834,12 +834,12 @@ func (in *FastRestoreRuleObservation) DeepCopyInto(out *FastRestoreRuleObservati
 	}
 	if in.Count != nil {
 		in, out := &in.Count, &out.Count
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Interval != nil {
 		in, out := &in.Interval, &out.Interval
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.IntervalUnit != nil {
@@ -875,12 +875,12 @@ func (in *FastRestoreRuleParameters) DeepCopyInto(out *FastRestoreRuleParameters
 	}
 	if in.Count != nil {
 		in, out := &in.Count, &out.Count
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Interval != nil {
 		in, out := &in.Interval, &out.Interval
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.IntervalUnit != nil {
@@ -959,22 +959,6 @@ func (in *LifecyclePolicyInitParameters) DeepCopyInto(out *LifecyclePolicyInitPa
 		in, out := &in.State, &out.State
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 }
 
@@ -1134,22 +1118,6 @@ func (in *LifecyclePolicyParameters) DeepCopyInto(out *LifecyclePolicyParameters
 		in, out := &in.State, &out.State
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 }
 
@@ -1626,7 +1594,7 @@ func (in *RetainRuleInitParameters) DeepCopyInto(out *RetainRuleInitParameters) 
 	*out = *in
 	if in.Interval != nil {
 		in, out := &in.Interval, &out.Interval
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.IntervalUnit != nil {
@@ -1651,7 +1619,7 @@ func (in *RetainRuleObservation) DeepCopyInto(out *RetainRuleObservation) {
 	*out = *in
 	if in.Interval != nil {
 		in, out := &in.Interval, &out.Interval
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.IntervalUnit != nil {
@@ -1676,7 +1644,7 @@ func (in *RetainRuleParameters) DeepCopyInto(out *RetainRuleParameters) {
 	*out = *in
 	if in.Interval != nil {
 		in, out := &in.Interval, &out.Interval
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.IntervalUnit != nil {
@@ -1701,12 +1669,12 @@ func (in *ScheduleDeprecateRuleInitParameters) DeepCopyInto(out *ScheduleDepreca
 	*out = *in
 	if in.Count != nil {
 		in, out := &in.Count, &out.Count
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Interval != nil {
 		in, out := &in.Interval, &out.Interval
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.IntervalUnit != nil {
@@ -1731,12 +1699,12 @@ func (in *ScheduleDeprecateRuleObservation) DeepCopyInto(out *ScheduleDeprecateR
 	*out = *in
 	if in.Count != nil {
 		in, out := &in.Count, &out.Count
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Interval != nil {
 		in, out := &in.Interval, &out.Interval
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.IntervalUnit != nil {
@@ -1761,12 +1729,12 @@ func (in *ScheduleDeprecateRuleParameters) DeepCopyInto(out *ScheduleDeprecateRu
 	*out = *in
 	if in.Count != nil {
 		in, out := &in.Count, &out.Count
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Interval != nil {
 		in, out := &in.Interval, &out.Interval
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.IntervalUnit != nil {
@@ -2058,12 +2026,12 @@ func (in *ScheduleRetainRuleInitParameters) DeepCopyInto(out *ScheduleRetainRule
 	*out = *in
 	if in.Count != nil {
 		in, out := &in.Count, &out.Count
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Interval != nil {
 		in, out := &in.Interval, &out.Interval
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.IntervalUnit != nil {
@@ -2088,12 +2056,12 @@ func (in *ScheduleRetainRuleObservation) DeepCopyInto(out *ScheduleRetainRuleObs
 	*out = *in
 	if in.Count != nil {
 		in, out := &in.Count, &out.Count
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Interval != nil {
 		in, out := &in.Interval, &out.Interval
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.IntervalUnit != nil {
@@ -2118,12 +2086,12 @@ func (in *ScheduleRetainRuleParameters) DeepCopyInto(out *ScheduleRetainRulePara
 	*out = *in
 	if in.Count != nil {
 		in, out := &in.Count, &out.Count
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Interval != nil {
 		in, out := &in.Interval, &out.Interval
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.IntervalUnit != nil {
@@ -2159,7 +2127,7 @@ func (in *ShareRuleInitParameters) DeepCopyInto(out *ShareRuleInitParameters) {
 	}
 	if in.UnshareInterval != nil {
 		in, out := &in.UnshareInterval, &out.UnshareInterval
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.UnshareIntervalUnit != nil {
@@ -2195,7 +2163,7 @@ func (in *ShareRuleObservation) DeepCopyInto(out *ShareRuleObservation) {
 	}
 	if in.UnshareInterval != nil {
 		in, out := &in.UnshareInterval, &out.UnshareInterval
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.UnshareIntervalUnit != nil {
@@ -2231,7 +2199,7 @@ func (in *ShareRuleParameters) DeepCopyInto(out *ShareRuleParameters) {
 	}
 	if in.UnshareInterval != nil {
 		in, out := &in.UnshareInterval, &out.UnshareInterval
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.UnshareIntervalUnit != nil {

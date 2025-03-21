@@ -65,10 +65,6 @@ type RuleInitParameters struct {
 	// Defaults to ENABLED.
 	// Conflicts with is_enabled.
 	State *string `json:"state,omitempty" tf:"state,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type RuleObservation struct {
@@ -185,11 +181,6 @@ type RuleParameters struct {
 	// Conflicts with is_enabled.
 	// +kubebuilder:validation:Optional
 	State *string `json:"state,omitempty" tf:"state,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // RuleSpec defines the desired state of Rule

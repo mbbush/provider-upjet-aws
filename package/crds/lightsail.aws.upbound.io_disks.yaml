@@ -82,13 +82,8 @@ spec:
                     type: string
                   sizeInGb:
                     description: The size of the disk in GB.
-                    type: number
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
+                    format: int64
+                    type: integer
                 required:
                 - region
                 type: object
@@ -110,13 +105,8 @@ spec:
                     type: string
                   sizeInGb:
                     description: The size of the disk in GB.
-                    type: number
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
+                    format: int64
+                    type: integer
                 type: object
               managementPolicies:
                 default:
@@ -313,7 +303,8 @@ spec:
                     type: string
                   sizeInGb:
                     description: The size of the disk in GB.
-                    type: number
+                    format: int64
+                    type: integer
                   supportCode:
                     description: The support code for the disk. Include this code
                       in your email to support when you have questions about a disk

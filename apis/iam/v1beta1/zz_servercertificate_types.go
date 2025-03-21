@@ -30,10 +30,6 @@ type ServerCertificateInitParameters struct {
 
 	// encoded format.
 	PrivateKeySecretRef v1.SecretKeySelector `json:"privateKeySecretRef" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type ServerCertificateObservation struct {
@@ -93,11 +89,6 @@ type ServerCertificateParameters struct {
 	// encoded format.
 	// +kubebuilder:validation:Optional
 	PrivateKeySecretRef v1.SecretKeySelector `json:"privateKeySecretRef" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // ServerCertificateSpec defines the desired state of ServerCertificate

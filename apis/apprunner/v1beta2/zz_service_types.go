@@ -286,10 +286,10 @@ type EncryptionConfigurationParameters struct {
 type HealthCheckConfigurationInitParameters struct {
 
 	// Number of consecutive checks that must succeed before App Runner decides that the service is healthy. Defaults to 1. Minimum value of 1. Maximum value of 20.
-	HealthyThreshold *float64 `json:"healthyThreshold,omitempty" tf:"healthy_threshold,omitempty"`
+	HealthyThreshold *int64 `json:"healthyThreshold,omitempty" tf:"healthy_threshold,omitempty"`
 
 	// Time interval, in seconds, between health checks. Defaults to 5. Minimum value of 1. Maximum value of 20.
-	Interval *float64 `json:"interval,omitempty" tf:"interval,omitempty"`
+	Interval *int64 `json:"interval,omitempty" tf:"interval,omitempty"`
 
 	// URL to send requests to for health checks. Defaults to /. Minimum length of 0. Maximum length of 51200.
 	Path *string `json:"path,omitempty" tf:"path,omitempty"`
@@ -298,19 +298,19 @@ type HealthCheckConfigurationInitParameters struct {
 	Protocol *string `json:"protocol,omitempty" tf:"protocol,omitempty"`
 
 	// Time, in seconds, to wait for a health check response before deciding it failed. Defaults to 2. Minimum value of  1. Maximum value of 20.
-	Timeout *float64 `json:"timeout,omitempty" tf:"timeout,omitempty"`
+	Timeout *int64 `json:"timeout,omitempty" tf:"timeout,omitempty"`
 
 	// Number of consecutive checks that must fail before App Runner decides that the service is unhealthy. Defaults to 5. Minimum value of  1. Maximum value of 20.
-	UnhealthyThreshold *float64 `json:"unhealthyThreshold,omitempty" tf:"unhealthy_threshold,omitempty"`
+	UnhealthyThreshold *int64 `json:"unhealthyThreshold,omitempty" tf:"unhealthy_threshold,omitempty"`
 }
 
 type HealthCheckConfigurationObservation struct {
 
 	// Number of consecutive checks that must succeed before App Runner decides that the service is healthy. Defaults to 1. Minimum value of 1. Maximum value of 20.
-	HealthyThreshold *float64 `json:"healthyThreshold,omitempty" tf:"healthy_threshold,omitempty"`
+	HealthyThreshold *int64 `json:"healthyThreshold,omitempty" tf:"healthy_threshold,omitempty"`
 
 	// Time interval, in seconds, between health checks. Defaults to 5. Minimum value of 1. Maximum value of 20.
-	Interval *float64 `json:"interval,omitempty" tf:"interval,omitempty"`
+	Interval *int64 `json:"interval,omitempty" tf:"interval,omitempty"`
 
 	// URL to send requests to for health checks. Defaults to /. Minimum length of 0. Maximum length of 51200.
 	Path *string `json:"path,omitempty" tf:"path,omitempty"`
@@ -319,21 +319,21 @@ type HealthCheckConfigurationObservation struct {
 	Protocol *string `json:"protocol,omitempty" tf:"protocol,omitempty"`
 
 	// Time, in seconds, to wait for a health check response before deciding it failed. Defaults to 2. Minimum value of  1. Maximum value of 20.
-	Timeout *float64 `json:"timeout,omitempty" tf:"timeout,omitempty"`
+	Timeout *int64 `json:"timeout,omitempty" tf:"timeout,omitempty"`
 
 	// Number of consecutive checks that must fail before App Runner decides that the service is unhealthy. Defaults to 5. Minimum value of  1. Maximum value of 20.
-	UnhealthyThreshold *float64 `json:"unhealthyThreshold,omitempty" tf:"unhealthy_threshold,omitempty"`
+	UnhealthyThreshold *int64 `json:"unhealthyThreshold,omitempty" tf:"unhealthy_threshold,omitempty"`
 }
 
 type HealthCheckConfigurationParameters struct {
 
 	// Number of consecutive checks that must succeed before App Runner decides that the service is healthy. Defaults to 1. Minimum value of 1. Maximum value of 20.
 	// +kubebuilder:validation:Optional
-	HealthyThreshold *float64 `json:"healthyThreshold,omitempty" tf:"healthy_threshold,omitempty"`
+	HealthyThreshold *int64 `json:"healthyThreshold,omitempty" tf:"healthy_threshold,omitempty"`
 
 	// Time interval, in seconds, between health checks. Defaults to 5. Minimum value of 1. Maximum value of 20.
 	// +kubebuilder:validation:Optional
-	Interval *float64 `json:"interval,omitempty" tf:"interval,omitempty"`
+	Interval *int64 `json:"interval,omitempty" tf:"interval,omitempty"`
 
 	// URL to send requests to for health checks. Defaults to /. Minimum length of 0. Maximum length of 51200.
 	// +kubebuilder:validation:Optional
@@ -345,11 +345,11 @@ type HealthCheckConfigurationParameters struct {
 
 	// Time, in seconds, to wait for a health check response before deciding it failed. Defaults to 2. Minimum value of  1. Maximum value of 20.
 	// +kubebuilder:validation:Optional
-	Timeout *float64 `json:"timeout,omitempty" tf:"timeout,omitempty"`
+	Timeout *int64 `json:"timeout,omitempty" tf:"timeout,omitempty"`
 
 	// Number of consecutive checks that must fail before App Runner decides that the service is unhealthy. Defaults to 5. Minimum value of  1. Maximum value of 20.
 	// +kubebuilder:validation:Optional
-	UnhealthyThreshold *float64 `json:"unhealthyThreshold,omitempty" tf:"unhealthy_threshold,omitempty"`
+	UnhealthyThreshold *int64 `json:"unhealthyThreshold,omitempty" tf:"unhealthy_threshold,omitempty"`
 }
 
 type ImageConfigurationInitParameters struct {
@@ -571,10 +571,6 @@ type ServiceInitParameters struct {
 
 	// The source to deploy to the App Runner service. Can be a code or an image repository. See Source Configuration below for more details.
 	SourceConfiguration *SourceConfigurationInitParameters `json:"sourceConfiguration,omitempty" tf:"source_configuration,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type ServiceObservabilityConfigurationInitParameters struct {
@@ -713,11 +709,6 @@ type ServiceParameters struct {
 	// The source to deploy to the App Runner service. Can be a code or an image repository. See Source Configuration below for more details.
 	// +kubebuilder:validation:Optional
 	SourceConfiguration *SourceConfigurationParameters `json:"sourceConfiguration,omitempty" tf:"source_configuration,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type SourceCodeVersionInitParameters struct {

@@ -12,5 +12,3 @@ spec:
     subnetIdRefs:
     - name: frontend
     - name: backend
-    tags:
-      Name: My neptune subnet group

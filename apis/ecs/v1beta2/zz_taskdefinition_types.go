@@ -122,7 +122,7 @@ type EFSVolumeConfigurationInitParameters struct {
 	TransitEncryption *string `json:"transitEncryption,omitempty" tf:"transit_encryption,omitempty"`
 
 	// Port to use for transit encryption. If you do not specify a transit encryption port, it will use the port selection strategy that the Amazon EFS mount helper uses.
-	TransitEncryptionPort *float64 `json:"transitEncryptionPort,omitempty" tf:"transit_encryption_port,omitempty"`
+	TransitEncryptionPort *int64 `json:"transitEncryptionPort,omitempty" tf:"transit_encryption_port,omitempty"`
 }
 
 type EFSVolumeConfigurationObservation struct {
@@ -140,7 +140,7 @@ type EFSVolumeConfigurationObservation struct {
 	TransitEncryption *string `json:"transitEncryption,omitempty" tf:"transit_encryption,omitempty"`
 
 	// Port to use for transit encryption. If you do not specify a transit encryption port, it will use the port selection strategy that the Amazon EFS mount helper uses.
-	TransitEncryptionPort *float64 `json:"transitEncryptionPort,omitempty" tf:"transit_encryption_port,omitempty"`
+	TransitEncryptionPort *int64 `json:"transitEncryptionPort,omitempty" tf:"transit_encryption_port,omitempty"`
 }
 
 type EFSVolumeConfigurationParameters struct {
@@ -163,26 +163,26 @@ type EFSVolumeConfigurationParameters struct {
 
 	// Port to use for transit encryption. If you do not specify a transit encryption port, it will use the port selection strategy that the Amazon EFS mount helper uses.
 	// +kubebuilder:validation:Optional
-	TransitEncryptionPort *float64 `json:"transitEncryptionPort,omitempty" tf:"transit_encryption_port,omitempty"`
+	TransitEncryptionPort *int64 `json:"transitEncryptionPort,omitempty" tf:"transit_encryption_port,omitempty"`
 }
 
 type EphemeralStorageInitParameters struct {
 
 	// The total amount, in GiB, of ephemeral storage to set for the task. The minimum supported value is 21 GiB and the maximum supported value is 200 GiB.
-	SizeInGib *float64 `json:"sizeInGib,omitempty" tf:"size_in_gib,omitempty"`
+	SizeInGib *int64 `json:"sizeInGib,omitempty" tf:"size_in_gib,omitempty"`
 }
 
 type EphemeralStorageObservation struct {
 
 	// The total amount, in GiB, of ephemeral storage to set for the task. The minimum supported value is 21 GiB and the maximum supported value is 200 GiB.
-	SizeInGib *float64 `json:"sizeInGib,omitempty" tf:"size_in_gib,omitempty"`
+	SizeInGib *int64 `json:"sizeInGib,omitempty" tf:"size_in_gib,omitempty"`
 }
 
 type EphemeralStorageParameters struct {
 
 	// The total amount, in GiB, of ephemeral storage to set for the task. The minimum supported value is 21 GiB and the maximum supported value is 200 GiB.
 	// +kubebuilder:validation:Optional
-	SizeInGib *float64 `json:"sizeInGib" tf:"size_in_gib,omitempty"`
+	SizeInGib *int64 `json:"sizeInGib" tf:"size_in_gib,omitempty"`
 }
 
 type FSXWindowsFileServerVolumeConfigurationAuthorizationConfigInitParameters struct {
@@ -411,10 +411,6 @@ type TaskDefinitionInitParameters struct {
 	// Whether to retain the old revision when the resource is destroyed or replacement is necessary. Default is false.
 	SkipDestroy *bool `json:"skipDestroy,omitempty" tf:"skip_destroy,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// ARN of IAM role that allows your Amazon ECS container task to make calls to other AWS services.
 	TaskRoleArn *string `json:"taskRoleArn,omitempty" tf:"task_role_arn,omitempty"`
 
@@ -476,7 +472,7 @@ type TaskDefinitionObservation struct {
 	RequiresCompatibilities []*string `json:"requiresCompatibilities,omitempty" tf:"requires_compatibilities,omitempty"`
 
 	// Revision of the task in a particular family.
-	Revision *float64 `json:"revision,omitempty" tf:"revision,omitempty"`
+	Revision *int64 `json:"revision,omitempty" tf:"revision,omitempty"`
 
 	// Configuration block for runtime_platform that containers in your task may use.
 	RuntimePlatform *RuntimePlatformObservation `json:"runtimePlatform,omitempty" tf:"runtime_platform,omitempty"`
@@ -579,11 +575,6 @@ type TaskDefinitionParameters struct {
 	// Whether to retain the old revision when the resource is destroyed or replacement is necessary. Default is false.
 	// +kubebuilder:validation:Optional
 	SkipDestroy *bool `json:"skipDestroy,omitempty" tf:"skip_destroy,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// ARN of IAM role that allows your Amazon ECS container task to make calls to other AWS services.
 	// +kubebuilder:validation:Optional

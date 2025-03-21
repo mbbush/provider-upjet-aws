@@ -108,10 +108,6 @@ type PoolInitParameters struct {
 	// Key-Value pairs mapping provider names to provider app IDs.
 	// +mapType=granular
 	SupportedLoginProviders map[string]*string `json:"supportedLoginProviders,omitempty" tf:"supported_login_providers,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type PoolObservation struct {
@@ -209,11 +205,6 @@ type PoolParameters struct {
 	// +kubebuilder:validation:Optional
 	// +mapType=granular
 	SupportedLoginProviders map[string]*string `json:"supportedLoginProviders,omitempty" tf:"supported_login_providers,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // PoolSpec defines the desired state of Pool

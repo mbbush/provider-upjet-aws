@@ -78,7 +78,8 @@ spec:
                     type: string
                   licenseCount:
                     description: Number of licenses managed by the license configuration.
-                    type: number
+                    format: int64
+                    type: integer
                   licenseCountHardLimit:
                     description: Sets the number of available licenses as a hard limit.
                     type: boolean
@@ -98,12 +99,6 @@ spec:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -125,7 +120,8 @@ spec:
                     type: string
                   licenseCount:
                     description: Number of licenses managed by the license configuration.
-                    type: number
+                    format: int64
+                    type: integer
                   licenseCountHardLimit:
                     description: Sets the number of available licenses as a hard limit.
                     type: boolean
@@ -141,12 +137,6 @@ spec:
                   name:
                     description: Name of the license configuration.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -341,7 +331,8 @@ spec:
                     type: string
                   licenseCount:
                     description: Number of licenses managed by the license configuration.
-                    type: number
+                    format: int64
+                    type: integer
                   licenseCountHardLimit:
                     description: Sets the number of available licenses as a hard limit.
                     type: boolean

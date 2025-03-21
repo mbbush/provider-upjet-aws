@@ -521,12 +521,6 @@ spec:
                         description: Type of routing strategyE.g., SIMPLE or TERMINAL
                         type: string
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -564,12 +558,6 @@ spec:
                         description: Type of routing strategyE.g., SIMPLE or TERMINAL
                         type: string
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:

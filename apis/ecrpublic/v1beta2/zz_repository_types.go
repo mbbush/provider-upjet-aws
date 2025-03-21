@@ -94,10 +94,6 @@ type RepositoryInitParameters struct {
 	CatalogData *CatalogDataInitParameters `json:"catalogData,omitempty" tf:"catalog_data,omitempty"`
 
 	ForceDestroy *bool `json:"forceDestroy,omitempty" tf:"force_destroy,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type RepositoryObservation struct {
@@ -141,11 +137,6 @@ type RepositoryParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // RepositorySpec defines the desired state of Repository

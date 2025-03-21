@@ -1242,7 +1242,8 @@ spec:
                           description: |-
                             Specifies the order in which the rules in a WebACL are evaluated.
                             Rules with a lower value are evaluated before rules with a higher value.
-                          type: number
+                          format: int64
+                          type: integer
                         ruleId:
                           description: ID of the associated WAF (Regional) rule (e.g.,
                             aws_wafregional_rule). WAF (Global) rules cannot be used.
@@ -1332,12 +1333,6 @@ spec:
                           type: string
                       type: object
                     type: array
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -1518,7 +1513,8 @@ spec:
                           description: |-
                             Specifies the order in which the rules in a WebACL are evaluated.
                             Rules with a lower value are evaluated before rules with a higher value.
-                          type: number
+                          format: int64
+                          type: integer
                         ruleId:
                           description: ID of the associated WAF (Regional) rule (e.g.,
                             aws_wafregional_rule). WAF (Global) rules cannot be used.
@@ -1608,12 +1604,6 @@ spec:
                           type: string
                       type: object
                     type: array
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -1894,7 +1884,8 @@ spec:
                           description: |-
                             Specifies the order in which the rules in a WebACL are evaluated.
                             Rules with a lower value are evaluated before rules with a higher value.
-                          type: number
+                          format: int64
+                          type: integer
                         ruleId:
                           description: ID of the associated WAF (Regional) rule (e.g.,
                             aws_wafregional_rule). WAF (Global) rules cannot be used.

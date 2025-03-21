@@ -16,7 +16,7 @@ import (
 type UsageLimitInitParameters struct {
 
 	// The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB). The value must be a positive number.
-	Amount *float64 `json:"amount,omitempty" tf:"amount,omitempty"`
+	Amount *int64 `json:"amount,omitempty" tf:"amount,omitempty"`
 
 	// The action that Amazon Redshift takes when the limit is reached. The default is log. Valid values are log, emit-metric, and disable.
 	BreachAction *string `json:"breachAction,omitempty" tf:"breach_action,omitempty"`
@@ -42,16 +42,12 @@ type UsageLimitInitParameters struct {
 
 	// The time period that the amount applies to. A weekly period begins on Sunday. The default is monthly. Valid values are daily, weekly, and monthly.
 	Period *string `json:"period,omitempty" tf:"period,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type UsageLimitObservation struct {
 
 	// The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB). The value must be a positive number.
-	Amount *float64 `json:"amount,omitempty" tf:"amount,omitempty"`
+	Amount *int64 `json:"amount,omitempty" tf:"amount,omitempty"`
 
 	// Amazon Resource Name (ARN) of the Redshift Usage Limit.
 	Arn *string `json:"arn,omitempty" tf:"arn,omitempty"`
@@ -87,7 +83,7 @@ type UsageLimitParameters struct {
 
 	// The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB). The value must be a positive number.
 	// +kubebuilder:validation:Optional
-	Amount *float64 `json:"amount,omitempty" tf:"amount,omitempty"`
+	Amount *int64 `json:"amount,omitempty" tf:"amount,omitempty"`
 
 	// The action that Amazon Redshift takes when the limit is reached. The default is log. Valid values are log, emit-metric, and disable.
 	// +kubebuilder:validation:Optional
@@ -123,11 +119,6 @@ type UsageLimitParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // UsageLimitSpec defines the desired state of UsageLimit

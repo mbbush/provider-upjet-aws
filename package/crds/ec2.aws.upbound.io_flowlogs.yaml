@@ -1430,7 +1430,8 @@ spec:
                       during which a flow of packets is captured and aggregated into a flow
                       log record. Valid Values: 60 seconds (1 minute) or 600 seconds (10
                       minutes). Default: 600. When transit_gateway_id or transit_gateway_attachment_id is specified, max_aggregation_interval must be 60 seconds (1 minute).
-                    type: number
+                    format: int64
+                    type: integer
                   region:
                     description: Region is the region you'd like your resource to
                       be created in.
@@ -1512,12 +1513,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   trafficType:
                     description: 'The type of traffic to capture. Valid values: ACCEPT,REJECT,
                       ALL.'
@@ -1824,7 +1819,8 @@ spec:
                       during which a flow of packets is captured and aggregated into a flow
                       log record. Valid Values: 60 seconds (1 minute) or 600 seconds (10
                       minutes). Default: 600. When transit_gateway_id or transit_gateway_attachment_id is specified, max_aggregation_interval must be 60 seconds (1 minute).
-                    type: number
+                    format: int64
+                    type: integer
                   subnetId:
                     description: Subnet ID to attach to
                     type: string
@@ -1902,12 +1898,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   trafficType:
                     description: 'The type of traffic to capture. Valid values: ACCEPT,REJECT,
                       ALL.'
@@ -2227,7 +2217,8 @@ spec:
                       during which a flow of packets is captured and aggregated into a flow
                       log record. Valid Values: 60 seconds (1 minute) or 600 seconds (10
                       minutes). Default: 600. When transit_gateway_id or transit_gateway_attachment_id is specified, max_aggregation_interval must be 60 seconds (1 minute).
-                    type: number
+                    format: int64
+                    type: integer
                   subnetId:
                     description: Subnet ID to attach to
                     type: string

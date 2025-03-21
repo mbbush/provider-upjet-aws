@@ -18,10 +18,6 @@ type VocabularyFilterInitParameters struct {
 	// The language code you selected for your vocabulary filter. Refer to the supported languages page for accepted codes.
 	LanguageCode *string `json:"languageCode,omitempty" tf:"language_code,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// The Amazon S3 location (URI) of the text file that contains your custom VocabularyFilter. Conflicts with words argument.
 	VocabularyFilterFileURI *string `json:"vocabularyFilterFileUri,omitempty" tf:"vocabulary_filter_file_uri,omitempty"`
 
@@ -67,11 +63,6 @@ type VocabularyFilterParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// The Amazon S3 location (URI) of the text file that contains your custom VocabularyFilter. Conflicts with words argument.
 	// +kubebuilder:validation:Optional

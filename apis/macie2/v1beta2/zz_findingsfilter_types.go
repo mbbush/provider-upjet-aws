@@ -145,7 +145,7 @@ type FindingsFilterInitParameters struct {
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
 
 	// The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.
-	Position *float64 `json:"position,omitempty" tf:"position,omitempty"`
+	Position *int64 `json:"position,omitempty" tf:"position,omitempty"`
 
 	// Key-value map of resource tags.
 	// +mapType=granular
@@ -173,7 +173,7 @@ type FindingsFilterObservation struct {
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
 
 	// The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.
-	Position *float64 `json:"position,omitempty" tf:"position,omitempty"`
+	Position *int64 `json:"position,omitempty" tf:"position,omitempty"`
 
 	// Key-value map of resource tags.
 	// +mapType=granular
@@ -203,7 +203,7 @@ type FindingsFilterParameters struct {
 
 	// The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.
 	// +kubebuilder:validation:Optional
-	Position *float64 `json:"position,omitempty" tf:"position,omitempty"`
+	Position *int64 `json:"position,omitempty" tf:"position,omitempty"`
 
 	// Region is the region you'd like your resource to be created in.
 	// +upjet:crd:field:TFTag=-

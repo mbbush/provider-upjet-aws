@@ -16,7 +16,7 @@ import (
 type SpecListenerPortMappingInitParameters struct {
 
 	// Port used for the port mapping.
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// Protocol used for the port mapping. Valid values are http,http2, tcp and grpc.
 	Protocol *string `json:"protocol,omitempty" tf:"protocol,omitempty"`
@@ -25,7 +25,7 @@ type SpecListenerPortMappingInitParameters struct {
 type SpecListenerPortMappingObservation struct {
 
 	// Port used for the port mapping.
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// Protocol used for the port mapping. Valid values are http,http2, tcp and grpc.
 	Protocol *string `json:"protocol,omitempty" tf:"protocol,omitempty"`
@@ -35,7 +35,7 @@ type SpecListenerPortMappingParameters struct {
 
 	// Port used for the port mapping.
 	// +kubebuilder:validation:Optional
-	Port *float64 `json:"port" tf:"port,omitempty"`
+	Port *int64 `json:"port" tf:"port,omitempty"`
 
 	// Protocol used for the port mapping. Valid values are http,http2, tcp and grpc.
 	// +kubebuilder:validation:Optional
@@ -65,10 +65,6 @@ type VirtualRouterInitParameters struct {
 
 	// Virtual router specification to apply.
 	Spec *VirtualRouterSpecInitParameters `json:"spec,omitempty" tf:"spec,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type VirtualRouterObservation struct {
@@ -141,11 +137,6 @@ type VirtualRouterParameters struct {
 	// Virtual router specification to apply.
 	// +kubebuilder:validation:Optional
 	Spec *VirtualRouterSpecParameters `json:"spec,omitempty" tf:"spec,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type VirtualRouterSpecInitParameters struct {

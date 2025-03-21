@@ -70,10 +70,6 @@ type AddonInitParameters struct {
 	// Selector for a Role in iam to populate serviceAccountRoleArn.
 	// +kubebuilder:validation:Optional
 	ServiceAccountRoleArnSelector *v1.Selector `json:"serviceAccountRoleArnSelector,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type AddonObservation struct {
@@ -208,11 +204,6 @@ type AddonParameters struct {
 	// Selector for a Role in iam to populate serviceAccountRoleArn.
 	// +kubebuilder:validation:Optional
 	ServiceAccountRoleArnSelector *v1.Selector `json:"serviceAccountRoleArnSelector,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type PodIdentityAssociationInitParameters struct {

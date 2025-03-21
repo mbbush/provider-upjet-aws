@@ -431,7 +431,7 @@ func (in *SMSPreferencesInitParameters) DeepCopyInto(out *SMSPreferencesInitPara
 	}
 	if in.MonthlySpendLimit != nil {
 		in, out := &in.MonthlySpendLimit, &out.MonthlySpendLimit
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.UsageReportS3Bucket != nil {
@@ -513,7 +513,7 @@ func (in *SMSPreferencesObservation) DeepCopyInto(out *SMSPreferencesObservation
 	}
 	if in.MonthlySpendLimit != nil {
 		in, out := &in.MonthlySpendLimit, &out.MonthlySpendLimit
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.UsageReportS3Bucket != nil {
@@ -568,7 +568,7 @@ func (in *SMSPreferencesParameters) DeepCopyInto(out *SMSPreferencesParameters) 
 	}
 	if in.MonthlySpendLimit != nil {
 		in, out := &in.MonthlySpendLimit, &out.MonthlySpendLimit
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Region != nil {
@@ -690,7 +690,7 @@ func (in *TopicInitParameters) DeepCopyInto(out *TopicInitParameters) {
 	}
 	if in.ApplicationSuccessFeedbackSampleRate != nil {
 		in, out := &in.ApplicationSuccessFeedbackSampleRate, &out.ApplicationSuccessFeedbackSampleRate
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ArchivePolicy != nil {
@@ -750,7 +750,7 @@ func (in *TopicInitParameters) DeepCopyInto(out *TopicInitParameters) {
 	}
 	if in.FirehoseSuccessFeedbackSampleRate != nil {
 		in, out := &in.FirehoseSuccessFeedbackSampleRate, &out.FirehoseSuccessFeedbackSampleRate
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.HTTPFailureFeedbackRoleArn != nil {
@@ -785,7 +785,7 @@ func (in *TopicInitParameters) DeepCopyInto(out *TopicInitParameters) {
 	}
 	if in.HTTPSuccessFeedbackSampleRate != nil {
 		in, out := &in.HTTPSuccessFeedbackSampleRate, &out.HTTPSuccessFeedbackSampleRate
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.KMSMasterKeyID != nil {
@@ -825,7 +825,7 @@ func (in *TopicInitParameters) DeepCopyInto(out *TopicInitParameters) {
 	}
 	if in.LambdaSuccessFeedbackSampleRate != nil {
 		in, out := &in.LambdaSuccessFeedbackSampleRate, &out.LambdaSuccessFeedbackSampleRate
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Policy != nil {
@@ -835,7 +835,7 @@ func (in *TopicInitParameters) DeepCopyInto(out *TopicInitParameters) {
 	}
 	if in.SignatureVersion != nil {
 		in, out := &in.SignatureVersion, &out.SignatureVersion
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.SqsFailureFeedbackRoleArn != nil {
@@ -870,24 +870,8 @@ func (in *TopicInitParameters) DeepCopyInto(out *TopicInitParameters) {
 	}
 	if in.SqsSuccessFeedbackSampleRate != nil {
 		in, out := &in.SqsSuccessFeedbackSampleRate, &out.SqsSuccessFeedbackSampleRate
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.TracingConfig != nil {
 		in, out := &in.TracingConfig, &out.TracingConfig
@@ -953,7 +937,7 @@ func (in *TopicObservation) DeepCopyInto(out *TopicObservation) {
 	}
 	if in.ApplicationSuccessFeedbackSampleRate != nil {
 		in, out := &in.ApplicationSuccessFeedbackSampleRate, &out.ApplicationSuccessFeedbackSampleRate
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ArchivePolicy != nil {
@@ -1003,7 +987,7 @@ func (in *TopicObservation) DeepCopyInto(out *TopicObservation) {
 	}
 	if in.FirehoseSuccessFeedbackSampleRate != nil {
 		in, out := &in.FirehoseSuccessFeedbackSampleRate, &out.FirehoseSuccessFeedbackSampleRate
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.HTTPFailureFeedbackRoleArn != nil {
@@ -1018,7 +1002,7 @@ func (in *TopicObservation) DeepCopyInto(out *TopicObservation) {
 	}
 	if in.HTTPSuccessFeedbackSampleRate != nil {
 		in, out := &in.HTTPSuccessFeedbackSampleRate, &out.HTTPSuccessFeedbackSampleRate
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ID != nil {
@@ -1043,7 +1027,7 @@ func (in *TopicObservation) DeepCopyInto(out *TopicObservation) {
 	}
 	if in.LambdaSuccessFeedbackSampleRate != nil {
 		in, out := &in.LambdaSuccessFeedbackSampleRate, &out.LambdaSuccessFeedbackSampleRate
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Owner != nil {
@@ -1058,7 +1042,7 @@ func (in *TopicObservation) DeepCopyInto(out *TopicObservation) {
 	}
 	if in.SignatureVersion != nil {
 		in, out := &in.SignatureVersion, &out.SignatureVersion
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.SqsFailureFeedbackRoleArn != nil {
@@ -1073,7 +1057,7 @@ func (in *TopicObservation) DeepCopyInto(out *TopicObservation) {
 	}
 	if in.SqsSuccessFeedbackSampleRate != nil {
 		in, out := &in.SqsSuccessFeedbackSampleRate, &out.SqsSuccessFeedbackSampleRate
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Tags != nil {
@@ -1160,7 +1144,7 @@ func (in *TopicParameters) DeepCopyInto(out *TopicParameters) {
 	}
 	if in.ApplicationSuccessFeedbackSampleRate != nil {
 		in, out := &in.ApplicationSuccessFeedbackSampleRate, &out.ApplicationSuccessFeedbackSampleRate
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ArchivePolicy != nil {
@@ -1220,7 +1204,7 @@ func (in *TopicParameters) DeepCopyInto(out *TopicParameters) {
 	}
 	if in.FirehoseSuccessFeedbackSampleRate != nil {
 		in, out := &in.FirehoseSuccessFeedbackSampleRate, &out.FirehoseSuccessFeedbackSampleRate
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.HTTPFailureFeedbackRoleArn != nil {
@@ -1255,7 +1239,7 @@ func (in *TopicParameters) DeepCopyInto(out *TopicParameters) {
 	}
 	if in.HTTPSuccessFeedbackSampleRate != nil {
 		in, out := &in.HTTPSuccessFeedbackSampleRate, &out.HTTPSuccessFeedbackSampleRate
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.KMSMasterKeyID != nil {
@@ -1295,7 +1279,7 @@ func (in *TopicParameters) DeepCopyInto(out *TopicParameters) {
 	}
 	if in.LambdaSuccessFeedbackSampleRate != nil {
 		in, out := &in.LambdaSuccessFeedbackSampleRate, &out.LambdaSuccessFeedbackSampleRate
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Policy != nil {
@@ -1310,7 +1294,7 @@ func (in *TopicParameters) DeepCopyInto(out *TopicParameters) {
 	}
 	if in.SignatureVersion != nil {
 		in, out := &in.SignatureVersion, &out.SignatureVersion
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.SqsFailureFeedbackRoleArn != nil {
@@ -1345,24 +1329,8 @@ func (in *TopicParameters) DeepCopyInto(out *TopicParameters) {
 	}
 	if in.SqsSuccessFeedbackSampleRate != nil {
 		in, out := &in.SqsSuccessFeedbackSampleRate, &out.SqsSuccessFeedbackSampleRate
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.TracingConfig != nil {
 		in, out := &in.TracingConfig, &out.TracingConfig
@@ -1652,7 +1620,7 @@ func (in *TopicSubscriptionInitParameters) DeepCopyInto(out *TopicSubscriptionIn
 	*out = *in
 	if in.ConfirmationTimeoutInMinutes != nil {
 		in, out := &in.ConfirmationTimeoutInMinutes, &out.ConfirmationTimeoutInMinutes
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.DeliveryPolicy != nil {
@@ -1794,7 +1762,7 @@ func (in *TopicSubscriptionObservation) DeepCopyInto(out *TopicSubscriptionObser
 	}
 	if in.ConfirmationTimeoutInMinutes != nil {
 		in, out := &in.ConfirmationTimeoutInMinutes, &out.ConfirmationTimeoutInMinutes
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ConfirmationWasAuthenticated != nil {
@@ -1889,7 +1857,7 @@ func (in *TopicSubscriptionParameters) DeepCopyInto(out *TopicSubscriptionParame
 	*out = *in
 	if in.ConfirmationTimeoutInMinutes != nil {
 		in, out := &in.ConfirmationTimeoutInMinutes, &out.ConfirmationTimeoutInMinutes
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.DeliveryPolicy != nil {

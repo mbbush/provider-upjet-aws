@@ -16,39 +16,39 @@ import (
 type ComputeCapacityInitParameters struct {
 
 	// Desired number of streaming instances.
-	DesiredInstances *float64 `json:"desiredInstances,omitempty" tf:"desired_instances,omitempty"`
+	DesiredInstances *int64 `json:"desiredInstances,omitempty" tf:"desired_instances,omitempty"`
 
 	// Desired number of user sessions for a multi-session fleet. This is not allowed for single-session fleets.
-	DesiredSessions *float64 `json:"desiredSessions,omitempty" tf:"desired_sessions,omitempty"`
+	DesiredSessions *int64 `json:"desiredSessions,omitempty" tf:"desired_sessions,omitempty"`
 }
 
 type ComputeCapacityObservation struct {
 
 	// Number of currently available instances that can be used to stream sessions.
-	Available *float64 `json:"available,omitempty" tf:"available,omitempty"`
+	Available *int64 `json:"available,omitempty" tf:"available,omitempty"`
 
 	// Desired number of streaming instances.
-	DesiredInstances *float64 `json:"desiredInstances,omitempty" tf:"desired_instances,omitempty"`
+	DesiredInstances *int64 `json:"desiredInstances,omitempty" tf:"desired_instances,omitempty"`
 
 	// Desired number of user sessions for a multi-session fleet. This is not allowed for single-session fleets.
-	DesiredSessions *float64 `json:"desiredSessions,omitempty" tf:"desired_sessions,omitempty"`
+	DesiredSessions *int64 `json:"desiredSessions,omitempty" tf:"desired_sessions,omitempty"`
 
 	// Number of instances in use for streaming.
-	InUse *float64 `json:"inUse,omitempty" tf:"in_use,omitempty"`
+	InUse *int64 `json:"inUse,omitempty" tf:"in_use,omitempty"`
 
 	// Total number of simultaneous streaming instances that are running.
-	Running *float64 `json:"running,omitempty" tf:"running,omitempty"`
+	Running *int64 `json:"running,omitempty" tf:"running,omitempty"`
 }
 
 type ComputeCapacityParameters struct {
 
 	// Desired number of streaming instances.
 	// +kubebuilder:validation:Optional
-	DesiredInstances *float64 `json:"desiredInstances,omitempty" tf:"desired_instances,omitempty"`
+	DesiredInstances *int64 `json:"desiredInstances,omitempty" tf:"desired_instances,omitempty"`
 
 	// Desired number of user sessions for a multi-session fleet. This is not allowed for single-session fleets.
 	// +kubebuilder:validation:Optional
-	DesiredSessions *float64 `json:"desiredSessions,omitempty" tf:"desired_sessions,omitempty"`
+	DesiredSessions *int64 `json:"desiredSessions,omitempty" tf:"desired_sessions,omitempty"`
 }
 
 type DomainJoinInfoInitParameters struct {
@@ -89,7 +89,7 @@ type FleetInitParameters struct {
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
 
 	// Amount of time that a streaming session remains active after users disconnect.
-	DisconnectTimeoutInSeconds *float64 `json:"disconnectTimeoutInSeconds,omitempty" tf:"disconnect_timeout_in_seconds,omitempty"`
+	DisconnectTimeoutInSeconds *int64 `json:"disconnectTimeoutInSeconds,omitempty" tf:"disconnect_timeout_in_seconds,omitempty"`
 
 	// Human-readable friendly name for the AppStream fleet.
 	DisplayName *string `json:"displayName,omitempty" tf:"display_name,omitempty"`
@@ -117,7 +117,7 @@ type FleetInitParameters struct {
 	IAMRoleArnSelector *v1.Selector `json:"iamRoleArnSelector,omitempty" tf:"-"`
 
 	// Amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the disconnect_timeout_in_seconds time interval begins. Defaults to 0. Valid value is between 60 and 3600 seconds.
-	IdleDisconnectTimeoutInSeconds *float64 `json:"idleDisconnectTimeoutInSeconds,omitempty" tf:"idle_disconnect_timeout_in_seconds,omitempty"`
+	IdleDisconnectTimeoutInSeconds *int64 `json:"idleDisconnectTimeoutInSeconds,omitempty" tf:"idle_disconnect_timeout_in_seconds,omitempty"`
 
 	// ARN of the public, private, or shared image to use.
 	ImageArn *string `json:"imageArn,omitempty" tf:"image_arn,omitempty"`
@@ -129,20 +129,16 @@ type FleetInitParameters struct {
 	InstanceType *string `json:"instanceType,omitempty" tf:"instance_type,omitempty"`
 
 	// The maximum number of user sessions on an instance. This only applies to multi-session fleets.
-	MaxSessionsPerInstance *float64 `json:"maxSessionsPerInstance,omitempty" tf:"max_sessions_per_instance,omitempty"`
+	MaxSessionsPerInstance *int64 `json:"maxSessionsPerInstance,omitempty" tf:"max_sessions_per_instance,omitempty"`
 
 	// Maximum amount of time that a streaming session can remain active, in seconds.
-	MaxUserDurationInSeconds *float64 `json:"maxUserDurationInSeconds,omitempty" tf:"max_user_duration_in_seconds,omitempty"`
+	MaxUserDurationInSeconds *int64 `json:"maxUserDurationInSeconds,omitempty" tf:"max_user_duration_in_seconds,omitempty"`
 
 	// Unique name for the fleet.
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
 
 	// AppStream 2.0 view that is displayed to your users when they stream from the fleet. When APP is specified, only the windows of applications opened by users display. When DESKTOP is specified, the standard desktop that is provided by the operating system displays. If not specified, defaults to APP.
 	StreamView *string `json:"streamView,omitempty" tf:"stream_view,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Configuration block for the VPC configuration for the image builder. See below.
 	VPCConfig *VPCConfigInitParameters `json:"vpcConfig,omitempty" tf:"vpc_config,omitempty"`
@@ -163,7 +159,7 @@ type FleetObservation struct {
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
 
 	// Amount of time that a streaming session remains active after users disconnect.
-	DisconnectTimeoutInSeconds *float64 `json:"disconnectTimeoutInSeconds,omitempty" tf:"disconnect_timeout_in_seconds,omitempty"`
+	DisconnectTimeoutInSeconds *int64 `json:"disconnectTimeoutInSeconds,omitempty" tf:"disconnect_timeout_in_seconds,omitempty"`
 
 	// Human-readable friendly name for the AppStream fleet.
 	DisplayName *string `json:"displayName,omitempty" tf:"display_name,omitempty"`
@@ -184,7 +180,7 @@ type FleetObservation struct {
 	ID *string `json:"id,omitempty" tf:"id,omitempty"`
 
 	// Amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the disconnect_timeout_in_seconds time interval begins. Defaults to 0. Valid value is between 60 and 3600 seconds.
-	IdleDisconnectTimeoutInSeconds *float64 `json:"idleDisconnectTimeoutInSeconds,omitempty" tf:"idle_disconnect_timeout_in_seconds,omitempty"`
+	IdleDisconnectTimeoutInSeconds *int64 `json:"idleDisconnectTimeoutInSeconds,omitempty" tf:"idle_disconnect_timeout_in_seconds,omitempty"`
 
 	// ARN of the public, private, or shared image to use.
 	ImageArn *string `json:"imageArn,omitempty" tf:"image_arn,omitempty"`
@@ -196,10 +192,10 @@ type FleetObservation struct {
 	InstanceType *string `json:"instanceType,omitempty" tf:"instance_type,omitempty"`
 
 	// The maximum number of user sessions on an instance. This only applies to multi-session fleets.
-	MaxSessionsPerInstance *float64 `json:"maxSessionsPerInstance,omitempty" tf:"max_sessions_per_instance,omitempty"`
+	MaxSessionsPerInstance *int64 `json:"maxSessionsPerInstance,omitempty" tf:"max_sessions_per_instance,omitempty"`
 
 	// Maximum amount of time that a streaming session can remain active, in seconds.
-	MaxUserDurationInSeconds *float64 `json:"maxUserDurationInSeconds,omitempty" tf:"max_user_duration_in_seconds,omitempty"`
+	MaxUserDurationInSeconds *int64 `json:"maxUserDurationInSeconds,omitempty" tf:"max_user_duration_in_seconds,omitempty"`
 
 	// Unique name for the fleet.
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
@@ -233,7 +229,7 @@ type FleetParameters struct {
 
 	// Amount of time that a streaming session remains active after users disconnect.
 	// +kubebuilder:validation:Optional
-	DisconnectTimeoutInSeconds *float64 `json:"disconnectTimeoutInSeconds,omitempty" tf:"disconnect_timeout_in_seconds,omitempty"`
+	DisconnectTimeoutInSeconds *int64 `json:"disconnectTimeoutInSeconds,omitempty" tf:"disconnect_timeout_in_seconds,omitempty"`
 
 	// Human-readable friendly name for the AppStream fleet.
 	// +kubebuilder:validation:Optional
@@ -267,7 +263,7 @@ type FleetParameters struct {
 
 	// Amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the disconnect_timeout_in_seconds time interval begins. Defaults to 0. Valid value is between 60 and 3600 seconds.
 	// +kubebuilder:validation:Optional
-	IdleDisconnectTimeoutInSeconds *float64 `json:"idleDisconnectTimeoutInSeconds,omitempty" tf:"idle_disconnect_timeout_in_seconds,omitempty"`
+	IdleDisconnectTimeoutInSeconds *int64 `json:"idleDisconnectTimeoutInSeconds,omitempty" tf:"idle_disconnect_timeout_in_seconds,omitempty"`
 
 	// ARN of the public, private, or shared image to use.
 	// +kubebuilder:validation:Optional
@@ -283,11 +279,11 @@ type FleetParameters struct {
 
 	// The maximum number of user sessions on an instance. This only applies to multi-session fleets.
 	// +kubebuilder:validation:Optional
-	MaxSessionsPerInstance *float64 `json:"maxSessionsPerInstance,omitempty" tf:"max_sessions_per_instance,omitempty"`
+	MaxSessionsPerInstance *int64 `json:"maxSessionsPerInstance,omitempty" tf:"max_sessions_per_instance,omitempty"`
 
 	// Maximum amount of time that a streaming session can remain active, in seconds.
 	// +kubebuilder:validation:Optional
-	MaxUserDurationInSeconds *float64 `json:"maxUserDurationInSeconds,omitempty" tf:"max_user_duration_in_seconds,omitempty"`
+	MaxUserDurationInSeconds *int64 `json:"maxUserDurationInSeconds,omitempty" tf:"max_user_duration_in_seconds,omitempty"`
 
 	// Unique name for the fleet.
 	// +kubebuilder:validation:Optional
@@ -301,11 +297,6 @@ type FleetParameters struct {
 	// AppStream 2.0 view that is displayed to your users when they stream from the fleet. When APP is specified, only the windows of applications opened by users display. When DESKTOP is specified, the standard desktop that is provided by the operating system displays. If not specified, defaults to APP.
 	// +kubebuilder:validation:Optional
 	StreamView *string `json:"streamView,omitempty" tf:"stream_view,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Configuration block for the VPC configuration for the image builder. See below.
 	// +kubebuilder:validation:Optional

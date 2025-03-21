@@ -338,9 +338,6 @@ type ReplicatorInitParameters struct {
 	// Selector for a Role in iam to populate serviceExecutionRoleArn.
 	// +kubebuilder:validation:Optional
 	ServiceExecutionRoleArnSelector *v1.Selector `json:"serviceExecutionRoleArnSelector,omitempty" tf:"-"`
-
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type ReplicatorObservation struct {
@@ -410,10 +407,6 @@ type ReplicatorParameters struct {
 	// Selector for a Role in iam to populate serviceExecutionRoleArn.
 	// +kubebuilder:validation:Optional
 	ServiceExecutionRoleArnSelector *v1.Selector `json:"serviceExecutionRoleArnSelector,omitempty" tf:"-"`
-
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type StartingPositionInitParameters struct {

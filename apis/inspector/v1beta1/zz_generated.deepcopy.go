@@ -249,7 +249,7 @@ func (in *AssessmentTemplateInitParameters) DeepCopyInto(out *AssessmentTemplate
 	*out = *in
 	if in.Duration != nil {
 		in, out := &in.Duration, &out.Duration
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.EventSubscription != nil {
@@ -273,22 +273,6 @@ func (in *AssessmentTemplateInitParameters) DeepCopyInto(out *AssessmentTemplate
 				*out = new(string)
 				**out = **in
 			}
-		}
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
 		}
 	}
 	if in.TargetArn != nil {
@@ -360,7 +344,7 @@ func (in *AssessmentTemplateObservation) DeepCopyInto(out *AssessmentTemplateObs
 	}
 	if in.Duration != nil {
 		in, out := &in.Duration, &out.Duration
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.EventSubscription != nil {
@@ -445,7 +429,7 @@ func (in *AssessmentTemplateParameters) DeepCopyInto(out *AssessmentTemplatePara
 	*out = *in
 	if in.Duration != nil {
 		in, out := &in.Duration, &out.Duration
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.EventSubscription != nil {
@@ -474,22 +458,6 @@ func (in *AssessmentTemplateParameters) DeepCopyInto(out *AssessmentTemplatePara
 				*out = new(string)
 				**out = **in
 			}
-		}
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
 		}
 	}
 	if in.TargetArn != nil {

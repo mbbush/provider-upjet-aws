@@ -155,12 +155,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   targetArn:
                     description: The ARN of the target Amazon Kinesis stream resource
                       for the destination.
@@ -333,12 +327,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   targetArn:
                     description: The ARN of the target Amazon Kinesis stream resource
                       for the destination.

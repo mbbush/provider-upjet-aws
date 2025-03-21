@@ -78,19 +78,14 @@ spec:
                     type: string
                   instancePort:
                     description: The instance port the load balancer will connect.
-                    type: number
+                    format: int64
+                    type: integer
                   ipAddressType:
                     type: string
                   region:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -113,15 +108,10 @@ spec:
                     type: string
                   instancePort:
                     description: The instance port the load balancer will connect.
-                    type: number
+                    format: int64
+                    type: integer
                   ipAddressType:
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -318,7 +308,8 @@ spec:
                     type: string
                   instancePort:
                     description: The instance port the load balancer will connect.
-                    type: number
+                    format: int64
+                    type: integer
                   ipAddressType:
                     type: string
                   protocol:
@@ -327,7 +318,8 @@ spec:
                   publicPorts:
                     description: The public ports of the load balancer.
                     items:
-                      type: number
+                      format: int64
+                      type: integer
                     type: array
                   supportCode:
                     description: The support code for the database. Include this code

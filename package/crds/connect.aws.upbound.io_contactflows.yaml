@@ -178,12 +178,6 @@ spec:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   type:
                     description: 'Specifies the type of the Contact Flow. Defaults
                       to CONTACT_FLOW. Allowed Values are: CONTACT_FLOW, CUSTOMER_QUEUE,
@@ -307,12 +301,6 @@ spec:
                   name:
                     description: Specifies the name of the Contact Flow.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   type:
                     description: 'Specifies the type of the Contact Flow. Defaults
                       to CONTACT_FLOW. Allowed Values are: CONTACT_FLOW, CUSTOMER_QUEUE,

@@ -29,10 +29,6 @@ type IdentityProviderConfigInitParameters struct {
 
 	// Nested attribute containing OpenID Connect identity provider information for the cluster. Detailed below.
 	Oidc *IdentityProviderConfigOidcInitParameters `json:"oidc,omitempty" tf:"oidc,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type IdentityProviderConfigObservation struct {
@@ -166,11 +162,6 @@ type IdentityProviderConfigParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // IdentityProviderConfigSpec defines the desired state of IdentityProviderConfig

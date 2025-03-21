@@ -796,12 +796,14 @@ spec:
                       they are added to the stream. The maximum value of a stream's
                       retention period is 8760 hours. Minimum value is 24. Default
                       is 24.
-                    type: number
+                    format: int64
+                    type: integer
                   shardCount:
                     description: |-
                       –  The number of shards that the stream will use. If the stream_mode is PROVISIONED, this field is required.
                       Amazon has guidelines for specifying the Stream size that should be referenced when creating a Kinesis stream. See Amazon Kinesis Streams for more.
-                    type: number
+                    format: int64
+                    type: integer
                   shardLevelMetrics:
                     description: A list of shard-level CloudWatch metrics which can
                       be enabled for the stream. See Monitoring with CloudWatch for
@@ -820,12 +822,6 @@ spec:
                           be either PROVISIONED or ON_DEMAND.
                         type: string
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -935,12 +931,14 @@ spec:
                       they are added to the stream. The maximum value of a stream's
                       retention period is 8760 hours. Minimum value is 24. Default
                       is 24.
-                    type: number
+                    format: int64
+                    type: integer
                   shardCount:
                     description: |-
                       –  The number of shards that the stream will use. If the stream_mode is PROVISIONED, this field is required.
                       Amazon has guidelines for specifying the Stream size that should be referenced when creating a Kinesis stream. See Amazon Kinesis Streams for more.
-                    type: number
+                    format: int64
+                    type: integer
                   shardLevelMetrics:
                     description: A list of shard-level CloudWatch metrics which can
                       be enabled for the stream. See Monitoring with CloudWatch for
@@ -959,12 +957,6 @@ spec:
                           be either PROVISIONED or ON_DEMAND.
                         type: string
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -1164,12 +1156,14 @@ spec:
                       they are added to the stream. The maximum value of a stream's
                       retention period is 8760 hours. Minimum value is 24. Default
                       is 24.
-                    type: number
+                    format: int64
+                    type: integer
                   shardCount:
                     description: |-
                       –  The number of shards that the stream will use. If the stream_mode is PROVISIONED, this field is required.
                       Amazon has guidelines for specifying the Stream size that should be referenced when creating a Kinesis stream. See Amazon Kinesis Streams for more.
-                    type: number
+                    format: int64
+                    type: integer
                   shardLevelMetrics:
                     description: A list of shard-level CloudWatch metrics which can
                       be enabled for the stream. See Monitoring with CloudWatch for

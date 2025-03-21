@@ -17,8 +17,6 @@ spec:
         matchLabels:
           testing.upbound.io/example-name: aws_sns_topic
     region: us-west-1
-    tags:
-      Test: MyArchive
 
 ---
 

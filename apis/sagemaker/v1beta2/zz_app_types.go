@@ -40,10 +40,6 @@ type AppInitParameters struct {
 	// The name of the space. At least one of user_profile_name or space_name required.
 	SpaceName *string `json:"spaceName,omitempty" tf:"space_name,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// The user profile name. At least one of user_profile_name or space_name required.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/sagemaker/v1beta2.UserProfile
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractParamPath("user_profile_name",false)
@@ -129,11 +125,6 @@ type AppParameters struct {
 	// The name of the space. At least one of user_profile_name or space_name required.
 	// +kubebuilder:validation:Optional
 	SpaceName *string `json:"spaceName,omitempty" tf:"space_name,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// The user profile name. At least one of user_profile_name or space_name required.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/sagemaker/v1beta2.UserProfile

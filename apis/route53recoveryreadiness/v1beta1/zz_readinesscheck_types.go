@@ -17,10 +17,6 @@ type ReadinessCheckInitParameters struct {
 
 	// Name describing the resource set that will be monitored for readiness.
 	ResourceSetName *string `json:"resourceSetName,omitempty" tf:"resource_set_name,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type ReadinessCheckObservation struct {
@@ -52,11 +48,6 @@ type ReadinessCheckParameters struct {
 	// Name describing the resource set that will be monitored for readiness.
 	// +kubebuilder:validation:Optional
 	ResourceSetName *string `json:"resourceSetName,omitempty" tf:"resource_set_name,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // ReadinessCheckSpec defines the desired state of ReadinessCheck

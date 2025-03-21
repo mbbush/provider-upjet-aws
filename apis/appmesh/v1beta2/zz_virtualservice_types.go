@@ -143,10 +143,6 @@ type VirtualServiceInitParameters_2 struct {
 
 	// Virtual service specification to apply.
 	Spec *VirtualServiceSpecInitParameters `json:"spec,omitempty" tf:"spec,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type VirtualServiceObservation_2 struct {
@@ -219,11 +215,6 @@ type VirtualServiceParameters_2 struct {
 	// Virtual service specification to apply.
 	// +kubebuilder:validation:Optional
 	Spec *VirtualServiceSpecParameters `json:"spec,omitempty" tf:"spec,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type VirtualServiceSpecInitParameters struct {

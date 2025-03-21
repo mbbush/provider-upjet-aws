@@ -537,12 +537,6 @@ spec:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -575,12 +569,6 @@ spec:
                           are: password or iam.'
                         type: string
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -776,7 +764,8 @@ spec:
                       passwordCount:
                         description: Number of passwords belonging to the user if
                           type is set to password.
-                        type: number
+                        format: int64
+                        type: integer
                       type:
                         description: 'Specifies the authentication type. Valid values
                           are: password or iam.'

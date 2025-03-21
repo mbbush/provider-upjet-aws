@@ -17,10 +17,6 @@ type ClientCertificateInitParameters struct {
 
 	// Description of the client certificate.
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type ClientCertificateObservation struct {
@@ -62,11 +58,6 @@ type ClientCertificateParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // ClientCertificateSpec defines the desired state of ClientCertificate

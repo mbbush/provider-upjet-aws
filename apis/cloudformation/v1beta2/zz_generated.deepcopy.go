@@ -294,22 +294,22 @@ func (in *OperationPreferencesInitParameters) DeepCopyInto(out *OperationPrefere
 	*out = *in
 	if in.FailureToleranceCount != nil {
 		in, out := &in.FailureToleranceCount, &out.FailureToleranceCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.FailureTolerancePercentage != nil {
 		in, out := &in.FailureTolerancePercentage, &out.FailureTolerancePercentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaxConcurrentCount != nil {
 		in, out := &in.MaxConcurrentCount, &out.MaxConcurrentCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaxConcurrentPercentage != nil {
 		in, out := &in.MaxConcurrentPercentage, &out.MaxConcurrentPercentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.RegionConcurrencyType != nil {
@@ -345,22 +345,22 @@ func (in *OperationPreferencesObservation) DeepCopyInto(out *OperationPreference
 	*out = *in
 	if in.FailureToleranceCount != nil {
 		in, out := &in.FailureToleranceCount, &out.FailureToleranceCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.FailureTolerancePercentage != nil {
 		in, out := &in.FailureTolerancePercentage, &out.FailureTolerancePercentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaxConcurrentCount != nil {
 		in, out := &in.MaxConcurrentCount, &out.MaxConcurrentCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaxConcurrentPercentage != nil {
 		in, out := &in.MaxConcurrentPercentage, &out.MaxConcurrentPercentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.RegionConcurrencyType != nil {
@@ -396,22 +396,22 @@ func (in *OperationPreferencesParameters) DeepCopyInto(out *OperationPreferences
 	*out = *in
 	if in.FailureToleranceCount != nil {
 		in, out := &in.FailureToleranceCount, &out.FailureToleranceCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.FailureTolerancePercentage != nil {
 		in, out := &in.FailureTolerancePercentage, &out.FailureTolerancePercentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaxConcurrentCount != nil {
 		in, out := &in.MaxConcurrentCount, &out.MaxConcurrentCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaxConcurrentPercentage != nil {
 		in, out := &in.MaxConcurrentPercentage, &out.MaxConcurrentPercentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.RegionConcurrencyType != nil {
@@ -608,22 +608,6 @@ func (in *StackSetInitParameters) DeepCopyInto(out *StackSetInitParameters) {
 		in, out := &in.PermissionModel, &out.PermissionModel
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.TemplateBody != nil {
 		in, out := &in.TemplateBody, &out.TemplateBody
@@ -870,22 +854,22 @@ func (in *StackSetInstanceOperationPreferencesInitParameters) DeepCopyInto(out *
 	}
 	if in.FailureToleranceCount != nil {
 		in, out := &in.FailureToleranceCount, &out.FailureToleranceCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.FailureTolerancePercentage != nil {
 		in, out := &in.FailureTolerancePercentage, &out.FailureTolerancePercentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaxConcurrentCount != nil {
 		in, out := &in.MaxConcurrentCount, &out.MaxConcurrentCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaxConcurrentPercentage != nil {
 		in, out := &in.MaxConcurrentPercentage, &out.MaxConcurrentPercentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.RegionConcurrencyType != nil {
@@ -926,22 +910,22 @@ func (in *StackSetInstanceOperationPreferencesObservation) DeepCopyInto(out *Sta
 	}
 	if in.FailureToleranceCount != nil {
 		in, out := &in.FailureToleranceCount, &out.FailureToleranceCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.FailureTolerancePercentage != nil {
 		in, out := &in.FailureTolerancePercentage, &out.FailureTolerancePercentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaxConcurrentCount != nil {
 		in, out := &in.MaxConcurrentCount, &out.MaxConcurrentCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaxConcurrentPercentage != nil {
 		in, out := &in.MaxConcurrentPercentage, &out.MaxConcurrentPercentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.RegionConcurrencyType != nil {
@@ -982,22 +966,22 @@ func (in *StackSetInstanceOperationPreferencesParameters) DeepCopyInto(out *Stac
 	}
 	if in.FailureToleranceCount != nil {
 		in, out := &in.FailureToleranceCount, &out.FailureToleranceCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.FailureTolerancePercentage != nil {
 		in, out := &in.FailureTolerancePercentage, &out.FailureTolerancePercentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaxConcurrentCount != nil {
 		in, out := &in.MaxConcurrentCount, &out.MaxConcurrentCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaxConcurrentPercentage != nil {
 		in, out := &in.MaxConcurrentPercentage, &out.MaxConcurrentPercentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.RegionConcurrencyType != nil {
@@ -1394,22 +1378,6 @@ func (in *StackSetParameters) DeepCopyInto(out *StackSetParameters) {
 		in, out := &in.Region, &out.Region
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.TemplateBody != nil {
 		in, out := &in.TemplateBody, &out.TemplateBody

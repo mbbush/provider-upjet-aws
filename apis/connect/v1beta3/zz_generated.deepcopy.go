@@ -108,12 +108,12 @@ func (in *EndTimeInitParameters) DeepCopyInto(out *EndTimeInitParameters) {
 	*out = *in
 	if in.Hours != nil {
 		in, out := &in.Hours, &out.Hours
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Minutes != nil {
 		in, out := &in.Minutes, &out.Minutes
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -133,12 +133,12 @@ func (in *EndTimeObservation) DeepCopyInto(out *EndTimeObservation) {
 	*out = *in
 	if in.Hours != nil {
 		in, out := &in.Hours, &out.Hours
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Minutes != nil {
 		in, out := &in.Minutes, &out.Minutes
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -158,12 +158,12 @@ func (in *EndTimeParameters) DeepCopyInto(out *EndTimeParameters) {
 	*out = *in
 	if in.Hours != nil {
 		in, out := &in.Hours, &out.Hours
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Minutes != nil {
 		in, out := &in.Minutes, &out.Minutes
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -239,22 +239,6 @@ func (in *HoursOfOperationInitParameters) DeepCopyInto(out *HoursOfOperationInit
 		in, out := &in.Name, &out.Name
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.TimeZone != nil {
 		in, out := &in.TimeZone, &out.TimeZone
@@ -433,22 +417,6 @@ func (in *HoursOfOperationParameters) DeepCopyInto(out *HoursOfOperationParamete
 		in, out := &in.Region, &out.Region
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.TimeZone != nil {
 		in, out := &in.TimeZone, &out.TimeZone
@@ -659,7 +627,7 @@ func (in *QueueInitParameters) DeepCopyInto(out *QueueInitParameters) {
 	}
 	if in.MaxContacts != nil {
 		in, out := &in.MaxContacts, &out.MaxContacts
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Name != nil {
@@ -687,22 +655,6 @@ func (in *QueueInitParameters) DeepCopyInto(out *QueueInitParameters) {
 		in, out := &in.Status, &out.Status
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 }
 
@@ -778,7 +730,7 @@ func (in *QueueObservation) DeepCopyInto(out *QueueObservation) {
 	}
 	if in.MaxContacts != nil {
 		in, out := &in.MaxContacts, &out.MaxContacts
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Name != nil {
@@ -896,7 +848,7 @@ func (in *QueueParameters) DeepCopyInto(out *QueueParameters) {
 	}
 	if in.MaxContacts != nil {
 		in, out := &in.MaxContacts, &out.MaxContacts
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Name != nil {
@@ -929,22 +881,6 @@ func (in *QueueParameters) DeepCopyInto(out *QueueParameters) {
 		in, out := &in.Status, &out.Status
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 }
 
@@ -998,12 +934,12 @@ func (in *StartTimeInitParameters) DeepCopyInto(out *StartTimeInitParameters) {
 	*out = *in
 	if in.Hours != nil {
 		in, out := &in.Hours, &out.Hours
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Minutes != nil {
 		in, out := &in.Minutes, &out.Minutes
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1023,12 +959,12 @@ func (in *StartTimeObservation) DeepCopyInto(out *StartTimeObservation) {
 	*out = *in
 	if in.Hours != nil {
 		in, out := &in.Hours, &out.Hours
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Minutes != nil {
 		in, out := &in.Minutes, &out.Minutes
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1048,12 +984,12 @@ func (in *StartTimeParameters) DeepCopyInto(out *StartTimeParameters) {
 	*out = *in
 	if in.Hours != nil {
 		in, out := &in.Hours, &out.Hours
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Minutes != nil {
 		in, out := &in.Minutes, &out.Minutes
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }

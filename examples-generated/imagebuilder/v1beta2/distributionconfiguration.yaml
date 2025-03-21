@@ -10,9 +10,7 @@ spec:
   forProvider:
     distribution:
     - amiDistributionConfiguration:
-      - amiTags:
-          CostCenter: IT
-        launchPermission:
+      - launchPermission:
         - userIds:
           - "123456789012"
         name: example-{{ imagebuilder:buildDate }}

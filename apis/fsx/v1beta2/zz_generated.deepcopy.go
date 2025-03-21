@@ -401,29 +401,13 @@ func (in *DataRepositoryAssociationInitParameters) DeepCopyInto(out *DataReposit
 	}
 	if in.ImportedFileChunkSize != nil {
 		in, out := &in.ImportedFileChunkSize, &out.ImportedFileChunkSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.S3 != nil {
 		in, out := &in.S3, &out.S3
 		*out = new(S3InitParameters)
 		(*in).DeepCopyInto(*out)
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 }
 
@@ -514,7 +498,7 @@ func (in *DataRepositoryAssociationObservation) DeepCopyInto(out *DataRepository
 	}
 	if in.ImportedFileChunkSize != nil {
 		in, out := &in.ImportedFileChunkSize, &out.ImportedFileChunkSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.S3 != nil {
@@ -606,7 +590,7 @@ func (in *DataRepositoryAssociationParameters) DeepCopyInto(out *DataRepositoryA
 	}
 	if in.ImportedFileChunkSize != nil {
 		in, out := &in.ImportedFileChunkSize, &out.ImportedFileChunkSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Region != nil {
@@ -618,22 +602,6 @@ func (in *DataRepositoryAssociationParameters) DeepCopyInto(out *DataRepositoryA
 		in, out := &in.S3, &out.S3
 		*out = new(S3Parameters)
 		(*in).DeepCopyInto(*out)
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 }
 
@@ -687,7 +655,7 @@ func (in *DiskIopsConfigurationInitParameters) DeepCopyInto(out *DiskIopsConfigu
 	*out = *in
 	if in.Iops != nil {
 		in, out := &in.Iops, &out.Iops
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Mode != nil {
@@ -712,7 +680,7 @@ func (in *DiskIopsConfigurationObservation) DeepCopyInto(out *DiskIopsConfigurat
 	*out = *in
 	if in.Iops != nil {
 		in, out := &in.Iops, &out.Iops
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Mode != nil {
@@ -737,7 +705,7 @@ func (in *DiskIopsConfigurationParameters) DeepCopyInto(out *DiskIopsConfigurati
 	*out = *in
 	if in.Iops != nil {
 		in, out := &in.Iops, &out.Iops
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Mode != nil {
@@ -1111,7 +1079,7 @@ func (in *LustreFileSystemInitParameters) DeepCopyInto(out *LustreFileSystemInit
 	}
 	if in.AutomaticBackupRetentionDays != nil {
 		in, out := &in.AutomaticBackupRetentionDays, &out.AutomaticBackupRetentionDays
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.BackupID != nil {
@@ -1159,22 +1127,6 @@ func (in *LustreFileSystemInitParameters) DeepCopyInto(out *LustreFileSystemInit
 		*out = new(string)
 		**out = **in
 	}
-	if in.FinalBackupTags != nil {
-		in, out := &in.FinalBackupTags, &out.FinalBackupTags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.ImportPath != nil {
 		in, out := &in.ImportPath, &out.ImportPath
 		*out = new(string)
@@ -1182,7 +1134,7 @@ func (in *LustreFileSystemInitParameters) DeepCopyInto(out *LustreFileSystemInit
 	}
 	if in.ImportedFileChunkSize != nil {
 		in, out := &in.ImportedFileChunkSize, &out.ImportedFileChunkSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.KMSKeyID != nil {
@@ -1212,7 +1164,7 @@ func (in *LustreFileSystemInitParameters) DeepCopyInto(out *LustreFileSystemInit
 	}
 	if in.PerUnitStorageThroughput != nil {
 		in, out := &in.PerUnitStorageThroughput, &out.PerUnitStorageThroughput
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.RootSquashConfiguration != nil {
@@ -1250,7 +1202,7 @@ func (in *LustreFileSystemInitParameters) DeepCopyInto(out *LustreFileSystemInit
 	}
 	if in.StorageCapacity != nil {
 		in, out := &in.StorageCapacity, &out.StorageCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.StorageType != nil {
@@ -1279,22 +1231,6 @@ func (in *LustreFileSystemInitParameters) DeepCopyInto(out *LustreFileSystemInit
 				*out = new(string)
 				**out = **in
 			}
-		}
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
 		}
 	}
 	if in.WeeklyMaintenanceStartTime != nil {
@@ -1361,7 +1297,7 @@ func (in *LustreFileSystemObservation) DeepCopyInto(out *LustreFileSystemObserva
 	}
 	if in.AutomaticBackupRetentionDays != nil {
 		in, out := &in.AutomaticBackupRetentionDays, &out.AutomaticBackupRetentionDays
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.BackupID != nil {
@@ -1442,7 +1378,7 @@ func (in *LustreFileSystemObservation) DeepCopyInto(out *LustreFileSystemObserva
 	}
 	if in.ImportedFileChunkSize != nil {
 		in, out := &in.ImportedFileChunkSize, &out.ImportedFileChunkSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.KMSKeyID != nil {
@@ -1483,7 +1419,7 @@ func (in *LustreFileSystemObservation) DeepCopyInto(out *LustreFileSystemObserva
 	}
 	if in.PerUnitStorageThroughput != nil {
 		in, out := &in.PerUnitStorageThroughput, &out.PerUnitStorageThroughput
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.RootSquashConfiguration != nil {
@@ -1509,7 +1445,7 @@ func (in *LustreFileSystemObservation) DeepCopyInto(out *LustreFileSystemObserva
 	}
 	if in.StorageCapacity != nil {
 		in, out := &in.StorageCapacity, &out.StorageCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.StorageType != nil {
@@ -1592,7 +1528,7 @@ func (in *LustreFileSystemParameters) DeepCopyInto(out *LustreFileSystemParamete
 	}
 	if in.AutomaticBackupRetentionDays != nil {
 		in, out := &in.AutomaticBackupRetentionDays, &out.AutomaticBackupRetentionDays
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.BackupID != nil {
@@ -1640,22 +1576,6 @@ func (in *LustreFileSystemParameters) DeepCopyInto(out *LustreFileSystemParamete
 		*out = new(string)
 		**out = **in
 	}
-	if in.FinalBackupTags != nil {
-		in, out := &in.FinalBackupTags, &out.FinalBackupTags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.ImportPath != nil {
 		in, out := &in.ImportPath, &out.ImportPath
 		*out = new(string)
@@ -1663,7 +1583,7 @@ func (in *LustreFileSystemParameters) DeepCopyInto(out *LustreFileSystemParamete
 	}
 	if in.ImportedFileChunkSize != nil {
 		in, out := &in.ImportedFileChunkSize, &out.ImportedFileChunkSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.KMSKeyID != nil {
@@ -1693,7 +1613,7 @@ func (in *LustreFileSystemParameters) DeepCopyInto(out *LustreFileSystemParamete
 	}
 	if in.PerUnitStorageThroughput != nil {
 		in, out := &in.PerUnitStorageThroughput, &out.PerUnitStorageThroughput
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Region != nil {
@@ -1736,7 +1656,7 @@ func (in *LustreFileSystemParameters) DeepCopyInto(out *LustreFileSystemParamete
 	}
 	if in.StorageCapacity != nil {
 		in, out := &in.StorageCapacity, &out.StorageCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.StorageType != nil {
@@ -1765,22 +1685,6 @@ func (in *LustreFileSystemParameters) DeepCopyInto(out *LustreFileSystemParamete
 				*out = new(string)
 				**out = **in
 			}
-		}
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
 		}
 	}
 	if in.WeeklyMaintenanceStartTime != nil {
@@ -1901,7 +1805,7 @@ func (in *MetadataConfigurationInitParameters) DeepCopyInto(out *MetadataConfigu
 	*out = *in
 	if in.Iops != nil {
 		in, out := &in.Iops, &out.Iops
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Mode != nil {
@@ -1926,7 +1830,7 @@ func (in *MetadataConfigurationObservation) DeepCopyInto(out *MetadataConfigurat
 	*out = *in
 	if in.Iops != nil {
 		in, out := &in.Iops, &out.Iops
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Mode != nil {
@@ -1951,7 +1855,7 @@ func (in *MetadataConfigurationParameters) DeepCopyInto(out *MetadataConfigurati
 	*out = *in
 	if in.Iops != nil {
 		in, out := &in.Iops, &out.Iops
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Mode != nil {
@@ -2064,7 +1968,7 @@ func (in *OntapFileSystemInitParameters) DeepCopyInto(out *OntapFileSystemInitPa
 	*out = *in
 	if in.AutomaticBackupRetentionDays != nil {
 		in, out := &in.AutomaticBackupRetentionDays, &out.AutomaticBackupRetentionDays
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.DailyAutomaticBackupStartTime != nil {
@@ -2094,7 +1998,7 @@ func (in *OntapFileSystemInitParameters) DeepCopyInto(out *OntapFileSystemInitPa
 	}
 	if in.HaPairs != nil {
 		in, out := &in.HaPairs, &out.HaPairs
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.KMSKeyID != nil {
@@ -2163,7 +2067,7 @@ func (in *OntapFileSystemInitParameters) DeepCopyInto(out *OntapFileSystemInitPa
 	}
 	if in.StorageCapacity != nil {
 		in, out := &in.StorageCapacity, &out.StorageCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.StorageType != nil {
@@ -2194,30 +2098,14 @@ func (in *OntapFileSystemInitParameters) DeepCopyInto(out *OntapFileSystemInitPa
 			}
 		}
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.ThroughputCapacity != nil {
 		in, out := &in.ThroughputCapacity, &out.ThroughputCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ThroughputCapacityPerHaPair != nil {
 		in, out := &in.ThroughputCapacityPerHaPair, &out.ThroughputCapacityPerHaPair
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.WeeklyMaintenanceStartTime != nil {
@@ -2279,7 +2167,7 @@ func (in *OntapFileSystemObservation) DeepCopyInto(out *OntapFileSystemObservati
 	}
 	if in.AutomaticBackupRetentionDays != nil {
 		in, out := &in.AutomaticBackupRetentionDays, &out.AutomaticBackupRetentionDays
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.DNSName != nil {
@@ -2316,7 +2204,7 @@ func (in *OntapFileSystemObservation) DeepCopyInto(out *OntapFileSystemObservati
 	}
 	if in.HaPairs != nil {
 		in, out := &in.HaPairs, &out.HaPairs
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ID != nil {
@@ -2374,7 +2262,7 @@ func (in *OntapFileSystemObservation) DeepCopyInto(out *OntapFileSystemObservati
 	}
 	if in.StorageCapacity != nil {
 		in, out := &in.StorageCapacity, &out.StorageCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.StorageType != nil {
@@ -2427,12 +2315,12 @@ func (in *OntapFileSystemObservation) DeepCopyInto(out *OntapFileSystemObservati
 	}
 	if in.ThroughputCapacity != nil {
 		in, out := &in.ThroughputCapacity, &out.ThroughputCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ThroughputCapacityPerHaPair != nil {
 		in, out := &in.ThroughputCapacityPerHaPair, &out.ThroughputCapacityPerHaPair
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.VPCID != nil {
@@ -2462,7 +2350,7 @@ func (in *OntapFileSystemParameters) DeepCopyInto(out *OntapFileSystemParameters
 	*out = *in
 	if in.AutomaticBackupRetentionDays != nil {
 		in, out := &in.AutomaticBackupRetentionDays, &out.AutomaticBackupRetentionDays
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.DailyAutomaticBackupStartTime != nil {
@@ -2492,7 +2380,7 @@ func (in *OntapFileSystemParameters) DeepCopyInto(out *OntapFileSystemParameters
 	}
 	if in.HaPairs != nil {
 		in, out := &in.HaPairs, &out.HaPairs
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.KMSKeyID != nil {
@@ -2566,7 +2454,7 @@ func (in *OntapFileSystemParameters) DeepCopyInto(out *OntapFileSystemParameters
 	}
 	if in.StorageCapacity != nil {
 		in, out := &in.StorageCapacity, &out.StorageCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.StorageType != nil {
@@ -2597,30 +2485,14 @@ func (in *OntapFileSystemParameters) DeepCopyInto(out *OntapFileSystemParameters
 			}
 		}
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.ThroughputCapacity != nil {
 		in, out := &in.ThroughputCapacity, &out.ThroughputCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ThroughputCapacityPerHaPair != nil {
 		in, out := &in.ThroughputCapacityPerHaPair, &out.ThroughputCapacityPerHaPair
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.WeeklyMaintenanceStartTime != nil {
@@ -2813,22 +2685,6 @@ func (in *OntapStorageVirtualMachineInitParameters) DeepCopyInto(out *OntapStora
 		*out = new(v1.SecretKeySelector)
 		**out = **in
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 }
 
 // DeepCopy is an autogenerated deepcopy function, copying the receiver, creating a new OntapStorageVirtualMachineInitParameters.
@@ -3009,22 +2865,6 @@ func (in *OntapStorageVirtualMachineParameters) DeepCopyInto(out *OntapStorageVi
 		in, out := &in.SvmAdminPasswordSecretRef, &out.SvmAdminPasswordSecretRef
 		*out = new(v1.SecretKeySelector)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 }
 
@@ -3614,7 +3454,7 @@ func (in *WindowsFileSystemDiskIopsConfigurationInitParameters) DeepCopyInto(out
 	*out = *in
 	if in.Iops != nil {
 		in, out := &in.Iops, &out.Iops
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Mode != nil {
@@ -3639,7 +3479,7 @@ func (in *WindowsFileSystemDiskIopsConfigurationObservation) DeepCopyInto(out *W
 	*out = *in
 	if in.Iops != nil {
 		in, out := &in.Iops, &out.Iops
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Mode != nil {
@@ -3664,7 +3504,7 @@ func (in *WindowsFileSystemDiskIopsConfigurationParameters) DeepCopyInto(out *Wi
 	*out = *in
 	if in.Iops != nil {
 		in, out := &in.Iops, &out.Iops
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Mode != nil {
@@ -3720,7 +3560,7 @@ func (in *WindowsFileSystemInitParameters) DeepCopyInto(out *WindowsFileSystemIn
 	}
 	if in.AutomaticBackupRetentionDays != nil {
 		in, out := &in.AutomaticBackupRetentionDays, &out.AutomaticBackupRetentionDays
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.BackupID != nil {
@@ -3747,22 +3587,6 @@ func (in *WindowsFileSystemInitParameters) DeepCopyInto(out *WindowsFileSystemIn
 		in, out := &in.DiskIopsConfiguration, &out.DiskIopsConfiguration
 		*out = new(WindowsFileSystemDiskIopsConfigurationInitParameters)
 		(*in).DeepCopyInto(*out)
-	}
-	if in.FinalBackupTags != nil {
-		in, out := &in.FinalBackupTags, &out.FinalBackupTags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.KMSKeyID != nil {
 		in, out := &in.KMSKeyID, &out.KMSKeyID
@@ -3819,7 +3643,7 @@ func (in *WindowsFileSystemInitParameters) DeepCopyInto(out *WindowsFileSystemIn
 	}
 	if in.StorageCapacity != nil {
 		in, out := &in.StorageCapacity, &out.StorageCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.StorageType != nil {
@@ -3850,25 +3674,9 @@ func (in *WindowsFileSystemInitParameters) DeepCopyInto(out *WindowsFileSystemIn
 			}
 		}
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.ThroughputCapacity != nil {
 		in, out := &in.ThroughputCapacity, &out.ThroughputCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.WeeklyMaintenanceStartTime != nil {
@@ -3951,7 +3759,7 @@ func (in *WindowsFileSystemObservation) DeepCopyInto(out *WindowsFileSystemObser
 	}
 	if in.AutomaticBackupRetentionDays != nil {
 		in, out := &in.AutomaticBackupRetentionDays, &out.AutomaticBackupRetentionDays
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.BackupID != nil {
@@ -4064,7 +3872,7 @@ func (in *WindowsFileSystemObservation) DeepCopyInto(out *WindowsFileSystemObser
 	}
 	if in.StorageCapacity != nil {
 		in, out := &in.StorageCapacity, &out.StorageCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.StorageType != nil {
@@ -4117,7 +3925,7 @@ func (in *WindowsFileSystemObservation) DeepCopyInto(out *WindowsFileSystemObser
 	}
 	if in.ThroughputCapacity != nil {
 		in, out := &in.ThroughputCapacity, &out.ThroughputCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.VPCID != nil {
@@ -4178,7 +3986,7 @@ func (in *WindowsFileSystemParameters) DeepCopyInto(out *WindowsFileSystemParame
 	}
 	if in.AutomaticBackupRetentionDays != nil {
 		in, out := &in.AutomaticBackupRetentionDays, &out.AutomaticBackupRetentionDays
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.BackupID != nil {
@@ -4205,22 +4013,6 @@ func (in *WindowsFileSystemParameters) DeepCopyInto(out *WindowsFileSystemParame
 		in, out := &in.DiskIopsConfiguration, &out.DiskIopsConfiguration
 		*out = new(WindowsFileSystemDiskIopsConfigurationParameters)
 		(*in).DeepCopyInto(*out)
-	}
-	if in.FinalBackupTags != nil {
-		in, out := &in.FinalBackupTags, &out.FinalBackupTags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.KMSKeyID != nil {
 		in, out := &in.KMSKeyID, &out.KMSKeyID
@@ -4282,7 +4074,7 @@ func (in *WindowsFileSystemParameters) DeepCopyInto(out *WindowsFileSystemParame
 	}
 	if in.StorageCapacity != nil {
 		in, out := &in.StorageCapacity, &out.StorageCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.StorageType != nil {
@@ -4313,25 +4105,9 @@ func (in *WindowsFileSystemParameters) DeepCopyInto(out *WindowsFileSystemParame
 			}
 		}
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.ThroughputCapacity != nil {
 		in, out := &in.ThroughputCapacity, &out.ThroughputCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.WeeklyMaintenanceStartTime != nil {

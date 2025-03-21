@@ -76,7 +76,8 @@ spec:
                   baseCapacity:
                     description: The base data warehouse capacity of the workgroup
                       in Redshift Processing Units (RPUs).
-                    type: number
+                    format: int64
+                    type: integer
                   configParameter:
                     description: An array of parameters to set for more control over
                       a serverless database. See Config Parameter below.
@@ -107,14 +108,16 @@ spec:
                     description: The maximum data-warehouse capacity Amazon Redshift
                       Serverless uses to serve queries, specified in Redshift Processing
                       Units (RPUs).
-                    type: number
+                    format: int64
+                    type: integer
                   namespaceName:
                     description: The name of the namespace.
                     type: string
                   port:
                     description: The port number on which the cluster accepts incoming
                       connections.
-                    type: number
+                    format: int64
+                    type: integer
                   publiclyAccessible:
                     description: A value that specifies whether the workgroup can
                       be accessed from a public network.
@@ -296,12 +299,6 @@ spec:
                       type: string
                     type: array
                     x-kubernetes-list-type: set
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -321,7 +318,8 @@ spec:
                   baseCapacity:
                     description: The base data warehouse capacity of the workgroup
                       in Redshift Processing Units (RPUs).
-                    type: number
+                    format: int64
+                    type: integer
                   configParameter:
                     description: An array of parameters to set for more control over
                       a serverless database. See Config Parameter below.
@@ -352,14 +350,16 @@ spec:
                     description: The maximum data-warehouse capacity Amazon Redshift
                       Serverless uses to serve queries, specified in Redshift Processing
                       Units (RPUs).
-                    type: number
+                    format: int64
+                    type: integer
                   namespaceName:
                     description: The name of the namespace.
                     type: string
                   port:
                     description: The port number on which the cluster accepts incoming
                       connections.
-                    type: number
+                    format: int64
+                    type: integer
                   publiclyAccessible:
                     description: A value that specifies whether the workgroup can
                       be accessed from a public network.
@@ -537,12 +537,6 @@ spec:
                       type: string
                     type: array
                     x-kubernetes-list-type: set
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -728,7 +722,8 @@ spec:
                   baseCapacity:
                     description: The base data warehouse capacity of the workgroup
                       in Redshift Processing Units (RPUs).
-                    type: number
+                    format: int64
+                    type: integer
                   configParameter:
                     description: An array of parameters to set for more control over
                       a serverless database. See Config Parameter below.
@@ -760,7 +755,8 @@ spec:
                         port:
                           description: The port number on which the cluster accepts
                             incoming connections.
-                          type: number
+                          format: int64
+                          type: integer
                         vpcEndpoint:
                           description: The VPC endpoint or the Redshift Serverless
                             workgroup. See VPC Endpoint below.
@@ -811,14 +807,16 @@ spec:
                     description: The maximum data-warehouse capacity Amazon Redshift
                       Serverless uses to serve queries, specified in Redshift Processing
                       Units (RPUs).
-                    type: number
+                    format: int64
+                    type: integer
                   namespaceName:
                     description: The name of the namespace.
                     type: string
                   port:
                     description: The port number on which the cluster accepts incoming
                       connections.
-                    type: number
+                    format: int64
+                    type: integer
                   publiclyAccessible:
                     description: A value that specifies whether the workgroup can
                       be accessed from a public network.

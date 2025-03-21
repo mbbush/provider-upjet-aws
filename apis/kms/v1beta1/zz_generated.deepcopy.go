@@ -624,7 +624,7 @@ func (in *ExternalKeyInitParameters) DeepCopyInto(out *ExternalKeyInitParameters
 	}
 	if in.DeletionWindowInDays != nil {
 		in, out := &in.DeletionWindowInDays, &out.DeletionWindowInDays
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Description != nil {
@@ -651,22 +651,6 @@ func (in *ExternalKeyInitParameters) DeepCopyInto(out *ExternalKeyInitParameters
 		in, out := &in.Policy, &out.Policy
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.ValidTo != nil {
 		in, out := &in.ValidTo, &out.ValidTo
@@ -732,7 +716,7 @@ func (in *ExternalKeyObservation) DeepCopyInto(out *ExternalKeyObservation) {
 	}
 	if in.DeletionWindowInDays != nil {
 		in, out := &in.DeletionWindowInDays, &out.DeletionWindowInDays
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Description != nil {
@@ -834,7 +818,7 @@ func (in *ExternalKeyParameters) DeepCopyInto(out *ExternalKeyParameters) {
 	}
 	if in.DeletionWindowInDays != nil {
 		in, out := &in.DeletionWindowInDays, &out.DeletionWindowInDays
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Description != nil {
@@ -866,22 +850,6 @@ func (in *ExternalKeyParameters) DeepCopyInto(out *ExternalKeyParameters) {
 		in, out := &in.Region, &out.Region
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.ValidTo != nil {
 		in, out := &in.ValidTo, &out.ValidTo
@@ -1338,7 +1306,7 @@ func (in *KeyInitParameters) DeepCopyInto(out *KeyInitParameters) {
 	}
 	if in.DeletionWindowInDays != nil {
 		in, out := &in.DeletionWindowInDays, &out.DeletionWindowInDays
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Description != nil {
@@ -1373,24 +1341,8 @@ func (in *KeyInitParameters) DeepCopyInto(out *KeyInitParameters) {
 	}
 	if in.RotationPeriodInDays != nil {
 		in, out := &in.RotationPeriodInDays, &out.RotationPeriodInDays
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.XksKeyID != nil {
 		in, out := &in.XksKeyID, &out.XksKeyID
@@ -1466,7 +1418,7 @@ func (in *KeyObservation) DeepCopyInto(out *KeyObservation) {
 	}
 	if in.DeletionWindowInDays != nil {
 		in, out := &in.DeletionWindowInDays, &out.DeletionWindowInDays
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Description != nil {
@@ -1511,7 +1463,7 @@ func (in *KeyObservation) DeepCopyInto(out *KeyObservation) {
 	}
 	if in.RotationPeriodInDays != nil {
 		in, out := &in.RotationPeriodInDays, &out.RotationPeriodInDays
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Tags != nil {
@@ -1583,7 +1535,7 @@ func (in *KeyParameters) DeepCopyInto(out *KeyParameters) {
 	}
 	if in.DeletionWindowInDays != nil {
 		in, out := &in.DeletionWindowInDays, &out.DeletionWindowInDays
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Description != nil {
@@ -1623,24 +1575,8 @@ func (in *KeyParameters) DeepCopyInto(out *KeyParameters) {
 	}
 	if in.RotationPeriodInDays != nil {
 		in, out := &in.RotationPeriodInDays, &out.RotationPeriodInDays
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.XksKeyID != nil {
 		in, out := &in.XksKeyID, &out.XksKeyID
@@ -1731,7 +1667,7 @@ func (in *ReplicaExternalKeyInitParameters) DeepCopyInto(out *ReplicaExternalKey
 	}
 	if in.DeletionWindowInDays != nil {
 		in, out := &in.DeletionWindowInDays, &out.DeletionWindowInDays
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Description != nil {
@@ -1768,22 +1704,6 @@ func (in *ReplicaExternalKeyInitParameters) DeepCopyInto(out *ReplicaExternalKey
 		in, out := &in.PrimaryKeyArnSelector, &out.PrimaryKeyArnSelector
 		*out = new(v1.Selector)
 		(*in).DeepCopyInto(*out)
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.ValidTo != nil {
 		in, out := &in.ValidTo, &out.ValidTo
@@ -1849,7 +1769,7 @@ func (in *ReplicaExternalKeyObservation) DeepCopyInto(out *ReplicaExternalKeyObs
 	}
 	if in.DeletionWindowInDays != nil {
 		in, out := &in.DeletionWindowInDays, &out.DeletionWindowInDays
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Description != nil {
@@ -1956,7 +1876,7 @@ func (in *ReplicaExternalKeyParameters) DeepCopyInto(out *ReplicaExternalKeyPara
 	}
 	if in.DeletionWindowInDays != nil {
 		in, out := &in.DeletionWindowInDays, &out.DeletionWindowInDays
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Description != nil {
@@ -1998,22 +1918,6 @@ func (in *ReplicaExternalKeyParameters) DeepCopyInto(out *ReplicaExternalKeyPara
 		in, out := &in.Region, &out.Region
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.ValidTo != nil {
 		in, out := &in.ValidTo, &out.ValidTo
@@ -2104,7 +2008,7 @@ func (in *ReplicaKeyInitParameters) DeepCopyInto(out *ReplicaKeyInitParameters) 
 	}
 	if in.DeletionWindowInDays != nil {
 		in, out := &in.DeletionWindowInDays, &out.DeletionWindowInDays
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Description != nil {
@@ -2136,22 +2040,6 @@ func (in *ReplicaKeyInitParameters) DeepCopyInto(out *ReplicaKeyInitParameters) 
 		in, out := &in.PrimaryKeyArnSelector, &out.PrimaryKeyArnSelector
 		*out = new(v1.Selector)
 		(*in).DeepCopyInto(*out)
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 }
 
@@ -2212,7 +2100,7 @@ func (in *ReplicaKeyObservation) DeepCopyInto(out *ReplicaKeyObservation) {
 	}
 	if in.DeletionWindowInDays != nil {
 		in, out := &in.DeletionWindowInDays, &out.DeletionWindowInDays
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Description != nil {
@@ -2314,7 +2202,7 @@ func (in *ReplicaKeyParameters) DeepCopyInto(out *ReplicaKeyParameters) {
 	}
 	if in.DeletionWindowInDays != nil {
 		in, out := &in.DeletionWindowInDays, &out.DeletionWindowInDays
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Description != nil {
@@ -2351,22 +2239,6 @@ func (in *ReplicaKeyParameters) DeepCopyInto(out *ReplicaKeyParameters) {
 		in, out := &in.Region, &out.Region
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 }
 

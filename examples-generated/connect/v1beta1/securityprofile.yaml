@@ -17,5 +17,3 @@ spec:
     - BasicAgentAccess
     - OutboundCallAccess
     region: us-west-1
-    tags:
-      Name: Example Security Profile

@@ -1755,12 +1755,6 @@ spec:
                       type: string
                     type: array
                     x-kubernetes-list-type: set
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   workspaceAccessProperties:
                     description: –  Specifies which devices and operating systems
                       users can use to access their WorkSpaces. Defined below.
@@ -2207,12 +2201,6 @@ spec:
                       type: string
                     type: array
                     x-kubernetes-list-type: set
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   workspaceAccessProperties:
                     description: –  Specifies which devices and operating systems
                       users can use to access their WorkSpaces. Defined below.

@@ -267,7 +267,7 @@ func (in *DirectoryInitParameters) DeepCopyInto(out *DirectoryInitParameters) {
 	}
 	if in.DesiredNumberOfDomainControllers != nil {
 		in, out := &in.DesiredNumberOfDomainControllers, &out.DesiredNumberOfDomainControllers
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Edition != nil {
@@ -295,22 +295,6 @@ func (in *DirectoryInitParameters) DeepCopyInto(out *DirectoryInitParameters) {
 		in, out := &in.Size, &out.Size
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.Type != nil {
 		in, out := &in.Type, &out.Type
@@ -402,7 +386,7 @@ func (in *DirectoryObservation) DeepCopyInto(out *DirectoryObservation) {
 	}
 	if in.DesiredNumberOfDomainControllers != nil {
 		in, out := &in.DesiredNumberOfDomainControllers, &out.DesiredNumberOfDomainControllers
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Edition != nil {
@@ -514,7 +498,7 @@ func (in *DirectoryParameters) DeepCopyInto(out *DirectoryParameters) {
 	}
 	if in.DesiredNumberOfDomainControllers != nil {
 		in, out := &in.DesiredNumberOfDomainControllers, &out.DesiredNumberOfDomainControllers
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Edition != nil {
@@ -547,22 +531,6 @@ func (in *DirectoryParameters) DeepCopyInto(out *DirectoryParameters) {
 		in, out := &in.Size, &out.Size
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.Type != nil {
 		in, out := &in.Type, &out.Type

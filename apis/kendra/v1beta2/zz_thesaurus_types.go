@@ -49,10 +49,6 @@ type ThesaurusInitParameters struct {
 
 	// The S3 path where your thesaurus file sits in S3. Detailed below.
 	SourceS3Path *ThesaurusSourceS3PathInitParameters `json:"sourceS3Path,omitempty" tf:"source_s3_path,omitempty"`
-
-	// Key-value map of resource tags. If configured with a provider default_tags configuration block present, tags with matching keys will overwrite those defined at the provider-level.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type ThesaurusObservation struct {
@@ -139,11 +135,6 @@ type ThesaurusParameters struct {
 	// The S3 path where your thesaurus file sits in S3. Detailed below.
 	// +kubebuilder:validation:Optional
 	SourceS3Path *ThesaurusSourceS3PathParameters `json:"sourceS3Path,omitempty" tf:"source_s3_path,omitempty"`
-
-	// Key-value map of resource tags. If configured with a provider default_tags configuration block present, tags with matching keys will overwrite those defined at the provider-level.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type ThesaurusSourceS3PathInitParameters struct {

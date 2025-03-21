@@ -101,7 +101,7 @@ func (in *ClusterInitParameters) DeepCopyInto(out *ClusterInitParameters) {
 	}
 	if in.ReplicationFactor != nil {
 		in, out := &in.ReplicationFactor, &out.ReplicationFactor
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.SecurityGroupIDRefs != nil {
@@ -136,22 +136,6 @@ func (in *ClusterInitParameters) DeepCopyInto(out *ClusterInitParameters) {
 		in, out := &in.SubnetGroupName, &out.SubnetGroupName
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 }
 
@@ -275,12 +259,12 @@ func (in *ClusterObservation) DeepCopyInto(out *ClusterObservation) {
 	}
 	if in.Port != nil {
 		in, out := &in.Port, &out.Port
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ReplicationFactor != nil {
 		in, out := &in.ReplicationFactor, &out.ReplicationFactor
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.SecurityGroupIds != nil {
@@ -414,7 +398,7 @@ func (in *ClusterParameters) DeepCopyInto(out *ClusterParameters) {
 	}
 	if in.ReplicationFactor != nil {
 		in, out := &in.ReplicationFactor, &out.ReplicationFactor
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.SecurityGroupIDRefs != nil {
@@ -449,22 +433,6 @@ func (in *ClusterParameters) DeepCopyInto(out *ClusterParameters) {
 		in, out := &in.SubnetGroupName, &out.SubnetGroupName
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 }
 
@@ -548,7 +516,7 @@ func (in *NodesObservation) DeepCopyInto(out *NodesObservation) {
 	}
 	if in.Port != nil {
 		in, out := &in.Port, &out.Port
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }

@@ -16,7 +16,7 @@ import (
 type BackendServerPolicyInitParameters struct {
 
 	// The instance port to apply the policy to.
-	InstancePort *float64 `json:"instancePort,omitempty" tf:"instance_port,omitempty"`
+	InstancePort *int64 `json:"instancePort,omitempty" tf:"instance_port,omitempty"`
 
 	// The load balancer to attach the policy to.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/elb/v1beta2.ELB
@@ -51,7 +51,7 @@ type BackendServerPolicyObservation struct {
 	ID *string `json:"id,omitempty" tf:"id,omitempty"`
 
 	// The instance port to apply the policy to.
-	InstancePort *float64 `json:"instancePort,omitempty" tf:"instance_port,omitempty"`
+	InstancePort *int64 `json:"instancePort,omitempty" tf:"instance_port,omitempty"`
 
 	// The load balancer to attach the policy to.
 	LoadBalancerName *string `json:"loadBalancerName,omitempty" tf:"load_balancer_name,omitempty"`
@@ -65,7 +65,7 @@ type BackendServerPolicyParameters struct {
 
 	// The instance port to apply the policy to.
 	// +kubebuilder:validation:Optional
-	InstancePort *float64 `json:"instancePort,omitempty" tf:"instance_port,omitempty"`
+	InstancePort *int64 `json:"instancePort,omitempty" tf:"instance_port,omitempty"`
 
 	// The load balancer to attach the policy to.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/elb/v1beta2.ELB

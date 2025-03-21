@@ -1051,20 +1051,24 @@ spec:
                         description: The number of accounts, per Region, for which
                           this operation can fail before AWS CloudFormation stops
                           the operation in that Region.
-                        type: number
+                        format: int64
+                        type: integer
                       failureTolerancePercentage:
                         description: The percentage of accounts, per Region, for which
                           this stack operation can fail before AWS CloudFormation
                           stops the operation in that Region.
-                        type: number
+                        format: int64
+                        type: integer
                       maxConcurrentCount:
                         description: The maximum number of accounts in which to perform
                           this operation at one time.
-                        type: number
+                        format: int64
+                        type: integer
                       maxConcurrentPercentage:
                         description: The maximum percentage of accounts in which to
                           perform this operation at one time.
-                        type: number
+                        format: int64
+                        type: integer
                       regionConcurrencyType:
                         description: The concurrency type of deploying StackSets operations
                           in Regions, could be in parallel or one Region at a time.
@@ -1095,12 +1099,6 @@ spec:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   templateBody:
                     description: 'String containing the CloudFormation template body.
                       Maximum size: 51,200 bytes. Conflicts with template_url.'
@@ -1261,20 +1259,24 @@ spec:
                         description: The number of accounts, per Region, for which
                           this operation can fail before AWS CloudFormation stops
                           the operation in that Region.
-                        type: number
+                        format: int64
+                        type: integer
                       failureTolerancePercentage:
                         description: The percentage of accounts, per Region, for which
                           this stack operation can fail before AWS CloudFormation
                           stops the operation in that Region.
-                        type: number
+                        format: int64
+                        type: integer
                       maxConcurrentCount:
                         description: The maximum number of accounts in which to perform
                           this operation at one time.
-                        type: number
+                        format: int64
+                        type: integer
                       maxConcurrentPercentage:
                         description: The maximum percentage of accounts in which to
                           perform this operation at one time.
-                        type: number
+                        format: int64
+                        type: integer
                       regionConcurrencyType:
                         description: The concurrency type of deploying StackSets operations
                           in Regions, could be in parallel or one Region at a time.
@@ -1301,12 +1303,6 @@ spec:
                     description: 'Describes how the IAM roles required for your StackSet
                       are created. Valid values: SELF_MANAGED (default), SERVICE_MANAGED.'
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   templateBody:
                     description: 'String containing the CloudFormation template body.
                       Maximum size: 51,200 bytes. Conflicts with template_url.'
@@ -1556,20 +1552,24 @@ spec:
                         description: The number of accounts, per Region, for which
                           this operation can fail before AWS CloudFormation stops
                           the operation in that Region.
-                        type: number
+                        format: int64
+                        type: integer
                       failureTolerancePercentage:
                         description: The percentage of accounts, per Region, for which
                           this stack operation can fail before AWS CloudFormation
                           stops the operation in that Region.
-                        type: number
+                        format: int64
+                        type: integer
                       maxConcurrentCount:
                         description: The maximum number of accounts in which to perform
                           this operation at one time.
-                        type: number
+                        format: int64
+                        type: integer
                       maxConcurrentPercentage:
                         description: The maximum percentage of accounts in which to
                           perform this operation at one time.
-                        type: number
+                        format: int64
+                        type: integer
                       regionConcurrencyType:
                         description: The concurrency type of deploying StackSets operations
                           in Regions, could be in parallel or one Region at a time.

@@ -1885,7 +1885,8 @@ spec:
                         type: object
                       revision:
                         description: Revision of the Configuration.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   dataReplicationMode:
                     description: Defines whether this broker is a part of a data replication
@@ -2283,12 +2284,6 @@ spec:
                       type: string
                     type: array
                     x-kubernetes-list-type: set
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   user:
                     description: Configuration block for broker users. For engine_type
                       of RabbitMQ, Amazon MQ does not return broker users preventing
@@ -2454,7 +2449,8 @@ spec:
                         type: object
                       revision:
                         description: Revision of the Configuration.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   dataReplicationMode:
                     description: Defines whether this broker is a part of a data replication
@@ -2848,12 +2844,6 @@ spec:
                       type: string
                     type: array
                     x-kubernetes-list-type: set
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   user:
                     description: Configuration block for broker users. For engine_type
                       of RabbitMQ, Amazon MQ does not return broker users preventing
@@ -3126,7 +3116,8 @@ spec:
                         type: string
                       revision:
                         description: Revision of the Configuration.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   dataReplicationMode:
                     description: Defines whether this broker is a part of a data replication

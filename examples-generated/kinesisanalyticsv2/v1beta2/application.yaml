@@ -45,8 +45,6 @@ spec:
     serviceExecutionRoleSelector:
       matchLabels:
         testing.upbound.io/example-name: example
-    tags:
-      Environment: test
 
 ---
 

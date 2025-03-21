@@ -42,10 +42,6 @@ type ProductInitParameters struct {
 	// Contact URL for product support.
 	SupportURL *string `json:"supportUrl,omitempty" tf:"support_url,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Type of product. See AWS Docs for valid list of values.
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
 }
@@ -148,11 +144,6 @@ type ProductParameters struct {
 	// Contact URL for product support.
 	// +kubebuilder:validation:Optional
 	SupportURL *string `json:"supportUrl,omitempty" tf:"support_url,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Type of product. See AWS Docs for valid list of values.
 	// +kubebuilder:validation:Optional

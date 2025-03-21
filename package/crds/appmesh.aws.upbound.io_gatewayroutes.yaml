@@ -2284,7 +2284,8 @@ spec:
                                       to the target for Virtual Service provider port.
                                       This is required when the provider (router or
                                       node) of the Virtual Service has multiple listeners.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                   virtualService:
                                     description: Virtual service gateway route target.
                                     properties:
@@ -2304,7 +2305,8 @@ spec:
                                   target for Virtual Service provider port. This is
                                   required when the provider (router or node) of the
                                   Virtual Service has multiple listeners.
-                                type: number
+                                format: int64
+                                type: integer
                               serviceName:
                                 description: Fully qualified domain name for the service
                                   to match from the request.
@@ -2360,7 +2362,8 @@ spec:
                                       to the target for Virtual Service provider port.
                                       This is required when the provider (router or
                                       node) of the Virtual Service has multiple listeners.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                   virtualService:
                                     description: Virtual service gateway route target.
                                     properties:
@@ -2403,11 +2406,13 @@ spec:
                                           properties:
                                             end:
                                               description: End of the range.
-                                              type: number
+                                              format: int64
+                                              type: integer
                                             start:
                                               description: (Requited) Start of the
                                                 range.
-                                              type: number
+                                              format: int64
+                                              type: integer
                                           type: object
                                         regex:
                                           description: Header value sent by the client
@@ -2451,7 +2456,8 @@ spec:
                                   target for Virtual Service provider port. This is
                                   required when the provider (router or node) of the
                                   Virtual Service has multiple listeners.
-                                type: number
+                                format: int64
+                                type: integer
                               prefix:
                                 description: Specified beginning characters to rewrite.
                                 type: string
@@ -2526,7 +2532,8 @@ spec:
                                       to the target for Virtual Service provider port.
                                       This is required when the provider (router or
                                       node) of the Virtual Service has multiple listeners.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                   virtualService:
                                     description: Virtual service gateway route target.
                                     properties:
@@ -2645,11 +2652,13 @@ spec:
                                           properties:
                                             end:
                                               description: End of the range.
-                                              type: number
+                                              format: int64
+                                              type: integer
                                             start:
                                               description: (Requited) Start of the
                                                 range.
-                                              type: number
+                                              format: int64
+                                              type: integer
                                           type: object
                                         regex:
                                           description: Header value sent by the client
@@ -2693,7 +2702,8 @@ spec:
                                   target for Virtual Service provider port. This is
                                   required when the provider (router or node) of the
                                   Virtual Service has multiple listeners.
-                                type: number
+                                format: int64
+                                type: integer
                               prefix:
                                 description: Specified beginning characters to rewrite.
                                 type: string
@@ -2722,14 +2732,9 @@ spec:
                       priority:
                         description: Priority for the gateway route, between 0 and
                           1000.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   virtualGatewayName:
                     description: Name of the virtual gateway to associate the gateway
                       route with. Must be between 1 and 255 characters in length.
@@ -2856,7 +2861,8 @@ spec:
                                       to the target for Virtual Service provider port.
                                       This is required when the provider (router or
                                       node) of the Virtual Service has multiple listeners.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                   virtualService:
                                     description: Virtual service gateway route target.
                                     properties:
@@ -2876,7 +2882,8 @@ spec:
                                   target for Virtual Service provider port. This is
                                   required when the provider (router or node) of the
                                   Virtual Service has multiple listeners.
-                                type: number
+                                format: int64
+                                type: integer
                               serviceName:
                                 description: Fully qualified domain name for the service
                                   to match from the request.
@@ -2932,7 +2939,8 @@ spec:
                                       to the target for Virtual Service provider port.
                                       This is required when the provider (router or
                                       node) of the Virtual Service has multiple listeners.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                   virtualService:
                                     description: Virtual service gateway route target.
                                     properties:
@@ -2975,11 +2983,13 @@ spec:
                                           properties:
                                             end:
                                               description: End of the range.
-                                              type: number
+                                              format: int64
+                                              type: integer
                                             start:
                                               description: (Requited) Start of the
                                                 range.
-                                              type: number
+                                              format: int64
+                                              type: integer
                                           type: object
                                         regex:
                                           description: Header value sent by the client
@@ -3023,7 +3033,8 @@ spec:
                                   target for Virtual Service provider port. This is
                                   required when the provider (router or node) of the
                                   Virtual Service has multiple listeners.
-                                type: number
+                                format: int64
+                                type: integer
                               prefix:
                                 description: Specified beginning characters to rewrite.
                                 type: string
@@ -3098,7 +3109,8 @@ spec:
                                       to the target for Virtual Service provider port.
                                       This is required when the provider (router or
                                       node) of the Virtual Service has multiple listeners.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                   virtualService:
                                     description: Virtual service gateway route target.
                                     properties:
@@ -3217,11 +3229,13 @@ spec:
                                           properties:
                                             end:
                                               description: End of the range.
-                                              type: number
+                                              format: int64
+                                              type: integer
                                             start:
                                               description: (Requited) Start of the
                                                 range.
-                                              type: number
+                                              format: int64
+                                              type: integer
                                           type: object
                                         regex:
                                           description: Header value sent by the client
@@ -3265,7 +3279,8 @@ spec:
                                   target for Virtual Service provider port. This is
                                   required when the provider (router or node) of the
                                   Virtual Service has multiple listeners.
-                                type: number
+                                format: int64
+                                type: integer
                               prefix:
                                 description: Specified beginning characters to rewrite.
                                 type: string
@@ -3294,14 +3309,9 @@ spec:
                       priority:
                         description: Priority for the gateway route, between 0 and
                           1000.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   virtualGatewayName:
                     description: Name of the virtual gateway to associate the gateway
                       route with. Must be between 1 and 255 characters in length.
@@ -3613,7 +3623,8 @@ spec:
                                       to the target for Virtual Service provider port.
                                       This is required when the provider (router or
                                       node) of the Virtual Service has multiple listeners.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                   virtualService:
                                     description: Virtual service gateway route target.
                                     properties:
@@ -3633,7 +3644,8 @@ spec:
                                   target for Virtual Service provider port. This is
                                   required when the provider (router or node) of the
                                   Virtual Service has multiple listeners.
-                                type: number
+                                format: int64
+                                type: integer
                               serviceName:
                                 description: Fully qualified domain name for the service
                                   to match from the request.
@@ -3689,7 +3701,8 @@ spec:
                                       to the target for Virtual Service provider port.
                                       This is required when the provider (router or
                                       node) of the Virtual Service has multiple listeners.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                   virtualService:
                                     description: Virtual service gateway route target.
                                     properties:
@@ -3732,11 +3745,13 @@ spec:
                                           properties:
                                             end:
                                               description: End of the range.
-                                              type: number
+                                              format: int64
+                                              type: integer
                                             start:
                                               description: (Requited) Start of the
                                                 range.
-                                              type: number
+                                              format: int64
+                                              type: integer
                                           type: object
                                         regex:
                                           description: Header value sent by the client
@@ -3780,7 +3795,8 @@ spec:
                                   target for Virtual Service provider port. This is
                                   required when the provider (router or node) of the
                                   Virtual Service has multiple listeners.
-                                type: number
+                                format: int64
+                                type: integer
                               prefix:
                                 description: Specified beginning characters to rewrite.
                                 type: string
@@ -3855,7 +3871,8 @@ spec:
                                       to the target for Virtual Service provider port.
                                       This is required when the provider (router or
                                       node) of the Virtual Service has multiple listeners.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                   virtualService:
                                     description: Virtual service gateway route target.
                                     properties:
@@ -3898,11 +3915,13 @@ spec:
                                           properties:
                                             end:
                                               description: End of the range.
-                                              type: number
+                                              format: int64
+                                              type: integer
                                             start:
                                               description: (Requited) Start of the
                                                 range.
-                                              type: number
+                                              format: int64
+                                              type: integer
                                           type: object
                                         regex:
                                           description: Header value sent by the client
@@ -3946,7 +3965,8 @@ spec:
                                   target for Virtual Service provider port. This is
                                   required when the provider (router or node) of the
                                   Virtual Service has multiple listeners.
-                                type: number
+                                format: int64
+                                type: integer
                               prefix:
                                 description: Specified beginning characters to rewrite.
                                 type: string
@@ -3975,7 +3995,8 @@ spec:
                       priority:
                         description: Priority for the gateway route, between 0 and
                           1000.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   tags:
                     additionalProperties:

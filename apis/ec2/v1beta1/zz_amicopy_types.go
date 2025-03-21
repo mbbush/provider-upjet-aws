@@ -25,7 +25,7 @@ type AMICopyEBSBlockDeviceObservation struct {
 	// Whether the destination snapshots of the copied image should be encrypted. Defaults to false
 	Encrypted *bool `json:"encrypted,omitempty" tf:"encrypted,omitempty"`
 
-	Iops *float64 `json:"iops,omitempty" tf:"iops,omitempty"`
+	Iops *int64 `json:"iops,omitempty" tf:"iops,omitempty"`
 
 	// ARN of the AMI.
 	OutpostArn *string `json:"outpostArn,omitempty" tf:"outpost_arn,omitempty"`
@@ -33,9 +33,9 @@ type AMICopyEBSBlockDeviceObservation struct {
 	// ID of the created AMI.
 	SnapshotID *string `json:"snapshotId,omitempty" tf:"snapshot_id,omitempty"`
 
-	Throughput *float64 `json:"throughput,omitempty" tf:"throughput,omitempty"`
+	Throughput *int64 `json:"throughput,omitempty" tf:"throughput,omitempty"`
 
-	VolumeSize *float64 `json:"volumeSize,omitempty" tf:"volume_size,omitempty"`
+	VolumeSize *int64 `json:"volumeSize,omitempty" tf:"volume_size,omitempty"`
 
 	VolumeType *string `json:"volumeType,omitempty" tf:"volume_type,omitempty"`
 }
@@ -105,10 +105,6 @@ type AMICopyInitParameters struct {
 	// Region from which the AMI will be copied. This may be the
 	// same as the AWS provider region in order to create a copy within the same region.
 	SourceAMIRegion *string `json:"sourceAmiRegion,omitempty" tf:"source_ami_region,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type AMICopyObservation struct {
@@ -265,11 +261,6 @@ type AMICopyParameters struct {
 	// same as the AWS provider region in order to create a copy within the same region.
 	// +kubebuilder:validation:Optional
 	SourceAMIRegion *string `json:"sourceAmiRegion,omitempty" tf:"source_ami_region,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // AMICopySpec defines the desired state of AMICopy

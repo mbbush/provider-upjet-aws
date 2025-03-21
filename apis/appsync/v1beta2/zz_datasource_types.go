@@ -231,32 +231,32 @@ type DatasourceParameters struct {
 type DeltaSyncConfigInitParameters struct {
 
 	// The number of minutes that an Item is stored in the data source.
-	BaseTableTTL *float64 `json:"baseTableTtl,omitempty" tf:"base_table_ttl,omitempty"`
+	BaseTableTTL *int64 `json:"baseTableTtl,omitempty" tf:"base_table_ttl,omitempty"`
 
 	// The table name.
 	DeltaSyncTableName *string `json:"deltaSyncTableName,omitempty" tf:"delta_sync_table_name,omitempty"`
 
 	// The number of minutes that a Delta Sync log entry is stored in the Delta Sync table.
-	DeltaSyncTableTTL *float64 `json:"deltaSyncTableTtl,omitempty" tf:"delta_sync_table_ttl,omitempty"`
+	DeltaSyncTableTTL *int64 `json:"deltaSyncTableTtl,omitempty" tf:"delta_sync_table_ttl,omitempty"`
 }
 
 type DeltaSyncConfigObservation struct {
 
 	// The number of minutes that an Item is stored in the data source.
-	BaseTableTTL *float64 `json:"baseTableTtl,omitempty" tf:"base_table_ttl,omitempty"`
+	BaseTableTTL *int64 `json:"baseTableTtl,omitempty" tf:"base_table_ttl,omitempty"`
 
 	// The table name.
 	DeltaSyncTableName *string `json:"deltaSyncTableName,omitempty" tf:"delta_sync_table_name,omitempty"`
 
 	// The number of minutes that a Delta Sync log entry is stored in the Delta Sync table.
-	DeltaSyncTableTTL *float64 `json:"deltaSyncTableTtl,omitempty" tf:"delta_sync_table_ttl,omitempty"`
+	DeltaSyncTableTTL *int64 `json:"deltaSyncTableTtl,omitempty" tf:"delta_sync_table_ttl,omitempty"`
 }
 
 type DeltaSyncConfigParameters struct {
 
 	// The number of minutes that an Item is stored in the data source.
 	// +kubebuilder:validation:Optional
-	BaseTableTTL *float64 `json:"baseTableTtl,omitempty" tf:"base_table_ttl,omitempty"`
+	BaseTableTTL *int64 `json:"baseTableTtl,omitempty" tf:"base_table_ttl,omitempty"`
 
 	// The table name.
 	// +kubebuilder:validation:Optional
@@ -264,7 +264,7 @@ type DeltaSyncConfigParameters struct {
 
 	// The number of minutes that a Delta Sync log entry is stored in the Delta Sync table.
 	// +kubebuilder:validation:Optional
-	DeltaSyncTableTTL *float64 `json:"deltaSyncTableTtl,omitempty" tf:"delta_sync_table_ttl,omitempty"`
+	DeltaSyncTableTTL *int64 `json:"deltaSyncTableTtl,omitempty" tf:"delta_sync_table_ttl,omitempty"`
 }
 
 type DynamodbConfigInitParameters struct {

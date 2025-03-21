@@ -2038,7 +2038,8 @@ spec:
                       than 100, Amazon Macie selects the objects to analyze at random,
                       up to the specified percentage, and analyzes all the data in
                       those objects.
-                    type: number
+                    format: int64
+                    type: integer
                   scheduleFrequency:
                     description: The recurrence pattern for running the job. To run
                       the job only once, don't specify a value for this property and
@@ -2052,7 +2053,8 @@ spec:
                       monthlySchedule:
                         description: Specifies a monthly recurrence pattern for running
                           the job.
-                        type: number
+                        format: int64
+                        type: integer
                       weeklySchedule:
                         description: Specifies a weekly recurrence pattern for running
                           the job.
@@ -2419,7 +2421,8 @@ spec:
                       than 100, Amazon Macie selects the objects to analyze at random,
                       up to the specified percentage, and analyzes all the data in
                       those objects.
-                    type: number
+                    format: int64
+                    type: integer
                   scheduleFrequency:
                     description: The recurrence pattern for running the job. To run
                       the job only once, don't specify a value for this property and
@@ -2433,7 +2436,8 @@ spec:
                       monthlySchedule:
                         description: Specifies a monthly recurrence pattern for running
                           the job.
-                        type: number
+                        format: int64
+                        type: integer
                       weeklySchedule:
                         description: Specifies a weekly recurrence pattern for running
                           the job.
@@ -2980,7 +2984,8 @@ spec:
                       than 100, Amazon Macie selects the objects to analyze at random,
                       up to the specified percentage, and analyzes all the data in
                       those objects.
-                    type: number
+                    format: int64
+                    type: integer
                   scheduleFrequency:
                     description: The recurrence pattern for running the job. To run
                       the job only once, don't specify a value for this property and
@@ -2994,7 +2999,8 @@ spec:
                       monthlySchedule:
                         description: Specifies a monthly recurrence pattern for running
                           the job.
-                        type: number
+                        format: int64
+                        type: integer
                       weeklySchedule:
                         description: Specifies a weekly recurrence pattern for running
                           the job.

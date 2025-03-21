@@ -30,10 +30,6 @@ type InstanceProfileInitParameters struct {
 
 	// When set to true, Device Farm reboots the instance after a test run. The default value is true.
 	RebootAfterUse *bool `json:"rebootAfterUse,omitempty" tf:"reboot_after_use,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type InstanceProfileObservation struct {
@@ -95,11 +91,6 @@ type InstanceProfileParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // InstanceProfileSpec defines the desired state of InstanceProfile

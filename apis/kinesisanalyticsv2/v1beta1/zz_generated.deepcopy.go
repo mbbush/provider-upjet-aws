@@ -875,7 +875,7 @@ func (in *ApplicationSnapshotObservation) DeepCopyInto(out *ApplicationSnapshotO
 	}
 	if in.ApplicationVersionID != nil {
 		in, out := &in.ApplicationVersionID, &out.ApplicationVersionID
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ID != nil {

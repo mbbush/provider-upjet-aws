@@ -74,7 +74,7 @@ type ActionRewriteParameters struct {
 type ActionTargetInitParameters struct {
 
 	// The port number that corresponds to the target for Virtual Service provider port. This is required when the provider (router or node) of the Virtual Service has multiple listeners.
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// Virtual service gateway route target.
 	VirtualService *TargetVirtualServiceInitParameters `json:"virtualService,omitempty" tf:"virtual_service,omitempty"`
@@ -83,7 +83,7 @@ type ActionTargetInitParameters struct {
 type ActionTargetObservation struct {
 
 	// The port number that corresponds to the target for Virtual Service provider port. This is required when the provider (router or node) of the Virtual Service has multiple listeners.
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// Virtual service gateway route target.
 	VirtualService *TargetVirtualServiceObservation `json:"virtualService,omitempty" tf:"virtual_service,omitempty"`
@@ -93,7 +93,7 @@ type ActionTargetParameters struct {
 
 	// The port number that corresponds to the target for Virtual Service provider port. This is required when the provider (router or node) of the Virtual Service has multiple listeners.
 	// +kubebuilder:validation:Optional
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// Virtual service gateway route target.
 	// +kubebuilder:validation:Optional
@@ -182,10 +182,6 @@ type GatewayRouteInitParameters struct {
 	// Gateway route specification to apply.
 	Spec *SpecInitParameters `json:"spec,omitempty" tf:"spec,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Name of the virtual gateway to associate the gateway route with. Must be between 1 and 255 characters in length.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/appmesh/v1beta2.VirtualGateway
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractParamPath("name",false)
@@ -264,11 +260,6 @@ type GatewayRouteParameters struct {
 	// +kubebuilder:validation:Optional
 	Spec *SpecParameters `json:"spec,omitempty" tf:"spec,omitempty"`
 
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Name of the virtual gateway to associate the gateway route with. Must be between 1 and 255 characters in length.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/appmesh/v1beta2.VirtualGateway
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractParamPath("name",false)
@@ -316,7 +307,7 @@ type HTTPRouteActionParameters struct {
 type HTTPRouteActionTargetInitParameters struct {
 
 	// The port number that corresponds to the target for Virtual Service provider port. This is required when the provider (router or node) of the Virtual Service has multiple listeners.
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// Virtual service gateway route target.
 	VirtualService *ActionTargetVirtualServiceInitParameters `json:"virtualService,omitempty" tf:"virtual_service,omitempty"`
@@ -325,7 +316,7 @@ type HTTPRouteActionTargetInitParameters struct {
 type HTTPRouteActionTargetObservation struct {
 
 	// The port number that corresponds to the target for Virtual Service provider port. This is required when the provider (router or node) of the Virtual Service has multiple listeners.
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// Virtual service gateway route target.
 	VirtualService *ActionTargetVirtualServiceObservation `json:"virtualService,omitempty" tf:"virtual_service,omitempty"`
@@ -335,7 +326,7 @@ type HTTPRouteActionTargetParameters struct {
 
 	// The port number that corresponds to the target for Virtual Service provider port. This is required when the provider (router or node) of the Virtual Service has multiple listeners.
 	// +kubebuilder:validation:Optional
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// Virtual service gateway route target.
 	// +kubebuilder:validation:Optional
@@ -392,7 +383,7 @@ type HTTPRouteMatchInitParameters struct {
 	Path *HTTPRouteMatchPathInitParameters `json:"path,omitempty" tf:"path,omitempty"`
 
 	// The port number that corresponds to the target for Virtual Service provider port. This is required when the provider (router or node) of the Virtual Service has multiple listeners.
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// Specified beginning characters to rewrite.
 	Prefix *string `json:"prefix,omitempty" tf:"prefix,omitempty"`
@@ -413,7 +404,7 @@ type HTTPRouteMatchObservation struct {
 	Path *HTTPRouteMatchPathObservation `json:"path,omitempty" tf:"path,omitempty"`
 
 	// The port number that corresponds to the target for Virtual Service provider port. This is required when the provider (router or node) of the Virtual Service has multiple listeners.
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// Specified beginning characters to rewrite.
 	Prefix *string `json:"prefix,omitempty" tf:"prefix,omitempty"`
@@ -438,7 +429,7 @@ type HTTPRouteMatchParameters struct {
 
 	// The port number that corresponds to the target for Virtual Service provider port. This is required when the provider (router or node) of the Virtual Service has multiple listeners.
 	// +kubebuilder:validation:Optional
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// Specified beginning characters to rewrite.
 	// +kubebuilder:validation:Optional
@@ -665,7 +656,7 @@ type Http2RouteMatchInitParameters struct {
 	Path *MatchPathInitParameters `json:"path,omitempty" tf:"path,omitempty"`
 
 	// The port number that corresponds to the target for Virtual Service provider port. This is required when the provider (router or node) of the Virtual Service has multiple listeners.
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// Specified beginning characters to rewrite.
 	Prefix *string `json:"prefix,omitempty" tf:"prefix,omitempty"`
@@ -686,7 +677,7 @@ type Http2RouteMatchObservation struct {
 	Path *MatchPathObservation `json:"path,omitempty" tf:"path,omitempty"`
 
 	// The port number that corresponds to the target for Virtual Service provider port. This is required when the provider (router or node) of the Virtual Service has multiple listeners.
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// Specified beginning characters to rewrite.
 	Prefix *string `json:"prefix,omitempty" tf:"prefix,omitempty"`
@@ -711,7 +702,7 @@ type Http2RouteMatchParameters struct {
 
 	// The port number that corresponds to the target for Virtual Service provider port. This is required when the provider (router or node) of the Virtual Service has multiple listeners.
 	// +kubebuilder:validation:Optional
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// Specified beginning characters to rewrite.
 	// +kubebuilder:validation:Optional
@@ -872,7 +863,7 @@ type MatchHostnameParameters struct {
 type MatchInitParameters struct {
 
 	// The port number that corresponds to the target for Virtual Service provider port. This is required when the provider (router or node) of the Virtual Service has multiple listeners.
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// Fully qualified domain name for the service to match from the request.
 	ServiceName *string `json:"serviceName,omitempty" tf:"service_name,omitempty"`
@@ -881,7 +872,7 @@ type MatchInitParameters struct {
 type MatchObservation struct {
 
 	// The port number that corresponds to the target for Virtual Service provider port. This is required when the provider (router or node) of the Virtual Service has multiple listeners.
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// Fully qualified domain name for the service to match from the request.
 	ServiceName *string `json:"serviceName,omitempty" tf:"service_name,omitempty"`
@@ -891,7 +882,7 @@ type MatchParameters struct {
 
 	// The port number that corresponds to the target for Virtual Service provider port. This is required when the provider (router or node) of the Virtual Service has multiple listeners.
 	// +kubebuilder:validation:Optional
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// Fully qualified domain name for the service to match from the request.
 	// +kubebuilder:validation:Optional
@@ -978,30 +969,30 @@ type MatchQueryParameterParameters struct {
 type MatchRangeInitParameters struct {
 
 	// End of the range.
-	End *float64 `json:"end,omitempty" tf:"end,omitempty"`
+	End *int64 `json:"end,omitempty" tf:"end,omitempty"`
 
 	// (Requited) Start of the range.
-	Start *float64 `json:"start,omitempty" tf:"start,omitempty"`
+	Start *int64 `json:"start,omitempty" tf:"start,omitempty"`
 }
 
 type MatchRangeObservation struct {
 
 	// End of the range.
-	End *float64 `json:"end,omitempty" tf:"end,omitempty"`
+	End *int64 `json:"end,omitempty" tf:"end,omitempty"`
 
 	// (Requited) Start of the range.
-	Start *float64 `json:"start,omitempty" tf:"start,omitempty"`
+	Start *int64 `json:"start,omitempty" tf:"start,omitempty"`
 }
 
 type MatchRangeParameters struct {
 
 	// End of the range.
 	// +kubebuilder:validation:Optional
-	End *float64 `json:"end" tf:"end,omitempty"`
+	End *int64 `json:"end" tf:"end,omitempty"`
 
 	// (Requited) Start of the range.
 	// +kubebuilder:validation:Optional
-	Start *float64 `json:"start" tf:"start,omitempty"`
+	Start *int64 `json:"start" tf:"start,omitempty"`
 }
 
 type PathInitParameters struct {
@@ -1103,30 +1094,30 @@ type QueryParameterParameters struct {
 type RangeInitParameters struct {
 
 	// End of the range.
-	End *float64 `json:"end,omitempty" tf:"end,omitempty"`
+	End *int64 `json:"end,omitempty" tf:"end,omitempty"`
 
 	// (Requited) Start of the range.
-	Start *float64 `json:"start,omitempty" tf:"start,omitempty"`
+	Start *int64 `json:"start,omitempty" tf:"start,omitempty"`
 }
 
 type RangeObservation struct {
 
 	// End of the range.
-	End *float64 `json:"end,omitempty" tf:"end,omitempty"`
+	End *int64 `json:"end,omitempty" tf:"end,omitempty"`
 
 	// (Requited) Start of the range.
-	Start *float64 `json:"start,omitempty" tf:"start,omitempty"`
+	Start *int64 `json:"start,omitempty" tf:"start,omitempty"`
 }
 
 type RangeParameters struct {
 
 	// End of the range.
 	// +kubebuilder:validation:Optional
-	End *float64 `json:"end" tf:"end,omitempty"`
+	End *int64 `json:"end" tf:"end,omitempty"`
 
 	// (Requited) Start of the range.
 	// +kubebuilder:validation:Optional
-	Start *float64 `json:"start" tf:"start,omitempty"`
+	Start *int64 `json:"start" tf:"start,omitempty"`
 }
 
 type RewriteHostnameInitParameters struct {
@@ -1247,7 +1238,7 @@ type SpecInitParameters struct {
 	Http2Route *Http2RouteInitParameters `json:"http2Route,omitempty" tf:"http2_route,omitempty"`
 
 	// Priority for the gateway route, between 0 and 1000.
-	Priority *float64 `json:"priority,omitempty" tf:"priority,omitempty"`
+	Priority *int64 `json:"priority,omitempty" tf:"priority,omitempty"`
 }
 
 type SpecObservation struct {
@@ -1262,7 +1253,7 @@ type SpecObservation struct {
 	Http2Route *Http2RouteObservation `json:"http2Route,omitempty" tf:"http2_route,omitempty"`
 
 	// Priority for the gateway route, between 0 and 1000.
-	Priority *float64 `json:"priority,omitempty" tf:"priority,omitempty"`
+	Priority *int64 `json:"priority,omitempty" tf:"priority,omitempty"`
 }
 
 type SpecParameters struct {
@@ -1281,13 +1272,13 @@ type SpecParameters struct {
 
 	// Priority for the gateway route, between 0 and 1000.
 	// +kubebuilder:validation:Optional
-	Priority *float64 `json:"priority,omitempty" tf:"priority,omitempty"`
+	Priority *int64 `json:"priority,omitempty" tf:"priority,omitempty"`
 }
 
 type TargetInitParameters struct {
 
 	// The port number that corresponds to the target for Virtual Service provider port. This is required when the provider (router or node) of the Virtual Service has multiple listeners.
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// Virtual service gateway route target.
 	VirtualService *VirtualServiceInitParameters `json:"virtualService,omitempty" tf:"virtual_service,omitempty"`
@@ -1296,7 +1287,7 @@ type TargetInitParameters struct {
 type TargetObservation struct {
 
 	// The port number that corresponds to the target for Virtual Service provider port. This is required when the provider (router or node) of the Virtual Service has multiple listeners.
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// Virtual service gateway route target.
 	VirtualService *VirtualServiceObservation `json:"virtualService,omitempty" tf:"virtual_service,omitempty"`
@@ -1306,7 +1297,7 @@ type TargetParameters struct {
 
 	// The port number that corresponds to the target for Virtual Service provider port. This is required when the provider (router or node) of the Virtual Service has multiple listeners.
 	// +kubebuilder:validation:Optional
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// Virtual service gateway route target.
 	// +kubebuilder:validation:Optional

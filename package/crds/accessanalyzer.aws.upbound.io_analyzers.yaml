@@ -498,19 +498,14 @@ spec:
                           unusedAccessAge:
                             description: The specified access age in days for which
                               to generate findings for unused access.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                     type: object
                   region:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   type:
                     description: Type of Analyzer. Valid values are ACCOUNT, ORGANIZATION,
                       ACCOUNT_UNUSED_ACCESS , ORGANIZATION_UNUSED_ACCESS. Defaults
@@ -544,15 +539,10 @@ spec:
                           unusedAccessAge:
                             description: The specified access age in days for which
                               to generate findings for unused access.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   type:
                     description: Type of Analyzer. Valid values are ACCOUNT, ORGANIZATION,
                       ACCOUNT_UNUSED_ACCESS , ORGANIZATION_UNUSED_ACCESS. Defaults
@@ -746,7 +736,8 @@ spec:
                           unusedAccessAge:
                             description: The specified access age in days for which
                               to generate findings for unused access.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                     type: object
                   id:

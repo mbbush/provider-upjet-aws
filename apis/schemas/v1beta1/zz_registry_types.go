@@ -17,10 +17,6 @@ type RegistryInitParameters struct {
 
 	// The description of the discoverer. Maximum of 256 characters.
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type RegistryObservation struct {
@@ -52,11 +48,6 @@ type RegistryParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // RegistrySpec defines the desired state of Registry

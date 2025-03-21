@@ -1702,7 +1702,8 @@ spec:
                       The required duration for the Spot instances, in minutes. This value must be a multiple of 60 (60, 120, 180, 240, 300, or 360).
                       The duration period starts as soon as your Spot instance receives its instance ID. At the end of the duration period, Amazon EC2 marks the Spot instance for termination and provides a Spot instance termination notice, which gives the instance a two-minute warning before it terminates.
                       Note that you can't specify an Availability Zone group or a launch group if you specify a duration.
-                    type: number
+                    format: int64
+                    type: integer
                   capacityReservationSpecification:
                     properties:
                       capacityReservationPreference:
@@ -1717,18 +1718,22 @@ spec:
                         type: object
                     type: object
                   cpuCoreCount:
-                    type: number
+                    format: int64
+                    type: integer
                   cpuOptions:
                     properties:
                       amdSevSnp:
                         type: string
                       coreCount:
-                        type: number
+                        format: int64
+                        type: integer
                       threadsPerCore:
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   cpuThreadsPerCore:
-                    type: number
+                    format: int64
+                    type: integer
                   creditSpecification:
                     properties:
                       cpuCredits:
@@ -1748,7 +1753,8 @@ spec:
                         encrypted:
                           type: boolean
                         iops:
-                          type: number
+                          format: int64
+                          type: integer
                         kmsKeyId:
                           description: The Spot Instance Request ID.
                           type: string
@@ -1761,18 +1767,12 @@ spec:
                           description: Key-value map of resource tags.
                           type: object
                           x-kubernetes-map-type: granular
-                        tagsAll:
-                          additionalProperties:
-                            type: string
-                          description: A map of tags assigned to the resource, including
-                            those inherited from the provider default_tags configuration
-                            block.
-                          type: object
-                          x-kubernetes-map-type: granular
                         throughput:
-                          type: number
+                          format: int64
+                          type: integer
                         volumeSize:
-                          type: number
+                          format: int64
+                          type: integer
                         volumeType:
                           type: string
                       type: object
@@ -1818,7 +1818,8 @@ spec:
                   instanceType:
                     type: string
                   ipv6AddressCount:
-                    type: number
+                    format: int64
+                    type: integer
                   ipv6Addresses:
                     items:
                       type: string
@@ -1852,7 +1853,8 @@ spec:
                       httpProtocolIpv6:
                         type: string
                       httpPutResponseHopLimit:
-                        type: number
+                        format: int64
+                        type: integer
                       httpTokens:
                         type: string
                       instanceMetadataTags:
@@ -1867,9 +1869,11 @@ spec:
                         deleteOnTermination:
                           type: boolean
                         deviceIndex:
-                          type: number
+                          format: int64
+                          type: integer
                         networkCardIndex:
-                          type: number
+                          format: int64
+                          type: integer
                         networkInterfaceId:
                           description: The Spot Instance Request ID.
                           type: string
@@ -1878,7 +1882,8 @@ spec:
                   placementGroup:
                     type: string
                   placementPartitionNumber:
-                    type: number
+                    format: int64
+                    type: integer
                   privateDnsNameOptions:
                     properties:
                       enableResourceNameDnsARecord:
@@ -1902,7 +1907,8 @@ spec:
                       encrypted:
                         type: boolean
                       iops:
-                        type: number
+                        format: int64
+                        type: integer
                       kmsKeyId:
                         description: The Spot Instance Request ID.
                         type: string
@@ -1912,18 +1918,12 @@ spec:
                         description: Key-value map of resource tags.
                         type: object
                         x-kubernetes-map-type: granular
-                      tagsAll:
-                        additionalProperties:
-                          type: string
-                        description: A map of tags assigned to the resource, including
-                          those inherited from the provider default_tags configuration
-                          block.
-                        type: object
-                        x-kubernetes-map-type: granular
                       throughput:
-                        type: number
+                        format: int64
+                        type: integer
                       volumeSize:
-                        type: number
+                        format: int64
+                        type: integer
                       volumeType:
                         type: string
                     type: object
@@ -2024,12 +2024,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   tenancy:
                     type: string
                   userData:
@@ -2050,12 +2044,6 @@ spec:
                       the request. The default end date is 7 days from the current
                       date.
                     type: string
-                  volumeTags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   vpcSecurityGroupIdRefs:
                     description: References to SecurityGroup in ec2 to populate vpcSecurityGroupIds.
                     items:
@@ -2168,7 +2156,8 @@ spec:
                       The required duration for the Spot instances, in minutes. This value must be a multiple of 60 (60, 120, 180, 240, 300, or 360).
                       The duration period starts as soon as your Spot instance receives its instance ID. At the end of the duration period, Amazon EC2 marks the Spot instance for termination and provides a Spot instance termination notice, which gives the instance a two-minute warning before it terminates.
                       Note that you can't specify an Availability Zone group or a launch group if you specify a duration.
-                    type: number
+                    format: int64
+                    type: integer
                   capacityReservationSpecification:
                     properties:
                       capacityReservationPreference:
@@ -2183,18 +2172,22 @@ spec:
                         type: object
                     type: object
                   cpuCoreCount:
-                    type: number
+                    format: int64
+                    type: integer
                   cpuOptions:
                     properties:
                       amdSevSnp:
                         type: string
                       coreCount:
-                        type: number
+                        format: int64
+                        type: integer
                       threadsPerCore:
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   cpuThreadsPerCore:
-                    type: number
+                    format: int64
+                    type: integer
                   creditSpecification:
                     properties:
                       cpuCredits:
@@ -2214,7 +2207,8 @@ spec:
                         encrypted:
                           type: boolean
                         iops:
-                          type: number
+                          format: int64
+                          type: integer
                         kmsKeyId:
                           description: The Spot Instance Request ID.
                           type: string
@@ -2227,18 +2221,12 @@ spec:
                           description: Key-value map of resource tags.
                           type: object
                           x-kubernetes-map-type: granular
-                        tagsAll:
-                          additionalProperties:
-                            type: string
-                          description: A map of tags assigned to the resource, including
-                            those inherited from the provider default_tags configuration
-                            block.
-                          type: object
-                          x-kubernetes-map-type: granular
                         throughput:
-                          type: number
+                          format: int64
+                          type: integer
                         volumeSize:
-                          type: number
+                          format: int64
+                          type: integer
                         volumeType:
                           type: string
                       type: object
@@ -2284,7 +2272,8 @@ spec:
                   instanceType:
                     type: string
                   ipv6AddressCount:
-                    type: number
+                    format: int64
+                    type: integer
                   ipv6Addresses:
                     items:
                       type: string
@@ -2318,7 +2307,8 @@ spec:
                       httpProtocolIpv6:
                         type: string
                       httpPutResponseHopLimit:
-                        type: number
+                        format: int64
+                        type: integer
                       httpTokens:
                         type: string
                       instanceMetadataTags:
@@ -2333,9 +2323,11 @@ spec:
                         deleteOnTermination:
                           type: boolean
                         deviceIndex:
-                          type: number
+                          format: int64
+                          type: integer
                         networkCardIndex:
-                          type: number
+                          format: int64
+                          type: integer
                         networkInterfaceId:
                           description: The Spot Instance Request ID.
                           type: string
@@ -2344,7 +2336,8 @@ spec:
                   placementGroup:
                     type: string
                   placementPartitionNumber:
-                    type: number
+                    format: int64
+                    type: integer
                   privateDnsNameOptions:
                     properties:
                       enableResourceNameDnsARecord:
@@ -2364,7 +2357,8 @@ spec:
                       encrypted:
                         type: boolean
                       iops:
-                        type: number
+                        format: int64
+                        type: integer
                       kmsKeyId:
                         description: The Spot Instance Request ID.
                         type: string
@@ -2374,18 +2368,12 @@ spec:
                         description: Key-value map of resource tags.
                         type: object
                         x-kubernetes-map-type: granular
-                      tagsAll:
-                        additionalProperties:
-                          type: string
-                        description: A map of tags assigned to the resource, including
-                          those inherited from the provider default_tags configuration
-                          block.
-                        type: object
-                        x-kubernetes-map-type: granular
                       throughput:
-                        type: number
+                        format: int64
+                        type: integer
                       volumeSize:
-                        type: number
+                        format: int64
+                        type: integer
                       volumeType:
                         type: string
                     type: object
@@ -2486,12 +2474,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   tenancy:
                     type: string
                   userData:
@@ -2512,12 +2494,6 @@ spec:
                       the request. The default end date is 7 days from the current
                       date.
                     type: string
-                  volumeTags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   vpcSecurityGroupIdRefs:
                     description: References to SecurityGroup in ec2 to populate vpcSecurityGroupIds.
                     items:
@@ -2789,7 +2765,8 @@ spec:
                       The required duration for the Spot instances, in minutes. This value must be a multiple of 60 (60, 120, 180, 240, 300, or 360).
                       The duration period starts as soon as your Spot instance receives its instance ID. At the end of the duration period, Amazon EC2 marks the Spot instance for termination and provides a Spot instance termination notice, which gives the instance a two-minute warning before it terminates.
                       Note that you can't specify an Availability Zone group or a launch group if you specify a duration.
-                    type: number
+                    format: int64
+                    type: integer
                   capacityReservationSpecification:
                     properties:
                       capacityReservationPreference:
@@ -2804,18 +2781,22 @@ spec:
                         type: object
                     type: object
                   cpuCoreCount:
-                    type: number
+                    format: int64
+                    type: integer
                   cpuOptions:
                     properties:
                       amdSevSnp:
                         type: string
                       coreCount:
-                        type: number
+                        format: int64
+                        type: integer
                       threadsPerCore:
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   cpuThreadsPerCore:
-                    type: number
+                    format: int64
+                    type: integer
                   creditSpecification:
                     properties:
                       cpuCredits:
@@ -2835,7 +2816,8 @@ spec:
                         encrypted:
                           type: boolean
                         iops:
-                          type: number
+                          format: int64
+                          type: integer
                         kmsKeyId:
                           description: The Spot Instance Request ID.
                           type: string
@@ -2857,12 +2839,14 @@ spec:
                           type: object
                           x-kubernetes-map-type: granular
                         throughput:
-                          type: number
+                          format: int64
+                          type: integer
                         volumeId:
                           description: The Spot Instance Request ID.
                           type: string
                         volumeSize:
-                          type: number
+                          format: int64
+                          type: integer
                         volumeType:
                           type: string
                       type: object
@@ -2913,7 +2897,8 @@ spec:
                   instanceType:
                     type: string
                   ipv6AddressCount:
-                    type: number
+                    format: int64
+                    type: integer
                   ipv6Addresses:
                     items:
                       type: string
@@ -2947,7 +2932,8 @@ spec:
                       httpProtocolIpv6:
                         type: string
                       httpPutResponseHopLimit:
-                        type: number
+                        format: int64
+                        type: integer
                       httpTokens:
                         type: string
                       instanceMetadataTags:
@@ -2962,9 +2948,11 @@ spec:
                         deleteOnTermination:
                           type: boolean
                         deviceIndex:
-                          type: number
+                          format: int64
+                          type: integer
                         networkCardIndex:
-                          type: number
+                          format: int64
+                          type: integer
                         networkInterfaceId:
                           description: The Spot Instance Request ID.
                           type: string
@@ -2977,7 +2965,8 @@ spec:
                   placementGroup:
                     type: string
                   placementPartitionNumber:
-                    type: number
+                    format: int64
+                    type: integer
                   primaryNetworkInterfaceId:
                     description: The Spot Instance Request ID.
                     type: string
@@ -3017,7 +3006,8 @@ spec:
                       encrypted:
                         type: boolean
                       iops:
-                        type: number
+                        format: int64
+                        type: integer
                       kmsKeyId:
                         description: The Spot Instance Request ID.
                         type: string
@@ -3036,12 +3026,14 @@ spec:
                         type: object
                         x-kubernetes-map-type: granular
                       throughput:
-                        type: number
+                        format: int64
+                        type: integer
                       volumeId:
                         description: The Spot Instance Request ID.
                         type: string
                       volumeSize:
-                        type: number
+                        format: int64
+                        type: integer
                       volumeType:
                         type: string
                     type: object

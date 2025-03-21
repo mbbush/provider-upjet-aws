@@ -17,10 +17,6 @@ type KeyspaceInitParameters struct {
 
 	// The replication specification of the keyspace.
 	ReplicationSpecification *ReplicationSpecificationInitParameters `json:"replicationSpecification,omitempty" tf:"replication_specification,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type KeyspaceObservation struct {
@@ -53,11 +49,6 @@ type KeyspaceParameters struct {
 	// The replication specification of the keyspace.
 	// +kubebuilder:validation:Optional
 	ReplicationSpecification *ReplicationSpecificationParameters `json:"replicationSpecification,omitempty" tf:"replication_specification,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type ReplicationSpecificationInitParameters struct {

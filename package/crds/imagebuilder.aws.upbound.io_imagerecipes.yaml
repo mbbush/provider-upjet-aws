@@ -972,7 +972,8 @@ spec:
                             iops:
                               description: Number of Input/Output (I/O) operations
                                 per second to provision for an io1 or io2 volume.
-                              type: number
+                              format: int64
+                              type: integer
                             kmsKeyId:
                               description: Amazon Resource Name (ARN) of the Key Management
                                 Service (KMS) Key for encryption.
@@ -983,10 +984,12 @@ spec:
                             throughput:
                               description: For GP3 volumes only. The throughput in
                                 MiB/s that the volume supports.
-                              type: number
+                              format: int64
+                              type: integer
                             volumeSize:
                               description: Size of the volume, in GiB.
-                              type: number
+                              format: int64
+                              type: integer
                             volumeType:
                               description: Type of the volume. For example, gp2 or
                                 io2.
@@ -1126,12 +1129,6 @@ spec:
                           the image has been built.
                         type: boolean
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   userDataBase64:
                     description: Base64 encoded user data. Use this to provide commands
                       or a command script to run when you launch your build instance.
@@ -1188,7 +1185,8 @@ spec:
                             iops:
                               description: Number of Input/Output (I/O) operations
                                 per second to provision for an io1 or io2 volume.
-                              type: number
+                              format: int64
+                              type: integer
                             kmsKeyId:
                               description: Amazon Resource Name (ARN) of the Key Management
                                 Service (KMS) Key for encryption.
@@ -1199,10 +1197,12 @@ spec:
                             throughput:
                               description: For GP3 volumes only. The throughput in
                                 MiB/s that the volume supports.
-                              type: number
+                              format: int64
+                              type: integer
                             volumeSize:
                               description: Size of the volume, in GiB.
-                              type: number
+                              format: int64
+                              type: integer
                             volumeType:
                               description: Type of the volume. For example, gp2 or
                                 io2.
@@ -1338,12 +1338,6 @@ spec:
                           the image has been built.
                         type: boolean
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   userDataBase64:
                     description: Base64 encoded user data. Use this to provide commands
                       or a command script to run when you launch your build instance.
@@ -1577,7 +1571,8 @@ spec:
                             iops:
                               description: Number of Input/Output (I/O) operations
                                 per second to provision for an io1 or io2 volume.
-                              type: number
+                              format: int64
+                              type: integer
                             kmsKeyId:
                               description: Amazon Resource Name (ARN) of the Key Management
                                 Service (KMS) Key for encryption.
@@ -1588,10 +1583,12 @@ spec:
                             throughput:
                               description: For GP3 volumes only. The throughput in
                                 MiB/s that the volume supports.
-                              type: number
+                              format: int64
+                              type: integer
                             volumeSize:
                               description: Size of the volume, in GiB.
-                              type: number
+                              format: int64
+                              type: integer
                             volumeType:
                               description: Type of the volume. For example, gp2 or
                                 io2.

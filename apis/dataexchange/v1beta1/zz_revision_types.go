@@ -30,10 +30,6 @@ type RevisionInitParameters struct {
 	// Selector for a DataSet in dataexchange to populate dataSetId.
 	// +kubebuilder:validation:Optional
 	DataSetIDSelector *v1.Selector `json:"dataSetIdSelector,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type RevisionObservation struct {
@@ -86,11 +82,6 @@ type RevisionParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // RevisionSpec defines the desired state of Revision

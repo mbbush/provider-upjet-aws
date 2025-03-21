@@ -269,7 +269,7 @@ func (in *LicenseConfigurationInitParameters) DeepCopyInto(out *LicenseConfigura
 	}
 	if in.LicenseCount != nil {
 		in, out := &in.LicenseCount, &out.LicenseCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.LicenseCountHardLimit != nil {
@@ -297,22 +297,6 @@ func (in *LicenseConfigurationInitParameters) DeepCopyInto(out *LicenseConfigura
 		in, out := &in.Name, &out.Name
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 }
 
@@ -378,7 +362,7 @@ func (in *LicenseConfigurationObservation) DeepCopyInto(out *LicenseConfiguratio
 	}
 	if in.LicenseCount != nil {
 		in, out := &in.LicenseCount, &out.LicenseCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.LicenseCountHardLimit != nil {
@@ -466,7 +450,7 @@ func (in *LicenseConfigurationParameters) DeepCopyInto(out *LicenseConfiguration
 	}
 	if in.LicenseCount != nil {
 		in, out := &in.LicenseCount, &out.LicenseCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.LicenseCountHardLimit != nil {
@@ -499,22 +483,6 @@ func (in *LicenseConfigurationParameters) DeepCopyInto(out *LicenseConfiguration
 		in, out := &in.Region, &out.Region
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 }
 

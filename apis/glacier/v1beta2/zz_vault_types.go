@@ -73,10 +73,6 @@ type VaultInitParameters struct {
 
 	// The notifications for the Vault. Fields documented below.
 	Notification *NotificationInitParameters `json:"notification,omitempty" tf:"notification,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type VaultObservation struct {
@@ -120,11 +116,6 @@ type VaultParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // VaultSpec defines the desired state of Vault

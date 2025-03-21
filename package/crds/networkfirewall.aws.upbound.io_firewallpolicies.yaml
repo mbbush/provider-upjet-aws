@@ -1502,7 +1502,8 @@ spec:
                                   a new flow and is processed by the firewall. Clients
                                   or targets can use TCP keepalive packets to reset
                                   the idle timeout. Default value: 350.'
-                                type: number
+                                format: int64
+                                type: integer
                             type: object
                           ruleOrder:
                             description: 'Indicates how to manage the order of stateful
@@ -1536,7 +1537,8 @@ spec:
                                 policy. AWS Network Firewall applies each stateless
                                 rule group to a packet starting with the group that
                                 has the lowest priority setting.
-                              type: number
+                              format: int64
+                              type: integer
                             resourceArn:
                               description: The Amazon Resource Name (ARN) of the stateless
                                 rule group.
@@ -1687,7 +1689,8 @@ spec:
                                 policy. AWS Network Firewall applies each stateless
                                 rule group to a packet starting with the group that
                                 has the lowest priority setting.
-                              type: number
+                              format: int64
+                              type: integer
                             resourceArn:
                               description: The Amazon Resource Name (ARN) of the stateless
                                 rule group.
@@ -1782,12 +1785,6 @@ spec:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -1887,7 +1884,8 @@ spec:
                                   a new flow and is processed by the firewall. Clients
                                   or targets can use TCP keepalive packets to reset
                                   the idle timeout. Default value: 350.'
-                                type: number
+                                format: int64
+                                type: integer
                             type: object
                           ruleOrder:
                             description: 'Indicates how to manage the order of stateful
@@ -1921,7 +1919,8 @@ spec:
                                 policy. AWS Network Firewall applies each stateless
                                 rule group to a packet starting with the group that
                                 has the lowest priority setting.
-                              type: number
+                              format: int64
+                              type: integer
                             resourceArn:
                               description: The Amazon Resource Name (ARN) of the stateless
                                 rule group.
@@ -2072,7 +2071,8 @@ spec:
                                 policy. AWS Network Firewall applies each stateless
                                 rule group to a packet starting with the group that
                                 has the lowest priority setting.
-                              type: number
+                              format: int64
+                              type: integer
                             resourceArn:
                               description: The Amazon Resource Name (ARN) of the stateless
                                 rule group.
@@ -2163,12 +2163,6 @@ spec:
                           policy."  This cannot be removed from a FW Policy.
                         type: string
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -2434,7 +2428,8 @@ spec:
                                   a new flow and is processed by the firewall. Clients
                                   or targets can use TCP keepalive packets to reset
                                   the idle timeout. Default value: 350.'
-                                type: number
+                                format: int64
+                                type: integer
                             type: object
                           ruleOrder:
                             description: 'Indicates how to manage the order of stateful
@@ -2468,7 +2463,8 @@ spec:
                                 policy. AWS Network Firewall applies each stateless
                                 rule group to a packet starting with the group that
                                 has the lowest priority setting.
-                              type: number
+                              format: int64
+                              type: integer
                             resourceArn:
                               description: The Amazon Resource Name (ARN) of the stateless
                                 rule group.
@@ -2543,7 +2539,8 @@ spec:
                                 policy. AWS Network Firewall applies each stateless
                                 rule group to a packet starting with the group that
                                 has the lowest priority setting.
-                              type: number
+                              format: int64
+                              type: integer
                             resourceArn:
                               description: The Amazon Resource Name (ARN) of the stateless
                                 rule group.

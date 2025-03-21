@@ -268,12 +268,6 @@ spec:
                       an AWS Database Migration Service Task to Select and Filter
                       Data
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   targetEndpointArn:
                     description: ARN that uniquely identifies the target endpoint.
                     type: string
@@ -558,12 +552,6 @@ spec:
                       an AWS Database Migration Service Task to Select and Filter
                       Data
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   targetEndpointArn:
                     description: ARN that uniquely identifies the target endpoint.
                     type: string

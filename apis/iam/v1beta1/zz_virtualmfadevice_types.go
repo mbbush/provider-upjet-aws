@@ -18,10 +18,6 @@ type VirtualMfaDeviceInitParameters struct {
 	// –  The path for the virtual MFA device.
 	Path *string `json:"path,omitempty" tf:"path,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// The name of the virtual MFA device. Use with path to uniquely identify a virtual MFA device.
 	VirtualMfaDeviceName *string `json:"virtualMfaDeviceName,omitempty" tf:"virtual_mfa_device_name,omitempty"`
 }
@@ -65,11 +61,6 @@ type VirtualMfaDeviceParameters struct {
 	// –  The path for the virtual MFA device.
 	// +kubebuilder:validation:Optional
 	Path *string `json:"path,omitempty" tf:"path,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// The name of the virtual MFA device. Use with path to uniquely identify a virtual MFA device.
 	// +kubebuilder:validation:Optional

@@ -2923,7 +2923,8 @@ spec:
                   allocatedStorage:
                     description: The amount of storage in gibibytes (GiB) to allocate
                       to each DB instance in the Multi-AZ DB cluster.
-                    type: number
+                    format: int64
+                    type: integer
                   allowMajorVersionUpgrade:
                     description: Enable to allow major engine version upgrades when
                       changing engine versions. Defaults to false.
@@ -2952,10 +2953,12 @@ spec:
                       for aurora and aurora-mysql engines currently. To disable backtracking,
                       set this value to 0. Defaults to 0. Must be between 0 and 259200
                       (72 hours)
-                    type: number
+                    format: int64
+                    type: integer
                   backupRetentionPeriod:
                     description: Days to retain backups for. Default 1
-                    type: number
+                    format: int64
+                    type: integer
                   caCertificateIdentifier:
                     description: The CA certificate identifier to use for the DB cluster's
                       server certificate.
@@ -3322,7 +3325,8 @@ spec:
                       in the Amazon RDS User Guide. (This setting is required to create
                       a Multi-AZ DB cluster). Must be a multiple between .5 and 50
                       of the storage amount for the DB cluster.
-                    type: number
+                    format: int64
+                    type: integer
                   kmsKeyId:
                     description: ARN for the KMS encryption key. When specifying kms_key_id,
                       storage_encrypted needs to be set to true.
@@ -3529,10 +3533,12 @@ spec:
                       are enabled. Valid values are 7, month * 31 (where month is
                       a number of months from 1-23), and 731. See here for more information
                       on retention periods.
-                    type: number
+                    format: int64
+                    type: integer
                   port:
                     description: Port on which the DB accepts connections.
-                    type: number
+                    format: int64
+                    type: integer
                   preferredBackupWindow:
                     description: 'Daily time range during which automated backups
                       are created if automated backups are enabled using the BackupRetentionPeriod
@@ -3770,7 +3776,8 @@ spec:
                           MySQL capacity values are 1, 2, 4, 8, 16, 32, 64, 128, 256.
                           Valid Aurora PostgreSQL capacity values are (2, 4, 8, 16,
                           32, 64, 192, and 384). Defaults to 16.
-                        type: number
+                        format: int64
+                        type: integer
                       minCapacity:
                         description: Minimum capacity for an Aurora DB cluster in
                           serverless DB engine mode. The minimum capacity must be
@@ -3778,18 +3785,21 @@ spec:
                           MySQL capacity values are 1, 2, 4, 8, 16, 32, 64, 128, 256.
                           Valid Aurora PostgreSQL capacity values are (2, 4, 8, 16,
                           32, 64, 192, and 384). Defaults to 1.
-                        type: number
+                        format: int64
+                        type: integer
                       secondsBeforeTimeout:
                         description: Amount of time, in seconds, that Aurora Serverless
                           v1 tries to find a scaling point to perform seamless scaling
                           before enforcing the timeout action. Valid values are 60
                           through 600. Defaults to 300.
-                        type: number
+                        format: int64
+                        type: integer
                       secondsUntilAutoPause:
                         description: Time, in seconds, before an Aurora DB cluster
                           in serverless mode is paused. Valid values are 300 through
                           86400. Defaults to 300.
-                        type: number
+                        format: int64
+                        type: integer
                       timeoutAction:
                         description: 'Action to take when the timeout is reached.
                           Valid values: ForceApplyCapacityChange, RollbackCapacityChange.
@@ -3821,7 +3831,8 @@ spec:
                         description: Time, in seconds, before an Aurora DB cluster
                           in serverless mode is paused. Valid values are 300 through
                           86400. Defaults to 300.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   skipFinalSnapshot:
                     description: Determines whether a final DB snapshot is created
@@ -3859,12 +3870,6 @@ spec:
                       io2 (Multi-AZ DB Clusters). Default: "" (Aurora DB Clusters);
                       io1 (Multi-AZ DB Clusters).'
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   vpcSecurityGroupIdRefs:
                     description: References to SecurityGroup in ec2 to populate vpcSecurityGroupIds.
                     items:
@@ -3969,7 +3974,8 @@ spec:
                   allocatedStorage:
                     description: The amount of storage in gibibytes (GiB) to allocate
                       to each DB instance in the Multi-AZ DB cluster.
-                    type: number
+                    format: int64
+                    type: integer
                   allowMajorVersionUpgrade:
                     description: Enable to allow major engine version upgrades when
                       changing engine versions. Defaults to false.
@@ -3993,10 +3999,12 @@ spec:
                       for aurora and aurora-mysql engines currently. To disable backtracking,
                       set this value to 0. Defaults to 0. Must be between 0 and 259200
                       (72 hours)
-                    type: number
+                    format: int64
+                    type: integer
                   backupRetentionPeriod:
                     description: Days to retain backups for. Default 1
-                    type: number
+                    format: int64
+                    type: integer
                   caCertificateIdentifier:
                     description: The CA certificate identifier to use for the DB cluster's
                       server certificate.
@@ -4363,7 +4371,8 @@ spec:
                       in the Amazon RDS User Guide. (This setting is required to create
                       a Multi-AZ DB cluster). Must be a multiple between .5 and 50
                       of the storage amount for the DB cluster.
-                    type: number
+                    format: int64
+                    type: integer
                   kmsKeyId:
                     description: ARN for the KMS encryption key. When specifying kms_key_id,
                       storage_encrypted needs to be set to true.
@@ -4570,10 +4579,12 @@ spec:
                       are enabled. Valid values are 7, month * 31 (where month is
                       a number of months from 1-23), and 731. See here for more information
                       on retention periods.
-                    type: number
+                    format: int64
+                    type: integer
                   port:
                     description: Port on which the DB accepts connections.
-                    type: number
+                    format: int64
+                    type: integer
                   preferredBackupWindow:
                     description: 'Daily time range during which automated backups
                       are created if automated backups are enabled using the BackupRetentionPeriod
@@ -4807,7 +4818,8 @@ spec:
                           MySQL capacity values are 1, 2, 4, 8, 16, 32, 64, 128, 256.
                           Valid Aurora PostgreSQL capacity values are (2, 4, 8, 16,
                           32, 64, 192, and 384). Defaults to 16.
-                        type: number
+                        format: int64
+                        type: integer
                       minCapacity:
                         description: Minimum capacity for an Aurora DB cluster in
                           serverless DB engine mode. The minimum capacity must be
@@ -4815,18 +4827,21 @@ spec:
                           MySQL capacity values are 1, 2, 4, 8, 16, 32, 64, 128, 256.
                           Valid Aurora PostgreSQL capacity values are (2, 4, 8, 16,
                           32, 64, 192, and 384). Defaults to 1.
-                        type: number
+                        format: int64
+                        type: integer
                       secondsBeforeTimeout:
                         description: Amount of time, in seconds, that Aurora Serverless
                           v1 tries to find a scaling point to perform seamless scaling
                           before enforcing the timeout action. Valid values are 60
                           through 600. Defaults to 300.
-                        type: number
+                        format: int64
+                        type: integer
                       secondsUntilAutoPause:
                         description: Time, in seconds, before an Aurora DB cluster
                           in serverless mode is paused. Valid values are 300 through
                           86400. Defaults to 300.
-                        type: number
+                        format: int64
+                        type: integer
                       timeoutAction:
                         description: 'Action to take when the timeout is reached.
                           Valid values: ForceApplyCapacityChange, RollbackCapacityChange.
@@ -4858,7 +4873,8 @@ spec:
                         description: Time, in seconds, before an Aurora DB cluster
                           in serverless mode is paused. Valid values are 300 through
                           86400. Defaults to 300.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   skipFinalSnapshot:
                     description: Determines whether a final DB snapshot is created
@@ -4896,12 +4912,6 @@ spec:
                       io2 (Multi-AZ DB Clusters). Default: "" (Aurora DB Clusters);
                       io1 (Multi-AZ DB Clusters).'
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   vpcSecurityGroupIdRefs:
                     description: References to SecurityGroup in ec2 to populate vpcSecurityGroupIds.
                     items:
@@ -5168,7 +5178,8 @@ spec:
                   allocatedStorage:
                     description: The amount of storage in gibibytes (GiB) to allocate
                       to each DB instance in the Multi-AZ DB cluster.
-                    type: number
+                    format: int64
+                    type: integer
                   allowMajorVersionUpgrade:
                     description: Enable to allow major engine version upgrades when
                       changing engine versions. Defaults to false.
@@ -5195,10 +5206,12 @@ spec:
                       for aurora and aurora-mysql engines currently. To disable backtracking,
                       set this value to 0. Defaults to 0. Must be between 0 and 259200
                       (72 hours)
-                    type: number
+                    format: int64
+                    type: integer
                   backupRetentionPeriod:
                     description: Days to retain backups for. Default 1
-                    type: number
+                    format: int64
+                    type: integer
                   caCertificateIdentifier:
                     description: The CA certificate identifier to use for the DB cluster's
                       server certificate.
@@ -5364,7 +5377,8 @@ spec:
                       in the Amazon RDS User Guide. (This setting is required to create
                       a Multi-AZ DB cluster). Must be a multiple between .5 and 50
                       of the storage amount for the DB cluster.
-                    type: number
+                    format: int64
+                    type: integer
                   kmsKeyId:
                     description: ARN for the KMS encryption key. When specifying kms_key_id,
                       storage_encrypted needs to be set to true.
@@ -5423,10 +5437,12 @@ spec:
                       are enabled. Valid values are 7, month * 31 (where month is
                       a number of months from 1-23), and 731. See here for more information
                       on retention periods.
-                    type: number
+                    format: int64
+                    type: integer
                   port:
                     description: Port on which the DB accepts connections.
-                    type: number
+                    format: int64
+                    type: integer
                   preferredBackupWindow:
                     description: 'Daily time range during which automated backups
                       are created if automated backups are enabled using the BackupRetentionPeriod
@@ -5517,7 +5533,8 @@ spec:
                           MySQL capacity values are 1, 2, 4, 8, 16, 32, 64, 128, 256.
                           Valid Aurora PostgreSQL capacity values are (2, 4, 8, 16,
                           32, 64, 192, and 384). Defaults to 16.
-                        type: number
+                        format: int64
+                        type: integer
                       minCapacity:
                         description: Minimum capacity for an Aurora DB cluster in
                           serverless DB engine mode. The minimum capacity must be
@@ -5525,18 +5542,21 @@ spec:
                           MySQL capacity values are 1, 2, 4, 8, 16, 32, 64, 128, 256.
                           Valid Aurora PostgreSQL capacity values are (2, 4, 8, 16,
                           32, 64, 192, and 384). Defaults to 1.
-                        type: number
+                        format: int64
+                        type: integer
                       secondsBeforeTimeout:
                         description: Amount of time, in seconds, that Aurora Serverless
                           v1 tries to find a scaling point to perform seamless scaling
                           before enforcing the timeout action. Valid values are 60
                           through 600. Defaults to 300.
-                        type: number
+                        format: int64
+                        type: integer
                       secondsUntilAutoPause:
                         description: Time, in seconds, before an Aurora DB cluster
                           in serverless mode is paused. Valid values are 300 through
                           86400. Defaults to 300.
-                        type: number
+                        format: int64
+                        type: integer
                       timeoutAction:
                         description: 'Action to take when the timeout is reached.
                           Valid values: ForceApplyCapacityChange, RollbackCapacityChange.
@@ -5568,7 +5588,8 @@ spec:
                         description: Time, in seconds, before an Aurora DB cluster
                           in serverless mode is paused. Valid values are 300 through
                           86400. Defaults to 300.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   skipFinalSnapshot:
                     description: Determines whether a final DB snapshot is created

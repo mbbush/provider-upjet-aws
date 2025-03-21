@@ -181,12 +181,6 @@ spec:
                       type: string
                     type: array
                     x-kubernetes-list-type: set
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   uri:
                     description: S3 URI with data of the component. Exactly one of
                       data and uri can be specified.
@@ -314,12 +308,6 @@ spec:
                       type: string
                     type: array
                     x-kubernetes-list-type: set
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   uri:
                     description: S3 URI with data of the component. Exactly one of
                       data and uri can be specified.

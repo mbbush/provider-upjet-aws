@@ -26,5 +26,3 @@ spec:
     securityGroupIdRefs:
     - name: sg1
     - name: sg2
-    tags:
-      Environment: Prod

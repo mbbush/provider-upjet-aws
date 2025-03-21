@@ -31,16 +31,12 @@ type SnapshotInitParameters struct {
 	// List of AWS Account IDs to share the snapshot with. Use all to make the snapshot public.
 	// +listType=set
 	SharedAccounts []*string `json:"sharedAccounts,omitempty" tf:"shared_accounts,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type SnapshotObservation struct {
 
 	// Specifies the allocated storage size in gigabytes (GB).
-	AllocatedStorage *float64 `json:"allocatedStorage,omitempty" tf:"allocated_storage,omitempty"`
+	AllocatedStorage *int64 `json:"allocatedStorage,omitempty" tf:"allocated_storage,omitempty"`
 
 	// Specifies the name of the Availability Zone the DB instance was located in at the time of the DB snapshot.
 	AvailabilityZone *string `json:"availabilityZone,omitempty" tf:"availability_zone,omitempty"`
@@ -63,7 +59,7 @@ type SnapshotObservation struct {
 	ID *string `json:"id,omitempty" tf:"id,omitempty"`
 
 	// Specifies the Provisioned IOPS (I/O operations per second) value of the DB instance at the time of the snapshot.
-	Iops *float64 `json:"iops,omitempty" tf:"iops,omitempty"`
+	Iops *int64 `json:"iops,omitempty" tf:"iops,omitempty"`
 
 	// The ARN for the KMS encryption key.
 	KMSKeyID *string `json:"kmsKeyId,omitempty" tf:"kms_key_id,omitempty"`
@@ -74,7 +70,7 @@ type SnapshotObservation struct {
 	// Provides the option group name for the DB snapshot.
 	OptionGroupName *string `json:"optionGroupName,omitempty" tf:"option_group_name,omitempty"`
 
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// List of AWS Account IDs to share the snapshot with. Use all to make the snapshot public.
 	// +listType=set
@@ -131,11 +127,6 @@ type SnapshotParameters struct {
 	// +kubebuilder:validation:Optional
 	// +listType=set
 	SharedAccounts []*string `json:"sharedAccounts,omitempty" tf:"shared_accounts,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // SnapshotSpec defines the desired state of Snapshot

@@ -106,11 +106,6 @@ spec:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -156,11 +151,6 @@ spec:
                     type: boolean
                   privateDnsHostnameTypeOnLaunch:
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -358,7 +348,8 @@ spec:
                   enableDns64:
                     type: boolean
                   enableLniAtDeviceIndex:
-                    type: number
+                    format: int64
+                    type: integer
                   enableResourceNameDnsARecordOnLaunch:
                     type: boolean
                   enableResourceNameDnsAaaaRecordOnLaunch:

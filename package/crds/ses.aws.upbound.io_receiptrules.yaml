@@ -85,7 +85,8 @@ spec:
                           type: string
                         position:
                           description: The position of the action in the receipt rule
-                          type: number
+                          format: int64
+                          type: integer
                       type: object
                     type: array
                   after:
@@ -100,7 +101,8 @@ spec:
                           type: string
                         position:
                           description: The position of the action in the receipt rule
-                          type: number
+                          format: int64
+                          type: integer
                         sender:
                           description: The email address of the sender
                           type: string
@@ -130,7 +132,8 @@ spec:
                           type: string
                         position:
                           description: The position of the action in the receipt rule
-                          type: number
+                          format: int64
+                          type: integer
                         topicArn:
                           description: The ARN of an SNS topic to notify
                           type: string
@@ -173,7 +176,8 @@ spec:
                           type: string
                         position:
                           description: The position of the action in the receipt rule
-                          type: number
+                          format: int64
+                          type: integer
                         topicArn:
                           description: The ARN of an SNS topic to notify
                           type: string
@@ -193,7 +197,8 @@ spec:
                           type: string
                         position:
                           description: The position of the action in the receipt rule
-                          type: number
+                          format: int64
+                          type: integer
                         topicArn:
                           description: The ARN of an SNS topic to notify
                           type: string
@@ -205,7 +210,8 @@ spec:
                       properties:
                         position:
                           description: The position of the action in the receipt rule
-                          type: number
+                          format: int64
+                          type: integer
                         scope:
                           description: The scope to apply. The only acceptable value
                             is RuleSet.
@@ -227,7 +233,8 @@ spec:
                           type: string
                         position:
                           description: The position of the action in the receipt rule
-                          type: number
+                          format: int64
+                          type: integer
                         topicArn:
                           description: The ARN of an SNS topic to notify
                           type: string
@@ -261,7 +268,8 @@ spec:
                           type: string
                         position:
                           description: The position of the action in the receipt rule
-                          type: number
+                          format: int64
+                          type: integer
                       type: object
                     type: array
                   after:
@@ -276,7 +284,8 @@ spec:
                           type: string
                         position:
                           description: The position of the action in the receipt rule
-                          type: number
+                          format: int64
+                          type: integer
                         sender:
                           description: The email address of the sender
                           type: string
@@ -306,7 +315,8 @@ spec:
                           type: string
                         position:
                           description: The position of the action in the receipt rule
-                          type: number
+                          format: int64
+                          type: integer
                         topicArn:
                           description: The ARN of an SNS topic to notify
                           type: string
@@ -345,7 +355,8 @@ spec:
                           type: string
                         position:
                           description: The position of the action in the receipt rule
-                          type: number
+                          format: int64
+                          type: integer
                         topicArn:
                           description: The ARN of an SNS topic to notify
                           type: string
@@ -365,7 +376,8 @@ spec:
                           type: string
                         position:
                           description: The position of the action in the receipt rule
-                          type: number
+                          format: int64
+                          type: integer
                         topicArn:
                           description: The ARN of an SNS topic to notify
                           type: string
@@ -377,7 +389,8 @@ spec:
                       properties:
                         position:
                           description: The position of the action in the receipt rule
-                          type: number
+                          format: int64
+                          type: integer
                         scope:
                           description: The scope to apply. The only acceptable value
                             is RuleSet.
@@ -399,7 +412,8 @@ spec:
                           type: string
                         position:
                           description: The position of the action in the receipt rule
-                          type: number
+                          format: int64
+                          type: integer
                         topicArn:
                           description: The ARN of an SNS topic to notify
                           type: string
@@ -599,7 +613,8 @@ spec:
                           type: string
                         position:
                           description: The position of the action in the receipt rule
-                          type: number
+                          format: int64
+                          type: integer
                       type: object
                     type: array
                   after:
@@ -617,7 +632,8 @@ spec:
                           type: string
                         position:
                           description: The position of the action in the receipt rule
-                          type: number
+                          format: int64
+                          type: integer
                         sender:
                           description: The email address of the sender
                           type: string
@@ -650,7 +666,8 @@ spec:
                           type: string
                         position:
                           description: The position of the action in the receipt rule
-                          type: number
+                          format: int64
+                          type: integer
                         topicArn:
                           description: The ARN of an SNS topic to notify
                           type: string
@@ -689,7 +706,8 @@ spec:
                           type: string
                         position:
                           description: The position of the action in the receipt rule
-                          type: number
+                          format: int64
+                          type: integer
                         topicArn:
                           description: The ARN of an SNS topic to notify
                           type: string
@@ -709,7 +727,8 @@ spec:
                           type: string
                         position:
                           description: The position of the action in the receipt rule
-                          type: number
+                          format: int64
+                          type: integer
                         topicArn:
                           description: The ARN of an SNS topic to notify
                           type: string
@@ -721,7 +740,8 @@ spec:
                       properties:
                         position:
                           description: The position of the action in the receipt rule
-                          type: number
+                          format: int64
+                          type: integer
                         scope:
                           description: The scope to apply. The only acceptable value
                             is RuleSet.
@@ -743,7 +763,8 @@ spec:
                           type: string
                         position:
                           description: The position of the action in the receipt rule
-                          type: number
+                          format: int64
+                          type: integer
                         topicArn:
                           description: The ARN of an SNS topic to notify
                           type: string

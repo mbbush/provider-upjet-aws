@@ -79,15 +79,11 @@ type DataRepositoryAssociationInitParameters struct {
 	FileSystemPath *string `json:"fileSystemPath,omitempty" tf:"file_system_path,omitempty"`
 
 	// For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.
-	ImportedFileChunkSize *float64 `json:"importedFileChunkSize,omitempty" tf:"imported_file_chunk_size,omitempty"`
+	ImportedFileChunkSize *int64 `json:"importedFileChunkSize,omitempty" tf:"imported_file_chunk_size,omitempty"`
 
 	// See the s3 configuration block. Max of 1.
 	// The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data repository association. The configuration defines which file events (new, changed, or deleted files or directories) are automatically imported from the linked data repository to the file system or automatically exported from the file system to the data repository.
 	S3 *S3InitParameters `json:"s3,omitempty" tf:"s3,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type DataRepositoryAssociationObservation struct {
@@ -117,7 +113,7 @@ type DataRepositoryAssociationObservation struct {
 	ID *string `json:"id,omitempty" tf:"id,omitempty"`
 
 	// For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.
-	ImportedFileChunkSize *float64 `json:"importedFileChunkSize,omitempty" tf:"imported_file_chunk_size,omitempty"`
+	ImportedFileChunkSize *int64 `json:"importedFileChunkSize,omitempty" tf:"imported_file_chunk_size,omitempty"`
 
 	// See the s3 configuration block. Max of 1.
 	// The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data repository association. The configuration defines which file events (new, changed, or deleted files or directories) are automatically imported from the linked data repository to the file system or automatically exported from the file system to the data repository.
@@ -166,7 +162,7 @@ type DataRepositoryAssociationParameters struct {
 
 	// For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.
 	// +kubebuilder:validation:Optional
-	ImportedFileChunkSize *float64 `json:"importedFileChunkSize,omitempty" tf:"imported_file_chunk_size,omitempty"`
+	ImportedFileChunkSize *int64 `json:"importedFileChunkSize,omitempty" tf:"imported_file_chunk_size,omitempty"`
 
 	// Region is the region you'd like your resource to be created in.
 	// +upjet:crd:field:TFTag=-
@@ -177,11 +173,6 @@ type DataRepositoryAssociationParameters struct {
 	// The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data repository association. The configuration defines which file events (new, changed, or deleted files or directories) are automatically imported from the linked data repository to the file system or automatically exported from the file system to the data repository.
 	// +kubebuilder:validation:Optional
 	S3 *S3Parameters `json:"s3,omitempty" tf:"s3,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type S3InitParameters struct {

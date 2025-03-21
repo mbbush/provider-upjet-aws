@@ -26,10 +26,6 @@ type DatabaseInitParameters struct {
 	// Selector for a Key in kms to populate kmsKeyId.
 	// +kubebuilder:validation:Optional
 	KMSKeyIDSelector *v1.Selector `json:"kmsKeyIdSelector,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type DatabaseObservation struct {
@@ -44,7 +40,7 @@ type DatabaseObservation struct {
 	KMSKeyID *string `json:"kmsKeyId,omitempty" tf:"kms_key_id,omitempty"`
 
 	// The total number of tables found within the Timestream database.
-	TableCount *float64 `json:"tableCount,omitempty" tf:"table_count,omitempty"`
+	TableCount *int64 `json:"tableCount,omitempty" tf:"table_count,omitempty"`
 
 	// Key-value map of resource tags.
 	// +mapType=granular
@@ -74,11 +70,6 @@ type DatabaseParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // DatabaseSpec defines the desired state of Database

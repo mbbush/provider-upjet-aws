@@ -84,12 +84,6 @@ spec:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   vpc:
                     description: The ID of VPC that you want to associate the namespace
                       with.
@@ -191,12 +185,6 @@ spec:
                   name:
                     description: The name of the namespace.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   vpc:
                     description: The ID of VPC that you want to associate the namespace
                       with.

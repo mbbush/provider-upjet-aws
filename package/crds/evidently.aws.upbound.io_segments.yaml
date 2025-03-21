@@ -84,12 +84,6 @@ spec:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -113,12 +107,6 @@ spec:
                     description: The pattern to use for the segment. For more information
                       about pattern syntax, see Segment rule pattern syntax.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -310,7 +298,8 @@ spec:
                     description: The number of experiments that this segment is used
                       in. This count includes all current experiments, not just those
                       that are currently running.
-                    type: number
+                    format: int64
+                    type: integer
                   id:
                     description: The ID has the same value as the ARN of the segment.
                     type: string
@@ -322,7 +311,8 @@ spec:
                     description: The number of launches that this segment is used
                       in. This count includes all current launches, not just those
                       that are currently running.
-                    type: number
+                    format: int64
+                    type: integer
                   pattern:
                     description: The pattern to use for the segment. For more information
                       about pattern syntax, see Segment rule pattern syntax.

@@ -12,5 +12,3 @@ spec:
     instanceType: c4.xlarge
     region: us-west-1
     spotPrice: "0.03"
-    tags:
-      Name: CheapWorker

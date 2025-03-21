@@ -527,12 +527,12 @@ func (in *ScalingParametersInitParameters) DeepCopyInto(out *ScalingParametersIn
 	}
 	if in.DesiredPartitionCount != nil {
 		in, out := &in.DesiredPartitionCount, &out.DesiredPartitionCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.DesiredReplicationCount != nil {
 		in, out := &in.DesiredReplicationCount, &out.DesiredReplicationCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -557,12 +557,12 @@ func (in *ScalingParametersObservation) DeepCopyInto(out *ScalingParametersObser
 	}
 	if in.DesiredPartitionCount != nil {
 		in, out := &in.DesiredPartitionCount, &out.DesiredPartitionCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.DesiredReplicationCount != nil {
 		in, out := &in.DesiredReplicationCount, &out.DesiredReplicationCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -587,12 +587,12 @@ func (in *ScalingParametersParameters) DeepCopyInto(out *ScalingParametersParame
 	}
 	if in.DesiredPartitionCount != nil {
 		in, out := &in.DesiredPartitionCount, &out.DesiredPartitionCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.DesiredReplicationCount != nil {
 		in, out := &in.DesiredReplicationCount, &out.DesiredReplicationCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }

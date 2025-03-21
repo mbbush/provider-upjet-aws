@@ -708,7 +708,7 @@ func (in *SMSChannelObservation) DeepCopyInto(out *SMSChannelObservation) {
 	}
 	if in.PromotionalMessagesPerSecond != nil {
 		in, out := &in.PromotionalMessagesPerSecond, &out.PromotionalMessagesPerSecond
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.SenderID != nil {
@@ -723,7 +723,7 @@ func (in *SMSChannelObservation) DeepCopyInto(out *SMSChannelObservation) {
 	}
 	if in.TransactionalMessagesPerSecond != nil {
 		in, out := &in.TransactionalMessagesPerSecond, &out.TransactionalMessagesPerSecond
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }

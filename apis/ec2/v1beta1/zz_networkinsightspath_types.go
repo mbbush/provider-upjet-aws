@@ -24,7 +24,7 @@ type NetworkInsightsPathInitParameters struct {
 	DestinationIP *string `json:"destinationIp,omitempty" tf:"destination_ip,omitempty"`
 
 	// Destination port to analyze access to.
-	DestinationPort *float64 `json:"destinationPort,omitempty" tf:"destination_port,omitempty"`
+	DestinationPort *int64 `json:"destinationPort,omitempty" tf:"destination_port,omitempty"`
 
 	// Reference to a NetworkInterface in ec2 to populate destination.
 	// +kubebuilder:validation:Optional
@@ -52,10 +52,6 @@ type NetworkInsightsPathInitParameters struct {
 	// Selector for a NetworkInterface in ec2 to populate source.
 	// +kubebuilder:validation:Optional
 	SourceSelector *v1.Selector `json:"sourceSelector,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type NetworkInsightsPathObservation struct {
@@ -73,7 +69,7 @@ type NetworkInsightsPathObservation struct {
 	DestinationIP *string `json:"destinationIp,omitempty" tf:"destination_ip,omitempty"`
 
 	// Destination port to analyze access to.
-	DestinationPort *float64 `json:"destinationPort,omitempty" tf:"destination_port,omitempty"`
+	DestinationPort *int64 `json:"destinationPort,omitempty" tf:"destination_port,omitempty"`
 
 	// ID of the Network Insights Path.
 	ID *string `json:"id,omitempty" tf:"id,omitempty"`
@@ -113,7 +109,7 @@ type NetworkInsightsPathParameters struct {
 
 	// Destination port to analyze access to.
 	// +kubebuilder:validation:Optional
-	DestinationPort *float64 `json:"destinationPort,omitempty" tf:"destination_port,omitempty"`
+	DestinationPort *int64 `json:"destinationPort,omitempty" tf:"destination_port,omitempty"`
 
 	// Reference to a NetworkInterface in ec2 to populate destination.
 	// +kubebuilder:validation:Optional
@@ -149,11 +145,6 @@ type NetworkInsightsPathParameters struct {
 	// Selector for a NetworkInterface in ec2 to populate source.
 	// +kubebuilder:validation:Optional
 	SourceSelector *v1.Selector `json:"sourceSelector,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // NetworkInsightsPathSpec defines the desired state of NetworkInsightsPath

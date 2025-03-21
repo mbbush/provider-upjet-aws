@@ -811,10 +811,12 @@ spec:
                     properties:
                       downloadSpeed:
                         description: Download speed in Mbps.
-                        type: number
+                        format: int64
+                        type: integer
                       uploadSpeed:
                         description: Upload speed in Mbps.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   description:
                     description: A description of the link.
@@ -984,12 +986,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   type:
                     description: The type of the link.
                     type: string
@@ -1015,10 +1011,12 @@ spec:
                     properties:
                       downloadSpeed:
                         description: Download speed in Mbps.
-                        type: number
+                        format: int64
+                        type: integer
                       uploadSpeed:
                         description: Upload speed in Mbps.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   description:
                     description: A description of the link.
@@ -1184,12 +1182,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   type:
                     description: The type of the link.
                     type: string
@@ -1380,10 +1372,12 @@ spec:
                     properties:
                       downloadSpeed:
                         description: Download speed in Mbps.
-                        type: number
+                        format: int64
+                        type: integer
                       uploadSpeed:
                         description: Upload speed in Mbps.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   description:
                     description: A description of the link.

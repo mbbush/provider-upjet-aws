@@ -32,10 +32,6 @@ type ConfigurationInitParameters_2 struct {
 
 	// Name of the configuration.
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type ConfigurationObservation_2 struct {
@@ -62,7 +58,7 @@ type ConfigurationObservation_2 struct {
 	ID *string `json:"id,omitempty" tf:"id,omitempty"`
 
 	// Latest revision of the configuration.
-	LatestRevision *float64 `json:"latestRevision,omitempty" tf:"latest_revision,omitempty"`
+	LatestRevision *int64 `json:"latestRevision,omitempty" tf:"latest_revision,omitempty"`
 
 	// Name of the configuration.
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
@@ -106,11 +102,6 @@ type ConfigurationParameters_2 struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // ConfigurationSpec defines the desired state of Configuration

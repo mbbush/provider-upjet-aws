@@ -155,12 +155,6 @@ spec:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   targetRole:
                     description: Indicates whether the DB proxy endpoint can be used
                       for read/write or read-only operations. The default is READ_WRITE.
@@ -274,12 +268,6 @@ spec:
                   for example because of an external controller is managing them, like an
                   autoscaler.
                 properties:
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   targetRole:
                     description: Indicates whether the DB proxy endpoint can be used
                       for read/write or read-only operations. The default is READ_WRITE.

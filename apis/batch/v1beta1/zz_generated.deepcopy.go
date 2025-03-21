@@ -73,22 +73,6 @@ func (in *ComputeEnvironmentInitParameters) DeepCopyInto(out *ComputeEnvironment
 		*out = new(string)
 		**out = **in
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.Type != nil {
 		in, out := &in.Type, &out.Type
 		*out = new(string)
@@ -378,22 +362,6 @@ func (in *ComputeEnvironmentParameters) DeepCopyInto(out *ComputeEnvironmentPara
 		*out = new(string)
 		**out = **in
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.Type != nil {
 		in, out := &in.Type, &out.Type
 		*out = new(string)
@@ -461,12 +429,12 @@ func (in *ComputeResourcesInitParameters) DeepCopyInto(out *ComputeResourcesInit
 	}
 	if in.BidPercentage != nil {
 		in, out := &in.BidPercentage, &out.BidPercentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.DesiredVcpus != nil {
 		in, out := &in.DesiredVcpus, &out.DesiredVcpus
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.EC2Configuration != nil {
@@ -519,12 +487,12 @@ func (in *ComputeResourcesInitParameters) DeepCopyInto(out *ComputeResourcesInit
 	}
 	if in.MaxVcpus != nil {
 		in, out := &in.MaxVcpus, &out.MaxVcpus
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MinVcpus != nil {
 		in, out := &in.MinVcpus, &out.MinVcpus
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.PlacementGroup != nil {
@@ -593,22 +561,6 @@ func (in *ComputeResourcesInitParameters) DeepCopyInto(out *ComputeResourcesInit
 		*out = new(v1.Selector)
 		(*in).DeepCopyInto(*out)
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.Type != nil {
 		in, out := &in.Type, &out.Type
 		*out = new(string)
@@ -636,12 +588,12 @@ func (in *ComputeResourcesObservation) DeepCopyInto(out *ComputeResourcesObserva
 	}
 	if in.BidPercentage != nil {
 		in, out := &in.BidPercentage, &out.BidPercentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.DesiredVcpus != nil {
 		in, out := &in.DesiredVcpus, &out.DesiredVcpus
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.EC2Configuration != nil {
@@ -684,12 +636,12 @@ func (in *ComputeResourcesObservation) DeepCopyInto(out *ComputeResourcesObserva
 	}
 	if in.MaxVcpus != nil {
 		in, out := &in.MaxVcpus, &out.MaxVcpus
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MinVcpus != nil {
 		in, out := &in.MinVcpus, &out.MinVcpus
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.PlacementGroup != nil {
@@ -767,12 +719,12 @@ func (in *ComputeResourcesParameters) DeepCopyInto(out *ComputeResourcesParamete
 	}
 	if in.BidPercentage != nil {
 		in, out := &in.BidPercentage, &out.BidPercentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.DesiredVcpus != nil {
 		in, out := &in.DesiredVcpus, &out.DesiredVcpus
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.EC2Configuration != nil {
@@ -825,12 +777,12 @@ func (in *ComputeResourcesParameters) DeepCopyInto(out *ComputeResourcesParamete
 	}
 	if in.MaxVcpus != nil {
 		in, out := &in.MaxVcpus, &out.MaxVcpus
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MinVcpus != nil {
 		in, out := &in.MinVcpus, &out.MinVcpus
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.PlacementGroup != nil {
@@ -898,22 +850,6 @@ func (in *ComputeResourcesParameters) DeepCopyInto(out *ComputeResourcesParamete
 		in, out := &in.SubnetsSelector, &out.SubnetsSelector
 		*out = new(v1.Selector)
 		(*in).DeepCopyInto(*out)
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.Type != nil {
 		in, out := &in.Type, &out.Type
@@ -4669,7 +4605,7 @@ func (in *UpdatePolicyInitParameters) DeepCopyInto(out *UpdatePolicyInitParamete
 	*out = *in
 	if in.JobExecutionTimeoutMinutes != nil {
 		in, out := &in.JobExecutionTimeoutMinutes, &out.JobExecutionTimeoutMinutes
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.TerminateJobsOnUpdate != nil {
@@ -4694,7 +4630,7 @@ func (in *UpdatePolicyObservation) DeepCopyInto(out *UpdatePolicyObservation) {
 	*out = *in
 	if in.JobExecutionTimeoutMinutes != nil {
 		in, out := &in.JobExecutionTimeoutMinutes, &out.JobExecutionTimeoutMinutes
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.TerminateJobsOnUpdate != nil {
@@ -4719,7 +4655,7 @@ func (in *UpdatePolicyParameters) DeepCopyInto(out *UpdatePolicyParameters) {
 	*out = *in
 	if in.JobExecutionTimeoutMinutes != nil {
 		in, out := &in.JobExecutionTimeoutMinutes, &out.JobExecutionTimeoutMinutes
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.TerminateJobsOnUpdate != nil {

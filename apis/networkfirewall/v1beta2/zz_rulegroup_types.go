@@ -102,30 +102,30 @@ type DestinationParameters struct {
 type DestinationPortInitParameters struct {
 
 	// The lower limit of the port range. This must be less than or equal to the to_port.
-	FromPort *float64 `json:"fromPort,omitempty" tf:"from_port,omitempty"`
+	FromPort *int64 `json:"fromPort,omitempty" tf:"from_port,omitempty"`
 
 	// The upper limit of the port range. This must be greater than or equal to the from_port.
-	ToPort *float64 `json:"toPort,omitempty" tf:"to_port,omitempty"`
+	ToPort *int64 `json:"toPort,omitempty" tf:"to_port,omitempty"`
 }
 
 type DestinationPortObservation struct {
 
 	// The lower limit of the port range. This must be less than or equal to the to_port.
-	FromPort *float64 `json:"fromPort,omitempty" tf:"from_port,omitempty"`
+	FromPort *int64 `json:"fromPort,omitempty" tf:"from_port,omitempty"`
 
 	// The upper limit of the port range. This must be greater than or equal to the from_port.
-	ToPort *float64 `json:"toPort,omitempty" tf:"to_port,omitempty"`
+	ToPort *int64 `json:"toPort,omitempty" tf:"to_port,omitempty"`
 }
 
 type DestinationPortParameters struct {
 
 	// The lower limit of the port range. This must be less than or equal to the to_port.
 	// +kubebuilder:validation:Optional
-	FromPort *float64 `json:"fromPort" tf:"from_port,omitempty"`
+	FromPort *int64 `json:"fromPort" tf:"from_port,omitempty"`
 
 	// The upper limit of the port range. This must be greater than or equal to the from_port.
 	// +kubebuilder:validation:Optional
-	ToPort *float64 `json:"toPort,omitempty" tf:"to_port,omitempty"`
+	ToPort *int64 `json:"toPort,omitempty" tf:"to_port,omitempty"`
 }
 
 type HeaderInitParameters struct {
@@ -326,7 +326,7 @@ type MatchAttributesInitParameters struct {
 
 	// Set of protocols to inspect for, specified using the protocol's assigned internet protocol number (IANA). If not specified, this matches with any protocol.
 	// +listType=set
-	Protocols []*float64 `json:"protocols,omitempty" tf:"protocols,omitempty"`
+	Protocols []*int64 `json:"protocols,omitempty" tf:"protocols,omitempty"`
 
 	// Set of configuration blocks describing the source IP address and address ranges to inspect for, in CIDR notation. If not specified, this matches with any source address. See Source below for details.
 	Source []SourceInitParameters `json:"source,omitempty" tf:"source,omitempty"`
@@ -348,7 +348,7 @@ type MatchAttributesObservation struct {
 
 	// Set of protocols to inspect for, specified using the protocol's assigned internet protocol number (IANA). If not specified, this matches with any protocol.
 	// +listType=set
-	Protocols []*float64 `json:"protocols,omitempty" tf:"protocols,omitempty"`
+	Protocols []*int64 `json:"protocols,omitempty" tf:"protocols,omitempty"`
 
 	// Set of configuration blocks describing the source IP address and address ranges to inspect for, in CIDR notation. If not specified, this matches with any source address. See Source below for details.
 	Source []SourceObservation `json:"source,omitempty" tf:"source,omitempty"`
@@ -373,7 +373,7 @@ type MatchAttributesParameters struct {
 	// Set of protocols to inspect for, specified using the protocol's assigned internet protocol number (IANA). If not specified, this matches with any protocol.
 	// +kubebuilder:validation:Optional
 	// +listType=set
-	Protocols []*float64 `json:"protocols,omitempty" tf:"protocols,omitempty"`
+	Protocols []*int64 `json:"protocols,omitempty" tf:"protocols,omitempty"`
 
 	// Set of configuration blocks describing the source IP address and address ranges to inspect for, in CIDR notation. If not specified, this matches with any source address. See Source below for details.
 	// +kubebuilder:validation:Optional
@@ -536,7 +536,7 @@ type RuleGroupEncryptionConfigurationParameters struct {
 type RuleGroupInitParameters struct {
 
 	// The maximum number of operating resources that this rule group can use. For a stateless rule group, the capacity required is the sum of the capacity requirements of the individual rules. For a stateful rule group, the minimum capacity required is the number of individual rules.
-	Capacity *float64 `json:"capacity,omitempty" tf:"capacity,omitempty"`
+	Capacity *int64 `json:"capacity,omitempty" tf:"capacity,omitempty"`
 
 	// A friendly description of the rule group.
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
@@ -553,10 +553,6 @@ type RuleGroupInitParameters struct {
 	// The stateful rule group rules specifications in Suricata file format, with one rule per line. Use this to import your existing Suricata compatible rule groups. Required unless rule_group is specified.
 	Rules *string `json:"rules,omitempty" tf:"rules,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Whether the rule group is stateless (containing stateless rules) or stateful (containing stateful rules). Valid values include: STATEFUL or STATELESS.
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
 }
@@ -567,7 +563,7 @@ type RuleGroupObservation struct {
 	Arn *string `json:"arn,omitempty" tf:"arn,omitempty"`
 
 	// The maximum number of operating resources that this rule group can use. For a stateless rule group, the capacity required is the sum of the capacity requirements of the individual rules. For a stateful rule group, the minimum capacity required is the number of individual rules.
-	Capacity *float64 `json:"capacity,omitempty" tf:"capacity,omitempty"`
+	Capacity *int64 `json:"capacity,omitempty" tf:"capacity,omitempty"`
 
 	// A friendly description of the rule group.
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
@@ -606,7 +602,7 @@ type RuleGroupParameters struct {
 
 	// The maximum number of operating resources that this rule group can use. For a stateless rule group, the capacity required is the sum of the capacity requirements of the individual rules. For a stateful rule group, the minimum capacity required is the number of individual rules.
 	// +kubebuilder:validation:Optional
-	Capacity *float64 `json:"capacity,omitempty" tf:"capacity,omitempty"`
+	Capacity *int64 `json:"capacity,omitempty" tf:"capacity,omitempty"`
 
 	// A friendly description of the rule group.
 	// +kubebuilder:validation:Optional
@@ -632,11 +628,6 @@ type RuleGroupParameters struct {
 	// The stateful rule group rules specifications in Suricata file format, with one rule per line. Use this to import your existing Suricata compatible rule groups. Required unless rule_group is specified.
 	// +kubebuilder:validation:Optional
 	Rules *string `json:"rules,omitempty" tf:"rules,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Whether the rule group is stateless (containing stateless rules) or stateful (containing stateful rules). Valid values include: STATEFUL or STATELESS.
 	// +kubebuilder:validation:Optional
@@ -872,30 +863,30 @@ type SourceParameters struct {
 type SourcePortInitParameters struct {
 
 	// The lower limit of the port range. This must be less than or equal to the to_port.
-	FromPort *float64 `json:"fromPort,omitempty" tf:"from_port,omitempty"`
+	FromPort *int64 `json:"fromPort,omitempty" tf:"from_port,omitempty"`
 
 	// The upper limit of the port range. This must be greater than or equal to the from_port.
-	ToPort *float64 `json:"toPort,omitempty" tf:"to_port,omitempty"`
+	ToPort *int64 `json:"toPort,omitempty" tf:"to_port,omitempty"`
 }
 
 type SourcePortObservation struct {
 
 	// The lower limit of the port range. This must be less than or equal to the to_port.
-	FromPort *float64 `json:"fromPort,omitempty" tf:"from_port,omitempty"`
+	FromPort *int64 `json:"fromPort,omitempty" tf:"from_port,omitempty"`
 
 	// The upper limit of the port range. This must be greater than or equal to the from_port.
-	ToPort *float64 `json:"toPort,omitempty" tf:"to_port,omitempty"`
+	ToPort *int64 `json:"toPort,omitempty" tf:"to_port,omitempty"`
 }
 
 type SourcePortParameters struct {
 
 	// The lower limit of the port range. This must be less than or equal to the to_port.
 	// +kubebuilder:validation:Optional
-	FromPort *float64 `json:"fromPort" tf:"from_port,omitempty"`
+	FromPort *int64 `json:"fromPort" tf:"from_port,omitempty"`
 
 	// The upper limit of the port range. This must be greater than or equal to the from_port.
 	// +kubebuilder:validation:Optional
-	ToPort *float64 `json:"toPort,omitempty" tf:"to_port,omitempty"`
+	ToPort *int64 `json:"toPort,omitempty" tf:"to_port,omitempty"`
 }
 
 type StatefulRuleInitParameters struct {
@@ -959,7 +950,7 @@ type StatefulRuleParameters struct {
 type StatelessRuleInitParameters struct {
 
 	// A setting that indicates the order in which to run this rule relative to all of the rules that are defined for a stateless rule group. AWS Network Firewall evaluates the rules in a rule group starting with the lowest priority setting.
-	Priority *float64 `json:"priority,omitempty" tf:"priority,omitempty"`
+	Priority *int64 `json:"priority,omitempty" tf:"priority,omitempty"`
 
 	// A configuration block defining the stateless 5-tuple packet inspection criteria and the action to take on a packet that matches the criteria. See Rule Definition below for details.
 	RuleDefinition *RuleDefinitionInitParameters `json:"ruleDefinition,omitempty" tf:"rule_definition,omitempty"`
@@ -968,7 +959,7 @@ type StatelessRuleInitParameters struct {
 type StatelessRuleObservation struct {
 
 	// A setting that indicates the order in which to run this rule relative to all of the rules that are defined for a stateless rule group. AWS Network Firewall evaluates the rules in a rule group starting with the lowest priority setting.
-	Priority *float64 `json:"priority,omitempty" tf:"priority,omitempty"`
+	Priority *int64 `json:"priority,omitempty" tf:"priority,omitempty"`
 
 	// A configuration block defining the stateless 5-tuple packet inspection criteria and the action to take on a packet that matches the criteria. See Rule Definition below for details.
 	RuleDefinition *RuleDefinitionObservation `json:"ruleDefinition,omitempty" tf:"rule_definition,omitempty"`
@@ -978,7 +969,7 @@ type StatelessRuleParameters struct {
 
 	// A setting that indicates the order in which to run this rule relative to all of the rules that are defined for a stateless rule group. AWS Network Firewall evaluates the rules in a rule group starting with the lowest priority setting.
 	// +kubebuilder:validation:Optional
-	Priority *float64 `json:"priority" tf:"priority,omitempty"`
+	Priority *int64 `json:"priority" tf:"priority,omitempty"`
 
 	// A configuration block defining the stateless 5-tuple packet inspection criteria and the action to take on a packet that matches the criteria. See Rule Definition below for details.
 	// +kubebuilder:validation:Optional

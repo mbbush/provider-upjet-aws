@@ -1634,7 +1634,7 @@ func (in *CustomDataIdentifierInitParameters) DeepCopyInto(out *CustomDataIdenti
 	}
 	if in.MaximumMatchDistance != nil {
 		in, out := &in.MaximumMatchDistance, &out.MaximumMatchDistance
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Name != nil {
@@ -1754,7 +1754,7 @@ func (in *CustomDataIdentifierObservation) DeepCopyInto(out *CustomDataIdentifie
 	}
 	if in.MaximumMatchDistance != nil {
 		in, out := &in.MaximumMatchDistance, &out.MaximumMatchDistance
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Name != nil {
@@ -1843,7 +1843,7 @@ func (in *CustomDataIdentifierParameters) DeepCopyInto(out *CustomDataIdentifier
 	}
 	if in.MaximumMatchDistance != nil {
 		in, out := &in.MaximumMatchDistance, &out.MaximumMatchDistance
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Name != nil {

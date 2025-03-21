@@ -49,10 +49,6 @@ type QuerySuggestionsBlockListInitParameters struct {
 
 	// S3 path where your block list text file is located. See details below.
 	SourceS3Path *SourceS3PathInitParameters `json:"sourceS3Path,omitempty" tf:"source_s3_path,omitempty"`
-
-	// Key-value map of resource tags. If configured with a provider default_tags configuration block, tags with matching keys will overwrite those defined at the provider-level.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type QuerySuggestionsBlockListObservation struct {
@@ -137,11 +133,6 @@ type QuerySuggestionsBlockListParameters struct {
 	// S3 path where your block list text file is located. See details below.
 	// +kubebuilder:validation:Optional
 	SourceS3Path *SourceS3PathParameters `json:"sourceS3Path,omitempty" tf:"source_s3_path,omitempty"`
-
-	// Key-value map of resource tags. If configured with a provider default_tags configuration block, tags with matching keys will overwrite those defined at the provider-level.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type SourceS3PathInitParameters struct {

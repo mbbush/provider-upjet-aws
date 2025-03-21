@@ -11,8 +11,6 @@ spec:
     description: Allow TLS inbound traffic and all outbound traffic
     name: allow_tls
     region: us-west-1
-    tags:
-      Name: allow_tls
     vpcIdSelector:
       matchLabels:
         testing.upbound.io/example-name: main

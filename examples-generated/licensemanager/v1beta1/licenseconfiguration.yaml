@@ -16,5 +16,3 @@ spec:
     - '#minimumSockets=2'
     name: Example
     region: us-west-1
-    tags:
-      foo: barr

@@ -16,7 +16,7 @@ import (
 type DiskIopsConfigurationInitParameters struct {
 
 	// - The total number of SSD IOPS provisioned for the file system.
-	Iops *float64 `json:"iops,omitempty" tf:"iops,omitempty"`
+	Iops *int64 `json:"iops,omitempty" tf:"iops,omitempty"`
 
 	// - Specifies whether the number of IOPS for the file system is using the system. Valid values are AUTOMATIC and USER_PROVISIONED. Default value is AUTOMATIC.
 	Mode *string `json:"mode,omitempty" tf:"mode,omitempty"`
@@ -25,7 +25,7 @@ type DiskIopsConfigurationInitParameters struct {
 type DiskIopsConfigurationObservation struct {
 
 	// - The total number of SSD IOPS provisioned for the file system.
-	Iops *float64 `json:"iops,omitempty" tf:"iops,omitempty"`
+	Iops *int64 `json:"iops,omitempty" tf:"iops,omitempty"`
 
 	// - Specifies whether the number of IOPS for the file system is using the system. Valid values are AUTOMATIC and USER_PROVISIONED. Default value is AUTOMATIC.
 	Mode *string `json:"mode,omitempty" tf:"mode,omitempty"`
@@ -35,7 +35,7 @@ type DiskIopsConfigurationParameters struct {
 
 	// - The total number of SSD IOPS provisioned for the file system.
 	// +kubebuilder:validation:Optional
-	Iops *float64 `json:"iops,omitempty" tf:"iops,omitempty"`
+	Iops *int64 `json:"iops,omitempty" tf:"iops,omitempty"`
 
 	// - Specifies whether the number of IOPS for the file system is using the system. Valid values are AUTOMATIC and USER_PROVISIONED. Default value is AUTOMATIC.
 	// +kubebuilder:validation:Optional
@@ -92,7 +92,7 @@ type ManagementParameters struct {
 type OntapFileSystemInitParameters struct {
 
 	// The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can retain automatic backups for a maximum of 90 days.
-	AutomaticBackupRetentionDays *float64 `json:"automaticBackupRetentionDays,omitempty" tf:"automatic_backup_retention_days,omitempty"`
+	AutomaticBackupRetentionDays *int64 `json:"automaticBackupRetentionDays,omitempty" tf:"automatic_backup_retention_days,omitempty"`
 
 	// A recurring daily time, in the format HH:MM. HH is the zero-padded hour of the day (0-23), and MM is the zero-padded minute of the hour. For example, 05:00 specifies 5 AM daily. Requires automatic_backup_retention_days to be set.
 	DailyAutomaticBackupStartTime *string `json:"dailyAutomaticBackupStartTime,omitempty" tf:"daily_automatic_backup_start_time,omitempty"`
@@ -110,7 +110,7 @@ type OntapFileSystemInitParameters struct {
 	FSXAdminPasswordSecretRef *v1.SecretKeySelector `json:"fsxAdminPasswordSecretRef,omitempty" tf:"-"`
 
 	// - The number of ha_pairs to deploy for the file system. Valid value is 1 for SINGLE_AZ_1 or MULTI_AZ_1 and MULTI_AZ_2. Valid values are 1 through 12 for SINGLE_AZ_2.
-	HaPairs *float64 `json:"haPairs,omitempty" tf:"ha_pairs,omitempty"`
+	HaPairs *int64 `json:"haPairs,omitempty" tf:"ha_pairs,omitempty"`
 
 	// ARN for the KMS Key to encrypt the file system at rest, Defaults to an AWS managed KMS Key.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/kms/v1beta1.Key
@@ -157,7 +157,7 @@ type OntapFileSystemInitParameters struct {
 	SecurityGroupIds []*string `json:"securityGroupIds,omitempty" tf:"security_group_ids,omitempty"`
 
 	// The storage capacity (GiB) of the file system. Valid values between 1024 and 196608 for file systems with deployment_type SINGLE_AZ_1 and MULTI_AZ_1. Valid values are between 1024 and 524288 for MULTI_AZ_2. Valid values between 1024 (1024 per ha pair) and 1048576 for file systems with deployment_type SINGLE_AZ_2. For SINGLE_AZ_2, the 1048576 (1PB) maximum is only supported when using 2 or more ha_pairs, the maximum is 524288 (512TB) when using 1 ha_pair.
-	StorageCapacity *float64 `json:"storageCapacity,omitempty" tf:"storage_capacity,omitempty"`
+	StorageCapacity *int64 `json:"storageCapacity,omitempty" tf:"storage_capacity,omitempty"`
 
 	// - The filesystem storage type. defaults to SSD.
 	StorageType *string `json:"storageType,omitempty" tf:"storage_type,omitempty"`
@@ -176,15 +176,11 @@ type OntapFileSystemInitParameters struct {
 	// +crossplane:generate:reference:selectorFieldName=SubnetIDSelector
 	SubnetIds []*string `json:"subnetIds,omitempty" tf:"subnet_ids,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Sets the throughput capacity (in MBps) for the file system that you're creating. Valid values are 128, 256, 512, 1024, 2048, and 4096. This parameter is only supported when not using the ha_pairs parameter. Either throughput_capacity or throughput_capacity_per_ha_pair must be specified.
-	ThroughputCapacity *float64 `json:"throughputCapacity,omitempty" tf:"throughput_capacity,omitempty"`
+	ThroughputCapacity *int64 `json:"throughputCapacity,omitempty" tf:"throughput_capacity,omitempty"`
 
 	// Sets the per-HA-pair throughput capacity (in MBps) for the file system that you're creating, as opposed to throughput_capacity which specifies the total throughput capacity for the file system. Valid value for MULTI_AZ_1 and SINGLE_AZ_1 are 128, 256, 512, 1024, 2048, and 4096. Valid values for deployment type MULTI_AZ_2 and SINGLE_AZ_2 are 384,768,1536,3072,6144 where ha_pairs is 1. Valid values for deployment type SINGLE_AZ_2 are 1536, 3072, and 6144 where ha_pairs is greater than 1. This parameter is only supported when specifying the ha_pairs parameter. Either throughput_capacity or throughput_capacity_per_ha_pair must be specified.
-	ThroughputCapacityPerHaPair *float64 `json:"throughputCapacityPerHaPair,omitempty" tf:"throughput_capacity_per_ha_pair,omitempty"`
+	ThroughputCapacityPerHaPair *int64 `json:"throughputCapacityPerHaPair,omitempty" tf:"throughput_capacity_per_ha_pair,omitempty"`
 
 	// The preferred start time (in d:HH:MM format) to perform weekly maintenance, in the UTC time zone.
 	WeeklyMaintenanceStartTime *string `json:"weeklyMaintenanceStartTime,omitempty" tf:"weekly_maintenance_start_time,omitempty"`
@@ -196,7 +192,7 @@ type OntapFileSystemObservation struct {
 	Arn *string `json:"arn,omitempty" tf:"arn,omitempty"`
 
 	// The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can retain automatic backups for a maximum of 90 days.
-	AutomaticBackupRetentionDays *float64 `json:"automaticBackupRetentionDays,omitempty" tf:"automatic_backup_retention_days,omitempty"`
+	AutomaticBackupRetentionDays *int64 `json:"automaticBackupRetentionDays,omitempty" tf:"automatic_backup_retention_days,omitempty"`
 
 	// DNS name for the file system.
 	DNSName *string `json:"dnsName,omitempty" tf:"dns_name,omitempty"`
@@ -217,7 +213,7 @@ type OntapFileSystemObservation struct {
 	Endpoints []EndpointsObservation `json:"endpoints,omitempty" tf:"endpoints,omitempty"`
 
 	// - The number of ha_pairs to deploy for the file system. Valid value is 1 for SINGLE_AZ_1 or MULTI_AZ_1 and MULTI_AZ_2. Valid values are 1 through 12 for SINGLE_AZ_2.
-	HaPairs *float64 `json:"haPairs,omitempty" tf:"ha_pairs,omitempty"`
+	HaPairs *int64 `json:"haPairs,omitempty" tf:"ha_pairs,omitempty"`
 
 	// Identifier of the file system, e.g., fs-12345678
 	ID *string `json:"id,omitempty" tf:"id,omitempty"`
@@ -243,7 +239,7 @@ type OntapFileSystemObservation struct {
 	SecurityGroupIds []*string `json:"securityGroupIds,omitempty" tf:"security_group_ids,omitempty"`
 
 	// The storage capacity (GiB) of the file system. Valid values between 1024 and 196608 for file systems with deployment_type SINGLE_AZ_1 and MULTI_AZ_1. Valid values are between 1024 and 524288 for MULTI_AZ_2. Valid values between 1024 (1024 per ha pair) and 1048576 for file systems with deployment_type SINGLE_AZ_2. For SINGLE_AZ_2, the 1048576 (1PB) maximum is only supported when using 2 or more ha_pairs, the maximum is 524288 (512TB) when using 1 ha_pair.
-	StorageCapacity *float64 `json:"storageCapacity,omitempty" tf:"storage_capacity,omitempty"`
+	StorageCapacity *int64 `json:"storageCapacity,omitempty" tf:"storage_capacity,omitempty"`
 
 	// - The filesystem storage type. defaults to SSD.
 	StorageType *string `json:"storageType,omitempty" tf:"storage_type,omitempty"`
@@ -260,10 +256,10 @@ type OntapFileSystemObservation struct {
 	TagsAll map[string]*string `json:"tagsAll,omitempty" tf:"tags_all,omitempty"`
 
 	// Sets the throughput capacity (in MBps) for the file system that you're creating. Valid values are 128, 256, 512, 1024, 2048, and 4096. This parameter is only supported when not using the ha_pairs parameter. Either throughput_capacity or throughput_capacity_per_ha_pair must be specified.
-	ThroughputCapacity *float64 `json:"throughputCapacity,omitempty" tf:"throughput_capacity,omitempty"`
+	ThroughputCapacity *int64 `json:"throughputCapacity,omitempty" tf:"throughput_capacity,omitempty"`
 
 	// Sets the per-HA-pair throughput capacity (in MBps) for the file system that you're creating, as opposed to throughput_capacity which specifies the total throughput capacity for the file system. Valid value for MULTI_AZ_1 and SINGLE_AZ_1 are 128, 256, 512, 1024, 2048, and 4096. Valid values for deployment type MULTI_AZ_2 and SINGLE_AZ_2 are 384,768,1536,3072,6144 where ha_pairs is 1. Valid values for deployment type SINGLE_AZ_2 are 1536, 3072, and 6144 where ha_pairs is greater than 1. This parameter is only supported when specifying the ha_pairs parameter. Either throughput_capacity or throughput_capacity_per_ha_pair must be specified.
-	ThroughputCapacityPerHaPair *float64 `json:"throughputCapacityPerHaPair,omitempty" tf:"throughput_capacity_per_ha_pair,omitempty"`
+	ThroughputCapacityPerHaPair *int64 `json:"throughputCapacityPerHaPair,omitempty" tf:"throughput_capacity_per_ha_pair,omitempty"`
 
 	// Identifier of the Virtual Private Cloud for the file system.
 	VPCID *string `json:"vpcId,omitempty" tf:"vpc_id,omitempty"`
@@ -276,7 +272,7 @@ type OntapFileSystemParameters struct {
 
 	// The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can retain automatic backups for a maximum of 90 days.
 	// +kubebuilder:validation:Optional
-	AutomaticBackupRetentionDays *float64 `json:"automaticBackupRetentionDays,omitempty" tf:"automatic_backup_retention_days,omitempty"`
+	AutomaticBackupRetentionDays *int64 `json:"automaticBackupRetentionDays,omitempty" tf:"automatic_backup_retention_days,omitempty"`
 
 	// A recurring daily time, in the format HH:MM. HH is the zero-padded hour of the day (0-23), and MM is the zero-padded minute of the hour. For example, 05:00 specifies 5 AM daily. Requires automatic_backup_retention_days to be set.
 	// +kubebuilder:validation:Optional
@@ -300,7 +296,7 @@ type OntapFileSystemParameters struct {
 
 	// - The number of ha_pairs to deploy for the file system. Valid value is 1 for SINGLE_AZ_1 or MULTI_AZ_1 and MULTI_AZ_2. Valid values are 1 through 12 for SINGLE_AZ_2.
 	// +kubebuilder:validation:Optional
-	HaPairs *float64 `json:"haPairs,omitempty" tf:"ha_pairs,omitempty"`
+	HaPairs *int64 `json:"haPairs,omitempty" tf:"ha_pairs,omitempty"`
 
 	// ARN for the KMS Key to encrypt the file system at rest, Defaults to an AWS managed KMS Key.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/kms/v1beta1.Key
@@ -357,7 +353,7 @@ type OntapFileSystemParameters struct {
 
 	// The storage capacity (GiB) of the file system. Valid values between 1024 and 196608 for file systems with deployment_type SINGLE_AZ_1 and MULTI_AZ_1. Valid values are between 1024 and 524288 for MULTI_AZ_2. Valid values between 1024 (1024 per ha pair) and 1048576 for file systems with deployment_type SINGLE_AZ_2. For SINGLE_AZ_2, the 1048576 (1PB) maximum is only supported when using 2 or more ha_pairs, the maximum is 524288 (512TB) when using 1 ha_pair.
 	// +kubebuilder:validation:Optional
-	StorageCapacity *float64 `json:"storageCapacity,omitempty" tf:"storage_capacity,omitempty"`
+	StorageCapacity *int64 `json:"storageCapacity,omitempty" tf:"storage_capacity,omitempty"`
 
 	// - The filesystem storage type. defaults to SSD.
 	// +kubebuilder:validation:Optional
@@ -378,18 +374,13 @@ type OntapFileSystemParameters struct {
 	// +kubebuilder:validation:Optional
 	SubnetIds []*string `json:"subnetIds,omitempty" tf:"subnet_ids,omitempty"`
 
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Sets the throughput capacity (in MBps) for the file system that you're creating. Valid values are 128, 256, 512, 1024, 2048, and 4096. This parameter is only supported when not using the ha_pairs parameter. Either throughput_capacity or throughput_capacity_per_ha_pair must be specified.
 	// +kubebuilder:validation:Optional
-	ThroughputCapacity *float64 `json:"throughputCapacity,omitempty" tf:"throughput_capacity,omitempty"`
+	ThroughputCapacity *int64 `json:"throughputCapacity,omitempty" tf:"throughput_capacity,omitempty"`
 
 	// Sets the per-HA-pair throughput capacity (in MBps) for the file system that you're creating, as opposed to throughput_capacity which specifies the total throughput capacity for the file system. Valid value for MULTI_AZ_1 and SINGLE_AZ_1 are 128, 256, 512, 1024, 2048, and 4096. Valid values for deployment type MULTI_AZ_2 and SINGLE_AZ_2 are 384,768,1536,3072,6144 where ha_pairs is 1. Valid values for deployment type SINGLE_AZ_2 are 1536, 3072, and 6144 where ha_pairs is greater than 1. This parameter is only supported when specifying the ha_pairs parameter. Either throughput_capacity or throughput_capacity_per_ha_pair must be specified.
 	// +kubebuilder:validation:Optional
-	ThroughputCapacityPerHaPair *float64 `json:"throughputCapacityPerHaPair,omitempty" tf:"throughput_capacity_per_ha_pair,omitempty"`
+	ThroughputCapacityPerHaPair *int64 `json:"throughputCapacityPerHaPair,omitempty" tf:"throughput_capacity_per_ha_pair,omitempty"`
 
 	// The preferred start time (in d:HH:MM format) to perform weekly maintenance, in the UTC time zone.
 	// +kubebuilder:validation:Optional

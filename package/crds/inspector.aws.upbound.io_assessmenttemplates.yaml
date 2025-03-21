@@ -75,7 +75,8 @@ spec:
                 properties:
                   duration:
                     description: The duration of the inspector run.
-                    type: number
+                    format: int64
+                    type: integer
                   eventSubscription:
                     description: A block that enables sending notifications about
                       a specified assessment template event to a designated SNS topic.
@@ -181,12 +182,6 @@ spec:
                       type: string
                     type: array
                     x-kubernetes-list-type: set
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   targetArn:
                     description: The assessment target ARN to attach the template
                       to.
@@ -285,7 +280,8 @@ spec:
                 properties:
                   duration:
                     description: The duration of the inspector run.
-                    type: number
+                    format: int64
+                    type: integer
                   eventSubscription:
                     description: A block that enables sending notifications about
                       a specified assessment template event to a designated SNS topic.
@@ -387,12 +383,6 @@ spec:
                       type: string
                     type: array
                     x-kubernetes-list-type: set
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   targetArn:
                     description: The assessment target ARN to attach the template
                       to.
@@ -664,7 +654,8 @@ spec:
                     type: string
                   duration:
                     description: The duration of the inspector run.
-                    type: number
+                    format: int64
+                    type: integer
                   eventSubscription:
                     description: A block that enables sending notifications about
                       a specified assessment template event to a designated SNS topic.

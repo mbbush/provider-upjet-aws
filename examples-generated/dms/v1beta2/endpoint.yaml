@@ -24,6 +24,4 @@ spec:
     region: us-west-1
     serverName: test
     sslMode: none
-    tags:
-      Name: test
     username: test

@@ -32,10 +32,6 @@ type ConfigRuleInitParameters struct {
 
 	// Source specifies the rule owner, the rule identifier, and the notifications that cause the function to evaluate your AWS resources. See Source Below.
 	Source *SourceInitParameters `json:"source,omitempty" tf:"source,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type ConfigRuleObservation struct {
@@ -105,11 +101,6 @@ type ConfigRuleParameters struct {
 	// Source specifies the rule owner, the rule identifier, and the notifications that cause the function to evaluate your AWS resources. See Source Below.
 	// +kubebuilder:validation:Optional
 	Source *SourceParameters `json:"source,omitempty" tf:"source,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type CustomPolicyDetailsInitParameters struct {

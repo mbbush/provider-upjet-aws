@@ -1202,12 +1202,6 @@ spec:
                   stageName:
                     description: Name of the stage
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   variables:
                     additionalProperties:
                       type: string
@@ -1452,12 +1446,6 @@ spec:
                   stageName:
                     description: Name of the stage
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   variables:
                     additionalProperties:
                       type: string

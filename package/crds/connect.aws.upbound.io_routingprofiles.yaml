@@ -1122,7 +1122,8 @@ spec:
                             VOICE: Minimum value of 1. Maximum value of 1. Valid Range
                             for CHAT: Minimum value of 1. Maximum value of 10. Valid
                             Range for TASK: Minimum value of 1. Maximum value of 10.'
-                          type: number
+                          format: int64
+                          type: integer
                       type: object
                     type: array
                   name:
@@ -1144,11 +1145,13 @@ spec:
                           description: Specifies the delay, in seconds, that a contact
                             should be in the queue before they are routed to an available
                             agent
-                          type: number
+                          format: int64
+                          type: integer
                         priority:
                           description: Specifies the order in which contacts are to
                             be handled for the queue.
-                          type: number
+                          format: int64
+                          type: integer
                         queueId:
                           description: Specifies the identifier for the queue.
                           type: string
@@ -1158,12 +1161,6 @@ spec:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -1357,7 +1354,8 @@ spec:
                             VOICE: Minimum value of 1. Maximum value of 1. Valid Range
                             for CHAT: Minimum value of 1. Maximum value of 10. Valid
                             Range for TASK: Minimum value of 1. Maximum value of 10.'
-                          type: number
+                          format: int64
+                          type: integer
                       type: object
                     type: array
                   name:
@@ -1379,22 +1377,18 @@ spec:
                           description: Specifies the delay, in seconds, that a contact
                             should be in the queue before they are routed to an available
                             agent
-                          type: number
+                          format: int64
+                          type: integer
                         priority:
                           description: Specifies the order in which contacts are to
                             be handled for the queue.
-                          type: number
+                          format: int64
+                          type: integer
                         queueId:
                           description: Specifies the identifier for the queue.
                           type: string
                       type: object
                     type: array
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -1617,7 +1611,8 @@ spec:
                             VOICE: Minimum value of 1. Maximum value of 1. Valid Range
                             for CHAT: Minimum value of 1. Maximum value of 10. Valid
                             Range for TASK: Minimum value of 1. Maximum value of 10.'
-                          type: number
+                          format: int64
+                          type: integer
                       type: object
                     type: array
                   name:
@@ -1639,11 +1634,13 @@ spec:
                           description: Specifies the delay, in seconds, that a contact
                             should be in the queue before they are routed to an available
                             agent
-                          type: number
+                          format: int64
+                          type: integer
                         priority:
                           description: Specifies the order in which contacts are to
                             be handled for the queue.
-                          type: number
+                          format: int64
+                          type: integer
                         queueArn:
                           description: ARN for the queue.
                           type: string

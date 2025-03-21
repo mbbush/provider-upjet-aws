@@ -839,12 +839,6 @@ spec:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   variations:
                     description: One or more blocks that contain the configuration
                       of the feature's different variations. Detailed below
@@ -925,12 +919,6 @@ spec:
                       specified by any ongoing launches or experiments. Specify DEFAULT_VARIATION
                       to serve the default variation to all users instead.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   variations:
                     description: One or more blocks that contain the configuration
                       of the feature's different variations. Detailed below

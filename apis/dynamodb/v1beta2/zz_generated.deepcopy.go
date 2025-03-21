@@ -221,12 +221,12 @@ func (in *GlobalSecondaryIndexInitParameters) DeepCopyInto(out *GlobalSecondaryI
 	}
 	if in.ReadCapacity != nil {
 		in, out := &in.ReadCapacity, &out.ReadCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.WriteCapacity != nil {
 		in, out := &in.WriteCapacity, &out.WriteCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -282,12 +282,12 @@ func (in *GlobalSecondaryIndexObservation) DeepCopyInto(out *GlobalSecondaryInde
 	}
 	if in.ReadCapacity != nil {
 		in, out := &in.ReadCapacity, &out.ReadCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.WriteCapacity != nil {
 		in, out := &in.WriteCapacity, &out.WriteCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -343,12 +343,12 @@ func (in *GlobalSecondaryIndexParameters) DeepCopyInto(out *GlobalSecondaryIndex
 	}
 	if in.ReadCapacity != nil {
 		in, out := &in.ReadCapacity, &out.ReadCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.WriteCapacity != nil {
 		in, out := &in.WriteCapacity, &out.WriteCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -656,12 +656,12 @@ func (in *OnDemandThroughputInitParameters) DeepCopyInto(out *OnDemandThroughput
 	*out = *in
 	if in.MaxReadRequestUnits != nil {
 		in, out := &in.MaxReadRequestUnits, &out.MaxReadRequestUnits
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaxWriteRequestUnits != nil {
 		in, out := &in.MaxWriteRequestUnits, &out.MaxWriteRequestUnits
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -681,12 +681,12 @@ func (in *OnDemandThroughputObservation) DeepCopyInto(out *OnDemandThroughputObs
 	*out = *in
 	if in.MaxReadRequestUnits != nil {
 		in, out := &in.MaxReadRequestUnits, &out.MaxReadRequestUnits
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaxWriteRequestUnits != nil {
 		in, out := &in.MaxWriteRequestUnits, &out.MaxWriteRequestUnits
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -706,12 +706,12 @@ func (in *OnDemandThroughputParameters) DeepCopyInto(out *OnDemandThroughputPara
 	*out = *in
 	if in.MaxReadRequestUnits != nil {
 		in, out := &in.MaxReadRequestUnits, &out.MaxReadRequestUnits
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaxWriteRequestUnits != nil {
 		in, out := &in.MaxWriteRequestUnits, &out.MaxWriteRequestUnits
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1234,7 +1234,7 @@ func (in *TableInitParameters) DeepCopyInto(out *TableInitParameters) {
 	}
 	if in.ReadCapacity != nil {
 		in, out := &in.ReadCapacity, &out.ReadCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Replica != nil {
@@ -1289,25 +1289,9 @@ func (in *TableInitParameters) DeepCopyInto(out *TableInitParameters) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.WriteCapacity != nil {
 		in, out := &in.WriteCapacity, &out.WriteCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1425,7 +1409,7 @@ func (in *TableObservation) DeepCopyInto(out *TableObservation) {
 	}
 	if in.ReadCapacity != nil {
 		in, out := &in.ReadCapacity, &out.ReadCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Replica != nil {
@@ -1524,7 +1508,7 @@ func (in *TableObservation) DeepCopyInto(out *TableObservation) {
 	}
 	if in.WriteCapacity != nil {
 		in, out := &in.WriteCapacity, &out.WriteCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1544,12 +1528,12 @@ func (in *TableOnDemandThroughputInitParameters) DeepCopyInto(out *TableOnDemand
 	*out = *in
 	if in.MaxReadRequestUnits != nil {
 		in, out := &in.MaxReadRequestUnits, &out.MaxReadRequestUnits
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaxWriteRequestUnits != nil {
 		in, out := &in.MaxWriteRequestUnits, &out.MaxWriteRequestUnits
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1569,12 +1553,12 @@ func (in *TableOnDemandThroughputObservation) DeepCopyInto(out *TableOnDemandThr
 	*out = *in
 	if in.MaxReadRequestUnits != nil {
 		in, out := &in.MaxReadRequestUnits, &out.MaxReadRequestUnits
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaxWriteRequestUnits != nil {
 		in, out := &in.MaxWriteRequestUnits, &out.MaxWriteRequestUnits
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1594,12 +1578,12 @@ func (in *TableOnDemandThroughputParameters) DeepCopyInto(out *TableOnDemandThro
 	*out = *in
 	if in.MaxReadRequestUnits != nil {
 		in, out := &in.MaxReadRequestUnits, &out.MaxReadRequestUnits
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaxWriteRequestUnits != nil {
 		in, out := &in.MaxWriteRequestUnits, &out.MaxWriteRequestUnits
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1675,7 +1659,7 @@ func (in *TableParameters) DeepCopyInto(out *TableParameters) {
 	}
 	if in.ReadCapacity != nil {
 		in, out := &in.ReadCapacity, &out.ReadCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Region != nil {
@@ -1735,25 +1719,9 @@ func (in *TableParameters) DeepCopyInto(out *TableParameters) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.WriteCapacity != nil {
 		in, out := &in.WriteCapacity, &out.WriteCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }

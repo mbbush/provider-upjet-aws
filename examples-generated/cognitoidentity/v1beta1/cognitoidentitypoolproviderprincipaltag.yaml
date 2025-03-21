@@ -14,8 +14,6 @@ spec:
     identityProviderNameSelector:
       matchLabels:
         testing.upbound.io/example-name: example
-    principalTags:
-      test: value
     region: us-west-1
     useDefaults: false
 

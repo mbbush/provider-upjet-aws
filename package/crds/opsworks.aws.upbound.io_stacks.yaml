@@ -1733,12 +1733,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   useCustomCookbooks:
                     description: Boolean value controlling whether the custom cookbook
                       settings are enabled.
@@ -2183,12 +2177,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   useCustomCookbooks:
                     description: Boolean value controlling whether the custom cookbook
                       settings are enabled.

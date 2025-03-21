@@ -51,8 +51,6 @@ spec:
         nodeExporter:
         - enabledInBroker: true
     region: us-west-1
-    tags:
-      foo: bar
 
 ---
 
@@ -104,8 +102,6 @@ spec:
           testing.upbound.io/example-name: firehose_role
     name: terraform-kinesis-firehose-msk-broker-logs-stream
     region: us-west-1
-    tags:
-      LogDeliveryEnabled: placeholder
 
 ---
 

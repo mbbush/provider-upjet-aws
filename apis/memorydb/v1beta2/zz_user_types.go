@@ -23,7 +23,7 @@ type AuthenticationModeInitParameters struct {
 type AuthenticationModeObservation struct {
 
 	// Number of passwords belonging to the user if type is set to password.
-	PasswordCount *float64 `json:"passwordCount,omitempty" tf:"password_count,omitempty"`
+	PasswordCount *int64 `json:"passwordCount,omitempty" tf:"password_count,omitempty"`
 
 	// Specifies the authentication type. Valid values are: password or iam.
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
@@ -47,10 +47,6 @@ type UserInitParameters struct {
 
 	// Denotes the user's authentication properties. Detailed below.
 	AuthenticationMode *AuthenticationModeInitParameters `json:"authenticationMode,omitempty" tf:"authentication_mode,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type UserObservation struct {
@@ -93,11 +89,6 @@ type UserParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // UserSpec defines the desired state of User

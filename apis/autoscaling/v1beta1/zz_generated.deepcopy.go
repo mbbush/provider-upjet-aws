@@ -4848,7 +4848,7 @@ func (in *LifecycleHookInitParameters) DeepCopyInto(out *LifecycleHookInitParame
 	}
 	if in.HeartbeatTimeout != nil {
 		in, out := &in.HeartbeatTimeout, &out.HeartbeatTimeout
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.LifecycleTransition != nil {
@@ -4940,7 +4940,7 @@ func (in *LifecycleHookObservation) DeepCopyInto(out *LifecycleHookObservation) 
 	}
 	if in.HeartbeatTimeout != nil {
 		in, out := &in.HeartbeatTimeout, &out.HeartbeatTimeout
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ID != nil {
@@ -5005,7 +5005,7 @@ func (in *LifecycleHookParameters) DeepCopyInto(out *LifecycleHookParameters) {
 	}
 	if in.HeartbeatTimeout != nil {
 		in, out := &in.HeartbeatTimeout, &out.HeartbeatTimeout
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.LifecycleTransition != nil {
@@ -8734,7 +8734,7 @@ func (in *ScheduleInitParameters) DeepCopyInto(out *ScheduleInitParameters) {
 	*out = *in
 	if in.DesiredCapacity != nil {
 		in, out := &in.DesiredCapacity, &out.DesiredCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.EndTime != nil {
@@ -8744,12 +8744,12 @@ func (in *ScheduleInitParameters) DeepCopyInto(out *ScheduleInitParameters) {
 	}
 	if in.MaxSize != nil {
 		in, out := &in.MaxSize, &out.MaxSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MinSize != nil {
 		in, out := &in.MinSize, &out.MinSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Recurrence != nil {
@@ -8826,7 +8826,7 @@ func (in *ScheduleObservation) DeepCopyInto(out *ScheduleObservation) {
 	}
 	if in.DesiredCapacity != nil {
 		in, out := &in.DesiredCapacity, &out.DesiredCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.EndTime != nil {
@@ -8841,12 +8841,12 @@ func (in *ScheduleObservation) DeepCopyInto(out *ScheduleObservation) {
 	}
 	if in.MaxSize != nil {
 		in, out := &in.MaxSize, &out.MaxSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MinSize != nil {
 		in, out := &in.MinSize, &out.MinSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Recurrence != nil {
@@ -8896,7 +8896,7 @@ func (in *ScheduleParameters) DeepCopyInto(out *ScheduleParameters) {
 	}
 	if in.DesiredCapacity != nil {
 		in, out := &in.DesiredCapacity, &out.DesiredCapacity
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.EndTime != nil {
@@ -8906,12 +8906,12 @@ func (in *ScheduleParameters) DeepCopyInto(out *ScheduleParameters) {
 	}
 	if in.MaxSize != nil {
 		in, out := &in.MaxSize, &out.MaxSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MinSize != nil {
 		in, out := &in.MinSize, &out.MinSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Recurrence != nil {

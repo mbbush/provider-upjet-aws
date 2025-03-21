@@ -94,10 +94,6 @@ type InputInitParameters struct {
 	// The source URLs for a PULL-type input. See Sources for more details.
 	Sources []SourcesInitParameters `json:"sources,omitempty" tf:"sources,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// The different types of inputs that AWS Elemental MediaLive supports.
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
 
@@ -214,11 +210,6 @@ type InputParameters struct {
 	// The source URLs for a PULL-type input. See Sources for more details.
 	// +kubebuilder:validation:Optional
 	Sources []SourcesParameters `json:"sources,omitempty" tf:"sources,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// The different types of inputs that AWS Elemental MediaLive supports.
 	// +kubebuilder:validation:Optional

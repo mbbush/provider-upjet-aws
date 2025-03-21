@@ -211,7 +211,8 @@ spec:
                       can be inactive before the proxy disconnects it. You can set
                       this value higher or lower than the connection timeout limit
                       for the associated database.
-                    type: number
+                    format: int64
+                    type: integer
                   region:
                     description: Region is the region you'd like your resource to
                       be created in.
@@ -300,12 +301,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   vpcSecurityGroupIdRefs:
                     description: References to SecurityGroup in ec2 to populate vpcSecurityGroupIds.
                     items:
@@ -630,7 +625,8 @@ spec:
                       can be inactive before the proxy disconnects it. You can set
                       this value higher or lower than the connection timeout limit
                       for the associated database.
-                    type: number
+                    format: int64
+                    type: integer
                   requireTls:
                     description: A Boolean parameter that specifies whether Transport
                       Layer Security (TLS) encryption is required for connections
@@ -715,12 +711,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   vpcSecurityGroupIdRefs:
                     description: References to SecurityGroup in ec2 to populate vpcSecurityGroupIds.
                     items:
@@ -1146,7 +1136,8 @@ spec:
                       can be inactive before the proxy disconnects it. You can set
                       this value higher or lower than the connection timeout limit
                       for the associated database.
-                    type: number
+                    format: int64
+                    type: integer
                   requireTls:
                     description: A Boolean parameter that specifies whether Transport
                       Layer Security (TLS) encryption is required for connections

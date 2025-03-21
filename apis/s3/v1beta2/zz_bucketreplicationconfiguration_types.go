@@ -169,7 +169,7 @@ type BucketReplicationConfigurationRuleInitParameters struct {
 	Prefix *string `json:"prefix,omitempty" tf:"prefix,omitempty"`
 
 	// Priority associated with the rule. Priority should only be set if filter is configured. If not provided, defaults to 0. Priority must be unique between multiple rules.
-	Priority *float64 `json:"priority,omitempty" tf:"priority,omitempty"`
+	Priority *int64 `json:"priority,omitempty" tf:"priority,omitempty"`
 
 	// Specifies special object selection criteria. See below.
 	SourceSelectionCriteria *RuleSourceSelectionCriteriaInitParameters `json:"sourceSelectionCriteria,omitempty" tf:"source_selection_criteria,omitempty"`
@@ -199,7 +199,7 @@ type BucketReplicationConfigurationRuleObservation struct {
 	Prefix *string `json:"prefix,omitempty" tf:"prefix,omitempty"`
 
 	// Priority associated with the rule. Priority should only be set if filter is configured. If not provided, defaults to 0. Priority must be unique between multiple rules.
-	Priority *float64 `json:"priority,omitempty" tf:"priority,omitempty"`
+	Priority *int64 `json:"priority,omitempty" tf:"priority,omitempty"`
 
 	// Specifies special object selection criteria. See below.
 	SourceSelectionCriteria *RuleSourceSelectionCriteriaObservation `json:"sourceSelectionCriteria,omitempty" tf:"source_selection_criteria,omitempty"`
@@ -236,7 +236,7 @@ type BucketReplicationConfigurationRuleParameters struct {
 
 	// Priority associated with the rule. Priority should only be set if filter is configured. If not provided, defaults to 0. Priority must be unique between multiple rules.
 	// +kubebuilder:validation:Optional
-	Priority *float64 `json:"priority,omitempty" tf:"priority,omitempty"`
+	Priority *int64 `json:"priority,omitempty" tf:"priority,omitempty"`
 
 	// Specifies special object selection criteria. See below.
 	// +kubebuilder:validation:Optional
@@ -383,20 +383,20 @@ type EncryptionConfigurationParameters struct {
 type EventThresholdInitParameters struct {
 
 	// Time in minutes. Valid values: 15.
-	Minutes *float64 `json:"minutes,omitempty" tf:"minutes,omitempty"`
+	Minutes *int64 `json:"minutes,omitempty" tf:"minutes,omitempty"`
 }
 
 type EventThresholdObservation struct {
 
 	// Time in minutes. Valid values: 15.
-	Minutes *float64 `json:"minutes,omitempty" tf:"minutes,omitempty"`
+	Minutes *int64 `json:"minutes,omitempty" tf:"minutes,omitempty"`
 }
 
 type EventThresholdParameters struct {
 
 	// Time in minutes. Valid values: 15.
 	// +kubebuilder:validation:Optional
-	Minutes *float64 `json:"minutes" tf:"minutes,omitempty"`
+	Minutes *int64 `json:"minutes" tf:"minutes,omitempty"`
 }
 
 type ExistingObjectReplicationInitParameters struct {
@@ -422,10 +422,6 @@ type FilterAndInitParameters struct {
 
 	// Object key name prefix identifying one or more objects to which the rule applies. Must be less than or equal to 1024 characters in length. Defaults to an empty string ("") if filter is not specified.
 	Prefix *string `json:"prefix,omitempty" tf:"prefix,omitempty"`
-
-	// Map of tags (key and value pairs) that identifies a subset of objects to which the rule applies. The rule applies only to objects having all the tags in its tagset.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type FilterAndObservation struct {
@@ -443,11 +439,6 @@ type FilterAndParameters struct {
 	// Object key name prefix identifying one or more objects to which the rule applies. Must be less than or equal to 1024 characters in length. Defaults to an empty string ("") if filter is not specified.
 	// +kubebuilder:validation:Optional
 	Prefix *string `json:"prefix,omitempty" tf:"prefix,omitempty"`
-
-	// Map of tags (key and value pairs) that identifies a subset of objects to which the rule applies. The rule applies only to objects having all the tags in its tagset.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type FilterTagInitParameters struct {
@@ -648,20 +639,20 @@ type SourceSelectionCriteriaSseKMSEncryptedObjectsParameters struct {
 type TimeInitParameters struct {
 
 	// Time in minutes. Valid values: 15.
-	Minutes *float64 `json:"minutes,omitempty" tf:"minutes,omitempty"`
+	Minutes *int64 `json:"minutes,omitempty" tf:"minutes,omitempty"`
 }
 
 type TimeObservation struct {
 
 	// Time in minutes. Valid values: 15.
-	Minutes *float64 `json:"minutes,omitempty" tf:"minutes,omitempty"`
+	Minutes *int64 `json:"minutes,omitempty" tf:"minutes,omitempty"`
 }
 
 type TimeParameters struct {
 
 	// Time in minutes. Valid values: 15.
 	// +kubebuilder:validation:Optional
-	Minutes *float64 `json:"minutes" tf:"minutes,omitempty"`
+	Minutes *int64 `json:"minutes" tf:"minutes,omitempty"`
 }
 
 // BucketReplicationConfigurationSpec defines the desired state of BucketReplicationConfiguration

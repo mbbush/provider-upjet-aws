@@ -34,11 +34,11 @@ type StreamInitParameters struct {
 	KMSKeyIDSelector *v1.Selector `json:"kmsKeyIdSelector,omitempty" tf:"-"`
 
 	// Length of time data records are accessible after they are added to the stream. The maximum value of a stream's retention period is 8760 hours. Minimum value is 24. Default is 24.
-	RetentionPeriod *float64 `json:"retentionPeriod,omitempty" tf:"retention_period,omitempty"`
+	RetentionPeriod *int64 `json:"retentionPeriod,omitempty" tf:"retention_period,omitempty"`
 
 	// –  The number of shards that the stream will use. If the stream_mode is PROVISIONED, this field is required.
 	// Amazon has guidelines for specifying the Stream size that should be referenced when creating a Kinesis stream. See Amazon Kinesis Streams for more.
-	ShardCount *float64 `json:"shardCount,omitempty" tf:"shard_count,omitempty"`
+	ShardCount *int64 `json:"shardCount,omitempty" tf:"shard_count,omitempty"`
 
 	// A list of shard-level CloudWatch metrics which can be enabled for the stream. See Monitoring with CloudWatch for more. Note that the value ALL should not be used; instead you should provide an explicit list of metrics you wish to enable.
 	// +listType=set
@@ -46,10 +46,6 @@ type StreamInitParameters struct {
 
 	// Indicates the capacity mode of the data stream. Detailed below.
 	StreamModeDetails *StreamModeDetailsInitParameters `json:"streamModeDetails,omitempty" tf:"stream_mode_details,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type StreamModeDetailsInitParameters struct {
@@ -89,11 +85,11 @@ type StreamObservation struct {
 	KMSKeyID *string `json:"kmsKeyId,omitempty" tf:"kms_key_id,omitempty"`
 
 	// Length of time data records are accessible after they are added to the stream. The maximum value of a stream's retention period is 8760 hours. Minimum value is 24. Default is 24.
-	RetentionPeriod *float64 `json:"retentionPeriod,omitempty" tf:"retention_period,omitempty"`
+	RetentionPeriod *int64 `json:"retentionPeriod,omitempty" tf:"retention_period,omitempty"`
 
 	// –  The number of shards that the stream will use. If the stream_mode is PROVISIONED, this field is required.
 	// Amazon has guidelines for specifying the Stream size that should be referenced when creating a Kinesis stream. See Amazon Kinesis Streams for more.
-	ShardCount *float64 `json:"shardCount,omitempty" tf:"shard_count,omitempty"`
+	ShardCount *int64 `json:"shardCount,omitempty" tf:"shard_count,omitempty"`
 
 	// A list of shard-level CloudWatch metrics which can be enabled for the stream. See Monitoring with CloudWatch for more. Note that the value ALL should not be used; instead you should provide an explicit list of metrics you wish to enable.
 	// +listType=set
@@ -141,12 +137,12 @@ type StreamParameters struct {
 
 	// Length of time data records are accessible after they are added to the stream. The maximum value of a stream's retention period is 8760 hours. Minimum value is 24. Default is 24.
 	// +kubebuilder:validation:Optional
-	RetentionPeriod *float64 `json:"retentionPeriod,omitempty" tf:"retention_period,omitempty"`
+	RetentionPeriod *int64 `json:"retentionPeriod,omitempty" tf:"retention_period,omitempty"`
 
 	// –  The number of shards that the stream will use. If the stream_mode is PROVISIONED, this field is required.
 	// Amazon has guidelines for specifying the Stream size that should be referenced when creating a Kinesis stream. See Amazon Kinesis Streams for more.
 	// +kubebuilder:validation:Optional
-	ShardCount *float64 `json:"shardCount,omitempty" tf:"shard_count,omitempty"`
+	ShardCount *int64 `json:"shardCount,omitempty" tf:"shard_count,omitempty"`
 
 	// A list of shard-level CloudWatch metrics which can be enabled for the stream. See Monitoring with CloudWatch for more. Note that the value ALL should not be used; instead you should provide an explicit list of metrics you wish to enable.
 	// +kubebuilder:validation:Optional
@@ -156,11 +152,6 @@ type StreamParameters struct {
 	// Indicates the capacity mode of the data stream. Detailed below.
 	// +kubebuilder:validation:Optional
 	StreamModeDetails *StreamModeDetailsParameters `json:"streamModeDetails,omitempty" tf:"stream_mode_details,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // StreamSpec defines the desired state of Stream

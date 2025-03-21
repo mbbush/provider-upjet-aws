@@ -116,10 +116,6 @@ type ClusterInitParameters struct {
 	// Configuration block with storage configuration for EKS Auto Mode. Detailed below.
 	StorageConfig *StorageConfigInitParameters `json:"storageConfig,omitempty" tf:"storage_config,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Configuration block for the support policy to use for the cluster.  See upgrade_policy for details.
 	UpgradePolicy *UpgradePolicyInitParameters `json:"upgradePolicy,omitempty" tf:"upgrade_policy,omitempty"`
 
@@ -271,11 +267,6 @@ type ClusterParameters struct {
 	// Configuration block with storage configuration for EKS Auto Mode. Detailed below.
 	// +kubebuilder:validation:Optional
 	StorageConfig *StorageConfigParameters `json:"storageConfig,omitempty" tf:"storage_config,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Configuration block for the support policy to use for the cluster.  See upgrade_policy for details.
 	// +kubebuilder:validation:Optional

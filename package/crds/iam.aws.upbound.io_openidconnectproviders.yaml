@@ -81,12 +81,6 @@ spec:
                       type: string
                     type: array
                     x-kubernetes-list-type: set
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   thumbprintList:
                     description: List of server certificate thumbprints for the OpenID
                       Connect (OIDC) identity provider's server certificate(s). For
@@ -131,12 +125,6 @@ spec:
                       type: string
                     type: array
                     x-kubernetes-list-type: set
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   thumbprintList:
                     description: List of server certificate thumbprints for the OpenID
                       Connect (OIDC) identity provider's server certificate(s). For

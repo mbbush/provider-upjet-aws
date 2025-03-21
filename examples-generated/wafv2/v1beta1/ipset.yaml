@@ -16,6 +16,3 @@ spec:
     name: example
     region: us-west-1
     scope: REGIONAL
-    tags:
-      Tag1: Value1
-      Tag2: Value2

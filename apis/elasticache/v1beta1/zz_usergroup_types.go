@@ -18,10 +18,6 @@ type UserGroupInitParameters struct {
 	// The current supported value is REDIS.
 	Engine *string `json:"engine,omitempty" tf:"engine,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// References to User in elasticache to populate userIds.
 	// +kubebuilder:validation:Optional
 	UserIDRefs []v1.Reference `json:"userIdRefs,omitempty" tf:"-"`
@@ -72,11 +68,6 @@ type UserGroupParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// References to User in elasticache to populate userIds.
 	// +kubebuilder:validation:Optional

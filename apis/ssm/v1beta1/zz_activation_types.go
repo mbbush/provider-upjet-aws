@@ -38,7 +38,7 @@ type ActivationInitParameters struct {
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
 
 	// The maximum number of managed instances you want to register. The default value is 1 instance.
-	RegistrationLimit *float64 `json:"registrationLimit,omitempty" tf:"registration_limit,omitempty"`
+	RegistrationLimit *int64 `json:"registrationLimit,omitempty" tf:"registration_limit,omitempty"`
 
 	// Key-value map of resource tags.
 	// +mapType=granular
@@ -69,10 +69,10 @@ type ActivationObservation struct {
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
 
 	// The number of managed instances that are currently registered using this activation.
-	RegistrationCount *float64 `json:"registrationCount,omitempty" tf:"registration_count,omitempty"`
+	RegistrationCount *int64 `json:"registrationCount,omitempty" tf:"registration_count,omitempty"`
 
 	// The maximum number of managed instances you want to register. The default value is 1 instance.
-	RegistrationLimit *float64 `json:"registrationLimit,omitempty" tf:"registration_limit,omitempty"`
+	RegistrationLimit *int64 `json:"registrationLimit,omitempty" tf:"registration_limit,omitempty"`
 
 	// Key-value map of resource tags.
 	// +mapType=granular
@@ -118,7 +118,7 @@ type ActivationParameters struct {
 
 	// The maximum number of managed instances you want to register. The default value is 1 instance.
 	// +kubebuilder:validation:Optional
-	RegistrationLimit *float64 `json:"registrationLimit,omitempty" tf:"registration_limit,omitempty"`
+	RegistrationLimit *int64 `json:"registrationLimit,omitempty" tf:"registration_limit,omitempty"`
 
 	// Key-value map of resource tags.
 	// +kubebuilder:validation:Optional

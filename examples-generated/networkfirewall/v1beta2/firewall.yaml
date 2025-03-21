@@ -17,9 +17,6 @@ spec:
     - subnetIdSelector:
         matchLabels:
           testing.upbound.io/example-name: example
-    tags:
-      Tag1: Value1
-      Tag2: Value2
     timeouts:
     - create: 40m
       delete: 1h

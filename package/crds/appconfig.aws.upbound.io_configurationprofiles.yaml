@@ -265,12 +265,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   type:
                     description: 'Type of configurations contained in the profile.
                       Valid values: AWS.AppConfig.FeatureFlags and AWS.Freeform.  Default:
@@ -509,12 +503,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   type:
                     description: 'Type of configurations contained in the profile.
                       Valid values: AWS.AppConfig.FeatureFlags and AWS.Freeform.  Default:

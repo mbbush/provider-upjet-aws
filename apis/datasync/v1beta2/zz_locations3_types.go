@@ -40,10 +40,6 @@ type LocationS3InitParameters struct {
 
 	// Prefix to perform actions as source or destination.
 	Subdirectory *string `json:"subdirectory,omitempty" tf:"subdirectory,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type LocationS3Observation struct {
@@ -118,11 +114,6 @@ type LocationS3Parameters struct {
 	// Prefix to perform actions as source or destination.
 	// +kubebuilder:validation:Optional
 	Subdirectory *string `json:"subdirectory,omitempty" tf:"subdirectory,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type S3ConfigInitParameters struct {

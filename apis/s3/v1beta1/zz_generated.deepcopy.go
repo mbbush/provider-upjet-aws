@@ -1390,7 +1390,7 @@ func (in *BucketCorsConfigurationCorsRuleInitParameters) DeepCopyInto(out *Bucke
 	}
 	if in.MaxAgeSeconds != nil {
 		in, out := &in.MaxAgeSeconds, &out.MaxAgeSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1459,7 +1459,7 @@ func (in *BucketCorsConfigurationCorsRuleObservation) DeepCopyInto(out *BucketCo
 	}
 	if in.MaxAgeSeconds != nil {
 		in, out := &in.MaxAgeSeconds, &out.MaxAgeSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1528,7 +1528,7 @@ func (in *BucketCorsConfigurationCorsRuleParameters) DeepCopyInto(out *BucketCor
 	}
 	if in.MaxAgeSeconds != nil {
 		in, out := &in.MaxAgeSeconds, &out.MaxAgeSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -4162,22 +4162,6 @@ func (in *BucketObjectInitParameters) DeepCopyInto(out *BucketObjectInitParamete
 		*out = new(string)
 		**out = **in
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.WebsiteRedirect != nil {
 		in, out := &in.WebsiteRedirect, &out.WebsiteRedirect
 		*out = new(string)
@@ -4874,22 +4858,6 @@ func (in *BucketObjectParameters) DeepCopyInto(out *BucketObjectParameters) {
 		in, out := &in.StorageClass, &out.StorageClass
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.WebsiteRedirect != nil {
 		in, out := &in.WebsiteRedirect, &out.WebsiteRedirect
@@ -10556,22 +10524,6 @@ func (in *ObjectCopyInitParameters) DeepCopyInto(out *ObjectCopyInitParameters) 
 		*out = new(string)
 		**out = **in
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.WebsiteRedirect != nil {
 		in, out := &in.WebsiteRedirect, &out.WebsiteRedirect
 		*out = new(string)
@@ -11116,22 +11068,6 @@ func (in *ObjectCopyParameters) DeepCopyInto(out *ObjectCopyParameters) {
 		in, out := &in.TaggingDirective, &out.TaggingDirective
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.WebsiteRedirect != nil {
 		in, out := &in.WebsiteRedirect, &out.WebsiteRedirect

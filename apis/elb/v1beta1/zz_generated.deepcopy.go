@@ -212,7 +212,7 @@ func (in *AppCookieStickinessPolicyObservation) DeepCopyInto(out *AppCookieStick
 	}
 	if in.LBPort != nil {
 		in, out := &in.LBPort, &out.LBPort
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.LoadBalancer != nil {
@@ -242,7 +242,7 @@ func (in *AppCookieStickinessPolicyParameters) DeepCopyInto(out *AppCookieSticki
 	}
 	if in.LBPort != nil {
 		in, out := &in.LBPort, &out.LBPort
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.LoadBalancer != nil {
@@ -638,7 +638,7 @@ func (in *BackendServerPolicyInitParameters) DeepCopyInto(out *BackendServerPoli
 	*out = *in
 	if in.InstancePort != nil {
 		in, out := &in.InstancePort, &out.InstancePort
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.LoadBalancerName != nil {
@@ -733,7 +733,7 @@ func (in *BackendServerPolicyObservation) DeepCopyInto(out *BackendServerPolicyO
 	}
 	if in.InstancePort != nil {
 		in, out := &in.InstancePort, &out.InstancePort
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.LoadBalancerName != nil {
@@ -769,7 +769,7 @@ func (in *BackendServerPolicyParameters) DeepCopyInto(out *BackendServerPolicyPa
 	*out = *in
 	if in.InstancePort != nil {
 		in, out := &in.InstancePort, &out.InstancePort
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.LoadBalancerName != nil {
@@ -1595,12 +1595,12 @@ func (in *LBCookieStickinessPolicyInitParameters) DeepCopyInto(out *LBCookieStic
 	*out = *in
 	if in.CookieExpirationPeriod != nil {
 		in, out := &in.CookieExpirationPeriod, &out.CookieExpirationPeriod
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.LBPort != nil {
 		in, out := &in.LBPort, &out.LBPort
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.LoadBalancer != nil {
@@ -1672,7 +1672,7 @@ func (in *LBCookieStickinessPolicyObservation) DeepCopyInto(out *LBCookieStickin
 	*out = *in
 	if in.CookieExpirationPeriod != nil {
 		in, out := &in.CookieExpirationPeriod, &out.CookieExpirationPeriod
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ID != nil {
@@ -1682,7 +1682,7 @@ func (in *LBCookieStickinessPolicyObservation) DeepCopyInto(out *LBCookieStickin
 	}
 	if in.LBPort != nil {
 		in, out := &in.LBPort, &out.LBPort
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.LoadBalancer != nil {
@@ -1712,12 +1712,12 @@ func (in *LBCookieStickinessPolicyParameters) DeepCopyInto(out *LBCookieStickine
 	*out = *in
 	if in.CookieExpirationPeriod != nil {
 		in, out := &in.CookieExpirationPeriod, &out.CookieExpirationPeriod
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.LBPort != nil {
 		in, out := &in.LBPort, &out.LBPort
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.LoadBalancer != nil {
@@ -1831,7 +1831,7 @@ func (in *LBSSLNegotiationPolicyInitParameters) DeepCopyInto(out *LBSSLNegotiati
 	}
 	if in.LBPort != nil {
 		in, out := &in.LBPort, &out.LBPort
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.LoadBalancer != nil {
@@ -1931,7 +1931,7 @@ func (in *LBSSLNegotiationPolicyObservation) DeepCopyInto(out *LBSSLNegotiationP
 	}
 	if in.LBPort != nil {
 		in, out := &in.LBPort, &out.LBPort
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.LoadBalancer != nil {
@@ -1984,7 +1984,7 @@ func (in *LBSSLNegotiationPolicyParameters) DeepCopyInto(out *LBSSLNegotiationPo
 	}
 	if in.LBPort != nil {
 		in, out := &in.LBPort, &out.LBPort
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.LoadBalancer != nil {
@@ -2242,7 +2242,7 @@ func (in *ListenerPolicyInitParameters) DeepCopyInto(out *ListenerPolicyInitPara
 	}
 	if in.LoadBalancerPort != nil {
 		in, out := &in.LoadBalancerPort, &out.LoadBalancerPort
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.PolicyNames != nil {
@@ -2343,7 +2343,7 @@ func (in *ListenerPolicyObservation) DeepCopyInto(out *ListenerPolicyObservation
 	}
 	if in.LoadBalancerPort != nil {
 		in, out := &in.LoadBalancerPort, &out.LoadBalancerPort
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.PolicyNames != nil {
@@ -2405,7 +2405,7 @@ func (in *ListenerPolicyParameters) DeepCopyInto(out *ListenerPolicyParameters) 
 	}
 	if in.LoadBalancerPort != nil {
 		in, out := &in.LoadBalancerPort, &out.LoadBalancerPort
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.PolicyNames != nil {

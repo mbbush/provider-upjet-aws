@@ -362,10 +362,6 @@ type ServerInitParameters struct {
 	// +listType=set
 	StructuredLogDestinations []*string `json:"structuredLogDestinations,omitempty" tf:"structured_log_destinations,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// - URL of the service endpoint used to authenticate users with an identity_provider_type of API_GATEWAY.
 	URL *string `json:"url,omitempty" tf:"url,omitempty"`
 
@@ -568,11 +564,6 @@ type ServerParameters struct {
 	// +kubebuilder:validation:Optional
 	// +listType=set
 	StructuredLogDestinations []*string `json:"structuredLogDestinations,omitempty" tf:"structured_log_destinations,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// - URL of the service endpoint used to authenticate users with an identity_provider_type of API_GATEWAY.
 	// +kubebuilder:validation:Optional

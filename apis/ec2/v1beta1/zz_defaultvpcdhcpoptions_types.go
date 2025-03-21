@@ -17,10 +17,6 @@ type DefaultVPCDHCPOptionsInitParameters struct {
 
 	// The ID of the AWS account that owns the DHCP options set.
 	OwnerID *string `json:"ownerId,omitempty" tf:"owner_id,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type DefaultVPCDHCPOptionsObservation struct {
@@ -66,11 +62,6 @@ type DefaultVPCDHCPOptionsParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // DefaultVPCDHCPOptionsSpec defines the desired state of DefaultVPCDHCPOptions

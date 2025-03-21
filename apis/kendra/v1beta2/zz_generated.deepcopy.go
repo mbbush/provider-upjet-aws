@@ -164,7 +164,7 @@ func (in *BasicAuthenticationInitParameters) DeepCopyInto(out *BasicAuthenticati
 	}
 	if in.Port != nil {
 		in, out := &in.Port, &out.Port
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -194,7 +194,7 @@ func (in *BasicAuthenticationObservation) DeepCopyInto(out *BasicAuthenticationO
 	}
 	if in.Port != nil {
 		in, out := &in.Port, &out.Port
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -234,7 +234,7 @@ func (in *BasicAuthenticationParameters) DeepCopyInto(out *BasicAuthenticationPa
 	}
 	if in.Port != nil {
 		in, out := &in.Port, &out.Port
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -254,12 +254,12 @@ func (in *CapacityUnitsInitParameters) DeepCopyInto(out *CapacityUnitsInitParame
 	*out = *in
 	if in.QueryCapacityUnits != nil {
 		in, out := &in.QueryCapacityUnits, &out.QueryCapacityUnits
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.StorageCapacityUnits != nil {
 		in, out := &in.StorageCapacityUnits, &out.StorageCapacityUnits
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -279,12 +279,12 @@ func (in *CapacityUnitsObservation) DeepCopyInto(out *CapacityUnitsObservation) 
 	*out = *in
 	if in.QueryCapacityUnits != nil {
 		in, out := &in.QueryCapacityUnits, &out.QueryCapacityUnits
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.StorageCapacityUnits != nil {
 		in, out := &in.StorageCapacityUnits, &out.StorageCapacityUnits
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -304,12 +304,12 @@ func (in *CapacityUnitsParameters) DeepCopyInto(out *CapacityUnitsParameters) {
 	*out = *in
 	if in.QueryCapacityUnits != nil {
 		in, out := &in.QueryCapacityUnits, &out.QueryCapacityUnits
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.StorageCapacityUnits != nil {
 		in, out := &in.StorageCapacityUnits, &out.StorageCapacityUnits
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -394,7 +394,7 @@ func (in *ConditionOnValueInitParameters) DeepCopyInto(out *ConditionOnValueInit
 	}
 	if in.LongValue != nil {
 		in, out := &in.LongValue, &out.LongValue
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.StringListValue != nil {
@@ -435,7 +435,7 @@ func (in *ConditionOnValueObservation) DeepCopyInto(out *ConditionOnValueObserva
 	}
 	if in.LongValue != nil {
 		in, out := &in.LongValue, &out.LongValue
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.StringListValue != nil {
@@ -476,7 +476,7 @@ func (in *ConditionOnValueParameters) DeepCopyInto(out *ConditionOnValueParamete
 	}
 	if in.LongValue != nil {
 		in, out := &in.LongValue, &out.LongValue
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.StringListValue != nil {
@@ -939,22 +939,6 @@ func (in *DataSourceInitParameters) DeepCopyInto(out *DataSourceInitParameters) 
 		*out = new(string)
 		**out = **in
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.Type != nil {
 		in, out := &in.Type, &out.Type
 		*out = new(string)
@@ -1198,22 +1182,6 @@ func (in *DataSourceParameters) DeepCopyInto(out *DataSourceParameters) {
 		in, out := &in.Schedule, &out.Schedule
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.Type != nil {
 		in, out := &in.Type, &out.Type
@@ -1868,7 +1836,7 @@ func (in *FaqStatisticsObservation) DeepCopyInto(out *FaqStatisticsObservation) 
 	*out = *in
 	if in.IndexedQuestionAnswersCount != nil {
 		in, out := &in.IndexedQuestionAnswersCount, &out.IndexedQuestionAnswersCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1974,22 +1942,6 @@ func (in *IndexInitParameters) DeepCopyInto(out *IndexInitParameters) {
 		in, out := &in.ServerSideEncryptionConfiguration, &out.ServerSideEncryptionConfiguration
 		*out = new(ServerSideEncryptionConfigurationInitParameters)
 		(*in).DeepCopyInto(*out)
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.UserContextPolicy != nil {
 		in, out := &in.UserContextPolicy, &out.UserContextPolicy
@@ -2241,22 +2193,6 @@ func (in *IndexParameters) DeepCopyInto(out *IndexParameters) {
 		*out = new(ServerSideEncryptionConfigurationParameters)
 		(*in).DeepCopyInto(*out)
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.UserContextPolicy != nil {
 		in, out := &in.UserContextPolicy, &out.UserContextPolicy
 		*out = new(string)
@@ -2478,7 +2414,7 @@ func (in *InvocationConditionConditionOnValueInitParameters) DeepCopyInto(out *I
 	}
 	if in.LongValue != nil {
 		in, out := &in.LongValue, &out.LongValue
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.StringListValue != nil {
@@ -2519,7 +2455,7 @@ func (in *InvocationConditionConditionOnValueObservation) DeepCopyInto(out *Invo
 	}
 	if in.LongValue != nil {
 		in, out := &in.LongValue, &out.LongValue
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.StringListValue != nil {
@@ -2560,7 +2496,7 @@ func (in *InvocationConditionConditionOnValueParameters) DeepCopyInto(out *Invoc
 	}
 	if in.LongValue != nil {
 		in, out := &in.LongValue, &out.LongValue
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.StringListValue != nil {
@@ -3036,7 +2972,7 @@ func (in *PreExtractionHookConfigurationInvocationConditionConditionOnValueInitP
 	}
 	if in.LongValue != nil {
 		in, out := &in.LongValue, &out.LongValue
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.StringListValue != nil {
@@ -3077,7 +3013,7 @@ func (in *PreExtractionHookConfigurationInvocationConditionConditionOnValueObser
 	}
 	if in.LongValue != nil {
 		in, out := &in.LongValue, &out.LongValue
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.StringListValue != nil {
@@ -3118,7 +3054,7 @@ func (in *PreExtractionHookConfigurationInvocationConditionConditionOnValueParam
 	}
 	if in.LongValue != nil {
 		in, out := &in.LongValue, &out.LongValue
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.StringListValue != nil {
@@ -3324,7 +3260,7 @@ func (in *ProxyConfigurationInitParameters) DeepCopyInto(out *ProxyConfiguration
 	}
 	if in.Port != nil {
 		in, out := &in.Port, &out.Port
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -3354,7 +3290,7 @@ func (in *ProxyConfigurationObservation) DeepCopyInto(out *ProxyConfigurationObs
 	}
 	if in.Port != nil {
 		in, out := &in.Port, &out.Port
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -3394,7 +3330,7 @@ func (in *ProxyConfigurationParameters) DeepCopyInto(out *ProxyConfigurationPara
 	}
 	if in.Port != nil {
 		in, out := &in.Port, &out.Port
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -3483,22 +3419,6 @@ func (in *QuerySuggestionsBlockListInitParameters) DeepCopyInto(out *QuerySugges
 		in, out := &in.SourceS3Path, &out.SourceS3Path
 		*out = new(SourceS3PathInitParameters)
 		(*in).DeepCopyInto(*out)
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 }
 
@@ -3689,22 +3609,6 @@ func (in *QuerySuggestionsBlockListParameters) DeepCopyInto(out *QuerySuggestion
 		*out = new(SourceS3PathParameters)
 		(*in).DeepCopyInto(*out)
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 }
 
 // DeepCopy is an autogenerated deepcopy function, copying the receiver, creating a new QuerySuggestionsBlockListParameters.
@@ -3767,7 +3671,7 @@ func (in *RelevanceInitParameters) DeepCopyInto(out *RelevanceInitParameters) {
 	}
 	if in.Importance != nil {
 		in, out := &in.Importance, &out.Importance
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.RankOrder != nil {
@@ -3777,15 +3681,15 @@ func (in *RelevanceInitParameters) DeepCopyInto(out *RelevanceInitParameters) {
 	}
 	if in.ValuesImportanceMap != nil {
 		in, out := &in.ValuesImportanceMap, &out.ValuesImportanceMap
-		*out = make(map[string]*float64, len(*in))
+		*out = make(map[string]*int64, len(*in))
 		for key, val := range *in {
-			var outVal *float64
+			var outVal *int64
 			if val == nil {
 				(*out)[key] = nil
 			} else {
 				inVal := (*in)[key]
 				in, out := &inVal, &outVal
-				*out = new(float64)
+				*out = new(int64)
 				**out = **in
 			}
 			(*out)[key] = outVal
@@ -3818,7 +3722,7 @@ func (in *RelevanceObservation) DeepCopyInto(out *RelevanceObservation) {
 	}
 	if in.Importance != nil {
 		in, out := &in.Importance, &out.Importance
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.RankOrder != nil {
@@ -3828,15 +3732,15 @@ func (in *RelevanceObservation) DeepCopyInto(out *RelevanceObservation) {
 	}
 	if in.ValuesImportanceMap != nil {
 		in, out := &in.ValuesImportanceMap, &out.ValuesImportanceMap
-		*out = make(map[string]*float64, len(*in))
+		*out = make(map[string]*int64, len(*in))
 		for key, val := range *in {
-			var outVal *float64
+			var outVal *int64
 			if val == nil {
 				(*out)[key] = nil
 			} else {
 				inVal := (*in)[key]
 				in, out := &inVal, &outVal
-				*out = new(float64)
+				*out = new(int64)
 				**out = **in
 			}
 			(*out)[key] = outVal
@@ -3869,7 +3773,7 @@ func (in *RelevanceParameters) DeepCopyInto(out *RelevanceParameters) {
 	}
 	if in.Importance != nil {
 		in, out := &in.Importance, &out.Importance
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.RankOrder != nil {
@@ -3879,15 +3783,15 @@ func (in *RelevanceParameters) DeepCopyInto(out *RelevanceParameters) {
 	}
 	if in.ValuesImportanceMap != nil {
 		in, out := &in.ValuesImportanceMap, &out.ValuesImportanceMap
-		*out = make(map[string]*float64, len(*in))
+		*out = make(map[string]*int64, len(*in))
 		for key, val := range *in {
-			var outVal *float64
+			var outVal *int64
 			if val == nil {
 				(*out)[key] = nil
 			} else {
 				inVal := (*in)[key]
 				in, out := &inVal, &outVal
-				*out = new(float64)
+				*out = new(int64)
 				**out = **in
 			}
 			(*out)[key] = outVal
@@ -4555,7 +4459,7 @@ func (in *TargetDocumentAttributeValueInitParameters) DeepCopyInto(out *TargetDo
 	}
 	if in.LongValue != nil {
 		in, out := &in.LongValue, &out.LongValue
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.StringListValue != nil {
@@ -4596,7 +4500,7 @@ func (in *TargetDocumentAttributeValueObservation) DeepCopyInto(out *TargetDocum
 	}
 	if in.LongValue != nil {
 		in, out := &in.LongValue, &out.LongValue
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.StringListValue != nil {
@@ -4637,7 +4541,7 @@ func (in *TargetDocumentAttributeValueParameters) DeepCopyInto(out *TargetDocume
 	}
 	if in.LongValue != nil {
 		in, out := &in.LongValue, &out.LongValue
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.StringListValue != nil {
@@ -4778,12 +4682,12 @@ func (in *TextDocumentStatisticsObservation) DeepCopyInto(out *TextDocumentStati
 	*out = *in
 	if in.IndexedTextBytes != nil {
 		in, out := &in.IndexedTextBytes, &out.IndexedTextBytes
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.IndexedTextDocumentsCount != nil {
 		in, out := &in.IndexedTextDocumentsCount, &out.IndexedTextDocumentsCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -4887,22 +4791,6 @@ func (in *ThesaurusInitParameters) DeepCopyInto(out *ThesaurusInitParameters) {
 		in, out := &in.SourceS3Path, &out.SourceS3Path
 		*out = new(ThesaurusSourceS3PathInitParameters)
 		(*in).DeepCopyInto(*out)
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 }
 
@@ -5092,22 +4980,6 @@ func (in *ThesaurusParameters) DeepCopyInto(out *ThesaurusParameters) {
 		in, out := &in.SourceS3Path, &out.SourceS3Path
 		*out = new(ThesaurusSourceS3PathParameters)
 		(*in).DeepCopyInto(*out)
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 }
 
@@ -5551,7 +5423,7 @@ func (in *WebCrawlerConfigurationInitParameters) DeepCopyInto(out *WebCrawlerCon
 	}
 	if in.CrawlDepth != nil {
 		in, out := &in.CrawlDepth, &out.CrawlDepth
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaxContentSizePerPageInMegaBytes != nil {
@@ -5561,12 +5433,12 @@ func (in *WebCrawlerConfigurationInitParameters) DeepCopyInto(out *WebCrawlerCon
 	}
 	if in.MaxLinksPerPage != nil {
 		in, out := &in.MaxLinksPerPage, &out.MaxLinksPerPage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaxUrlsPerMinuteCrawlRate != nil {
 		in, out := &in.MaxUrlsPerMinuteCrawlRate, &out.MaxUrlsPerMinuteCrawlRate
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ProxyConfiguration != nil {
@@ -5623,7 +5495,7 @@ func (in *WebCrawlerConfigurationObservation) DeepCopyInto(out *WebCrawlerConfig
 	}
 	if in.CrawlDepth != nil {
 		in, out := &in.CrawlDepth, &out.CrawlDepth
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaxContentSizePerPageInMegaBytes != nil {
@@ -5633,12 +5505,12 @@ func (in *WebCrawlerConfigurationObservation) DeepCopyInto(out *WebCrawlerConfig
 	}
 	if in.MaxLinksPerPage != nil {
 		in, out := &in.MaxLinksPerPage, &out.MaxLinksPerPage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaxUrlsPerMinuteCrawlRate != nil {
 		in, out := &in.MaxUrlsPerMinuteCrawlRate, &out.MaxUrlsPerMinuteCrawlRate
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ProxyConfiguration != nil {
@@ -5695,7 +5567,7 @@ func (in *WebCrawlerConfigurationParameters) DeepCopyInto(out *WebCrawlerConfigu
 	}
 	if in.CrawlDepth != nil {
 		in, out := &in.CrawlDepth, &out.CrawlDepth
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaxContentSizePerPageInMegaBytes != nil {
@@ -5705,12 +5577,12 @@ func (in *WebCrawlerConfigurationParameters) DeepCopyInto(out *WebCrawlerConfigu
 	}
 	if in.MaxLinksPerPage != nil {
 		in, out := &in.MaxLinksPerPage, &out.MaxLinksPerPage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaxUrlsPerMinuteCrawlRate != nil {
 		in, out := &in.MaxUrlsPerMinuteCrawlRate, &out.MaxUrlsPerMinuteCrawlRate
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ProxyConfiguration != nil {

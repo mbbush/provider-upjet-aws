@@ -84,7 +84,8 @@ spec:
                             patch matched by the rule the patch is marked as approved
                             in the patch baseline. Valid Range: 0 to 360. Conflicts
                             with approve_until_date.'
-                          type: number
+                          format: int64
+                          type: integer
                         approveUntilDate:
                           description: Cutoff date for auto approval of released patches.
                             Any patches released on or before this date are installed
@@ -207,12 +208,6 @@ spec:
                           type: array
                       type: object
                     type: array
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -240,7 +235,8 @@ spec:
                             patch matched by the rule the patch is marked as approved
                             in the patch baseline. Valid Range: 0 to 360. Conflicts
                             with approve_until_date.'
-                          type: number
+                          format: int64
+                          type: integer
                         approveUntilDate:
                           description: Cutoff date for auto approval of released patches.
                             Any patches released on or before this date are installed
@@ -359,12 +355,6 @@ spec:
                           type: array
                       type: object
                     type: array
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -554,7 +544,8 @@ spec:
                             patch matched by the rule the patch is marked as approved
                             in the patch baseline. Valid Range: 0 to 360. Conflicts
                             with approve_until_date.'
-                          type: number
+                          format: int64
+                          type: integer
                         approveUntilDate:
                           description: Cutoff date for auto approval of released patches.
                             Any patches released on or before this date are installed

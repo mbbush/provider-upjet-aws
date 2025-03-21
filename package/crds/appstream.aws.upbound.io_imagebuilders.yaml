@@ -1089,12 +1089,6 @@ spec:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   vpcConfig:
                     description: Configuration block for the VPC configuration for
                       the image builder. See below.
@@ -1334,12 +1328,6 @@ spec:
                   instanceType:
                     description: Instance type to use when launching the image builder.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   vpcConfig:
                     description: Configuration block for the VPC configuration for
                       the image builder. See below.

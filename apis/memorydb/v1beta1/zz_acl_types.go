@@ -15,10 +15,6 @@ import (
 
 type ACLInitParameters struct {
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Set of MemoryDB user names to be included in this ACL.
 	// +listType=set
 	UserNames []*string `json:"userNames,omitempty" tf:"user_names,omitempty"`
@@ -54,11 +50,6 @@ type ACLParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Set of MemoryDB user names to be included in this ACL.
 	// +kubebuilder:validation:Optional

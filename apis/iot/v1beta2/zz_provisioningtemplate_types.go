@@ -66,10 +66,6 @@ type ProvisioningTemplateInitParameters struct {
 	// +kubebuilder:validation:Optional
 	ProvisioningRoleArnSelector *v1.Selector `json:"provisioningRoleArnSelector,omitempty" tf:"-"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// The JSON formatted contents of the fleet provisioning template.
 	TemplateBody *string `json:"templateBody,omitempty" tf:"template_body,omitempty"`
 
@@ -83,7 +79,7 @@ type ProvisioningTemplateObservation struct {
 	Arn *string `json:"arn,omitempty" tf:"arn,omitempty"`
 
 	// The default version of the fleet provisioning template.
-	DefaultVersionID *float64 `json:"defaultVersionId,omitempty" tf:"default_version_id,omitempty"`
+	DefaultVersionID *int64 `json:"defaultVersionId,omitempty" tf:"default_version_id,omitempty"`
 
 	// The description of the fleet provisioning template.
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
@@ -146,11 +142,6 @@ type ProvisioningTemplateParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// The JSON formatted contents of the fleet provisioning template.
 	// +kubebuilder:validation:Optional

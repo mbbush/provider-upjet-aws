@@ -2354,7 +2354,7 @@ func (in *EBSBlockDeviceInitParameters) DeepCopyInto(out *EBSBlockDeviceInitPara
 	}
 	if in.Iops != nil {
 		in, out := &in.Iops, &out.Iops
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.NoDevice != nil {
@@ -2369,12 +2369,12 @@ func (in *EBSBlockDeviceInitParameters) DeepCopyInto(out *EBSBlockDeviceInitPara
 	}
 	if in.Throughput != nil {
 		in, out := &in.Throughput, &out.Throughput
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.VolumeSize != nil {
 		in, out := &in.VolumeSize, &out.VolumeSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.VolumeType != nil {
@@ -2414,7 +2414,7 @@ func (in *EBSBlockDeviceObservation) DeepCopyInto(out *EBSBlockDeviceObservation
 	}
 	if in.Iops != nil {
 		in, out := &in.Iops, &out.Iops
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.NoDevice != nil {
@@ -2429,12 +2429,12 @@ func (in *EBSBlockDeviceObservation) DeepCopyInto(out *EBSBlockDeviceObservation
 	}
 	if in.Throughput != nil {
 		in, out := &in.Throughput, &out.Throughput
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.VolumeSize != nil {
 		in, out := &in.VolumeSize, &out.VolumeSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.VolumeType != nil {
@@ -2474,7 +2474,7 @@ func (in *EBSBlockDeviceParameters) DeepCopyInto(out *EBSBlockDeviceParameters) 
 	}
 	if in.Iops != nil {
 		in, out := &in.Iops, &out.Iops
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.NoDevice != nil {
@@ -2489,12 +2489,12 @@ func (in *EBSBlockDeviceParameters) DeepCopyInto(out *EBSBlockDeviceParameters) 
 	}
 	if in.Throughput != nil {
 		in, out := &in.Throughput, &out.Throughput
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.VolumeSize != nil {
 		in, out := &in.VolumeSize, &out.VolumeSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.VolumeType != nil {
@@ -4834,7 +4834,7 @@ func (in *MetadataOptionsInitParameters) DeepCopyInto(out *MetadataOptionsInitPa
 	}
 	if in.HTTPPutResponseHopLimit != nil {
 		in, out := &in.HTTPPutResponseHopLimit, &out.HTTPPutResponseHopLimit
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.HTTPTokens != nil {
@@ -4864,7 +4864,7 @@ func (in *MetadataOptionsObservation) DeepCopyInto(out *MetadataOptionsObservati
 	}
 	if in.HTTPPutResponseHopLimit != nil {
 		in, out := &in.HTTPPutResponseHopLimit, &out.HTTPPutResponseHopLimit
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.HTTPTokens != nil {
@@ -4894,7 +4894,7 @@ func (in *MetadataOptionsParameters) DeepCopyInto(out *MetadataOptionsParameters
 	}
 	if in.HTTPPutResponseHopLimit != nil {
 		in, out := &in.HTTPPutResponseHopLimit, &out.HTTPPutResponseHopLimit
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.HTTPTokens != nil {
@@ -6846,7 +6846,7 @@ func (in *PolicyInitParameters) DeepCopyInto(out *PolicyInitParameters) {
 	}
 	if in.Cooldown != nil {
 		in, out := &in.Cooldown, &out.Cooldown
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -6856,7 +6856,7 @@ func (in *PolicyInitParameters) DeepCopyInto(out *PolicyInitParameters) {
 	}
 	if in.EstimatedInstanceWarmup != nil {
 		in, out := &in.EstimatedInstanceWarmup, &out.EstimatedInstanceWarmup
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MetricAggregationType != nil {
@@ -6866,7 +6866,7 @@ func (in *PolicyInitParameters) DeepCopyInto(out *PolicyInitParameters) {
 	}
 	if in.MinAdjustmentMagnitude != nil {
 		in, out := &in.MinAdjustmentMagnitude, &out.MinAdjustmentMagnitude
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.PolicyType != nil {
@@ -6881,7 +6881,7 @@ func (in *PolicyInitParameters) DeepCopyInto(out *PolicyInitParameters) {
 	}
 	if in.ScalingAdjustment != nil {
 		in, out := &in.ScalingAdjustment, &out.ScalingAdjustment
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.StepAdjustment != nil {
@@ -6960,7 +6960,7 @@ func (in *PolicyObservation) DeepCopyInto(out *PolicyObservation) {
 	}
 	if in.Cooldown != nil {
 		in, out := &in.Cooldown, &out.Cooldown
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -6970,7 +6970,7 @@ func (in *PolicyObservation) DeepCopyInto(out *PolicyObservation) {
 	}
 	if in.EstimatedInstanceWarmup != nil {
 		in, out := &in.EstimatedInstanceWarmup, &out.EstimatedInstanceWarmup
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ID != nil {
@@ -6985,7 +6985,7 @@ func (in *PolicyObservation) DeepCopyInto(out *PolicyObservation) {
 	}
 	if in.MinAdjustmentMagnitude != nil {
 		in, out := &in.MinAdjustmentMagnitude, &out.MinAdjustmentMagnitude
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.PolicyType != nil {
@@ -7000,7 +7000,7 @@ func (in *PolicyObservation) DeepCopyInto(out *PolicyObservation) {
 	}
 	if in.ScalingAdjustment != nil {
 		in, out := &in.ScalingAdjustment, &out.ScalingAdjustment
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.StepAdjustment != nil {
@@ -7052,7 +7052,7 @@ func (in *PolicyParameters) DeepCopyInto(out *PolicyParameters) {
 	}
 	if in.Cooldown != nil {
 		in, out := &in.Cooldown, &out.Cooldown
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -7062,7 +7062,7 @@ func (in *PolicyParameters) DeepCopyInto(out *PolicyParameters) {
 	}
 	if in.EstimatedInstanceWarmup != nil {
 		in, out := &in.EstimatedInstanceWarmup, &out.EstimatedInstanceWarmup
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MetricAggregationType != nil {
@@ -7072,7 +7072,7 @@ func (in *PolicyParameters) DeepCopyInto(out *PolicyParameters) {
 	}
 	if in.MinAdjustmentMagnitude != nil {
 		in, out := &in.MinAdjustmentMagnitude, &out.MinAdjustmentMagnitude
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.PolicyType != nil {
@@ -7092,7 +7092,7 @@ func (in *PolicyParameters) DeepCopyInto(out *PolicyParameters) {
 	}
 	if in.ScalingAdjustment != nil {
 		in, out := &in.ScalingAdjustment, &out.ScalingAdjustment
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.StepAdjustment != nil {
@@ -7808,17 +7808,17 @@ func (in *RootBlockDeviceInitParameters) DeepCopyInto(out *RootBlockDeviceInitPa
 	}
 	if in.Iops != nil {
 		in, out := &in.Iops, &out.Iops
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Throughput != nil {
 		in, out := &in.Throughput, &out.Throughput
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.VolumeSize != nil {
 		in, out := &in.VolumeSize, &out.VolumeSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.VolumeType != nil {
@@ -7853,17 +7853,17 @@ func (in *RootBlockDeviceObservation) DeepCopyInto(out *RootBlockDeviceObservati
 	}
 	if in.Iops != nil {
 		in, out := &in.Iops, &out.Iops
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Throughput != nil {
 		in, out := &in.Throughput, &out.Throughput
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.VolumeSize != nil {
 		in, out := &in.VolumeSize, &out.VolumeSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.VolumeType != nil {
@@ -7898,17 +7898,17 @@ func (in *RootBlockDeviceParameters) DeepCopyInto(out *RootBlockDeviceParameters
 	}
 	if in.Iops != nil {
 		in, out := &in.Iops, &out.Iops
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Throughput != nil {
 		in, out := &in.Throughput, &out.Throughput
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.VolumeSize != nil {
 		in, out := &in.VolumeSize, &out.VolumeSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.VolumeType != nil {
@@ -7943,7 +7943,7 @@ func (in *StepAdjustmentInitParameters) DeepCopyInto(out *StepAdjustmentInitPara
 	}
 	if in.ScalingAdjustment != nil {
 		in, out := &in.ScalingAdjustment, &out.ScalingAdjustment
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -7973,7 +7973,7 @@ func (in *StepAdjustmentObservation) DeepCopyInto(out *StepAdjustmentObservation
 	}
 	if in.ScalingAdjustment != nil {
 		in, out := &in.ScalingAdjustment, &out.ScalingAdjustment
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -8003,7 +8003,7 @@ func (in *StepAdjustmentParameters) DeepCopyInto(out *StepAdjustmentParameters) 
 	}
 	if in.ScalingAdjustment != nil {
 		in, out := &in.ScalingAdjustment, &out.ScalingAdjustment
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }

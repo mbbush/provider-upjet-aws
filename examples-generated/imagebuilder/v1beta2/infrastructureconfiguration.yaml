@@ -34,6 +34,4 @@ spec:
     subnetIdSelector:
       matchLabels:
         testing.upbound.io/example-name: main
-    tags:
-      foo: bar
     terminateInstanceOnFailure: true

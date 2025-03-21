@@ -15,8 +15,6 @@ spec:
       namespace: upbound-system
     region: us-west-1
     size: Small
-    tags:
-      Project: foo
     vpcSettings:
     - subnetIdsRefs:
       - name: foo

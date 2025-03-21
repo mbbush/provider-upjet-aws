@@ -10,8 +10,6 @@ spec:
   forProvider:
     countryCode: US
     region: us-west-1
-    tags:
-      hello: world
     targetArnSelector:
       matchLabels:
         testing.upbound.io/example-name: example

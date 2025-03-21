@@ -137,10 +137,6 @@ type WorkspaceInitParameters struct {
 	// The AWS CloudFormation stack set name that provisions IAM roles to be used by the workspace.
 	StackSetName *string `json:"stackSetName,omitempty" tf:"stack_set_name,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to. See VPC Configuration below.
 	VPCConfiguration *VPCConfigurationInitParameters `json:"vpcConfiguration,omitempty" tf:"vpc_configuration,omitempty"`
 }
@@ -283,11 +279,6 @@ type WorkspaceParameters struct {
 	// The AWS CloudFormation stack set name that provisions IAM roles to be used by the workspace.
 	// +kubebuilder:validation:Optional
 	StackSetName *string `json:"stackSetName,omitempty" tf:"stack_set_name,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to. See VPC Configuration below.
 	// +kubebuilder:validation:Optional

@@ -18,5 +18,3 @@ spec:
       - phoneNumber: "+12345678912"
       quickConnectType: PHONE_NUMBER
     region: us-west-1
-    tags:
-      Name: Example Quick Connect

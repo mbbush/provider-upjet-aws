@@ -240,12 +240,6 @@ spec:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   type:
                     description: Defaults to STANDARD which provides the standard
                       workflow. EC2_LINUX, EC2_WINDOWS, FARGATE_LINUX types disallow
@@ -279,12 +273,6 @@ spec:
                       type: string
                     type: array
                     x-kubernetes-list-type: set
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   type:
                     description: Defaults to STANDARD which provides the standard
                       workflow. EC2_LINUX, EC2_WINDOWS, FARGATE_LINUX types disallow

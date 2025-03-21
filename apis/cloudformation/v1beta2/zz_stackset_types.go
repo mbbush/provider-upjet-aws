@@ -64,16 +64,16 @@ type ManagedExecutionParameters struct {
 type OperationPreferencesInitParameters struct {
 
 	// The number of accounts, per Region, for which this operation can fail before AWS CloudFormation stops the operation in that Region.
-	FailureToleranceCount *float64 `json:"failureToleranceCount,omitempty" tf:"failure_tolerance_count,omitempty"`
+	FailureToleranceCount *int64 `json:"failureToleranceCount,omitempty" tf:"failure_tolerance_count,omitempty"`
 
 	// The percentage of accounts, per Region, for which this stack operation can fail before AWS CloudFormation stops the operation in that Region.
-	FailureTolerancePercentage *float64 `json:"failureTolerancePercentage,omitempty" tf:"failure_tolerance_percentage,omitempty"`
+	FailureTolerancePercentage *int64 `json:"failureTolerancePercentage,omitempty" tf:"failure_tolerance_percentage,omitempty"`
 
 	// The maximum number of accounts in which to perform this operation at one time.
-	MaxConcurrentCount *float64 `json:"maxConcurrentCount,omitempty" tf:"max_concurrent_count,omitempty"`
+	MaxConcurrentCount *int64 `json:"maxConcurrentCount,omitempty" tf:"max_concurrent_count,omitempty"`
 
 	// The maximum percentage of accounts in which to perform this operation at one time.
-	MaxConcurrentPercentage *float64 `json:"maxConcurrentPercentage,omitempty" tf:"max_concurrent_percentage,omitempty"`
+	MaxConcurrentPercentage *int64 `json:"maxConcurrentPercentage,omitempty" tf:"max_concurrent_percentage,omitempty"`
 
 	// The concurrency type of deploying StackSets operations in Regions, could be in parallel or one Region at a time.
 	RegionConcurrencyType *string `json:"regionConcurrencyType,omitempty" tf:"region_concurrency_type,omitempty"`
@@ -85,16 +85,16 @@ type OperationPreferencesInitParameters struct {
 type OperationPreferencesObservation struct {
 
 	// The number of accounts, per Region, for which this operation can fail before AWS CloudFormation stops the operation in that Region.
-	FailureToleranceCount *float64 `json:"failureToleranceCount,omitempty" tf:"failure_tolerance_count,omitempty"`
+	FailureToleranceCount *int64 `json:"failureToleranceCount,omitempty" tf:"failure_tolerance_count,omitempty"`
 
 	// The percentage of accounts, per Region, for which this stack operation can fail before AWS CloudFormation stops the operation in that Region.
-	FailureTolerancePercentage *float64 `json:"failureTolerancePercentage,omitempty" tf:"failure_tolerance_percentage,omitempty"`
+	FailureTolerancePercentage *int64 `json:"failureTolerancePercentage,omitempty" tf:"failure_tolerance_percentage,omitempty"`
 
 	// The maximum number of accounts in which to perform this operation at one time.
-	MaxConcurrentCount *float64 `json:"maxConcurrentCount,omitempty" tf:"max_concurrent_count,omitempty"`
+	MaxConcurrentCount *int64 `json:"maxConcurrentCount,omitempty" tf:"max_concurrent_count,omitempty"`
 
 	// The maximum percentage of accounts in which to perform this operation at one time.
-	MaxConcurrentPercentage *float64 `json:"maxConcurrentPercentage,omitempty" tf:"max_concurrent_percentage,omitempty"`
+	MaxConcurrentPercentage *int64 `json:"maxConcurrentPercentage,omitempty" tf:"max_concurrent_percentage,omitempty"`
 
 	// The concurrency type of deploying StackSets operations in Regions, could be in parallel or one Region at a time.
 	RegionConcurrencyType *string `json:"regionConcurrencyType,omitempty" tf:"region_concurrency_type,omitempty"`
@@ -107,19 +107,19 @@ type OperationPreferencesParameters struct {
 
 	// The number of accounts, per Region, for which this operation can fail before AWS CloudFormation stops the operation in that Region.
 	// +kubebuilder:validation:Optional
-	FailureToleranceCount *float64 `json:"failureToleranceCount,omitempty" tf:"failure_tolerance_count,omitempty"`
+	FailureToleranceCount *int64 `json:"failureToleranceCount,omitempty" tf:"failure_tolerance_count,omitempty"`
 
 	// The percentage of accounts, per Region, for which this stack operation can fail before AWS CloudFormation stops the operation in that Region.
 	// +kubebuilder:validation:Optional
-	FailureTolerancePercentage *float64 `json:"failureTolerancePercentage,omitempty" tf:"failure_tolerance_percentage,omitempty"`
+	FailureTolerancePercentage *int64 `json:"failureTolerancePercentage,omitempty" tf:"failure_tolerance_percentage,omitempty"`
 
 	// The maximum number of accounts in which to perform this operation at one time.
 	// +kubebuilder:validation:Optional
-	MaxConcurrentCount *float64 `json:"maxConcurrentCount,omitempty" tf:"max_concurrent_count,omitempty"`
+	MaxConcurrentCount *int64 `json:"maxConcurrentCount,omitempty" tf:"max_concurrent_count,omitempty"`
 
 	// The maximum percentage of accounts in which to perform this operation at one time.
 	// +kubebuilder:validation:Optional
-	MaxConcurrentPercentage *float64 `json:"maxConcurrentPercentage,omitempty" tf:"max_concurrent_percentage,omitempty"`
+	MaxConcurrentPercentage *int64 `json:"maxConcurrentPercentage,omitempty" tf:"max_concurrent_percentage,omitempty"`
 
 	// The concurrency type of deploying StackSets operations in Regions, could be in parallel or one Region at a time.
 	// +kubebuilder:validation:Optional
@@ -173,10 +173,6 @@ type StackSetInitParameters struct {
 
 	// Describes how the IAM roles required for your StackSet are created. Valid values: SELF_MANAGED (default), SERVICE_MANAGED.
 	PermissionModel *string `json:"permissionModel,omitempty" tf:"permission_model,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// String containing the CloudFormation template body. Maximum size: 51,200 bytes. Conflicts with template_url.
 	TemplateBody *string `json:"templateBody,omitempty" tf:"template_body,omitempty"`
@@ -301,11 +297,6 @@ type StackSetParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// String containing the CloudFormation template body. Maximum size: 51,200 bytes. Conflicts with template_url.
 	// +kubebuilder:validation:Optional

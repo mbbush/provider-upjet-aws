@@ -915,7 +915,8 @@ spec:
                         description: Integer for the upper data usage limit (cutoff)
                           for the amount of bytes a single query in a workgroup is
                           allowed to scan. Must be at least 10485760.
-                        type: number
+                        format: int64
+                        type: integer
                       enforceWorkgroupConfiguration:
                         description: Boolean whether the settings for the workgroup
                           override client-side settings. For more information, see
@@ -1086,12 +1087,6 @@ spec:
                     description: State of the workgroup. Valid values are DISABLED
                       or ENABLED. Defaults to ENABLED.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -1116,7 +1111,8 @@ spec:
                         description: Integer for the upper data usage limit (cutoff)
                           for the amount of bytes a single query in a workgroup is
                           allowed to scan. Must be at least 10485760.
-                        type: number
+                        format: int64
+                        type: integer
                       enforceWorkgroupConfiguration:
                         description: Boolean whether the settings for the workgroup
                           override client-side settings. For more information, see
@@ -1283,12 +1279,6 @@ spec:
                     description: State of the workgroup. Valid values are DISABLED
                       or ENABLED. Defaults to ENABLED.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -1473,7 +1463,8 @@ spec:
                         description: Integer for the upper data usage limit (cutoff)
                           for the amount of bytes a single query in a workgroup is
                           allowed to scan. Must be at least 10485760.
-                        type: number
+                        format: int64
+                        type: integer
                       enforceWorkgroupConfiguration:
                         description: Boolean whether the settings for the workgroup
                           override client-side settings. For more information, see

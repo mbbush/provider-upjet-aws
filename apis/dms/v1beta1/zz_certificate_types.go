@@ -20,10 +20,6 @@ type CertificateInitParameters struct {
 
 	// The contents of the Oracle Wallet certificate for use with SSL, provided as a base64-encoded String. Either certificate_pem or certificate_wallet must be set.
 	CertificateWalletSecretRef *v1.SecretKeySelector `json:"certificateWalletSecretRef,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type CertificateObservation struct {
@@ -56,11 +52,6 @@ type CertificateParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // CertificateSpec defines the desired state of Certificate

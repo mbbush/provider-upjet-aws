@@ -170,7 +170,8 @@ spec:
                     description: Enter the maximum number of invocations per second
                       to allow for this destination. Enter a value greater than 0
                       (default 300).
-                    type: number
+                    format: int64
+                    type: integer
                   region:
                     description: Region is the region you'd like your resource to
                       be created in.
@@ -288,7 +289,8 @@ spec:
                     description: Enter the maximum number of invocations per second
                       to allow for this destination. Enter a value greater than 0
                       (default 300).
-                    type: number
+                    format: int64
+                    type: integer
                 type: object
               managementPolicies:
                 default:
@@ -497,7 +499,8 @@ spec:
                     description: Enter the maximum number of invocations per second
                       to allow for this destination. Enter a value greater than 0
                       (default 300).
-                    type: number
+                    format: int64
+                    type: integer
                 type: object
               conditions:
                 description: Conditions of the resource.

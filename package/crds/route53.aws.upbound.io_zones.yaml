@@ -166,12 +166,6 @@ spec:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   vpc:
                     description: Configuration block(s) specifying VPC(s) to associate
                       with a private hosted zone. Conflicts with the delegation_set_id
@@ -367,12 +361,6 @@ spec:
                   name:
                     description: This is the name of the hosted zone.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   vpc:
                     description: Configuration block(s) specifying VPC(s) to associate
                       with a private hosted zone. Conflicts with the delegation_set_id

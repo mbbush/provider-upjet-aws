@@ -83,26 +83,18 @@ spec:
                       10.0.0.0/8 and you enter 16 here, new allocations will default
                       to 10.0.0.0/16 (unless you provide a different netmask value
                       when you create the new allocation).
-                    type: number
+                    format: int64
+                    type: integer
                   allocationMaxNetmaskLength:
                     description: The maximum netmask length that will be required
                       for CIDR allocations in this pool.
-                    type: number
+                    format: int64
+                    type: integer
                   allocationMinNetmaskLength:
                     description: The minimum netmask length that will be required
                       for CIDR allocations in this pool.
-                    type: number
-                  allocationResourceTags:
-                    additionalProperties:
-                      type: string
-                    description: Tags that are required for resources that use CIDRs
-                      from this IPAM pool. Resources that do not have these tags will
-                      not be allowed to allocate space from the pool. If the resources
-                      have their tags changed after they have allocated space or if
-                      the allocation tagging requirements are changed on the pool,
-                      the resource may be marked as noncompliant.
-                    type: object
-                    x-kubernetes-map-type: granular
+                    format: int64
+                    type: integer
                   autoImport:
                     description: |-
                       If you include this argument, IPAM automatically imports any VPCs you have in your scope that fall
@@ -302,12 +294,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -334,26 +320,18 @@ spec:
                       10.0.0.0/8 and you enter 16 here, new allocations will default
                       to 10.0.0.0/16 (unless you provide a different netmask value
                       when you create the new allocation).
-                    type: number
+                    format: int64
+                    type: integer
                   allocationMaxNetmaskLength:
                     description: The maximum netmask length that will be required
                       for CIDR allocations in this pool.
-                    type: number
+                    format: int64
+                    type: integer
                   allocationMinNetmaskLength:
                     description: The minimum netmask length that will be required
                       for CIDR allocations in this pool.
-                    type: number
-                  allocationResourceTags:
-                    additionalProperties:
-                      type: string
-                    description: Tags that are required for resources that use CIDRs
-                      from this IPAM pool. Resources that do not have these tags will
-                      not be allowed to allocate space from the pool. If the resources
-                      have their tags changed after they have allocated space or if
-                      the allocation tagging requirements are changed on the pool,
-                      the resource may be marked as noncompliant.
-                    type: object
-                    x-kubernetes-map-type: granular
+                    format: int64
+                    type: integer
                   autoImport:
                     description: |-
                       If you include this argument, IPAM automatically imports any VPCs you have in your scope that fall
@@ -549,12 +527,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -743,15 +715,18 @@ spec:
                       10.0.0.0/8 and you enter 16 here, new allocations will default
                       to 10.0.0.0/16 (unless you provide a different netmask value
                       when you create the new allocation).
-                    type: number
+                    format: int64
+                    type: integer
                   allocationMaxNetmaskLength:
                     description: The maximum netmask length that will be required
                       for CIDR allocations in this pool.
-                    type: number
+                    format: int64
+                    type: integer
                   allocationMinNetmaskLength:
                     description: The minimum netmask length that will be required
                       for CIDR allocations in this pool.
-                    type: number
+                    format: int64
+                    type: integer
                   allocationResourceTags:
                     additionalProperties:
                       type: string
@@ -801,7 +776,8 @@ spec:
                       Region. Possible values: Any AWS region, such as us-east-1.'
                     type: string
                   poolDepth:
-                    type: number
+                    format: int64
+                    type: integer
                   publicIpSource:
                     description: The IP address source for pools in the public scope.
                       Only used for provisioning IP address CIDRs to pools in the

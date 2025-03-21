@@ -1583,7 +1583,8 @@ spec:
                     description: The largest number of records that Lambda will retrieve
                       from your event source at the time of invocation. Defaults to
                       100 for DynamoDB, Kinesis, MQ and MSK, 10 for SQS.
-                    type: number
+                    format: int64
+                    type: integer
                   bisectBatchOnFunctionError:
                     description: If the function returns an error, split the batch
                       in two and retry. Only available for stream sources (DynamoDB
@@ -1831,19 +1832,22 @@ spec:
                       If the batch it reads from the stream/queue only has one record
                       in it, Lambda only sends one record to the function. Only available
                       for stream sources (DynamoDB and Kinesis) and SQS standard queues.
-                    type: number
+                    format: int64
+                    type: integer
                   maximumRecordAgeInSeconds:
                     description: The maximum age of a record that Lambda sends to
                       a function for processing. Only available for stream sources
                       (DynamoDB and Kinesis). Must be either -1 (forever, and the
                       default value) or between 60 and 604800 (inclusive).
-                    type: number
+                    format: int64
+                    type: integer
                   maximumRetryAttempts:
                     description: The maximum number of times to retry when the function
                       returns an error. Only available for stream sources (DynamoDB
                       and Kinesis). Minimum and default of -1 (forever), maximum of
                       10000.
-                    type: number
+                    format: int64
+                    type: integer
                   metricsConfig:
                     description: CloudWatch metrics configuration of the event source.
                       Only available for stream sources (DynamoDB and Kinesis) and
@@ -1861,7 +1865,8 @@ spec:
                     description: The number of batches to process from each shard
                       concurrently. Only available for stream sources (DynamoDB and
                       Kinesis). Minimum and default of 1, maximum of 10.
-                    type: number
+                    format: int64
+                    type: integer
                   provisionedPollerConfig:
                     description: Event poller configuration for the event source.
                       Only valid for Amazon MSK or self-managed Apache Kafka sources.
@@ -1870,11 +1875,13 @@ spec:
                       maximumPollers:
                         description: The maximum number of event pollers this event
                           source can scale up to. The range is between 1 and 2000.
-                        type: number
+                        format: int64
+                        type: integer
                       minimumPollers:
                         description: The minimum number of event pollers this event
                           source can scale down to. The range is between 1 and 200.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   queues:
                     description: The name of the Amazon MQ broker destination queue
@@ -1897,7 +1904,8 @@ spec:
                           than or equal to 2. See Configuring maximum concurrency
                           for Amazon SQS event sources. You need to raise a Service
                           Quota Ticket to increase the concurrency beyond 1000.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   selfManagedEventSource:
                     description: For Self Managed Kafka sources, the location of the
@@ -1964,12 +1972,6 @@ spec:
                       later record is chosen. If the timestamp is older than the current
                       trim horizon, the oldest available record is chosen.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   topics:
                     description: The name of the Kafka topics. Only available for
                       MSK sources. A single topic name must be specified.
@@ -1982,7 +1984,8 @@ spec:
                       AWS Lambda streaming analytics. The range is between 1 second
                       up to 900 seconds. Only available for stream sources (DynamoDB
                       and Kinesis).
-                    type: number
+                    format: int64
+                    type: integer
                 required:
                 - region
                 type: object
@@ -2015,7 +2018,8 @@ spec:
                     description: The largest number of records that Lambda will retrieve
                       from your event source at the time of invocation. Defaults to
                       100 for DynamoDB, Kinesis, MQ and MSK, 10 for SQS.
-                    type: number
+                    format: int64
+                    type: integer
                   bisectBatchOnFunctionError:
                     description: If the function returns an error, split the batch
                       in two and retry. Only available for stream sources (DynamoDB
@@ -2263,19 +2267,22 @@ spec:
                       If the batch it reads from the stream/queue only has one record
                       in it, Lambda only sends one record to the function. Only available
                       for stream sources (DynamoDB and Kinesis) and SQS standard queues.
-                    type: number
+                    format: int64
+                    type: integer
                   maximumRecordAgeInSeconds:
                     description: The maximum age of a record that Lambda sends to
                       a function for processing. Only available for stream sources
                       (DynamoDB and Kinesis). Must be either -1 (forever, and the
                       default value) or between 60 and 604800 (inclusive).
-                    type: number
+                    format: int64
+                    type: integer
                   maximumRetryAttempts:
                     description: The maximum number of times to retry when the function
                       returns an error. Only available for stream sources (DynamoDB
                       and Kinesis). Minimum and default of -1 (forever), maximum of
                       10000.
-                    type: number
+                    format: int64
+                    type: integer
                   metricsConfig:
                     description: CloudWatch metrics configuration of the event source.
                       Only available for stream sources (DynamoDB and Kinesis) and
@@ -2293,7 +2300,8 @@ spec:
                     description: The number of batches to process from each shard
                       concurrently. Only available for stream sources (DynamoDB and
                       Kinesis). Minimum and default of 1, maximum of 10.
-                    type: number
+                    format: int64
+                    type: integer
                   provisionedPollerConfig:
                     description: Event poller configuration for the event source.
                       Only valid for Amazon MSK or self-managed Apache Kafka sources.
@@ -2302,11 +2310,13 @@ spec:
                       maximumPollers:
                         description: The maximum number of event pollers this event
                           source can scale up to. The range is between 1 and 2000.
-                        type: number
+                        format: int64
+                        type: integer
                       minimumPollers:
                         description: The minimum number of event pollers this event
                           source can scale down to. The range is between 1 and 200.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   queues:
                     description: The name of the Amazon MQ broker destination queue
@@ -2325,7 +2335,8 @@ spec:
                           than or equal to 2. See Configuring maximum concurrency
                           for Amazon SQS event sources. You need to raise a Service
                           Quota Ticket to increase the concurrency beyond 1000.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   selfManagedEventSource:
                     description: For Self Managed Kafka sources, the location of the
@@ -2392,12 +2403,6 @@ spec:
                       later record is chosen. If the timestamp is older than the current
                       trim horizon, the oldest available record is chosen.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   topics:
                     description: The name of the Kafka topics. Only available for
                       MSK sources. A single topic name must be specified.
@@ -2410,7 +2415,8 @@ spec:
                       AWS Lambda streaming analytics. The range is between 1 second
                       up to 900 seconds. Only available for stream sources (DynamoDB
                       and Kinesis).
-                    type: number
+                    format: int64
+                    type: integer
                 type: object
               managementPolicies:
                 default:
@@ -2603,7 +2609,8 @@ spec:
                     description: The largest number of records that Lambda will retrieve
                       from your event source at the time of invocation. Defaults to
                       100 for DynamoDB, Kinesis, MQ and MSK, 10 for SQS.
-                    type: number
+                    format: int64
+                    type: integer
                   bisectBatchOnFunctionError:
                     description: If the function returns an error, split the batch
                       in two and retry. Only available for stream sources (DynamoDB
@@ -2717,19 +2724,22 @@ spec:
                       If the batch it reads from the stream/queue only has one record
                       in it, Lambda only sends one record to the function. Only available
                       for stream sources (DynamoDB and Kinesis) and SQS standard queues.
-                    type: number
+                    format: int64
+                    type: integer
                   maximumRecordAgeInSeconds:
                     description: The maximum age of a record that Lambda sends to
                       a function for processing. Only available for stream sources
                       (DynamoDB and Kinesis). Must be either -1 (forever, and the
                       default value) or between 60 and 604800 (inclusive).
-                    type: number
+                    format: int64
+                    type: integer
                   maximumRetryAttempts:
                     description: The maximum number of times to retry when the function
                       returns an error. Only available for stream sources (DynamoDB
                       and Kinesis). Minimum and default of -1 (forever), maximum of
                       10000.
-                    type: number
+                    format: int64
+                    type: integer
                   metricsConfig:
                     description: CloudWatch metrics configuration of the event source.
                       Only available for stream sources (DynamoDB and Kinesis) and
@@ -2747,7 +2757,8 @@ spec:
                     description: The number of batches to process from each shard
                       concurrently. Only available for stream sources (DynamoDB and
                       Kinesis). Minimum and default of 1, maximum of 10.
-                    type: number
+                    format: int64
+                    type: integer
                   provisionedPollerConfig:
                     description: Event poller configuration for the event source.
                       Only valid for Amazon MSK or self-managed Apache Kafka sources.
@@ -2756,11 +2767,13 @@ spec:
                       maximumPollers:
                         description: The maximum number of event pollers this event
                           source can scale up to. The range is between 1 and 2000.
-                        type: number
+                        format: int64
+                        type: integer
                       minimumPollers:
                         description: The minimum number of event pollers this event
                           source can scale down to. The range is between 1 and 200.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   queues:
                     description: The name of the Amazon MQ broker destination queue
@@ -2779,7 +2792,8 @@ spec:
                           than or equal to 2. See Configuring maximum concurrency
                           for Amazon SQS event sources. You need to raise a Service
                           Quota Ticket to increase the concurrency beyond 1000.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   selfManagedEventSource:
                     description: For Self Managed Kafka sources, the location of the
@@ -2879,7 +2893,8 @@ spec:
                       AWS Lambda streaming analytics. The range is between 1 second
                       up to 900 seconds. Only available for stream sources (DynamoDB
                       and Kinesis).
-                    type: number
+                    format: int64
+                    type: integer
                   uuid:
                     description: The UUID of the created event source mapping.
                     type: string

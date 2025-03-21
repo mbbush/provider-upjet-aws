@@ -54,10 +54,6 @@ type InstanceInitParameters struct {
 
 	// Specifies whether outbound calls are enabled.
 	OutboundCallsEnabled *bool `json:"outboundCallsEnabled,omitempty" tf:"outbound_calls_enabled,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type InstanceObservation struct {
@@ -172,11 +168,6 @@ type InstanceParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // InstanceSpec defines the desired state of Instance

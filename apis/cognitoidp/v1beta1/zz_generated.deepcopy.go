@@ -4346,7 +4346,7 @@ func (in *UserGroupInitParameters) DeepCopyInto(out *UserGroupInitParameters) {
 	}
 	if in.Precedence != nil {
 		in, out := &in.Precedence, &out.Precedence
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.RoleArn != nil {
@@ -4443,7 +4443,7 @@ func (in *UserGroupObservation) DeepCopyInto(out *UserGroupObservation) {
 	}
 	if in.Precedence != nil {
 		in, out := &in.Precedence, &out.Precedence
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.RoleArn != nil {
@@ -4483,7 +4483,7 @@ func (in *UserGroupParameters) DeepCopyInto(out *UserGroupParameters) {
 	}
 	if in.Precedence != nil {
 		in, out := &in.Precedence, &out.Precedence
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Region != nil {

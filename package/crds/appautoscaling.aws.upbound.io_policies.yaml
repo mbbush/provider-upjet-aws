@@ -1552,7 +1552,8 @@ spec:
                       cooldown:
                         description: Amount of time, in seconds, after a scaling activity
                           completes and before the next scaling activity can start.
-                        type: number
+                        format: int64
+                        type: integer
                       metricAggregationType:
                         description: Aggregation type for the policy's metrics. Valid
                           values are "Minimum", "Maximum", and "Average". Without
@@ -1563,7 +1564,8 @@ spec:
                           as a result of a scaling activity. If the adjustment type
                           is PercentChangeInCapacity, the scaling policy changes the
                           scalable dimension of the scalable target by this amount.
-                        type: number
+                        format: int64
+                        type: integer
                       stepAdjustment:
                         description: 'Set of adjustments that manage scaling. These
                           have the following structure:'
@@ -1584,7 +1586,8 @@ spec:
                               description: Number of members by which to scale, when
                                 the adjustment bounds are breached. A positive value
                                 scales up. A negative value scales down.
-                              type: number
+                              format: int64
+                              type: integer
                           type: object
                         type: array
                     type: object
@@ -1716,12 +1719,14 @@ spec:
                         description: Amount of time, in seconds, after a scale in
                           activity completes before another scale in activity can
                           start.
-                        type: number
+                        format: int64
+                        type: integer
                       scaleOutCooldown:
                         description: Amount of time, in seconds, after a scale out
                           activity completes before another scale out activity can
                           start.
-                        type: number
+                        format: int64
+                        type: integer
                       targetValue:
                         description: Target value for the metric.
                         type: number
@@ -1760,7 +1765,8 @@ spec:
                       cooldown:
                         description: Amount of time, in seconds, after a scaling activity
                           completes and before the next scaling activity can start.
-                        type: number
+                        format: int64
+                        type: integer
                       metricAggregationType:
                         description: Aggregation type for the policy's metrics. Valid
                           values are "Minimum", "Maximum", and "Average". Without
@@ -1771,7 +1777,8 @@ spec:
                           as a result of a scaling activity. If the adjustment type
                           is PercentChangeInCapacity, the scaling policy changes the
                           scalable dimension of the scalable target by this amount.
-                        type: number
+                        format: int64
+                        type: integer
                       stepAdjustment:
                         description: 'Set of adjustments that manage scaling. These
                           have the following structure:'
@@ -1792,7 +1799,8 @@ spec:
                               description: Number of members by which to scale, when
                                 the adjustment bounds are breached. A positive value
                                 scales up. A negative value scales down.
-                              type: number
+                              format: int64
+                              type: integer
                           type: object
                         type: array
                     type: object
@@ -1924,12 +1932,14 @@ spec:
                         description: Amount of time, in seconds, after a scale in
                           activity completes before another scale in activity can
                           start.
-                        type: number
+                        format: int64
+                        type: integer
                       scaleOutCooldown:
                         description: Amount of time, in seconds, after a scale out
                           activity completes before another scale out activity can
                           start.
-                        type: number
+                        format: int64
+                        type: integer
                       targetValue:
                         description: Target value for the metric.
                         type: number
@@ -2154,7 +2164,8 @@ spec:
                       cooldown:
                         description: Amount of time, in seconds, after a scaling activity
                           completes and before the next scaling activity can start.
-                        type: number
+                        format: int64
+                        type: integer
                       metricAggregationType:
                         description: Aggregation type for the policy's metrics. Valid
                           values are "Minimum", "Maximum", and "Average". Without
@@ -2165,7 +2176,8 @@ spec:
                           as a result of a scaling activity. If the adjustment type
                           is PercentChangeInCapacity, the scaling policy changes the
                           scalable dimension of the scalable target by this amount.
-                        type: number
+                        format: int64
+                        type: integer
                       stepAdjustment:
                         description: 'Set of adjustments that manage scaling. These
                           have the following structure:'
@@ -2186,7 +2198,8 @@ spec:
                               description: Number of members by which to scale, when
                                 the adjustment bounds are breached. A positive value
                                 scales up. A negative value scales down.
-                              type: number
+                              format: int64
+                              type: integer
                           type: object
                         type: array
                     type: object
@@ -2318,12 +2331,14 @@ spec:
                         description: Amount of time, in seconds, after a scale in
                           activity completes before another scale in activity can
                           start.
-                        type: number
+                        format: int64
+                        type: integer
                       scaleOutCooldown:
                         description: Amount of time, in seconds, after a scale out
                           activity completes before another scale out activity can
                           start.
-                        type: number
+                        format: int64
+                        type: integer
                       targetValue:
                         description: Target value for the metric.
                         type: number

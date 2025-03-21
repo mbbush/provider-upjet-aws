@@ -2008,7 +2008,8 @@ spec:
                               data store that is associated with the stream. Minimum
                               value of 0. Maximum value of 87600. A value of 0, indicates
                               that the stream does not persist data.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       s3Config:
                         description: A block that specifies the configuration of S3
@@ -2570,7 +2571,8 @@ spec:
                               data store that is associated with the stream. Minimum
                               value of 0. Maximum value of 87600. A value of 0, indicates
                               that the stream does not persist data.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       s3Config:
                         description: A block that specifies the configuration of S3
@@ -3006,7 +3008,8 @@ spec:
                               data store that is associated with the stream. Minimum
                               value of 0. Maximum value of 87600. A value of 0, indicates
                               that the stream does not persist data.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       s3Config:
                         description: A block that specifies the configuration of S3

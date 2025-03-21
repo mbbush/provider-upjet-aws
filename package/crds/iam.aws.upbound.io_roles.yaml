@@ -196,7 +196,8 @@ spec:
                       to set for the specified role. If you do not specify a value
                       for this setting, the default maximum of one hour is applied.
                       This setting can have a value from 1 hour to 12 hours.
-                    type: number
+                    format: int64
+                    type: integer
                   path:
                     description: Path to the role. See IAM Identifiers for more information.
                     type: string
@@ -204,12 +205,6 @@ spec:
                     description: ARN of the policy that is used to set the permissions
                       boundary for the role.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               initProvider:
                 description: |-
@@ -348,7 +343,8 @@ spec:
                       to set for the specified role. If you do not specify a value
                       for this setting, the default maximum of one hour is applied.
                       This setting can have a value from 1 hour to 12 hours.
-                    type: number
+                    format: int64
+                    type: integer
                   path:
                     description: Path to the role. See IAM Identifiers for more information.
                     type: string
@@ -356,12 +352,6 @@ spec:
                     description: ARN of the policy that is used to set the permissions
                       boundary for the role.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -595,7 +585,8 @@ spec:
                       to set for the specified role. If you do not specify a value
                       for this setting, the default maximum of one hour is applied.
                       This setting can have a value from 1 hour to 12 hours.
-                    type: number
+                    format: int64
+                    type: integer
                   path:
                     description: Path to the role. See IAM Identifiers for more information.
                     type: string

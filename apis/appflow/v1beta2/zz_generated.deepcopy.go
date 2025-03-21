@@ -23,7 +23,7 @@ func (in *AggregationConfigInitParameters) DeepCopyInto(out *AggregationConfigIn
 	}
 	if in.TargetFileSize != nil {
 		in, out := &in.TargetFileSize, &out.TargetFileSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -48,7 +48,7 @@ func (in *AggregationConfigObservation) DeepCopyInto(out *AggregationConfigObser
 	}
 	if in.TargetFileSize != nil {
 		in, out := &in.TargetFileSize, &out.TargetFileSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -73,7 +73,7 @@ func (in *AggregationConfigParameters) DeepCopyInto(out *AggregationConfigParame
 	}
 	if in.TargetFileSize != nil {
 		in, out := &in.TargetFileSize, &out.TargetFileSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1456,22 +1456,6 @@ func (in *FlowInitParameters) DeepCopyInto(out *FlowInitParameters) {
 		*out = new(SourceFlowConfigInitParameters)
 		(*in).DeepCopyInto(*out)
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.Task != nil {
 		in, out := &in.Task, &out.Task
 		*out = make([]TaskInitParameters, len(*in))
@@ -1663,22 +1647,6 @@ func (in *FlowParameters) DeepCopyInto(out *FlowParameters) {
 		in, out := &in.SourceFlowConfig, &out.SourceFlowConfig
 		*out = new(SourceFlowConfigParameters)
 		(*in).DeepCopyInto(*out)
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.Task != nil {
 		in, out := &in.Task, &out.Task
@@ -2449,7 +2417,7 @@ func (in *PaginationConfigInitParameters) DeepCopyInto(out *PaginationConfigInit
 	*out = *in
 	if in.MaxPageSize != nil {
 		in, out := &in.MaxPageSize, &out.MaxPageSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2469,7 +2437,7 @@ func (in *PaginationConfigObservation) DeepCopyInto(out *PaginationConfigObserva
 	*out = *in
 	if in.MaxPageSize != nil {
 		in, out := &in.MaxPageSize, &out.MaxPageSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2489,7 +2457,7 @@ func (in *PaginationConfigParameters) DeepCopyInto(out *PaginationConfigParamete
 	*out = *in
 	if in.MaxPageSize != nil {
 		in, out := &in.MaxPageSize, &out.MaxPageSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2509,7 +2477,7 @@ func (in *ParallelismConfigInitParameters) DeepCopyInto(out *ParallelismConfigIn
 	*out = *in
 	if in.MaxPageSize != nil {
 		in, out := &in.MaxPageSize, &out.MaxPageSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2529,7 +2497,7 @@ func (in *ParallelismConfigObservation) DeepCopyInto(out *ParallelismConfigObser
 	*out = *in
 	if in.MaxPageSize != nil {
 		in, out := &in.MaxPageSize, &out.MaxPageSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2549,7 +2517,7 @@ func (in *ParallelismConfigParameters) DeepCopyInto(out *ParallelismConfigParame
 	*out = *in
 	if in.MaxPageSize != nil {
 		in, out := &in.MaxPageSize, &out.MaxPageSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -3776,7 +3744,7 @@ func (in *ScheduledInitParameters) DeepCopyInto(out *ScheduledInitParameters) {
 	}
 	if in.ScheduleOffset != nil {
 		in, out := &in.ScheduleOffset, &out.ScheduleOffset
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ScheduleStartTime != nil {
@@ -3826,7 +3794,7 @@ func (in *ScheduledObservation) DeepCopyInto(out *ScheduledObservation) {
 	}
 	if in.ScheduleOffset != nil {
 		in, out := &in.ScheduleOffset, &out.ScheduleOffset
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ScheduleStartTime != nil {
@@ -3876,7 +3844,7 @@ func (in *ScheduledParameters) DeepCopyInto(out *ScheduledParameters) {
 	}
 	if in.ScheduleOffset != nil {
 		in, out := &in.ScheduleOffset, &out.ScheduleOffset
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ScheduleStartTime != nil {

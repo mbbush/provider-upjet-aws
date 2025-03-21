@@ -95,16 +95,12 @@ spec:
                   ipv6IpamPoolId:
                     type: string
                   ipv6NetmaskLength:
-                    type: number
+                    format: int64
+                    type: integer
                   region:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -143,12 +139,8 @@ spec:
                   ipv6IpamPoolId:
                     type: string
                   ipv6NetmaskLength:
-                    type: number
-                  tags:
-                    additionalProperties:
-                      type: string
-                    type: object
-                    x-kubernetes-map-type: granular
+                    format: int64
+                    type: integer
                 type: object
               managementPolicies:
                 default:
@@ -367,7 +359,8 @@ spec:
                   ipv6IpamPoolId:
                     type: string
                   ipv6NetmaskLength:
-                    type: number
+                    format: int64
+                    type: integer
                   mainRouteTableId:
                     type: string
                   ownerId:

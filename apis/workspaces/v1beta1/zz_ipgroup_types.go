@@ -23,10 +23,6 @@ type IPGroupInitParameters struct {
 
 	// One or more pairs specifying the IP group rule (in CIDR format) from which web requests originate.
 	Rules []RulesInitParameters `json:"rules,omitempty" tf:"rules,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type IPGroupObservation struct {
@@ -70,11 +66,6 @@ type IPGroupParameters struct {
 	// One or more pairs specifying the IP group rule (in CIDR format) from which web requests originate.
 	// +kubebuilder:validation:Optional
 	Rules []RulesParameters `json:"rules,omitempty" tf:"rules,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type RulesInitParameters struct {

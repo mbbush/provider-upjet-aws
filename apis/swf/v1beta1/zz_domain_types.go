@@ -18,10 +18,6 @@ type DomainInitParameters struct {
 	// The domain description.
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Length of time that SWF will continue to retain information about the workflow execution after the workflow execution is complete, must be between 0 and 90 days.
 	WorkflowExecutionRetentionPeriodInDays *string `json:"workflowExecutionRetentionPeriodInDays,omitempty" tf:"workflow_execution_retention_period_in_days,omitempty"`
 }
@@ -59,11 +55,6 @@ type DomainParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Length of time that SWF will continue to retain information about the workflow execution after the workflow execution is complete, must be between 0 and 90 days.
 	// +kubebuilder:validation:Optional

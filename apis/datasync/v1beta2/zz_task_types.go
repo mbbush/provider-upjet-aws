@@ -77,7 +77,7 @@ type OptionsInitParameters struct {
 	Atime *string `json:"atime,omitempty" tf:"atime,omitempty"`
 
 	// Limits the bandwidth utilized. For example, to set a maximum of 1 MB, set this value to 1048576. Value values: -1 or greater. Default: -1 (unlimited).
-	BytesPerSecond *float64 `json:"bytesPerSecond,omitempty" tf:"bytes_per_second,omitempty"`
+	BytesPerSecond *int64 `json:"bytesPerSecond,omitempty" tf:"bytes_per_second,omitempty"`
 
 	// Group identifier of the file's owners. Valid values: BOTH, INT_VALUE, NAME, NONE. Default: INT_VALUE (preserve integer value of the ID).
 	GID *string `json:"gid,omitempty" tf:"gid,omitempty"`
@@ -125,7 +125,7 @@ type OptionsObservation struct {
 	Atime *string `json:"atime,omitempty" tf:"atime,omitempty"`
 
 	// Limits the bandwidth utilized. For example, to set a maximum of 1 MB, set this value to 1048576. Value values: -1 or greater. Default: -1 (unlimited).
-	BytesPerSecond *float64 `json:"bytesPerSecond,omitempty" tf:"bytes_per_second,omitempty"`
+	BytesPerSecond *int64 `json:"bytesPerSecond,omitempty" tf:"bytes_per_second,omitempty"`
 
 	// Group identifier of the file's owners. Valid values: BOTH, INT_VALUE, NAME, NONE. Default: INT_VALUE (preserve integer value of the ID).
 	GID *string `json:"gid,omitempty" tf:"gid,omitempty"`
@@ -175,7 +175,7 @@ type OptionsParameters struct {
 
 	// Limits the bandwidth utilized. For example, to set a maximum of 1 MB, set this value to 1048576. Value values: -1 or greater. Default: -1 (unlimited).
 	// +kubebuilder:validation:Optional
-	BytesPerSecond *float64 `json:"bytesPerSecond,omitempty" tf:"bytes_per_second,omitempty"`
+	BytesPerSecond *int64 `json:"bytesPerSecond,omitempty" tf:"bytes_per_second,omitempty"`
 
 	// Group identifier of the file's owners. Valid values: BOTH, INT_VALUE, NAME, NONE. Default: INT_VALUE (preserve integer value of the ID).
 	// +kubebuilder:validation:Optional
@@ -391,10 +391,6 @@ type TaskInitParameters struct {
 	// +kubebuilder:validation:Optional
 	SourceLocationArnSelector *v1.Selector `json:"sourceLocationArnSelector,omitempty" tf:"-"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Configuration block containing the configuration of a DataSync Task Report. See task_report_config below.
 	TaskReportConfig *TaskReportConfigInitParameters `json:"taskReportConfig,omitempty" tf:"task_report_config,omitempty"`
 }
@@ -509,11 +505,6 @@ type TaskParameters struct {
 	// Selector for a LocationS3 in datasync to populate sourceLocationArn.
 	// +kubebuilder:validation:Optional
 	SourceLocationArnSelector *v1.Selector `json:"sourceLocationArnSelector,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Configuration block containing the configuration of a DataSync Task Report. See task_report_config below.
 	// +kubebuilder:validation:Optional

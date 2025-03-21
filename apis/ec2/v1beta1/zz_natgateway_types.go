@@ -49,7 +49,7 @@ type NATGatewayInitParameters_2 struct {
 	SecondaryAllocationIdsSelector *v1.Selector `json:"secondaryAllocationIdsSelector,omitempty" tf:"-"`
 
 	// [Private NAT Gateway only] The number of secondary private IPv4 addresses you want to assign to the NAT Gateway.
-	SecondaryPrivateIPAddressCount *float64 `json:"secondaryPrivateIpAddressCount,omitempty" tf:"secondary_private_ip_address_count,omitempty"`
+	SecondaryPrivateIPAddressCount *int64 `json:"secondaryPrivateIpAddressCount,omitempty" tf:"secondary_private_ip_address_count,omitempty"`
 
 	// A list of secondary private IPv4 addresses to assign to the NAT Gateway.
 	// +listType=set
@@ -66,10 +66,6 @@ type NATGatewayInitParameters_2 struct {
 	// Selector for a Subnet in ec2 to populate subnetId.
 	// +kubebuilder:validation:Optional
 	SubnetIDSelector *v1.Selector `json:"subnetIdSelector,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type NATGatewayObservation_2 struct {
@@ -100,7 +96,7 @@ type NATGatewayObservation_2 struct {
 	SecondaryAllocationIds []*string `json:"secondaryAllocationIds,omitempty" tf:"secondary_allocation_ids,omitempty"`
 
 	// [Private NAT Gateway only] The number of secondary private IPv4 addresses you want to assign to the NAT Gateway.
-	SecondaryPrivateIPAddressCount *float64 `json:"secondaryPrivateIpAddressCount,omitempty" tf:"secondary_private_ip_address_count,omitempty"`
+	SecondaryPrivateIPAddressCount *int64 `json:"secondaryPrivateIpAddressCount,omitempty" tf:"secondary_private_ip_address_count,omitempty"`
 
 	// A list of secondary private IPv4 addresses to assign to the NAT Gateway.
 	// +listType=set
@@ -164,7 +160,7 @@ type NATGatewayParameters_2 struct {
 
 	// [Private NAT Gateway only] The number of secondary private IPv4 addresses you want to assign to the NAT Gateway.
 	// +kubebuilder:validation:Optional
-	SecondaryPrivateIPAddressCount *float64 `json:"secondaryPrivateIpAddressCount,omitempty" tf:"secondary_private_ip_address_count,omitempty"`
+	SecondaryPrivateIPAddressCount *int64 `json:"secondaryPrivateIpAddressCount,omitempty" tf:"secondary_private_ip_address_count,omitempty"`
 
 	// A list of secondary private IPv4 addresses to assign to the NAT Gateway.
 	// +kubebuilder:validation:Optional
@@ -183,11 +179,6 @@ type NATGatewayParameters_2 struct {
 	// Selector for a Subnet in ec2 to populate subnetId.
 	// +kubebuilder:validation:Optional
 	SubnetIDSelector *v1.Selector `json:"subnetIdSelector,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // NATGatewaySpec defines the desired state of NATGateway

@@ -196,22 +196,22 @@ func (in *EnvironmentInitParameters) DeepCopyInto(out *EnvironmentInitParameters
 	}
 	if in.MaxWebservers != nil {
 		in, out := &in.MaxWebservers, &out.MaxWebservers
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaxWorkers != nil {
 		in, out := &in.MaxWorkers, &out.MaxWorkers
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MinWebservers != nil {
 		in, out := &in.MinWebservers, &out.MinWebservers
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MinWorkers != nil {
 		in, out := &in.MinWorkers, &out.MinWorkers
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.NetworkConfiguration != nil {
@@ -241,7 +241,7 @@ func (in *EnvironmentInitParameters) DeepCopyInto(out *EnvironmentInitParameters
 	}
 	if in.Schedulers != nil {
 		in, out := &in.Schedulers, &out.Schedulers
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.SourceBucketArn != nil {
@@ -268,22 +268,6 @@ func (in *EnvironmentInitParameters) DeepCopyInto(out *EnvironmentInitParameters
 		in, out := &in.StartupScriptS3Path, &out.StartupScriptS3Path
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.WebserverAccessMode != nil {
 		in, out := &in.WebserverAccessMode, &out.WebserverAccessMode
@@ -406,22 +390,22 @@ func (in *EnvironmentObservation) DeepCopyInto(out *EnvironmentObservation) {
 	}
 	if in.MaxWebservers != nil {
 		in, out := &in.MaxWebservers, &out.MaxWebservers
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaxWorkers != nil {
 		in, out := &in.MaxWorkers, &out.MaxWorkers
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MinWebservers != nil {
 		in, out := &in.MinWebservers, &out.MinWebservers
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MinWorkers != nil {
 		in, out := &in.MinWorkers, &out.MinWorkers
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.NetworkConfiguration != nil {
@@ -451,7 +435,7 @@ func (in *EnvironmentObservation) DeepCopyInto(out *EnvironmentObservation) {
 	}
 	if in.Schedulers != nil {
 		in, out := &in.Schedulers, &out.Schedulers
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ServiceRoleArn != nil {
@@ -608,22 +592,22 @@ func (in *EnvironmentParameters) DeepCopyInto(out *EnvironmentParameters) {
 	}
 	if in.MaxWebservers != nil {
 		in, out := &in.MaxWebservers, &out.MaxWebservers
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaxWorkers != nil {
 		in, out := &in.MaxWorkers, &out.MaxWorkers
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MinWebservers != nil {
 		in, out := &in.MinWebservers, &out.MinWebservers
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MinWorkers != nil {
 		in, out := &in.MinWorkers, &out.MinWorkers
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.NetworkConfiguration != nil {
@@ -658,7 +642,7 @@ func (in *EnvironmentParameters) DeepCopyInto(out *EnvironmentParameters) {
 	}
 	if in.Schedulers != nil {
 		in, out := &in.Schedulers, &out.Schedulers
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.SourceBucketArn != nil {
@@ -685,22 +669,6 @@ func (in *EnvironmentParameters) DeepCopyInto(out *EnvironmentParameters) {
 		in, out := &in.StartupScriptS3Path, &out.StartupScriptS3Path
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.WebserverAccessMode != nil {
 		in, out := &in.WebserverAccessMode, &out.WebserverAccessMode

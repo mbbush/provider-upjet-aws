@@ -30,10 +30,6 @@ type DomainInitParameters struct {
 	// Selector for a Key in kms to populate encryptionKey.
 	// +kubebuilder:validation:Optional
 	EncryptionKeySelector *v1.Selector `json:"encryptionKeySelector,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type DomainObservation struct {
@@ -60,7 +56,7 @@ type DomainObservation struct {
 	Owner *string `json:"owner,omitempty" tf:"owner,omitempty"`
 
 	// The number of repositories in the domain.
-	RepositoryCount *float64 `json:"repositoryCount,omitempty" tf:"repository_count,omitempty"`
+	RepositoryCount *int64 `json:"repositoryCount,omitempty" tf:"repository_count,omitempty"`
 
 	// The ARN of the Amazon S3 bucket that is used to store package assets in the domain.
 	S3BucketArn *string `json:"s3BucketArn,omitempty" tf:"s3_bucket_arn,omitempty"`
@@ -98,11 +94,6 @@ type DomainParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // DomainSpec defines the desired state of Domain

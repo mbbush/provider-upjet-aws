@@ -3470,7 +3470,8 @@ spec:
                                     port:
                                       description: The port number to match from the
                                         request.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                     virtualNode:
                                       description: Virtual node to associate with
                                         the weighted target. Must be between 1 and
@@ -3479,7 +3480,8 @@ spec:
                                     weight:
                                       description: Relative weight of the weighted
                                         target. An integer between 0 and 100.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                   type: object
                                 type: array
                             type: object
@@ -3516,11 +3518,13 @@ spec:
                                           properties:
                                             end:
                                               description: End of the range.
-                                              type: number
+                                              format: int64
+                                              type: integer
                                             start:
                                               description: (Requited) Start of the
                                                 range.
-                                              type: number
+                                              format: int64
+                                              type: integer
                                           type: object
                                         regex:
                                           description: Value sent by the client must
@@ -3545,7 +3549,8 @@ spec:
                                 type: string
                               port:
                                 description: The port number to match from the request.
-                                type: number
+                                format: int64
+                                type: integer
                               prefix:
                                 description: Value sent by the client must begin with
                                   the specified characters. Must be between 1 and
@@ -3577,7 +3582,8 @@ spec:
                                 x-kubernetes-list-type: set
                               maxRetries:
                                 description: Maximum number of retries.
-                                type: number
+                                format: int64
+                                type: integer
                               perRetryTimeout:
                                 description: Per-retry timeout.
                                 properties:
@@ -3588,7 +3594,8 @@ spec:
                                   value:
                                     description: Number of time units. Minimum value
                                       of 0.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                               tcpRetryEvents:
                                 description: List of TCP retry events. The only valid
@@ -3612,7 +3619,8 @@ spec:
                                   value:
                                     description: Number of time units. Minimum value
                                       of 0.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                               perRequest:
                                 description: Per request timeout.
@@ -3624,7 +3632,8 @@ spec:
                                   value:
                                     description: Number of time units. Minimum value
                                       of 0.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                             type: object
                         type: object
@@ -3643,7 +3652,8 @@ spec:
                                     port:
                                       description: The port number to match from the
                                         request.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                     virtualNode:
                                       description: Virtual node to associate with
                                         the weighted target. Must be between 1 and
@@ -3652,7 +3662,8 @@ spec:
                                     weight:
                                       description: Relative weight of the weighted
                                         target. An integer between 0 and 100.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                   type: object
                                 type: array
                             type: object
@@ -3689,11 +3700,13 @@ spec:
                                           properties:
                                             end:
                                               description: End of the range.
-                                              type: number
+                                              format: int64
+                                              type: integer
                                             start:
                                               description: (Requited) Start of the
                                                 range.
-                                              type: number
+                                              format: int64
+                                              type: integer
                                           type: object
                                         regex:
                                           description: Value sent by the client must
@@ -3733,7 +3746,8 @@ spec:
                                 type: object
                               port:
                                 description: The port number to match from the request.
-                                type: number
+                                format: int64
+                                type: integer
                               prefix:
                                 description: Value sent by the client must begin with
                                   the specified characters. Must be between 1 and
@@ -3778,7 +3792,8 @@ spec:
                                 x-kubernetes-list-type: set
                               maxRetries:
                                 description: Maximum number of retries.
-                                type: number
+                                format: int64
+                                type: integer
                               perRetryTimeout:
                                 description: Per-retry timeout.
                                 properties:
@@ -3789,7 +3804,8 @@ spec:
                                   value:
                                     description: Number of time units. Minimum value
                                       of 0.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                               tcpRetryEvents:
                                 description: List of TCP retry events. The only valid
@@ -3813,7 +3829,8 @@ spec:
                                   value:
                                     description: Number of time units. Minimum value
                                       of 0.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                               perRequest:
                                 description: Per request timeout.
@@ -3825,7 +3842,8 @@ spec:
                                   value:
                                     description: Number of time units. Minimum value
                                       of 0.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                             type: object
                         type: object
@@ -3844,7 +3862,8 @@ spec:
                                     port:
                                       description: The port number to match from the
                                         request.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                     virtualNode:
                                       description: Virtual node to associate with
                                         the weighted target. Must be between 1 and
@@ -3929,7 +3948,8 @@ spec:
                                     weight:
                                       description: Relative weight of the weighted
                                         target. An integer between 0 and 100.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                   type: object
                                 type: array
                             type: object
@@ -3966,11 +3986,13 @@ spec:
                                           properties:
                                             end:
                                               description: End of the range.
-                                              type: number
+                                              format: int64
+                                              type: integer
                                             start:
                                               description: (Requited) Start of the
                                                 range.
-                                              type: number
+                                              format: int64
+                                              type: integer
                                           type: object
                                         regex:
                                           description: Value sent by the client must
@@ -4010,7 +4032,8 @@ spec:
                                 type: object
                               port:
                                 description: The port number to match from the request.
-                                type: number
+                                format: int64
+                                type: integer
                               prefix:
                                 description: Value sent by the client must begin with
                                   the specified characters. Must be between 1 and
@@ -4055,7 +4078,8 @@ spec:
                                 x-kubernetes-list-type: set
                               maxRetries:
                                 description: Maximum number of retries.
-                                type: number
+                                format: int64
+                                type: integer
                               perRetryTimeout:
                                 description: Per-retry timeout.
                                 properties:
@@ -4066,7 +4090,8 @@ spec:
                                   value:
                                     description: Number of time units. Minimum value
                                       of 0.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                               tcpRetryEvents:
                                 description: List of TCP retry events. The only valid
@@ -4090,7 +4115,8 @@ spec:
                                   value:
                                     description: Number of time units. Minimum value
                                       of 0.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                               perRequest:
                                 description: Per request timeout.
@@ -4102,7 +4128,8 @@ spec:
                                   value:
                                     description: Number of time units. Minimum value
                                       of 0.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                             type: object
                         type: object
@@ -4110,7 +4137,8 @@ spec:
                         description: |-
                           Priority for the route, between 0 and 1000.
                           Routes are matched based on the specified value, where 0 is the highest priority.
-                        type: number
+                        format: int64
+                        type: integer
                       tcpRoute:
                         description: TCP routing information for the route.
                         properties:
@@ -4126,7 +4154,8 @@ spec:
                                     port:
                                       description: The port number to match from the
                                         request.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                     virtualNode:
                                       description: Virtual node to associate with
                                         the weighted target. Must be between 1 and
@@ -4211,7 +4240,8 @@ spec:
                                     weight:
                                       description: Relative weight of the weighted
                                         target. An integer between 0 and 100.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                   type: object
                                 type: array
                             type: object
@@ -4221,7 +4251,8 @@ spec:
                             properties:
                               port:
                                 description: The port number to match from the request.
-                                type: number
+                                format: int64
+                                type: integer
                             type: object
                           timeout:
                             description: Types of timeouts.
@@ -4237,17 +4268,12 @@ spec:
                                   value:
                                     description: Number of time units. Minimum value
                                       of 0.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                             type: object
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   virtualRouterName:
                     description: Name of the virtual router in which to create the
                       route. Must be between 1 and 255 characters in length.
@@ -4448,7 +4474,8 @@ spec:
                                     port:
                                       description: The port number to match from the
                                         request.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                     virtualNode:
                                       description: Virtual node to associate with
                                         the weighted target. Must be between 1 and
@@ -4457,7 +4484,8 @@ spec:
                                     weight:
                                       description: Relative weight of the weighted
                                         target. An integer between 0 and 100.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                   type: object
                                 type: array
                             type: object
@@ -4494,11 +4522,13 @@ spec:
                                           properties:
                                             end:
                                               description: End of the range.
-                                              type: number
+                                              format: int64
+                                              type: integer
                                             start:
                                               description: (Requited) Start of the
                                                 range.
-                                              type: number
+                                              format: int64
+                                              type: integer
                                           type: object
                                         regex:
                                           description: Value sent by the client must
@@ -4523,7 +4553,8 @@ spec:
                                 type: string
                               port:
                                 description: The port number to match from the request.
-                                type: number
+                                format: int64
+                                type: integer
                               prefix:
                                 description: Value sent by the client must begin with
                                   the specified characters. Must be between 1 and
@@ -4555,7 +4586,8 @@ spec:
                                 x-kubernetes-list-type: set
                               maxRetries:
                                 description: Maximum number of retries.
-                                type: number
+                                format: int64
+                                type: integer
                               perRetryTimeout:
                                 description: Per-retry timeout.
                                 properties:
@@ -4566,7 +4598,8 @@ spec:
                                   value:
                                     description: Number of time units. Minimum value
                                       of 0.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                               tcpRetryEvents:
                                 description: List of TCP retry events. The only valid
@@ -4590,7 +4623,8 @@ spec:
                                   value:
                                     description: Number of time units. Minimum value
                                       of 0.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                               perRequest:
                                 description: Per request timeout.
@@ -4602,7 +4636,8 @@ spec:
                                   value:
                                     description: Number of time units. Minimum value
                                       of 0.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                             type: object
                         type: object
@@ -4621,7 +4656,8 @@ spec:
                                     port:
                                       description: The port number to match from the
                                         request.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                     virtualNode:
                                       description: Virtual node to associate with
                                         the weighted target. Must be between 1 and
@@ -4630,7 +4666,8 @@ spec:
                                     weight:
                                       description: Relative weight of the weighted
                                         target. An integer between 0 and 100.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                   type: object
                                 type: array
                             type: object
@@ -4667,11 +4704,13 @@ spec:
                                           properties:
                                             end:
                                               description: End of the range.
-                                              type: number
+                                              format: int64
+                                              type: integer
                                             start:
                                               description: (Requited) Start of the
                                                 range.
-                                              type: number
+                                              format: int64
+                                              type: integer
                                           type: object
                                         regex:
                                           description: Value sent by the client must
@@ -4711,7 +4750,8 @@ spec:
                                 type: object
                               port:
                                 description: The port number to match from the request.
-                                type: number
+                                format: int64
+                                type: integer
                               prefix:
                                 description: Value sent by the client must begin with
                                   the specified characters. Must be between 1 and
@@ -4756,7 +4796,8 @@ spec:
                                 x-kubernetes-list-type: set
                               maxRetries:
                                 description: Maximum number of retries.
-                                type: number
+                                format: int64
+                                type: integer
                               perRetryTimeout:
                                 description: Per-retry timeout.
                                 properties:
@@ -4767,7 +4808,8 @@ spec:
                                   value:
                                     description: Number of time units. Minimum value
                                       of 0.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                               tcpRetryEvents:
                                 description: List of TCP retry events. The only valid
@@ -4791,7 +4833,8 @@ spec:
                                   value:
                                     description: Number of time units. Minimum value
                                       of 0.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                               perRequest:
                                 description: Per request timeout.
@@ -4803,7 +4846,8 @@ spec:
                                   value:
                                     description: Number of time units. Minimum value
                                       of 0.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                             type: object
                         type: object
@@ -4822,7 +4866,8 @@ spec:
                                     port:
                                       description: The port number to match from the
                                         request.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                     virtualNode:
                                       description: Virtual node to associate with
                                         the weighted target. Must be between 1 and
@@ -4907,7 +4952,8 @@ spec:
                                     weight:
                                       description: Relative weight of the weighted
                                         target. An integer between 0 and 100.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                   type: object
                                 type: array
                             type: object
@@ -4944,11 +4990,13 @@ spec:
                                           properties:
                                             end:
                                               description: End of the range.
-                                              type: number
+                                              format: int64
+                                              type: integer
                                             start:
                                               description: (Requited) Start of the
                                                 range.
-                                              type: number
+                                              format: int64
+                                              type: integer
                                           type: object
                                         regex:
                                           description: Value sent by the client must
@@ -4988,7 +5036,8 @@ spec:
                                 type: object
                               port:
                                 description: The port number to match from the request.
-                                type: number
+                                format: int64
+                                type: integer
                               prefix:
                                 description: Value sent by the client must begin with
                                   the specified characters. Must be between 1 and
@@ -5033,7 +5082,8 @@ spec:
                                 x-kubernetes-list-type: set
                               maxRetries:
                                 description: Maximum number of retries.
-                                type: number
+                                format: int64
+                                type: integer
                               perRetryTimeout:
                                 description: Per-retry timeout.
                                 properties:
@@ -5044,7 +5094,8 @@ spec:
                                   value:
                                     description: Number of time units. Minimum value
                                       of 0.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                               tcpRetryEvents:
                                 description: List of TCP retry events. The only valid
@@ -5068,7 +5119,8 @@ spec:
                                   value:
                                     description: Number of time units. Minimum value
                                       of 0.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                               perRequest:
                                 description: Per request timeout.
@@ -5080,7 +5132,8 @@ spec:
                                   value:
                                     description: Number of time units. Minimum value
                                       of 0.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                             type: object
                         type: object
@@ -5088,7 +5141,8 @@ spec:
                         description: |-
                           Priority for the route, between 0 and 1000.
                           Routes are matched based on the specified value, where 0 is the highest priority.
-                        type: number
+                        format: int64
+                        type: integer
                       tcpRoute:
                         description: TCP routing information for the route.
                         properties:
@@ -5104,7 +5158,8 @@ spec:
                                     port:
                                       description: The port number to match from the
                                         request.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                     virtualNode:
                                       description: Virtual node to associate with
                                         the weighted target. Must be between 1 and
@@ -5189,7 +5244,8 @@ spec:
                                     weight:
                                       description: Relative weight of the weighted
                                         target. An integer between 0 and 100.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                   type: object
                                 type: array
                             type: object
@@ -5199,7 +5255,8 @@ spec:
                             properties:
                               port:
                                 description: The port number to match from the request.
-                                type: number
+                                format: int64
+                                type: integer
                             type: object
                           timeout:
                             description: Types of timeouts.
@@ -5215,17 +5272,12 @@ spec:
                                   value:
                                     description: Number of time units. Minimum value
                                       of 0.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                             type: object
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   virtualRouterName:
                     description: Name of the virtual router in which to create the
                       route. Must be between 1 and 255 characters in length.
@@ -5533,7 +5585,8 @@ spec:
                                     port:
                                       description: The port number to match from the
                                         request.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                     virtualNode:
                                       description: Virtual node to associate with
                                         the weighted target. Must be between 1 and
@@ -5542,7 +5595,8 @@ spec:
                                     weight:
                                       description: Relative weight of the weighted
                                         target. An integer between 0 and 100.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                   type: object
                                 type: array
                             type: object
@@ -5579,11 +5633,13 @@ spec:
                                           properties:
                                             end:
                                               description: End of the range.
-                                              type: number
+                                              format: int64
+                                              type: integer
                                             start:
                                               description: (Requited) Start of the
                                                 range.
-                                              type: number
+                                              format: int64
+                                              type: integer
                                           type: object
                                         regex:
                                           description: Value sent by the client must
@@ -5608,7 +5664,8 @@ spec:
                                 type: string
                               port:
                                 description: The port number to match from the request.
-                                type: number
+                                format: int64
+                                type: integer
                               prefix:
                                 description: Value sent by the client must begin with
                                   the specified characters. Must be between 1 and
@@ -5640,7 +5697,8 @@ spec:
                                 x-kubernetes-list-type: set
                               maxRetries:
                                 description: Maximum number of retries.
-                                type: number
+                                format: int64
+                                type: integer
                               perRetryTimeout:
                                 description: Per-retry timeout.
                                 properties:
@@ -5651,7 +5709,8 @@ spec:
                                   value:
                                     description: Number of time units. Minimum value
                                       of 0.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                               tcpRetryEvents:
                                 description: List of TCP retry events. The only valid
@@ -5675,7 +5734,8 @@ spec:
                                   value:
                                     description: Number of time units. Minimum value
                                       of 0.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                               perRequest:
                                 description: Per request timeout.
@@ -5687,7 +5747,8 @@ spec:
                                   value:
                                     description: Number of time units. Minimum value
                                       of 0.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                             type: object
                         type: object
@@ -5706,7 +5767,8 @@ spec:
                                     port:
                                       description: The port number to match from the
                                         request.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                     virtualNode:
                                       description: Virtual node to associate with
                                         the weighted target. Must be between 1 and
@@ -5715,7 +5777,8 @@ spec:
                                     weight:
                                       description: Relative weight of the weighted
                                         target. An integer between 0 and 100.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                   type: object
                                 type: array
                             type: object
@@ -5752,11 +5815,13 @@ spec:
                                           properties:
                                             end:
                                               description: End of the range.
-                                              type: number
+                                              format: int64
+                                              type: integer
                                             start:
                                               description: (Requited) Start of the
                                                 range.
-                                              type: number
+                                              format: int64
+                                              type: integer
                                           type: object
                                         regex:
                                           description: Value sent by the client must
@@ -5796,7 +5861,8 @@ spec:
                                 type: object
                               port:
                                 description: The port number to match from the request.
-                                type: number
+                                format: int64
+                                type: integer
                               prefix:
                                 description: Value sent by the client must begin with
                                   the specified characters. Must be between 1 and
@@ -5841,7 +5907,8 @@ spec:
                                 x-kubernetes-list-type: set
                               maxRetries:
                                 description: Maximum number of retries.
-                                type: number
+                                format: int64
+                                type: integer
                               perRetryTimeout:
                                 description: Per-retry timeout.
                                 properties:
@@ -5852,7 +5919,8 @@ spec:
                                   value:
                                     description: Number of time units. Minimum value
                                       of 0.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                               tcpRetryEvents:
                                 description: List of TCP retry events. The only valid
@@ -5876,7 +5944,8 @@ spec:
                                   value:
                                     description: Number of time units. Minimum value
                                       of 0.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                               perRequest:
                                 description: Per request timeout.
@@ -5888,7 +5957,8 @@ spec:
                                   value:
                                     description: Number of time units. Minimum value
                                       of 0.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                             type: object
                         type: object
@@ -5907,7 +5977,8 @@ spec:
                                     port:
                                       description: The port number to match from the
                                         request.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                     virtualNode:
                                       description: Virtual node to associate with
                                         the weighted target. Must be between 1 and
@@ -5916,7 +5987,8 @@ spec:
                                     weight:
                                       description: Relative weight of the weighted
                                         target. An integer between 0 and 100.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                   type: object
                                 type: array
                             type: object
@@ -5953,11 +6025,13 @@ spec:
                                           properties:
                                             end:
                                               description: End of the range.
-                                              type: number
+                                              format: int64
+                                              type: integer
                                             start:
                                               description: (Requited) Start of the
                                                 range.
-                                              type: number
+                                              format: int64
+                                              type: integer
                                           type: object
                                         regex:
                                           description: Value sent by the client must
@@ -5997,7 +6071,8 @@ spec:
                                 type: object
                               port:
                                 description: The port number to match from the request.
-                                type: number
+                                format: int64
+                                type: integer
                               prefix:
                                 description: Value sent by the client must begin with
                                   the specified characters. Must be between 1 and
@@ -6042,7 +6117,8 @@ spec:
                                 x-kubernetes-list-type: set
                               maxRetries:
                                 description: Maximum number of retries.
-                                type: number
+                                format: int64
+                                type: integer
                               perRetryTimeout:
                                 description: Per-retry timeout.
                                 properties:
@@ -6053,7 +6129,8 @@ spec:
                                   value:
                                     description: Number of time units. Minimum value
                                       of 0.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                               tcpRetryEvents:
                                 description: List of TCP retry events. The only valid
@@ -6077,7 +6154,8 @@ spec:
                                   value:
                                     description: Number of time units. Minimum value
                                       of 0.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                               perRequest:
                                 description: Per request timeout.
@@ -6089,7 +6167,8 @@ spec:
                                   value:
                                     description: Number of time units. Minimum value
                                       of 0.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                             type: object
                         type: object
@@ -6097,7 +6176,8 @@ spec:
                         description: |-
                           Priority for the route, between 0 and 1000.
                           Routes are matched based on the specified value, where 0 is the highest priority.
-                        type: number
+                        format: int64
+                        type: integer
                       tcpRoute:
                         description: TCP routing information for the route.
                         properties:
@@ -6113,7 +6193,8 @@ spec:
                                     port:
                                       description: The port number to match from the
                                         request.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                     virtualNode:
                                       description: Virtual node to associate with
                                         the weighted target. Must be between 1 and
@@ -6122,7 +6203,8 @@ spec:
                                     weight:
                                       description: Relative weight of the weighted
                                         target. An integer between 0 and 100.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                   type: object
                                 type: array
                             type: object
@@ -6132,7 +6214,8 @@ spec:
                             properties:
                               port:
                                 description: The port number to match from the request.
-                                type: number
+                                format: int64
+                                type: integer
                             type: object
                           timeout:
                             description: Types of timeouts.
@@ -6148,7 +6231,8 @@ spec:
                                   value:
                                     description: Number of time units. Minimum value
                                       of 0.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                             type: object
                         type: object

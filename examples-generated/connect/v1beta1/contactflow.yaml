@@ -41,8 +41,4 @@ spec:
         testing.upbound.io/example-name: example
     name: Test
     region: us-west-1
-    tags:
-      Application: Terraform
-      Method: Create
-      Name: Test Contact Flow
     type: CONTACT_FLOW

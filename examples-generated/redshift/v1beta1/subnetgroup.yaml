@@ -12,8 +12,6 @@ spec:
     subnetIdRefs:
     - name: foo
     - name: bar
-    tags:
-      environment: Production
 
 ---
 
@@ -30,8 +28,6 @@ spec:
     availabilityZone: us-west-2b
     cidrBlock: 10.1.2.0/24
     region: us-west-1
-    tags:
-      Name: tf-dbsubnet-test-2
     vpcIdSelector:
       matchLabels:
         testing.upbound.io/example-name: foo
@@ -51,8 +47,6 @@ spec:
     availabilityZone: us-west-2a
     cidrBlock: 10.1.1.0/24
     region: us-west-1
-    tags:
-      Name: tf-dbsubnet-test-1
     vpcIdSelector:
       matchLabels:
         testing.upbound.io/example-name: foo

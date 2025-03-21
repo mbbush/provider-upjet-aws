@@ -1210,14 +1210,6 @@ spec:
                         description: Name of the file.
                         type: string
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags. If configured with
-                      a provider default_tags configuration block, tags with matching
-                      keys will overwrite those defined at the provider-level.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -1480,14 +1472,6 @@ spec:
                         description: Name of the file.
                         type: string
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags. If configured with
-                      a provider default_tags configuration block, tags with matching
-                      keys will overwrite those defined at the provider-level.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:

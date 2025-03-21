@@ -20,10 +20,6 @@ type StudioLifecycleConfigInitParameters struct {
 
 	// The content of your Studio Lifecycle Configuration script. This content must be base64 encoded.
 	StudioLifecycleConfigContent *string `json:"studioLifecycleConfigContent,omitempty" tf:"studio_lifecycle_config_content,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type StudioLifecycleConfigObservation struct {
@@ -63,11 +59,6 @@ type StudioLifecycleConfigParameters struct {
 	// The content of your Studio Lifecycle Configuration script. This content must be base64 encoded.
 	// +kubebuilder:validation:Optional
 	StudioLifecycleConfigContent *string `json:"studioLifecycleConfigContent,omitempty" tf:"studio_lifecycle_config_content,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // StudioLifecycleConfigSpec defines the desired state of StudioLifecycleConfig

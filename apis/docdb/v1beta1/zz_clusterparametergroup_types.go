@@ -23,10 +23,6 @@ type ClusterParameterGroupInitParameters struct {
 
 	// A list of DocumentDB parameters to apply. Setting parameters to system default values may show a difference on imported resources.
 	Parameter []ParameterInitParameters `json:"parameter,omitempty" tf:"parameter,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type ClusterParameterGroupObservation struct {
@@ -73,11 +69,6 @@ type ClusterParameterGroupParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type ParameterInitParameters struct {

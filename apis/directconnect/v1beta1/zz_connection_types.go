@@ -34,10 +34,6 @@ type ConnectionInitParameters struct {
 	RequestMacsec *bool `json:"requestMacsec,omitempty" tf:"request_macsec,omitempty"`
 
 	SkipDestroy *bool `json:"skipDestroy,omitempty" tf:"skip_destroy,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type ConnectionObservation struct {
@@ -98,7 +94,7 @@ type ConnectionObservation struct {
 	TagsAll map[string]*string `json:"tagsAll,omitempty" tf:"tags_all,omitempty"`
 
 	// The VLAN ID.
-	VlanID *float64 `json:"vlanId,omitempty" tf:"vlan_id,omitempty"`
+	VlanID *int64 `json:"vlanId,omitempty" tf:"vlan_id,omitempty"`
 }
 
 type ConnectionParameters struct {
@@ -134,11 +130,6 @@ type ConnectionParameters struct {
 
 	// +kubebuilder:validation:Optional
 	SkipDestroy *bool `json:"skipDestroy,omitempty" tf:"skip_destroy,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // ConnectionSpec defines the desired state of Connection

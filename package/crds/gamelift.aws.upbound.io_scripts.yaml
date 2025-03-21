@@ -1211,12 +1211,6 @@ spec:
                             type: object
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   version:
                     description: Version that is associated with this script.
                     type: string
@@ -1485,12 +1479,6 @@ spec:
                             type: object
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   version:
                     description: Version that is associated with this script.
                     type: string

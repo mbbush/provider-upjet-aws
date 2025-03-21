@@ -1657,12 +1657,6 @@ spec:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   workerAccessConfiguration:
                     description: Use this optional parameter to constrain access to
                       an Amazon S3 resource based on the IP address using supported
@@ -2087,12 +2081,6 @@ spec:
                           should be published.
                         type: string
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   workerAccessConfiguration:
                     description: Use this optional parameter to constrain access to
                       an Amazon S3 resource based on the IP address using supported

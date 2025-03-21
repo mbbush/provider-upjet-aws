@@ -44,9 +44,9 @@ type ActionInitParameters struct {
 	RoleArn *string `json:"roleArn,omitempty" tf:"role_arn,omitempty"`
 
 	// The order in which actions are run.
-	RunOrder *float64 `json:"runOrder,omitempty" tf:"run_order,omitempty"`
+	RunOrder *int64 `json:"runOrder,omitempty" tf:"run_order,omitempty"`
 
-	TimeoutInMinutes *float64 `json:"timeoutInMinutes,omitempty" tf:"timeout_in_minutes,omitempty"`
+	TimeoutInMinutes *int64 `json:"timeoutInMinutes,omitempty" tf:"timeout_in_minutes,omitempty"`
 
 	// A string that identifies the action type.
 	Version *string `json:"version,omitempty" tf:"version,omitempty"`
@@ -86,9 +86,9 @@ type ActionObservation struct {
 	RoleArn *string `json:"roleArn,omitempty" tf:"role_arn,omitempty"`
 
 	// The order in which actions are run.
-	RunOrder *float64 `json:"runOrder,omitempty" tf:"run_order,omitempty"`
+	RunOrder *int64 `json:"runOrder,omitempty" tf:"run_order,omitempty"`
 
-	TimeoutInMinutes *float64 `json:"timeoutInMinutes,omitempty" tf:"timeout_in_minutes,omitempty"`
+	TimeoutInMinutes *int64 `json:"timeoutInMinutes,omitempty" tf:"timeout_in_minutes,omitempty"`
 
 	// A string that identifies the action type.
 	Version *string `json:"version,omitempty" tf:"version,omitempty"`
@@ -139,10 +139,10 @@ type ActionParameters struct {
 
 	// The order in which actions are run.
 	// +kubebuilder:validation:Optional
-	RunOrder *float64 `json:"runOrder,omitempty" tf:"run_order,omitempty"`
+	RunOrder *int64 `json:"runOrder,omitempty" tf:"run_order,omitempty"`
 
 	// +kubebuilder:validation:Optional
-	TimeoutInMinutes *float64 `json:"timeoutInMinutes,omitempty" tf:"timeout_in_minutes,omitempty"`
+	TimeoutInMinutes *int64 `json:"timeoutInMinutes,omitempty" tf:"timeout_in_minutes,omitempty"`
 
 	// A string that identifies the action type.
 	// +kubebuilder:validation:Optional
@@ -269,10 +269,6 @@ type CodepipelineInitParameters struct {
 	// (Minimum of at least two stage blocks is required) A stage block. Stages are documented below.
 	Stage []StageInitParameters `json:"stage,omitempty" tf:"stage,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// A trigger block. Valid only when pipeline_type is V2. Triggers are documented below.
 	Trigger []TriggerInitParameters `json:"trigger,omitempty" tf:"trigger,omitempty"`
 
@@ -355,11 +351,6 @@ type CodepipelineParameters struct {
 	// (Minimum of at least two stage blocks is required) A stage block. Stages are documented below.
 	// +kubebuilder:validation:Optional
 	Stage []StageParameters `json:"stage,omitempty" tf:"stage,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// A trigger block. Valid only when pipeline_type is V2. Triggers are documented below.
 	// +kubebuilder:validation:Optional

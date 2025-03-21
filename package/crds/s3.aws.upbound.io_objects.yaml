@@ -1418,12 +1418,6 @@ spec:
                   storageClass:
                     description: Storage Class for the object. Defaults to "STANDARD".
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   websiteRedirect:
                     description: Target URL for website redirect.
                     type: string
@@ -1719,12 +1713,6 @@ spec:
                   storageClass:
                     description: Storage Class for the object. Defaults to "STANDARD".
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   websiteRedirect:
                     description: Target URL for website redirect.
                     type: string

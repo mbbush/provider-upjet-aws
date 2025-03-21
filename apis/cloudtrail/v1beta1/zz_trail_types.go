@@ -293,10 +293,6 @@ type TrailInitParameters struct {
 
 	// Name of the Amazon SNS topic defined for notification of log file delivery.
 	SnsTopicName *string `json:"snsTopicName,omitempty" tf:"sns_topic_name,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type TrailObservation struct {
@@ -452,11 +448,6 @@ type TrailParameters struct {
 	// Name of the Amazon SNS topic defined for notification of log file delivery.
 	// +kubebuilder:validation:Optional
 	SnsTopicName *string `json:"snsTopicName,omitempty" tf:"sns_topic_name,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // TrailSpec defines the desired state of Trail

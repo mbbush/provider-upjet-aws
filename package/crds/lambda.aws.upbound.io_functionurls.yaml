@@ -800,7 +800,8 @@ spec:
                           web browsers can cache results of a preflight request. By
                           default, this is set to 0, which means that the browser
                           doesn't cache results. The maximum value is 86400.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   functionName:
                     description: The name (or ARN) of the Lambda function.
@@ -958,7 +959,8 @@ spec:
                           web browsers can cache results of a preflight request. By
                           default, this is set to 0, which means that the browser
                           doesn't cache results. The maximum value is 86400.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   functionName:
                     description: The name (or ARN) of the Lambda function.
@@ -1274,7 +1276,8 @@ spec:
                           web browsers can cache results of a preflight request. By
                           default, this is set to 0, which means that the browser
                           doesn't cache results. The maximum value is 86400.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   functionArn:
                     description: The Amazon Resource Name (ARN) of the function.

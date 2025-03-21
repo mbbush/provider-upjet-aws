@@ -640,22 +640,6 @@ func (in *DeploymentGroupInitParameters) DeepCopyInto(out *DeploymentGroupInitPa
 		*out = new(v1.Selector)
 		(*in).DeepCopyInto(*out)
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.TerminationHookEnabled != nil {
 		in, out := &in.TerminationHookEnabled, &out.TerminationHookEnabled
 		*out = new(bool)
@@ -983,22 +967,6 @@ func (in *DeploymentGroupParameters) DeepCopyInto(out *DeploymentGroupParameters
 		*out = new(v1.Selector)
 		(*in).DeepCopyInto(*out)
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.TerminationHookEnabled != nil {
 		in, out := &in.TerminationHookEnabled, &out.TerminationHookEnabled
 		*out = new(bool)
@@ -1068,7 +1036,7 @@ func (in *DeploymentReadyOptionInitParameters) DeepCopyInto(out *DeploymentReady
 	}
 	if in.WaitTimeInMinutes != nil {
 		in, out := &in.WaitTimeInMinutes, &out.WaitTimeInMinutes
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1093,7 +1061,7 @@ func (in *DeploymentReadyOptionObservation) DeepCopyInto(out *DeploymentReadyOpt
 	}
 	if in.WaitTimeInMinutes != nil {
 		in, out := &in.WaitTimeInMinutes, &out.WaitTimeInMinutes
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1118,7 +1086,7 @@ func (in *DeploymentReadyOptionParameters) DeepCopyInto(out *DeploymentReadyOpti
 	}
 	if in.WaitTimeInMinutes != nil {
 		in, out := &in.WaitTimeInMinutes, &out.WaitTimeInMinutes
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1821,7 +1789,7 @@ func (in *MinimumHealthyHostsInitParameters) DeepCopyInto(out *MinimumHealthyHos
 	}
 	if in.Value != nil {
 		in, out := &in.Value, &out.Value
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1846,7 +1814,7 @@ func (in *MinimumHealthyHostsObservation) DeepCopyInto(out *MinimumHealthyHostsO
 	}
 	if in.Value != nil {
 		in, out := &in.Value, &out.Value
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1871,7 +1839,7 @@ func (in *MinimumHealthyHostsParameters) DeepCopyInto(out *MinimumHealthyHostsPa
 	}
 	if in.Value != nil {
 		in, out := &in.Value, &out.Value
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1896,7 +1864,7 @@ func (in *MinimumHealthyHostsPerZoneInitParameters) DeepCopyInto(out *MinimumHea
 	}
 	if in.Value != nil {
 		in, out := &in.Value, &out.Value
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1921,7 +1889,7 @@ func (in *MinimumHealthyHostsPerZoneObservation) DeepCopyInto(out *MinimumHealth
 	}
 	if in.Value != nil {
 		in, out := &in.Value, &out.Value
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1946,7 +1914,7 @@ func (in *MinimumHealthyHostsPerZoneParameters) DeepCopyInto(out *MinimumHealthy
 	}
 	if in.Value != nil {
 		in, out := &in.Value, &out.Value
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2399,7 +2367,7 @@ func (in *TerminateBlueInstancesOnDeploymentSuccessInitParameters) DeepCopyInto(
 	}
 	if in.TerminationWaitTimeInMinutes != nil {
 		in, out := &in.TerminationWaitTimeInMinutes, &out.TerminationWaitTimeInMinutes
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2424,7 +2392,7 @@ func (in *TerminateBlueInstancesOnDeploymentSuccessObservation) DeepCopyInto(out
 	}
 	if in.TerminationWaitTimeInMinutes != nil {
 		in, out := &in.TerminationWaitTimeInMinutes, &out.TerminationWaitTimeInMinutes
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2449,7 +2417,7 @@ func (in *TerminateBlueInstancesOnDeploymentSuccessParameters) DeepCopyInto(out 
 	}
 	if in.TerminationWaitTimeInMinutes != nil {
 		in, out := &in.TerminationWaitTimeInMinutes, &out.TerminationWaitTimeInMinutes
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2547,12 +2515,12 @@ func (in *TimeBasedCanaryInitParameters) DeepCopyInto(out *TimeBasedCanaryInitPa
 	*out = *in
 	if in.Interval != nil {
 		in, out := &in.Interval, &out.Interval
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Percentage != nil {
 		in, out := &in.Percentage, &out.Percentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2572,12 +2540,12 @@ func (in *TimeBasedCanaryObservation) DeepCopyInto(out *TimeBasedCanaryObservati
 	*out = *in
 	if in.Interval != nil {
 		in, out := &in.Interval, &out.Interval
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Percentage != nil {
 		in, out := &in.Percentage, &out.Percentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2597,12 +2565,12 @@ func (in *TimeBasedCanaryParameters) DeepCopyInto(out *TimeBasedCanaryParameters
 	*out = *in
 	if in.Interval != nil {
 		in, out := &in.Interval, &out.Interval
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Percentage != nil {
 		in, out := &in.Percentage, &out.Percentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2622,12 +2590,12 @@ func (in *TimeBasedLinearInitParameters) DeepCopyInto(out *TimeBasedLinearInitPa
 	*out = *in
 	if in.Interval != nil {
 		in, out := &in.Interval, &out.Interval
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Percentage != nil {
 		in, out := &in.Percentage, &out.Percentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2647,12 +2615,12 @@ func (in *TimeBasedLinearObservation) DeepCopyInto(out *TimeBasedLinearObservati
 	*out = *in
 	if in.Interval != nil {
 		in, out := &in.Interval, &out.Interval
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Percentage != nil {
 		in, out := &in.Percentage, &out.Percentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2672,12 +2640,12 @@ func (in *TimeBasedLinearParameters) DeepCopyInto(out *TimeBasedLinearParameters
 	*out = *in
 	if in.Interval != nil {
 		in, out := &in.Interval, &out.Interval
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Percentage != nil {
 		in, out := &in.Percentage, &out.Percentage
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2915,7 +2883,7 @@ func (in *ZonalConfigInitParameters) DeepCopyInto(out *ZonalConfigInitParameters
 	*out = *in
 	if in.FirstZoneMonitorDurationInSeconds != nil {
 		in, out := &in.FirstZoneMonitorDurationInSeconds, &out.FirstZoneMonitorDurationInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MinimumHealthyHostsPerZone != nil {
@@ -2925,7 +2893,7 @@ func (in *ZonalConfigInitParameters) DeepCopyInto(out *ZonalConfigInitParameters
 	}
 	if in.MonitorDurationInSeconds != nil {
 		in, out := &in.MonitorDurationInSeconds, &out.MonitorDurationInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2945,7 +2913,7 @@ func (in *ZonalConfigObservation) DeepCopyInto(out *ZonalConfigObservation) {
 	*out = *in
 	if in.FirstZoneMonitorDurationInSeconds != nil {
 		in, out := &in.FirstZoneMonitorDurationInSeconds, &out.FirstZoneMonitorDurationInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MinimumHealthyHostsPerZone != nil {
@@ -2955,7 +2923,7 @@ func (in *ZonalConfigObservation) DeepCopyInto(out *ZonalConfigObservation) {
 	}
 	if in.MonitorDurationInSeconds != nil {
 		in, out := &in.MonitorDurationInSeconds, &out.MonitorDurationInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2975,7 +2943,7 @@ func (in *ZonalConfigParameters) DeepCopyInto(out *ZonalConfigParameters) {
 	*out = *in
 	if in.FirstZoneMonitorDurationInSeconds != nil {
 		in, out := &in.FirstZoneMonitorDurationInSeconds, &out.FirstZoneMonitorDurationInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MinimumHealthyHostsPerZone != nil {
@@ -2985,7 +2953,7 @@ func (in *ZonalConfigParameters) DeepCopyInto(out *ZonalConfigParameters) {
 	}
 	if in.MonitorDurationInSeconds != nil {
 		in, out := &in.MonitorDurationInSeconds, &out.MonitorDurationInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }

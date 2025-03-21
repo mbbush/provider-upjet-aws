@@ -17,10 +17,6 @@ type CellInitParameters struct {
 
 	// List of cell arns to add as nested fault domains within this cell.
 	Cells []*string `json:"cells,omitempty" tf:"cells,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type CellObservation struct {
@@ -55,11 +51,6 @@ type CellParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // CellSpec defines the desired state of Cell

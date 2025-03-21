@@ -1827,11 +1827,13 @@ spec:
                                     readOnlyRootFileSystem:
                                       type: boolean
                                     runAsGroup:
-                                      type: number
+                                      format: int64
+                                      type: integer
                                     runAsNonRoot:
                                       type: boolean
                                     runAsUser:
-                                      type: number
+                                      format: int64
+                                      type: integer
                                   type: object
                                 volumeMounts:
                                   description: Volume mounts for the container.
@@ -1955,11 +1957,13 @@ spec:
                                     readOnlyRootFileSystem:
                                       type: boolean
                                     runAsGroup:
-                                      type: number
+                                      format: int64
+                                      type: integer
                                     runAsNonRoot:
                                       type: boolean
                                     runAsUser:
-                                      type: number
+                                      format: int64
+                                      type: integer
                                   type: object
                                 volumeMounts:
                                   description: Volume mounts for the container.
@@ -2083,7 +2087,8 @@ spec:
                       attempts:
                         description: Number of times to move a job to the RUNNABLE
                           status. You may specify between 1 and 10 attempts.
-                        type: number
+                        format: int64
+                        type: integer
                       evaluateOnExit:
                         description: Evaluate on exit conditions under which the job
                           should be retried or failed. If this parameter is specified,
@@ -2116,13 +2121,8 @@ spec:
                       affects jobs in job queues with a fair share policy. Jobs with
                       a higher scheduling priority are scheduled before jobs with
                       a lower scheduling priority. Allowed values 0 through 9999.
-                    type: number
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
+                    format: int64
+                    type: integer
                   timeout:
                     description: Timeout for jobs so that if a job runs longer, AWS
                       Batch terminates the job. Maximum number of timeout is 1. Defined
@@ -2132,7 +2132,8 @@ spec:
                         description: Time duration in seconds after which AWS Batch
                           terminates your jobs if they have not finished. The minimum
                           value for the timeout is 60 seconds.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   type:
                     description: Type of job definition. Must be container or multinode.
@@ -2251,11 +2252,13 @@ spec:
                                     readOnlyRootFileSystem:
                                       type: boolean
                                     runAsGroup:
-                                      type: number
+                                      format: int64
+                                      type: integer
                                     runAsNonRoot:
                                       type: boolean
                                     runAsUser:
-                                      type: number
+                                      format: int64
+                                      type: integer
                                   type: object
                                 volumeMounts:
                                   description: Volume mounts for the container.
@@ -2379,11 +2382,13 @@ spec:
                                     readOnlyRootFileSystem:
                                       type: boolean
                                     runAsGroup:
-                                      type: number
+                                      format: int64
+                                      type: integer
                                     runAsNonRoot:
                                       type: boolean
                                     runAsUser:
-                                      type: number
+                                      format: int64
+                                      type: integer
                                   type: object
                                 volumeMounts:
                                   description: Volume mounts for the container.
@@ -2503,7 +2508,8 @@ spec:
                       attempts:
                         description: Number of times to move a job to the RUNNABLE
                           status. You may specify between 1 and 10 attempts.
-                        type: number
+                        format: int64
+                        type: integer
                       evaluateOnExit:
                         description: Evaluate on exit conditions under which the job
                           should be retried or failed. If this parameter is specified,
@@ -2536,13 +2542,8 @@ spec:
                       affects jobs in job queues with a fair share policy. Jobs with
                       a higher scheduling priority are scheduled before jobs with
                       a lower scheduling priority. Allowed values 0 through 9999.
-                    type: number
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
+                    format: int64
+                    type: integer
                   timeout:
                     description: Timeout for jobs so that if a job runs longer, AWS
                       Batch terminates the job. Maximum number of timeout is 1. Defined
@@ -2552,7 +2553,8 @@ spec:
                         description: Time duration in seconds after which AWS Batch
                           terminates your jobs if they have not finished. The minimum
                           value for the timeout is 60 seconds.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   type:
                     description: Type of job definition. Must be container or multinode.
@@ -2843,11 +2845,13 @@ spec:
                                     readOnlyRootFileSystem:
                                       type: boolean
                                     runAsGroup:
-                                      type: number
+                                      format: int64
+                                      type: integer
                                     runAsNonRoot:
                                       type: boolean
                                     runAsUser:
-                                      type: number
+                                      format: int64
+                                      type: integer
                                   type: object
                                 volumeMounts:
                                   description: Volume mounts for the container.
@@ -2971,11 +2975,13 @@ spec:
                                     readOnlyRootFileSystem:
                                       type: boolean
                                     runAsGroup:
-                                      type: number
+                                      format: int64
+                                      type: integer
                                     runAsNonRoot:
                                       type: boolean
                                     runAsUser:
-                                      type: number
+                                      format: int64
+                                      type: integer
                                   type: object
                                 volumeMounts:
                                   description: Volume mounts for the container.
@@ -3097,7 +3103,8 @@ spec:
                       attempts:
                         description: Number of times to move a job to the RUNNABLE
                           status. You may specify between 1 and 10 attempts.
-                        type: number
+                        format: int64
+                        type: integer
                       evaluateOnExit:
                         description: Evaluate on exit conditions under which the job
                           should be retried or failed. If this parameter is specified,
@@ -3127,13 +3134,15 @@ spec:
                     type: object
                   revision:
                     description: Revision of the job definition.
-                    type: number
+                    format: int64
+                    type: integer
                   schedulingPriority:
                     description: Scheduling priority of the job definition. This only
                       affects jobs in job queues with a fair share policy. Jobs with
                       a higher scheduling priority are scheduled before jobs with
                       a lower scheduling priority. Allowed values 0 through 9999.
-                    type: number
+                    format: int64
+                    type: integer
                   tags:
                     additionalProperties:
                       type: string
@@ -3156,7 +3165,8 @@ spec:
                         description: Time duration in seconds after which AWS Batch
                           terminates your jobs if they have not finished. The minimum
                           value for the timeout is 60 seconds.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   type:
                     description: Type of job definition. Must be container or multinode.

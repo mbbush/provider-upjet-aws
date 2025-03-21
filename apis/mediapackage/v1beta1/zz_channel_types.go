@@ -20,10 +20,6 @@ type ChannelInitParameters struct {
 
 	// A description of the channel
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type ChannelObservation struct {
@@ -66,11 +62,6 @@ type ChannelParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type HlsIngestInitParameters struct {
@@ -89,9 +80,6 @@ type IngestEndpointsInitParameters struct {
 }
 
 type IngestEndpointsObservation struct {
-
-	// The password
-	Password *string `json:"password,omitempty" tf:"password,omitempty"`
 
 	// The URL
 	URL *string `json:"url,omitempty" tf:"url,omitempty"`

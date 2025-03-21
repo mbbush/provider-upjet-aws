@@ -50,5 +50,3 @@ spec:
     name: tf-test-resource-share
     provider: ${aws.alternate}
     region: us-west-1
-    tags:
-      Name: tf-test-resource-share

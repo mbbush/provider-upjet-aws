@@ -19,7 +19,4 @@ spec:
           - HTTP_HOST
           targets:
           - test.example.com
-    tags:
-      Tag1: Value1
-      Tag2: Value2
     type: STATEFUL

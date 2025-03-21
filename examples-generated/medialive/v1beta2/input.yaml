@@ -12,8 +12,6 @@ spec:
     - name: example
     name: example-input
     region: us-west-1
-    tags:
-      ENVIRONMENT: prod
     type: UDP_PUSH
 
 ---
@@ -29,7 +27,5 @@ metadata:
 spec:
   forProvider:
     region: us-west-1
-    tags:
-      ENVIRONMENT: prod
     whitelistRules:
     - cidr: 10.0.0.8/32

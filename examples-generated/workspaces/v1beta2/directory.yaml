@@ -24,8 +24,6 @@ spec:
     subnetIdRefs:
     - name: example_c
     - name: example_d
-    tags:
-      Example: true
     workspaceAccessProperties:
     - deviceTypeAndroid: ALLOW
       deviceTypeChromeos: ALLOW

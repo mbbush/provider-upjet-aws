@@ -37,10 +37,6 @@ type ComputeEnvironmentInitParameters struct {
 	// The state of the compute environment. If the state is ENABLED, then the compute environment accepts jobs from a queue and can scale out automatically based on queues. Valid items are ENABLED or DISABLED. Defaults to ENABLED.
 	State *string `json:"state,omitempty" tf:"state,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// The type of the compute environment. Valid items are MANAGED or UNMANAGED.
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
 
@@ -124,11 +120,6 @@ type ComputeEnvironmentParameters struct {
 	// +kubebuilder:validation:Optional
 	State *string `json:"state,omitempty" tf:"state,omitempty"`
 
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// The type of the compute environment. Valid items are MANAGED or UNMANAGED.
 	// +kubebuilder:validation:Optional
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
@@ -144,10 +135,10 @@ type ComputeResourcesInitParameters struct {
 	AllocationStrategy *string `json:"allocationStrategy,omitempty" tf:"allocation_strategy,omitempty"`
 
 	// Integer of maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance type before instances are launched. For example, if your bid percentage is 20% (20), then the Spot price must be below 20% of the current On-Demand price for that EC2 instance. If you leave this field empty, the default value is 100% of the On-Demand price. This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.
-	BidPercentage *float64 `json:"bidPercentage,omitempty" tf:"bid_percentage,omitempty"`
+	BidPercentage *int64 `json:"bidPercentage,omitempty" tf:"bid_percentage,omitempty"`
 
 	// The desired number of EC2 vCPUS in the compute environment. This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.
-	DesiredVcpus *float64 `json:"desiredVcpus,omitempty" tf:"desired_vcpus,omitempty"`
+	DesiredVcpus *int64 `json:"desiredVcpus,omitempty" tf:"desired_vcpus,omitempty"`
 
 	// Provides information used to select Amazon Machine Images (AMIs) for EC2 instances in the compute environment. If Ec2Configuration isn't specified, the default is ECS_AL2. This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.
 	EC2Configuration []EC2ConfigurationInitParameters `json:"ec2Configuration,omitempty" tf:"ec2_configuration,omitempty"`
@@ -179,10 +170,10 @@ type ComputeResourcesInitParameters struct {
 	LaunchTemplate *LaunchTemplateInitParameters `json:"launchTemplate,omitempty" tf:"launch_template,omitempty"`
 
 	// The maximum number of EC2 vCPUs that an environment can reach.
-	MaxVcpus *float64 `json:"maxVcpus,omitempty" tf:"max_vcpus,omitempty"`
+	MaxVcpus *int64 `json:"maxVcpus,omitempty" tf:"max_vcpus,omitempty"`
 
 	// The minimum number of EC2 vCPUs that an environment should maintain. For EC2 or SPOT compute environments, if the parameter is not explicitly defined, a 0 default value will be set. This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.
-	MinVcpus *float64 `json:"minVcpus,omitempty" tf:"min_vcpus,omitempty"`
+	MinVcpus *int64 `json:"minVcpus,omitempty" tf:"min_vcpus,omitempty"`
 
 	// The Amazon EC2 placement group to associate with your compute resources.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/ec2/v1beta1.PlacementGroup
@@ -225,10 +216,6 @@ type ComputeResourcesInitParameters struct {
 	// +kubebuilder:validation:Optional
 	SubnetsSelector *v1.Selector `json:"subnetsSelector,omitempty" tf:"-"`
 
-	// Key-value pair tags to be applied to resources that are launched in the compute environment. This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// The type of compute environment. Valid items are EC2, SPOT, FARGATE or FARGATE_SPOT.
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
 }
@@ -239,10 +226,10 @@ type ComputeResourcesObservation struct {
 	AllocationStrategy *string `json:"allocationStrategy,omitempty" tf:"allocation_strategy,omitempty"`
 
 	// Integer of maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance type before instances are launched. For example, if your bid percentage is 20% (20), then the Spot price must be below 20% of the current On-Demand price for that EC2 instance. If you leave this field empty, the default value is 100% of the On-Demand price. This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.
-	BidPercentage *float64 `json:"bidPercentage,omitempty" tf:"bid_percentage,omitempty"`
+	BidPercentage *int64 `json:"bidPercentage,omitempty" tf:"bid_percentage,omitempty"`
 
 	// The desired number of EC2 vCPUS in the compute environment. This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.
-	DesiredVcpus *float64 `json:"desiredVcpus,omitempty" tf:"desired_vcpus,omitempty"`
+	DesiredVcpus *int64 `json:"desiredVcpus,omitempty" tf:"desired_vcpus,omitempty"`
 
 	// Provides information used to select Amazon Machine Images (AMIs) for EC2 instances in the compute environment. If Ec2Configuration isn't specified, the default is ECS_AL2. This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.
 	EC2Configuration []EC2ConfigurationObservation `json:"ec2Configuration,omitempty" tf:"ec2_configuration,omitempty"`
@@ -264,10 +251,10 @@ type ComputeResourcesObservation struct {
 	LaunchTemplate *LaunchTemplateObservation `json:"launchTemplate,omitempty" tf:"launch_template,omitempty"`
 
 	// The maximum number of EC2 vCPUs that an environment can reach.
-	MaxVcpus *float64 `json:"maxVcpus,omitempty" tf:"max_vcpus,omitempty"`
+	MaxVcpus *int64 `json:"maxVcpus,omitempty" tf:"max_vcpus,omitempty"`
 
 	// The minimum number of EC2 vCPUs that an environment should maintain. For EC2 or SPOT compute environments, if the parameter is not explicitly defined, a 0 default value will be set. This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.
-	MinVcpus *float64 `json:"minVcpus,omitempty" tf:"min_vcpus,omitempty"`
+	MinVcpus *int64 `json:"minVcpus,omitempty" tf:"min_vcpus,omitempty"`
 
 	// The Amazon EC2 placement group to associate with your compute resources.
 	PlacementGroup *string `json:"placementGroup,omitempty" tf:"placement_group,omitempty"`
@@ -299,11 +286,11 @@ type ComputeResourcesParameters struct {
 
 	// Integer of maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance type before instances are launched. For example, if your bid percentage is 20% (20), then the Spot price must be below 20% of the current On-Demand price for that EC2 instance. If you leave this field empty, the default value is 100% of the On-Demand price. This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.
 	// +kubebuilder:validation:Optional
-	BidPercentage *float64 `json:"bidPercentage,omitempty" tf:"bid_percentage,omitempty"`
+	BidPercentage *int64 `json:"bidPercentage,omitempty" tf:"bid_percentage,omitempty"`
 
 	// The desired number of EC2 vCPUS in the compute environment. This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.
 	// +kubebuilder:validation:Optional
-	DesiredVcpus *float64 `json:"desiredVcpus,omitempty" tf:"desired_vcpus,omitempty"`
+	DesiredVcpus *int64 `json:"desiredVcpus,omitempty" tf:"desired_vcpus,omitempty"`
 
 	// Provides information used to select Amazon Machine Images (AMIs) for EC2 instances in the compute environment. If Ec2Configuration isn't specified, the default is ECS_AL2. This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.
 	// +kubebuilder:validation:Optional
@@ -342,11 +329,11 @@ type ComputeResourcesParameters struct {
 
 	// The maximum number of EC2 vCPUs that an environment can reach.
 	// +kubebuilder:validation:Optional
-	MaxVcpus *float64 `json:"maxVcpus" tf:"max_vcpus,omitempty"`
+	MaxVcpus *int64 `json:"maxVcpus" tf:"max_vcpus,omitempty"`
 
 	// The minimum number of EC2 vCPUs that an environment should maintain. For EC2 or SPOT compute environments, if the parameter is not explicitly defined, a 0 default value will be set. This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.
 	// +kubebuilder:validation:Optional
-	MinVcpus *float64 `json:"minVcpus,omitempty" tf:"min_vcpus,omitempty"`
+	MinVcpus *int64 `json:"minVcpus,omitempty" tf:"min_vcpus,omitempty"`
 
 	// The Amazon EC2 placement group to associate with your compute resources.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/ec2/v1beta1.PlacementGroup
@@ -392,11 +379,6 @@ type ComputeResourcesParameters struct {
 	// Selector for a list of Subnet in ec2 to populate subnets.
 	// +kubebuilder:validation:Optional
 	SubnetsSelector *v1.Selector `json:"subnetsSelector,omitempty" tf:"-"`
-
-	// Key-value pair tags to be applied to resources that are launched in the compute environment. This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// The type of compute environment. Valid items are EC2, SPOT, FARGATE or FARGATE_SPOT.
 	// +kubebuilder:validation:Optional
@@ -503,7 +485,7 @@ type LaunchTemplateParameters struct {
 type UpdatePolicyInitParameters struct {
 
 	// Specifies the job timeout (in minutes) when the compute environment infrastructure is updated.
-	JobExecutionTimeoutMinutes *float64 `json:"jobExecutionTimeoutMinutes,omitempty" tf:"job_execution_timeout_minutes,omitempty"`
+	JobExecutionTimeoutMinutes *int64 `json:"jobExecutionTimeoutMinutes,omitempty" tf:"job_execution_timeout_minutes,omitempty"`
 
 	// Specifies whether jobs are automatically terminated when the computer environment infrastructure is updated.
 	TerminateJobsOnUpdate *bool `json:"terminateJobsOnUpdate,omitempty" tf:"terminate_jobs_on_update,omitempty"`
@@ -512,7 +494,7 @@ type UpdatePolicyInitParameters struct {
 type UpdatePolicyObservation struct {
 
 	// Specifies the job timeout (in minutes) when the compute environment infrastructure is updated.
-	JobExecutionTimeoutMinutes *float64 `json:"jobExecutionTimeoutMinutes,omitempty" tf:"job_execution_timeout_minutes,omitempty"`
+	JobExecutionTimeoutMinutes *int64 `json:"jobExecutionTimeoutMinutes,omitempty" tf:"job_execution_timeout_minutes,omitempty"`
 
 	// Specifies whether jobs are automatically terminated when the computer environment infrastructure is updated.
 	TerminateJobsOnUpdate *bool `json:"terminateJobsOnUpdate,omitempty" tf:"terminate_jobs_on_update,omitempty"`
@@ -522,7 +504,7 @@ type UpdatePolicyParameters struct {
 
 	// Specifies the job timeout (in minutes) when the compute environment infrastructure is updated.
 	// +kubebuilder:validation:Optional
-	JobExecutionTimeoutMinutes *float64 `json:"jobExecutionTimeoutMinutes" tf:"job_execution_timeout_minutes,omitempty"`
+	JobExecutionTimeoutMinutes *int64 `json:"jobExecutionTimeoutMinutes" tf:"job_execution_timeout_minutes,omitempty"`
 
 	// Specifies whether jobs are automatically terminated when the computer environment infrastructure is updated.
 	// +kubebuilder:validation:Optional

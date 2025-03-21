@@ -23,10 +23,6 @@ type AppImageConfigInitParameters struct {
 
 	// The configuration for the file system and kernels in a SageMaker image running as a KernelGateway app. See Kernel Gateway Image Config details below.
 	KernelGatewayImageConfig *KernelGatewayImageConfigInitParameters `json:"kernelGatewayImageConfig,omitempty" tf:"kernel_gateway_image_config,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type AppImageConfigObservation struct {
@@ -73,11 +69,6 @@ type AppImageConfigParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type CodeEditorAppImageConfigInitParameters struct {
@@ -154,10 +145,10 @@ type ContainerConfigParameters struct {
 type FileSystemConfigInitParameters struct {
 
 	// The default POSIX group ID (GID). If not specified, defaults to 100. Valid values are 0 and 100.
-	DefaultGID *float64 `json:"defaultGid,omitempty" tf:"default_gid,omitempty"`
+	DefaultGID *int64 `json:"defaultGid,omitempty" tf:"default_gid,omitempty"`
 
 	// The default POSIX user ID (UID). If not specified, defaults to 1000. Valid values are 0 and 1000.
-	DefaultUID *float64 `json:"defaultUid,omitempty" tf:"default_uid,omitempty"`
+	DefaultUID *int64 `json:"defaultUid,omitempty" tf:"default_uid,omitempty"`
 
 	// The path within the image to mount the user's EFS home directory. The directory should be empty. If not specified, defaults to /home/sagemaker-user.
 	MountPath *string `json:"mountPath,omitempty" tf:"mount_path,omitempty"`
@@ -166,10 +157,10 @@ type FileSystemConfigInitParameters struct {
 type FileSystemConfigObservation struct {
 
 	// The default POSIX group ID (GID). If not specified, defaults to 100. Valid values are 0 and 100.
-	DefaultGID *float64 `json:"defaultGid,omitempty" tf:"default_gid,omitempty"`
+	DefaultGID *int64 `json:"defaultGid,omitempty" tf:"default_gid,omitempty"`
 
 	// The default POSIX user ID (UID). If not specified, defaults to 1000. Valid values are 0 and 1000.
-	DefaultUID *float64 `json:"defaultUid,omitempty" tf:"default_uid,omitempty"`
+	DefaultUID *int64 `json:"defaultUid,omitempty" tf:"default_uid,omitempty"`
 
 	// The path within the image to mount the user's EFS home directory. The directory should be empty. If not specified, defaults to /home/sagemaker-user.
 	MountPath *string `json:"mountPath,omitempty" tf:"mount_path,omitempty"`
@@ -179,11 +170,11 @@ type FileSystemConfigParameters struct {
 
 	// The default POSIX group ID (GID). If not specified, defaults to 100. Valid values are 0 and 100.
 	// +kubebuilder:validation:Optional
-	DefaultGID *float64 `json:"defaultGid,omitempty" tf:"default_gid,omitempty"`
+	DefaultGID *int64 `json:"defaultGid,omitempty" tf:"default_gid,omitempty"`
 
 	// The default POSIX user ID (UID). If not specified, defaults to 1000. Valid values are 0 and 1000.
 	// +kubebuilder:validation:Optional
-	DefaultUID *float64 `json:"defaultUid,omitempty" tf:"default_uid,omitempty"`
+	DefaultUID *int64 `json:"defaultUid,omitempty" tf:"default_uid,omitempty"`
 
 	// The path within the image to mount the user's EFS home directory. The directory should be empty. If not specified, defaults to /home/sagemaker-user.
 	// +kubebuilder:validation:Optional
@@ -235,10 +226,10 @@ type JupyterLabImageConfigContainerConfigParameters struct {
 type JupyterLabImageConfigFileSystemConfigInitParameters struct {
 
 	// The default POSIX group ID (GID). If not specified, defaults to 100. Valid values are 0 and 100.
-	DefaultGID *float64 `json:"defaultGid,omitempty" tf:"default_gid,omitempty"`
+	DefaultGID *int64 `json:"defaultGid,omitempty" tf:"default_gid,omitempty"`
 
 	// The default POSIX user ID (UID). If not specified, defaults to 1000. Valid values are 0 and 1000.
-	DefaultUID *float64 `json:"defaultUid,omitempty" tf:"default_uid,omitempty"`
+	DefaultUID *int64 `json:"defaultUid,omitempty" tf:"default_uid,omitempty"`
 
 	// The path within the image to mount the user's EFS home directory. The directory should be empty. If not specified, defaults to /home/sagemaker-user.
 	MountPath *string `json:"mountPath,omitempty" tf:"mount_path,omitempty"`
@@ -247,10 +238,10 @@ type JupyterLabImageConfigFileSystemConfigInitParameters struct {
 type JupyterLabImageConfigFileSystemConfigObservation struct {
 
 	// The default POSIX group ID (GID). If not specified, defaults to 100. Valid values are 0 and 100.
-	DefaultGID *float64 `json:"defaultGid,omitempty" tf:"default_gid,omitempty"`
+	DefaultGID *int64 `json:"defaultGid,omitempty" tf:"default_gid,omitempty"`
 
 	// The default POSIX user ID (UID). If not specified, defaults to 1000. Valid values are 0 and 1000.
-	DefaultUID *float64 `json:"defaultUid,omitempty" tf:"default_uid,omitempty"`
+	DefaultUID *int64 `json:"defaultUid,omitempty" tf:"default_uid,omitempty"`
 
 	// The path within the image to mount the user's EFS home directory. The directory should be empty. If not specified, defaults to /home/sagemaker-user.
 	MountPath *string `json:"mountPath,omitempty" tf:"mount_path,omitempty"`
@@ -260,11 +251,11 @@ type JupyterLabImageConfigFileSystemConfigParameters struct {
 
 	// The default POSIX group ID (GID). If not specified, defaults to 100. Valid values are 0 and 100.
 	// +kubebuilder:validation:Optional
-	DefaultGID *float64 `json:"defaultGid,omitempty" tf:"default_gid,omitempty"`
+	DefaultGID *int64 `json:"defaultGid,omitempty" tf:"default_gid,omitempty"`
 
 	// The default POSIX user ID (UID). If not specified, defaults to 1000. Valid values are 0 and 1000.
 	// +kubebuilder:validation:Optional
-	DefaultUID *float64 `json:"defaultUid,omitempty" tf:"default_uid,omitempty"`
+	DefaultUID *int64 `json:"defaultUid,omitempty" tf:"default_uid,omitempty"`
 
 	// The path within the image to mount the user's EFS home directory. The directory should be empty. If not specified, defaults to /home/sagemaker-user.
 	// +kubebuilder:validation:Optional
@@ -303,10 +294,10 @@ type JupyterLabImageConfigParameters struct {
 type KernelGatewayImageConfigFileSystemConfigInitParameters struct {
 
 	// The default POSIX group ID (GID). If not specified, defaults to 100. Valid values are 0 and 100.
-	DefaultGID *float64 `json:"defaultGid,omitempty" tf:"default_gid,omitempty"`
+	DefaultGID *int64 `json:"defaultGid,omitempty" tf:"default_gid,omitempty"`
 
 	// The default POSIX user ID (UID). If not specified, defaults to 1000. Valid values are 0 and 1000.
-	DefaultUID *float64 `json:"defaultUid,omitempty" tf:"default_uid,omitempty"`
+	DefaultUID *int64 `json:"defaultUid,omitempty" tf:"default_uid,omitempty"`
 
 	// The path within the image to mount the user's EFS home directory. The directory should be empty. If not specified, defaults to /home/sagemaker-user.
 	MountPath *string `json:"mountPath,omitempty" tf:"mount_path,omitempty"`
@@ -315,10 +306,10 @@ type KernelGatewayImageConfigFileSystemConfigInitParameters struct {
 type KernelGatewayImageConfigFileSystemConfigObservation struct {
 
 	// The default POSIX group ID (GID). If not specified, defaults to 100. Valid values are 0 and 100.
-	DefaultGID *float64 `json:"defaultGid,omitempty" tf:"default_gid,omitempty"`
+	DefaultGID *int64 `json:"defaultGid,omitempty" tf:"default_gid,omitempty"`
 
 	// The default POSIX user ID (UID). If not specified, defaults to 1000. Valid values are 0 and 1000.
-	DefaultUID *float64 `json:"defaultUid,omitempty" tf:"default_uid,omitempty"`
+	DefaultUID *int64 `json:"defaultUid,omitempty" tf:"default_uid,omitempty"`
 
 	// The path within the image to mount the user's EFS home directory. The directory should be empty. If not specified, defaults to /home/sagemaker-user.
 	MountPath *string `json:"mountPath,omitempty" tf:"mount_path,omitempty"`
@@ -328,11 +319,11 @@ type KernelGatewayImageConfigFileSystemConfigParameters struct {
 
 	// The default POSIX group ID (GID). If not specified, defaults to 100. Valid values are 0 and 100.
 	// +kubebuilder:validation:Optional
-	DefaultGID *float64 `json:"defaultGid,omitempty" tf:"default_gid,omitempty"`
+	DefaultGID *int64 `json:"defaultGid,omitempty" tf:"default_gid,omitempty"`
 
 	// The default POSIX user ID (UID). If not specified, defaults to 1000. Valid values are 0 and 1000.
 	// +kubebuilder:validation:Optional
-	DefaultUID *float64 `json:"defaultUid,omitempty" tf:"default_uid,omitempty"`
+	DefaultUID *int64 `json:"defaultUid,omitempty" tf:"default_uid,omitempty"`
 
 	// The path within the image to mount the user's EFS home directory. The directory should be empty. If not specified, defaults to /home/sagemaker-user.
 	// +kubebuilder:validation:Optional

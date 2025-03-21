@@ -710,13 +710,8 @@ spec:
                     description: |-
                       The scale specification for the container service. The scale specifies the allocated compute
                       nodes of the container service.
-                    type: number
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
+                    format: int64
+                    type: integer
                 required:
                 - region
                 type: object
@@ -788,13 +783,8 @@ spec:
                     description: |-
                       The scale specification for the container service. The scale specifies the allocated compute
                       nodes of the container service.
-                    type: number
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
+                    format: int64
+                    type: integer
                 type: object
               managementPolicies:
                 default:
@@ -1068,7 +1058,8 @@ spec:
                     description: |-
                       The scale specification for the container service. The scale specifies the allocated compute
                       nodes of the container service.
-                    type: number
+                    format: int64
+                    type: integer
                   state:
                     description: The current state of the container service.
                     type: string

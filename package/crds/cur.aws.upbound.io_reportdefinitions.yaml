@@ -196,12 +196,6 @@ spec:
                     description: Region of the existing S3 bucket to hold generated
                       reports.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   timeUnit:
                     description: 'The frequency on which report data are measured
                       and displayed.  Valid values are: DAILY, HOURLY, MONTHLY.'
@@ -341,12 +335,6 @@ spec:
                     description: Region of the existing S3 bucket to hold generated
                       reports.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   timeUnit:
                     description: 'The frequency on which report data are measured
                       and displayed.  Valid values are: DAILY, HOURLY, MONTHLY.'

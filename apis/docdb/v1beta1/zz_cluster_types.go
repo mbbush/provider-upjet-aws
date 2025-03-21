@@ -29,7 +29,7 @@ type ClusterInitParameters struct {
 	AvailabilityZones []*string `json:"availabilityZones,omitempty" tf:"availability_zones,omitempty"`
 
 	// The days to retain backups for. Default 1
-	BackupRetentionPeriod *float64 `json:"backupRetentionPeriod,omitempty" tf:"backup_retention_period,omitempty"`
+	BackupRetentionPeriod *int64 `json:"backupRetentionPeriod,omitempty" tf:"backup_retention_period,omitempty"`
 
 	// A cluster parameter group to associate with the cluster.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/docdb/v1beta1.ClusterParameterGroup
@@ -88,7 +88,7 @@ type ClusterInitParameters struct {
 	MasterUsername *string `json:"masterUsername,omitempty" tf:"master_username,omitempty"`
 
 	// The port on which the DB accepts connections
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// The daily time range during which automated backups are created if automated backups are enabled using the BackupRetentionPeriod parameter.Time in UTC
 	// Default: A 30-minute window selected at random from an 8-hour block of time per regionE.g., 04:00-09:00
@@ -111,10 +111,6 @@ type ClusterInitParameters struct {
 
 	// The storage type to associate with the DB cluster. Valid values: standard, iopt1.
 	StorageType *string `json:"storageType,omitempty" tf:"storage_type,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// References to SecurityGroup in ec2 to populate vpcSecurityGroupIds.
 	// +kubebuilder:validation:Optional
@@ -152,7 +148,7 @@ type ClusterObservation struct {
 	AvailabilityZones []*string `json:"availabilityZones,omitempty" tf:"availability_zones,omitempty"`
 
 	// The days to retain backups for. Default 1
-	BackupRetentionPeriod *float64 `json:"backupRetentionPeriod,omitempty" tf:"backup_retention_period,omitempty"`
+	BackupRetentionPeriod *int64 `json:"backupRetentionPeriod,omitempty" tf:"backup_retention_period,omitempty"`
 
 	// – List of DocumentDB Instances that are a part of this cluster
 	// +listType=set
@@ -204,7 +200,7 @@ type ClusterObservation struct {
 	MasterUsername *string `json:"masterUsername,omitempty" tf:"master_username,omitempty"`
 
 	// The port on which the DB accepts connections
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// The daily time range during which automated backups are created if automated backups are enabled using the BackupRetentionPeriod parameter.Time in UTC
 	// Default: A 30-minute window selected at random from an 8-hour block of time per regionE.g., 04:00-09:00
@@ -270,7 +266,7 @@ type ClusterParameters struct {
 
 	// The days to retain backups for. Default 1
 	// +kubebuilder:validation:Optional
-	BackupRetentionPeriod *float64 `json:"backupRetentionPeriod,omitempty" tf:"backup_retention_period,omitempty"`
+	BackupRetentionPeriod *int64 `json:"backupRetentionPeriod,omitempty" tf:"backup_retention_period,omitempty"`
 
 	// A cluster parameter group to associate with the cluster.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/docdb/v1beta1.ClusterParameterGroup
@@ -341,7 +337,7 @@ type ClusterParameters struct {
 
 	// The port on which the DB accepts connections
 	// +kubebuilder:validation:Optional
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// The daily time range during which automated backups are created if automated backups are enabled using the BackupRetentionPeriod parameter.Time in UTC
 	// Default: A 30-minute window selected at random from an 8-hour block of time per regionE.g., 04:00-09:00
@@ -376,11 +372,6 @@ type ClusterParameters struct {
 	// The storage type to associate with the DB cluster. Valid values: standard, iopt1.
 	// +kubebuilder:validation:Optional
 	StorageType *string `json:"storageType,omitempty" tf:"storage_type,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// References to SecurityGroup in ec2 to populate vpcSecurityGroupIds.
 	// +kubebuilder:validation:Optional

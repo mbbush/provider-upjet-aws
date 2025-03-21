@@ -985,7 +985,8 @@ spec:
                         completionWindow:
                           description: The amount of time in minutes AWS Backup attempts
                             a backup before canceling the job and returning an error.
-                          type: number
+                          format: int64
+                          type: integer
                         copyAction:
                           description: Configuration block(s) with copy operation
                             settings. Detailed below.
@@ -1005,12 +1006,14 @@ spec:
                                     description: Specifies the number of days after
                                       creation that a recovery point is moved to cold
                                       storage.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                   deleteAfter:
                                     description: Specifies the number of days after
                                       creation that a recovery point is deleted. Must
                                       be 90 days greater than cold_storage_after.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                   optInToArchiveForSupportedResources:
                                     description: This setting will instruct your backup
                                       plan to transition supported resources to archive
@@ -1031,12 +1034,14 @@ spec:
                             coldStorageAfter:
                               description: Specifies the number of days after creation
                                 that a recovery point is moved to cold storage.
-                              type: number
+                              format: int64
+                              type: integer
                             deleteAfter:
                               description: Specifies the number of days after creation
                                 that a recovery point is deleted. Must be 90 days
                                 greater than cold_storage_after.
-                              type: number
+                              format: int64
+                              type: integer
                             optInToArchiveForSupportedResources:
                               description: This setting will instruct your backup
                                 plan to transition supported resources to archive
@@ -1044,13 +1049,6 @@ spec:
                                 settings.
                               type: boolean
                           type: object
-                        recoveryPointTags:
-                          additionalProperties:
-                            type: string
-                          description: Metadata that you can assign to help organize
-                            the resources that you create.
-                          type: object
-                          x-kubernetes-map-type: granular
                         ruleName:
                           description: An display name for a backup rule.
                           type: string
@@ -1065,7 +1063,8 @@ spec:
                         startWindow:
                           description: The amount of time in minutes before beginning
                             a backup.
-                          type: number
+                          format: int64
+                          type: integer
                         targetVaultName:
                           description: The name of a logical container where backups
                             are stored.
@@ -1148,12 +1147,6 @@ spec:
                           type: object
                       type: object
                     type: array
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -1202,7 +1195,8 @@ spec:
                         completionWindow:
                           description: The amount of time in minutes AWS Backup attempts
                             a backup before canceling the job and returning an error.
-                          type: number
+                          format: int64
+                          type: integer
                         copyAction:
                           description: Configuration block(s) with copy operation
                             settings. Detailed below.
@@ -1222,12 +1216,14 @@ spec:
                                     description: Specifies the number of days after
                                       creation that a recovery point is moved to cold
                                       storage.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                   deleteAfter:
                                     description: Specifies the number of days after
                                       creation that a recovery point is deleted. Must
                                       be 90 days greater than cold_storage_after.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                   optInToArchiveForSupportedResources:
                                     description: This setting will instruct your backup
                                       plan to transition supported resources to archive
@@ -1248,12 +1244,14 @@ spec:
                             coldStorageAfter:
                               description: Specifies the number of days after creation
                                 that a recovery point is moved to cold storage.
-                              type: number
+                              format: int64
+                              type: integer
                             deleteAfter:
                               description: Specifies the number of days after creation
                                 that a recovery point is deleted. Must be 90 days
                                 greater than cold_storage_after.
-                              type: number
+                              format: int64
+                              type: integer
                             optInToArchiveForSupportedResources:
                               description: This setting will instruct your backup
                                 plan to transition supported resources to archive
@@ -1261,13 +1259,6 @@ spec:
                                 settings.
                               type: boolean
                           type: object
-                        recoveryPointTags:
-                          additionalProperties:
-                            type: string
-                          description: Metadata that you can assign to help organize
-                            the resources that you create.
-                          type: object
-                          x-kubernetes-map-type: granular
                         ruleName:
                           description: An display name for a backup rule.
                           type: string
@@ -1282,7 +1273,8 @@ spec:
                         startWindow:
                           description: The amount of time in minutes before beginning
                             a backup.
-                          type: number
+                          format: int64
+                          type: integer
                         targetVaultName:
                           description: The name of a logical container where backups
                             are stored.
@@ -1365,12 +1357,6 @@ spec:
                           type: object
                       type: object
                     type: array
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -1591,7 +1577,8 @@ spec:
                         completionWindow:
                           description: The amount of time in minutes AWS Backup attempts
                             a backup before canceling the job and returning an error.
-                          type: number
+                          format: int64
+                          type: integer
                         copyAction:
                           description: Configuration block(s) with copy operation
                             settings. Detailed below.
@@ -1611,12 +1598,14 @@ spec:
                                     description: Specifies the number of days after
                                       creation that a recovery point is moved to cold
                                       storage.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                   deleteAfter:
                                     description: Specifies the number of days after
                                       creation that a recovery point is deleted. Must
                                       be 90 days greater than cold_storage_after.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                   optInToArchiveForSupportedResources:
                                     description: This setting will instruct your backup
                                       plan to transition supported resources to archive
@@ -1637,12 +1626,14 @@ spec:
                             coldStorageAfter:
                               description: Specifies the number of days after creation
                                 that a recovery point is moved to cold storage.
-                              type: number
+                              format: int64
+                              type: integer
                             deleteAfter:
                               description: Specifies the number of days after creation
                                 that a recovery point is deleted. Must be 90 days
                                 greater than cold_storage_after.
-                              type: number
+                              format: int64
+                              type: integer
                             optInToArchiveForSupportedResources:
                               description: This setting will instruct your backup
                                 plan to transition supported resources to archive
@@ -1671,7 +1662,8 @@ spec:
                         startWindow:
                           description: The amount of time in minutes before beginning
                             a backup.
-                          type: number
+                          format: int64
+                          type: integer
                         targetVaultName:
                           description: The name of a logical container where backups
                             are stored.

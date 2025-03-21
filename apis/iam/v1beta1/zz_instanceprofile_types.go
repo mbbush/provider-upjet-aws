@@ -29,10 +29,6 @@ type InstanceProfileInitParameters struct {
 	// Selector for a Role in iam to populate role.
 	// +kubebuilder:validation:Optional
 	RoleSelector *v1.Selector `json:"roleSelector,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type InstanceProfileObservation struct {
@@ -82,11 +78,6 @@ type InstanceProfileParameters struct {
 	// Selector for a Role in iam to populate role.
 	// +kubebuilder:validation:Optional
 	RoleSelector *v1.Selector `json:"roleSelector,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // InstanceProfileSpec defines the desired state of InstanceProfile

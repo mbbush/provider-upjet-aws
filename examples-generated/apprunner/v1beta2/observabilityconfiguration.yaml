@@ -10,7 +10,5 @@ spec:
   forProvider:
     observabilityConfigurationName: example
     region: us-west-1
-    tags:
-      Name: example-apprunner-observability-configuration
     traceConfiguration:
     - vendor: AWSXRAY

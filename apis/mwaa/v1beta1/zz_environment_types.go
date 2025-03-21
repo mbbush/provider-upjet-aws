@@ -89,16 +89,16 @@ type EnvironmentInitParameters struct {
 	LoggingConfiguration *LoggingConfigurationInitParameters `json:"loggingConfiguration,omitempty" tf:"logging_configuration,omitempty"`
 
 	// The maximum number of web servers that you want to run in your environment. Value need to be between 2 and 5. Will be 2 by default.
-	MaxWebservers *float64 `json:"maxWebservers,omitempty" tf:"max_webservers,omitempty"`
+	MaxWebservers *int64 `json:"maxWebservers,omitempty" tf:"max_webservers,omitempty"`
 
 	// The maximum number of workers that can be automatically scaled up. Value need to be between 1 and 25. Will be 10 by default.
-	MaxWorkers *float64 `json:"maxWorkers,omitempty" tf:"max_workers,omitempty"`
+	MaxWorkers *int64 `json:"maxWorkers,omitempty" tf:"max_workers,omitempty"`
 
 	// The minimum number of web servers that you want to run in your environment. Value need to be between 2 and 5. Will be 2 by default.
-	MinWebservers *float64 `json:"minWebservers,omitempty" tf:"min_webservers,omitempty"`
+	MinWebservers *int64 `json:"minWebservers,omitempty" tf:"min_webservers,omitempty"`
 
 	// The minimum number of workers that you want to run in your environment. Will be 1 by default.
-	MinWorkers *float64 `json:"minWorkers,omitempty" tf:"min_workers,omitempty"`
+	MinWorkers *int64 `json:"minWorkers,omitempty" tf:"min_workers,omitempty"`
 
 	// Specifies the network configuration for your Apache Airflow Environment. This includes two private subnets as well as security groups for the Airflow environment. Each subnet requires internet connection, otherwise the deployment will fail. See network_configuration Block for details.
 	NetworkConfiguration *NetworkConfigurationInitParameters `json:"networkConfiguration,omitempty" tf:"network_configuration,omitempty"`
@@ -116,7 +116,7 @@ type EnvironmentInitParameters struct {
 	RequirementsS3Path *string `json:"requirementsS3Path,omitempty" tf:"requirements_s3_path,omitempty"`
 
 	// The number of schedulers that you want to run in your environment. v2.0.2 and above accepts 2 - 5, default 2. v1.10.12 accepts 1.
-	Schedulers *float64 `json:"schedulers,omitempty" tf:"schedulers,omitempty"`
+	Schedulers *int64 `json:"schedulers,omitempty" tf:"schedulers,omitempty"`
 
 	// The Amazon Resource Name (ARN) of your Amazon S3 storage bucket. For example, arn:aws:s3:::airflow-mybucketname.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/s3/v1beta2.Bucket
@@ -136,10 +136,6 @@ type EnvironmentInitParameters struct {
 
 	// The relative path to the script hosted in your bucket. The script runs as your environment starts before starting the Apache Airflow process. Use this script to install dependencies, modify configuration options, and set environment variables. See Using a startup script. Supported for environment versions 2.x and later.
 	StartupScriptS3Path *string `json:"startupScriptS3Path,omitempty" tf:"startup_script_s3_path,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Specifies whether the webserver should be accessible over the internet or via your specified VPC. Possible options: PRIVATE_ONLY (default) and PUBLIC_ONLY.
 	WebserverAccessMode *string `json:"webserverAccessMode,omitempty" tf:"webserver_access_mode,omitempty"`
@@ -185,16 +181,16 @@ type EnvironmentObservation struct {
 	LoggingConfiguration *LoggingConfigurationObservation `json:"loggingConfiguration,omitempty" tf:"logging_configuration,omitempty"`
 
 	// The maximum number of web servers that you want to run in your environment. Value need to be between 2 and 5. Will be 2 by default.
-	MaxWebservers *float64 `json:"maxWebservers,omitempty" tf:"max_webservers,omitempty"`
+	MaxWebservers *int64 `json:"maxWebservers,omitempty" tf:"max_webservers,omitempty"`
 
 	// The maximum number of workers that can be automatically scaled up. Value need to be between 1 and 25. Will be 10 by default.
-	MaxWorkers *float64 `json:"maxWorkers,omitempty" tf:"max_workers,omitempty"`
+	MaxWorkers *int64 `json:"maxWorkers,omitempty" tf:"max_workers,omitempty"`
 
 	// The minimum number of web servers that you want to run in your environment. Value need to be between 2 and 5. Will be 2 by default.
-	MinWebservers *float64 `json:"minWebservers,omitempty" tf:"min_webservers,omitempty"`
+	MinWebservers *int64 `json:"minWebservers,omitempty" tf:"min_webservers,omitempty"`
 
 	// The minimum number of workers that you want to run in your environment. Will be 1 by default.
-	MinWorkers *float64 `json:"minWorkers,omitempty" tf:"min_workers,omitempty"`
+	MinWorkers *int64 `json:"minWorkers,omitempty" tf:"min_workers,omitempty"`
 
 	// Specifies the network configuration for your Apache Airflow Environment. This includes two private subnets as well as security groups for the Airflow environment. Each subnet requires internet connection, otherwise the deployment will fail. See network_configuration Block for details.
 	NetworkConfiguration *NetworkConfigurationObservation `json:"networkConfiguration,omitempty" tf:"network_configuration,omitempty"`
@@ -212,7 +208,7 @@ type EnvironmentObservation struct {
 	RequirementsS3Path *string `json:"requirementsS3Path,omitempty" tf:"requirements_s3_path,omitempty"`
 
 	// The number of schedulers that you want to run in your environment. v2.0.2 and above accepts 2 - 5, default 2. v1.10.12 accepts 1.
-	Schedulers *float64 `json:"schedulers,omitempty" tf:"schedulers,omitempty"`
+	Schedulers *int64 `json:"schedulers,omitempty" tf:"schedulers,omitempty"`
 
 	// The Service Role ARN of the Amazon MWAA Environment
 	ServiceRoleArn *string `json:"serviceRoleArn,omitempty" tf:"service_role_arn,omitempty"`
@@ -305,19 +301,19 @@ type EnvironmentParameters struct {
 
 	// The maximum number of web servers that you want to run in your environment. Value need to be between 2 and 5. Will be 2 by default.
 	// +kubebuilder:validation:Optional
-	MaxWebservers *float64 `json:"maxWebservers,omitempty" tf:"max_webservers,omitempty"`
+	MaxWebservers *int64 `json:"maxWebservers,omitempty" tf:"max_webservers,omitempty"`
 
 	// The maximum number of workers that can be automatically scaled up. Value need to be between 1 and 25. Will be 10 by default.
 	// +kubebuilder:validation:Optional
-	MaxWorkers *float64 `json:"maxWorkers,omitempty" tf:"max_workers,omitempty"`
+	MaxWorkers *int64 `json:"maxWorkers,omitempty" tf:"max_workers,omitempty"`
 
 	// The minimum number of web servers that you want to run in your environment. Value need to be between 2 and 5. Will be 2 by default.
 	// +kubebuilder:validation:Optional
-	MinWebservers *float64 `json:"minWebservers,omitempty" tf:"min_webservers,omitempty"`
+	MinWebservers *int64 `json:"minWebservers,omitempty" tf:"min_webservers,omitempty"`
 
 	// The minimum number of workers that you want to run in your environment. Will be 1 by default.
 	// +kubebuilder:validation:Optional
-	MinWorkers *float64 `json:"minWorkers,omitempty" tf:"min_workers,omitempty"`
+	MinWorkers *int64 `json:"minWorkers,omitempty" tf:"min_workers,omitempty"`
 
 	// Specifies the network configuration for your Apache Airflow Environment. This includes two private subnets as well as security groups for the Airflow environment. Each subnet requires internet connection, otherwise the deployment will fail. See network_configuration Block for details.
 	// +kubebuilder:validation:Optional
@@ -346,7 +342,7 @@ type EnvironmentParameters struct {
 
 	// The number of schedulers that you want to run in your environment. v2.0.2 and above accepts 2 - 5, default 2. v1.10.12 accepts 1.
 	// +kubebuilder:validation:Optional
-	Schedulers *float64 `json:"schedulers,omitempty" tf:"schedulers,omitempty"`
+	Schedulers *int64 `json:"schedulers,omitempty" tf:"schedulers,omitempty"`
 
 	// The Amazon Resource Name (ARN) of your Amazon S3 storage bucket. For example, arn:aws:s3:::airflow-mybucketname.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/s3/v1beta2.Bucket
@@ -369,11 +365,6 @@ type EnvironmentParameters struct {
 	// The relative path to the script hosted in your bucket. The script runs as your environment starts before starting the Apache Airflow process. Use this script to install dependencies, modify configuration options, and set environment variables. See Using a startup script. Supported for environment versions 2.x and later.
 	// +kubebuilder:validation:Optional
 	StartupScriptS3Path *string `json:"startupScriptS3Path,omitempty" tf:"startup_script_s3_path,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Specifies whether the webserver should be accessible over the internet or via your specified VPC. Possible options: PRIVATE_ONLY (default) and PUBLIC_ONLY.
 	// +kubebuilder:validation:Optional

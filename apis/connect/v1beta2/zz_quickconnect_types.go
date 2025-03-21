@@ -133,10 +133,6 @@ type QuickConnectInitParameters struct {
 
 	// A block that defines the configuration information for the Quick Connect: quick_connect_type and one of phone_config, queue_config, user_config . The Quick Connect Config block is documented below.
 	QuickConnectConfig *QuickConnectConfigInitParameters `json:"quickConnectConfig,omitempty" tf:"quick_connect_config,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type QuickConnectObservation struct {
@@ -203,11 +199,6 @@ type QuickConnectParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type UserConfigInitParameters struct {

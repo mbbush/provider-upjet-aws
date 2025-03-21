@@ -344,21 +344,25 @@ spec:
                     description: The maximum number of web servers that you want to
                       run in your environment. Value need to be between 2 and 5. Will
                       be 2 by default.
-                    type: number
+                    format: int64
+                    type: integer
                   maxWorkers:
                     description: The maximum number of workers that can be automatically
                       scaled up. Value need to be between 1 and 25. Will be 10 by
                       default.
-                    type: number
+                    format: int64
+                    type: integer
                   minWebservers:
                     description: The minimum number of web servers that you want to
                       run in your environment. Value need to be between 2 and 5. Will
                       be 2 by default.
-                    type: number
+                    format: int64
+                    type: integer
                   minWorkers:
                     description: The minimum number of workers that you want to run
                       in your environment. Will be 1 by default.
-                    type: number
+                    format: int64
+                    type: integer
                   networkConfiguration:
                     description: Specifies the network configuration for your Apache
                       Airflow Environment. This includes two private subnets as well
@@ -567,7 +571,8 @@ spec:
                     description: The number of schedulers that you want to run in
                       your environment. v2.0.2 and above accepts 2 - 5, default 2.
                       v1.10.12 accepts 1.
-                    type: number
+                    format: int64
+                    type: integer
                   sourceBucketArn:
                     description: The Amazon Resource Name (ARN) of your Amazon S3
                       storage bucket. For example, arn:aws:s3:::airflow-mybucketname.
@@ -659,12 +664,6 @@ spec:
                       See Using a startup script. Supported for environment versions
                       2.x and later.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   webserverAccessMode:
                     description: 'Specifies whether the webserver should be accessible
                       over the internet or via your specified VPC. Possible options:
@@ -950,21 +949,25 @@ spec:
                     description: The maximum number of web servers that you want to
                       run in your environment. Value need to be between 2 and 5. Will
                       be 2 by default.
-                    type: number
+                    format: int64
+                    type: integer
                   maxWorkers:
                     description: The maximum number of workers that can be automatically
                       scaled up. Value need to be between 1 and 25. Will be 10 by
                       default.
-                    type: number
+                    format: int64
+                    type: integer
                   minWebservers:
                     description: The minimum number of web servers that you want to
                       run in your environment. Value need to be between 2 and 5. Will
                       be 2 by default.
-                    type: number
+                    format: int64
+                    type: integer
                   minWorkers:
                     description: The minimum number of workers that you want to run
                       in your environment. Will be 1 by default.
-                    type: number
+                    format: int64
+                    type: integer
                   networkConfiguration:
                     description: Specifies the network configuration for your Apache
                       Airflow Environment. This includes two private subnets as well
@@ -1169,7 +1172,8 @@ spec:
                     description: The number of schedulers that you want to run in
                       your environment. v2.0.2 and above accepts 2 - 5, default 2.
                       v1.10.12 accepts 1.
-                    type: number
+                    format: int64
+                    type: integer
                   sourceBucketArn:
                     description: The Amazon Resource Name (ARN) of your Amazon S3
                       storage bucket. For example, arn:aws:s3:::airflow-mybucketname.
@@ -1261,12 +1265,6 @@ spec:
                       See Using a startup script. Supported for environment versions
                       2.x and later.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   webserverAccessMode:
                     description: 'Specifies whether the webserver should be accessible
                       over the internet or via your specified VPC. Possible options:
@@ -1618,21 +1616,25 @@ spec:
                     description: The maximum number of web servers that you want to
                       run in your environment. Value need to be between 2 and 5. Will
                       be 2 by default.
-                    type: number
+                    format: int64
+                    type: integer
                   maxWorkers:
                     description: The maximum number of workers that can be automatically
                       scaled up. Value need to be between 1 and 25. Will be 10 by
                       default.
-                    type: number
+                    format: int64
+                    type: integer
                   minWebservers:
                     description: The minimum number of web servers that you want to
                       run in your environment. Value need to be between 2 and 5. Will
                       be 2 by default.
-                    type: number
+                    format: int64
+                    type: integer
                   minWorkers:
                     description: The minimum number of workers that you want to run
                       in your environment. Will be 1 by default.
-                    type: number
+                    format: int64
+                    type: integer
                   networkConfiguration:
                     description: Specifies the network configuration for your Apache
                       Airflow Environment. This includes two private subnets as well
@@ -1680,7 +1682,8 @@ spec:
                     description: The number of schedulers that you want to run in
                       your environment. v2.0.2 and above accepts 2 - 5, default 2.
                       v1.10.12 accepts 1.
-                    type: number
+                    format: int64
+                    type: integer
                   serviceRoleArn:
                     description: The Service Role ARN of the Amazon MWAA Environment
                     type: string

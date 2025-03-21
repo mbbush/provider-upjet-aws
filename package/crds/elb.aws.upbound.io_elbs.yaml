@@ -1155,7 +1155,8 @@ spec:
                       interval:
                         description: 'The publishing interval in minutes. Valid values:
                           5 and 60. Default: 60'
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   availabilityZones:
                     description: The AZ's to serve traffic in.
@@ -1170,7 +1171,8 @@ spec:
                   connectionDrainingTimeout:
                     description: 'The time in seconds to allow for connections to
                       drain. Default: 300'
-                    type: number
+                    format: int64
+                    type: integer
                   crossZoneLoadBalancing:
                     description: 'Enable cross-zone load balancing. Default: true'
                     type: boolean
@@ -1185,11 +1187,13 @@ spec:
                       healthyThreshold:
                         description: The number of checks before the instance is declared
                           healthy.
-                        type: number
+                        format: int64
+                        type: integer
                       interval:
                         description: 'The publishing interval in minutes. Valid values:
                           5 and 60. Default: 60'
-                        type: number
+                        format: int64
+                        type: integer
                       target:
                         description: |-
                           The target of the check. Valid pattern is "${PROTOCOL}:${PORT}${PATH}", where PROTOCOL
@@ -1197,16 +1201,19 @@ spec:
                         type: string
                       timeout:
                         description: The length of time before the check times out.
-                        type: number
+                        format: int64
+                        type: integer
                       unhealthyThreshold:
                         description: The number of checks before the instance is declared
                           unhealthy.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   idleTimeout:
                     description: 'The time in seconds that the connection is allowed
                       to be idle. Default: 60'
-                    type: number
+                    format: int64
+                    type: integer
                   instances:
                     description: A list of instance ids to place in the ELB pool.
                     items:
@@ -1300,7 +1307,8 @@ spec:
                       properties:
                         instancePort:
                           description: The port on the instance to route to
-                          type: number
+                          format: int64
+                          type: integer
                         instanceProtocol:
                           description: |-
                             The protocol to use to the instance. Valid
@@ -1308,7 +1316,8 @@ spec:
                           type: string
                         lbPort:
                           description: The port to listen on for the load balancer
-                          type: number
+                          format: int64
+                          type: integer
                         lbProtocol:
                           description: |-
                             The protocol to listen on. Valid values are HTTP,
@@ -1425,12 +1434,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -1464,7 +1467,8 @@ spec:
                       interval:
                         description: 'The publishing interval in minutes. Valid values:
                           5 and 60. Default: 60'
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   availabilityZones:
                     description: The AZ's to serve traffic in.
@@ -1479,7 +1483,8 @@ spec:
                   connectionDrainingTimeout:
                     description: 'The time in seconds to allow for connections to
                       drain. Default: 300'
-                    type: number
+                    format: int64
+                    type: integer
                   crossZoneLoadBalancing:
                     description: 'Enable cross-zone load balancing. Default: true'
                     type: boolean
@@ -1494,11 +1499,13 @@ spec:
                       healthyThreshold:
                         description: The number of checks before the instance is declared
                           healthy.
-                        type: number
+                        format: int64
+                        type: integer
                       interval:
                         description: 'The publishing interval in minutes. Valid values:
                           5 and 60. Default: 60'
-                        type: number
+                        format: int64
+                        type: integer
                       target:
                         description: |-
                           The target of the check. Valid pattern is "${PROTOCOL}:${PORT}${PATH}", where PROTOCOL
@@ -1506,16 +1513,19 @@ spec:
                         type: string
                       timeout:
                         description: The length of time before the check times out.
-                        type: number
+                        format: int64
+                        type: integer
                       unhealthyThreshold:
                         description: The number of checks before the instance is declared
                           unhealthy.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   idleTimeout:
                     description: 'The time in seconds that the connection is allowed
                       to be idle. Default: 60'
-                    type: number
+                    format: int64
+                    type: integer
                   instances:
                     description: A list of instance ids to place in the ELB pool.
                     items:
@@ -1609,7 +1619,8 @@ spec:
                       properties:
                         instancePort:
                           description: The port on the instance to route to
-                          type: number
+                          format: int64
+                          type: integer
                         instanceProtocol:
                           description: |-
                             The protocol to use to the instance. Valid
@@ -1617,7 +1628,8 @@ spec:
                           type: string
                         lbPort:
                           description: The port to listen on for the load balancer
-                          type: number
+                          format: int64
+                          type: integer
                         lbProtocol:
                           description: |-
                             The protocol to listen on. Valid values are HTTP,
@@ -1730,12 +1742,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -1931,7 +1937,8 @@ spec:
                       interval:
                         description: 'The publishing interval in minutes. Valid values:
                           5 and 60. Default: 60'
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   arn:
                     description: The ARN of the ELB
@@ -1949,7 +1956,8 @@ spec:
                   connectionDrainingTimeout:
                     description: 'The time in seconds to allow for connections to
                       drain. Default: 300'
-                    type: number
+                    format: int64
+                    type: integer
                   crossZoneLoadBalancing:
                     description: 'Enable cross-zone load balancing. Default: true'
                     type: boolean
@@ -1967,11 +1975,13 @@ spec:
                       healthyThreshold:
                         description: The number of checks before the instance is declared
                           healthy.
-                        type: number
+                        format: int64
+                        type: integer
                       interval:
                         description: 'The publishing interval in minutes. Valid values:
                           5 and 60. Default: 60'
-                        type: number
+                        format: int64
+                        type: integer
                       target:
                         description: |-
                           The target of the check. Valid pattern is "${PROTOCOL}:${PORT}${PATH}", where PROTOCOL
@@ -1979,11 +1989,13 @@ spec:
                         type: string
                       timeout:
                         description: The length of time before the check times out.
-                        type: number
+                        format: int64
+                        type: integer
                       unhealthyThreshold:
                         description: The number of checks before the instance is declared
                           unhealthy.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   id:
                     description: The name of the ELB
@@ -1991,7 +2003,8 @@ spec:
                   idleTimeout:
                     description: 'The time in seconds that the connection is allowed
                       to be idle. Default: 60'
-                    type: number
+                    format: int64
+                    type: integer
                   instances:
                     description: A list of instance ids to place in the ELB pool.
                     items:
@@ -2007,7 +2020,8 @@ spec:
                       properties:
                         instancePort:
                           description: The port on the instance to route to
-                          type: number
+                          format: int64
+                          type: integer
                         instanceProtocol:
                           description: |-
                             The protocol to use to the instance. Valid
@@ -2015,7 +2029,8 @@ spec:
                           type: string
                         lbPort:
                           description: The port to listen on for the load balancer
-                          type: number
+                          format: int64
+                          type: integer
                         lbProtocol:
                           description: |-
                             The protocol to listen on. Valid values are HTTP,

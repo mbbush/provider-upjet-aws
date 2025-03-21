@@ -413,7 +413,7 @@ func (in *GeoproximityRoutingPolicyInitParameters) DeepCopyInto(out *Geoproximit
 	}
 	if in.Bias != nil {
 		in, out := &in.Bias, &out.Bias
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Coordinates != nil {
@@ -450,7 +450,7 @@ func (in *GeoproximityRoutingPolicyObservation) DeepCopyInto(out *GeoproximityRo
 	}
 	if in.Bias != nil {
 		in, out := &in.Bias, &out.Bias
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Coordinates != nil {
@@ -487,7 +487,7 @@ func (in *GeoproximityRoutingPolicyParameters) DeepCopyInto(out *GeoproximityRou
 	}
 	if in.Bias != nil {
 		in, out := &in.Bias, &out.Bias
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Coordinates != nil {
@@ -689,7 +689,7 @@ func (in *RecordInitParameters) DeepCopyInto(out *RecordInitParameters) {
 	}
 	if in.TTL != nil {
 		in, out := &in.TTL, &out.TTL
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Type != nil {
@@ -842,7 +842,7 @@ func (in *RecordObservation) DeepCopyInto(out *RecordObservation) {
 	}
 	if in.TTL != nil {
 		in, out := &in.TTL, &out.TTL
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Type != nil {
@@ -970,7 +970,7 @@ func (in *RecordParameters) DeepCopyInto(out *RecordParameters) {
 	}
 	if in.TTL != nil {
 		in, out := &in.TTL, &out.TTL
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Type != nil {
@@ -1050,7 +1050,7 @@ func (in *WeightedRoutingPolicyInitParameters) DeepCopyInto(out *WeightedRouting
 	*out = *in
 	if in.Weight != nil {
 		in, out := &in.Weight, &out.Weight
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1070,7 +1070,7 @@ func (in *WeightedRoutingPolicyObservation) DeepCopyInto(out *WeightedRoutingPol
 	*out = *in
 	if in.Weight != nil {
 		in, out := &in.Weight, &out.Weight
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1090,7 +1090,7 @@ func (in *WeightedRoutingPolicyParameters) DeepCopyInto(out *WeightedRoutingPoli
 	*out = *in
 	if in.Weight != nil {
 		in, out := &in.Weight, &out.Weight
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }

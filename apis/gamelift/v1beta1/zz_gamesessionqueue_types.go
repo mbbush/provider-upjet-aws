@@ -47,12 +47,8 @@ type GameSessionQueueInitParameters struct {
 	// One or more policies used to choose fleet based on player latency. See below.
 	PlayerLatencyPolicy []PlayerLatencyPolicyInitParameters `json:"playerLatencyPolicy,omitempty" tf:"player_latency_policy,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Maximum time a game session request can remain in the queue.
-	TimeoutInSeconds *float64 `json:"timeoutInSeconds,omitempty" tf:"timeout_in_seconds,omitempty"`
+	TimeoutInSeconds *int64 `json:"timeoutInSeconds,omitempty" tf:"timeout_in_seconds,omitempty"`
 }
 
 type GameSessionQueueObservation struct {
@@ -83,7 +79,7 @@ type GameSessionQueueObservation struct {
 	TagsAll map[string]*string `json:"tagsAll,omitempty" tf:"tags_all,omitempty"`
 
 	// Maximum time a game session request can remain in the queue.
-	TimeoutInSeconds *float64 `json:"timeoutInSeconds,omitempty" tf:"timeout_in_seconds,omitempty"`
+	TimeoutInSeconds *int64 `json:"timeoutInSeconds,omitempty" tf:"timeout_in_seconds,omitempty"`
 }
 
 type GameSessionQueueParameters struct {
@@ -129,43 +125,38 @@ type GameSessionQueueParameters struct {
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
 
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Maximum time a game session request can remain in the queue.
 	// +kubebuilder:validation:Optional
-	TimeoutInSeconds *float64 `json:"timeoutInSeconds,omitempty" tf:"timeout_in_seconds,omitempty"`
+	TimeoutInSeconds *int64 `json:"timeoutInSeconds,omitempty" tf:"timeout_in_seconds,omitempty"`
 }
 
 type PlayerLatencyPolicyInitParameters struct {
 
 	// Maximum latency value that is allowed for any player.
-	MaximumIndividualPlayerLatencyMilliseconds *float64 `json:"maximumIndividualPlayerLatencyMilliseconds,omitempty" tf:"maximum_individual_player_latency_milliseconds,omitempty"`
+	MaximumIndividualPlayerLatencyMilliseconds *int64 `json:"maximumIndividualPlayerLatencyMilliseconds,omitempty" tf:"maximum_individual_player_latency_milliseconds,omitempty"`
 
 	// Length of time that the policy is enforced while placing a new game session. Absence of value for this attribute means that the policy is enforced until the queue times out.
-	PolicyDurationSeconds *float64 `json:"policyDurationSeconds,omitempty" tf:"policy_duration_seconds,omitempty"`
+	PolicyDurationSeconds *int64 `json:"policyDurationSeconds,omitempty" tf:"policy_duration_seconds,omitempty"`
 }
 
 type PlayerLatencyPolicyObservation struct {
 
 	// Maximum latency value that is allowed for any player.
-	MaximumIndividualPlayerLatencyMilliseconds *float64 `json:"maximumIndividualPlayerLatencyMilliseconds,omitempty" tf:"maximum_individual_player_latency_milliseconds,omitempty"`
+	MaximumIndividualPlayerLatencyMilliseconds *int64 `json:"maximumIndividualPlayerLatencyMilliseconds,omitempty" tf:"maximum_individual_player_latency_milliseconds,omitempty"`
 
 	// Length of time that the policy is enforced while placing a new game session. Absence of value for this attribute means that the policy is enforced until the queue times out.
-	PolicyDurationSeconds *float64 `json:"policyDurationSeconds,omitempty" tf:"policy_duration_seconds,omitempty"`
+	PolicyDurationSeconds *int64 `json:"policyDurationSeconds,omitempty" tf:"policy_duration_seconds,omitempty"`
 }
 
 type PlayerLatencyPolicyParameters struct {
 
 	// Maximum latency value that is allowed for any player.
 	// +kubebuilder:validation:Optional
-	MaximumIndividualPlayerLatencyMilliseconds *float64 `json:"maximumIndividualPlayerLatencyMilliseconds" tf:"maximum_individual_player_latency_milliseconds,omitempty"`
+	MaximumIndividualPlayerLatencyMilliseconds *int64 `json:"maximumIndividualPlayerLatencyMilliseconds" tf:"maximum_individual_player_latency_milliseconds,omitempty"`
 
 	// Length of time that the policy is enforced while placing a new game session. Absence of value for this attribute means that the policy is enforced until the queue times out.
 	// +kubebuilder:validation:Optional
-	PolicyDurationSeconds *float64 `json:"policyDurationSeconds,omitempty" tf:"policy_duration_seconds,omitempty"`
+	PolicyDurationSeconds *int64 `json:"policyDurationSeconds,omitempty" tf:"policy_duration_seconds,omitempty"`
 }
 
 // GameSessionQueueSpec defines the desired state of GameSessionQueue

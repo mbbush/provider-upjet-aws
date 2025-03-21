@@ -1583,7 +1583,8 @@ spec:
                             notifyDelayAfter:
                               description: After a job run starts, the number of minutes
                                 to wait before sending a job run delay notification.
-                              type: number
+                              format: int64
+                              type: integer
                           type: object
                         securityConfiguration:
                           description: The name of the Security Configuration structure
@@ -1592,7 +1593,8 @@ spec:
                         timeout:
                           description: The job run timeout in minutes. It overrides
                             the timeout value of the job.
-                          type: number
+                          format: int64
+                          type: integer
                       type: object
                     type: array
                   description:
@@ -1610,12 +1612,14 @@ spec:
                         batchSize:
                           description: Number of events that must be received from
                             Amazon EventBridge before EventBridge  event trigger fires.
-                          type: number
+                          format: int64
+                          type: integer
                         batchWindow:
                           description: Window of time in seconds after which EventBridge
                             event trigger fires. Window starts when first event is
                             received. Default value is 900.
-                          type: number
+                          format: int64
+                          type: integer
                       type: object
                     type: array
                   predicate:
@@ -1821,12 +1825,6 @@ spec:
                     description: –  Set to true to start SCHEDULED and CONDITIONAL
                       triggers when created. True is not supported for ON_DEMAND triggers.
                     type: boolean
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   type:
                     description: –  The type of trigger. Valid values are CONDITIONAL,
                       EVENT, ON_DEMAND, and SCHEDULED.
@@ -2031,7 +2029,8 @@ spec:
                             notifyDelayAfter:
                               description: After a job run starts, the number of minutes
                                 to wait before sending a job run delay notification.
-                              type: number
+                              format: int64
+                              type: integer
                           type: object
                         securityConfiguration:
                           description: The name of the Security Configuration structure
@@ -2040,7 +2039,8 @@ spec:
                         timeout:
                           description: The job run timeout in minutes. It overrides
                             the timeout value of the job.
-                          type: number
+                          format: int64
+                          type: integer
                       type: object
                     type: array
                   description:
@@ -2058,12 +2058,14 @@ spec:
                         batchSize:
                           description: Number of events that must be received from
                             Amazon EventBridge before EventBridge  event trigger fires.
-                          type: number
+                          format: int64
+                          type: integer
                         batchWindow:
                           description: Window of time in seconds after which EventBridge
                             event trigger fires. Window starts when first event is
                             received. Default value is 900.
-                          type: number
+                          format: int64
+                          type: integer
                       type: object
                     type: array
                   predicate:
@@ -2265,12 +2267,6 @@ spec:
                     description: –  Set to true to start SCHEDULED and CONDITIONAL
                       triggers when created. True is not supported for ON_DEMAND triggers.
                     type: boolean
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   type:
                     description: –  The type of trigger. Valid values are CONDITIONAL,
                       EVENT, ON_DEMAND, and SCHEDULED.
@@ -2491,7 +2487,8 @@ spec:
                             notifyDelayAfter:
                               description: After a job run starts, the number of minutes
                                 to wait before sending a job run delay notification.
-                              type: number
+                              format: int64
+                              type: integer
                           type: object
                         securityConfiguration:
                           description: The name of the Security Configuration structure
@@ -2500,7 +2497,8 @@ spec:
                         timeout:
                           description: The job run timeout in minutes. It overrides
                             the timeout value of the job.
-                          type: number
+                          format: int64
+                          type: integer
                       type: object
                     type: array
                   arn:
@@ -2521,12 +2519,14 @@ spec:
                         batchSize:
                           description: Number of events that must be received from
                             Amazon EventBridge before EventBridge  event trigger fires.
-                          type: number
+                          format: int64
+                          type: integer
                         batchWindow:
                           description: Window of time in seconds after which EventBridge
                             event trigger fires. Window starts when first event is
                             received. Default value is 900.
-                          type: number
+                          format: int64
+                          type: integer
                       type: object
                     type: array
                   id:

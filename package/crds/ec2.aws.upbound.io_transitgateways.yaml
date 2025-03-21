@@ -78,7 +78,8 @@ spec:
                       side of a BGP session. The range is 64512 to 65534 for 16-bit
                       ASNs and 4200000000 to 4294967294 for 32-bit ASNs. Default value:
                       64512.'
-                    type: number
+                    format: int64
+                    type: integer
                   autoAcceptSharedAttachments:
                     description: 'Whether resource attachment requests are automatically
                       accepted. Valid values: disable, enable. Default value: disable.'
@@ -113,12 +114,6 @@ spec:
                     description: 'Whether Security Group Referencing Support is enabled.
                       Valid values: disable, enable. Default value: disable.'
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   transitGatewayCidrBlocks:
                     description: One or more IPv4 or IPv6 CIDR blocks for the transit
                       gateway. Must be a size /24 CIDR block or larger for IPv4, or
@@ -152,7 +147,8 @@ spec:
                       side of a BGP session. The range is 64512 to 65534 for 16-bit
                       ASNs and 4200000000 to 4294967294 for 32-bit ASNs. Default value:
                       64512.'
-                    type: number
+                    format: int64
+                    type: integer
                   autoAcceptSharedAttachments:
                     description: 'Whether resource attachment requests are automatically
                       accepted. Valid values: disable, enable. Default value: disable.'
@@ -183,12 +179,6 @@ spec:
                     description: 'Whether Security Group Referencing Support is enabled.
                       Valid values: disable, enable. Default value: disable.'
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   transitGatewayCidrBlocks:
                     description: One or more IPv4 or IPv6 CIDR blocks for the transit
                       gateway. Must be a size /24 CIDR block or larger for IPv4, or
@@ -379,7 +369,8 @@ spec:
                       side of a BGP session. The range is 64512 to 65534 for 16-bit
                       ASNs and 4200000000 to 4294967294 for 32-bit ASNs. Default value:
                       64512.'
-                    type: number
+                    format: int64
+                    type: integer
                   arn:
                     description: EC2 Transit Gateway Amazon Resource Name (ARN)
                     type: string

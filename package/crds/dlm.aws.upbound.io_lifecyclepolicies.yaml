@@ -2259,7 +2259,8 @@ spec:
                                         are valid values. Conflicts with cron_expression.
                                         If set, interval_unit and times must also
                                         be set.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                     intervalUnit:
                                       description: The unit for how often the lifecycle
                                         policy should be evaluated. HOURS is currently
@@ -2387,7 +2388,8 @@ spec:
                                     be evaluated. 1, 2,3,4,6,8,12 or 24 are valid
                                     values. Conflicts with cron_expression. If set,
                                     interval_unit and times must also be set.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 intervalUnit:
                                   description: The unit for how often the lifecycle
                                     policy should be evaluated. HOURS is currently
@@ -2521,7 +2523,8 @@ spec:
                                           24 are valid values. Conflicts with cron_expression.
                                           If set, interval_unit and times must also
                                           be set.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                       intervalUnit:
                                         description: The unit for how often the lifecycle
                                           policy should be evaluated. HOURS is currently
@@ -2549,7 +2552,8 @@ spec:
                                           24 are valid values. Conflicts with cron_expression.
                                           If set, interval_unit and times must also
                                           be set.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                       intervalUnit:
                                         description: The unit for how often the lifecycle
                                           policy should be evaluated. HOURS is currently
@@ -2573,13 +2577,15 @@ spec:
                                   description: Specifies the number of oldest AMIs
                                     to deprecate. Must be an integer between 1 and
                                     1000. Conflicts with interval and interval_unit.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 interval:
                                   description: How often this lifecycle policy should
                                     be evaluated. 1, 2,3,4,6,8,12 or 24 are valid
                                     values. Conflicts with cron_expression. If set,
                                     interval_unit and times must also be set.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 intervalUnit:
                                   description: The unit for how often the lifecycle
                                     policy should be evaluated. HOURS is currently
@@ -2603,13 +2609,15 @@ spec:
                                   description: Specifies the number of oldest AMIs
                                     to deprecate. Must be an integer between 1 and
                                     1000. Conflicts with interval and interval_unit.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 interval:
                                   description: How often this lifecycle policy should
                                     be evaluated. 1, 2,3,4,6,8,12 or 24 are valid
                                     values. Conflicts with cron_expression. If set,
                                     interval_unit and times must also be set.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 intervalUnit:
                                   description: The unit for how often the lifecycle
                                     policy should be evaluated. HOURS is currently
@@ -2630,13 +2638,15 @@ spec:
                                   description: Specifies the number of oldest AMIs
                                     to deprecate. Must be an integer between 1 and
                                     1000. Conflicts with interval and interval_unit.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 interval:
                                   description: How often this lifecycle policy should
                                     be evaluated. 1, 2,3,4,6,8,12 or 24 are valid
                                     values. Conflicts with cron_expression. If set,
                                     interval_unit and times must also be set.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 intervalUnit:
                                   description: The unit for how often the lifecycle
                                     policy should be evaluated. HOURS is currently
@@ -2660,7 +2670,8 @@ spec:
                                   description: The period after which snapshots that
                                     are shared with other AWS accounts are automatically
                                     unshared.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 unshareIntervalUnit:
                                   description: The unit of time for the automatic
                                     unsharing interval. Valid values are DAYS, WEEKS,
@@ -2706,12 +2717,6 @@ spec:
                       disabled. ENABLED or DISABLED are valid values. Defaults to
                       ENABLED.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -2856,7 +2861,8 @@ spec:
                                         are valid values. Conflicts with cron_expression.
                                         If set, interval_unit and times must also
                                         be set.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                     intervalUnit:
                                       description: The unit for how often the lifecycle
                                         policy should be evaluated. HOURS is currently
@@ -2984,7 +2990,8 @@ spec:
                                     be evaluated. 1, 2,3,4,6,8,12 or 24 are valid
                                     values. Conflicts with cron_expression. If set,
                                     interval_unit and times must also be set.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 intervalUnit:
                                   description: The unit for how often the lifecycle
                                     policy should be evaluated. HOURS is currently
@@ -3118,7 +3125,8 @@ spec:
                                           24 are valid values. Conflicts with cron_expression.
                                           If set, interval_unit and times must also
                                           be set.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                       intervalUnit:
                                         description: The unit for how often the lifecycle
                                           policy should be evaluated. HOURS is currently
@@ -3146,7 +3154,8 @@ spec:
                                           24 are valid values. Conflicts with cron_expression.
                                           If set, interval_unit and times must also
                                           be set.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                       intervalUnit:
                                         description: The unit for how often the lifecycle
                                           policy should be evaluated. HOURS is currently
@@ -3170,13 +3179,15 @@ spec:
                                   description: Specifies the number of oldest AMIs
                                     to deprecate. Must be an integer between 1 and
                                     1000. Conflicts with interval and interval_unit.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 interval:
                                   description: How often this lifecycle policy should
                                     be evaluated. 1, 2,3,4,6,8,12 or 24 are valid
                                     values. Conflicts with cron_expression. If set,
                                     interval_unit and times must also be set.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 intervalUnit:
                                   description: The unit for how often the lifecycle
                                     policy should be evaluated. HOURS is currently
@@ -3200,13 +3211,15 @@ spec:
                                   description: Specifies the number of oldest AMIs
                                     to deprecate. Must be an integer between 1 and
                                     1000. Conflicts with interval and interval_unit.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 interval:
                                   description: How often this lifecycle policy should
                                     be evaluated. 1, 2,3,4,6,8,12 or 24 are valid
                                     values. Conflicts with cron_expression. If set,
                                     interval_unit and times must also be set.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 intervalUnit:
                                   description: The unit for how often the lifecycle
                                     policy should be evaluated. HOURS is currently
@@ -3227,13 +3240,15 @@ spec:
                                   description: Specifies the number of oldest AMIs
                                     to deprecate. Must be an integer between 1 and
                                     1000. Conflicts with interval and interval_unit.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 interval:
                                   description: How often this lifecycle policy should
                                     be evaluated. 1, 2,3,4,6,8,12 or 24 are valid
                                     values. Conflicts with cron_expression. If set,
                                     interval_unit and times must also be set.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 intervalUnit:
                                   description: The unit for how often the lifecycle
                                     policy should be evaluated. HOURS is currently
@@ -3257,7 +3272,8 @@ spec:
                                   description: The period after which snapshots that
                                     are shared with other AWS accounts are automatically
                                     unshared.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 unshareIntervalUnit:
                                   description: The unit of time for the automatic
                                     unsharing interval. Valid values are DAYS, WEEKS,
@@ -3299,12 +3315,6 @@ spec:
                       disabled. ENABLED or DISABLED are valid values. Defaults to
                       ENABLED.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -3547,7 +3557,8 @@ spec:
                                         are valid values. Conflicts with cron_expression.
                                         If set, interval_unit and times must also
                                         be set.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                     intervalUnit:
                                       description: The unit for how often the lifecycle
                                         policy should be evaluated. HOURS is currently
@@ -3675,7 +3686,8 @@ spec:
                                     be evaluated. 1, 2,3,4,6,8,12 or 24 are valid
                                     values. Conflicts with cron_expression. If set,
                                     interval_unit and times must also be set.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 intervalUnit:
                                   description: The unit for how often the lifecycle
                                     policy should be evaluated. HOURS is currently
@@ -3733,7 +3745,8 @@ spec:
                                           24 are valid values. Conflicts with cron_expression.
                                           If set, interval_unit and times must also
                                           be set.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                       intervalUnit:
                                         description: The unit for how often the lifecycle
                                           policy should be evaluated. HOURS is currently
@@ -3761,7 +3774,8 @@ spec:
                                           24 are valid values. Conflicts with cron_expression.
                                           If set, interval_unit and times must also
                                           be set.
-                                        type: number
+                                        format: int64
+                                        type: integer
                                       intervalUnit:
                                         description: The unit for how often the lifecycle
                                           policy should be evaluated. HOURS is currently
@@ -3785,13 +3799,15 @@ spec:
                                   description: Specifies the number of oldest AMIs
                                     to deprecate. Must be an integer between 1 and
                                     1000. Conflicts with interval and interval_unit.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 interval:
                                   description: How often this lifecycle policy should
                                     be evaluated. 1, 2,3,4,6,8,12 or 24 are valid
                                     values. Conflicts with cron_expression. If set,
                                     interval_unit and times must also be set.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 intervalUnit:
                                   description: The unit for how often the lifecycle
                                     policy should be evaluated. HOURS is currently
@@ -3815,13 +3831,15 @@ spec:
                                   description: Specifies the number of oldest AMIs
                                     to deprecate. Must be an integer between 1 and
                                     1000. Conflicts with interval and interval_unit.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 interval:
                                   description: How often this lifecycle policy should
                                     be evaluated. 1, 2,3,4,6,8,12 or 24 are valid
                                     values. Conflicts with cron_expression. If set,
                                     interval_unit and times must also be set.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 intervalUnit:
                                   description: The unit for how often the lifecycle
                                     policy should be evaluated. HOURS is currently
@@ -3842,13 +3860,15 @@ spec:
                                   description: Specifies the number of oldest AMIs
                                     to deprecate. Must be an integer between 1 and
                                     1000. Conflicts with interval and interval_unit.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 interval:
                                   description: How often this lifecycle policy should
                                     be evaluated. 1, 2,3,4,6,8,12 or 24 are valid
                                     values. Conflicts with cron_expression. If set,
                                     interval_unit and times must also be set.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 intervalUnit:
                                   description: The unit for how often the lifecycle
                                     policy should be evaluated. HOURS is currently
@@ -3872,7 +3892,8 @@ spec:
                                   description: The period after which snapshots that
                                     are shared with other AWS accounts are automatically
                                     unshared.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 unshareIntervalUnit:
                                   description: The unit of time for the automatic
                                     unsharing interval. Valid values are DAYS, WEEKS,

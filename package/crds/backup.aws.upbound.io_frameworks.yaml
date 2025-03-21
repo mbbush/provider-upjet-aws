@@ -712,12 +712,6 @@ spec:
                                 type: string
                               type: array
                               x-kubernetes-list-type: set
-                            tags:
-                              additionalProperties:
-                                type: string
-                              description: Key-value map of resource tags.
-                              type: object
-                              x-kubernetes-map-type: granular
                           type: object
                       type: object
                     type: array
@@ -734,12 +728,6 @@ spec:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -809,12 +797,6 @@ spec:
                                 type: string
                               type: array
                               x-kubernetes-list-type: set
-                            tags:
-                              additionalProperties:
-                                type: string
-                              description: Key-value map of resource tags.
-                              type: object
-                              x-kubernetes-map-type: granular
                           type: object
                       type: object
                     type: array
@@ -827,12 +809,6 @@ spec:
                       between 1 and 256 characters, starting with a letter, and consisting
                       of letters, numbers, and underscores.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:

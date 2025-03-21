@@ -16,45 +16,41 @@ import (
 type AbortIncompleteMultipartUploadInitParameters struct {
 
 	// Number of days after which Amazon S3 aborts an incomplete multipart upload.
-	DaysAfterInitiation *float64 `json:"daysAfterInitiation,omitempty" tf:"days_after_initiation,omitempty"`
+	DaysAfterInitiation *int64 `json:"daysAfterInitiation,omitempty" tf:"days_after_initiation,omitempty"`
 }
 
 type AbortIncompleteMultipartUploadObservation struct {
 
 	// Number of days after which Amazon S3 aborts an incomplete multipart upload.
-	DaysAfterInitiation *float64 `json:"daysAfterInitiation,omitempty" tf:"days_after_initiation,omitempty"`
+	DaysAfterInitiation *int64 `json:"daysAfterInitiation,omitempty" tf:"days_after_initiation,omitempty"`
 }
 
 type AbortIncompleteMultipartUploadParameters struct {
 
 	// Number of days after which Amazon S3 aborts an incomplete multipart upload.
 	// +kubebuilder:validation:Optional
-	DaysAfterInitiation *float64 `json:"daysAfterInitiation,omitempty" tf:"days_after_initiation,omitempty"`
+	DaysAfterInitiation *int64 `json:"daysAfterInitiation,omitempty" tf:"days_after_initiation,omitempty"`
 }
 
 type AndInitParameters struct {
 
 	// Minimum object size (in bytes) to which the rule applies.
-	ObjectSizeGreaterThan *float64 `json:"objectSizeGreaterThan,omitempty" tf:"object_size_greater_than,omitempty"`
+	ObjectSizeGreaterThan *int64 `json:"objectSizeGreaterThan,omitempty" tf:"object_size_greater_than,omitempty"`
 
 	// Maximum object size (in bytes) to which the rule applies.
-	ObjectSizeLessThan *float64 `json:"objectSizeLessThan,omitempty" tf:"object_size_less_than,omitempty"`
+	ObjectSizeLessThan *int64 `json:"objectSizeLessThan,omitempty" tf:"object_size_less_than,omitempty"`
 
 	// Prefix identifying one or more objects to which the rule applies.
 	Prefix *string `json:"prefix,omitempty" tf:"prefix,omitempty"`
-
-	// Key-value map of resource tags. All of these tags must exist in the object's tag set in order for the rule to apply.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type AndObservation struct {
 
 	// Minimum object size (in bytes) to which the rule applies.
-	ObjectSizeGreaterThan *float64 `json:"objectSizeGreaterThan,omitempty" tf:"object_size_greater_than,omitempty"`
+	ObjectSizeGreaterThan *int64 `json:"objectSizeGreaterThan,omitempty" tf:"object_size_greater_than,omitempty"`
 
 	// Maximum object size (in bytes) to which the rule applies.
-	ObjectSizeLessThan *float64 `json:"objectSizeLessThan,omitempty" tf:"object_size_less_than,omitempty"`
+	ObjectSizeLessThan *int64 `json:"objectSizeLessThan,omitempty" tf:"object_size_less_than,omitempty"`
 
 	// Prefix identifying one or more objects to which the rule applies.
 	Prefix *string `json:"prefix,omitempty" tf:"prefix,omitempty"`
@@ -68,20 +64,15 @@ type AndParameters struct {
 
 	// Minimum object size (in bytes) to which the rule applies.
 	// +kubebuilder:validation:Optional
-	ObjectSizeGreaterThan *float64 `json:"objectSizeGreaterThan,omitempty" tf:"object_size_greater_than,omitempty"`
+	ObjectSizeGreaterThan *int64 `json:"objectSizeGreaterThan,omitempty" tf:"object_size_greater_than,omitempty"`
 
 	// Maximum object size (in bytes) to which the rule applies.
 	// +kubebuilder:validation:Optional
-	ObjectSizeLessThan *float64 `json:"objectSizeLessThan,omitempty" tf:"object_size_less_than,omitempty"`
+	ObjectSizeLessThan *int64 `json:"objectSizeLessThan,omitempty" tf:"object_size_less_than,omitempty"`
 
 	// Prefix identifying one or more objects to which the rule applies.
 	// +kubebuilder:validation:Optional
 	Prefix *string `json:"prefix,omitempty" tf:"prefix,omitempty"`
-
-	// Key-value map of resource tags. All of these tags must exist in the object's tag set in order for the rule to apply.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type BucketLifecycleConfigurationInitParameters struct {
@@ -266,7 +257,7 @@ type RuleExpirationInitParameters struct {
 	Date *string `json:"date,omitempty" tf:"date,omitempty"`
 
 	// Number of days after creation when objects are transitioned to the specified storage class. The value must be a positive integer. If both days and date are not specified, defaults to 0. Valid values depend on storage_class, see Transition objects using Amazon S3 Lifecycle for more details.
-	Days *float64 `json:"days,omitempty" tf:"days,omitempty"`
+	Days *int64 `json:"days,omitempty" tf:"days,omitempty"`
 
 	// Indicates whether Amazon S3 will remove a delete marker with no noncurrent versions. If set to true, the delete marker will be expired; if set to false the policy takes no action.
 	ExpiredObjectDeleteMarker *bool `json:"expiredObjectDeleteMarker,omitempty" tf:"expired_object_delete_marker,omitempty"`
@@ -278,7 +269,7 @@ type RuleExpirationObservation struct {
 	Date *string `json:"date,omitempty" tf:"date,omitempty"`
 
 	// Number of days after creation when objects are transitioned to the specified storage class. The value must be a positive integer. If both days and date are not specified, defaults to 0. Valid values depend on storage_class, see Transition objects using Amazon S3 Lifecycle for more details.
-	Days *float64 `json:"days,omitempty" tf:"days,omitempty"`
+	Days *int64 `json:"days,omitempty" tf:"days,omitempty"`
 
 	// Indicates whether Amazon S3 will remove a delete marker with no noncurrent versions. If set to true, the delete marker will be expired; if set to false the policy takes no action.
 	ExpiredObjectDeleteMarker *bool `json:"expiredObjectDeleteMarker,omitempty" tf:"expired_object_delete_marker,omitempty"`
@@ -292,7 +283,7 @@ type RuleExpirationParameters struct {
 
 	// Number of days after creation when objects are transitioned to the specified storage class. The value must be a positive integer. If both days and date are not specified, defaults to 0. Valid values depend on storage_class, see Transition objects using Amazon S3 Lifecycle for more details.
 	// +kubebuilder:validation:Optional
-	Days *float64 `json:"days,omitempty" tf:"days,omitempty"`
+	Days *int64 `json:"days,omitempty" tf:"days,omitempty"`
 
 	// Indicates whether Amazon S3 will remove a delete marker with no noncurrent versions. If set to true, the delete marker will be expired; if set to false the policy takes no action.
 	// +kubebuilder:validation:Optional
@@ -364,7 +355,7 @@ type RuleNoncurrentVersionExpirationInitParameters struct {
 	NewerNoncurrentVersions *string `json:"newerNoncurrentVersions,omitempty" tf:"newer_noncurrent_versions,omitempty"`
 
 	// Number of days an object is noncurrent before Amazon S3 can perform the associated action.
-	NoncurrentDays *float64 `json:"noncurrentDays,omitempty" tf:"noncurrent_days,omitempty"`
+	NoncurrentDays *int64 `json:"noncurrentDays,omitempty" tf:"noncurrent_days,omitempty"`
 }
 
 type RuleNoncurrentVersionExpirationObservation struct {
@@ -373,7 +364,7 @@ type RuleNoncurrentVersionExpirationObservation struct {
 	NewerNoncurrentVersions *string `json:"newerNoncurrentVersions,omitempty" tf:"newer_noncurrent_versions,omitempty"`
 
 	// Number of days an object is noncurrent before Amazon S3 can perform the associated action.
-	NoncurrentDays *float64 `json:"noncurrentDays,omitempty" tf:"noncurrent_days,omitempty"`
+	NoncurrentDays *int64 `json:"noncurrentDays,omitempty" tf:"noncurrent_days,omitempty"`
 }
 
 type RuleNoncurrentVersionExpirationParameters struct {
@@ -384,7 +375,7 @@ type RuleNoncurrentVersionExpirationParameters struct {
 
 	// Number of days an object is noncurrent before Amazon S3 can perform the associated action.
 	// +kubebuilder:validation:Optional
-	NoncurrentDays *float64 `json:"noncurrentDays,omitempty" tf:"noncurrent_days,omitempty"`
+	NoncurrentDays *int64 `json:"noncurrentDays,omitempty" tf:"noncurrent_days,omitempty"`
 }
 
 type RuleNoncurrentVersionTransitionInitParameters struct {
@@ -393,7 +384,7 @@ type RuleNoncurrentVersionTransitionInitParameters struct {
 	NewerNoncurrentVersions *string `json:"newerNoncurrentVersions,omitempty" tf:"newer_noncurrent_versions,omitempty"`
 
 	// Number of days an object is noncurrent before Amazon S3 can perform the associated action.
-	NoncurrentDays *float64 `json:"noncurrentDays,omitempty" tf:"noncurrent_days,omitempty"`
+	NoncurrentDays *int64 `json:"noncurrentDays,omitempty" tf:"noncurrent_days,omitempty"`
 
 	// Class of storage used to store the object. Valid Values: GLACIER, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE, GLACIER_IR.
 	StorageClass *string `json:"storageClass,omitempty" tf:"storage_class,omitempty"`
@@ -405,7 +396,7 @@ type RuleNoncurrentVersionTransitionObservation struct {
 	NewerNoncurrentVersions *string `json:"newerNoncurrentVersions,omitempty" tf:"newer_noncurrent_versions,omitempty"`
 
 	// Number of days an object is noncurrent before Amazon S3 can perform the associated action.
-	NoncurrentDays *float64 `json:"noncurrentDays,omitempty" tf:"noncurrent_days,omitempty"`
+	NoncurrentDays *int64 `json:"noncurrentDays,omitempty" tf:"noncurrent_days,omitempty"`
 
 	// Class of storage used to store the object. Valid Values: GLACIER, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE, GLACIER_IR.
 	StorageClass *string `json:"storageClass,omitempty" tf:"storage_class,omitempty"`
@@ -419,7 +410,7 @@ type RuleNoncurrentVersionTransitionParameters struct {
 
 	// Number of days an object is noncurrent before Amazon S3 can perform the associated action.
 	// +kubebuilder:validation:Optional
-	NoncurrentDays *float64 `json:"noncurrentDays,omitempty" tf:"noncurrent_days,omitempty"`
+	NoncurrentDays *int64 `json:"noncurrentDays,omitempty" tf:"noncurrent_days,omitempty"`
 
 	// Class of storage used to store the object. Valid Values: GLACIER, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE, GLACIER_IR.
 	// +kubebuilder:validation:Optional
@@ -432,7 +423,7 @@ type RuleTransitionInitParameters struct {
 	Date *string `json:"date,omitempty" tf:"date,omitempty"`
 
 	// Number of days after creation when objects are transitioned to the specified storage class. The value must be a positive integer. If both days and date are not specified, defaults to 0. Valid values depend on storage_class, see Transition objects using Amazon S3 Lifecycle for more details.
-	Days *float64 `json:"days,omitempty" tf:"days,omitempty"`
+	Days *int64 `json:"days,omitempty" tf:"days,omitempty"`
 
 	// Class of storage used to store the object. Valid Values: GLACIER, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE, GLACIER_IR.
 	StorageClass *string `json:"storageClass,omitempty" tf:"storage_class,omitempty"`
@@ -444,7 +435,7 @@ type RuleTransitionObservation struct {
 	Date *string `json:"date,omitempty" tf:"date,omitempty"`
 
 	// Number of days after creation when objects are transitioned to the specified storage class. The value must be a positive integer. If both days and date are not specified, defaults to 0. Valid values depend on storage_class, see Transition objects using Amazon S3 Lifecycle for more details.
-	Days *float64 `json:"days,omitempty" tf:"days,omitempty"`
+	Days *int64 `json:"days,omitempty" tf:"days,omitempty"`
 
 	// Class of storage used to store the object. Valid Values: GLACIER, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE, GLACIER_IR.
 	StorageClass *string `json:"storageClass,omitempty" tf:"storage_class,omitempty"`
@@ -458,7 +449,7 @@ type RuleTransitionParameters struct {
 
 	// Number of days after creation when objects are transitioned to the specified storage class. The value must be a positive integer. If both days and date are not specified, defaults to 0. Valid values depend on storage_class, see Transition objects using Amazon S3 Lifecycle for more details.
 	// +kubebuilder:validation:Optional
-	Days *float64 `json:"days,omitempty" tf:"days,omitempty"`
+	Days *int64 `json:"days,omitempty" tf:"days,omitempty"`
 
 	// Class of storage used to store the object. Valid Values: GLACIER, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE, GLACIER_IR.
 	// +kubebuilder:validation:Optional

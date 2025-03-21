@@ -617,12 +617,6 @@ spec:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -675,12 +669,6 @@ spec:
                   name:
                     description: A name for the project.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -862,10 +850,12 @@ spec:
                   activeExperimentCount:
                     description: The number of ongoing experiments currently in the
                       project.
-                    type: number
+                    format: int64
+                    type: integer
                   activeLaunchCount:
                     description: The number of ongoing launches currently in the project.
-                    type: number
+                    format: int64
+                    type: integer
                   arn:
                     description: The ARN of the project.
                     type: string
@@ -909,10 +899,12 @@ spec:
                     description: The number of experiments currently in the project.
                       This includes all experiments that have been created and not
                       deleted, whether they are ongoing or not.
-                    type: number
+                    format: int64
+                    type: integer
                   featureCount:
                     description: The number of features currently in the project.
-                    type: number
+                    format: int64
+                    type: integer
                   id:
                     description: The ID has the same value as the arn of the project.
                     type: string
@@ -924,7 +916,8 @@ spec:
                     description: The number of launches currently in the project.
                       This includes all launches that have been created and not deleted,
                       whether they are ongoing or not.
-                    type: number
+                    format: int64
+                    type: integer
                   name:
                     description: A name for the project.
                     type: string

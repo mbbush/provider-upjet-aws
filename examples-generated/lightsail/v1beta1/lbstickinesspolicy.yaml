@@ -27,5 +27,3 @@ spec:
     healthCheckPath: /
     instancePort: "80"
     region: us-west-1
-    tags:
-      foo: bar

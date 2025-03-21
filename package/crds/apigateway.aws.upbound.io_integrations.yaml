@@ -1851,7 +1851,8 @@ spec:
                     description: Custom timeout between 50 and 300,000 milliseconds.
                       The default value is 29,000 milliseconds. You need to raise
                       a Service Quota Ticket to increase time beyond 29,000 milliseconds.
-                    type: number
+                    format: int64
+                    type: integer
                   tlsConfig:
                     description: TLS configuration. See below.
                     properties:
@@ -2350,7 +2351,8 @@ spec:
                     description: Custom timeout between 50 and 300,000 milliseconds.
                       The default value is 29,000 milliseconds. You need to raise
                       a Service Quota Ticket to increase time beyond 29,000 milliseconds.
-                    type: number
+                    format: int64
+                    type: integer
                   tlsConfig:
                     description: TLS configuration. See below.
                     properties:
@@ -2711,7 +2713,8 @@ spec:
                     description: Custom timeout between 50 and 300,000 milliseconds.
                       The default value is 29,000 milliseconds. You need to raise
                       a Service Quota Ticket to increase time beyond 29,000 milliseconds.
-                    type: number
+                    format: int64
+                    type: integer
                   tlsConfig:
                     description: TLS configuration. See below.
                     properties:

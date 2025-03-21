@@ -1194,7 +1194,8 @@ spec:
                       ttl:
                         description: The TTL in seconds for a resolver that has caching
                           activated. Valid values are between 1 and 3600 seconds.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   code:
                     description: The function code that contains the request and response
@@ -1290,7 +1291,8 @@ spec:
                   maxBatchSize:
                     description: Maximum batching size for a resolver. Valid values
                       are between 0 and 2000.
-                    type: number
+                    format: int64
+                    type: integer
                   pipelineConfig:
                     description: The caching configuration for the resolver. See Pipeline
                       Config.
@@ -1469,7 +1471,8 @@ spec:
                       ttl:
                         description: The TTL in seconds for a resolver that has caching
                           activated. Valid values are between 1 and 3600 seconds.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   code:
                     description: The function code that contains the request and response
@@ -1561,7 +1564,8 @@ spec:
                   maxBatchSize:
                     description: Maximum batching size for a resolver. Valid values
                       are between 0 and 2000.
-                    type: number
+                    format: int64
+                    type: integer
                   pipelineConfig:
                     description: The caching configuration for the resolver. See Pipeline
                       Config.
@@ -1893,7 +1897,8 @@ spec:
                       ttl:
                         description: The TTL in seconds for a resolver that has caching
                           activated. Valid values are between 1 and 3600 seconds.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   code:
                     description: The function code that contains the request and response
@@ -1915,7 +1920,8 @@ spec:
                   maxBatchSize:
                     description: Maximum batching size for a resolver. Valid values
                       are between 0 and 2000.
-                    type: number
+                    format: int64
+                    type: integer
                   pipelineConfig:
                     description: The caching configuration for the resolver. See Pipeline
                       Config.

@@ -13,5 +13,3 @@ spec:
     bundleId: nano_3_0
     keyPairName: some_key_name
     region: us-west-1
-    tags:
-      foo: bar

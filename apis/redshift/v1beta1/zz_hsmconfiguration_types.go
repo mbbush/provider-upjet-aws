@@ -29,10 +29,6 @@ type HSMConfigurationInitParameters struct {
 
 	// The HSMs public certificate file. When using Cloud HSM, the file name is server.pem.
 	HSMServerPublicCertificate *string `json:"hsmServerPublicCertificate,omitempty" tf:"hsm_server_public_certificate,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type HSMConfigurationObservation struct {
@@ -89,11 +85,6 @@ type HSMConfigurationParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // HSMConfigurationSpec defines the desired state of HSMConfiguration

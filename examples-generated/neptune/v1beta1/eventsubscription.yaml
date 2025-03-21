@@ -28,8 +28,6 @@ spec:
     sourceIdsRefs:
     - name: example
     sourceType: db-instance
-    tags:
-      env: test
 
 ---
 

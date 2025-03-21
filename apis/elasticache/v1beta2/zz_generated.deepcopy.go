@@ -49,7 +49,7 @@ func (in *AuthenticationModeObservation) DeepCopyInto(out *AuthenticationModeObs
 	*out = *in
 	if in.PasswordCount != nil {
 		in, out := &in.PasswordCount, &out.PasswordCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Type != nil {
@@ -362,12 +362,12 @@ func (in *ReplicationGroupInitParameters) DeepCopyInto(out *ReplicationGroupInit
 	}
 	if in.NumCacheClusters != nil {
 		in, out := &in.NumCacheClusters, &out.NumCacheClusters
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.NumNodeGroups != nil {
 		in, out := &in.NumNodeGroups, &out.NumNodeGroups
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ParameterGroupName != nil {
@@ -377,7 +377,7 @@ func (in *ReplicationGroupInitParameters) DeepCopyInto(out *ReplicationGroupInit
 	}
 	if in.Port != nil {
 		in, out := &in.Port, &out.Port
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.PreferredCacheClusterAzs != nil {
@@ -393,7 +393,7 @@ func (in *ReplicationGroupInitParameters) DeepCopyInto(out *ReplicationGroupInit
 	}
 	if in.ReplicasPerNodeGroup != nil {
 		in, out := &in.ReplicasPerNodeGroup, &out.ReplicasPerNodeGroup
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.SecurityGroupIDRefs != nil {
@@ -448,7 +448,7 @@ func (in *ReplicationGroupInitParameters) DeepCopyInto(out *ReplicationGroupInit
 	}
 	if in.SnapshotRetentionLimit != nil {
 		in, out := &in.SnapshotRetentionLimit, &out.SnapshotRetentionLimit
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.SnapshotWindow != nil {
@@ -470,22 +470,6 @@ func (in *ReplicationGroupInitParameters) DeepCopyInto(out *ReplicationGroupInit
 		in, out := &in.SubnetGroupNameSelector, &out.SubnetGroupNameSelector
 		*out = new(v1.Selector)
 		(*in).DeepCopyInto(*out)
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.TransitEncryptionEnabled != nil {
 		in, out := &in.TransitEncryptionEnabled, &out.TransitEncryptionEnabled
@@ -695,12 +679,12 @@ func (in *ReplicationGroupObservation) DeepCopyInto(out *ReplicationGroupObserva
 	}
 	if in.NumCacheClusters != nil {
 		in, out := &in.NumCacheClusters, &out.NumCacheClusters
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.NumNodeGroups != nil {
 		in, out := &in.NumNodeGroups, &out.NumNodeGroups
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ParameterGroupName != nil {
@@ -710,7 +694,7 @@ func (in *ReplicationGroupObservation) DeepCopyInto(out *ReplicationGroupObserva
 	}
 	if in.Port != nil {
 		in, out := &in.Port, &out.Port
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.PreferredCacheClusterAzs != nil {
@@ -736,7 +720,7 @@ func (in *ReplicationGroupObservation) DeepCopyInto(out *ReplicationGroupObserva
 	}
 	if in.ReplicasPerNodeGroup != nil {
 		in, out := &in.ReplicasPerNodeGroup, &out.ReplicasPerNodeGroup
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.SecurityGroupIds != nil {
@@ -779,7 +763,7 @@ func (in *ReplicationGroupObservation) DeepCopyInto(out *ReplicationGroupObserva
 	}
 	if in.SnapshotRetentionLimit != nil {
 		in, out := &in.SnapshotRetentionLimit, &out.SnapshotRetentionLimit
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.SnapshotWindow != nil {
@@ -994,12 +978,12 @@ func (in *ReplicationGroupParameters) DeepCopyInto(out *ReplicationGroupParamete
 	}
 	if in.NumCacheClusters != nil {
 		in, out := &in.NumCacheClusters, &out.NumCacheClusters
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.NumNodeGroups != nil {
 		in, out := &in.NumNodeGroups, &out.NumNodeGroups
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ParameterGroupName != nil {
@@ -1009,7 +993,7 @@ func (in *ReplicationGroupParameters) DeepCopyInto(out *ReplicationGroupParamete
 	}
 	if in.Port != nil {
 		in, out := &in.Port, &out.Port
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.PreferredCacheClusterAzs != nil {
@@ -1030,7 +1014,7 @@ func (in *ReplicationGroupParameters) DeepCopyInto(out *ReplicationGroupParamete
 	}
 	if in.ReplicasPerNodeGroup != nil {
 		in, out := &in.ReplicasPerNodeGroup, &out.ReplicasPerNodeGroup
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.SecurityGroupIDRefs != nil {
@@ -1085,7 +1069,7 @@ func (in *ReplicationGroupParameters) DeepCopyInto(out *ReplicationGroupParamete
 	}
 	if in.SnapshotRetentionLimit != nil {
 		in, out := &in.SnapshotRetentionLimit, &out.SnapshotRetentionLimit
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.SnapshotWindow != nil {
@@ -1107,22 +1091,6 @@ func (in *ReplicationGroupParameters) DeepCopyInto(out *ReplicationGroupParamete
 		in, out := &in.SubnetGroupNameSelector, &out.SubnetGroupNameSelector
 		*out = new(v1.Selector)
 		(*in).DeepCopyInto(*out)
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.TransitEncryptionEnabled != nil {
 		in, out := &in.TransitEncryptionEnabled, &out.TransitEncryptionEnabled
@@ -1251,22 +1219,6 @@ func (in *UserInitParameters) DeepCopyInto(out *UserInitParameters) {
 				*out = new(string)
 				**out = **in
 			}
-		}
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
 		}
 	}
 	if in.UserName != nil {
@@ -1436,22 +1388,6 @@ func (in *UserParameters) DeepCopyInto(out *UserParameters) {
 		in, out := &in.Region, &out.Region
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.UserName != nil {
 		in, out := &in.UserName, &out.UserName

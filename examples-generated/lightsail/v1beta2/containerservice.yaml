@@ -12,6 +12,3 @@ spec:
     power: nano
     region: us-west-1
     scale: 1
-    tags:
-      foo1: bar1
-      foo2: ""

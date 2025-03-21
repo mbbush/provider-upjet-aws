@@ -85,7 +85,8 @@ spec:
                     description: Duration in days after which the key is deleted after
                       destruction of the resource. Must be between 7 and 30 days.
                       Defaults to 30.
-                    type: number
+                    format: int64
+                    type: integer
                   description:
                     description: Description of the key.
                     type: string
@@ -126,12 +127,6 @@ spec:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   validTo:
                     description: 'Time at which the imported key material expires.
                       When the key material expires, AWS KMS deletes the key material
@@ -166,7 +161,8 @@ spec:
                     description: Duration in days after which the key is deleted after
                       destruction of the resource. Must be between 7 and 30 days.
                       Defaults to 30.
-                    type: number
+                    format: int64
+                    type: integer
                   description:
                     description: Description of the key.
                     type: string
@@ -203,12 +199,6 @@ spec:
                     description: A key policy JSON document. If you do not provide
                       a key policy, AWS KMS attaches a default key policy to the CMK.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   validTo:
                     description: 'Time at which the imported key material expires.
                       When the key material expires, AWS KMS deletes the key material
@@ -403,7 +393,8 @@ spec:
                     description: Duration in days after which the key is deleted after
                       destruction of the resource. Must be between 7 and 30 days.
                       Defaults to 30.
-                    type: number
+                    format: int64
+                    type: integer
                   description:
                     description: Description of the key.
                     type: string

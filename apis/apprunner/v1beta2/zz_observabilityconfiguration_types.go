@@ -18,10 +18,6 @@ type ObservabilityConfigurationInitParameters struct {
 	// Name of the observability configuration.
 	ObservabilityConfigurationName *string `json:"observabilityConfigurationName,omitempty" tf:"observability_configuration_name,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Configuration of the tracing feature within this observability configuration. If you don't specify it, App Runner doesn't enable tracing. See Trace Configuration below for more details.
 	TraceConfiguration *TraceConfigurationInitParameters `json:"traceConfiguration,omitempty" tf:"trace_configuration,omitempty"`
 }
@@ -40,7 +36,7 @@ type ObservabilityConfigurationObservation struct {
 	ObservabilityConfigurationName *string `json:"observabilityConfigurationName,omitempty" tf:"observability_configuration_name,omitempty"`
 
 	// The revision of this observability configuration.
-	ObservabilityConfigurationRevision *float64 `json:"observabilityConfigurationRevision,omitempty" tf:"observability_configuration_revision,omitempty"`
+	ObservabilityConfigurationRevision *int64 `json:"observabilityConfigurationRevision,omitempty" tf:"observability_configuration_revision,omitempty"`
 
 	// Current state of the observability configuration. An INACTIVE configuration revision has been deleted and can't be used. It is permanently removed some time after deletion.
 	Status *string `json:"status,omitempty" tf:"status,omitempty"`
@@ -67,11 +63,6 @@ type ObservabilityConfigurationParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Configuration of the tracing feature within this observability configuration. If you don't specify it, App Runner doesn't enable tracing. See Trace Configuration below for more details.
 	// +kubebuilder:validation:Optional

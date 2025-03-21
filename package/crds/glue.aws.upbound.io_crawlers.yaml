@@ -2596,7 +2596,8 @@ spec:
                             crawler can traverse to discover the Hudi metadata folder
                             in your Amazon S3 path. Used to limit the crawler run
                             time. Valid values are between 1 and 20.
-                          type: number
+                          format: int64
+                          type: integer
                         paths:
                           description: One or more Amazon S3 paths that contains Hudi
                             metadata folders as s3://bucket/prefix.
@@ -2626,7 +2627,8 @@ spec:
                             crawler can traverse to discover the Hudi metadata folder
                             in your Amazon S3 path. Used to limit the crawler run
                             time. Valid values are between 1 and 20.
-                          type: number
+                          format: int64
+                          type: integer
                         paths:
                           description: One or more Amazon S3 paths that contains Hudi
                             metadata folders as s3://bucket/prefix.
@@ -2985,7 +2987,8 @@ spec:
                             to be crawled when crawling sample files in a dataset.
                             If not set, all the files are crawled. A valid value is
                             an integer between 1 and 249.
-                          type: number
+                          format: int64
+                          type: integer
                       type: object
                     type: array
                   schedule:
@@ -3016,12 +3019,6 @@ spec:
                     description: The table prefix used for catalog tables that are
                       created.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -3380,7 +3377,8 @@ spec:
                             crawler can traverse to discover the Hudi metadata folder
                             in your Amazon S3 path. Used to limit the crawler run
                             time. Valid values are between 1 and 20.
-                          type: number
+                          format: int64
+                          type: integer
                         paths:
                           description: One or more Amazon S3 paths that contains Hudi
                             metadata folders as s3://bucket/prefix.
@@ -3410,7 +3408,8 @@ spec:
                             crawler can traverse to discover the Hudi metadata folder
                             in your Amazon S3 path. Used to limit the crawler run
                             time. Valid values are between 1 and 20.
-                          type: number
+                          format: int64
+                          type: integer
                         paths:
                           description: One or more Amazon S3 paths that contains Hudi
                             metadata folders as s3://bucket/prefix.
@@ -3765,7 +3764,8 @@ spec:
                             to be crawled when crawling sample files in a dataset.
                             If not set, all the files are crawled. A valid value is
                             an integer between 1 and 249.
-                          type: number
+                          format: int64
+                          type: integer
                       type: object
                     type: array
                   schedule:
@@ -3796,12 +3796,6 @@ spec:
                     description: The table prefix used for catalog tables that are
                       created.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -4089,7 +4083,8 @@ spec:
                             crawler can traverse to discover the Hudi metadata folder
                             in your Amazon S3 path. Used to limit the crawler run
                             time. Valid values are between 1 and 20.
-                          type: number
+                          format: int64
+                          type: integer
                         paths:
                           description: One or more Amazon S3 paths that contains Hudi
                             metadata folders as s3://bucket/prefix.
@@ -4119,7 +4114,8 @@ spec:
                             crawler can traverse to discover the Hudi metadata folder
                             in your Amazon S3 path. Used to limit the crawler run
                             time. Valid values are between 1 and 20.
-                          type: number
+                          format: int64
+                          type: integer
                         paths:
                           description: One or more Amazon S3 paths that contains Hudi
                             metadata folders as s3://bucket/prefix.
@@ -4251,7 +4247,8 @@ spec:
                             to be crawled when crawling sample files in a dataset.
                             If not set, all the files are crawled. A valid value is
                             an integer between 1 and 249.
-                          type: number
+                          format: int64
+                          type: integer
                       type: object
                     type: array
                   schedule:

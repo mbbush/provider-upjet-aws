@@ -63,10 +63,6 @@ type DirectoryInitParameters struct {
 	// +listType=set
 	SubnetIds []*string `json:"subnetIds,omitempty" tf:"subnet_ids,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// –  Specifies which devices and operating systems users can use to access their WorkSpaces. Defined below.
 	WorkspaceAccessProperties *WorkspaceAccessPropertiesInitParameters `json:"workspaceAccessProperties,omitempty" tf:"workspace_access_properties,omitempty"`
 
@@ -195,11 +191,6 @@ type DirectoryParameters struct {
 	// +kubebuilder:validation:Optional
 	// +listType=set
 	SubnetIds []*string `json:"subnetIds,omitempty" tf:"subnet_ids,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// –  Specifies which devices and operating systems users can use to access their WorkSpaces. Defined below.
 	// +kubebuilder:validation:Optional

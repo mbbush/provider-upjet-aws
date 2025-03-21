@@ -64,15 +64,11 @@ type AssociationInitParameters struct {
 	// The mode for generating association compliance. You can specify AUTO or MANUAL.
 	SyncCompliance *string `json:"syncCompliance,omitempty" tf:"sync_compliance,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// A block containing the targets of the SSM association. Targets are documented below. AWS currently supports a maximum of 5 targets.
 	Targets []TargetsInitParameters `json:"targets,omitempty" tf:"targets,omitempty"`
 
 	// The number of seconds to wait for the association status to be Success. If Success status is not reached within the given time, create opration will fail.
-	WaitForSuccessTimeoutSeconds *float64 `json:"waitForSuccessTimeoutSeconds,omitempty" tf:"wait_for_success_timeout_seconds,omitempty"`
+	WaitForSuccessTimeoutSeconds *int64 `json:"waitForSuccessTimeoutSeconds,omitempty" tf:"wait_for_success_timeout_seconds,omitempty"`
 }
 
 type AssociationObservation struct {
@@ -137,7 +133,7 @@ type AssociationObservation struct {
 	Targets []TargetsObservation `json:"targets,omitempty" tf:"targets,omitempty"`
 
 	// The number of seconds to wait for the association status to be Success. If Success status is not reached within the given time, create opration will fail.
-	WaitForSuccessTimeoutSeconds *float64 `json:"waitForSuccessTimeoutSeconds,omitempty" tf:"wait_for_success_timeout_seconds,omitempty"`
+	WaitForSuccessTimeoutSeconds *int64 `json:"waitForSuccessTimeoutSeconds,omitempty" tf:"wait_for_success_timeout_seconds,omitempty"`
 }
 
 type AssociationParameters struct {
@@ -209,18 +205,13 @@ type AssociationParameters struct {
 	// +kubebuilder:validation:Optional
 	SyncCompliance *string `json:"syncCompliance,omitempty" tf:"sync_compliance,omitempty"`
 
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// A block containing the targets of the SSM association. Targets are documented below. AWS currently supports a maximum of 5 targets.
 	// +kubebuilder:validation:Optional
 	Targets []TargetsParameters `json:"targets,omitempty" tf:"targets,omitempty"`
 
 	// The number of seconds to wait for the association status to be Success. If Success status is not reached within the given time, create opration will fail.
 	// +kubebuilder:validation:Optional
-	WaitForSuccessTimeoutSeconds *float64 `json:"waitForSuccessTimeoutSeconds,omitempty" tf:"wait_for_success_timeout_seconds,omitempty"`
+	WaitForSuccessTimeoutSeconds *int64 `json:"waitForSuccessTimeoutSeconds,omitempty" tf:"wait_for_success_timeout_seconds,omitempty"`
 }
 
 type OutputLocationInitParameters struct {

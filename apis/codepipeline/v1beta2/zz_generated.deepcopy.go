@@ -86,12 +86,12 @@ func (in *ActionInitParameters) DeepCopyInto(out *ActionInitParameters) {
 	}
 	if in.RunOrder != nil {
 		in, out := &in.RunOrder, &out.RunOrder
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.TimeoutInMinutes != nil {
 		in, out := &in.TimeoutInMinutes, &out.TimeoutInMinutes
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Version != nil {
@@ -189,12 +189,12 @@ func (in *ActionObservation) DeepCopyInto(out *ActionObservation) {
 	}
 	if in.RunOrder != nil {
 		in, out := &in.RunOrder, &out.RunOrder
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.TimeoutInMinutes != nil {
 		in, out := &in.TimeoutInMinutes, &out.TimeoutInMinutes
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Version != nil {
@@ -292,12 +292,12 @@ func (in *ActionParameters) DeepCopyInto(out *ActionParameters) {
 	}
 	if in.RunOrder != nil {
 		in, out := &in.RunOrder, &out.RunOrder
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.TimeoutInMinutes != nil {
 		in, out := &in.TimeoutInMinutes, &out.TimeoutInMinutes
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Version != nil {
@@ -687,22 +687,6 @@ func (in *CodepipelineInitParameters) DeepCopyInto(out *CodepipelineInitParamete
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.Trigger != nil {
 		in, out := &in.Trigger, &out.Trigger
 		*out = make([]TriggerInitParameters, len(*in))
@@ -906,22 +890,6 @@ func (in *CodepipelineParameters) DeepCopyInto(out *CodepipelineParameters) {
 		*out = make([]StageParameters, len(*in))
 		for i := range *in {
 			(*in)[i].DeepCopyInto(&(*out)[i])
-		}
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
 		}
 	}
 	if in.Trigger != nil {
@@ -1197,22 +1165,6 @@ func (in *CustomActionTypeInitParameters) DeepCopyInto(out *CustomActionTypeInit
 		*out = new(SettingsInitParameters)
 		(*in).DeepCopyInto(*out)
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.Version != nil {
 		in, out := &in.Version, &out.Version
 		*out = new(string)
@@ -1400,22 +1352,6 @@ func (in *CustomActionTypeParameters) DeepCopyInto(out *CustomActionTypeParamete
 		in, out := &in.Settings, &out.Settings
 		*out = new(SettingsParameters)
 		(*in).DeepCopyInto(*out)
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.Version != nil {
 		in, out := &in.Version, &out.Version
@@ -1837,12 +1773,12 @@ func (in *InputArtifactDetailsInitParameters) DeepCopyInto(out *InputArtifactDet
 	*out = *in
 	if in.MaximumCount != nil {
 		in, out := &in.MaximumCount, &out.MaximumCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MinimumCount != nil {
 		in, out := &in.MinimumCount, &out.MinimumCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1862,12 +1798,12 @@ func (in *InputArtifactDetailsObservation) DeepCopyInto(out *InputArtifactDetail
 	*out = *in
 	if in.MaximumCount != nil {
 		in, out := &in.MaximumCount, &out.MaximumCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MinimumCount != nil {
 		in, out := &in.MinimumCount, &out.MinimumCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1887,12 +1823,12 @@ func (in *InputArtifactDetailsParameters) DeepCopyInto(out *InputArtifactDetails
 	*out = *in
 	if in.MaximumCount != nil {
 		in, out := &in.MaximumCount, &out.MaximumCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MinimumCount != nil {
 		in, out := &in.MinimumCount, &out.MinimumCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1912,12 +1848,12 @@ func (in *OutputArtifactDetailsInitParameters) DeepCopyInto(out *OutputArtifactD
 	*out = *in
 	if in.MaximumCount != nil {
 		in, out := &in.MaximumCount, &out.MaximumCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MinimumCount != nil {
 		in, out := &in.MinimumCount, &out.MinimumCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1937,12 +1873,12 @@ func (in *OutputArtifactDetailsObservation) DeepCopyInto(out *OutputArtifactDeta
 	*out = *in
 	if in.MaximumCount != nil {
 		in, out := &in.MaximumCount, &out.MaximumCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MinimumCount != nil {
 		in, out := &in.MinimumCount, &out.MinimumCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1962,12 +1898,12 @@ func (in *OutputArtifactDetailsParameters) DeepCopyInto(out *OutputArtifactDetai
 	*out = *in
 	if in.MaximumCount != nil {
 		in, out := &in.MaximumCount, &out.MaximumCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MinimumCount != nil {
 		in, out := &in.MinimumCount, &out.MinimumCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2911,22 +2847,6 @@ func (in *WebhookInitParameters) DeepCopyInto(out *WebhookInitParameters) {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.TargetAction != nil {
 		in, out := &in.TargetAction, &out.TargetAction
 		*out = new(string)
@@ -3104,22 +3024,6 @@ func (in *WebhookParameters) DeepCopyInto(out *WebhookParameters) {
 		in, out := &in.Region, &out.Region
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.TargetAction != nil {
 		in, out := &in.TargetAction, &out.TargetAction

@@ -30,10 +30,6 @@ type VaultInitParameters struct {
 	// Selector for a Key in kms to populate kmsKeyArn.
 	// +kubebuilder:validation:Optional
 	KMSKeyArnSelector *v1.Selector `json:"kmsKeyArnSelector,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type VaultObservation struct {
@@ -51,7 +47,7 @@ type VaultObservation struct {
 	KMSKeyArn *string `json:"kmsKeyArn,omitempty" tf:"kms_key_arn,omitempty"`
 
 	// The number of recovery points that are stored in a backup vault.
-	RecoveryPoints *float64 `json:"recoveryPoints,omitempty" tf:"recovery_points,omitempty"`
+	RecoveryPoints *int64 `json:"recoveryPoints,omitempty" tf:"recovery_points,omitempty"`
 
 	// Key-value map of resource tags.
 	// +mapType=granular
@@ -86,11 +82,6 @@ type VaultParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // VaultSpec defines the desired state of Vault

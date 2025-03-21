@@ -243,22 +243,6 @@ func (in *ConnectorInitParameters) DeepCopyInto(out *ConnectorInitParameters) {
 		*out = new(SftpConfigInitParameters)
 		(*in).DeepCopyInto(*out)
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.URL != nil {
 		in, out := &in.URL, &out.URL
 		*out = new(string)
@@ -442,22 +426,6 @@ func (in *ConnectorParameters) DeepCopyInto(out *ConnectorParameters) {
 		in, out := &in.SftpConfig, &out.SftpConfig
 		*out = new(SftpConfigParameters)
 		(*in).DeepCopyInto(*out)
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.URL != nil {
 		in, out := &in.URL, &out.URL
@@ -861,7 +829,7 @@ func (in *CustomStepDetailsInitParameters) DeepCopyInto(out *CustomStepDetailsIn
 	}
 	if in.TimeoutSeconds != nil {
 		in, out := &in.TimeoutSeconds, &out.TimeoutSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -896,7 +864,7 @@ func (in *CustomStepDetailsObservation) DeepCopyInto(out *CustomStepDetailsObser
 	}
 	if in.TimeoutSeconds != nil {
 		in, out := &in.TimeoutSeconds, &out.TimeoutSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -931,7 +899,7 @@ func (in *CustomStepDetailsParameters) DeepCopyInto(out *CustomStepDetailsParame
 	}
 	if in.TimeoutSeconds != nil {
 		in, out := &in.TimeoutSeconds, &out.TimeoutSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2273,23 +2241,23 @@ func (in *PosixProfileInitParameters) DeepCopyInto(out *PosixProfileInitParamete
 	*out = *in
 	if in.GID != nil {
 		in, out := &in.GID, &out.GID
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.SecondaryGids != nil {
 		in, out := &in.SecondaryGids, &out.SecondaryGids
-		*out = make([]*float64, len(*in))
+		*out = make([]*int64, len(*in))
 		for i := range *in {
 			if (*in)[i] != nil {
 				in, out := &(*in)[i], &(*out)[i]
-				*out = new(float64)
+				*out = new(int64)
 				**out = **in
 			}
 		}
 	}
 	if in.UID != nil {
 		in, out := &in.UID, &out.UID
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2309,23 +2277,23 @@ func (in *PosixProfileObservation) DeepCopyInto(out *PosixProfileObservation) {
 	*out = *in
 	if in.GID != nil {
 		in, out := &in.GID, &out.GID
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.SecondaryGids != nil {
 		in, out := &in.SecondaryGids, &out.SecondaryGids
-		*out = make([]*float64, len(*in))
+		*out = make([]*int64, len(*in))
 		for i := range *in {
 			if (*in)[i] != nil {
 				in, out := &(*in)[i], &(*out)[i]
-				*out = new(float64)
+				*out = new(int64)
 				**out = **in
 			}
 		}
 	}
 	if in.UID != nil {
 		in, out := &in.UID, &out.UID
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2345,23 +2313,23 @@ func (in *PosixProfileParameters) DeepCopyInto(out *PosixProfileParameters) {
 	*out = *in
 	if in.GID != nil {
 		in, out := &in.GID, &out.GID
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.SecondaryGids != nil {
 		in, out := &in.SecondaryGids, &out.SecondaryGids
-		*out = make([]*float64, len(*in))
+		*out = make([]*int64, len(*in))
 		for i := range *in {
 			if (*in)[i] != nil {
 				in, out := &(*in)[i], &(*out)[i]
-				*out = new(float64)
+				*out = new(int64)
 				**out = **in
 			}
 		}
 	}
 	if in.UID != nil {
 		in, out := &in.UID, &out.UID
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2801,22 +2769,6 @@ func (in *ServerInitParameters) DeepCopyInto(out *ServerInitParameters) {
 			}
 		}
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.URL != nil {
 		in, out := &in.URL, &out.URL
 		*out = new(string)
@@ -3185,22 +3137,6 @@ func (in *ServerParameters) DeepCopyInto(out *ServerParameters) {
 			}
 		}
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.URL != nil {
 		in, out := &in.URL, &out.URL
 		*out = new(string)
@@ -3506,7 +3442,7 @@ func (in *StepsCustomStepDetailsInitParameters) DeepCopyInto(out *StepsCustomSte
 	}
 	if in.TimeoutSeconds != nil {
 		in, out := &in.TimeoutSeconds, &out.TimeoutSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -3541,7 +3477,7 @@ func (in *StepsCustomStepDetailsObservation) DeepCopyInto(out *StepsCustomStepDe
 	}
 	if in.TimeoutSeconds != nil {
 		in, out := &in.TimeoutSeconds, &out.TimeoutSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -3586,7 +3522,7 @@ func (in *StepsCustomStepDetailsParameters) DeepCopyInto(out *StepsCustomStepDet
 	}
 	if in.TimeoutSeconds != nil {
 		in, out := &in.TimeoutSeconds, &out.TimeoutSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -4435,22 +4371,6 @@ func (in *UserInitParameters) DeepCopyInto(out *UserInitParameters) {
 		*out = new(v1.Selector)
 		(*in).DeepCopyInto(*out)
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 }
 
 // DeepCopy is an autogenerated deepcopy function, copying the receiver, creating a new UserInitParameters.
@@ -4654,22 +4574,6 @@ func (in *UserParameters) DeepCopyInto(out *UserParameters) {
 		*out = new(v1.Selector)
 		(*in).DeepCopyInto(*out)
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 }
 
 // DeepCopy is an autogenerated deepcopy function, copying the receiver, creating a new UserParameters.
@@ -4841,22 +4745,6 @@ func (in *WorkflowInitParameters) DeepCopyInto(out *WorkflowInitParameters) {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 }
 
 // DeepCopy is an autogenerated deepcopy function, copying the receiver, creating a new WorkflowInitParameters.
@@ -5002,22 +4890,6 @@ func (in *WorkflowParameters) DeepCopyInto(out *WorkflowParameters) {
 		*out = make([]StepsParameters, len(*in))
 		for i := range *in {
 			(*in)[i].DeepCopyInto(&(*out)[i])
-		}
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
 		}
 	}
 }

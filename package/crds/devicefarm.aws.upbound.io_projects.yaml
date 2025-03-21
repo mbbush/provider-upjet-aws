@@ -77,7 +77,8 @@ spec:
                     description: Sets the execution timeout value (in minutes) for
                       a project. All test runs in this project use the specified execution
                       timeout value unless overridden when scheduling a run.
-                    type: number
+                    format: int64
+                    type: integer
                   name:
                     description: The name of the project
                     type: string
@@ -85,12 +86,6 @@ spec:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -111,16 +106,11 @@ spec:
                     description: Sets the execution timeout value (in minutes) for
                       a project. All test runs in this project use the specified execution
                       timeout value unless overridden when scheduling a run.
-                    type: number
+                    format: int64
+                    type: integer
                   name:
                     description: The name of the project
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -306,7 +296,8 @@ spec:
                     description: Sets the execution timeout value (in minutes) for
                       a project. All test runs in this project use the specified execution
                       timeout value unless overridden when scheduling a run.
-                    type: number
+                    format: int64
+                    type: integer
                   id:
                     type: string
                   name:

@@ -38,7 +38,7 @@ type BlueGreenUpdateParameters struct {
 type InstanceInitParameters struct {
 
 	// The allocated storage in gibibytes. If max_allocated_storage is configured, this argument represents the initial storage allocation and differences from the configuration will be ignored automatically when Storage Autoscaling occurs. If replicate_source_db is set, the value is ignored during the creation of the instance.
-	AllocatedStorage *float64 `json:"allocatedStorage,omitempty" tf:"allocated_storage,omitempty"`
+	AllocatedStorage *int64 `json:"allocatedStorage,omitempty" tf:"allocated_storage,omitempty"`
 
 	// Indicates that major version
 	// upgrades are allowed. Changing this parameter does not result in an outage and
@@ -65,7 +65,7 @@ type InstanceInitParameters struct {
 	// Must be greater than 0 if the database is used as a source for a Read Replica,
 	// uses low-downtime updates,
 	// or will use RDS Blue/Green deployments.
-	BackupRetentionPeriod *float64 `json:"backupRetentionPeriod,omitempty" tf:"backup_retention_period,omitempty"`
+	BackupRetentionPeriod *int64 `json:"backupRetentionPeriod,omitempty" tf:"backup_retention_period,omitempty"`
 
 	// Specifies where automated backups and manual snapshots are stored. Possible values are region (default) and outposts. See Working with Amazon RDS on AWS Outposts for more information.
 	BackupTarget *string `json:"backupTarget,omitempty" tf:"backup_target,omitempty"`
@@ -179,7 +179,7 @@ type InstanceInitParameters struct {
 	// storage_type of "io1" or "io2". Can only be set when storage_type is "io1", "io2 or "gp3".
 	// Cannot be specified for gp3 storage if the allocated_storage value is below a per-engine threshold.
 	// See the RDS User Guide for details.
-	Iops *float64 `json:"iops,omitempty" tf:"iops,omitempty"`
+	Iops *int64 `json:"iops,omitempty" tf:"iops,omitempty"`
 
 	// The ARN for the KMS encryption key. If creating an
 	// encrypted replica, set this to the destination KMS ARN.
@@ -222,13 +222,13 @@ type InstanceInitParameters struct {
 	MasterUserSecretKMSKeyIDSelector *v1.Selector `json:"masterUserSecretKmsKeyIdSelector,omitempty" tf:"-"`
 
 	// When configured, the upper limit to which Amazon RDS can automatically scale the storage of the DB instance. Configuring this will automatically ignore differences to allocated_storage. Must be greater than or equal to allocated_storage or 0 to disable Storage Autoscaling.
-	MaxAllocatedStorage *float64 `json:"maxAllocatedStorage,omitempty" tf:"max_allocated_storage,omitempty"`
+	MaxAllocatedStorage *int64 `json:"maxAllocatedStorage,omitempty" tf:"max_allocated_storage,omitempty"`
 
 	// The interval, in seconds, between points
 	// when Enhanced Monitoring metrics are collected for the DB instance. To disable
 	// collecting Enhanced Monitoring metrics, specify 0. The default is 0. Valid
 	// Values: 0, 1, 5, 10, 15, 30, 60.
-	MonitoringInterval *float64 `json:"monitoringInterval,omitempty" tf:"monitoring_interval,omitempty"`
+	MonitoringInterval *int64 `json:"monitoringInterval,omitempty" tf:"monitoring_interval,omitempty"`
 
 	// The ARN for the IAM role that permits RDS
 	// to send enhanced monitoring metrics to CloudWatch Logs. You can find more
@@ -284,10 +284,10 @@ type InstanceInitParameters struct {
 	PerformanceInsightsKMSKeyID *string `json:"performanceInsightsKmsKeyId,omitempty" tf:"performance_insights_kms_key_id,omitempty"`
 
 	// Amount of time in days to retain Performance Insights data. Valid values are 7, 731 (2 years) or a multiple of 31. When specifying performance_insights_retention_period, performance_insights_enabled needs to be set to true. Defaults to '7'.
-	PerformanceInsightsRetentionPeriod *float64 `json:"performanceInsightsRetentionPeriod,omitempty" tf:"performance_insights_retention_period,omitempty"`
+	PerformanceInsightsRetentionPeriod *int64 `json:"performanceInsightsRetentionPeriod,omitempty" tf:"performance_insights_retention_period,omitempty"`
 
 	// The port on which the DB accepts connections.
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// Bool to control if instance is publicly
 	// accessible. Default is false.
@@ -341,17 +341,13 @@ type InstanceInitParameters struct {
 	StorageEncrypted *bool `json:"storageEncrypted,omitempty" tf:"storage_encrypted,omitempty"`
 
 	// The storage throughput value for the DB instance. Can only be set when storage_type is "gp3". Cannot be specified if the allocated_storage value is below a per-engine threshold. See the RDS User Guide for details.
-	StorageThroughput *float64 `json:"storageThroughput,omitempty" tf:"storage_throughput,omitempty"`
+	StorageThroughput *int64 `json:"storageThroughput,omitempty" tf:"storage_throughput,omitempty"`
 
 	// One of "standard" (magnetic), "gp2" (general
 	// purpose SSD), "gp3" (general purpose SSD that needs iops independently)
 	// "io1" (provisioned IOPS SSD) or "io2" (block express storage provisioned IOPS
 	// SSD). The default is "io1" if iops is specified, "gp2" if not.
 	StorageType *string `json:"storageType,omitempty" tf:"storage_type,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Time zone of the DB instance. timezone is currently
 	// only supported by Microsoft SQL Server. The timezone can only be set on
@@ -390,7 +386,7 @@ type InstanceObservation struct {
 	Address *string `json:"address,omitempty" tf:"address,omitempty"`
 
 	// The allocated storage in gibibytes. If max_allocated_storage is configured, this argument represents the initial storage allocation and differences from the configuration will be ignored automatically when Storage Autoscaling occurs. If replicate_source_db is set, the value is ignored during the creation of the instance.
-	AllocatedStorage *float64 `json:"allocatedStorage,omitempty" tf:"allocated_storage,omitempty"`
+	AllocatedStorage *int64 `json:"allocatedStorage,omitempty" tf:"allocated_storage,omitempty"`
 
 	// Indicates that major version
 	// upgrades are allowed. Changing this parameter does not result in an outage and
@@ -420,7 +416,7 @@ type InstanceObservation struct {
 	// Must be greater than 0 if the database is used as a source for a Read Replica,
 	// uses low-downtime updates,
 	// or will use RDS Blue/Green deployments.
-	BackupRetentionPeriod *float64 `json:"backupRetentionPeriod,omitempty" tf:"backup_retention_period,omitempty"`
+	BackupRetentionPeriod *int64 `json:"backupRetentionPeriod,omitempty" tf:"backup_retention_period,omitempty"`
 
 	// Specifies where automated backups and manual snapshots are stored. Possible values are region (default) and outposts. See Working with Amazon RDS on AWS Outposts for more information.
 	BackupTarget *string `json:"backupTarget,omitempty" tf:"backup_target,omitempty"`
@@ -538,7 +534,7 @@ type InstanceObservation struct {
 	// storage_type of "io1" or "io2". Can only be set when storage_type is "io1", "io2 or "gp3".
 	// Cannot be specified for gp3 storage if the allocated_storage value is below a per-engine threshold.
 	// See the RDS User Guide for details.
-	Iops *float64 `json:"iops,omitempty" tf:"iops,omitempty"`
+	Iops *int64 `json:"iops,omitempty" tf:"iops,omitempty"`
 
 	// The ARN for the KMS encryption key. If creating an
 	// encrypted replica, set this to the destination KMS ARN.
@@ -570,13 +566,13 @@ type InstanceObservation struct {
 	MasterUserSecretKMSKeyID *string `json:"masterUserSecretKmsKeyId,omitempty" tf:"master_user_secret_kms_key_id,omitempty"`
 
 	// When configured, the upper limit to which Amazon RDS can automatically scale the storage of the DB instance. Configuring this will automatically ignore differences to allocated_storage. Must be greater than or equal to allocated_storage or 0 to disable Storage Autoscaling.
-	MaxAllocatedStorage *float64 `json:"maxAllocatedStorage,omitempty" tf:"max_allocated_storage,omitempty"`
+	MaxAllocatedStorage *int64 `json:"maxAllocatedStorage,omitempty" tf:"max_allocated_storage,omitempty"`
 
 	// The interval, in seconds, between points
 	// when Enhanced Monitoring metrics are collected for the DB instance. To disable
 	// collecting Enhanced Monitoring metrics, specify 0. The default is 0. Valid
 	// Values: 0, 1, 5, 10, 15, 30, 60.
-	MonitoringInterval *float64 `json:"monitoringInterval,omitempty" tf:"monitoring_interval,omitempty"`
+	MonitoringInterval *int64 `json:"monitoringInterval,omitempty" tf:"monitoring_interval,omitempty"`
 
 	// The ARN for the IAM role that permits RDS
 	// to send enhanced monitoring metrics to CloudWatch Logs. You can find more
@@ -608,10 +604,10 @@ type InstanceObservation struct {
 	PerformanceInsightsKMSKeyID *string `json:"performanceInsightsKmsKeyId,omitempty" tf:"performance_insights_kms_key_id,omitempty"`
 
 	// Amount of time in days to retain Performance Insights data. Valid values are 7, 731 (2 years) or a multiple of 31. When specifying performance_insights_retention_period, performance_insights_enabled needs to be set to true. Defaults to '7'.
-	PerformanceInsightsRetentionPeriod *float64 `json:"performanceInsightsRetentionPeriod,omitempty" tf:"performance_insights_retention_period,omitempty"`
+	PerformanceInsightsRetentionPeriod *int64 `json:"performanceInsightsRetentionPeriod,omitempty" tf:"performance_insights_retention_period,omitempty"`
 
 	// The port on which the DB accepts connections.
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// Bool to control if instance is publicly
 	// accessible. Default is false.
@@ -663,7 +659,7 @@ type InstanceObservation struct {
 	StorageEncrypted *bool `json:"storageEncrypted,omitempty" tf:"storage_encrypted,omitempty"`
 
 	// The storage throughput value for the DB instance. Can only be set when storage_type is "gp3". Cannot be specified if the allocated_storage value is below a per-engine threshold. See the RDS User Guide for details.
-	StorageThroughput *float64 `json:"storageThroughput,omitempty" tf:"storage_throughput,omitempty"`
+	StorageThroughput *int64 `json:"storageThroughput,omitempty" tf:"storage_throughput,omitempty"`
 
 	// One of "standard" (magnetic), "gp2" (general
 	// purpose SSD), "gp3" (general purpose SSD that needs iops independently)
@@ -703,7 +699,7 @@ type InstanceParameters struct {
 
 	// The allocated storage in gibibytes. If max_allocated_storage is configured, this argument represents the initial storage allocation and differences from the configuration will be ignored automatically when Storage Autoscaling occurs. If replicate_source_db is set, the value is ignored during the creation of the instance.
 	// +kubebuilder:validation:Optional
-	AllocatedStorage *float64 `json:"allocatedStorage,omitempty" tf:"allocated_storage,omitempty"`
+	AllocatedStorage *int64 `json:"allocatedStorage,omitempty" tf:"allocated_storage,omitempty"`
 
 	// Indicates that major version
 	// upgrades are allowed. Changing this parameter does not result in an outage and
@@ -742,7 +738,7 @@ type InstanceParameters struct {
 	// uses low-downtime updates,
 	// or will use RDS Blue/Green deployments.
 	// +kubebuilder:validation:Optional
-	BackupRetentionPeriod *float64 `json:"backupRetentionPeriod,omitempty" tf:"backup_retention_period,omitempty"`
+	BackupRetentionPeriod *int64 `json:"backupRetentionPeriod,omitempty" tf:"backup_retention_period,omitempty"`
 
 	// Specifies where automated backups and manual snapshots are stored. Possible values are region (default) and outposts. See Working with Amazon RDS on AWS Outposts for more information.
 	// +kubebuilder:validation:Optional
@@ -885,7 +881,7 @@ type InstanceParameters struct {
 	// Cannot be specified for gp3 storage if the allocated_storage value is below a per-engine threshold.
 	// See the RDS User Guide for details.
 	// +kubebuilder:validation:Optional
-	Iops *float64 `json:"iops,omitempty" tf:"iops,omitempty"`
+	Iops *int64 `json:"iops,omitempty" tf:"iops,omitempty"`
 
 	// The ARN for the KMS encryption key. If creating an
 	// encrypted replica, set this to the destination KMS ARN.
@@ -934,14 +930,14 @@ type InstanceParameters struct {
 
 	// When configured, the upper limit to which Amazon RDS can automatically scale the storage of the DB instance. Configuring this will automatically ignore differences to allocated_storage. Must be greater than or equal to allocated_storage or 0 to disable Storage Autoscaling.
 	// +kubebuilder:validation:Optional
-	MaxAllocatedStorage *float64 `json:"maxAllocatedStorage,omitempty" tf:"max_allocated_storage,omitempty"`
+	MaxAllocatedStorage *int64 `json:"maxAllocatedStorage,omitempty" tf:"max_allocated_storage,omitempty"`
 
 	// The interval, in seconds, between points
 	// when Enhanced Monitoring metrics are collected for the DB instance. To disable
 	// collecting Enhanced Monitoring metrics, specify 0. The default is 0. Valid
 	// Values: 0, 1, 5, 10, 15, 30, 60.
 	// +kubebuilder:validation:Optional
-	MonitoringInterval *float64 `json:"monitoringInterval,omitempty" tf:"monitoring_interval,omitempty"`
+	MonitoringInterval *int64 `json:"monitoringInterval,omitempty" tf:"monitoring_interval,omitempty"`
 
 	// The ARN for the IAM role that permits RDS
 	// to send enhanced monitoring metrics to CloudWatch Logs. You can find more
@@ -1007,11 +1003,11 @@ type InstanceParameters struct {
 
 	// Amount of time in days to retain Performance Insights data. Valid values are 7, 731 (2 years) or a multiple of 31. When specifying performance_insights_retention_period, performance_insights_enabled needs to be set to true. Defaults to '7'.
 	// +kubebuilder:validation:Optional
-	PerformanceInsightsRetentionPeriod *float64 `json:"performanceInsightsRetentionPeriod,omitempty" tf:"performance_insights_retention_period,omitempty"`
+	PerformanceInsightsRetentionPeriod *int64 `json:"performanceInsightsRetentionPeriod,omitempty" tf:"performance_insights_retention_period,omitempty"`
 
 	// The port on which the DB accepts connections.
 	// +kubebuilder:validation:Optional
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// Bool to control if instance is publicly
 	// accessible. Default is false.
@@ -1079,7 +1075,7 @@ type InstanceParameters struct {
 
 	// The storage throughput value for the DB instance. Can only be set when storage_type is "gp3". Cannot be specified if the allocated_storage value is below a per-engine threshold. See the RDS User Guide for details.
 	// +kubebuilder:validation:Optional
-	StorageThroughput *float64 `json:"storageThroughput,omitempty" tf:"storage_throughput,omitempty"`
+	StorageThroughput *int64 `json:"storageThroughput,omitempty" tf:"storage_throughput,omitempty"`
 
 	// One of "standard" (magnetic), "gp2" (general
 	// purpose SSD), "gp3" (general purpose SSD that needs iops independently)
@@ -1087,11 +1083,6 @@ type InstanceParameters struct {
 	// SSD). The default is "io1" if iops is specified, "gp2" if not.
 	// +kubebuilder:validation:Optional
 	StorageType *string `json:"storageType,omitempty" tf:"storage_type,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Time zone of the DB instance. timezone is currently
 	// only supported by Microsoft SQL Server. The timezone can only be set on
@@ -1141,7 +1132,7 @@ type ListenerEndpointObservation struct {
 	HostedZoneID *string `json:"hostedZoneId,omitempty" tf:"hosted_zone_id,omitempty"`
 
 	// The port on which the DB accepts connections.
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 }
 
 type ListenerEndpointParameters struct {

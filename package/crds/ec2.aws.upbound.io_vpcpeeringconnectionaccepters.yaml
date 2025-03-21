@@ -682,17 +682,6 @@ spec:
                 type: string
               forProvider:
                 properties:
-                  accepter:
-                    description: |-
-                      A configuration block that describes [VPC Peering Connection]
-                      (https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) options set for the accepter VPC.
-                    properties:
-                      allowRemoteVpcDnsResolution:
-                        description: |-
-                          Indicates whether a local VPC can resolve public DNS hostnames to
-                          private IP addresses when queried from instances in a peer VPC.
-                        type: boolean
-                    type: object
                   autoAccept:
                     description: Whether or not to accept the peering request. Defaults
                       to false.
@@ -701,23 +690,6 @@ spec:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  requester:
-                    description: |-
-                      A configuration block that describes [VPC Peering Connection]
-                      (https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) options set for the requester VPC.
-                    properties:
-                      allowRemoteVpcDnsResolution:
-                        description: |-
-                          Indicates whether a local VPC can resolve public DNS hostnames to
-                          private IP addresses when queried from instances in a peer VPC.
-                        type: boolean
-                    type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   vpcPeeringConnectionId:
                     description: The VPC Peering Connection ID to manage.
                     type: string
@@ -813,38 +785,10 @@ spec:
                   for example because of an external controller is managing them, like an
                   autoscaler.
                 properties:
-                  accepter:
-                    description: |-
-                      A configuration block that describes [VPC Peering Connection]
-                      (https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) options set for the accepter VPC.
-                    properties:
-                      allowRemoteVpcDnsResolution:
-                        description: |-
-                          Indicates whether a local VPC can resolve public DNS hostnames to
-                          private IP addresses when queried from instances in a peer VPC.
-                        type: boolean
-                    type: object
                   autoAccept:
                     description: Whether or not to accept the peering request. Defaults
                       to false.
                     type: boolean
-                  requester:
-                    description: |-
-                      A configuration block that describes [VPC Peering Connection]
-                      (https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) options set for the requester VPC.
-                    properties:
-                      allowRemoteVpcDnsResolution:
-                        description: |-
-                          Indicates whether a local VPC can resolve public DNS hostnames to
-                          private IP addresses when queried from instances in a peer VPC.
-                        type: boolean
-                    type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   vpcPeeringConnectionId:
                     description: The VPC Peering Connection ID to manage.
                     type: string

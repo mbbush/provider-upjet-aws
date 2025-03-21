@@ -904,7 +904,8 @@ spec:
                             type: string
                           numberOfNodes:
                             description: The new number of nodes for the cluster.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       resumeCluster:
                         description: An action that runs a ResumeCluster API operation.
@@ -1060,7 +1061,8 @@ spec:
                             type: string
                           numberOfNodes:
                             description: The new number of nodes for the cluster.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       resumeCluster:
                         description: An action that runs a ResumeCluster API operation.
@@ -1311,7 +1313,8 @@ spec:
                             type: string
                           numberOfNodes:
                             description: The new number of nodes for the cluster.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       resumeCluster:
                         description: An action that runs a ResumeCluster API operation.

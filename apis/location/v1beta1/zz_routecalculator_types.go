@@ -20,10 +20,6 @@ type RouteCalculatorInitParameters struct {
 
 	// The optional description for the route calculator resource.
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type RouteCalculatorObservation struct {
@@ -68,11 +64,6 @@ type RouteCalculatorParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // RouteCalculatorSpec defines the desired state of RouteCalculator

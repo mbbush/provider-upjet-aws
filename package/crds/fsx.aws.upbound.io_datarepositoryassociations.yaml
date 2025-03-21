@@ -951,7 +951,8 @@ spec:
                       (in MiB) stored on a single physical disk. The maximum number
                       of disks that a single file can be striped across is limited
                       by the total number of disks that make up the file system.
-                    type: number
+                    format: int64
+                    type: integer
                   region:
                     description: Region is the region you'd like your resource to
                       be created in.
@@ -990,12 +991,6 @@ spec:
                             type: array
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -1130,7 +1125,8 @@ spec:
                       (in MiB) stored on a single physical disk. The maximum number
                       of disks that a single file can be striped across is limited
                       by the total number of disks that make up the file system.
-                    type: number
+                    format: int64
+                    type: integer
                   s3:
                     description: |-
                       See the s3 configuration block. Max of 1.
@@ -1165,12 +1161,6 @@ spec:
                             type: array
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -1407,7 +1397,8 @@ spec:
                       (in MiB) stored on a single physical disk. The maximum number
                       of disks that a single file can be striped across is limited
                       by the total number of disks that make up the file system.
-                    type: number
+                    format: int64
+                    type: integer
                   s3:
                     description: |-
                       See the s3 configuration block. Max of 1.

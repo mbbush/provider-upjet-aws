@@ -979,7 +979,7 @@ func (in *LogConfigurationInitParameters) DeepCopyInto(out *LogConfigurationInit
 	}
 	if in.LogSchemaVersion != nil {
 		in, out := &in.LogSchemaVersion, &out.LogSchemaVersion
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.S3Configuration != nil {
@@ -1009,7 +1009,7 @@ func (in *LogConfigurationObservation) DeepCopyInto(out *LogConfigurationObserva
 	}
 	if in.LogSchemaVersion != nil {
 		in, out := &in.LogSchemaVersion, &out.LogSchemaVersion
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.S3Configuration != nil {
@@ -1039,7 +1039,7 @@ func (in *LogConfigurationParameters) DeepCopyInto(out *LogConfigurationParamete
 	}
 	if in.LogSchemaVersion != nil {
 		in, out := &in.LogSchemaVersion, &out.LogSchemaVersion
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.S3Configuration != nil {

@@ -16,30 +16,30 @@ import (
 type BandwidthInitParameters struct {
 
 	// Download speed in Mbps.
-	DownloadSpeed *float64 `json:"downloadSpeed,omitempty" tf:"download_speed,omitempty"`
+	DownloadSpeed *int64 `json:"downloadSpeed,omitempty" tf:"download_speed,omitempty"`
 
 	// Upload speed in Mbps.
-	UploadSpeed *float64 `json:"uploadSpeed,omitempty" tf:"upload_speed,omitempty"`
+	UploadSpeed *int64 `json:"uploadSpeed,omitempty" tf:"upload_speed,omitempty"`
 }
 
 type BandwidthObservation struct {
 
 	// Download speed in Mbps.
-	DownloadSpeed *float64 `json:"downloadSpeed,omitempty" tf:"download_speed,omitempty"`
+	DownloadSpeed *int64 `json:"downloadSpeed,omitempty" tf:"download_speed,omitempty"`
 
 	// Upload speed in Mbps.
-	UploadSpeed *float64 `json:"uploadSpeed,omitempty" tf:"upload_speed,omitempty"`
+	UploadSpeed *int64 `json:"uploadSpeed,omitempty" tf:"upload_speed,omitempty"`
 }
 
 type BandwidthParameters struct {
 
 	// Download speed in Mbps.
 	// +kubebuilder:validation:Optional
-	DownloadSpeed *float64 `json:"downloadSpeed,omitempty" tf:"download_speed,omitempty"`
+	DownloadSpeed *int64 `json:"downloadSpeed,omitempty" tf:"download_speed,omitempty"`
 
 	// Upload speed in Mbps.
 	// +kubebuilder:validation:Optional
-	UploadSpeed *float64 `json:"uploadSpeed,omitempty" tf:"upload_speed,omitempty"`
+	UploadSpeed *int64 `json:"uploadSpeed,omitempty" tf:"upload_speed,omitempty"`
 }
 
 type LinkInitParameters struct {
@@ -77,10 +77,6 @@ type LinkInitParameters struct {
 	// Selector for a Site in networkmanager to populate siteId.
 	// +kubebuilder:validation:Optional
 	SiteIDSelector *v1.Selector `json:"siteIdSelector,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// The type of the link.
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
@@ -165,11 +161,6 @@ type LinkParameters struct {
 	// Selector for a Site in networkmanager to populate siteId.
 	// +kubebuilder:validation:Optional
 	SiteIDSelector *v1.Selector `json:"siteIdSelector,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// The type of the link.
 	// +kubebuilder:validation:Optional

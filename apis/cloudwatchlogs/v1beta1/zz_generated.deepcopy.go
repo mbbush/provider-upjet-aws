@@ -275,22 +275,6 @@ func (in *DestinationInitParameters) DeepCopyInto(out *DestinationInitParameters
 		*out = new(v1.Selector)
 		(*in).DeepCopyInto(*out)
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.TargetArn != nil {
 		in, out := &in.TargetArn, &out.TargetArn
 		*out = new(string)
@@ -439,22 +423,6 @@ func (in *DestinationParameters) DeepCopyInto(out *DestinationParameters) {
 		in, out := &in.RoleArnSelector, &out.RoleArnSelector
 		*out = new(v1.Selector)
 		(*in).DeepCopyInto(*out)
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.TargetArn != nil {
 		in, out := &in.TargetArn, &out.TargetArn
@@ -749,29 +717,13 @@ func (in *GroupInitParameters) DeepCopyInto(out *GroupInitParameters) {
 	}
 	if in.RetentionInDays != nil {
 		in, out := &in.RetentionInDays, &out.RetentionInDays
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.SkipDestroy != nil {
 		in, out := &in.SkipDestroy, &out.SkipDestroy
 		*out = new(bool)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 }
 
@@ -842,7 +794,7 @@ func (in *GroupObservation) DeepCopyInto(out *GroupObservation) {
 	}
 	if in.RetentionInDays != nil {
 		in, out := &in.RetentionInDays, &out.RetentionInDays
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.SkipDestroy != nil {
@@ -924,29 +876,13 @@ func (in *GroupParameters) DeepCopyInto(out *GroupParameters) {
 	}
 	if in.RetentionInDays != nil {
 		in, out := &in.RetentionInDays, &out.RetentionInDays
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.SkipDestroy != nil {
 		in, out := &in.SkipDestroy, &out.SkipDestroy
 		*out = new(bool)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 }
 

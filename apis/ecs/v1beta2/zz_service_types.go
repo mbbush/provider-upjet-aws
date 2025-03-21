@@ -58,32 +58,32 @@ type AlarmsParameters struct {
 type CapacityProviderStrategyInitParameters struct {
 
 	// Number of tasks, at a minimum, to run on the specified capacity provider. Only one capacity provider in a capacity provider strategy can have a base defined.
-	Base *float64 `json:"base,omitempty" tf:"base,omitempty"`
+	Base *int64 `json:"base,omitempty" tf:"base,omitempty"`
 
 	// Short name of the capacity provider.
 	CapacityProvider *string `json:"capacityProvider,omitempty" tf:"capacity_provider,omitempty"`
 
 	// Relative percentage of the total number of launched tasks that should use the specified capacity provider.
-	Weight *float64 `json:"weight,omitempty" tf:"weight,omitempty"`
+	Weight *int64 `json:"weight,omitempty" tf:"weight,omitempty"`
 }
 
 type CapacityProviderStrategyObservation struct {
 
 	// Number of tasks, at a minimum, to run on the specified capacity provider. Only one capacity provider in a capacity provider strategy can have a base defined.
-	Base *float64 `json:"base,omitempty" tf:"base,omitempty"`
+	Base *int64 `json:"base,omitempty" tf:"base,omitempty"`
 
 	// Short name of the capacity provider.
 	CapacityProvider *string `json:"capacityProvider,omitempty" tf:"capacity_provider,omitempty"`
 
 	// Relative percentage of the total number of launched tasks that should use the specified capacity provider.
-	Weight *float64 `json:"weight,omitempty" tf:"weight,omitempty"`
+	Weight *int64 `json:"weight,omitempty" tf:"weight,omitempty"`
 }
 
 type CapacityProviderStrategyParameters struct {
 
 	// Number of tasks, at a minimum, to run on the specified capacity provider. Only one capacity provider in a capacity provider strategy can have a base defined.
 	// +kubebuilder:validation:Optional
-	Base *float64 `json:"base,omitempty" tf:"base,omitempty"`
+	Base *int64 `json:"base,omitempty" tf:"base,omitempty"`
 
 	// Short name of the capacity provider.
 	// +kubebuilder:validation:Optional
@@ -91,7 +91,7 @@ type CapacityProviderStrategyParameters struct {
 
 	// Relative percentage of the total number of launched tasks that should use the specified capacity provider.
 	// +kubebuilder:validation:Optional
-	Weight *float64 `json:"weight,omitempty" tf:"weight,omitempty"`
+	Weight *int64 `json:"weight,omitempty" tf:"weight,omitempty"`
 }
 
 type ClientAliasInitParameters struct {
@@ -100,7 +100,7 @@ type ClientAliasInitParameters struct {
 	DNSName *string `json:"dnsName,omitempty" tf:"dns_name,omitempty"`
 
 	// Listening port number for the Service Connect proxy. This port is available inside of all of the tasks within the same namespace.
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 }
 
 type ClientAliasObservation struct {
@@ -109,7 +109,7 @@ type ClientAliasObservation struct {
 	DNSName *string `json:"dnsName,omitempty" tf:"dns_name,omitempty"`
 
 	// Listening port number for the Service Connect proxy. This port is available inside of all of the tasks within the same namespace.
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 }
 
 type ClientAliasParameters struct {
@@ -120,7 +120,7 @@ type ClientAliasParameters struct {
 
 	// Listening port number for the Service Connect proxy. This port is available inside of all of the tasks within the same namespace.
 	// +kubebuilder:validation:Optional
-	Port *float64 `json:"port" tf:"port,omitempty"`
+	Port *int64 `json:"port" tf:"port,omitempty"`
 }
 
 type DeploymentCircuitBreakerInitParameters struct {
@@ -196,7 +196,7 @@ type LoadBalancerInitParameters struct {
 	ContainerName *string `json:"containerName,omitempty" tf:"container_name,omitempty"`
 
 	// Port on the container to associate with the load balancer.
-	ContainerPort *float64 `json:"containerPort,omitempty" tf:"container_port,omitempty"`
+	ContainerPort *int64 `json:"containerPort,omitempty" tf:"container_port,omitempty"`
 
 	// Name of the ELB (Classic) to associate with the service.
 	ELBName *string `json:"elbName,omitempty" tf:"elb_name,omitempty"`
@@ -220,7 +220,7 @@ type LoadBalancerObservation struct {
 	ContainerName *string `json:"containerName,omitempty" tf:"container_name,omitempty"`
 
 	// Port on the container to associate with the load balancer.
-	ContainerPort *float64 `json:"containerPort,omitempty" tf:"container_port,omitempty"`
+	ContainerPort *int64 `json:"containerPort,omitempty" tf:"container_port,omitempty"`
 
 	// Name of the ELB (Classic) to associate with the service.
 	ELBName *string `json:"elbName,omitempty" tf:"elb_name,omitempty"`
@@ -237,7 +237,7 @@ type LoadBalancerParameters struct {
 
 	// Port on the container to associate with the load balancer.
 	// +kubebuilder:validation:Optional
-	ContainerPort *float64 `json:"containerPort" tf:"container_port,omitempty"`
+	ContainerPort *int64 `json:"containerPort" tf:"container_port,omitempty"`
 
 	// Name of the ELB (Classic) to associate with the service.
 	// +kubebuilder:validation:Optional
@@ -266,7 +266,7 @@ type ManagedEBSVolumeInitParameters struct {
 	FileSystemType *string `json:"fileSystemType,omitempty" tf:"file_system_type,omitempty"`
 
 	// Number of I/O operations per second (IOPS).
-	Iops *float64 `json:"iops,omitempty" tf:"iops,omitempty"`
+	Iops *int64 `json:"iops,omitempty" tf:"iops,omitempty"`
 
 	// Amazon Resource Name (ARN) identifier of the Amazon Web Services Key Management Service key to use for Amazon EBS encryption.
 	KMSKeyID *string `json:"kmsKeyId,omitempty" tf:"kms_key_id,omitempty"`
@@ -275,7 +275,7 @@ type ManagedEBSVolumeInitParameters struct {
 	RoleArn *string `json:"roleArn,omitempty" tf:"role_arn,omitempty"`
 
 	// Size of the volume in GiB. You must specify either a size_in_gb or a snapshot_id. You can optionally specify a volume size greater than or equal to the snapshot size.
-	SizeInGb *float64 `json:"sizeInGb,omitempty" tf:"size_in_gb,omitempty"`
+	SizeInGb *int64 `json:"sizeInGb,omitempty" tf:"size_in_gb,omitempty"`
 
 	// Snapshot that Amazon ECS uses to create the volume. You must specify either a size_in_gb or a snapshot_id.
 	SnapshotID *string `json:"snapshotId,omitempty" tf:"snapshot_id,omitempty"`
@@ -284,7 +284,7 @@ type ManagedEBSVolumeInitParameters struct {
 	TagSpecifications []TagSpecificationsInitParameters `json:"tagSpecifications,omitempty" tf:"tag_specifications,omitempty"`
 
 	// Throughput to provision for a volume, in MiB/s, with a maximum of 1,000 MiB/s.
-	Throughput *float64 `json:"throughput,omitempty" tf:"throughput,omitempty"`
+	Throughput *int64 `json:"throughput,omitempty" tf:"throughput,omitempty"`
 
 	// Volume type.
 	VolumeType *string `json:"volumeType,omitempty" tf:"volume_type,omitempty"`
@@ -299,7 +299,7 @@ type ManagedEBSVolumeObservation struct {
 	FileSystemType *string `json:"fileSystemType,omitempty" tf:"file_system_type,omitempty"`
 
 	// Number of I/O operations per second (IOPS).
-	Iops *float64 `json:"iops,omitempty" tf:"iops,omitempty"`
+	Iops *int64 `json:"iops,omitempty" tf:"iops,omitempty"`
 
 	// Amazon Resource Name (ARN) identifier of the Amazon Web Services Key Management Service key to use for Amazon EBS encryption.
 	KMSKeyID *string `json:"kmsKeyId,omitempty" tf:"kms_key_id,omitempty"`
@@ -308,7 +308,7 @@ type ManagedEBSVolumeObservation struct {
 	RoleArn *string `json:"roleArn,omitempty" tf:"role_arn,omitempty"`
 
 	// Size of the volume in GiB. You must specify either a size_in_gb or a snapshot_id. You can optionally specify a volume size greater than or equal to the snapshot size.
-	SizeInGb *float64 `json:"sizeInGb,omitempty" tf:"size_in_gb,omitempty"`
+	SizeInGb *int64 `json:"sizeInGb,omitempty" tf:"size_in_gb,omitempty"`
 
 	// Snapshot that Amazon ECS uses to create the volume. You must specify either a size_in_gb or a snapshot_id.
 	SnapshotID *string `json:"snapshotId,omitempty" tf:"snapshot_id,omitempty"`
@@ -317,7 +317,7 @@ type ManagedEBSVolumeObservation struct {
 	TagSpecifications []TagSpecificationsObservation `json:"tagSpecifications,omitempty" tf:"tag_specifications,omitempty"`
 
 	// Throughput to provision for a volume, in MiB/s, with a maximum of 1,000 MiB/s.
-	Throughput *float64 `json:"throughput,omitempty" tf:"throughput,omitempty"`
+	Throughput *int64 `json:"throughput,omitempty" tf:"throughput,omitempty"`
 
 	// Volume type.
 	VolumeType *string `json:"volumeType,omitempty" tf:"volume_type,omitempty"`
@@ -335,7 +335,7 @@ type ManagedEBSVolumeParameters struct {
 
 	// Number of I/O operations per second (IOPS).
 	// +kubebuilder:validation:Optional
-	Iops *float64 `json:"iops,omitempty" tf:"iops,omitempty"`
+	Iops *int64 `json:"iops,omitempty" tf:"iops,omitempty"`
 
 	// Amazon Resource Name (ARN) identifier of the Amazon Web Services Key Management Service key to use for Amazon EBS encryption.
 	// +kubebuilder:validation:Optional
@@ -347,7 +347,7 @@ type ManagedEBSVolumeParameters struct {
 
 	// Size of the volume in GiB. You must specify either a size_in_gb or a snapshot_id. You can optionally specify a volume size greater than or equal to the snapshot size.
 	// +kubebuilder:validation:Optional
-	SizeInGb *float64 `json:"sizeInGb,omitempty" tf:"size_in_gb,omitempty"`
+	SizeInGb *int64 `json:"sizeInGb,omitempty" tf:"size_in_gb,omitempty"`
 
 	// Snapshot that Amazon ECS uses to create the volume. You must specify either a size_in_gb or a snapshot_id.
 	// +kubebuilder:validation:Optional
@@ -359,7 +359,7 @@ type ManagedEBSVolumeParameters struct {
 
 	// Throughput to provision for a volume, in MiB/s, with a maximum of 1,000 MiB/s.
 	// +kubebuilder:validation:Optional
-	Throughput *float64 `json:"throughput,omitempty" tf:"throughput,omitempty"`
+	Throughput *int64 `json:"throughput,omitempty" tf:"throughput,omitempty"`
 
 	// Volume type.
 	// +kubebuilder:validation:Optional
@@ -651,7 +651,7 @@ type ServiceConnectConfigurationServiceInitParameters struct {
 	DiscoveryName *string `json:"discoveryName,omitempty" tf:"discovery_name,omitempty"`
 
 	// Port number for the Service Connect proxy to listen on.
-	IngressPortOverride *float64 `json:"ingressPortOverride,omitempty" tf:"ingress_port_override,omitempty"`
+	IngressPortOverride *int64 `json:"ingressPortOverride,omitempty" tf:"ingress_port_override,omitempty"`
 
 	// Name of one of the portMappings from all the containers in the task definition of this Amazon ECS service.
 	PortName *string `json:"portName,omitempty" tf:"port_name,omitempty"`
@@ -672,7 +672,7 @@ type ServiceConnectConfigurationServiceObservation struct {
 	DiscoveryName *string `json:"discoveryName,omitempty" tf:"discovery_name,omitempty"`
 
 	// Port number for the Service Connect proxy to listen on.
-	IngressPortOverride *float64 `json:"ingressPortOverride,omitempty" tf:"ingress_port_override,omitempty"`
+	IngressPortOverride *int64 `json:"ingressPortOverride,omitempty" tf:"ingress_port_override,omitempty"`
 
 	// Name of one of the portMappings from all the containers in the task definition of this Amazon ECS service.
 	PortName *string `json:"portName,omitempty" tf:"port_name,omitempty"`
@@ -696,7 +696,7 @@ type ServiceConnectConfigurationServiceParameters struct {
 
 	// Port number for the Service Connect proxy to listen on.
 	// +kubebuilder:validation:Optional
-	IngressPortOverride *float64 `json:"ingressPortOverride,omitempty" tf:"ingress_port_override,omitempty"`
+	IngressPortOverride *int64 `json:"ingressPortOverride,omitempty" tf:"ingress_port_override,omitempty"`
 
 	// Name of one of the portMappings from all the containers in the task definition of this Amazon ECS service.
 	// +kubebuilder:validation:Optional
@@ -741,13 +741,13 @@ type ServiceInitParameters struct {
 	DeploymentController *DeploymentControllerInitParameters `json:"deploymentController,omitempty" tf:"deployment_controller,omitempty"`
 
 	// Upper limit (as a percentage of the service's desiredCount) of the number of running tasks that can be running in a service during a deployment. Not valid when using the DAEMON scheduling strategy.
-	DeploymentMaximumPercent *float64 `json:"deploymentMaximumPercent,omitempty" tf:"deployment_maximum_percent,omitempty"`
+	DeploymentMaximumPercent *int64 `json:"deploymentMaximumPercent,omitempty" tf:"deployment_maximum_percent,omitempty"`
 
 	// Lower limit (as a percentage of the service's desiredCount) of the number of running tasks that must remain running and healthy in a service during a deployment.
-	DeploymentMinimumHealthyPercent *float64 `json:"deploymentMinimumHealthyPercent,omitempty" tf:"deployment_minimum_healthy_percent,omitempty"`
+	DeploymentMinimumHealthyPercent *int64 `json:"deploymentMinimumHealthyPercent,omitempty" tf:"deployment_minimum_healthy_percent,omitempty"`
 
 	// Number of instances of the task definition to place and keep running. Defaults to 0. Do not specify if using the DAEMON scheduling strategy.
-	DesiredCount *float64 `json:"desiredCount,omitempty" tf:"desired_count,omitempty"`
+	DesiredCount *int64 `json:"desiredCount,omitempty" tf:"desired_count,omitempty"`
 
 	// Whether to enable Amazon ECS managed tags for the tasks within the service.
 	EnableEcsManagedTags *bool `json:"enableEcsManagedTags,omitempty" tf:"enable_ecs_managed_tags,omitempty"`
@@ -762,7 +762,7 @@ type ServiceInitParameters struct {
 	ForceNewDeployment *bool `json:"forceNewDeployment,omitempty" tf:"force_new_deployment,omitempty"`
 
 	// Seconds to ignore failing load balancer health checks on newly instantiated tasks to prevent premature shutdown, up to 2147483647. Only valid for services configured to use load balancers.
-	HealthCheckGracePeriodSeconds *float64 `json:"healthCheckGracePeriodSeconds,omitempty" tf:"health_check_grace_period_seconds,omitempty"`
+	HealthCheckGracePeriodSeconds *int64 `json:"healthCheckGracePeriodSeconds,omitempty" tf:"health_check_grace_period_seconds,omitempty"`
 
 	// ARN of the IAM role that allows Amazon ECS to make calls to your load balancer on your behalf. This parameter is required if you are using a load balancer with your service, but only if your task definition does not use the awsvpc network mode. If using awsvpc network mode, do not specify this role. If your account has already created the Amazon ECS service-linked role, that role is used by default for your service unless you specify a role here.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/iam/v1beta1.Role
@@ -806,10 +806,6 @@ type ServiceInitParameters struct {
 
 	// Service discovery registries for the service. The maximum number of service_registries blocks is 1. See below.
 	ServiceRegistries *ServiceRegistriesInitParameters `json:"serviceRegistries,omitempty" tf:"service_registries,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Family and revision (family:revision) or full ARN of the task definition that you want to run in your service. Required unless using the EXTERNAL deployment controller. If a revision is not specified, the latest ACTIVE revision is used.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/ecs/v1beta2.TaskDefinition
@@ -858,13 +854,13 @@ type ServiceObservation struct {
 	DeploymentController *DeploymentControllerObservation `json:"deploymentController,omitempty" tf:"deployment_controller,omitempty"`
 
 	// Upper limit (as a percentage of the service's desiredCount) of the number of running tasks that can be running in a service during a deployment. Not valid when using the DAEMON scheduling strategy.
-	DeploymentMaximumPercent *float64 `json:"deploymentMaximumPercent,omitempty" tf:"deployment_maximum_percent,omitempty"`
+	DeploymentMaximumPercent *int64 `json:"deploymentMaximumPercent,omitempty" tf:"deployment_maximum_percent,omitempty"`
 
 	// Lower limit (as a percentage of the service's desiredCount) of the number of running tasks that must remain running and healthy in a service during a deployment.
-	DeploymentMinimumHealthyPercent *float64 `json:"deploymentMinimumHealthyPercent,omitempty" tf:"deployment_minimum_healthy_percent,omitempty"`
+	DeploymentMinimumHealthyPercent *int64 `json:"deploymentMinimumHealthyPercent,omitempty" tf:"deployment_minimum_healthy_percent,omitempty"`
 
 	// Number of instances of the task definition to place and keep running. Defaults to 0. Do not specify if using the DAEMON scheduling strategy.
-	DesiredCount *float64 `json:"desiredCount,omitempty" tf:"desired_count,omitempty"`
+	DesiredCount *int64 `json:"desiredCount,omitempty" tf:"desired_count,omitempty"`
 
 	// Whether to enable Amazon ECS managed tags for the tasks within the service.
 	EnableEcsManagedTags *bool `json:"enableEcsManagedTags,omitempty" tf:"enable_ecs_managed_tags,omitempty"`
@@ -879,7 +875,7 @@ type ServiceObservation struct {
 	ForceNewDeployment *bool `json:"forceNewDeployment,omitempty" tf:"force_new_deployment,omitempty"`
 
 	// Seconds to ignore failing load balancer health checks on newly instantiated tasks to prevent premature shutdown, up to 2147483647. Only valid for services configured to use load balancers.
-	HealthCheckGracePeriodSeconds *float64 `json:"healthCheckGracePeriodSeconds,omitempty" tf:"health_check_grace_period_seconds,omitempty"`
+	HealthCheckGracePeriodSeconds *int64 `json:"healthCheckGracePeriodSeconds,omitempty" tf:"health_check_grace_period_seconds,omitempty"`
 
 	// ARN of the IAM role that allows Amazon ECS to make calls to your load balancer on your behalf. This parameter is required if you are using a load balancer with your service, but only if your task definition does not use the awsvpc network mode. If using awsvpc network mode, do not specify this role. If your account has already created the Amazon ECS service-linked role, that role is used by default for your service unless you specify a role here.
 	IAMRole *string `json:"iamRole,omitempty" tf:"iam_role,omitempty"`
@@ -979,15 +975,15 @@ type ServiceParameters struct {
 
 	// Upper limit (as a percentage of the service's desiredCount) of the number of running tasks that can be running in a service during a deployment. Not valid when using the DAEMON scheduling strategy.
 	// +kubebuilder:validation:Optional
-	DeploymentMaximumPercent *float64 `json:"deploymentMaximumPercent,omitempty" tf:"deployment_maximum_percent,omitempty"`
+	DeploymentMaximumPercent *int64 `json:"deploymentMaximumPercent,omitempty" tf:"deployment_maximum_percent,omitempty"`
 
 	// Lower limit (as a percentage of the service's desiredCount) of the number of running tasks that must remain running and healthy in a service during a deployment.
 	// +kubebuilder:validation:Optional
-	DeploymentMinimumHealthyPercent *float64 `json:"deploymentMinimumHealthyPercent,omitempty" tf:"deployment_minimum_healthy_percent,omitempty"`
+	DeploymentMinimumHealthyPercent *int64 `json:"deploymentMinimumHealthyPercent,omitempty" tf:"deployment_minimum_healthy_percent,omitempty"`
 
 	// Number of instances of the task definition to place and keep running. Defaults to 0. Do not specify if using the DAEMON scheduling strategy.
 	// +kubebuilder:validation:Optional
-	DesiredCount *float64 `json:"desiredCount,omitempty" tf:"desired_count,omitempty"`
+	DesiredCount *int64 `json:"desiredCount,omitempty" tf:"desired_count,omitempty"`
 
 	// Whether to enable Amazon ECS managed tags for the tasks within the service.
 	// +kubebuilder:validation:Optional
@@ -1007,7 +1003,7 @@ type ServiceParameters struct {
 
 	// Seconds to ignore failing load balancer health checks on newly instantiated tasks to prevent premature shutdown, up to 2147483647. Only valid for services configured to use load balancers.
 	// +kubebuilder:validation:Optional
-	HealthCheckGracePeriodSeconds *float64 `json:"healthCheckGracePeriodSeconds,omitempty" tf:"health_check_grace_period_seconds,omitempty"`
+	HealthCheckGracePeriodSeconds *int64 `json:"healthCheckGracePeriodSeconds,omitempty" tf:"health_check_grace_period_seconds,omitempty"`
 
 	// ARN of the IAM role that allows Amazon ECS to make calls to your load balancer on your behalf. This parameter is required if you are using a load balancer with your service, but only if your task definition does not use the awsvpc network mode. If using awsvpc network mode, do not specify this role. If your account has already created the Amazon ECS service-linked role, that role is used by default for your service unless you specify a role here.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/iam/v1beta1.Role
@@ -1068,11 +1064,6 @@ type ServiceParameters struct {
 	// +kubebuilder:validation:Optional
 	ServiceRegistries *ServiceRegistriesParameters `json:"serviceRegistries,omitempty" tf:"service_registries,omitempty"`
 
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Family and revision (family:revision) or full ARN of the task definition that you want to run in your service. Required unless using the EXTERNAL deployment controller. If a revision is not specified, the latest ACTIVE revision is used.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/ecs/v1beta2.TaskDefinition
 	// +kubebuilder:validation:Optional
@@ -1110,10 +1101,10 @@ type ServiceRegistriesInitParameters struct {
 	ContainerName *string `json:"containerName,omitempty" tf:"container_name,omitempty"`
 
 	// Port value, already specified in the task definition, to be used for your service discovery service.
-	ContainerPort *float64 `json:"containerPort,omitempty" tf:"container_port,omitempty"`
+	ContainerPort *int64 `json:"containerPort,omitempty" tf:"container_port,omitempty"`
 
 	// Port value used if your Service Discovery service specified an SRV record.
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// ARN of the Service Registry. The currently supported service registry is Amazon Route 53 Auto Naming Service(aws_service_discovery_service). For more information, see Service
 	RegistryArn *string `json:"registryArn,omitempty" tf:"registry_arn,omitempty"`
@@ -1125,10 +1116,10 @@ type ServiceRegistriesObservation struct {
 	ContainerName *string `json:"containerName,omitempty" tf:"container_name,omitempty"`
 
 	// Port value, already specified in the task definition, to be used for your service discovery service.
-	ContainerPort *float64 `json:"containerPort,omitempty" tf:"container_port,omitempty"`
+	ContainerPort *int64 `json:"containerPort,omitempty" tf:"container_port,omitempty"`
 
 	// Port value used if your Service Discovery service specified an SRV record.
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// ARN of the Service Registry. The currently supported service registry is Amazon Route 53 Auto Naming Service(aws_service_discovery_service). For more information, see Service
 	RegistryArn *string `json:"registryArn,omitempty" tf:"registry_arn,omitempty"`
@@ -1142,11 +1133,11 @@ type ServiceRegistriesParameters struct {
 
 	// Port value, already specified in the task definition, to be used for your service discovery service.
 	// +kubebuilder:validation:Optional
-	ContainerPort *float64 `json:"containerPort,omitempty" tf:"container_port,omitempty"`
+	ContainerPort *int64 `json:"containerPort,omitempty" tf:"container_port,omitempty"`
 
 	// Port value used if your Service Discovery service specified an SRV record.
 	// +kubebuilder:validation:Optional
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// ARN of the Service Registry. The currently supported service registry is Amazon Route 53 Auto Naming Service(aws_service_discovery_service). For more information, see Service
 	// +kubebuilder:validation:Optional
@@ -1199,10 +1190,6 @@ type TagSpecificationsInitParameters struct {
 
 	// The type of volume resource. Valid values, volume.
 	ResourceType *string `json:"resourceType,omitempty" tf:"resource_type,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type TagSpecificationsObservation struct {
@@ -1227,40 +1214,35 @@ type TagSpecificationsParameters struct {
 	// The type of volume resource. Valid values, volume.
 	// +kubebuilder:validation:Optional
 	ResourceType *string `json:"resourceType" tf:"resource_type,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type TimeoutInitParameters struct {
 
 	// Amount of time in seconds a connection will stay active while idle. A value of 0 can be set to disable idleTimeout.
-	IdleTimeoutSeconds *float64 `json:"idleTimeoutSeconds,omitempty" tf:"idle_timeout_seconds,omitempty"`
+	IdleTimeoutSeconds *int64 `json:"idleTimeoutSeconds,omitempty" tf:"idle_timeout_seconds,omitempty"`
 
 	// Amount of time in seconds for the upstream to respond with a complete response per request. A value of 0 can be set to disable perRequestTimeout. Can only be set when appProtocol isn't TCP.
-	PerRequestTimeoutSeconds *float64 `json:"perRequestTimeoutSeconds,omitempty" tf:"per_request_timeout_seconds,omitempty"`
+	PerRequestTimeoutSeconds *int64 `json:"perRequestTimeoutSeconds,omitempty" tf:"per_request_timeout_seconds,omitempty"`
 }
 
 type TimeoutObservation struct {
 
 	// Amount of time in seconds a connection will stay active while idle. A value of 0 can be set to disable idleTimeout.
-	IdleTimeoutSeconds *float64 `json:"idleTimeoutSeconds,omitempty" tf:"idle_timeout_seconds,omitempty"`
+	IdleTimeoutSeconds *int64 `json:"idleTimeoutSeconds,omitempty" tf:"idle_timeout_seconds,omitempty"`
 
 	// Amount of time in seconds for the upstream to respond with a complete response per request. A value of 0 can be set to disable perRequestTimeout. Can only be set when appProtocol isn't TCP.
-	PerRequestTimeoutSeconds *float64 `json:"perRequestTimeoutSeconds,omitempty" tf:"per_request_timeout_seconds,omitempty"`
+	PerRequestTimeoutSeconds *int64 `json:"perRequestTimeoutSeconds,omitempty" tf:"per_request_timeout_seconds,omitempty"`
 }
 
 type TimeoutParameters struct {
 
 	// Amount of time in seconds a connection will stay active while idle. A value of 0 can be set to disable idleTimeout.
 	// +kubebuilder:validation:Optional
-	IdleTimeoutSeconds *float64 `json:"idleTimeoutSeconds,omitempty" tf:"idle_timeout_seconds,omitempty"`
+	IdleTimeoutSeconds *int64 `json:"idleTimeoutSeconds,omitempty" tf:"idle_timeout_seconds,omitempty"`
 
 	// Amount of time in seconds for the upstream to respond with a complete response per request. A value of 0 can be set to disable perRequestTimeout. Can only be set when appProtocol isn't TCP.
 	// +kubebuilder:validation:Optional
-	PerRequestTimeoutSeconds *float64 `json:"perRequestTimeoutSeconds,omitempty" tf:"per_request_timeout_seconds,omitempty"`
+	PerRequestTimeoutSeconds *int64 `json:"perRequestTimeoutSeconds,omitempty" tf:"per_request_timeout_seconds,omitempty"`
 }
 
 type VPCLatticeConfigurationsInitParameters struct {

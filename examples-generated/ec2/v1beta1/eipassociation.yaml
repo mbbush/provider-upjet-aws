@@ -47,5 +47,3 @@ spec:
     availabilityZone: us-west-2a
     instanceType: t2.micro
     region: us-west-1
-    tags:
-      Name: HelloWorld

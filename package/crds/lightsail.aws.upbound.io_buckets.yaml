@@ -90,12 +90,6 @@ spec:
                       The Amazon Web Services Region name.
                       Region is the region you'd like your resource to be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -124,12 +118,6 @@ spec:
                       resources in lightsail. If force_delete is set to true the bucket
                       will be deleted even when not empty.
                     type: boolean
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:

@@ -104,22 +104,6 @@ func (in *CertificateInitParameters) DeepCopyInto(out *CertificateInitParameters
 			}
 		}
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.ValidationMethod != nil {
 		in, out := &in.ValidationMethod, &out.ValidationMethod
 		*out = new(string)
@@ -413,22 +397,6 @@ func (in *CertificateParameters) DeepCopyInto(out *CertificateParameters) {
 				*out = new(string)
 				**out = **in
 			}
-		}
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
 		}
 	}
 	if in.ValidationMethod != nil {

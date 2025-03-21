@@ -23,10 +23,6 @@ type PortfolioInitParameters struct {
 
 	// Name of the person or organization who owns the portfolio.
 	ProviderName *string `json:"providerName,omitempty" tf:"provider_name,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type PortfolioObservation struct {
@@ -73,11 +69,6 @@ type PortfolioParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // PortfolioSpec defines the desired state of Portfolio

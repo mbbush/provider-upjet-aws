@@ -94,22 +94,6 @@ func (in *ApplicationInitParameters) DeepCopyInto(out *ApplicationInitParameters
 		*out = new(string)
 		**out = **in
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.Type != nil {
 		in, out := &in.Type, &out.Type
 		*out = new(string)
@@ -333,22 +317,6 @@ func (in *ApplicationParameters) DeepCopyInto(out *ApplicationParameters) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.Type != nil {
 		in, out := &in.Type, &out.Type
 		*out = new(string)
@@ -471,7 +439,7 @@ func (in *AutoStopConfigurationInitParameters) DeepCopyInto(out *AutoStopConfigu
 	}
 	if in.IdleTimeoutMinutes != nil {
 		in, out := &in.IdleTimeoutMinutes, &out.IdleTimeoutMinutes
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -496,7 +464,7 @@ func (in *AutoStopConfigurationObservation) DeepCopyInto(out *AutoStopConfigurat
 	}
 	if in.IdleTimeoutMinutes != nil {
 		in, out := &in.IdleTimeoutMinutes, &out.IdleTimeoutMinutes
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -521,7 +489,7 @@ func (in *AutoStopConfigurationParameters) DeepCopyInto(out *AutoStopConfigurati
 	}
 	if in.IdleTimeoutMinutes != nil {
 		in, out := &in.IdleTimeoutMinutes, &out.IdleTimeoutMinutes
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -606,7 +574,7 @@ func (in *InitialCapacityConfigInitParameters) DeepCopyInto(out *InitialCapacity
 	}
 	if in.WorkerCount != nil {
 		in, out := &in.WorkerCount, &out.WorkerCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -631,7 +599,7 @@ func (in *InitialCapacityConfigObservation) DeepCopyInto(out *InitialCapacityCon
 	}
 	if in.WorkerCount != nil {
 		in, out := &in.WorkerCount, &out.WorkerCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -656,7 +624,7 @@ func (in *InitialCapacityConfigParameters) DeepCopyInto(out *InitialCapacityConf
 	}
 	if in.WorkerCount != nil {
 		in, out := &in.WorkerCount, &out.WorkerCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }

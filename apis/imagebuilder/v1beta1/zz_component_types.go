@@ -49,10 +49,6 @@ type ComponentInitParameters struct {
 	// +listType=set
 	SupportedOsVersions []*string `json:"supportedOsVersions,omitempty" tf:"supported_os_versions,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// S3 URI with data of the component. Exactly one of data and uri can be specified.
 	URI *string `json:"uri,omitempty" tf:"uri,omitempty"`
 
@@ -167,11 +163,6 @@ type ComponentParameters struct {
 	// +kubebuilder:validation:Optional
 	// +listType=set
 	SupportedOsVersions []*string `json:"supportedOsVersions,omitempty" tf:"supported_os_versions,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// S3 URI with data of the component. Exactly one of data and uri can be specified.
 	// +kubebuilder:validation:Optional

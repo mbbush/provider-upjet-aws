@@ -23,5 +23,3 @@ spec:
       keySelector:
         matchLabels:
           testing.upbound.io/example-name: example
-    tags:
-      Name: Example Kendra Thesaurus

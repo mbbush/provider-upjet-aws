@@ -80,12 +80,6 @@ spec:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   userIdRefs:
                     description: References to User in elasticache to populate userIds.
                     items:
@@ -189,12 +183,6 @@ spec:
                   engine:
                     description: The current supported value is REDIS.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   userIdRefs:
                     description: References to User in elasticache to populate userIds.
                     items:

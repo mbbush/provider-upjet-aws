@@ -21,10 +21,6 @@ type VPCLinkInitParameters struct {
 	// Name used to label and identify the VPC link.
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// References to LB in elbv2 to populate targetArns.
 	// +kubebuilder:validation:Optional
 	TargetArnRefs []v1.Reference `json:"targetArnRefs,omitempty" tf:"-"`
@@ -79,11 +75,6 @@ type VPCLinkParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// References to LB in elbv2 to populate targetArns.
 	// +kubebuilder:validation:Optional

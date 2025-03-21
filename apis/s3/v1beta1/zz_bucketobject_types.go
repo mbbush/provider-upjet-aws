@@ -101,10 +101,6 @@ type BucketObjectInitParameters struct {
 	// Storage Class for the object. Defaults to "STANDARD".
 	StorageClass *string `json:"storageClass,omitempty" tf:"storage_class,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Target URL for website redirect.
 	WebsiteRedirect *string `json:"websiteRedirect,omitempty" tf:"website_redirect,omitempty"`
 }
@@ -312,11 +308,6 @@ type BucketObjectParameters struct {
 	// Storage Class for the object. Defaults to "STANDARD".
 	// +kubebuilder:validation:Optional
 	StorageClass *string `json:"storageClass,omitempty" tf:"storage_class,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Target URL for website redirect.
 	// +kubebuilder:validation:Optional

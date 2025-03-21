@@ -31,7 +31,7 @@ type KeyInitParameters struct {
 	// The waiting period, specified in number of days. After the waiting period ends, AWS KMS deletes the KMS key.
 	// If you specify a value, it must be between 7 and 30, inclusive. If you do not specify a value, it defaults to 30.
 	// If the KMS key is a multi-Region primary key with replicas, the waiting period begins when the last of its replica keys is deleted. Otherwise, the waiting period begins immediately.
-	DeletionWindowInDays *float64 `json:"deletionWindowInDays,omitempty" tf:"deletion_window_in_days,omitempty"`
+	DeletionWindowInDays *int64 `json:"deletionWindowInDays,omitempty" tf:"deletion_window_in_days,omitempty"`
 
 	// The description of the key as viewed in AWS console.
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
@@ -53,11 +53,7 @@ type KeyInitParameters struct {
 	Policy *string `json:"policy,omitempty" tf:"policy,omitempty"`
 
 	// Custom period of time between each rotation date. Must be a number between 90 and 2560 (inclusive).
-	RotationPeriodInDays *float64 `json:"rotationPeriodInDays,omitempty" tf:"rotation_period_in_days,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
+	RotationPeriodInDays *int64 `json:"rotationPeriodInDays,omitempty" tf:"rotation_period_in_days,omitempty"`
 
 	// Identifies the external key that serves as key material for the KMS key in an external key store.
 	XksKeyID *string `json:"xksKeyId,omitempty" tf:"xks_key_id,omitempty"`
@@ -84,7 +80,7 @@ type KeyObservation struct {
 	// The waiting period, specified in number of days. After the waiting period ends, AWS KMS deletes the KMS key.
 	// If you specify a value, it must be between 7 and 30, inclusive. If you do not specify a value, it defaults to 30.
 	// If the KMS key is a multi-Region primary key with replicas, the waiting period begins when the last of its replica keys is deleted. Otherwise, the waiting period begins immediately.
-	DeletionWindowInDays *float64 `json:"deletionWindowInDays,omitempty" tf:"deletion_window_in_days,omitempty"`
+	DeletionWindowInDays *int64 `json:"deletionWindowInDays,omitempty" tf:"deletion_window_in_days,omitempty"`
 
 	// The description of the key as viewed in AWS console.
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
@@ -111,7 +107,7 @@ type KeyObservation struct {
 	Policy *string `json:"policy,omitempty" tf:"policy,omitempty"`
 
 	// Custom period of time between each rotation date. Must be a number between 90 and 2560 (inclusive).
-	RotationPeriodInDays *float64 `json:"rotationPeriodInDays,omitempty" tf:"rotation_period_in_days,omitempty"`
+	RotationPeriodInDays *int64 `json:"rotationPeriodInDays,omitempty" tf:"rotation_period_in_days,omitempty"`
 
 	// Key-value map of resource tags.
 	// +mapType=granular
@@ -147,7 +143,7 @@ type KeyParameters struct {
 	// If you specify a value, it must be between 7 and 30, inclusive. If you do not specify a value, it defaults to 30.
 	// If the KMS key is a multi-Region primary key with replicas, the waiting period begins when the last of its replica keys is deleted. Otherwise, the waiting period begins immediately.
 	// +kubebuilder:validation:Optional
-	DeletionWindowInDays *float64 `json:"deletionWindowInDays,omitempty" tf:"deletion_window_in_days,omitempty"`
+	DeletionWindowInDays *int64 `json:"deletionWindowInDays,omitempty" tf:"deletion_window_in_days,omitempty"`
 
 	// The description of the key as viewed in AWS console.
 	// +kubebuilder:validation:Optional
@@ -181,12 +177,7 @@ type KeyParameters struct {
 
 	// Custom period of time between each rotation date. Must be a number between 90 and 2560 (inclusive).
 	// +kubebuilder:validation:Optional
-	RotationPeriodInDays *float64 `json:"rotationPeriodInDays,omitempty" tf:"rotation_period_in_days,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
+	RotationPeriodInDays *int64 `json:"rotationPeriodInDays,omitempty" tf:"rotation_period_in_days,omitempty"`
 
 	// Identifies the external key that serves as key material for the KMS key in an external key store.
 	// +kubebuilder:validation:Optional

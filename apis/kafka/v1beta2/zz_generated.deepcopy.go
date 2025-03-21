@@ -2607,22 +2607,6 @@ func (in *ServerlessClusterInitParameters) DeepCopyInto(out *ServerlessClusterIn
 		*out = new(string)
 		**out = **in
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.VPCConfig != nil {
 		in, out := &in.VPCConfig, &out.VPCConfig
 		*out = make([]VPCConfigInitParameters, len(*in))
@@ -2770,22 +2754,6 @@ func (in *ServerlessClusterParameters) DeepCopyInto(out *ServerlessClusterParame
 		in, out := &in.Region, &out.Region
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.VPCConfig != nil {
 		in, out := &in.VPCConfig, &out.VPCConfig

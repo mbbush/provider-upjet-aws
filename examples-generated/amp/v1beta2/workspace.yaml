@@ -10,5 +10,3 @@ spec:
   forProvider:
     alias: example
     region: us-west-1
-    tags:
-      Environment: production

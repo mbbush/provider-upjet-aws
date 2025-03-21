@@ -98,7 +98,8 @@ spec:
                     type: boolean
                   instanceCount:
                     description: The number of instances for which to reserve capacity.
-                    type: number
+                    format: int64
+                    type: integer
                   instanceMatchCriteria:
                     description: Indicates the type of instance launches that the
                       Capacity Reservation accepts. Specify either open or targeted.
@@ -125,12 +126,6 @@ spec:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   tenancy:
                     description: Indicates the tenancy of the Capacity Reservation.
                       Specify either default or dedicated.
@@ -175,7 +170,8 @@ spec:
                     type: boolean
                   instanceCount:
                     description: The number of instances for which to reserve capacity.
-                    type: number
+                    format: int64
+                    type: integer
                   instanceMatchCriteria:
                     description: Indicates the type of instance launches that the
                       Capacity Reservation accepts. Specify either open or targeted.
@@ -198,12 +194,6 @@ spec:
                     description: The Amazon Resource Name (ARN) of the cluster placement
                       group in which to create the Capacity Reservation.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   tenancy:
                     description: Indicates the tenancy of the Capacity Reservation.
                       Specify either default or dedicated.
@@ -428,7 +418,8 @@ spec:
                     type: string
                   instanceCount:
                     description: The number of instances for which to reserve capacity.
-                    type: number
+                    format: int64
+                    type: integer
                   instanceMatchCriteria:
                     description: Indicates the type of instance launches that the
                       Capacity Reservation accepts. Specify either open or targeted.

@@ -1129,12 +1129,6 @@ spec:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   transportAttachmentId:
                     description: The ID of the attachment between the two connections.
                     type: string
@@ -1397,12 +1391,6 @@ spec:
                           Possible values are GRE and NO_ENCAP.
                         type: string
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   transportAttachmentId:
                     description: The ID of the attachment between the two connections.
                     type: string
@@ -1668,7 +1656,8 @@ spec:
                     type: string
                   attachmentPolicyRuleNumber:
                     description: The policy rule number associated with the attachment.
-                    type: number
+                    format: int64
+                    type: integer
                   attachmentType:
                     description: The type of attachment.
                     type: string

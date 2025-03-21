@@ -27,10 +27,6 @@ type ConfigurationSetInitParameters struct {
 	// An object that contains information about the suppression list preferences for your account. See suppression_options Block for details.
 	SuppressionOptions *SuppressionOptionsInitParameters `json:"suppressionOptions,omitempty" tf:"suppression_options,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// An object that defines the open and click tracking options for emails that you send using the configuration set. See tracking_options Block for details.
 	TrackingOptions *TrackingOptionsInitParameters `json:"trackingOptions,omitempty" tf:"tracking_options,omitempty"`
 
@@ -94,11 +90,6 @@ type ConfigurationSetParameters struct {
 	// +kubebuilder:validation:Optional
 	SuppressionOptions *SuppressionOptionsParameters `json:"suppressionOptions,omitempty" tf:"suppression_options,omitempty"`
 
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// An object that defines the open and click tracking options for emails that you send using the configuration set. See tracking_options Block for details.
 	// +kubebuilder:validation:Optional
 	TrackingOptions *TrackingOptionsParameters `json:"trackingOptions,omitempty" tf:"tracking_options,omitempty"`
@@ -130,7 +121,7 @@ type DashboardOptionsParameters struct {
 type DeliveryOptionsInitParameters struct {
 
 	// The maximum amount of time, in seconds, that Amazon SES API v2 will attempt delivery of email. If specified, the value must greater than or equal to 300 seconds (5 minutes) and less than or equal to 50400 seconds (840 minutes).
-	MaxDeliverySeconds *float64 `json:"maxDeliverySeconds,omitempty" tf:"max_delivery_seconds,omitempty"`
+	MaxDeliverySeconds *int64 `json:"maxDeliverySeconds,omitempty" tf:"max_delivery_seconds,omitempty"`
 
 	// The name of the dedicated IP pool to associate with the configuration set.
 	SendingPoolName *string `json:"sendingPoolName,omitempty" tf:"sending_pool_name,omitempty"`
@@ -142,7 +133,7 @@ type DeliveryOptionsInitParameters struct {
 type DeliveryOptionsObservation struct {
 
 	// The maximum amount of time, in seconds, that Amazon SES API v2 will attempt delivery of email. If specified, the value must greater than or equal to 300 seconds (5 minutes) and less than or equal to 50400 seconds (840 minutes).
-	MaxDeliverySeconds *float64 `json:"maxDeliverySeconds,omitempty" tf:"max_delivery_seconds,omitempty"`
+	MaxDeliverySeconds *int64 `json:"maxDeliverySeconds,omitempty" tf:"max_delivery_seconds,omitempty"`
 
 	// The name of the dedicated IP pool to associate with the configuration set.
 	SendingPoolName *string `json:"sendingPoolName,omitempty" tf:"sending_pool_name,omitempty"`
@@ -155,7 +146,7 @@ type DeliveryOptionsParameters struct {
 
 	// The maximum amount of time, in seconds, that Amazon SES API v2 will attempt delivery of email. If specified, the value must greater than or equal to 300 seconds (5 minutes) and less than or equal to 50400 seconds (840 minutes).
 	// +kubebuilder:validation:Optional
-	MaxDeliverySeconds *float64 `json:"maxDeliverySeconds,omitempty" tf:"max_delivery_seconds,omitempty"`
+	MaxDeliverySeconds *int64 `json:"maxDeliverySeconds,omitempty" tf:"max_delivery_seconds,omitempty"`
 
 	// The name of the dedicated IP pool to associate with the configuration set.
 	// +kubebuilder:validation:Optional

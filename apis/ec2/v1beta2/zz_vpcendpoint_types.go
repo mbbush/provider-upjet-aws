@@ -153,10 +153,6 @@ type VPCEndpointInitParameters struct {
 	// Subnet configuration for the endpoint, used to select specific IPv4 and/or IPv6 addresses to the endpoint. See subnet_configuration below.
 	SubnetConfiguration []SubnetConfigurationInitParameters `json:"subnetConfiguration,omitempty" tf:"subnet_configuration,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// The VPC endpoint type, Gateway, GatewayLoadBalancer, or Interface. Defaults to Gateway.
 	VPCEndpointType *string `json:"vpcEndpointType,omitempty" tf:"vpc_endpoint_type,omitempty"`
 
@@ -305,11 +301,6 @@ type VPCEndpointParameters struct {
 	// Subnet configuration for the endpoint, used to select specific IPv4 and/or IPv6 addresses to the endpoint. See subnet_configuration below.
 	// +kubebuilder:validation:Optional
 	SubnetConfiguration []SubnetConfigurationParameters `json:"subnetConfiguration,omitempty" tf:"subnet_configuration,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// The VPC endpoint type, Gateway, GatewayLoadBalancer, or Interface. Defaults to Gateway.
 	// +kubebuilder:validation:Optional

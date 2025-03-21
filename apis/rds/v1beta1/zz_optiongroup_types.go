@@ -28,10 +28,6 @@ type OptionGroupInitParameters struct {
 	OptionGroupDescription *string `json:"optionGroupDescription,omitempty" tf:"option_group_description,omitempty"`
 
 	SkipDestroy *bool `json:"skipDestroy,omitempty" tf:"skip_destroy,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type OptionGroupObservation struct {
@@ -90,11 +86,6 @@ type OptionGroupParameters struct {
 
 	// +kubebuilder:validation:Optional
 	SkipDestroy *bool `json:"skipDestroy,omitempty" tf:"skip_destroy,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type OptionInitParameters struct {
@@ -110,7 +101,7 @@ type OptionInitParameters struct {
 	OptionSettings []OptionSettingsInitParameters `json:"optionSettings,omitempty" tf:"option_settings,omitempty"`
 
 	// Port number when connecting to the option (e.g., 11211). Leaving out or removing port from your configuration does not remove or clear a port from the option in AWS. AWS may assign a default port. Not including port in your configuration means that the AWS provider will ignore a previously set value, a value set by AWS, and any port changes.
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// List of VPC Security Groups for which the option is enabled.
 	// +listType=set
@@ -133,7 +124,7 @@ type OptionObservation struct {
 	OptionSettings []OptionSettingsObservation `json:"optionSettings,omitempty" tf:"option_settings,omitempty"`
 
 	// Port number when connecting to the option (e.g., 11211). Leaving out or removing port from your configuration does not remove or clear a port from the option in AWS. AWS may assign a default port. Not including port in your configuration means that the AWS provider will ignore a previously set value, a value set by AWS, and any port changes.
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// List of VPC Security Groups for which the option is enabled.
 	// +listType=set
@@ -160,7 +151,7 @@ type OptionParameters struct {
 
 	// Port number when connecting to the option (e.g., 11211). Leaving out or removing port from your configuration does not remove or clear a port from the option in AWS. AWS may assign a default port. Not including port in your configuration means that the AWS provider will ignore a previously set value, a value set by AWS, and any port changes.
 	// +kubebuilder:validation:Optional
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// List of VPC Security Groups for which the option is enabled.
 	// +kubebuilder:validation:Optional

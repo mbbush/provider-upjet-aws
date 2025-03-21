@@ -12,5 +12,3 @@ spec:
     - instanceType: r4.large.elasticsearch
     elasticsearchVersion: "7.10"
     region: us-west-1
-    tags:
-      Domain: TestDomain

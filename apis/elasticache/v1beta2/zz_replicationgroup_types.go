@@ -164,18 +164,18 @@ type ReplicationGroupInitParameters struct {
 	NotificationTopicArn *string `json:"notificationTopicArn,omitempty" tf:"notification_topic_arn,omitempty"`
 
 	// 00#.
-	NumCacheClusters *float64 `json:"numCacheClusters,omitempty" tf:"num_cache_clusters,omitempty"`
+	NumCacheClusters *int64 `json:"numCacheClusters,omitempty" tf:"num_cache_clusters,omitempty"`
 
 	// Number of node groups (shards) for this Redis replication group.
 	// Changing this number will trigger a resizing operation before other settings modifications.
 	// Conflicts with num_cache_clusters.
-	NumNodeGroups *float64 `json:"numNodeGroups,omitempty" tf:"num_node_groups,omitempty"`
+	NumNodeGroups *int64 `json:"numNodeGroups,omitempty" tf:"num_node_groups,omitempty"`
 
 	// Name of the parameter group to associate with this replication group. If this argument is omitted, the default cache parameter group for the specified engine is used. To enable "cluster mode", i.e., data sharding, use a parameter group that has the parameter cluster-enabled set to true.
 	ParameterGroupName *string `json:"parameterGroupName,omitempty" tf:"parameter_group_name,omitempty"`
 
 	// –  Port number on which each of the cache nodes will accept connections. For Memcache the default is 11211, and for Redis the default port is 6379.
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// List of EC2 availability zones in which the replication group's cache clusters will be created. The order of the availability zones in the list is considered. The first item in the list will be the primary node. Ignored when updating.
 	PreferredCacheClusterAzs []*string `json:"preferredCacheClusterAzs,omitempty" tf:"preferred_cache_cluster_azs,omitempty"`
@@ -185,7 +185,7 @@ type ReplicationGroupInitParameters struct {
 	// Valid values are 0 to 5.
 	// Conflicts with num_cache_clusters.
 	// Can only be set if num_node_groups is set.
-	ReplicasPerNodeGroup *float64 `json:"replicasPerNodeGroup,omitempty" tf:"replicas_per_node_group,omitempty"`
+	ReplicasPerNodeGroup *int64 `json:"replicasPerNodeGroup,omitempty" tf:"replicas_per_node_group,omitempty"`
 
 	// References to SecurityGroup in ec2 to populate securityGroupIds.
 	// +kubebuilder:validation:Optional
@@ -214,7 +214,7 @@ type ReplicationGroupInitParameters struct {
 	SnapshotName *string `json:"snapshotName,omitempty" tf:"snapshot_name,omitempty"`
 
 	// Number of days for which ElastiCache will retain automatic cache cluster snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, then a snapshot that was taken today will be retained for 5 days before being deleted. If the value of snapshot_retention_limit is set to zero (0), backups are turned off. Please note that setting a snapshot_retention_limit is not supported on cache.t1.micro cache nodes
-	SnapshotRetentionLimit *float64 `json:"snapshotRetentionLimit,omitempty" tf:"snapshot_retention_limit,omitempty"`
+	SnapshotRetentionLimit *int64 `json:"snapshotRetentionLimit,omitempty" tf:"snapshot_retention_limit,omitempty"`
 
 	// Daily time range (in UTC) during which ElastiCache will begin taking a daily snapshot of your cache cluster. The minimum snapshot window is a 60 minute period. Example: 05:00-09:00
 	SnapshotWindow *string `json:"snapshotWindow,omitempty" tf:"snapshot_window,omitempty"`
@@ -230,10 +230,6 @@ type ReplicationGroupInitParameters struct {
 	// Selector for a SubnetGroup in elasticache to populate subnetGroupName.
 	// +kubebuilder:validation:Optional
 	SubnetGroupNameSelector *v1.Selector `json:"subnetGroupNameSelector,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Whether to enable encryption in transit.
 	// Changing this argument with an engine_version < 7.0.5 will force a replacement.
@@ -349,18 +345,18 @@ type ReplicationGroupObservation struct {
 	NotificationTopicArn *string `json:"notificationTopicArn,omitempty" tf:"notification_topic_arn,omitempty"`
 
 	// 00#.
-	NumCacheClusters *float64 `json:"numCacheClusters,omitempty" tf:"num_cache_clusters,omitempty"`
+	NumCacheClusters *int64 `json:"numCacheClusters,omitempty" tf:"num_cache_clusters,omitempty"`
 
 	// Number of node groups (shards) for this Redis replication group.
 	// Changing this number will trigger a resizing operation before other settings modifications.
 	// Conflicts with num_cache_clusters.
-	NumNodeGroups *float64 `json:"numNodeGroups,omitempty" tf:"num_node_groups,omitempty"`
+	NumNodeGroups *int64 `json:"numNodeGroups,omitempty" tf:"num_node_groups,omitempty"`
 
 	// Name of the parameter group to associate with this replication group. If this argument is omitted, the default cache parameter group for the specified engine is used. To enable "cluster mode", i.e., data sharding, use a parameter group that has the parameter cluster-enabled set to true.
 	ParameterGroupName *string `json:"parameterGroupName,omitempty" tf:"parameter_group_name,omitempty"`
 
 	// –  Port number on which each of the cache nodes will accept connections. For Memcache the default is 11211, and for Redis the default port is 6379.
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// List of EC2 availability zones in which the replication group's cache clusters will be created. The order of the availability zones in the list is considered. The first item in the list will be the primary node. Ignored when updating.
 	PreferredCacheClusterAzs []*string `json:"preferredCacheClusterAzs,omitempty" tf:"preferred_cache_cluster_azs,omitempty"`
@@ -376,7 +372,7 @@ type ReplicationGroupObservation struct {
 	// Valid values are 0 to 5.
 	// Conflicts with num_cache_clusters.
 	// Can only be set if num_node_groups is set.
-	ReplicasPerNodeGroup *float64 `json:"replicasPerNodeGroup,omitempty" tf:"replicas_per_node_group,omitempty"`
+	ReplicasPerNodeGroup *int64 `json:"replicasPerNodeGroup,omitempty" tf:"replicas_per_node_group,omitempty"`
 
 	// IDs of one or more Amazon VPC security groups associated with this replication group. Use this parameter only when you are creating a replication group in an Amazon Virtual Private Cloud.
 	// +listType=set
@@ -394,7 +390,7 @@ type ReplicationGroupObservation struct {
 	SnapshotName *string `json:"snapshotName,omitempty" tf:"snapshot_name,omitempty"`
 
 	// Number of days for which ElastiCache will retain automatic cache cluster snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, then a snapshot that was taken today will be retained for 5 days before being deleted. If the value of snapshot_retention_limit is set to zero (0), backups are turned off. Please note that setting a snapshot_retention_limit is not supported on cache.t1.micro cache nodes
-	SnapshotRetentionLimit *float64 `json:"snapshotRetentionLimit,omitempty" tf:"snapshot_retention_limit,omitempty"`
+	SnapshotRetentionLimit *int64 `json:"snapshotRetentionLimit,omitempty" tf:"snapshot_retention_limit,omitempty"`
 
 	// Daily time range (in UTC) during which ElastiCache will begin taking a daily snapshot of your cache cluster. The minimum snapshot window is a 60 minute period. Example: 05:00-09:00
 	SnapshotWindow *string `json:"snapshotWindow,omitempty" tf:"snapshot_window,omitempty"`
@@ -556,13 +552,13 @@ type ReplicationGroupParameters struct {
 
 	// 00#.
 	// +kubebuilder:validation:Optional
-	NumCacheClusters *float64 `json:"numCacheClusters,omitempty" tf:"num_cache_clusters,omitempty"`
+	NumCacheClusters *int64 `json:"numCacheClusters,omitempty" tf:"num_cache_clusters,omitempty"`
 
 	// Number of node groups (shards) for this Redis replication group.
 	// Changing this number will trigger a resizing operation before other settings modifications.
 	// Conflicts with num_cache_clusters.
 	// +kubebuilder:validation:Optional
-	NumNodeGroups *float64 `json:"numNodeGroups,omitempty" tf:"num_node_groups,omitempty"`
+	NumNodeGroups *int64 `json:"numNodeGroups,omitempty" tf:"num_node_groups,omitempty"`
 
 	// Name of the parameter group to associate with this replication group. If this argument is omitted, the default cache parameter group for the specified engine is used. To enable "cluster mode", i.e., data sharding, use a parameter group that has the parameter cluster-enabled set to true.
 	// +kubebuilder:validation:Optional
@@ -570,7 +566,7 @@ type ReplicationGroupParameters struct {
 
 	// –  Port number on which each of the cache nodes will accept connections. For Memcache the default is 11211, and for Redis the default port is 6379.
 	// +kubebuilder:validation:Optional
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// List of EC2 availability zones in which the replication group's cache clusters will be created. The order of the availability zones in the list is considered. The first item in the list will be the primary node. Ignored when updating.
 	// +kubebuilder:validation:Optional
@@ -587,7 +583,7 @@ type ReplicationGroupParameters struct {
 	// Conflicts with num_cache_clusters.
 	// Can only be set if num_node_groups is set.
 	// +kubebuilder:validation:Optional
-	ReplicasPerNodeGroup *float64 `json:"replicasPerNodeGroup,omitempty" tf:"replicas_per_node_group,omitempty"`
+	ReplicasPerNodeGroup *int64 `json:"replicasPerNodeGroup,omitempty" tf:"replicas_per_node_group,omitempty"`
 
 	// References to SecurityGroup in ec2 to populate securityGroupIds.
 	// +kubebuilder:validation:Optional
@@ -621,7 +617,7 @@ type ReplicationGroupParameters struct {
 
 	// Number of days for which ElastiCache will retain automatic cache cluster snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, then a snapshot that was taken today will be retained for 5 days before being deleted. If the value of snapshot_retention_limit is set to zero (0), backups are turned off. Please note that setting a snapshot_retention_limit is not supported on cache.t1.micro cache nodes
 	// +kubebuilder:validation:Optional
-	SnapshotRetentionLimit *float64 `json:"snapshotRetentionLimit,omitempty" tf:"snapshot_retention_limit,omitempty"`
+	SnapshotRetentionLimit *int64 `json:"snapshotRetentionLimit,omitempty" tf:"snapshot_retention_limit,omitempty"`
 
 	// Daily time range (in UTC) during which ElastiCache will begin taking a daily snapshot of your cache cluster. The minimum snapshot window is a 60 minute period. Example: 05:00-09:00
 	// +kubebuilder:validation:Optional
@@ -639,11 +635,6 @@ type ReplicationGroupParameters struct {
 	// Selector for a SubnetGroup in elasticache to populate subnetGroupName.
 	// +kubebuilder:validation:Optional
 	SubnetGroupNameSelector *v1.Selector `json:"subnetGroupNameSelector,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Whether to enable encryption in transit.
 	// Changing this argument with an engine_version < 7.0.5 will force a replacement.

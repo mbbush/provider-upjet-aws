@@ -104,12 +104,6 @@ spec:
                     description: The version of the application to deploy. If not
                       supplied, deploys the latest version.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -152,12 +146,6 @@ spec:
                     description: The version of the application to deploy. If not
                       supplied, deploys the latest version.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:

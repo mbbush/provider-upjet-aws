@@ -21,10 +21,6 @@ type TestGridProjectInitParameters struct {
 	// The name of the Selenium testing project.
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// The VPC security groups and subnets that are attached to a project. See VPC Config below.
 	VPCConfig *VPCConfigInitParameters `json:"vpcConfig,omitempty" tf:"vpc_config,omitempty"`
 }
@@ -68,11 +64,6 @@ type TestGridProjectParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// The VPC security groups and subnets that are attached to a project. See VPC Config below.
 	// +kubebuilder:validation:Optional

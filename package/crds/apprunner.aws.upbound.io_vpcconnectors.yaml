@@ -252,12 +252,6 @@ spec:
                       type: string
                     type: array
                     x-kubernetes-list-type: set
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   vpcConnectorName:
                     description: Name for the VPC connector.
                     type: string
@@ -452,12 +446,6 @@ spec:
                       type: string
                     type: array
                     x-kubernetes-list-type: set
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   vpcConnectorName:
                     description: Name for the VPC connector.
                     type: string
@@ -689,7 +677,8 @@ spec:
                     description: 'The revision of VPC connector. It''s unique among
                       all the active connectors ("Status": "ACTIVE") that share the
                       same Name.'
-                    type: number
+                    format: int64
+                    type: integer
                 type: object
               conditions:
                 description: Conditions of the resource.

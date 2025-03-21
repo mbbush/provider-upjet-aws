@@ -19,7 +19,7 @@ type LicenseConfigurationInitParameters struct {
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
 
 	// Number of licenses managed by the license configuration.
-	LicenseCount *float64 `json:"licenseCount,omitempty" tf:"license_count,omitempty"`
+	LicenseCount *int64 `json:"licenseCount,omitempty" tf:"license_count,omitempty"`
 
 	// Sets the number of available licenses as a hard limit.
 	LicenseCountHardLimit *bool `json:"licenseCountHardLimit,omitempty" tf:"license_count_hard_limit,omitempty"`
@@ -32,10 +32,6 @@ type LicenseConfigurationInitParameters struct {
 
 	// Name of the license configuration.
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type LicenseConfigurationObservation struct {
@@ -50,7 +46,7 @@ type LicenseConfigurationObservation struct {
 	ID *string `json:"id,omitempty" tf:"id,omitempty"`
 
 	// Number of licenses managed by the license configuration.
-	LicenseCount *float64 `json:"licenseCount,omitempty" tf:"license_count,omitempty"`
+	LicenseCount *int64 `json:"licenseCount,omitempty" tf:"license_count,omitempty"`
 
 	// Sets the number of available licenses as a hard limit.
 	LicenseCountHardLimit *bool `json:"licenseCountHardLimit,omitempty" tf:"license_count_hard_limit,omitempty"`
@@ -84,7 +80,7 @@ type LicenseConfigurationParameters struct {
 
 	// Number of licenses managed by the license configuration.
 	// +kubebuilder:validation:Optional
-	LicenseCount *float64 `json:"licenseCount,omitempty" tf:"license_count,omitempty"`
+	LicenseCount *int64 `json:"licenseCount,omitempty" tf:"license_count,omitempty"`
 
 	// Sets the number of available licenses as a hard limit.
 	// +kubebuilder:validation:Optional
@@ -106,11 +102,6 @@ type LicenseConfigurationParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // LicenseConfigurationSpec defines the desired state of LicenseConfiguration

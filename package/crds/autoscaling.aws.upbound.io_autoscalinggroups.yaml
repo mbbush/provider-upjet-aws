@@ -7858,7 +7858,8 @@ spec:
                   defaultCooldown:
                     description: Amount of time, in seconds, after a scaling activity
                       completes before another scaling activity can start.
-                    type: number
+                    format: int64
+                    type: integer
                   defaultInstanceWarmup:
                     description: Amount of time, in seconds, until a newly launched
                       instance can contribute to the Amazon CloudWatch metrics. This
@@ -7868,13 +7869,15 @@ spec:
                       that it takes for resource consumption to become stable after
                       an instance reaches the InService state. (See Set the default
                       instance warmup for an Auto Scaling group)
-                    type: number
+                    format: int64
+                    type: integer
                   desiredCapacity:
                     description: |-
                       Number of Amazon EC2 instances that
                       should be running in the group. (See also Waiting for
                       Capacity below.)
-                    type: number
+                    format: int64
+                    type: integer
                   desiredCapacityType:
                     description: 'The unit of measurement for the value specified
                       for desired_capacity. Supported for attribute-based instance
@@ -7901,7 +7904,8 @@ spec:
                   healthCheckGracePeriod:
                     description: Time (in seconds) after instance comes into service
                       before checking health.
-                    type: number
+                    format: int64
+                    type: integer
                   healthCheckType:
                     description: '"EC2" or "ELB". Controls how health checking is
                       done.'
@@ -7925,7 +7929,8 @@ spec:
                         defaultResult:
                           type: string
                         heartbeatTimeout:
-                          type: number
+                          format: int64
+                          type: integer
                         lifecycleTransition:
                           type: string
                         name:
@@ -7952,13 +7957,15 @@ spec:
                           your workload when an instance refresh is in place, as a
                           percentage of the desired capacity of the Auto Scaling group.
                           Values must be between 100 and 200, defaults to 100.
-                        type: number
+                        format: int64
+                        type: integer
                       minHealthyPercentage:
                         description: Amount of capacity in the Auto Scaling group
                           that must remain healthy during an instance refresh to allow
                           the operation to continue, as a percentage of the desired
                           capacity of the Auto Scaling group. Defaults to 90.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   instanceRefresh:
                     description: |-
@@ -7994,7 +8001,8 @@ spec:
                               Values must be unique and in ascending order. To replace
                               all instances, the final number must be 100.
                             items:
-                              type: number
+                              format: int64
+                              type: integer
                             type: array
                           instanceWarmup:
                             description: Number of seconds until a newly launched
@@ -8009,14 +8017,16 @@ spec:
                               as a percentage of the desired capacity of the Auto
                               Scaling group. Values must be between 100 and 200, defaults
                               to 100.
-                            type: number
+                            format: int64
+                            type: integer
                           minHealthyPercentage:
                             description: Amount of capacity in the Auto Scaling group
                               that must remain healthy during an instance refresh
                               to allow the operation to continue, as a percentage
                               of the desired capacity of the Auto Scaling group. Defaults
                               to 90.
-                            type: number
+                            format: int64
+                            type: integer
                           scaleInProtectedInstances:
                             description: Behavior when encountering instances protected
                               from scale in are found. Available behaviors are Refresh,
@@ -8222,10 +8232,12 @@ spec:
                     description: Maximum amount of time, in seconds, that an instance
                       can be in service, values must be either equal to 0 or between
                       86400 and 31536000 seconds.
-                    type: number
+                    format: int64
+                    type: integer
                   maxSize:
                     description: Maximum size of the Auto Scaling Group.
-                    type: number
+                    format: int64
+                    type: integer
                   metricsGranularity:
                     description: Granularity to associate with the metrics to collect.
                       The only valid value is 1Minute. Default is 1Minute.
@@ -8234,12 +8246,14 @@ spec:
                     description: |-
                       Updates will not wait on ELB instance number changes.
                       (See also Waiting for Capacity below.)
-                    type: number
+                    format: int64
+                    type: integer
                   minSize:
                     description: |-
                       Minimum size of the Auto Scaling Group.
                       (See also Waiting for Capacity below.)
-                    type: number
+                    format: int64
+                    type: integer
                   mixedInstancesPolicy:
                     description: Configuration block containing settings to define
                       launch targets for Auto Scaling groups. See Mixed Instances
@@ -8259,12 +8273,14 @@ spec:
                             description: 'Absolute minimum amount of desired capacity
                               that must be fulfilled by on-demand instances. Default:
                               0.'
-                            type: number
+                            format: int64
+                            type: integer
                           onDemandPercentageAboveBaseCapacity:
                             description: 'Percentage split between on-demand and Spot
                               instances above the base on-demand capacity. Default:
                               100.'
-                            type: number
+                            format: int64
+                            type: integer
                           spotAllocationStrategy:
                             description: 'How to allocate capacity across the Spot
                               pools. Valid values: lowest-price, capacity-optimized,
@@ -8279,7 +8295,8 @@ spec:
                               with spot_allocation_strategy set to lowest-price. Otherwise
                               it must be set to 0, if it has been defined before.
                               Default: 2.'
-                            type: number
+                            format: int64
+                            type: integer
                           spotMaxPrice:
                             description: 'Maximum price per unit hour that the user
                               is willing to pay for the Spot instances. Default: an
@@ -8406,10 +8423,12 @@ spec:
                                       properties:
                                         max:
                                           description: Maximum.
-                                          type: number
+                                          format: int64
+                                          type: integer
                                         min:
                                           description: Minimum.
-                                          type: number
+                                          format: int64
+                                          type: integer
                                       type: object
                                     acceleratorManufacturers:
                                       description: List of accelerator manufacturer
@@ -8432,10 +8451,12 @@ spec:
                                       properties:
                                         max:
                                           description: Maximum.
-                                          type: number
+                                          format: int64
+                                          type: integer
                                         min:
                                           description: Minimum.
-                                          type: number
+                                          format: int64
+                                          type: integer
                                       type: object
                                     acceleratorTypes:
                                       description: List of accelerator types. Default
@@ -8477,10 +8498,12 @@ spec:
                                       properties:
                                         max:
                                           description: Maximum.
-                                          type: number
+                                          format: int64
+                                          type: integer
                                         min:
                                           description: Minimum.
-                                          type: number
+                                          format: int64
+                                          type: integer
                                       type: object
                                     burstablePerformance:
                                       description: Indicate whether burstable performance
@@ -8544,7 +8567,8 @@ spec:
                                         EC2 Auto Scaling interprets as a percentage.
                                         To turn off price protection, specify a high
                                         value, such as 999999. Conflicts with spot_max_price_percentage_over_lowest_price
-                                      type: number
+                                      format: int64
+                                      type: integer
                                     memoryGibPerVcpu:
                                       description: Block describing the minimum and
                                         maximum amount of memory (GiB) per vCPU. Default
@@ -8564,10 +8588,12 @@ spec:
                                       properties:
                                         max:
                                           description: Maximum.
-                                          type: number
+                                          format: int64
+                                          type: integer
                                         min:
                                           description: Minimum.
-                                          type: number
+                                          format: int64
+                                          type: integer
                                       type: object
                                     networkBandwidthGbps:
                                       description: Block describing the minimum and
@@ -8589,10 +8615,12 @@ spec:
                                       properties:
                                         max:
                                           description: Maximum.
-                                          type: number
+                                          format: int64
+                                          type: integer
                                         min:
                                           description: Minimum.
-                                          type: number
+                                          format: int64
+                                          type: integer
                                       type: object
                                     onDemandMaxPricePercentageOverLowestPrice:
                                       description: Price protection threshold for
@@ -8608,7 +8636,8 @@ spec:
                                         a percentage. To turn off price protection,
                                         specify a high value, such as 999999. Default
                                         is 20.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                     requireHibernateSupport:
                                       description: Indicate whether instance types
                                         must support On-Demand Instance Hibernation,
@@ -8628,7 +8657,8 @@ spec:
                                         To turn off price protection, specify a high
                                         value, such as 999999. Default is 100. Conflicts
                                         with max_spot_price_as_percentage_of_optimal_on_demand_price
-                                      type: number
+                                      format: int64
+                                      type: integer
                                     totalLocalStorageGb:
                                       description: Block describing the minimum and
                                         maximum total local storage (GB). Default
@@ -8647,10 +8677,12 @@ spec:
                                       properties:
                                         max:
                                           description: Maximum.
-                                          type: number
+                                          format: int64
+                                          type: integer
                                         min:
                                           description: Minimum.
-                                          type: number
+                                          format: int64
+                                          type: integer
                                       type: object
                                   type: object
                                 instanceType:
@@ -9084,7 +9116,8 @@ spec:
                       (Takes
                       precedence over min_elb_capacity behavior.)
                       (See also Waiting for Capacity below.)
-                    type: number
+                    format: int64
+                    type: integer
                   warmPool:
                     description: |-
                       If this block is configured, add a Warm Pool
@@ -9105,12 +9138,14 @@ spec:
                         description: Total maximum number of instances that are allowed
                           to be in the warm pool or in any state except Terminated
                           for the Auto Scaling group.
-                        type: number
+                        format: int64
+                        type: integer
                       minSize:
                         description: |-
                           Minimum size of the Auto Scaling Group.
                           (See also Waiting for Capacity below.)
-                        type: number
+                        format: int64
+                        type: integer
                       poolState:
                         description: 'Sets the instance state to transition to after
                           the lifecycle hooks finish. Valid values are: Stopped (default),
@@ -9164,7 +9199,8 @@ spec:
                   defaultCooldown:
                     description: Amount of time, in seconds, after a scaling activity
                       completes before another scaling activity can start.
-                    type: number
+                    format: int64
+                    type: integer
                   defaultInstanceWarmup:
                     description: Amount of time, in seconds, until a newly launched
                       instance can contribute to the Amazon CloudWatch metrics. This
@@ -9174,13 +9210,15 @@ spec:
                       that it takes for resource consumption to become stable after
                       an instance reaches the InService state. (See Set the default
                       instance warmup for an Auto Scaling group)
-                    type: number
+                    format: int64
+                    type: integer
                   desiredCapacity:
                     description: |-
                       Number of Amazon EC2 instances that
                       should be running in the group. (See also Waiting for
                       Capacity below.)
-                    type: number
+                    format: int64
+                    type: integer
                   desiredCapacityType:
                     description: 'The unit of measurement for the value specified
                       for desired_capacity. Supported for attribute-based instance
@@ -9207,7 +9245,8 @@ spec:
                   healthCheckGracePeriod:
                     description: Time (in seconds) after instance comes into service
                       before checking health.
-                    type: number
+                    format: int64
+                    type: integer
                   healthCheckType:
                     description: '"EC2" or "ELB". Controls how health checking is
                       done.'
@@ -9231,7 +9270,8 @@ spec:
                         defaultResult:
                           type: string
                         heartbeatTimeout:
-                          type: number
+                          format: int64
+                          type: integer
                         lifecycleTransition:
                           type: string
                         name:
@@ -9258,13 +9298,15 @@ spec:
                           your workload when an instance refresh is in place, as a
                           percentage of the desired capacity of the Auto Scaling group.
                           Values must be between 100 and 200, defaults to 100.
-                        type: number
+                        format: int64
+                        type: integer
                       minHealthyPercentage:
                         description: Amount of capacity in the Auto Scaling group
                           that must remain healthy during an instance refresh to allow
                           the operation to continue, as a percentage of the desired
                           capacity of the Auto Scaling group. Defaults to 90.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   instanceRefresh:
                     description: |-
@@ -9300,7 +9342,8 @@ spec:
                               Values must be unique and in ascending order. To replace
                               all instances, the final number must be 100.
                             items:
-                              type: number
+                              format: int64
+                              type: integer
                             type: array
                           instanceWarmup:
                             description: Number of seconds until a newly launched
@@ -9315,14 +9358,16 @@ spec:
                               as a percentage of the desired capacity of the Auto
                               Scaling group. Values must be between 100 and 200, defaults
                               to 100.
-                            type: number
+                            format: int64
+                            type: integer
                           minHealthyPercentage:
                             description: Amount of capacity in the Auto Scaling group
                               that must remain healthy during an instance refresh
                               to allow the operation to continue, as a percentage
                               of the desired capacity of the Auto Scaling group. Defaults
                               to 90.
-                            type: number
+                            format: int64
+                            type: integer
                           scaleInProtectedInstances:
                             description: Behavior when encountering instances protected
                               from scale in are found. Available behaviors are Refresh,
@@ -9528,10 +9573,12 @@ spec:
                     description: Maximum amount of time, in seconds, that an instance
                       can be in service, values must be either equal to 0 or between
                       86400 and 31536000 seconds.
-                    type: number
+                    format: int64
+                    type: integer
                   maxSize:
                     description: Maximum size of the Auto Scaling Group.
-                    type: number
+                    format: int64
+                    type: integer
                   metricsGranularity:
                     description: Granularity to associate with the metrics to collect.
                       The only valid value is 1Minute. Default is 1Minute.
@@ -9540,12 +9587,14 @@ spec:
                     description: |-
                       Updates will not wait on ELB instance number changes.
                       (See also Waiting for Capacity below.)
-                    type: number
+                    format: int64
+                    type: integer
                   minSize:
                     description: |-
                       Minimum size of the Auto Scaling Group.
                       (See also Waiting for Capacity below.)
-                    type: number
+                    format: int64
+                    type: integer
                   mixedInstancesPolicy:
                     description: Configuration block containing settings to define
                       launch targets for Auto Scaling groups. See Mixed Instances
@@ -9565,12 +9614,14 @@ spec:
                             description: 'Absolute minimum amount of desired capacity
                               that must be fulfilled by on-demand instances. Default:
                               0.'
-                            type: number
+                            format: int64
+                            type: integer
                           onDemandPercentageAboveBaseCapacity:
                             description: 'Percentage split between on-demand and Spot
                               instances above the base on-demand capacity. Default:
                               100.'
-                            type: number
+                            format: int64
+                            type: integer
                           spotAllocationStrategy:
                             description: 'How to allocate capacity across the Spot
                               pools. Valid values: lowest-price, capacity-optimized,
@@ -9585,7 +9636,8 @@ spec:
                               with spot_allocation_strategy set to lowest-price. Otherwise
                               it must be set to 0, if it has been defined before.
                               Default: 2.'
-                            type: number
+                            format: int64
+                            type: integer
                           spotMaxPrice:
                             description: 'Maximum price per unit hour that the user
                               is willing to pay for the Spot instances. Default: an
@@ -9712,10 +9764,12 @@ spec:
                                       properties:
                                         max:
                                           description: Maximum.
-                                          type: number
+                                          format: int64
+                                          type: integer
                                         min:
                                           description: Minimum.
-                                          type: number
+                                          format: int64
+                                          type: integer
                                       type: object
                                     acceleratorManufacturers:
                                       description: List of accelerator manufacturer
@@ -9738,10 +9792,12 @@ spec:
                                       properties:
                                         max:
                                           description: Maximum.
-                                          type: number
+                                          format: int64
+                                          type: integer
                                         min:
                                           description: Minimum.
-                                          type: number
+                                          format: int64
+                                          type: integer
                                       type: object
                                     acceleratorTypes:
                                       description: List of accelerator types. Default
@@ -9783,10 +9839,12 @@ spec:
                                       properties:
                                         max:
                                           description: Maximum.
-                                          type: number
+                                          format: int64
+                                          type: integer
                                         min:
                                           description: Minimum.
-                                          type: number
+                                          format: int64
+                                          type: integer
                                       type: object
                                     burstablePerformance:
                                       description: Indicate whether burstable performance
@@ -9850,7 +9908,8 @@ spec:
                                         EC2 Auto Scaling interprets as a percentage.
                                         To turn off price protection, specify a high
                                         value, such as 999999. Conflicts with spot_max_price_percentage_over_lowest_price
-                                      type: number
+                                      format: int64
+                                      type: integer
                                     memoryGibPerVcpu:
                                       description: Block describing the minimum and
                                         maximum amount of memory (GiB) per vCPU. Default
@@ -9870,10 +9929,12 @@ spec:
                                       properties:
                                         max:
                                           description: Maximum.
-                                          type: number
+                                          format: int64
+                                          type: integer
                                         min:
                                           description: Minimum.
-                                          type: number
+                                          format: int64
+                                          type: integer
                                       type: object
                                     networkBandwidthGbps:
                                       description: Block describing the minimum and
@@ -9895,10 +9956,12 @@ spec:
                                       properties:
                                         max:
                                           description: Maximum.
-                                          type: number
+                                          format: int64
+                                          type: integer
                                         min:
                                           description: Minimum.
-                                          type: number
+                                          format: int64
+                                          type: integer
                                       type: object
                                     onDemandMaxPricePercentageOverLowestPrice:
                                       description: Price protection threshold for
@@ -9914,7 +9977,8 @@ spec:
                                         a percentage. To turn off price protection,
                                         specify a high value, such as 999999. Default
                                         is 20.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                     requireHibernateSupport:
                                       description: Indicate whether instance types
                                         must support On-Demand Instance Hibernation,
@@ -9934,7 +9998,8 @@ spec:
                                         To turn off price protection, specify a high
                                         value, such as 999999. Default is 100. Conflicts
                                         with max_spot_price_as_percentage_of_optimal_on_demand_price
-                                      type: number
+                                      format: int64
+                                      type: integer
                                     totalLocalStorageGb:
                                       description: Block describing the minimum and
                                         maximum total local storage (GB). Default
@@ -9953,10 +10018,12 @@ spec:
                                       properties:
                                         max:
                                           description: Maximum.
-                                          type: number
+                                          format: int64
+                                          type: integer
                                         min:
                                           description: Minimum.
-                                          type: number
+                                          format: int64
+                                          type: integer
                                       type: object
                                   type: object
                                 instanceType:
@@ -10386,7 +10453,8 @@ spec:
                       (Takes
                       precedence over min_elb_capacity behavior.)
                       (See also Waiting for Capacity below.)
-                    type: number
+                    format: int64
+                    type: integer
                   warmPool:
                     description: |-
                       If this block is configured, add a Warm Pool
@@ -10407,12 +10475,14 @@ spec:
                         description: Total maximum number of instances that are allowed
                           to be in the warm pool or in any state except Terminated
                           for the Auto Scaling group.
-                        type: number
+                        format: int64
+                        type: integer
                       minSize:
                         description: |-
                           Minimum size of the Auto Scaling Group.
                           (See also Waiting for Capacity below.)
-                        type: number
+                        format: int64
+                        type: integer
                       poolState:
                         description: 'Sets the instance state to transition to after
                           the lifecycle hooks finish. Valid values are: Stopped (default),
@@ -10635,7 +10705,8 @@ spec:
                   defaultCooldown:
                     description: Amount of time, in seconds, after a scaling activity
                       completes before another scaling activity can start.
-                    type: number
+                    format: int64
+                    type: integer
                   defaultInstanceWarmup:
                     description: Amount of time, in seconds, until a newly launched
                       instance can contribute to the Amazon CloudWatch metrics. This
@@ -10645,13 +10716,15 @@ spec:
                       that it takes for resource consumption to become stable after
                       an instance reaches the InService state. (See Set the default
                       instance warmup for an Auto Scaling group)
-                    type: number
+                    format: int64
+                    type: integer
                   desiredCapacity:
                     description: |-
                       Number of Amazon EC2 instances that
                       should be running in the group. (See also Waiting for
                       Capacity below.)
-                    type: number
+                    format: int64
+                    type: integer
                   desiredCapacityType:
                     description: 'The unit of measurement for the value specified
                       for desired_capacity. Supported for attribute-based instance
@@ -10678,7 +10751,8 @@ spec:
                   healthCheckGracePeriod:
                     description: Time (in seconds) after instance comes into service
                       before checking health.
-                    type: number
+                    format: int64
+                    type: integer
                   healthCheckType:
                     description: '"EC2" or "ELB". Controls how health checking is
                       done.'
@@ -10705,7 +10779,8 @@ spec:
                         defaultResult:
                           type: string
                         heartbeatTimeout:
-                          type: number
+                          format: int64
+                          type: integer
                         lifecycleTransition:
                           type: string
                         name:
@@ -10732,13 +10807,15 @@ spec:
                           your workload when an instance refresh is in place, as a
                           percentage of the desired capacity of the Auto Scaling group.
                           Values must be between 100 and 200, defaults to 100.
-                        type: number
+                        format: int64
+                        type: integer
                       minHealthyPercentage:
                         description: Amount of capacity in the Auto Scaling group
                           that must remain healthy during an instance refresh to allow
                           the operation to continue, as a percentage of the desired
                           capacity of the Auto Scaling group. Defaults to 90.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   instanceRefresh:
                     description: |-
@@ -10774,7 +10851,8 @@ spec:
                               Values must be unique and in ascending order. To replace
                               all instances, the final number must be 100.
                             items:
-                              type: number
+                              format: int64
+                              type: integer
                             type: array
                           instanceWarmup:
                             description: Number of seconds until a newly launched
@@ -10789,14 +10867,16 @@ spec:
                               as a percentage of the desired capacity of the Auto
                               Scaling group. Values must be between 100 and 200, defaults
                               to 100.
-                            type: number
+                            format: int64
+                            type: integer
                           minHealthyPercentage:
                             description: Amount of capacity in the Auto Scaling group
                               that must remain healthy during an instance refresh
                               to allow the operation to continue, as a percentage
                               of the desired capacity of the Auto Scaling group. Defaults
                               to 90.
-                            type: number
+                            format: int64
+                            type: integer
                           scaleInProtectedInstances:
                             description: Behavior when encountering instances protected
                               from scale in are found. Available behaviors are Refresh,
@@ -10858,10 +10938,12 @@ spec:
                     description: Maximum amount of time, in seconds, that an instance
                       can be in service, values must be either equal to 0 or between
                       86400 and 31536000 seconds.
-                    type: number
+                    format: int64
+                    type: integer
                   maxSize:
                     description: Maximum size of the Auto Scaling Group.
-                    type: number
+                    format: int64
+                    type: integer
                   metricsGranularity:
                     description: Granularity to associate with the metrics to collect.
                       The only valid value is 1Minute. Default is 1Minute.
@@ -10870,12 +10952,14 @@ spec:
                     description: |-
                       Updates will not wait on ELB instance number changes.
                       (See also Waiting for Capacity below.)
-                    type: number
+                    format: int64
+                    type: integer
                   minSize:
                     description: |-
                       Minimum size of the Auto Scaling Group.
                       (See also Waiting for Capacity below.)
-                    type: number
+                    format: int64
+                    type: integer
                   mixedInstancesPolicy:
                     description: Configuration block containing settings to define
                       launch targets for Auto Scaling groups. See Mixed Instances
@@ -10895,12 +10979,14 @@ spec:
                             description: 'Absolute minimum amount of desired capacity
                               that must be fulfilled by on-demand instances. Default:
                               0.'
-                            type: number
+                            format: int64
+                            type: integer
                           onDemandPercentageAboveBaseCapacity:
                             description: 'Percentage split between on-demand and Spot
                               instances above the base on-demand capacity. Default:
                               100.'
-                            type: number
+                            format: int64
+                            type: integer
                           spotAllocationStrategy:
                             description: 'How to allocate capacity across the Spot
                               pools. Valid values: lowest-price, capacity-optimized,
@@ -10915,7 +11001,8 @@ spec:
                               with spot_allocation_strategy set to lowest-price. Otherwise
                               it must be set to 0, if it has been defined before.
                               Default: 2.'
-                            type: number
+                            format: int64
+                            type: integer
                           spotMaxPrice:
                             description: 'Maximum price per unit hour that the user
                               is willing to pay for the Spot instances. Default: an
@@ -10966,10 +11053,12 @@ spec:
                                       properties:
                                         max:
                                           description: Maximum.
-                                          type: number
+                                          format: int64
+                                          type: integer
                                         min:
                                           description: Minimum.
-                                          type: number
+                                          format: int64
+                                          type: integer
                                       type: object
                                     acceleratorManufacturers:
                                       description: List of accelerator manufacturer
@@ -10992,10 +11081,12 @@ spec:
                                       properties:
                                         max:
                                           description: Maximum.
-                                          type: number
+                                          format: int64
+                                          type: integer
                                         min:
                                           description: Minimum.
-                                          type: number
+                                          format: int64
+                                          type: integer
                                       type: object
                                     acceleratorTypes:
                                       description: List of accelerator types. Default
@@ -11037,10 +11128,12 @@ spec:
                                       properties:
                                         max:
                                           description: Maximum.
-                                          type: number
+                                          format: int64
+                                          type: integer
                                         min:
                                           description: Minimum.
-                                          type: number
+                                          format: int64
+                                          type: integer
                                       type: object
                                     burstablePerformance:
                                       description: Indicate whether burstable performance
@@ -11104,7 +11197,8 @@ spec:
                                         EC2 Auto Scaling interprets as a percentage.
                                         To turn off price protection, specify a high
                                         value, such as 999999. Conflicts with spot_max_price_percentage_over_lowest_price
-                                      type: number
+                                      format: int64
+                                      type: integer
                                     memoryGibPerVcpu:
                                       description: Block describing the minimum and
                                         maximum amount of memory (GiB) per vCPU. Default
@@ -11124,10 +11218,12 @@ spec:
                                       properties:
                                         max:
                                           description: Maximum.
-                                          type: number
+                                          format: int64
+                                          type: integer
                                         min:
                                           description: Minimum.
-                                          type: number
+                                          format: int64
+                                          type: integer
                                       type: object
                                     networkBandwidthGbps:
                                       description: Block describing the minimum and
@@ -11149,10 +11245,12 @@ spec:
                                       properties:
                                         max:
                                           description: Maximum.
-                                          type: number
+                                          format: int64
+                                          type: integer
                                         min:
                                           description: Minimum.
-                                          type: number
+                                          format: int64
+                                          type: integer
                                       type: object
                                     onDemandMaxPricePercentageOverLowestPrice:
                                       description: Price protection threshold for
@@ -11168,7 +11266,8 @@ spec:
                                         a percentage. To turn off price protection,
                                         specify a high value, such as 999999. Default
                                         is 20.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                     requireHibernateSupport:
                                       description: Indicate whether instance types
                                         must support On-Demand Instance Hibernation,
@@ -11188,7 +11287,8 @@ spec:
                                         To turn off price protection, specify a high
                                         value, such as 999999. Default is 100. Conflicts
                                         with max_spot_price_as_percentage_of_optimal_on_demand_price
-                                      type: number
+                                      format: int64
+                                      type: integer
                                     totalLocalStorageGb:
                                       description: Block describing the minimum and
                                         maximum total local storage (GB). Default
@@ -11207,10 +11307,12 @@ spec:
                                       properties:
                                         max:
                                           description: Maximum.
-                                          type: number
+                                          format: int64
+                                          type: integer
                                         min:
                                           description: Minimum.
-                                          type: number
+                                          format: int64
+                                          type: integer
                                       type: object
                                   type: object
                                 instanceType:
@@ -11249,7 +11351,8 @@ spec:
                     type: string
                   predictedCapacity:
                     description: Predicted capacity of the group.
-                    type: number
+                    format: int64
+                    type: integer
                   protectFromScaleIn:
                     description: |-
                       Whether newly launched instances
@@ -11347,7 +11450,8 @@ spec:
                       (Takes
                       precedence over min_elb_capacity behavior.)
                       (See also Waiting for Capacity below.)
-                    type: number
+                    format: int64
+                    type: integer
                   warmPool:
                     description: |-
                       If this block is configured, add a Warm Pool
@@ -11368,12 +11472,14 @@ spec:
                         description: Total maximum number of instances that are allowed
                           to be in the warm pool or in any state except Terminated
                           for the Auto Scaling group.
-                        type: number
+                        format: int64
+                        type: integer
                       minSize:
                         description: |-
                           Minimum size of the Auto Scaling Group.
                           (See also Waiting for Capacity below.)
-                        type: number
+                        format: int64
+                        type: integer
                       poolState:
                         description: 'Sets the instance state to transition to after
                           the lifecycle hooks finish. Valid values are: Stopped (default),
@@ -11382,7 +11488,8 @@ spec:
                     type: object
                   warmPoolSize:
                     description: Current size of the warm pool.
-                    type: number
+                    format: int64
+                    type: integer
                 type: object
               conditions:
                 description: Conditions of the resource.

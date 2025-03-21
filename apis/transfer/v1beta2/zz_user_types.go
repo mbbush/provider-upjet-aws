@@ -45,43 +45,43 @@ type HomeDirectoryMappingsParameters struct {
 type PosixProfileInitParameters struct {
 
 	// The POSIX group ID used for all EFS operations by this user.
-	GID *float64 `json:"gid,omitempty" tf:"gid,omitempty"`
+	GID *int64 `json:"gid,omitempty" tf:"gid,omitempty"`
 
 	// The secondary POSIX group IDs used for all EFS operations by this user.
 	// +listType=set
-	SecondaryGids []*float64 `json:"secondaryGids,omitempty" tf:"secondary_gids,omitempty"`
+	SecondaryGids []*int64 `json:"secondaryGids,omitempty" tf:"secondary_gids,omitempty"`
 
 	// The POSIX user ID used for all EFS operations by this user.
-	UID *float64 `json:"uid,omitempty" tf:"uid,omitempty"`
+	UID *int64 `json:"uid,omitempty" tf:"uid,omitempty"`
 }
 
 type PosixProfileObservation struct {
 
 	// The POSIX group ID used for all EFS operations by this user.
-	GID *float64 `json:"gid,omitempty" tf:"gid,omitempty"`
+	GID *int64 `json:"gid,omitempty" tf:"gid,omitempty"`
 
 	// The secondary POSIX group IDs used for all EFS operations by this user.
 	// +listType=set
-	SecondaryGids []*float64 `json:"secondaryGids,omitempty" tf:"secondary_gids,omitempty"`
+	SecondaryGids []*int64 `json:"secondaryGids,omitempty" tf:"secondary_gids,omitempty"`
 
 	// The POSIX user ID used for all EFS operations by this user.
-	UID *float64 `json:"uid,omitempty" tf:"uid,omitempty"`
+	UID *int64 `json:"uid,omitempty" tf:"uid,omitempty"`
 }
 
 type PosixProfileParameters struct {
 
 	// The POSIX group ID used for all EFS operations by this user.
 	// +kubebuilder:validation:Optional
-	GID *float64 `json:"gid" tf:"gid,omitempty"`
+	GID *int64 `json:"gid" tf:"gid,omitempty"`
 
 	// The secondary POSIX group IDs used for all EFS operations by this user.
 	// +kubebuilder:validation:Optional
 	// +listType=set
-	SecondaryGids []*float64 `json:"secondaryGids,omitempty" tf:"secondary_gids,omitempty"`
+	SecondaryGids []*int64 `json:"secondaryGids,omitempty" tf:"secondary_gids,omitempty"`
 
 	// The POSIX user ID used for all EFS operations by this user.
 	// +kubebuilder:validation:Optional
-	UID *float64 `json:"uid" tf:"uid,omitempty"`
+	UID *int64 `json:"uid" tf:"uid,omitempty"`
 }
 
 type UserInitParameters struct {
@@ -125,10 +125,6 @@ type UserInitParameters struct {
 	// Selector for a Server in transfer to populate serverId.
 	// +kubebuilder:validation:Optional
 	ServerIDSelector *v1.Selector `json:"serverIdSelector,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type UserObservation struct {
@@ -221,11 +217,6 @@ type UserParameters struct {
 	// Selector for a Server in transfer to populate serverId.
 	// +kubebuilder:validation:Optional
 	ServerIDSelector *v1.Selector `json:"serverIdSelector,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // UserSpec defines the desired state of User

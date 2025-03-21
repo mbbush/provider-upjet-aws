@@ -15,5 +15,3 @@ spec:
     subnetIdSelector:
       matchLabels:
         testing.upbound.io/example-name: aws_subnets
-    tags:
-      Usage: example

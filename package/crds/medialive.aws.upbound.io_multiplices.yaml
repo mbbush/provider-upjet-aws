@@ -523,16 +523,20 @@ spec:
                     properties:
                       maximumVideoBufferDelayMilliseconds:
                         description: Maximum video buffer delay.
-                        type: number
+                        format: int64
+                        type: integer
                       transportStreamBitrate:
                         description: Transport stream bit rate.
-                        type: number
+                        format: int64
+                        type: integer
                       transportStreamId:
                         description: Unique ID for each multiplex.
-                        type: number
+                        format: int64
+                        type: integer
                       transportStreamReservedBitrate:
                         description: Transport stream reserved bit rate.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   name:
                     description: name of Multiplex.
@@ -544,12 +548,6 @@ spec:
                   startMultiplex:
                     description: Whether to start the Multiplex. Defaults to false.
                     type: boolean
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -578,16 +576,20 @@ spec:
                     properties:
                       maximumVideoBufferDelayMilliseconds:
                         description: Maximum video buffer delay.
-                        type: number
+                        format: int64
+                        type: integer
                       transportStreamBitrate:
                         description: Transport stream bit rate.
-                        type: number
+                        format: int64
+                        type: integer
                       transportStreamId:
                         description: Unique ID for each multiplex.
-                        type: number
+                        format: int64
+                        type: integer
                       transportStreamReservedBitrate:
                         description: Transport stream reserved bit rate.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   name:
                     description: name of Multiplex.
@@ -595,12 +597,6 @@ spec:
                   startMultiplex:
                     description: Whether to start the Multiplex. Defaults to false.
                     type: boolean
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -800,16 +796,20 @@ spec:
                     properties:
                       maximumVideoBufferDelayMilliseconds:
                         description: Maximum video buffer delay.
-                        type: number
+                        format: int64
+                        type: integer
                       transportStreamBitrate:
                         description: Transport stream bit rate.
-                        type: number
+                        format: int64
+                        type: integer
                       transportStreamId:
                         description: Unique ID for each multiplex.
-                        type: number
+                        format: int64
+                        type: integer
                       transportStreamReservedBitrate:
                         description: Transport stream reserved bit rate.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   name:
                     description: name of Multiplex.

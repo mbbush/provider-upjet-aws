@@ -19,5 +19,3 @@ spec:
     sourceIdsRefs:
     - name: example
     sourceType: replication-task
-    tags:
-      Name: example

@@ -18,7 +18,7 @@ func (in *ActivemqBrokerParametersInitParameters) DeepCopyInto(out *ActivemqBrok
 	*out = *in
 	if in.BatchSize != nil {
 		in, out := &in.BatchSize, &out.BatchSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Credentials != nil {
@@ -28,7 +28,7 @@ func (in *ActivemqBrokerParametersInitParameters) DeepCopyInto(out *ActivemqBrok
 	}
 	if in.MaximumBatchingWindowInSeconds != nil {
 		in, out := &in.MaximumBatchingWindowInSeconds, &out.MaximumBatchingWindowInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.QueueName != nil {
@@ -53,7 +53,7 @@ func (in *ActivemqBrokerParametersObservation) DeepCopyInto(out *ActivemqBrokerP
 	*out = *in
 	if in.BatchSize != nil {
 		in, out := &in.BatchSize, &out.BatchSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Credentials != nil {
@@ -63,7 +63,7 @@ func (in *ActivemqBrokerParametersObservation) DeepCopyInto(out *ActivemqBrokerP
 	}
 	if in.MaximumBatchingWindowInSeconds != nil {
 		in, out := &in.MaximumBatchingWindowInSeconds, &out.MaximumBatchingWindowInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.QueueName != nil {
@@ -88,7 +88,7 @@ func (in *ActivemqBrokerParametersParameters) DeepCopyInto(out *ActivemqBrokerPa
 	*out = *in
 	if in.BatchSize != nil {
 		in, out := &in.BatchSize, &out.BatchSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Credentials != nil {
@@ -98,7 +98,7 @@ func (in *ActivemqBrokerParametersParameters) DeepCopyInto(out *ActivemqBrokerPa
 	}
 	if in.MaximumBatchingWindowInSeconds != nil {
 		in, out := &in.MaximumBatchingWindowInSeconds, &out.MaximumBatchingWindowInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.QueueName != nil {
@@ -123,7 +123,7 @@ func (in *ArrayPropertiesInitParameters) DeepCopyInto(out *ArrayPropertiesInitPa
 	*out = *in
 	if in.Size != nil {
 		in, out := &in.Size, &out.Size
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -143,7 +143,7 @@ func (in *ArrayPropertiesObservation) DeepCopyInto(out *ArrayPropertiesObservati
 	*out = *in
 	if in.Size != nil {
 		in, out := &in.Size, &out.Size
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -163,7 +163,7 @@ func (in *ArrayPropertiesParameters) DeepCopyInto(out *ArrayPropertiesParameters
 	*out = *in
 	if in.Size != nil {
 		in, out := &in.Size, &out.Size
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -498,7 +498,7 @@ func (in *CapacityProviderStrategyInitParameters) DeepCopyInto(out *CapacityProv
 	*out = *in
 	if in.Base != nil {
 		in, out := &in.Base, &out.Base
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.CapacityProvider != nil {
@@ -508,7 +508,7 @@ func (in *CapacityProviderStrategyInitParameters) DeepCopyInto(out *CapacityProv
 	}
 	if in.Weight != nil {
 		in, out := &in.Weight, &out.Weight
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -528,7 +528,7 @@ func (in *CapacityProviderStrategyObservation) DeepCopyInto(out *CapacityProvide
 	*out = *in
 	if in.Base != nil {
 		in, out := &in.Base, &out.Base
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.CapacityProvider != nil {
@@ -538,7 +538,7 @@ func (in *CapacityProviderStrategyObservation) DeepCopyInto(out *CapacityProvide
 	}
 	if in.Weight != nil {
 		in, out := &in.Weight, &out.Weight
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -558,7 +558,7 @@ func (in *CapacityProviderStrategyParameters) DeepCopyInto(out *CapacityProvider
 	*out = *in
 	if in.Base != nil {
 		in, out := &in.Base, &out.Base
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.CapacityProvider != nil {
@@ -568,7 +568,7 @@ func (in *CapacityProviderStrategyParameters) DeepCopyInto(out *CapacityProvider
 	}
 	if in.Weight != nil {
 		in, out := &in.Weight, &out.Weight
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -818,7 +818,7 @@ func (in *ContainerOverrideInitParameters) DeepCopyInto(out *ContainerOverrideIn
 	*out = *in
 	if in.CPU != nil {
 		in, out := &in.CPU, &out.CPU
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Command != nil {
@@ -848,12 +848,12 @@ func (in *ContainerOverrideInitParameters) DeepCopyInto(out *ContainerOverrideIn
 	}
 	if in.Memory != nil {
 		in, out := &in.Memory, &out.Memory
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MemoryReservation != nil {
 		in, out := &in.MemoryReservation, &out.MemoryReservation
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Name != nil {
@@ -885,7 +885,7 @@ func (in *ContainerOverrideObservation) DeepCopyInto(out *ContainerOverrideObser
 	*out = *in
 	if in.CPU != nil {
 		in, out := &in.CPU, &out.CPU
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Command != nil {
@@ -915,12 +915,12 @@ func (in *ContainerOverrideObservation) DeepCopyInto(out *ContainerOverrideObser
 	}
 	if in.Memory != nil {
 		in, out := &in.Memory, &out.Memory
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MemoryReservation != nil {
 		in, out := &in.MemoryReservation, &out.MemoryReservation
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Name != nil {
@@ -952,7 +952,7 @@ func (in *ContainerOverrideParameters) DeepCopyInto(out *ContainerOverrideParame
 	*out = *in
 	if in.CPU != nil {
 		in, out := &in.CPU, &out.CPU
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Command != nil {
@@ -982,12 +982,12 @@ func (in *ContainerOverrideParameters) DeepCopyInto(out *ContainerOverrideParame
 	}
 	if in.Memory != nil {
 		in, out := &in.Memory, &out.Memory
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MemoryReservation != nil {
 		in, out := &in.MemoryReservation, &out.MemoryReservation
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Name != nil {
@@ -1424,7 +1424,7 @@ func (in *DynamodbStreamParametersInitParameters) DeepCopyInto(out *DynamodbStre
 	*out = *in
 	if in.BatchSize != nil {
 		in, out := &in.BatchSize, &out.BatchSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.DeadLetterConfig != nil {
@@ -1434,17 +1434,17 @@ func (in *DynamodbStreamParametersInitParameters) DeepCopyInto(out *DynamodbStre
 	}
 	if in.MaximumBatchingWindowInSeconds != nil {
 		in, out := &in.MaximumBatchingWindowInSeconds, &out.MaximumBatchingWindowInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaximumRecordAgeInSeconds != nil {
 		in, out := &in.MaximumRecordAgeInSeconds, &out.MaximumRecordAgeInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaximumRetryAttempts != nil {
 		in, out := &in.MaximumRetryAttempts, &out.MaximumRetryAttempts
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.OnPartialBatchItemFailure != nil {
@@ -1454,7 +1454,7 @@ func (in *DynamodbStreamParametersInitParameters) DeepCopyInto(out *DynamodbStre
 	}
 	if in.ParallelizationFactor != nil {
 		in, out := &in.ParallelizationFactor, &out.ParallelizationFactor
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.StartingPosition != nil {
@@ -1479,7 +1479,7 @@ func (in *DynamodbStreamParametersObservation) DeepCopyInto(out *DynamodbStreamP
 	*out = *in
 	if in.BatchSize != nil {
 		in, out := &in.BatchSize, &out.BatchSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.DeadLetterConfig != nil {
@@ -1489,17 +1489,17 @@ func (in *DynamodbStreamParametersObservation) DeepCopyInto(out *DynamodbStreamP
 	}
 	if in.MaximumBatchingWindowInSeconds != nil {
 		in, out := &in.MaximumBatchingWindowInSeconds, &out.MaximumBatchingWindowInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaximumRecordAgeInSeconds != nil {
 		in, out := &in.MaximumRecordAgeInSeconds, &out.MaximumRecordAgeInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaximumRetryAttempts != nil {
 		in, out := &in.MaximumRetryAttempts, &out.MaximumRetryAttempts
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.OnPartialBatchItemFailure != nil {
@@ -1509,7 +1509,7 @@ func (in *DynamodbStreamParametersObservation) DeepCopyInto(out *DynamodbStreamP
 	}
 	if in.ParallelizationFactor != nil {
 		in, out := &in.ParallelizationFactor, &out.ParallelizationFactor
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.StartingPosition != nil {
@@ -1534,7 +1534,7 @@ func (in *DynamodbStreamParametersParameters) DeepCopyInto(out *DynamodbStreamPa
 	*out = *in
 	if in.BatchSize != nil {
 		in, out := &in.BatchSize, &out.BatchSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.DeadLetterConfig != nil {
@@ -1544,17 +1544,17 @@ func (in *DynamodbStreamParametersParameters) DeepCopyInto(out *DynamodbStreamPa
 	}
 	if in.MaximumBatchingWindowInSeconds != nil {
 		in, out := &in.MaximumBatchingWindowInSeconds, &out.MaximumBatchingWindowInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaximumRecordAgeInSeconds != nil {
 		in, out := &in.MaximumRecordAgeInSeconds, &out.MaximumRecordAgeInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaximumRetryAttempts != nil {
 		in, out := &in.MaximumRetryAttempts, &out.MaximumRetryAttempts
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.OnPartialBatchItemFailure != nil {
@@ -1564,7 +1564,7 @@ func (in *DynamodbStreamParametersParameters) DeepCopyInto(out *DynamodbStreamPa
 	}
 	if in.ParallelizationFactor != nil {
 		in, out := &in.ParallelizationFactor, &out.ParallelizationFactor
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.StartingPosition != nil {
@@ -1653,25 +1653,9 @@ func (in *EcsTaskParametersInitParameters) DeepCopyInto(out *EcsTaskParametersIn
 		*out = new(string)
 		**out = **in
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.TaskCount != nil {
 		in, out := &in.TaskCount, &out.TaskCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.TaskDefinitionArn != nil {
@@ -1778,7 +1762,7 @@ func (in *EcsTaskParametersObservation) DeepCopyInto(out *EcsTaskParametersObser
 	}
 	if in.TaskCount != nil {
 		in, out := &in.TaskCount, &out.TaskCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.TaskDefinitionArn != nil {
@@ -1867,25 +1851,9 @@ func (in *EcsTaskParametersParameters) DeepCopyInto(out *EcsTaskParametersParame
 		*out = new(string)
 		**out = **in
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.TaskCount != nil {
 		in, out := &in.TaskCount, &out.TaskCount
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.TaskDefinitionArn != nil {
@@ -2135,7 +2103,7 @@ func (in *EphemeralStorageInitParameters) DeepCopyInto(out *EphemeralStorageInit
 	*out = *in
 	if in.SizeInGib != nil {
 		in, out := &in.SizeInGib, &out.SizeInGib
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2155,7 +2123,7 @@ func (in *EphemeralStorageObservation) DeepCopyInto(out *EphemeralStorageObserva
 	*out = *in
 	if in.SizeInGib != nil {
 		in, out := &in.SizeInGib, &out.SizeInGib
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2175,7 +2143,7 @@ func (in *EphemeralStorageParameters) DeepCopyInto(out *EphemeralStorageParamete
 	*out = *in
 	if in.SizeInGib != nil {
 		in, out := &in.SizeInGib, &out.SizeInGib
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2828,7 +2796,7 @@ func (in *KinesisStreamParametersInitParameters) DeepCopyInto(out *KinesisStream
 	*out = *in
 	if in.BatchSize != nil {
 		in, out := &in.BatchSize, &out.BatchSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.DeadLetterConfig != nil {
@@ -2838,17 +2806,17 @@ func (in *KinesisStreamParametersInitParameters) DeepCopyInto(out *KinesisStream
 	}
 	if in.MaximumBatchingWindowInSeconds != nil {
 		in, out := &in.MaximumBatchingWindowInSeconds, &out.MaximumBatchingWindowInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaximumRecordAgeInSeconds != nil {
 		in, out := &in.MaximumRecordAgeInSeconds, &out.MaximumRecordAgeInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaximumRetryAttempts != nil {
 		in, out := &in.MaximumRetryAttempts, &out.MaximumRetryAttempts
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.OnPartialBatchItemFailure != nil {
@@ -2858,7 +2826,7 @@ func (in *KinesisStreamParametersInitParameters) DeepCopyInto(out *KinesisStream
 	}
 	if in.ParallelizationFactor != nil {
 		in, out := &in.ParallelizationFactor, &out.ParallelizationFactor
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.StartingPosition != nil {
@@ -2888,7 +2856,7 @@ func (in *KinesisStreamParametersObservation) DeepCopyInto(out *KinesisStreamPar
 	*out = *in
 	if in.BatchSize != nil {
 		in, out := &in.BatchSize, &out.BatchSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.DeadLetterConfig != nil {
@@ -2898,17 +2866,17 @@ func (in *KinesisStreamParametersObservation) DeepCopyInto(out *KinesisStreamPar
 	}
 	if in.MaximumBatchingWindowInSeconds != nil {
 		in, out := &in.MaximumBatchingWindowInSeconds, &out.MaximumBatchingWindowInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaximumRecordAgeInSeconds != nil {
 		in, out := &in.MaximumRecordAgeInSeconds, &out.MaximumRecordAgeInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaximumRetryAttempts != nil {
 		in, out := &in.MaximumRetryAttempts, &out.MaximumRetryAttempts
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.OnPartialBatchItemFailure != nil {
@@ -2918,7 +2886,7 @@ func (in *KinesisStreamParametersObservation) DeepCopyInto(out *KinesisStreamPar
 	}
 	if in.ParallelizationFactor != nil {
 		in, out := &in.ParallelizationFactor, &out.ParallelizationFactor
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.StartingPosition != nil {
@@ -2948,7 +2916,7 @@ func (in *KinesisStreamParametersParameters) DeepCopyInto(out *KinesisStreamPara
 	*out = *in
 	if in.BatchSize != nil {
 		in, out := &in.BatchSize, &out.BatchSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.DeadLetterConfig != nil {
@@ -2958,17 +2926,17 @@ func (in *KinesisStreamParametersParameters) DeepCopyInto(out *KinesisStreamPara
 	}
 	if in.MaximumBatchingWindowInSeconds != nil {
 		in, out := &in.MaximumBatchingWindowInSeconds, &out.MaximumBatchingWindowInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaximumRecordAgeInSeconds != nil {
 		in, out := &in.MaximumRecordAgeInSeconds, &out.MaximumRecordAgeInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaximumRetryAttempts != nil {
 		in, out := &in.MaximumRetryAttempts, &out.MaximumRetryAttempts
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.OnPartialBatchItemFailure != nil {
@@ -2978,7 +2946,7 @@ func (in *KinesisStreamParametersParameters) DeepCopyInto(out *KinesisStreamPara
 	}
 	if in.ParallelizationFactor != nil {
 		in, out := &in.ParallelizationFactor, &out.ParallelizationFactor
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.StartingPosition != nil {
@@ -3281,7 +3249,7 @@ func (in *ManagedStreamingKafkaParametersInitParameters) DeepCopyInto(out *Manag
 	*out = *in
 	if in.BatchSize != nil {
 		in, out := &in.BatchSize, &out.BatchSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ConsumerGroupID != nil {
@@ -3296,7 +3264,7 @@ func (in *ManagedStreamingKafkaParametersInitParameters) DeepCopyInto(out *Manag
 	}
 	if in.MaximumBatchingWindowInSeconds != nil {
 		in, out := &in.MaximumBatchingWindowInSeconds, &out.MaximumBatchingWindowInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.StartingPosition != nil {
@@ -3326,7 +3294,7 @@ func (in *ManagedStreamingKafkaParametersObservation) DeepCopyInto(out *ManagedS
 	*out = *in
 	if in.BatchSize != nil {
 		in, out := &in.BatchSize, &out.BatchSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ConsumerGroupID != nil {
@@ -3341,7 +3309,7 @@ func (in *ManagedStreamingKafkaParametersObservation) DeepCopyInto(out *ManagedS
 	}
 	if in.MaximumBatchingWindowInSeconds != nil {
 		in, out := &in.MaximumBatchingWindowInSeconds, &out.MaximumBatchingWindowInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.StartingPosition != nil {
@@ -3371,7 +3339,7 @@ func (in *ManagedStreamingKafkaParametersParameters) DeepCopyInto(out *ManagedSt
 	*out = *in
 	if in.BatchSize != nil {
 		in, out := &in.BatchSize, &out.BatchSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ConsumerGroupID != nil {
@@ -3386,7 +3354,7 @@ func (in *ManagedStreamingKafkaParametersParameters) DeepCopyInto(out *ManagedSt
 	}
 	if in.MaximumBatchingWindowInSeconds != nil {
 		in, out := &in.MaximumBatchingWindowInSeconds, &out.MaximumBatchingWindowInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.StartingPosition != nil {
@@ -3733,22 +3701,6 @@ func (in *PipeInitParameters) DeepCopyInto(out *PipeInitParameters) {
 		*out = new(v1.Selector)
 		(*in).DeepCopyInto(*out)
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.Target != nil {
 		in, out := &in.Target, &out.Target
 		*out = new(string)
@@ -3997,22 +3949,6 @@ func (in *PipeParameters) DeepCopyInto(out *PipeParameters) {
 		in, out := &in.SourceSelector, &out.SourceSelector
 		*out = new(v1.Selector)
 		(*in).DeepCopyInto(*out)
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.Target != nil {
 		in, out := &in.Target, &out.Target
@@ -4371,7 +4307,7 @@ func (in *RabbitmqBrokerParametersInitParameters) DeepCopyInto(out *RabbitmqBrok
 	*out = *in
 	if in.BatchSize != nil {
 		in, out := &in.BatchSize, &out.BatchSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Credentials != nil {
@@ -4381,7 +4317,7 @@ func (in *RabbitmqBrokerParametersInitParameters) DeepCopyInto(out *RabbitmqBrok
 	}
 	if in.MaximumBatchingWindowInSeconds != nil {
 		in, out := &in.MaximumBatchingWindowInSeconds, &out.MaximumBatchingWindowInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.QueueName != nil {
@@ -4411,7 +4347,7 @@ func (in *RabbitmqBrokerParametersObservation) DeepCopyInto(out *RabbitmqBrokerP
 	*out = *in
 	if in.BatchSize != nil {
 		in, out := &in.BatchSize, &out.BatchSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Credentials != nil {
@@ -4421,7 +4357,7 @@ func (in *RabbitmqBrokerParametersObservation) DeepCopyInto(out *RabbitmqBrokerP
 	}
 	if in.MaximumBatchingWindowInSeconds != nil {
 		in, out := &in.MaximumBatchingWindowInSeconds, &out.MaximumBatchingWindowInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.QueueName != nil {
@@ -4451,7 +4387,7 @@ func (in *RabbitmqBrokerParametersParameters) DeepCopyInto(out *RabbitmqBrokerPa
 	*out = *in
 	if in.BatchSize != nil {
 		in, out := &in.BatchSize, &out.BatchSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Credentials != nil {
@@ -4461,7 +4397,7 @@ func (in *RabbitmqBrokerParametersParameters) DeepCopyInto(out *RabbitmqBrokerPa
 	}
 	if in.MaximumBatchingWindowInSeconds != nil {
 		in, out := &in.MaximumBatchingWindowInSeconds, &out.MaximumBatchingWindowInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.QueueName != nil {
@@ -4719,7 +4655,7 @@ func (in *RetryStrategyInitParameters) DeepCopyInto(out *RetryStrategyInitParame
 	*out = *in
 	if in.Attempts != nil {
 		in, out := &in.Attempts, &out.Attempts
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -4739,7 +4675,7 @@ func (in *RetryStrategyObservation) DeepCopyInto(out *RetryStrategyObservation) 
 	*out = *in
 	if in.Attempts != nil {
 		in, out := &in.Attempts, &out.Attempts
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -4759,7 +4695,7 @@ func (in *RetryStrategyParameters) DeepCopyInto(out *RetryStrategyParameters) {
 	*out = *in
 	if in.Attempts != nil {
 		in, out := &in.Attempts, &out.Attempts
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -5066,7 +5002,7 @@ func (in *SelfManagedKafkaParametersInitParameters) DeepCopyInto(out *SelfManage
 	}
 	if in.BatchSize != nil {
 		in, out := &in.BatchSize, &out.BatchSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ConsumerGroupID != nil {
@@ -5081,7 +5017,7 @@ func (in *SelfManagedKafkaParametersInitParameters) DeepCopyInto(out *SelfManage
 	}
 	if in.MaximumBatchingWindowInSeconds != nil {
 		in, out := &in.MaximumBatchingWindowInSeconds, &out.MaximumBatchingWindowInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ServerRootCACertificate != nil {
@@ -5132,7 +5068,7 @@ func (in *SelfManagedKafkaParametersObservation) DeepCopyInto(out *SelfManagedKa
 	}
 	if in.BatchSize != nil {
 		in, out := &in.BatchSize, &out.BatchSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ConsumerGroupID != nil {
@@ -5147,7 +5083,7 @@ func (in *SelfManagedKafkaParametersObservation) DeepCopyInto(out *SelfManagedKa
 	}
 	if in.MaximumBatchingWindowInSeconds != nil {
 		in, out := &in.MaximumBatchingWindowInSeconds, &out.MaximumBatchingWindowInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ServerRootCACertificate != nil {
@@ -5198,7 +5134,7 @@ func (in *SelfManagedKafkaParametersParameters) DeepCopyInto(out *SelfManagedKaf
 	}
 	if in.BatchSize != nil {
 		in, out := &in.BatchSize, &out.BatchSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ConsumerGroupID != nil {
@@ -5213,7 +5149,7 @@ func (in *SelfManagedKafkaParametersParameters) DeepCopyInto(out *SelfManagedKaf
 	}
 	if in.MaximumBatchingWindowInSeconds != nil {
 		in, out := &in.MaximumBatchingWindowInSeconds, &out.MaximumBatchingWindowInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.ServerRootCACertificate != nil {
@@ -5418,12 +5354,12 @@ func (in *SqsQueueParametersInitParameters) DeepCopyInto(out *SqsQueueParameters
 	*out = *in
 	if in.BatchSize != nil {
 		in, out := &in.BatchSize, &out.BatchSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaximumBatchingWindowInSeconds != nil {
 		in, out := &in.MaximumBatchingWindowInSeconds, &out.MaximumBatchingWindowInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -5443,12 +5379,12 @@ func (in *SqsQueueParametersObservation) DeepCopyInto(out *SqsQueueParametersObs
 	*out = *in
 	if in.BatchSize != nil {
 		in, out := &in.BatchSize, &out.BatchSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaximumBatchingWindowInSeconds != nil {
 		in, out := &in.MaximumBatchingWindowInSeconds, &out.MaximumBatchingWindowInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -5468,12 +5404,12 @@ func (in *SqsQueueParametersParameters) DeepCopyInto(out *SqsQueueParametersPara
 	*out = *in
 	if in.BatchSize != nil {
 		in, out := &in.BatchSize, &out.BatchSize
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.MaximumBatchingWindowInSeconds != nil {
 		in, out := &in.MaximumBatchingWindowInSeconds, &out.MaximumBatchingWindowInSeconds
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }

@@ -1896,9 +1896,11 @@ spec:
                                 type: string
                               runOrder:
                                 description: The order in which actions are run.
-                                type: number
+                                format: int64
+                                type: integer
                               timeoutInMinutes:
-                                type: number
+                                format: int64
+                                type: integer
                               version:
                                 description: A string that identifies the action type.
                                 type: string
@@ -1909,12 +1911,6 @@ spec:
                           type: string
                       type: object
                     type: array
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   trigger:
                     description: A trigger block. Valid only when pipeline_type is
                       V2. Triggers are documented below.
@@ -2352,9 +2348,11 @@ spec:
                                 type: string
                               runOrder:
                                 description: The order in which actions are run.
-                                type: number
+                                format: int64
+                                type: integer
                               timeoutInMinutes:
-                                type: number
+                                format: int64
+                                type: integer
                               version:
                                 description: A string that identifies the action type.
                                 type: string
@@ -2365,12 +2363,6 @@ spec:
                           type: string
                       type: object
                     type: array
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   trigger:
                     description: A trigger block. Valid only when pipeline_type is
                       V2. Triggers are documented below.
@@ -2840,9 +2832,11 @@ spec:
                                 type: string
                               runOrder:
                                 description: The order in which actions are run.
-                                type: number
+                                format: int64
+                                type: integer
                               timeoutInMinutes:
-                                type: number
+                                format: int64
+                                type: integer
                               version:
                                 description: A string that identifies the action type.
                                 type: string

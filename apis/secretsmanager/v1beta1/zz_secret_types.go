@@ -72,14 +72,10 @@ type SecretInitParameters struct {
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
 
 	// Number of days that AWS Secrets Manager waits before it can delete the secret. This value can be 0 to force deletion without recovery or range from 7 to 30 days. The default value is 30.
-	RecoveryWindowInDays *float64 `json:"recoveryWindowInDays,omitempty" tf:"recovery_window_in_days,omitempty"`
+	RecoveryWindowInDays *int64 `json:"recoveryWindowInDays,omitempty" tf:"recovery_window_in_days,omitempty"`
 
 	// Configuration block to support secret replication. See details below.
 	Replica []ReplicaInitParameters `json:"replica,omitempty" tf:"replica,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type SecretObservation struct {
@@ -106,7 +102,7 @@ type SecretObservation struct {
 	Policy *string `json:"policy,omitempty" tf:"policy,omitempty"`
 
 	// Number of days that AWS Secrets Manager waits before it can delete the secret. This value can be 0 to force deletion without recovery or range from 7 to 30 days. The default value is 30.
-	RecoveryWindowInDays *float64 `json:"recoveryWindowInDays,omitempty" tf:"recovery_window_in_days,omitempty"`
+	RecoveryWindowInDays *int64 `json:"recoveryWindowInDays,omitempty" tf:"recovery_window_in_days,omitempty"`
 
 	// Configuration block to support secret replication. See details below.
 	Replica []ReplicaObservation `json:"replica,omitempty" tf:"replica,omitempty"`
@@ -149,7 +145,7 @@ type SecretParameters struct {
 
 	// Number of days that AWS Secrets Manager waits before it can delete the secret. This value can be 0 to force deletion without recovery or range from 7 to 30 days. The default value is 30.
 	// +kubebuilder:validation:Optional
-	RecoveryWindowInDays *float64 `json:"recoveryWindowInDays,omitempty" tf:"recovery_window_in_days,omitempty"`
+	RecoveryWindowInDays *int64 `json:"recoveryWindowInDays,omitempty" tf:"recovery_window_in_days,omitempty"`
 
 	// Region for replicating the secret.
 	// Region is the region you'd like your resource to be created in.
@@ -160,11 +156,6 @@ type SecretParameters struct {
 	// Configuration block to support secret replication. See details below.
 	// +kubebuilder:validation:Optional
 	Replica []ReplicaParameters `json:"replica,omitempty" tf:"replica,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // SecretSpec defines the desired state of Secret

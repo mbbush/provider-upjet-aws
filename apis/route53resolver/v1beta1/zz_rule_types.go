@@ -38,10 +38,6 @@ type RuleInitParameters struct {
 	// Rule type. Valid values are FORWARD, SYSTEM and RECURSIVE.
 	RuleType *string `json:"ruleType,omitempty" tf:"rule_type,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Configuration block(s) indicating the IPs that you want Resolver to forward DNS queries to (documented below).
 	// This argument should only be specified for FORWARD type rules.
 	TargetIP []TargetIPInitParameters `json:"targetIp,omitempty" tf:"target_ip,omitempty"`
@@ -122,11 +118,6 @@ type RuleParameters struct {
 	// +kubebuilder:validation:Optional
 	RuleType *string `json:"ruleType,omitempty" tf:"rule_type,omitempty"`
 
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Configuration block(s) indicating the IPs that you want Resolver to forward DNS queries to (documented below).
 	// This argument should only be specified for FORWARD type rules.
 	// +kubebuilder:validation:Optional
@@ -142,7 +133,7 @@ type TargetIPInitParameters struct {
 	IPv6 *string `json:"ipv6,omitempty" tf:"ipv6,omitempty"`
 
 	// Port at ip that you want to forward DNS queries to. Default value is 53.
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// Protocol for the resolver endpoint. Valid values can be found in the AWS documentation. Default value is Do53.
 	Protocol *string `json:"protocol,omitempty" tf:"protocol,omitempty"`
@@ -157,7 +148,7 @@ type TargetIPObservation struct {
 	IPv6 *string `json:"ipv6,omitempty" tf:"ipv6,omitempty"`
 
 	// Port at ip that you want to forward DNS queries to. Default value is 53.
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// Protocol for the resolver endpoint. Valid values can be found in the AWS documentation. Default value is Do53.
 	Protocol *string `json:"protocol,omitempty" tf:"protocol,omitempty"`
@@ -175,7 +166,7 @@ type TargetIPParameters struct {
 
 	// Port at ip that you want to forward DNS queries to. Default value is 53.
 	// +kubebuilder:validation:Optional
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// Protocol for the resolver endpoint. Valid values can be found in the AWS documentation. Default value is Do53.
 	// +kubebuilder:validation:Optional

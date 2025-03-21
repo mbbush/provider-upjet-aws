@@ -58,10 +58,6 @@ type ClusterEndpointInitParameters struct {
 	// Selector for a list of ClusterInstance in rds to populate staticMembers.
 	// +kubebuilder:validation:Optional
 	StaticMembersSelector *v1.Selector `json:"staticMembersSelector,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type ClusterEndpointObservation struct {
@@ -152,11 +148,6 @@ type ClusterEndpointParameters struct {
 	// Selector for a list of ClusterInstance in rds to populate staticMembers.
 	// +kubebuilder:validation:Optional
 	StaticMembersSelector *v1.Selector `json:"staticMembersSelector,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // ClusterEndpointSpec defines the desired state of ClusterEndpoint

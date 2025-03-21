@@ -83,10 +83,6 @@ type AppInitParameters struct {
 
 	// Repository for an Amplify app.
 	Repository *string `json:"repository,omitempty" tf:"repository,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type AppObservation struct {
@@ -256,11 +252,6 @@ type AppParameters struct {
 	// Repository for an Amplify app.
 	// +kubebuilder:validation:Optional
 	Repository *string `json:"repository,omitempty" tf:"repository,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type AutoBranchCreationConfigInitParameters struct {

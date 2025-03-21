@@ -44,10 +44,6 @@ type VPCAttachmentInitParameters struct {
 	// +kubebuilder:validation:Optional
 	SubnetArnsSelector *v1.Selector `json:"subnetArnsSelector,omitempty" tf:"-"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// The ARN of the VPC.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/ec2/v1beta1.VPC
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractParamPath("arn",true)
@@ -68,7 +64,7 @@ type VPCAttachmentObservation struct {
 	Arn *string `json:"arn,omitempty" tf:"arn,omitempty"`
 
 	// The policy rule number associated with the attachment.
-	AttachmentPolicyRuleNumber *float64 `json:"attachmentPolicyRuleNumber,omitempty" tf:"attachment_policy_rule_number,omitempty"`
+	AttachmentPolicyRuleNumber *int64 `json:"attachmentPolicyRuleNumber,omitempty" tf:"attachment_policy_rule_number,omitempty"`
 
 	// The type of attachment.
 	AttachmentType *string `json:"attachmentType,omitempty" tf:"attachment_type,omitempty"`
@@ -192,11 +188,6 @@ type VPCAttachmentParameters struct {
 	// Selector for a list of Subnet in ec2 to populate subnetArns.
 	// +kubebuilder:validation:Optional
 	SubnetArnsSelector *v1.Selector `json:"subnetArnsSelector,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// The ARN of the VPC.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/ec2/v1beta1.VPC

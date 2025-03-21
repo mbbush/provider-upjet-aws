@@ -2711,7 +2711,8 @@ spec:
                               status of a blue/green deployment changed to Stopped
                               if rerouting is not started manually. Applies only to
                               the STOP_DEPLOYMENT option for action_on_timeout.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       greenFleetProvisioningOption:
                         description: Information about how instances are provisioned
@@ -2736,7 +2737,8 @@ spec:
                             description: The number of minutes to wait after a successful
                               blue/green deployment before terminating instances from
                               the original environment.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                     type: object
                   deploymentConfigName:
@@ -3378,12 +3380,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   terminationHookEnabled:
                     description: Indicates whether the deployment group was configured
                       to have CodeDeploy install a termination hook into an Auto Scaling
@@ -3571,7 +3567,8 @@ spec:
                               status of a blue/green deployment changed to Stopped
                               if rerouting is not started manually. Applies only to
                               the STOP_DEPLOYMENT option for action_on_timeout.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       greenFleetProvisioningOption:
                         description: Information about how instances are provisioned
@@ -3596,7 +3593,8 @@ spec:
                             description: The number of minutes to wait after a successful
                               blue/green deployment before terminating instances from
                               the original environment.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                     type: object
                   deploymentConfigName:
@@ -4234,12 +4232,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   terminationHookEnabled:
                     description: Indicates whether the deployment group was configured
                       to have CodeDeploy install a termination hook into an Auto Scaling
@@ -4590,7 +4582,8 @@ spec:
                               status of a blue/green deployment changed to Stopped
                               if rerouting is not started manually. Applies only to
                               the STOP_DEPLOYMENT option for action_on_timeout.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       greenFleetProvisioningOption:
                         description: Information about how instances are provisioned
@@ -4615,7 +4608,8 @@ spec:
                             description: The number of minutes to wait after a successful
                               blue/green deployment before terminating instances from
                               the original environment.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                     type: object
                   computePlatform:

@@ -4549,7 +4549,8 @@ spec:
                                             for each output file that Amazon AppFlow
                                             writes to the flow destination. Integer
                                             value.
-                                          type: number
+                                          format: int64
+                                          type: integer
                                       type: object
                                     fileType:
                                       description: File type that Amazon AppFlow places
@@ -5106,7 +5107,8 @@ spec:
                                     description: he maximum number of records that
                                       Amazon AppFlow receives in each page of the
                                       response from your SAP application.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                               parallelismConfig:
                                 description: Sets the number of concurrent processes
@@ -5116,7 +5118,8 @@ spec:
                                     description: he maximum number of records that
                                       Amazon AppFlow receives in each page of the
                                       response from your SAP application.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                             type: object
                           serviceNow:
@@ -5189,12 +5192,6 @@ spec:
                             type: object
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   task:
                     description: A Task that Amazon AppFlow performs while transferring
                       the data in the flow run.
@@ -5356,7 +5353,8 @@ spec:
                                 description: Optional offset that is added to the
                                   time interval for a schedule-triggered flow. Maximum
                                   value of 36000.
-                                type: number
+                                format: int64
+                                type: integer
                               scheduleStartTime:
                                 description: Scheduled start time for a schedule-triggered
                                   flow. Must be a valid RFC3339 timestamp.
@@ -5718,7 +5716,8 @@ spec:
                                             for each output file that Amazon AppFlow
                                             writes to the flow destination. Integer
                                             value.
-                                          type: number
+                                          format: int64
+                                          type: integer
                                       type: object
                                     fileType:
                                       description: File type that Amazon AppFlow places
@@ -6271,7 +6270,8 @@ spec:
                                     description: he maximum number of records that
                                       Amazon AppFlow receives in each page of the
                                       response from your SAP application.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                               parallelismConfig:
                                 description: Sets the number of concurrent processes
@@ -6281,7 +6281,8 @@ spec:
                                     description: he maximum number of records that
                                       Amazon AppFlow receives in each page of the
                                       response from your SAP application.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                             type: object
                           serviceNow:
@@ -6354,12 +6355,6 @@ spec:
                             type: object
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   task:
                     description: A Task that Amazon AppFlow performs while transferring
                       the data in the flow run.
@@ -6521,7 +6516,8 @@ spec:
                                 description: Optional offset that is added to the
                                   time interval for a schedule-triggered flow. Maximum
                                   value of 36000.
-                                type: number
+                                format: int64
+                                type: integer
                               scheduleStartTime:
                                 description: Scheduled start time for a schedule-triggered
                                   flow. Must be a valid RFC3339 timestamp.
@@ -6984,7 +6980,8 @@ spec:
                                             for each output file that Amazon AppFlow
                                             writes to the flow destination. Integer
                                             value.
-                                          type: number
+                                          format: int64
+                                          type: integer
                                       type: object
                                     fileType:
                                       description: File type that Amazon AppFlow places
@@ -7466,7 +7463,8 @@ spec:
                                     description: he maximum number of records that
                                       Amazon AppFlow receives in each page of the
                                       response from your SAP application.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                               parallelismConfig:
                                 description: Sets the number of concurrent processes
@@ -7476,7 +7474,8 @@ spec:
                                     description: he maximum number of records that
                                       Amazon AppFlow receives in each page of the
                                       response from your SAP application.
-                                    type: number
+                                    format: int64
+                                    type: integer
                                 type: object
                             type: object
                           serviceNow:
@@ -7723,7 +7722,8 @@ spec:
                                 description: Optional offset that is added to the
                                   time interval for a schedule-triggered flow. Maximum
                                   value of 36000.
-                                type: number
+                                format: int64
+                                type: integer
                               scheduleStartTime:
                                 description: Scheduled start time for a schedule-triggered
                                   flow. Must be a valid RFC3339 timestamp.

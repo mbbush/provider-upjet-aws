@@ -21,5 +21,3 @@ spec:
         matchLabels:
           testing.upbound.io/example-name: example
       ipv6CidrBlock: ::/0
-    tags:
-      Name: example

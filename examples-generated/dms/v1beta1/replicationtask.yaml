@@ -19,8 +19,6 @@ spec:
       matchLabels:
         testing.upbound.io/example-name: test-dms-source-endpoint-tf
     tableMappings: '{"rules":[{"rule-type":"selection","rule-id":"1","rule-name":"1","object-locator":{"schema-name":"%","table-name":"%"},"rule-action":"include"}]}'
-    tags:
-      Name: test
     targetEndpointArnSelector:
       matchLabels:
         testing.upbound.io/example-name: test-dms-target-endpoint-tf

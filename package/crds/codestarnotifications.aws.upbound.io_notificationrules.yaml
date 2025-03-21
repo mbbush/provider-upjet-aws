@@ -176,12 +176,6 @@ spec:
                     description: The status of the notification rule. Possible values
                       are ENABLED and DISABLED, default is ENABLED.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   target:
                     description: Configuration blocks containing notification target
                       information. Can be specified multiple times. At least one target
@@ -387,12 +381,6 @@ spec:
                     description: The status of the notification rule. Possible values
                       are ENABLED and DISABLED, default is ENABLED.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   target:
                     description: Configuration blocks containing notification target
                       information. Can be specified multiple times. At least one target

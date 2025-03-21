@@ -61,10 +61,6 @@ type EIPInitParameters struct {
 	// This option is only available for VPC EIPs.
 	PublicIPv4Pool *string `json:"publicIpv4Pool,omitempty" tf:"public_ipv4_pool,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Boolean if the EIP is in a VPC or not. Use domain instead.
 	// Defaults to true unless the region supports EC2-Classic.
 	VPC *bool `json:"vpc,omitempty" tf:"vpc,omitempty"`
@@ -206,11 +202,6 @@ type EIPParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Boolean if the EIP is in a VPC or not. Use domain instead.
 	// Defaults to true unless the region supports EC2-Classic.

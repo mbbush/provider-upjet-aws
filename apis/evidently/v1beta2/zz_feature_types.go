@@ -43,10 +43,6 @@ type FeatureInitParameters struct {
 	// Specify ALL_RULES to activate the traffic allocation specified by any ongoing launches or experiments. Specify DEFAULT_VARIATION to serve the default variation to all users instead.
 	EvaluationStrategy *string `json:"evaluationStrategy,omitempty" tf:"evaluation_strategy,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// One or more blocks that contain the configuration of the feature's different variations. Detailed below
 	Variations []VariationsInitParameters `json:"variations,omitempty" tf:"variations,omitempty"`
 }
@@ -139,11 +135,6 @@ type FeatureParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// One or more blocks that contain the configuration of the feature's different variations. Detailed below
 	// +kubebuilder:validation:Optional

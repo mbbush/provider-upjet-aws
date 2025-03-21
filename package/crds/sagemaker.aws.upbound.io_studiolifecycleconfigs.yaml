@@ -86,12 +86,6 @@ spec:
                     description: The content of your Studio Lifecycle Configuration
                       script. This content must be base64 encoded.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -117,12 +111,6 @@ spec:
                     description: The content of your Studio Lifecycle Configuration
                       script. This content must be base64 encoded.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:

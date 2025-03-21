@@ -765,7 +765,8 @@ spec:
                       maxAge:
                         description: Number of seconds that the browser should cache
                           preflight request results.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   credentialsArn:
                     description: Part of quick create. Specifies any credentials required
@@ -806,12 +807,6 @@ spec:
                       The route selection expression for the API.
                       Defaults to $request.method $request.path.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   target:
                     description: |-
                       Part of quick create. Quick create produces an API with an integration, a default catch-all route, and a default stage which is configured to automatically deploy changes.
@@ -884,7 +879,8 @@ spec:
                       maxAge:
                         description: Number of seconds that the browser should cache
                           preflight request results.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   credentialsArn:
                     description: Part of quick create. Specifies any credentials required
@@ -921,12 +917,6 @@ spec:
                       The route selection expression for the API.
                       Defaults to $request.method $request.path.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   target:
                     description: |-
                       Part of quick create. Quick create produces an API with an integration, a default catch-all route, and a default stage which is configured to automatically deploy changes.
@@ -1173,7 +1163,8 @@ spec:
                       maxAge:
                         description: Number of seconds that the browser should cache
                           preflight request results.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   credentialsArn:
                     description: Part of quick create. Specifies any credentials required

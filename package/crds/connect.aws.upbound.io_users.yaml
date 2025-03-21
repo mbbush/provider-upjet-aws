@@ -1363,7 +1363,8 @@ spec:
                       afterContactWorkTimeLimit:
                         description: The After Call Work (ACW) timeout setting, in
                           seconds. Minimum value of 0.
-                        type: number
+                        format: int64
+                        type: integer
                       autoAccept:
                         description: When Auto-Accept Call is enabled for an available
                           agent, the agent connects to contacts automatically.
@@ -1548,12 +1549,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -1725,7 +1720,8 @@ spec:
                       afterContactWorkTimeLimit:
                         description: The After Call Work (ACW) timeout setting, in
                           seconds. Minimum value of 0.
-                        type: number
+                        format: int64
+                        type: integer
                       autoAccept:
                         description: When Auto-Accept Call is enabled for an available
                           agent, the agent connects to contacts automatically.
@@ -1906,12 +1902,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -2164,7 +2154,8 @@ spec:
                       afterContactWorkTimeLimit:
                         description: The After Call Work (ACW) timeout setting, in
                           seconds. Minimum value of 0.
-                        type: number
+                        format: int64
+                        type: integer
                       autoAccept:
                         description: When Auto-Accept Call is enabled for an available
                           agent, the agent connects to contacts automatically.

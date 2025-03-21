@@ -15,10 +15,6 @@ import (
 
 type InputSecurityGroupInitParameters struct {
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Whitelist rules. See Whitelist Rules for more details.
 	WhitelistRules []WhitelistRulesInitParameters `json:"whitelistRules,omitempty" tf:"whitelist_rules,omitempty"`
 }
@@ -51,11 +47,6 @@ type InputSecurityGroupParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Whitelist rules. See Whitelist Rules for more details.
 	// +kubebuilder:validation:Optional

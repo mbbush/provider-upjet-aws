@@ -454,22 +454,6 @@ func (in *VocabularyFilterInitParameters) DeepCopyInto(out *VocabularyFilterInit
 		*out = new(string)
 		**out = **in
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.VocabularyFilterFileURI != nil {
 		in, out := &in.VocabularyFilterFileURI, &out.VocabularyFilterFileURI
 		*out = new(string)
@@ -626,22 +610,6 @@ func (in *VocabularyFilterParameters) DeepCopyInto(out *VocabularyFilterParamete
 		*out = new(string)
 		**out = **in
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.VocabularyFilterFileURI != nil {
 		in, out := &in.VocabularyFilterFileURI, &out.VocabularyFilterFileURI
 		*out = new(string)
@@ -722,22 +690,6 @@ func (in *VocabularyInitParameters) DeepCopyInto(out *VocabularyInitParameters) 
 				*out = new(string)
 				**out = **in
 			}
-		}
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
 		}
 	}
 	if in.VocabularyFileURI != nil {
@@ -895,22 +847,6 @@ func (in *VocabularyParameters) DeepCopyInto(out *VocabularyParameters) {
 		in, out := &in.Region, &out.Region
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.VocabularyFileURI != nil {
 		in, out := &in.VocabularyFileURI, &out.VocabularyFileURI

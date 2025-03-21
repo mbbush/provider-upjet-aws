@@ -752,7 +752,8 @@ spec:
                           Amazon SES API v2 will attempt delivery of email. If specified,
                           the value must greater than or equal to 300 seconds (5 minutes)
                           and less than or equal to 50400 seconds (840 minutes).
-                        type: number
+                        format: int64
+                        type: integer
                       sendingPoolName:
                         description: The name of the dedicated IP pool to associate
                           with the configuration set.
@@ -803,12 +804,6 @@ spec:
                           type: string
                         type: array
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   trackingOptions:
                     description: An object that defines the open and click tracking
                       options for emails that you send using the configuration set.
@@ -876,7 +871,8 @@ spec:
                           Amazon SES API v2 will attempt delivery of email. If specified,
                           the value must greater than or equal to 300 seconds (5 minutes)
                           and less than or equal to 50400 seconds (840 minutes).
-                        type: number
+                        format: int64
+                        type: integer
                       sendingPoolName:
                         description: The name of the dedicated IP pool to associate
                           with the configuration set.
@@ -923,12 +919,6 @@ spec:
                           type: string
                         type: array
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   trackingOptions:
                     description: An object that defines the open and click tracking
                       options for emails that you send using the configuration set.
@@ -1156,7 +1146,8 @@ spec:
                           Amazon SES API v2 will attempt delivery of email. If specified,
                           the value must greater than or equal to 300 seconds (5 minutes)
                           and less than or equal to 50400 seconds (840 minutes).
-                        type: number
+                        format: int64
+                        type: integer
                       sendingPoolName:
                         description: The name of the dedicated IP pool to associate
                           with the configuration set.

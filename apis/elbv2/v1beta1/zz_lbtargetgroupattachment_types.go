@@ -19,7 +19,7 @@ type LBTargetGroupAttachmentInitParameters struct {
 	AvailabilityZone *string `json:"availabilityZone,omitempty" tf:"availability_zone,omitempty"`
 
 	// The port on which targets receive traffic.
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// The ARN of the target group with which to register targets.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/elbv2/v1beta2.LBTargetGroup
@@ -46,7 +46,7 @@ type LBTargetGroupAttachmentObservation struct {
 	ID *string `json:"id,omitempty" tf:"id,omitempty"`
 
 	// The port on which targets receive traffic.
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// The ARN of the target group with which to register targets.
 	TargetGroupArn *string `json:"targetGroupArn,omitempty" tf:"target_group_arn,omitempty"`
@@ -63,7 +63,7 @@ type LBTargetGroupAttachmentParameters struct {
 
 	// The port on which targets receive traffic.
 	// +kubebuilder:validation:Optional
-	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
+	Port *int64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// Region is the region you'd like your resource to be created in.
 	// +upjet:crd:field:TFTag=-

@@ -32,10 +32,6 @@ type AccessPointInitParameters struct {
 
 	// Directory on the Amazon EFS file system that the access point provides access to. Detailed below.
 	RootDirectory *RootDirectoryInitParameters `json:"rootDirectory,omitempty" tf:"root_directory,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type AccessPointObservation struct {
@@ -97,20 +93,15 @@ type AccessPointParameters struct {
 	// Directory on the Amazon EFS file system that the access point provides access to. Detailed below.
 	// +kubebuilder:validation:Optional
 	RootDirectory *RootDirectoryParameters `json:"rootDirectory,omitempty" tf:"root_directory,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type CreationInfoInitParameters struct {
 
 	// POSIX group ID to apply to the root_directory.
-	OwnerGID *float64 `json:"ownerGid,omitempty" tf:"owner_gid,omitempty"`
+	OwnerGID *int64 `json:"ownerGid,omitempty" tf:"owner_gid,omitempty"`
 
 	// POSIX user ID to apply to the root_directory.
-	OwnerUID *float64 `json:"ownerUid,omitempty" tf:"owner_uid,omitempty"`
+	OwnerUID *int64 `json:"ownerUid,omitempty" tf:"owner_uid,omitempty"`
 
 	// POSIX permissions to apply to the RootDirectory, in the format of an octal number representing the file's mode bits.
 	Permissions *string `json:"permissions,omitempty" tf:"permissions,omitempty"`
@@ -119,10 +110,10 @@ type CreationInfoInitParameters struct {
 type CreationInfoObservation struct {
 
 	// POSIX group ID to apply to the root_directory.
-	OwnerGID *float64 `json:"ownerGid,omitempty" tf:"owner_gid,omitempty"`
+	OwnerGID *int64 `json:"ownerGid,omitempty" tf:"owner_gid,omitempty"`
 
 	// POSIX user ID to apply to the root_directory.
-	OwnerUID *float64 `json:"ownerUid,omitempty" tf:"owner_uid,omitempty"`
+	OwnerUID *int64 `json:"ownerUid,omitempty" tf:"owner_uid,omitempty"`
 
 	// POSIX permissions to apply to the RootDirectory, in the format of an octal number representing the file's mode bits.
 	Permissions *string `json:"permissions,omitempty" tf:"permissions,omitempty"`
@@ -132,11 +123,11 @@ type CreationInfoParameters struct {
 
 	// POSIX group ID to apply to the root_directory.
 	// +kubebuilder:validation:Optional
-	OwnerGID *float64 `json:"ownerGid" tf:"owner_gid,omitempty"`
+	OwnerGID *int64 `json:"ownerGid" tf:"owner_gid,omitempty"`
 
 	// POSIX user ID to apply to the root_directory.
 	// +kubebuilder:validation:Optional
-	OwnerUID *float64 `json:"ownerUid" tf:"owner_uid,omitempty"`
+	OwnerUID *int64 `json:"ownerUid" tf:"owner_uid,omitempty"`
 
 	// POSIX permissions to apply to the RootDirectory, in the format of an octal number representing the file's mode bits.
 	// +kubebuilder:validation:Optional
@@ -146,43 +137,43 @@ type CreationInfoParameters struct {
 type PosixUserInitParameters struct {
 
 	// POSIX group ID used for all file system operations using this access point.
-	GID *float64 `json:"gid,omitempty" tf:"gid,omitempty"`
+	GID *int64 `json:"gid,omitempty" tf:"gid,omitempty"`
 
 	// Secondary POSIX group IDs used for all file system operations using this access point.
 	// +listType=set
-	SecondaryGids []*float64 `json:"secondaryGids,omitempty" tf:"secondary_gids,omitempty"`
+	SecondaryGids []*int64 `json:"secondaryGids,omitempty" tf:"secondary_gids,omitempty"`
 
 	// POSIX user ID used for all file system operations using this access point.
-	UID *float64 `json:"uid,omitempty" tf:"uid,omitempty"`
+	UID *int64 `json:"uid,omitempty" tf:"uid,omitempty"`
 }
 
 type PosixUserObservation struct {
 
 	// POSIX group ID used for all file system operations using this access point.
-	GID *float64 `json:"gid,omitempty" tf:"gid,omitempty"`
+	GID *int64 `json:"gid,omitempty" tf:"gid,omitempty"`
 
 	// Secondary POSIX group IDs used for all file system operations using this access point.
 	// +listType=set
-	SecondaryGids []*float64 `json:"secondaryGids,omitempty" tf:"secondary_gids,omitempty"`
+	SecondaryGids []*int64 `json:"secondaryGids,omitempty" tf:"secondary_gids,omitempty"`
 
 	// POSIX user ID used for all file system operations using this access point.
-	UID *float64 `json:"uid,omitempty" tf:"uid,omitempty"`
+	UID *int64 `json:"uid,omitempty" tf:"uid,omitempty"`
 }
 
 type PosixUserParameters struct {
 
 	// POSIX group ID used for all file system operations using this access point.
 	// +kubebuilder:validation:Optional
-	GID *float64 `json:"gid" tf:"gid,omitempty"`
+	GID *int64 `json:"gid" tf:"gid,omitempty"`
 
 	// Secondary POSIX group IDs used for all file system operations using this access point.
 	// +kubebuilder:validation:Optional
 	// +listType=set
-	SecondaryGids []*float64 `json:"secondaryGids,omitempty" tf:"secondary_gids,omitempty"`
+	SecondaryGids []*int64 `json:"secondaryGids,omitempty" tf:"secondary_gids,omitempty"`
 
 	// POSIX user ID used for all file system operations using this access point.
 	// +kubebuilder:validation:Optional
-	UID *float64 `json:"uid" tf:"uid,omitempty"`
+	UID *int64 `json:"uid" tf:"uid,omitempty"`
 }
 
 type RootDirectoryInitParameters struct {

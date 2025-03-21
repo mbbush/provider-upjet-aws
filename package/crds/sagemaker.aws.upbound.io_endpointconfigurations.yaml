@@ -1962,7 +1962,8 @@ spec:
                               sent by the SageMaker client to the model container.
                               If no value is provided, Amazon SageMaker will choose
                               an optimal value for you.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       outputConfig:
                         description: Specifies the configuration for asynchronous
@@ -2049,7 +2050,8 @@ spec:
                       initialSamplingPercentage:
                         description: Portion of data to capture. Should be between
                           0 and 100.
-                        type: number
+                        format: int64
+                        type: integer
                       kmsKeyId:
                         description: Amazon Resource Name (ARN) of a AWS Key Management
                           Service key that Amazon SageMaker uses to encrypt the captured
@@ -2152,7 +2154,8 @@ spec:
                             more information about health check, see How Your Container
                             Should Respond to Health Check (Ping) Requests. Valid
                             values between 60 and 3600.
-                          type: number
+                          format: int64
+                          type: integer
                         coreDumpConfig:
                           description: Specifies configuration for a core dump from
                             the model container when the process crashes. Fields are
@@ -2185,7 +2188,8 @@ spec:
                           type: string
                         initialInstanceCount:
                           description: Initial number of instances used for auto-scaling.
-                          type: number
+                          format: int64
+                          type: integer
                         initialVariantWeight:
                           description: Determines initial traffic distribution among
                             all of the models that you specify in the endpoint configuration.
@@ -2203,12 +2207,14 @@ spec:
                               description: The maximum number of instances that the
                                 endpoint can provision when it scales up to accommodate
                                 an increase in traffic.
-                              type: number
+                              format: int64
+                              type: integer
                             minInstanceCount:
                               description: The minimum number of instances that the
                                 endpoint must retain when it scales down to accommodate
                                 a decrease in traffic.
-                              type: number
+                              format: int64
+                              type: integer
                             status:
                               description: Indicates whether managed instance scaling
                                 is enabled. Valid values are ENABLED and DISABLED.
@@ -2219,7 +2225,8 @@ spec:
                             and extract the model that you want to host from Amazon
                             S3 to the individual inference instance associated with
                             this production variant. Valid values between 60 and 3600.
-                          type: number
+                          format: int64
+                          type: integer
                         modelName:
                           description: The name of the model to use.
                           type: string
@@ -2322,18 +2329,21 @@ spec:
                               description: The maximum number of concurrent invocations
                                 your serverless endpoint can process. Valid values
                                 are between 1 and 200.
-                              type: number
+                              format: int64
+                              type: integer
                             memorySizeInMb:
                               description: 'The memory size of your serverless endpoint.
                                 Valid values are in 1 GB increments: 1024 MB, 2048
                                 MB, 3072 MB, 4096 MB, 5120 MB, or 6144 MB.'
-                              type: number
+                              format: int64
+                              type: integer
                             provisionedConcurrency:
                               description: The amount of provisioned concurrency to
                                 allocate for the serverless endpoint. Should be less
                                 than or equal to max_concurrency. Valid values are
                                 between 1 and 200.
-                              type: number
+                              format: int64
+                              type: integer
                           type: object
                         variantName:
                           description: The name of the variant.
@@ -2342,7 +2352,8 @@ spec:
                           description: The size, in GB, of the ML storage volume attached
                             to individual inference instance associated with the production
                             variant. Valid values between 1 and 512.
-                          type: number
+                          format: int64
+                          type: integer
                       type: object
                     type: array
                   region:
@@ -2368,7 +2379,8 @@ spec:
                             more information about health check, see How Your Container
                             Should Respond to Health Check (Ping) Requests. Valid
                             values between 60 and 3600.
-                          type: number
+                          format: int64
+                          type: integer
                         coreDumpConfig:
                           description: Specifies configuration for a core dump from
                             the model container when the process crashes. Fields are
@@ -2401,7 +2413,8 @@ spec:
                           type: string
                         initialInstanceCount:
                           description: Initial number of instances used for auto-scaling.
-                          type: number
+                          format: int64
+                          type: integer
                         initialVariantWeight:
                           description: Determines initial traffic distribution among
                             all of the models that you specify in the endpoint configuration.
@@ -2419,12 +2432,14 @@ spec:
                               description: The maximum number of instances that the
                                 endpoint can provision when it scales up to accommodate
                                 an increase in traffic.
-                              type: number
+                              format: int64
+                              type: integer
                             minInstanceCount:
                               description: The minimum number of instances that the
                                 endpoint must retain when it scales down to accommodate
                                 a decrease in traffic.
-                              type: number
+                              format: int64
+                              type: integer
                             status:
                               description: Indicates whether managed instance scaling
                                 is enabled. Valid values are ENABLED and DISABLED.
@@ -2435,7 +2450,8 @@ spec:
                             and extract the model that you want to host from Amazon
                             S3 to the individual inference instance associated with
                             this production variant. Valid values between 60 and 3600.
-                          type: number
+                          format: int64
+                          type: integer
                         modelName:
                           description: The name of the model to use.
                           type: string
@@ -2462,18 +2478,21 @@ spec:
                               description: The maximum number of concurrent invocations
                                 your serverless endpoint can process. Valid values
                                 are between 1 and 200.
-                              type: number
+                              format: int64
+                              type: integer
                             memorySizeInMb:
                               description: 'The memory size of your serverless endpoint.
                                 Valid values are in 1 GB increments: 1024 MB, 2048
                                 MB, 3072 MB, 4096 MB, 5120 MB, or 6144 MB.'
-                              type: number
+                              format: int64
+                              type: integer
                             provisionedConcurrency:
                               description: The amount of provisioned concurrency to
                                 allocate for the serverless endpoint. Should be less
                                 than or equal to max_concurrency. Valid values are
                                 between 1 and 200.
-                              type: number
+                              format: int64
+                              type: integer
                           type: object
                         variantName:
                           description: The name of the variant.
@@ -2482,15 +2501,10 @@ spec:
                           description: The size, in GB, of the ML storage volume attached
                             to individual inference instance associated with the production
                             variant. Valid values between 1 and 512.
-                          type: number
+                          format: int64
+                          type: integer
                       type: object
                     type: array
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -2521,7 +2535,8 @@ spec:
                               sent by the SageMaker client to the model container.
                               If no value is provided, Amazon SageMaker will choose
                               an optimal value for you.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       outputConfig:
                         description: Specifies the configuration for asynchronous
@@ -2608,7 +2623,8 @@ spec:
                       initialSamplingPercentage:
                         description: Portion of data to capture. Should be between
                           0 and 100.
-                        type: number
+                        format: int64
+                        type: integer
                       kmsKeyId:
                         description: Amazon Resource Name (ARN) of a AWS Key Management
                           Service key that Amazon SageMaker uses to encrypt the captured
@@ -2711,7 +2727,8 @@ spec:
                             more information about health check, see How Your Container
                             Should Respond to Health Check (Ping) Requests. Valid
                             values between 60 and 3600.
-                          type: number
+                          format: int64
+                          type: integer
                         coreDumpConfig:
                           description: Specifies configuration for a core dump from
                             the model container when the process crashes. Fields are
@@ -2744,7 +2761,8 @@ spec:
                           type: string
                         initialInstanceCount:
                           description: Initial number of instances used for auto-scaling.
-                          type: number
+                          format: int64
+                          type: integer
                         initialVariantWeight:
                           description: Determines initial traffic distribution among
                             all of the models that you specify in the endpoint configuration.
@@ -2762,12 +2780,14 @@ spec:
                               description: The maximum number of instances that the
                                 endpoint can provision when it scales up to accommodate
                                 an increase in traffic.
-                              type: number
+                              format: int64
+                              type: integer
                             minInstanceCount:
                               description: The minimum number of instances that the
                                 endpoint must retain when it scales down to accommodate
                                 a decrease in traffic.
-                              type: number
+                              format: int64
+                              type: integer
                             status:
                               description: Indicates whether managed instance scaling
                                 is enabled. Valid values are ENABLED and DISABLED.
@@ -2778,7 +2798,8 @@ spec:
                             and extract the model that you want to host from Amazon
                             S3 to the individual inference instance associated with
                             this production variant. Valid values between 60 and 3600.
-                          type: number
+                          format: int64
+                          type: integer
                         modelName:
                           description: The name of the model to use.
                           type: string
@@ -2881,18 +2902,21 @@ spec:
                               description: The maximum number of concurrent invocations
                                 your serverless endpoint can process. Valid values
                                 are between 1 and 200.
-                              type: number
+                              format: int64
+                              type: integer
                             memorySizeInMb:
                               description: 'The memory size of your serverless endpoint.
                                 Valid values are in 1 GB increments: 1024 MB, 2048
                                 MB, 3072 MB, 4096 MB, 5120 MB, or 6144 MB.'
-                              type: number
+                              format: int64
+                              type: integer
                             provisionedConcurrency:
                               description: The amount of provisioned concurrency to
                                 allocate for the serverless endpoint. Should be less
                                 than or equal to max_concurrency. Valid values are
                                 between 1 and 200.
-                              type: number
+                              format: int64
+                              type: integer
                           type: object
                         variantName:
                           description: The name of the variant.
@@ -2901,7 +2925,8 @@ spec:
                           description: The size, in GB, of the ML storage volume attached
                             to individual inference instance associated with the production
                             variant. Valid values between 1 and 512.
-                          type: number
+                          format: int64
+                          type: integer
                       type: object
                     type: array
                   shadowProductionVariants:
@@ -2923,7 +2948,8 @@ spec:
                             more information about health check, see How Your Container
                             Should Respond to Health Check (Ping) Requests. Valid
                             values between 60 and 3600.
-                          type: number
+                          format: int64
+                          type: integer
                         coreDumpConfig:
                           description: Specifies configuration for a core dump from
                             the model container when the process crashes. Fields are
@@ -2956,7 +2982,8 @@ spec:
                           type: string
                         initialInstanceCount:
                           description: Initial number of instances used for auto-scaling.
-                          type: number
+                          format: int64
+                          type: integer
                         initialVariantWeight:
                           description: Determines initial traffic distribution among
                             all of the models that you specify in the endpoint configuration.
@@ -2974,12 +3001,14 @@ spec:
                               description: The maximum number of instances that the
                                 endpoint can provision when it scales up to accommodate
                                 an increase in traffic.
-                              type: number
+                              format: int64
+                              type: integer
                             minInstanceCount:
                               description: The minimum number of instances that the
                                 endpoint must retain when it scales down to accommodate
                                 a decrease in traffic.
-                              type: number
+                              format: int64
+                              type: integer
                             status:
                               description: Indicates whether managed instance scaling
                                 is enabled. Valid values are ENABLED and DISABLED.
@@ -2990,7 +3019,8 @@ spec:
                             and extract the model that you want to host from Amazon
                             S3 to the individual inference instance associated with
                             this production variant. Valid values between 60 and 3600.
-                          type: number
+                          format: int64
+                          type: integer
                         modelName:
                           description: The name of the model to use.
                           type: string
@@ -3017,18 +3047,21 @@ spec:
                               description: The maximum number of concurrent invocations
                                 your serverless endpoint can process. Valid values
                                 are between 1 and 200.
-                              type: number
+                              format: int64
+                              type: integer
                             memorySizeInMb:
                               description: 'The memory size of your serverless endpoint.
                                 Valid values are in 1 GB increments: 1024 MB, 2048
                                 MB, 3072 MB, 4096 MB, 5120 MB, or 6144 MB.'
-                              type: number
+                              format: int64
+                              type: integer
                             provisionedConcurrency:
                               description: The amount of provisioned concurrency to
                                 allocate for the serverless endpoint. Should be less
                                 than or equal to max_concurrency. Valid values are
                                 between 1 and 200.
-                              type: number
+                              format: int64
+                              type: integer
                           type: object
                         variantName:
                           description: The name of the variant.
@@ -3037,15 +3070,10 @@ spec:
                           description: The size, in GB, of the ML storage volume attached
                             to individual inference instance associated with the production
                             variant. Valid values between 1 and 512.
-                          type: number
+                          format: int64
+                          type: integer
                       type: object
                     type: array
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -3243,7 +3271,8 @@ spec:
                               sent by the SageMaker client to the model container.
                               If no value is provided, Amazon SageMaker will choose
                               an optimal value for you.
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       outputConfig:
                         description: Specifies the configuration for asynchronous
@@ -3330,7 +3359,8 @@ spec:
                       initialSamplingPercentage:
                         description: Portion of data to capture. Should be between
                           0 and 100.
-                        type: number
+                        format: int64
+                        type: integer
                       kmsKeyId:
                         description: Amazon Resource Name (ARN) of a AWS Key Management
                           Service key that Amazon SageMaker uses to encrypt the captured
@@ -3361,7 +3391,8 @@ spec:
                             more information about health check, see How Your Container
                             Should Respond to Health Check (Ping) Requests. Valid
                             values between 60 and 3600.
-                          type: number
+                          format: int64
+                          type: integer
                         coreDumpConfig:
                           description: Specifies configuration for a core dump from
                             the model container when the process crashes. Fields are
@@ -3394,7 +3425,8 @@ spec:
                           type: string
                         initialInstanceCount:
                           description: Initial number of instances used for auto-scaling.
-                          type: number
+                          format: int64
+                          type: integer
                         initialVariantWeight:
                           description: Determines initial traffic distribution among
                             all of the models that you specify in the endpoint configuration.
@@ -3412,12 +3444,14 @@ spec:
                               description: The maximum number of instances that the
                                 endpoint can provision when it scales up to accommodate
                                 an increase in traffic.
-                              type: number
+                              format: int64
+                              type: integer
                             minInstanceCount:
                               description: The minimum number of instances that the
                                 endpoint must retain when it scales down to accommodate
                                 a decrease in traffic.
-                              type: number
+                              format: int64
+                              type: integer
                             status:
                               description: Indicates whether managed instance scaling
                                 is enabled. Valid values are ENABLED and DISABLED.
@@ -3428,7 +3462,8 @@ spec:
                             and extract the model that you want to host from Amazon
                             S3 to the individual inference instance associated with
                             this production variant. Valid values between 60 and 3600.
-                          type: number
+                          format: int64
+                          type: integer
                         modelName:
                           description: The name of the model to use.
                           type: string
@@ -3455,18 +3490,21 @@ spec:
                               description: The maximum number of concurrent invocations
                                 your serverless endpoint can process. Valid values
                                 are between 1 and 200.
-                              type: number
+                              format: int64
+                              type: integer
                             memorySizeInMb:
                               description: 'The memory size of your serverless endpoint.
                                 Valid values are in 1 GB increments: 1024 MB, 2048
                                 MB, 3072 MB, 4096 MB, 5120 MB, or 6144 MB.'
-                              type: number
+                              format: int64
+                              type: integer
                             provisionedConcurrency:
                               description: The amount of provisioned concurrency to
                                 allocate for the serverless endpoint. Should be less
                                 than or equal to max_concurrency. Valid values are
                                 between 1 and 200.
-                              type: number
+                              format: int64
+                              type: integer
                           type: object
                         variantName:
                           description: The name of the variant.
@@ -3475,7 +3513,8 @@ spec:
                           description: The size, in GB, of the ML storage volume attached
                             to individual inference instance associated with the production
                             variant. Valid values between 1 and 512.
-                          type: number
+                          format: int64
+                          type: integer
                       type: object
                     type: array
                   shadowProductionVariants:
@@ -3497,7 +3536,8 @@ spec:
                             more information about health check, see How Your Container
                             Should Respond to Health Check (Ping) Requests. Valid
                             values between 60 and 3600.
-                          type: number
+                          format: int64
+                          type: integer
                         coreDumpConfig:
                           description: Specifies configuration for a core dump from
                             the model container when the process crashes. Fields are
@@ -3530,7 +3570,8 @@ spec:
                           type: string
                         initialInstanceCount:
                           description: Initial number of instances used for auto-scaling.
-                          type: number
+                          format: int64
+                          type: integer
                         initialVariantWeight:
                           description: Determines initial traffic distribution among
                             all of the models that you specify in the endpoint configuration.
@@ -3548,12 +3589,14 @@ spec:
                               description: The maximum number of instances that the
                                 endpoint can provision when it scales up to accommodate
                                 an increase in traffic.
-                              type: number
+                              format: int64
+                              type: integer
                             minInstanceCount:
                               description: The minimum number of instances that the
                                 endpoint must retain when it scales down to accommodate
                                 a decrease in traffic.
-                              type: number
+                              format: int64
+                              type: integer
                             status:
                               description: Indicates whether managed instance scaling
                                 is enabled. Valid values are ENABLED and DISABLED.
@@ -3564,7 +3607,8 @@ spec:
                             and extract the model that you want to host from Amazon
                             S3 to the individual inference instance associated with
                             this production variant. Valid values between 60 and 3600.
-                          type: number
+                          format: int64
+                          type: integer
                         modelName:
                           description: The name of the model to use.
                           type: string
@@ -3591,18 +3635,21 @@ spec:
                               description: The maximum number of concurrent invocations
                                 your serverless endpoint can process. Valid values
                                 are between 1 and 200.
-                              type: number
+                              format: int64
+                              type: integer
                             memorySizeInMb:
                               description: 'The memory size of your serverless endpoint.
                                 Valid values are in 1 GB increments: 1024 MB, 2048
                                 MB, 3072 MB, 4096 MB, 5120 MB, or 6144 MB.'
-                              type: number
+                              format: int64
+                              type: integer
                             provisionedConcurrency:
                               description: The amount of provisioned concurrency to
                                 allocate for the serverless endpoint. Should be less
                                 than or equal to max_concurrency. Valid values are
                                 between 1 and 200.
-                              type: number
+                              format: int64
+                              type: integer
                           type: object
                         variantName:
                           description: The name of the variant.
@@ -3611,7 +3658,8 @@ spec:
                           description: The size, in GB, of the ML storage volume attached
                             to individual inference instance associated with the production
                             variant. Valid values between 1 and 512.
-                          type: number
+                          format: int64
+                          type: integer
                       type: object
                     type: array
                   tags:

@@ -77,7 +77,8 @@ spec:
                     description: The limit amount. If time-based, this amount is in
                       minutes. If data-based, this amount is in terabytes (TB). The
                       value must be a positive number.
-                    type: number
+                    format: int64
+                    type: integer
                   breachAction:
                     description: The action that Amazon Redshift takes when the limit
                       is reached. The default is log. Valid values are log, emit-metric,
@@ -182,12 +183,6 @@ spec:
                     description: Region is the region you'd like your resource to
                       be created in.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -208,7 +203,8 @@ spec:
                     description: The limit amount. If time-based, this amount is in
                       minutes. If data-based, this amount is in terabytes (TB). The
                       value must be a positive number.
-                    type: number
+                    format: int64
+                    type: integer
                   breachAction:
                     description: The action that Amazon Redshift takes when the limit
                       is reached. The default is log. Valid values are log, emit-metric,
@@ -309,12 +305,6 @@ spec:
                       period begins on Sunday. The default is monthly. Valid values
                       are daily, weekly, and monthly.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -505,7 +495,8 @@ spec:
                     description: The limit amount. If time-based, this amount is in
                       minutes. If data-based, this amount is in terabytes (TB). The
                       value must be a positive number.
-                    type: number
+                    format: int64
+                    type: integer
                   arn:
                     description: Amazon Resource Name (ARN) of the Redshift Usage
                       Limit.

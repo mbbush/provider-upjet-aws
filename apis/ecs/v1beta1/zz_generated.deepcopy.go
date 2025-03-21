@@ -1526,7 +1526,7 @@ func (in *DefaultCapacityProviderStrategyInitParameters) DeepCopyInto(out *Defau
 	*out = *in
 	if in.Base != nil {
 		in, out := &in.Base, &out.Base
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.CapacityProvider != nil {
@@ -1536,7 +1536,7 @@ func (in *DefaultCapacityProviderStrategyInitParameters) DeepCopyInto(out *Defau
 	}
 	if in.Weight != nil {
 		in, out := &in.Weight, &out.Weight
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1556,7 +1556,7 @@ func (in *DefaultCapacityProviderStrategyObservation) DeepCopyInto(out *DefaultC
 	*out = *in
 	if in.Base != nil {
 		in, out := &in.Base, &out.Base
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.CapacityProvider != nil {
@@ -1566,7 +1566,7 @@ func (in *DefaultCapacityProviderStrategyObservation) DeepCopyInto(out *DefaultC
 	}
 	if in.Weight != nil {
 		in, out := &in.Weight, &out.Weight
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1586,7 +1586,7 @@ func (in *DefaultCapacityProviderStrategyParameters) DeepCopyInto(out *DefaultCa
 	*out = *in
 	if in.Base != nil {
 		in, out := &in.Base, &out.Base
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.CapacityProvider != nil {
@@ -1596,7 +1596,7 @@ func (in *DefaultCapacityProviderStrategyParameters) DeepCopyInto(out *DefaultCa
 	}
 	if in.Weight != nil {
 		in, out := &in.Weight, &out.Weight
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 }

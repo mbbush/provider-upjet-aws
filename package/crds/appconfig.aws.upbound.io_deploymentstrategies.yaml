@@ -76,7 +76,8 @@ spec:
                   deploymentDurationInMinutes:
                     description: Total amount of time for a deployment to last. Minimum
                       value of 0, maximum value of 1440.
-                    type: number
+                    format: int64
+                    type: integer
                   description:
                     description: Description of the deployment strategy. Can be at
                       most 1024 characters.
@@ -86,7 +87,8 @@ spec:
                       before considering the deployment to be complete and no longer
                       eligible for automatic roll back. Minimum value of 0, maximum
                       value of 1440.
-                    type: number
+                    format: int64
+                    type: integer
                   growthFactor:
                     description: Percentage of targets to receive a deployed configuration
                       during each interval. Minimum value of 1.0, maximum value of
@@ -108,12 +110,6 @@ spec:
                     description: 'Where to save the deployment strategy. Valid values:
                       NONE and SSM_DOCUMENT.'
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -133,7 +129,8 @@ spec:
                   deploymentDurationInMinutes:
                     description: Total amount of time for a deployment to last. Minimum
                       value of 0, maximum value of 1440.
-                    type: number
+                    format: int64
+                    type: integer
                   description:
                     description: Description of the deployment strategy. Can be at
                       most 1024 characters.
@@ -143,7 +140,8 @@ spec:
                       before considering the deployment to be complete and no longer
                       eligible for automatic roll back. Minimum value of 0, maximum
                       value of 1440.
-                    type: number
+                    format: int64
+                    type: integer
                   growthFactor:
                     description: Percentage of targets to receive a deployed configuration
                       during each interval. Minimum value of 1.0, maximum value of
@@ -161,12 +159,6 @@ spec:
                     description: 'Where to save the deployment strategy. Valid values:
                       NONE and SSM_DOCUMENT.'
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -364,7 +356,8 @@ spec:
                   deploymentDurationInMinutes:
                     description: Total amount of time for a deployment to last. Minimum
                       value of 0, maximum value of 1440.
-                    type: number
+                    format: int64
+                    type: integer
                   description:
                     description: Description of the deployment strategy. Can be at
                       most 1024 characters.
@@ -374,7 +367,8 @@ spec:
                       before considering the deployment to be complete and no longer
                       eligible for automatic roll back. Minimum value of 0, maximum
                       value of 1440.
-                    type: number
+                    format: int64
+                    type: integer
                   growthFactor:
                     description: Percentage of targets to receive a deployed configuration
                       during each interval. Minimum value of 1.0, maximum value of

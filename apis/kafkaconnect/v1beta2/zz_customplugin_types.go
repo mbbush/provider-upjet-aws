@@ -23,10 +23,6 @@ type CustomPluginInitParameters_2 struct {
 
 	// Information about the location of a custom plugin. See location Block for details.
 	Location *LocationInitParameters `json:"location,omitempty" tf:"location,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type CustomPluginObservation_2 struct {
@@ -43,7 +39,7 @@ type CustomPluginObservation_2 struct {
 	ID *string `json:"id,omitempty" tf:"id,omitempty"`
 
 	// an ID of the latest successfully created revision of the custom plugin.
-	LatestRevision *float64 `json:"latestRevision,omitempty" tf:"latest_revision,omitempty"`
+	LatestRevision *int64 `json:"latestRevision,omitempty" tf:"latest_revision,omitempty"`
 
 	// Information about the location of a custom plugin. See location Block for details.
 	Location *LocationObservation `json:"location,omitempty" tf:"location,omitempty"`
@@ -85,11 +81,6 @@ type CustomPluginParameters_2 struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type LocationInitParameters struct {

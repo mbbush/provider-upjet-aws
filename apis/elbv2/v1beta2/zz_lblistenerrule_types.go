@@ -29,7 +29,7 @@ type ActionAuthenticateCognitoInitParameters struct {
 	SessionCookieName *string `json:"sessionCookieName,omitempty" tf:"session_cookie_name,omitempty"`
 
 	// The maximum duration of the authentication session, in seconds.
-	SessionTimeout *float64 `json:"sessionTimeout,omitempty" tf:"session_timeout,omitempty"`
+	SessionTimeout *int64 `json:"sessionTimeout,omitempty" tf:"session_timeout,omitempty"`
 
 	// The ARN of the Cognito user pool.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/cognitoidp/v1beta2.UserPool
@@ -87,7 +87,7 @@ type ActionAuthenticateCognitoObservation struct {
 	SessionCookieName *string `json:"sessionCookieName,omitempty" tf:"session_cookie_name,omitempty"`
 
 	// The maximum duration of the authentication session, in seconds.
-	SessionTimeout *float64 `json:"sessionTimeout,omitempty" tf:"session_timeout,omitempty"`
+	SessionTimeout *int64 `json:"sessionTimeout,omitempty" tf:"session_timeout,omitempty"`
 
 	// The ARN of the Cognito user pool.
 	UserPoolArn *string `json:"userPoolArn,omitempty" tf:"user_pool_arn,omitempty"`
@@ -120,7 +120,7 @@ type ActionAuthenticateCognitoParameters struct {
 
 	// The maximum duration of the authentication session, in seconds.
 	// +kubebuilder:validation:Optional
-	SessionTimeout *float64 `json:"sessionTimeout,omitempty" tf:"session_timeout,omitempty"`
+	SessionTimeout *int64 `json:"sessionTimeout,omitempty" tf:"session_timeout,omitempty"`
 
 	// The ARN of the Cognito user pool.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/cognitoidp/v1beta2.UserPool
@@ -193,7 +193,7 @@ type ActionAuthenticateOidcInitParameters struct {
 	SessionCookieName *string `json:"sessionCookieName,omitempty" tf:"session_cookie_name,omitempty"`
 
 	// The maximum duration of the authentication session, in seconds.
-	SessionTimeout *float64 `json:"sessionTimeout,omitempty" tf:"session_timeout,omitempty"`
+	SessionTimeout *int64 `json:"sessionTimeout,omitempty" tf:"session_timeout,omitempty"`
 
 	// The token endpoint of the IdP.
 	TokenEndpoint *string `json:"tokenEndpoint,omitempty" tf:"token_endpoint,omitempty"`
@@ -227,7 +227,7 @@ type ActionAuthenticateOidcObservation struct {
 	SessionCookieName *string `json:"sessionCookieName,omitempty" tf:"session_cookie_name,omitempty"`
 
 	// The maximum duration of the authentication session, in seconds.
-	SessionTimeout *float64 `json:"sessionTimeout,omitempty" tf:"session_timeout,omitempty"`
+	SessionTimeout *int64 `json:"sessionTimeout,omitempty" tf:"session_timeout,omitempty"`
 
 	// The token endpoint of the IdP.
 	TokenEndpoint *string `json:"tokenEndpoint,omitempty" tf:"token_endpoint,omitempty"`
@@ -273,7 +273,7 @@ type ActionAuthenticateOidcParameters struct {
 
 	// The maximum duration of the authentication session, in seconds.
 	// +kubebuilder:validation:Optional
-	SessionTimeout *float64 `json:"sessionTimeout,omitempty" tf:"session_timeout,omitempty"`
+	SessionTimeout *int64 `json:"sessionTimeout,omitempty" tf:"session_timeout,omitempty"`
 
 	// The token endpoint of the IdP.
 	// +kubebuilder:validation:Optional
@@ -372,7 +372,7 @@ type ActionInitParameters struct {
 	// The action with the lowest value for order is performed first.
 	// Valid values are between 1 and 50000.
 	// Defaults to the position in the list of actions.
-	Order *float64 `json:"order,omitempty" tf:"order,omitempty"`
+	Order *int64 `json:"order,omitempty" tf:"order,omitempty"`
 
 	// Information for creating a redirect action. Required if type is redirect.
 	Redirect *ActionRedirectInitParameters `json:"redirect,omitempty" tf:"redirect,omitempty"`
@@ -417,7 +417,7 @@ type ActionObservation struct {
 	// The action with the lowest value for order is performed first.
 	// Valid values are between 1 and 50000.
 	// Defaults to the position in the list of actions.
-	Order *float64 `json:"order,omitempty" tf:"order,omitempty"`
+	Order *int64 `json:"order,omitempty" tf:"order,omitempty"`
 
 	// Information for creating a redirect action. Required if type is redirect.
 	Redirect *ActionRedirectObservation `json:"redirect,omitempty" tf:"redirect,omitempty"`
@@ -457,7 +457,7 @@ type ActionParameters struct {
 	// Valid values are between 1 and 50000.
 	// Defaults to the position in the list of actions.
 	// +kubebuilder:validation:Optional
-	Order *float64 `json:"order,omitempty" tf:"order,omitempty"`
+	Order *int64 `json:"order,omitempty" tf:"order,omitempty"`
 
 	// Information for creating a redirect action. Required if type is redirect.
 	// +kubebuilder:validation:Optional
@@ -626,7 +626,7 @@ type ConditionParameters struct {
 type ForwardStickinessInitParameters struct {
 
 	// The time period, in seconds, during which requests from a client should be routed to the same target group. The range is 1-604800 seconds (7 days).
-	Duration *float64 `json:"duration,omitempty" tf:"duration,omitempty"`
+	Duration *int64 `json:"duration,omitempty" tf:"duration,omitempty"`
 
 	// Indicates whether target group stickiness is enabled.
 	Enabled *bool `json:"enabled,omitempty" tf:"enabled,omitempty"`
@@ -635,7 +635,7 @@ type ForwardStickinessInitParameters struct {
 type ForwardStickinessObservation struct {
 
 	// The time period, in seconds, during which requests from a client should be routed to the same target group. The range is 1-604800 seconds (7 days).
-	Duration *float64 `json:"duration,omitempty" tf:"duration,omitempty"`
+	Duration *int64 `json:"duration,omitempty" tf:"duration,omitempty"`
 
 	// Indicates whether target group stickiness is enabled.
 	Enabled *bool `json:"enabled,omitempty" tf:"enabled,omitempty"`
@@ -645,7 +645,7 @@ type ForwardStickinessParameters struct {
 
 	// The time period, in seconds, during which requests from a client should be routed to the same target group. The range is 1-604800 seconds (7 days).
 	// +kubebuilder:validation:Optional
-	Duration *float64 `json:"duration" tf:"duration,omitempty"`
+	Duration *int64 `json:"duration" tf:"duration,omitempty"`
 
 	// Indicates whether target group stickiness is enabled.
 	// +kubebuilder:validation:Optional
@@ -668,7 +668,7 @@ type ForwardTargetGroupInitParameters struct {
 	ArnSelector *v1.Selector `json:"arnSelector,omitempty" tf:"-"`
 
 	// The weight. The range is 0 to 999.
-	Weight *float64 `json:"weight,omitempty" tf:"weight,omitempty"`
+	Weight *int64 `json:"weight,omitempty" tf:"weight,omitempty"`
 }
 
 type ForwardTargetGroupObservation struct {
@@ -677,7 +677,7 @@ type ForwardTargetGroupObservation struct {
 	Arn *string `json:"arn,omitempty" tf:"arn,omitempty"`
 
 	// The weight. The range is 0 to 999.
-	Weight *float64 `json:"weight,omitempty" tf:"weight,omitempty"`
+	Weight *int64 `json:"weight,omitempty" tf:"weight,omitempty"`
 }
 
 type ForwardTargetGroupParameters struct {
@@ -698,7 +698,7 @@ type ForwardTargetGroupParameters struct {
 
 	// The weight. The range is 0 to 999.
 	// +kubebuilder:validation:Optional
-	Weight *float64 `json:"weight,omitempty" tf:"weight,omitempty"`
+	Weight *int64 `json:"weight,omitempty" tf:"weight,omitempty"`
 }
 
 type HTTPHeaderInitParameters struct {
@@ -799,11 +799,7 @@ type LBListenerRuleInitParameters struct {
 	ListenerArnSelector *v1.Selector `json:"listenerArnSelector,omitempty" tf:"-"`
 
 	// The priority for the rule between 1 and 50000. Leaving it unset will automatically set the rule with next available priority after currently existing highest rule. A listener can't have multiple rules with the same priority.
-	Priority *float64 `json:"priority,omitempty" tf:"priority,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
+	Priority *int64 `json:"priority,omitempty" tf:"priority,omitempty"`
 }
 
 type LBListenerRuleObservation struct {
@@ -824,7 +820,7 @@ type LBListenerRuleObservation struct {
 	ListenerArn *string `json:"listenerArn,omitempty" tf:"listener_arn,omitempty"`
 
 	// The priority for the rule between 1 and 50000. Leaving it unset will automatically set the rule with next available priority after currently existing highest rule. A listener can't have multiple rules with the same priority.
-	Priority *float64 `json:"priority,omitempty" tf:"priority,omitempty"`
+	Priority *int64 `json:"priority,omitempty" tf:"priority,omitempty"`
 
 	// Key-value map of resource tags.
 	// +mapType=granular
@@ -861,17 +857,12 @@ type LBListenerRuleParameters struct {
 
 	// The priority for the rule between 1 and 50000. Leaving it unset will automatically set the rule with next available priority after currently existing highest rule. A listener can't have multiple rules with the same priority.
 	// +kubebuilder:validation:Optional
-	Priority *float64 `json:"priority,omitempty" tf:"priority,omitempty"`
+	Priority *int64 `json:"priority,omitempty" tf:"priority,omitempty"`
 
 	// Region is the region you'd like your resource to be created in.
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type PathPatternInitParameters struct {

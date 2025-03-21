@@ -2374,7 +2374,8 @@ spec:
                                 value:
                                   description: An integer specifying the value of
                                     the duration of an Auto-Tune maintenance window.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             startAt:
                               description: Date and time at which to start the Auto-Tune
@@ -2409,7 +2410,8 @@ spec:
                         type: object
                       dedicatedMasterCount:
                         description: Number of dedicated main nodes in the cluster.
-                        type: number
+                        format: int64
+                        type: integer
                       dedicatedMasterEnabled:
                         description: Whether dedicated main nodes are enabled for
                           the cluster.
@@ -2420,7 +2422,8 @@ spec:
                         type: string
                       instanceCount:
                         description: Number of instances in the cluster.
-                        type: number
+                        format: int64
+                        type: integer
                       instanceType:
                         description: Instance type of data nodes in the cluster.
                         type: string
@@ -2433,7 +2436,8 @@ spec:
                         description: Number of warm nodes in the cluster. Valid values
                           are between 2 and 150. warm_count can be only and must be
                           set when warm_enabled is set to true.
-                        type: number
+                        format: int64
+                        type: integer
                       warmEnabled:
                         description: Whether to enable warm storage.
                         type: boolean
@@ -2451,7 +2455,8 @@ spec:
                             description: 'Number of Availability Zones for the domain
                               to use with zone_awareness_enabled. Defaults to 2. Valid
                               values: 2 or 3.'
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       zoneAwarenessEnabled:
                         description: Whether zone awareness is enabled, set to true
@@ -2518,16 +2523,19 @@ spec:
                         description: Baseline input/output (I/O) performance of EBS
                           volumes attached to data nodes. Applicable only for the
                           GP3 and Provisioned IOPS EBS volume types.
-                        type: number
+                        format: int64
+                        type: integer
                       throughput:
                         description: Specifies the throughput (in MiB/s) of the EBS
                           volumes attached to data nodes. Applicable only for the
                           gp3 volume type.
-                        type: number
+                        format: int64
+                        type: integer
                       volumeSize:
                         description: Size of EBS volumes attached to data nodes (in
                           GiB).
-                        type: number
+                        format: int64
+                        type: integer
                       volumeType:
                         description: Type of EBS volumes attached to data nodes.
                         type: string
@@ -2755,11 +2763,13 @@ spec:
                               hours:
                                 description: Starting hour of the 10-hour window for
                                   updates
-                                type: number
+                                format: int64
+                                type: integer
                               minutes:
                                 description: Starting minute of the 10-hour window
                                   for updates
-                                type: number
+                                format: int64
+                                type: integer
                             type: object
                         type: object
                     type: object
@@ -2777,7 +2787,8 @@ spec:
                       automatedSnapshotStartHour:
                         description: Hour during which the service takes an automated
                           daily snapshot of the indices in the domain.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   softwareUpdateOptions:
                     description: Software update options for the domain. Detailed
@@ -2788,12 +2799,6 @@ spec:
                           enabled for the domain. Defaults to false.
                         type: boolean
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   vpcOptions:
                     description: Configuration block for VPC related options. Adding
                       or removing this configuration forces a new resource (documentation).
@@ -3077,7 +3082,8 @@ spec:
                                 value:
                                   description: An integer specifying the value of
                                     the duration of an Auto-Tune maintenance window.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             startAt:
                               description: Date and time at which to start the Auto-Tune
@@ -3112,7 +3118,8 @@ spec:
                         type: object
                       dedicatedMasterCount:
                         description: Number of dedicated main nodes in the cluster.
-                        type: number
+                        format: int64
+                        type: integer
                       dedicatedMasterEnabled:
                         description: Whether dedicated main nodes are enabled for
                           the cluster.
@@ -3123,7 +3130,8 @@ spec:
                         type: string
                       instanceCount:
                         description: Number of instances in the cluster.
-                        type: number
+                        format: int64
+                        type: integer
                       instanceType:
                         description: Instance type of data nodes in the cluster.
                         type: string
@@ -3136,7 +3144,8 @@ spec:
                         description: Number of warm nodes in the cluster. Valid values
                           are between 2 and 150. warm_count can be only and must be
                           set when warm_enabled is set to true.
-                        type: number
+                        format: int64
+                        type: integer
                       warmEnabled:
                         description: Whether to enable warm storage.
                         type: boolean
@@ -3154,7 +3163,8 @@ spec:
                             description: 'Number of Availability Zones for the domain
                               to use with zone_awareness_enabled. Defaults to 2. Valid
                               values: 2 or 3.'
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       zoneAwarenessEnabled:
                         description: Whether zone awareness is enabled, set to true
@@ -3221,16 +3231,19 @@ spec:
                         description: Baseline input/output (I/O) performance of EBS
                           volumes attached to data nodes. Applicable only for the
                           GP3 and Provisioned IOPS EBS volume types.
-                        type: number
+                        format: int64
+                        type: integer
                       throughput:
                         description: Specifies the throughput (in MiB/s) of the EBS
                           volumes attached to data nodes. Applicable only for the
                           gp3 volume type.
-                        type: number
+                        format: int64
+                        type: integer
                       volumeSize:
                         description: Size of EBS volumes attached to data nodes (in
                           GiB).
-                        type: number
+                        format: int64
+                        type: integer
                       volumeType:
                         description: Type of EBS volumes attached to data nodes.
                         type: string
@@ -3458,11 +3471,13 @@ spec:
                               hours:
                                 description: Starting hour of the 10-hour window for
                                   updates
-                                type: number
+                                format: int64
+                                type: integer
                               minutes:
                                 description: Starting minute of the 10-hour window
                                   for updates
-                                type: number
+                                format: int64
+                                type: integer
                             type: object
                         type: object
                     type: object
@@ -3476,7 +3491,8 @@ spec:
                       automatedSnapshotStartHour:
                         description: Hour during which the service takes an automated
                           daily snapshot of the indices in the domain.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   softwareUpdateOptions:
                     description: Software update options for the domain. Detailed
@@ -3487,12 +3503,6 @@ spec:
                           enabled for the domain. Defaults to false.
                         type: boolean
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   vpcOptions:
                     description: Configuration block for VPC related options. Adding
                       or removing this configuration forces a new resource (documentation).
@@ -3924,7 +3934,8 @@ spec:
                                 value:
                                   description: An integer specifying the value of
                                     the duration of an Auto-Tune maintenance window.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             startAt:
                               description: Date and time at which to start the Auto-Tune
@@ -3959,7 +3970,8 @@ spec:
                         type: object
                       dedicatedMasterCount:
                         description: Number of dedicated main nodes in the cluster.
-                        type: number
+                        format: int64
+                        type: integer
                       dedicatedMasterEnabled:
                         description: Whether dedicated main nodes are enabled for
                           the cluster.
@@ -3970,7 +3982,8 @@ spec:
                         type: string
                       instanceCount:
                         description: Number of instances in the cluster.
-                        type: number
+                        format: int64
+                        type: integer
                       instanceType:
                         description: Instance type of data nodes in the cluster.
                         type: string
@@ -3983,7 +3996,8 @@ spec:
                         description: Number of warm nodes in the cluster. Valid values
                           are between 2 and 150. warm_count can be only and must be
                           set when warm_enabled is set to true.
-                        type: number
+                        format: int64
+                        type: integer
                       warmEnabled:
                         description: Whether to enable warm storage.
                         type: boolean
@@ -4001,7 +4015,8 @@ spec:
                             description: 'Number of Availability Zones for the domain
                               to use with zone_awareness_enabled. Defaults to 2. Valid
                               values: 2 or 3.'
-                            type: number
+                            format: int64
+                            type: integer
                         type: object
                       zoneAwarenessEnabled:
                         description: Whether zone awareness is enabled, set to true
@@ -4082,16 +4097,19 @@ spec:
                         description: Baseline input/output (I/O) performance of EBS
                           volumes attached to data nodes. Applicable only for the
                           GP3 and Provisioned IOPS EBS volume types.
-                        type: number
+                        format: int64
+                        type: integer
                       throughput:
                         description: Specifies the throughput (in MiB/s) of the EBS
                           volumes attached to data nodes. Applicable only for the
                           gp3 volume type.
-                        type: number
+                        format: int64
+                        type: integer
                       volumeSize:
                         description: Size of EBS volumes attached to data nodes (in
                           GiB).
-                        type: number
+                        format: int64
+                        type: integer
                       volumeType:
                         description: Type of EBS volumes attached to data nodes.
                         type: string
@@ -4184,11 +4202,13 @@ spec:
                               hours:
                                 description: Starting hour of the 10-hour window for
                                   updates
-                                type: number
+                                format: int64
+                                type: integer
                               minutes:
                                 description: Starting minute of the 10-hour window
                                   for updates
-                                type: number
+                                format: int64
+                                type: integer
                             type: object
                         type: object
                     type: object
@@ -4202,7 +4222,8 @@ spec:
                       automatedSnapshotStartHour:
                         description: Hour during which the service takes an automated
                           daily snapshot of the indices in the domain.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   softwareUpdateOptions:
                     description: Software update options for the domain. Detailed

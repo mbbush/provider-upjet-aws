@@ -82,10 +82,6 @@ type LanguageModelInitParameters struct {
 
 	// The language code you selected for your language model. Refer to the supported languages page for accepted codes.
 	LanguageCode *string `json:"languageCode,omitempty" tf:"language_code,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type LanguageModelObservation struct {
@@ -131,11 +127,6 @@ type LanguageModelParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // LanguageModelSpec defines the desired state of LanguageModel

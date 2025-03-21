@@ -1456,12 +1456,14 @@ spec:
                               description: Maximum number of read request units for
                                 the specified table. To specify set the value greater
                                 than or equal to 1. To remove set the value to -1.
-                              type: number
+                              format: int64
+                              type: integer
                             maxWriteRequestUnits:
                               description: Maximum number of write request units for
                                 the specified table. To specify set the value greater
                                 than or equal to 1. To remove set the value to -1.
-                              type: number
+                              format: int64
+                              type: integer
                           type: object
                         projectionType:
                           description: One of ALL, INCLUDE or KEYS_ONLY where ALL
@@ -1477,11 +1479,13 @@ spec:
                         readCapacity:
                           description: Number of read units for this index. Must be
                             set if billing_mode is set to PROVISIONED.
-                          type: number
+                          format: int64
+                          type: integer
                         writeCapacity:
                           description: Number of write units for this index. Must
                             be set if billing_mode is set to PROVISIONED.
-                          type: number
+                          format: int64
+                          type: integer
                       type: object
                     type: array
                   hashKey:
@@ -1579,12 +1583,14 @@ spec:
                         description: Maximum number of read request units for the
                           specified table. To specify set the value greater than or
                           equal to 1. To remove set the value to -1.
-                        type: number
+                        format: int64
+                        type: integer
                       maxWriteRequestUnits:
                         description: Maximum number of write request units for the
                           specified table. To specify set the value greater than or
                           equal to 1. To remove set the value to -1.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   pointInTimeRecovery:
                     description: Enable point-in-time recovery options. See below.
@@ -1602,7 +1608,8 @@ spec:
                   readCapacity:
                     description: Number of read units for this table. If the billing_mode
                       is PROVISIONED, this field is required.
-                    type: number
+                    format: int64
+                    type: integer
                   region:
                     description: Region is the region you'd like your resource to
                       be created in.
@@ -1693,12 +1700,6 @@ spec:
                       Valid values are STANDARD and STANDARD_INFREQUENT_ACCESS.
                       Default value is STANDARD.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   ttl:
                     description: Configuration block for TTL. See below.
                     properties:
@@ -1716,7 +1717,8 @@ spec:
                   writeCapacity:
                     description: Number of write units for this table. If the billing_mode
                       is PROVISIONED, this field is required.
-                    type: number
+                    format: int64
+                    type: integer
                 required:
                 - region
                 type: object
@@ -1785,12 +1787,14 @@ spec:
                               description: Maximum number of read request units for
                                 the specified table. To specify set the value greater
                                 than or equal to 1. To remove set the value to -1.
-                              type: number
+                              format: int64
+                              type: integer
                             maxWriteRequestUnits:
                               description: Maximum number of write request units for
                                 the specified table. To specify set the value greater
                                 than or equal to 1. To remove set the value to -1.
-                              type: number
+                              format: int64
+                              type: integer
                           type: object
                         projectionType:
                           description: One of ALL, INCLUDE or KEYS_ONLY where ALL
@@ -1806,11 +1810,13 @@ spec:
                         readCapacity:
                           description: Number of read units for this index. Must be
                             set if billing_mode is set to PROVISIONED.
-                          type: number
+                          format: int64
+                          type: integer
                         writeCapacity:
                           description: Number of write units for this index. Must
                             be set if billing_mode is set to PROVISIONED.
-                          type: number
+                          format: int64
+                          type: integer
                       type: object
                     type: array
                   hashKey:
@@ -1908,12 +1914,14 @@ spec:
                         description: Maximum number of read request units for the
                           specified table. To specify set the value greater than or
                           equal to 1. To remove set the value to -1.
-                        type: number
+                        format: int64
+                        type: integer
                       maxWriteRequestUnits:
                         description: Maximum number of write request units for the
                           specified table. To specify set the value greater than or
                           equal to 1. To remove set the value to -1.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   pointInTimeRecovery:
                     description: Enable point-in-time recovery options. See below.
@@ -1931,7 +1939,8 @@ spec:
                   readCapacity:
                     description: Number of read units for this table. If the billing_mode
                       is PROVISIONED, this field is required.
-                    type: number
+                    format: int64
+                    type: integer
                   replica:
                     description: Configuration block(s) with DynamoDB Global Tables
                       V2 (version 2019.11.21) replication configurations. See below.
@@ -2018,12 +2027,6 @@ spec:
                       Valid values are STANDARD and STANDARD_INFREQUENT_ACCESS.
                       Default value is STANDARD.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   ttl:
                     description: Configuration block for TTL. See below.
                     properties:
@@ -2041,7 +2044,8 @@ spec:
                   writeCapacity:
                     description: Number of write units for this table. If the billing_mode
                       is PROVISIONED, this field is required.
-                    type: number
+                    format: int64
+                    type: integer
                 type: object
               managementPolicies:
                 default:
@@ -2270,12 +2274,14 @@ spec:
                               description: Maximum number of read request units for
                                 the specified table. To specify set the value greater
                                 than or equal to 1. To remove set the value to -1.
-                              type: number
+                              format: int64
+                              type: integer
                             maxWriteRequestUnits:
                               description: Maximum number of write request units for
                                 the specified table. To specify set the value greater
                                 than or equal to 1. To remove set the value to -1.
-                              type: number
+                              format: int64
+                              type: integer
                           type: object
                         projectionType:
                           description: One of ALL, INCLUDE or KEYS_ONLY where ALL
@@ -2291,11 +2297,13 @@ spec:
                         readCapacity:
                           description: Number of read units for this index. Must be
                             set if billing_mode is set to PROVISIONED.
-                          type: number
+                          format: int64
+                          type: integer
                         writeCapacity:
                           description: Number of write units for this index. Must
                             be set if billing_mode is set to PROVISIONED.
-                          type: number
+                          format: int64
+                          type: integer
                       type: object
                     type: array
                   hashKey:
@@ -2396,12 +2404,14 @@ spec:
                         description: Maximum number of read request units for the
                           specified table. To specify set the value greater than or
                           equal to 1. To remove set the value to -1.
-                        type: number
+                        format: int64
+                        type: integer
                       maxWriteRequestUnits:
                         description: Maximum number of write request units for the
                           specified table. To specify set the value greater than or
                           equal to 1. To remove set the value to -1.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   pointInTimeRecovery:
                     description: Enable point-in-time recovery options. See below.
@@ -2419,7 +2429,8 @@ spec:
                   readCapacity:
                     description: Number of read units for this table. If the billing_mode
                       is PROVISIONED, this field is required.
-                    type: number
+                    format: int64
+                    type: integer
                   replica:
                     description: Configuration block(s) with DynamoDB Global Tables
                       V2 (version 2019.11.21) replication configurations. See below.
@@ -2563,7 +2574,8 @@ spec:
                   writeCapacity:
                     description: Number of write units for this table. If the billing_mode
                       is PROVISIONED, this field is required.
-                    type: number
+                    format: int64
+                    type: integer
                 type: object
               conditions:
                 description: Conditions of the resource.

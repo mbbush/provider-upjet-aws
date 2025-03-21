@@ -535,18 +535,13 @@ spec:
                       reservedSlots:
                         description: Specifies the number of reserved transcode slots
                           (RTS) for queue.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   status:
                     description: A status of the queue. Valid values are ACTIVE or
                       RESERVED. Default to PAUSED.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -586,18 +581,13 @@ spec:
                       reservedSlots:
                         description: Specifies the number of reserved transcode slots
                           (RTS) for queue.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   status:
                     description: A status of the queue. Valid values are ACTIVE or
                       RESERVED. Default to PAUSED.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -800,7 +790,8 @@ spec:
                       reservedSlots:
                         description: Specifies the number of reserved transcode slots
                           (RTS) for queue.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   status:
                     description: A status of the queue. Valid values are ACTIVE or

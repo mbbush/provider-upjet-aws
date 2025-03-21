@@ -21,10 +21,6 @@ type TrafficMirrorFilterInitParameters struct {
 	// List of amazon network services that should be mirrored. Valid values: amazon-dns.
 	// +listType=set
 	NetworkServices []*string `json:"networkServices,omitempty" tf:"network_services,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type TrafficMirrorFilterObservation struct {
@@ -66,11 +62,6 @@ type TrafficMirrorFilterParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // TrafficMirrorFilterSpec defines the desired state of TrafficMirrorFilter

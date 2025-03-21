@@ -31,10 +31,6 @@ type CatalogDatabaseInitParameters struct {
 	// +mapType=granular
 	Parameters map[string]*string `json:"parameters,omitempty" tf:"parameters,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Configuration block for a target database for resource linking. See target_database below.
 	TargetDatabase *TargetDatabaseInitParameters `json:"targetDatabase,omitempty" tf:"target_database,omitempty"`
 }
@@ -110,11 +106,6 @@ type CatalogDatabaseParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Configuration block for a target database for resource linking. See target_database below.
 	// +kubebuilder:validation:Optional

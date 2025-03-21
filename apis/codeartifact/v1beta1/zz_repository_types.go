@@ -50,10 +50,6 @@ type RepositoryInitParameters struct {
 	// The name of the repository to create.
 	Repository *string `json:"repository,omitempty" tf:"repository,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when AWS CodeArtifact looks for a requested package version. see Upstream
 	Upstream []UpstreamInitParameters `json:"upstream,omitempty" tf:"upstream,omitempty"`
 }
@@ -132,11 +128,6 @@ type RepositoryParameters struct {
 	// The name of the repository to create.
 	// +kubebuilder:validation:Optional
 	Repository *string `json:"repository,omitempty" tf:"repository,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when AWS CodeArtifact looks for a requested package version. see Upstream
 	// +kubebuilder:validation:Optional

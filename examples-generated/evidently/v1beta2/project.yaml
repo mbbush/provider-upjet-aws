@@ -11,5 +11,3 @@ spec:
     description: Example Description
     name: Example
     region: us-west-1
-    tags:
-      Key1: example Project

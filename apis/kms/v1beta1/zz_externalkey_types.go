@@ -19,7 +19,7 @@ type ExternalKeyInitParameters struct {
 	BypassPolicyLockoutSafetyCheck *bool `json:"bypassPolicyLockoutSafetyCheck,omitempty" tf:"bypass_policy_lockout_safety_check,omitempty"`
 
 	// Duration in days after which the key is deleted after destruction of the resource. Must be between 7 and 30 days. Defaults to 30.
-	DeletionWindowInDays *float64 `json:"deletionWindowInDays,omitempty" tf:"deletion_window_in_days,omitempty"`
+	DeletionWindowInDays *int64 `json:"deletionWindowInDays,omitempty" tf:"deletion_window_in_days,omitempty"`
 
 	// Description of the key.
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
@@ -36,10 +36,6 @@ type ExternalKeyInitParameters struct {
 	// A key policy JSON document. If you do not provide a key policy, AWS KMS attaches a default key policy to the CMK.
 	Policy *string `json:"policy,omitempty" tf:"policy,omitempty"`
 
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
-
 	// Time at which the imported key material expires. When the key material expires, AWS KMS deletes the key material and the CMK becomes unusable. If not specified, key material does not expire. Valid values: RFC3339 time string (YYYY-MM-DDTHH:MM:SSZ)
 	ValidTo *string `json:"validTo,omitempty" tf:"valid_to,omitempty"`
 }
@@ -53,7 +49,7 @@ type ExternalKeyObservation struct {
 	BypassPolicyLockoutSafetyCheck *bool `json:"bypassPolicyLockoutSafetyCheck,omitempty" tf:"bypass_policy_lockout_safety_check,omitempty"`
 
 	// Duration in days after which the key is deleted after destruction of the resource. Must be between 7 and 30 days. Defaults to 30.
-	DeletionWindowInDays *float64 `json:"deletionWindowInDays,omitempty" tf:"deletion_window_in_days,omitempty"`
+	DeletionWindowInDays *int64 `json:"deletionWindowInDays,omitempty" tf:"deletion_window_in_days,omitempty"`
 
 	// Description of the key.
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
@@ -99,7 +95,7 @@ type ExternalKeyParameters struct {
 
 	// Duration in days after which the key is deleted after destruction of the resource. Must be between 7 and 30 days. Defaults to 30.
 	// +kubebuilder:validation:Optional
-	DeletionWindowInDays *float64 `json:"deletionWindowInDays,omitempty" tf:"deletion_window_in_days,omitempty"`
+	DeletionWindowInDays *int64 `json:"deletionWindowInDays,omitempty" tf:"deletion_window_in_days,omitempty"`
 
 	// Description of the key.
 	// +kubebuilder:validation:Optional
@@ -125,11 +121,6 @@ type ExternalKeyParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// Time at which the imported key material expires. When the key material expires, AWS KMS deletes the key material and the CMK becomes unusable. If not specified, key material does not expire. Valid values: RFC3339 time string (YYYY-MM-DDTHH:MM:SSZ)
 	// +kubebuilder:validation:Optional

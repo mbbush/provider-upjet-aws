@@ -80,10 +80,6 @@ type EmailIdentityInitParameters struct {
 
 	// The configuration of the DKIM authentication settings for an email domain identity.
 	DKIMSigningAttributes *DKIMSigningAttributesInitParameters `json:"dkimSigningAttributes,omitempty" tf:"dkim_signing_attributes,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type EmailIdentityObservation struct {
@@ -137,11 +133,6 @@ type EmailIdentityParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // EmailIdentitySpec defines the desired state of EmailIdentity

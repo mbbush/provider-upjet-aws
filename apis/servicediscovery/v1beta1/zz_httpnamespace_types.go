@@ -20,10 +20,6 @@ type HTTPNamespaceInitParameters struct {
 
 	// The name of the http namespace.
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type HTTPNamespaceObservation struct {
@@ -66,11 +62,6 @@ type HTTPNamespaceParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // HTTPNamespaceSpec defines the desired state of HTTPNamespace

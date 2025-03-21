@@ -734,7 +734,8 @@ spec:
                         x-kubernetes-list-type: set
                       numberOfFrameworks:
                         description: Specifies the number of frameworks a report covers.
-                        type: number
+                        format: int64
+                        type: integer
                       organizationUnits:
                         description: Specifies the list of Organizational Units a
                           report covers.
@@ -755,12 +756,6 @@ spec:
                           | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT.'
                         type: string
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -830,7 +825,8 @@ spec:
                         x-kubernetes-list-type: set
                       numberOfFrameworks:
                         description: Specifies the number of frameworks a report covers.
-                        type: number
+                        format: int64
+                        type: integer
                       organizationUnits:
                         description: Specifies the list of Organizational Units a
                           report covers.
@@ -851,12 +847,6 @@ spec:
                           | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT.'
                         type: string
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -1111,7 +1101,8 @@ spec:
                         x-kubernetes-list-type: set
                       numberOfFrameworks:
                         description: Specifies the number of frameworks a report covers.
-                        type: number
+                        format: int64
+                        type: integer
                       organizationUnits:
                         description: Specifies the list of Organizational Units a
                           report covers.

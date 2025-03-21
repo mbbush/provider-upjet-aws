@@ -2947,7 +2947,8 @@ spec:
                           description: Number of tasks, at a minimum, to run on the
                             specified capacity provider. Only one capacity provider
                             in a capacity provider strategy can have a base defined.
-                          type: number
+                          format: int64
+                          type: integer
                         capacityProvider:
                           description: Short name of the capacity provider.
                           type: string
@@ -2955,7 +2956,8 @@ spec:
                           description: Relative percentage of the total number of
                             launched tasks that should use the specified capacity
                             provider.
-                          type: number
+                          format: int64
+                          type: integer
                       type: object
                     type: array
                   cluster:
@@ -3064,17 +3066,20 @@ spec:
                       of the number of running tasks that can be running in a service
                       during a deployment. Not valid when using the DAEMON scheduling
                       strategy.
-                    type: number
+                    format: int64
+                    type: integer
                   deploymentMinimumHealthyPercent:
                     description: Lower limit (as a percentage of the service's desiredCount)
                       of the number of running tasks that must remain running and
                       healthy in a service during a deployment.
-                    type: number
+                    format: int64
+                    type: integer
                   desiredCount:
                     description: Number of instances of the task definition to place
                       and keep running. Defaults to 0. Do not specify if using the
                       DAEMON scheduling strategy.
-                    type: number
+                    format: int64
+                    type: integer
                   enableEcsManagedTags:
                     description: Whether to enable Amazon ECS managed tags for the
                       tasks within the service.
@@ -3101,7 +3106,8 @@ spec:
                       on newly instantiated tasks to prevent premature shutdown, up
                       to 2147483647. Only valid for services configured to use load
                       balancers.
-                    type: number
+                    format: int64
+                    type: integer
                   iamRole:
                     description: ARN of the IAM role that allows Amazon ECS to make
                       calls to your load balancer on your behalf. This parameter is
@@ -3202,7 +3208,8 @@ spec:
                         containerPort:
                           description: Port on the container to associate with the
                             load balancer.
-                          type: number
+                          format: int64
+                          type: integer
                         elbName:
                           description: Name of the ELB (Classic) to associate with
                             the service.
@@ -3596,7 +3603,8 @@ spec:
                                   description: Listening port number for the Service
                                     Connect proxy. This port is available inside of
                                     all of the tasks within the same namespace.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             discoveryName:
                               description: Name of the new AWS Cloud Map service that
@@ -3605,7 +3613,8 @@ spec:
                             ingressPortOverride:
                               description: Port number for the Service Connect proxy
                                 to listen on.
-                              type: number
+                              format: int64
+                              type: integer
                             portName:
                               description: Name of one of the portMappings from all
                                 the containers in the task definition of this Amazon
@@ -3618,13 +3627,15 @@ spec:
                                   description: Amount of time in seconds a connection
                                     will stay active while idle. A value of 0 can
                                     be set to disable idleTimeout.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 perRequestTimeoutSeconds:
                                   description: Amount of time in seconds for the upstream
                                     to respond with a complete response per request.
                                     A value of 0 can be set to disable perRequestTimeout.
                                     Can only be set when appProtocol isn't TCP.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             tls:
                               description: Configuration for enabling Transport Layer
@@ -3662,23 +3673,19 @@ spec:
                       containerPort:
                         description: Port value, already specified in the task definition,
                           to be used for your service discovery service.
-                        type: number
+                        format: int64
+                        type: integer
                       port:
                         description: Port value used if your Service Discovery service
                           specified an SRV record.
-                        type: number
+                        format: int64
+                        type: integer
                       registryArn:
                         description: ARN of the Service Registry. The currently supported
                           service registry is Amazon Route 53 Auto Naming Service(aws_service_discovery_service).
                           For more information, see Service
                         type: string
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   taskDefinition:
                     description: Family and revision (family:revision) or full ARN
                       of the task definition that you want to run in your service.
@@ -3792,7 +3799,8 @@ spec:
                             type: string
                           iops:
                             description: Number of I/O operations per second (IOPS).
-                            type: number
+                            format: int64
+                            type: integer
                           kmsKeyId:
                             description: Amazon Resource Name (ARN) identifier of
                               the Amazon Web Services Key Management Service key to
@@ -3808,7 +3816,8 @@ spec:
                               either a size_in_gb or a snapshot_id. You can optionally
                               specify a volume size greater than or equal to the snapshot
                               size.
-                            type: number
+                            format: int64
+                            type: integer
                           snapshotId:
                             description: Snapshot that Amazon ECS uses to create the
                               volume. You must specify either a size_in_gb or a snapshot_id.
@@ -3826,18 +3835,13 @@ spec:
                                   description: The type of volume resource. Valid
                                     values, volume.
                                   type: string
-                                tags:
-                                  additionalProperties:
-                                    type: string
-                                  description: Key-value map of resource tags.
-                                  type: object
-                                  x-kubernetes-map-type: granular
                               type: object
                             type: array
                           throughput:
                             description: Throughput to provision for a volume, in
                               MiB/s, with a maximum of 1,000 MiB/s.
-                            type: number
+                            format: int64
+                            type: integer
                           volumeType:
                             description: Volume type.
                             type: string
@@ -3925,7 +3929,8 @@ spec:
                           description: Number of tasks, at a minimum, to run on the
                             specified capacity provider. Only one capacity provider
                             in a capacity provider strategy can have a base defined.
-                          type: number
+                          format: int64
+                          type: integer
                         capacityProvider:
                           description: Short name of the capacity provider.
                           type: string
@@ -3933,7 +3938,8 @@ spec:
                           description: Relative percentage of the total number of
                             launched tasks that should use the specified capacity
                             provider.
-                          type: number
+                          format: int64
+                          type: integer
                       type: object
                     type: array
                   cluster:
@@ -4042,17 +4048,20 @@ spec:
                       of the number of running tasks that can be running in a service
                       during a deployment. Not valid when using the DAEMON scheduling
                       strategy.
-                    type: number
+                    format: int64
+                    type: integer
                   deploymentMinimumHealthyPercent:
                     description: Lower limit (as a percentage of the service's desiredCount)
                       of the number of running tasks that must remain running and
                       healthy in a service during a deployment.
-                    type: number
+                    format: int64
+                    type: integer
                   desiredCount:
                     description: Number of instances of the task definition to place
                       and keep running. Defaults to 0. Do not specify if using the
                       DAEMON scheduling strategy.
-                    type: number
+                    format: int64
+                    type: integer
                   enableEcsManagedTags:
                     description: Whether to enable Amazon ECS managed tags for the
                       tasks within the service.
@@ -4079,7 +4088,8 @@ spec:
                       on newly instantiated tasks to prevent premature shutdown, up
                       to 2147483647. Only valid for services configured to use load
                       balancers.
-                    type: number
+                    format: int64
+                    type: integer
                   iamRole:
                     description: ARN of the IAM role that allows Amazon ECS to make
                       calls to your load balancer on your behalf. This parameter is
@@ -4180,7 +4190,8 @@ spec:
                         containerPort:
                           description: Port on the container to associate with the
                             load balancer.
-                          type: number
+                          format: int64
+                          type: integer
                         elbName:
                           description: Name of the ELB (Classic) to associate with
                             the service.
@@ -4570,7 +4581,8 @@ spec:
                                   description: Listening port number for the Service
                                     Connect proxy. This port is available inside of
                                     all of the tasks within the same namespace.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             discoveryName:
                               description: Name of the new AWS Cloud Map service that
@@ -4579,7 +4591,8 @@ spec:
                             ingressPortOverride:
                               description: Port number for the Service Connect proxy
                                 to listen on.
-                              type: number
+                              format: int64
+                              type: integer
                             portName:
                               description: Name of one of the portMappings from all
                                 the containers in the task definition of this Amazon
@@ -4592,13 +4605,15 @@ spec:
                                   description: Amount of time in seconds a connection
                                     will stay active while idle. A value of 0 can
                                     be set to disable idleTimeout.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 perRequestTimeoutSeconds:
                                   description: Amount of time in seconds for the upstream
                                     to respond with a complete response per request.
                                     A value of 0 can be set to disable perRequestTimeout.
                                     Can only be set when appProtocol isn't TCP.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             tls:
                               description: Configuration for enabling Transport Layer
@@ -4636,23 +4651,19 @@ spec:
                       containerPort:
                         description: Port value, already specified in the task definition,
                           to be used for your service discovery service.
-                        type: number
+                        format: int64
+                        type: integer
                       port:
                         description: Port value used if your Service Discovery service
                           specified an SRV record.
-                        type: number
+                        format: int64
+                        type: integer
                       registryArn:
                         description: ARN of the Service Registry. The currently supported
                           service registry is Amazon Route 53 Auto Naming Service(aws_service_discovery_service).
                           For more information, see Service
                         type: string
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   taskDefinition:
                     description: Family and revision (family:revision) or full ARN
                       of the task definition that you want to run in your service.
@@ -4766,7 +4777,8 @@ spec:
                             type: string
                           iops:
                             description: Number of I/O operations per second (IOPS).
-                            type: number
+                            format: int64
+                            type: integer
                           kmsKeyId:
                             description: Amazon Resource Name (ARN) identifier of
                               the Amazon Web Services Key Management Service key to
@@ -4782,7 +4794,8 @@ spec:
                               either a size_in_gb or a snapshot_id. You can optionally
                               specify a volume size greater than or equal to the snapshot
                               size.
-                            type: number
+                            format: int64
+                            type: integer
                           snapshotId:
                             description: Snapshot that Amazon ECS uses to create the
                               volume. You must specify either a size_in_gb or a snapshot_id.
@@ -4800,18 +4813,13 @@ spec:
                                   description: The type of volume resource. Valid
                                     values, volume.
                                   type: string
-                                tags:
-                                  additionalProperties:
-                                    type: string
-                                  description: Key-value map of resource tags.
-                                  type: object
-                                  x-kubernetes-map-type: granular
                               type: object
                             type: array
                           throughput:
                             description: Throughput to provision for a volume, in
                               MiB/s, with a maximum of 1,000 MiB/s.
-                            type: number
+                            format: int64
+                            type: integer
                           volumeType:
                             description: Volume type.
                             type: string
@@ -5056,7 +5064,8 @@ spec:
                           description: Number of tasks, at a minimum, to run on the
                             specified capacity provider. Only one capacity provider
                             in a capacity provider strategy can have a base defined.
-                          type: number
+                          format: int64
+                          type: integer
                         capacityProvider:
                           description: Short name of the capacity provider.
                           type: string
@@ -5064,7 +5073,8 @@ spec:
                           description: Relative percentage of the total number of
                             launched tasks that should use the specified capacity
                             provider.
-                          type: number
+                          format: int64
+                          type: integer
                       type: object
                     type: array
                   cluster:
@@ -5099,17 +5109,20 @@ spec:
                       of the number of running tasks that can be running in a service
                       during a deployment. Not valid when using the DAEMON scheduling
                       strategy.
-                    type: number
+                    format: int64
+                    type: integer
                   deploymentMinimumHealthyPercent:
                     description: Lower limit (as a percentage of the service's desiredCount)
                       of the number of running tasks that must remain running and
                       healthy in a service during a deployment.
-                    type: number
+                    format: int64
+                    type: integer
                   desiredCount:
                     description: Number of instances of the task definition to place
                       and keep running. Defaults to 0. Do not specify if using the
                       DAEMON scheduling strategy.
-                    type: number
+                    format: int64
+                    type: integer
                   enableEcsManagedTags:
                     description: Whether to enable Amazon ECS managed tags for the
                       tasks within the service.
@@ -5136,7 +5149,8 @@ spec:
                       on newly instantiated tasks to prevent premature shutdown, up
                       to 2147483647. Only valid for services configured to use load
                       balancers.
-                    type: number
+                    format: int64
+                    type: integer
                   iamRole:
                     description: ARN of the IAM role that allows Amazon ECS to make
                       calls to your load balancer on your behalf. This parameter is
@@ -5166,7 +5180,8 @@ spec:
                         containerPort:
                           description: Port on the container to associate with the
                             load balancer.
-                          type: number
+                          format: int64
+                          type: integer
                         elbName:
                           description: Name of the ELB (Classic) to associate with
                             the service.
@@ -5323,7 +5338,8 @@ spec:
                                   description: Listening port number for the Service
                                     Connect proxy. This port is available inside of
                                     all of the tasks within the same namespace.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             discoveryName:
                               description: Name of the new AWS Cloud Map service that
@@ -5332,7 +5348,8 @@ spec:
                             ingressPortOverride:
                               description: Port number for the Service Connect proxy
                                 to listen on.
-                              type: number
+                              format: int64
+                              type: integer
                             portName:
                               description: Name of one of the portMappings from all
                                 the containers in the task definition of this Amazon
@@ -5345,13 +5362,15 @@ spec:
                                   description: Amount of time in seconds a connection
                                     will stay active while idle. A value of 0 can
                                     be set to disable idleTimeout.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 perRequestTimeoutSeconds:
                                   description: Amount of time in seconds for the upstream
                                     to respond with a complete response per request.
                                     A value of 0 can be set to disable perRequestTimeout.
                                     Can only be set when appProtocol isn't TCP.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             tls:
                               description: Configuration for enabling Transport Layer
@@ -5389,11 +5408,13 @@ spec:
                       containerPort:
                         description: Port value, already specified in the task definition,
                           to be used for your service discovery service.
-                        type: number
+                        format: int64
+                        type: integer
                       port:
                         description: Port value used if your Service Discovery service
                           specified an SRV record.
-                        type: number
+                        format: int64
+                        type: integer
                       registryArn:
                         description: ARN of the Service Registry. The currently supported
                           service registry is Amazon Route 53 Auto Naming Service(aws_service_discovery_service).
@@ -5451,7 +5472,8 @@ spec:
                             type: string
                           iops:
                             description: Number of I/O operations per second (IOPS).
-                            type: number
+                            format: int64
+                            type: integer
                           kmsKeyId:
                             description: Amazon Resource Name (ARN) identifier of
                               the Amazon Web Services Key Management Service key to
@@ -5467,7 +5489,8 @@ spec:
                               either a size_in_gb or a snapshot_id. You can optionally
                               specify a volume size greater than or equal to the snapshot
                               size.
-                            type: number
+                            format: int64
+                            type: integer
                           snapshotId:
                             description: Snapshot that Amazon ECS uses to create the
                               volume. You must specify either a size_in_gb or a snapshot_id.
@@ -5496,7 +5519,8 @@ spec:
                           throughput:
                             description: Throughput to provision for a volume, in
                               MiB/s, with a maximum of 1,000 MiB/s.
-                            type: number
+                            format: int64
+                            type: integer
                           volumeType:
                             description: Volume type.
                             type: string

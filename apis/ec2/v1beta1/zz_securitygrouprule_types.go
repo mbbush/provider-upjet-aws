@@ -32,7 +32,7 @@ type SecurityGroupRuleInitParameters_2 struct {
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
 
 	// Start port (or ICMP type number if protocol is "icmp" or "icmpv6").
-	FromPort *float64 `json:"fromPort,omitempty" tf:"from_port,omitempty"`
+	FromPort *int64 `json:"fromPort,omitempty" tf:"from_port,omitempty"`
 
 	// List of IPv6 CIDR blocks. Cannot be specified with source_security_group_id or self.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/ec2/v1beta1.VPC
@@ -92,7 +92,7 @@ type SecurityGroupRuleInitParameters_2 struct {
 	SourceSecurityGroupIDSelector *v1.Selector `json:"sourceSecurityGroupIdSelector,omitempty" tf:"-"`
 
 	// End port (or ICMP code if protocol is "icmp").
-	ToPort *float64 `json:"toPort,omitempty" tf:"to_port,omitempty"`
+	ToPort *int64 `json:"toPort,omitempty" tf:"to_port,omitempty"`
 
 	// Type of rule being created. Valid options are ingress (inbound)
 	// or egress (outbound).
@@ -108,7 +108,7 @@ type SecurityGroupRuleObservation_2 struct {
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
 
 	// Start port (or ICMP type number if protocol is "icmp" or "icmpv6").
-	FromPort *float64 `json:"fromPort,omitempty" tf:"from_port,omitempty"`
+	FromPort *int64 `json:"fromPort,omitempty" tf:"from_port,omitempty"`
 
 	// ID of the security group rule.
 	ID *string `json:"id,omitempty" tf:"id,omitempty"`
@@ -135,7 +135,7 @@ type SecurityGroupRuleObservation_2 struct {
 	SourceSecurityGroupID *string `json:"sourceSecurityGroupId,omitempty" tf:"source_security_group_id,omitempty"`
 
 	// End port (or ICMP code if protocol is "icmp").
-	ToPort *float64 `json:"toPort,omitempty" tf:"to_port,omitempty"`
+	ToPort *int64 `json:"toPort,omitempty" tf:"to_port,omitempty"`
 
 	// Type of rule being created. Valid options are ingress (inbound)
 	// or egress (outbound).
@@ -164,7 +164,7 @@ type SecurityGroupRuleParameters_2 struct {
 
 	// Start port (or ICMP type number if protocol is "icmp" or "icmpv6").
 	// +kubebuilder:validation:Optional
-	FromPort *float64 `json:"fromPort,omitempty" tf:"from_port,omitempty"`
+	FromPort *int64 `json:"fromPort,omitempty" tf:"from_port,omitempty"`
 
 	// List of IPv6 CIDR blocks. Cannot be specified with source_security_group_id or self.
 	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/ec2/v1beta1.VPC
@@ -236,7 +236,7 @@ type SecurityGroupRuleParameters_2 struct {
 
 	// End port (or ICMP code if protocol is "icmp").
 	// +kubebuilder:validation:Optional
-	ToPort *float64 `json:"toPort,omitempty" tf:"to_port,omitempty"`
+	ToPort *int64 `json:"toPort,omitempty" tf:"to_port,omitempty"`
 
 	// Type of rule being created. Valid options are ingress (inbound)
 	// or egress (outbound).

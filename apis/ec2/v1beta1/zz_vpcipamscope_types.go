@@ -29,10 +29,6 @@ type VPCIpamScopeInitParameters struct {
 	// Selector for a VPCIpam in ec2 to populate ipamId.
 	// +kubebuilder:validation:Optional
 	IpamIDSelector *v1.Selector `json:"ipamIdSelector,omitempty" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type VPCIpamScopeObservation struct {
@@ -59,7 +55,7 @@ type VPCIpamScopeObservation struct {
 	IsDefault *bool `json:"isDefault,omitempty" tf:"is_default,omitempty"`
 
 	// The number of pools in the scope.
-	PoolCount *float64 `json:"poolCount,omitempty" tf:"pool_count,omitempty"`
+	PoolCount *int64 `json:"poolCount,omitempty" tf:"pool_count,omitempty"`
 
 	// Key-value map of resource tags.
 	// +mapType=granular
@@ -92,11 +88,6 @@ type VPCIpamScopeParameters struct {
 	// +upjet:crd:field:TFTag=-
 	// +kubebuilder:validation:Required
 	Region *string `json:"region" tf:"-"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // VPCIpamScopeSpec defines the desired state of VPCIpamScope

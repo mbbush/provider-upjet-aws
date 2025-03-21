@@ -71,17 +71,13 @@ type RoleInitParameters struct {
 	ManagedPolicyArnsSelector *v1.Selector `json:"managedPolicyArnsSelector,omitempty" tf:"-"`
 
 	// Maximum session duration (in seconds) that you want to set for the specified role. If you do not specify a value for this setting, the default maximum of one hour is applied. This setting can have a value from 1 hour to 12 hours.
-	MaxSessionDuration *float64 `json:"maxSessionDuration,omitempty" tf:"max_session_duration,omitempty"`
+	MaxSessionDuration *int64 `json:"maxSessionDuration,omitempty" tf:"max_session_duration,omitempty"`
 
 	// Path to the role. See IAM Identifiers for more information.
 	Path *string `json:"path,omitempty" tf:"path,omitempty"`
 
 	// ARN of the policy that is used to set the permissions boundary for the role.
 	PermissionsBoundary *string `json:"permissionsBoundary,omitempty" tf:"permissions_boundary,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type RoleObservation struct {
@@ -112,7 +108,7 @@ type RoleObservation struct {
 	ManagedPolicyArns []*string `json:"managedPolicyArns,omitempty" tf:"managed_policy_arns,omitempty"`
 
 	// Maximum session duration (in seconds) that you want to set for the specified role. If you do not specify a value for this setting, the default maximum of one hour is applied. This setting can have a value from 1 hour to 12 hours.
-	MaxSessionDuration *float64 `json:"maxSessionDuration,omitempty" tf:"max_session_duration,omitempty"`
+	MaxSessionDuration *int64 `json:"maxSessionDuration,omitempty" tf:"max_session_duration,omitempty"`
 
 	// Path to the role. See IAM Identifiers for more information.
 	Path *string `json:"path,omitempty" tf:"path,omitempty"`
@@ -167,7 +163,7 @@ type RoleParameters struct {
 
 	// Maximum session duration (in seconds) that you want to set for the specified role. If you do not specify a value for this setting, the default maximum of one hour is applied. This setting can have a value from 1 hour to 12 hours.
 	// +kubebuilder:validation:Optional
-	MaxSessionDuration *float64 `json:"maxSessionDuration,omitempty" tf:"max_session_duration,omitempty"`
+	MaxSessionDuration *int64 `json:"maxSessionDuration,omitempty" tf:"max_session_duration,omitempty"`
 
 	// Path to the role. See IAM Identifiers for more information.
 	// +kubebuilder:validation:Optional
@@ -176,11 +172,6 @@ type RoleParameters struct {
 	// ARN of the policy that is used to set the permissions boundary for the role.
 	// +kubebuilder:validation:Optional
 	PermissionsBoundary *string `json:"permissionsBoundary,omitempty" tf:"permissions_boundary,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // RoleSpec defines the desired state of Role

@@ -29,10 +29,6 @@ type SnapshotCopyGrantInitParameters struct {
 
 	// A friendly name for identifying the grant.
 	SnapshotCopyGrantName *string `json:"snapshotCopyGrantName,omitempty" tf:"snapshot_copy_grant_name,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type SnapshotCopyGrantObservation struct {
@@ -80,11 +76,6 @@ type SnapshotCopyGrantParameters struct {
 	// A friendly name for identifying the grant.
 	// +kubebuilder:validation:Optional
 	SnapshotCopyGrantName *string `json:"snapshotCopyGrantName,omitempty" tf:"snapshot_copy_grant_name,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // SnapshotCopyGrantSpec defines the desired state of SnapshotCopyGrant

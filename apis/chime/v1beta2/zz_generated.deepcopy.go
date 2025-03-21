@@ -120,7 +120,7 @@ func (in *VoiceConnectorStreamingInitParameters) DeepCopyInto(out *VoiceConnecto
 	*out = *in
 	if in.DataRetention != nil {
 		in, out := &in.DataRetention, &out.DataRetention
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Disabled != nil {
@@ -208,7 +208,7 @@ func (in *VoiceConnectorStreamingObservation) DeepCopyInto(out *VoiceConnectorSt
 	*out = *in
 	if in.DataRetention != nil {
 		in, out := &in.DataRetention, &out.DataRetention
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Disabled != nil {
@@ -259,7 +259,7 @@ func (in *VoiceConnectorStreamingParameters) DeepCopyInto(out *VoiceConnectorStr
 	*out = *in
 	if in.DataRetention != nil {
 		in, out := &in.DataRetention, &out.DataRetention
-		*out = new(float64)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Disabled != nil {

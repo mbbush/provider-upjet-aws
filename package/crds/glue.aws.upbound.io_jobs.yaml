@@ -1000,7 +1000,8 @@ spec:
                       maxConcurrentRuns:
                         description: The maximum number of concurrent runs allowed
                           for a job. The default is 1.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   glueVersion:
                     description: The version of glue to use, for example "1.0". Ray
@@ -1027,7 +1028,8 @@ spec:
                   maxRetries:
                     description: –  The maximum number of times to retry this job
                       if it fails.
-                    type: number
+                    format: int64
+                    type: integer
                   nonOverridableArguments:
                     additionalProperties:
                       type: string
@@ -1041,12 +1043,14 @@ spec:
                       notifyDelayAfter:
                         description: After a job run starts, the number of minutes
                           to wait before sending a job run delay notification.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   numberOfWorkers:
                     description: The number of workers of a defined workerType that
                       are allocated when a job runs.
-                    type: number
+                    format: int64
+                    type: integer
                   region:
                     description: Region is the region you'd like your resource to
                       be created in.
@@ -1132,17 +1136,12 @@ spec:
                     description: The name of the Security Configuration to be associated
                       with the job.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   timeout:
                     description: –  The job timeout in minutes. The default is 2880
                       minutes (48 hours) for glueetl and pythonshell jobs, and null
                       (unlimited) for gluestreaming jobs.
-                    type: number
+                    format: int64
+                    type: integer
                   workerType:
                     description: The type of predefined worker that is allocated when
                       a job runs. Accepts a value of Standard, G.1X, G.2X, or G.025X
@@ -1220,7 +1219,8 @@ spec:
                       maxConcurrentRuns:
                         description: The maximum number of concurrent runs allowed
                           for a job. The default is 1.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   glueVersion:
                     description: The version of glue to use, for example "1.0". Ray
@@ -1247,7 +1247,8 @@ spec:
                   maxRetries:
                     description: –  The maximum number of times to retry this job
                       if it fails.
-                    type: number
+                    format: int64
+                    type: integer
                   nonOverridableArguments:
                     additionalProperties:
                       type: string
@@ -1261,12 +1262,14 @@ spec:
                       notifyDelayAfter:
                         description: After a job run starts, the number of minutes
                           to wait before sending a job run delay notification.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   numberOfWorkers:
                     description: The number of workers of a defined workerType that
                       are allocated when a job runs.
-                    type: number
+                    format: int64
+                    type: integer
                   roleArn:
                     description: –  The ARN of the IAM role associated with this job.
                     type: string
@@ -1348,17 +1351,12 @@ spec:
                     description: The name of the Security Configuration to be associated
                       with the job.
                     type: string
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                   timeout:
                     description: –  The job timeout in minutes. The default is 2880
                       minutes (48 hours) for glueetl and pythonshell jobs, and null
                       (unlimited) for gluestreaming jobs.
-                    type: number
+                    format: int64
+                    type: integer
                   workerType:
                     description: The type of predefined worker that is allocated when
                       a job runs. Accepts a value of Standard, G.1X, G.2X, or G.025X
@@ -1601,7 +1599,8 @@ spec:
                       maxConcurrentRuns:
                         description: The maximum number of concurrent runs allowed
                           for a job. The default is 1.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   glueVersion:
                     description: The version of glue to use, for example "1.0". Ray
@@ -1631,7 +1630,8 @@ spec:
                   maxRetries:
                     description: –  The maximum number of times to retry this job
                       if it fails.
-                    type: number
+                    format: int64
+                    type: integer
                   nonOverridableArguments:
                     additionalProperties:
                       type: string
@@ -1645,12 +1645,14 @@ spec:
                       notifyDelayAfter:
                         description: After a job run starts, the number of minutes
                           to wait before sending a job run delay notification.
-                        type: number
+                        format: int64
+                        type: integer
                     type: object
                   numberOfWorkers:
                     description: The number of workers of a defined workerType that
                       are allocated when a job runs.
-                    type: number
+                    format: int64
+                    type: integer
                   roleArn:
                     description: –  The ARN of the IAM role associated with this job.
                     type: string
@@ -1676,7 +1678,8 @@ spec:
                     description: –  The job timeout in minutes. The default is 2880
                       minutes (48 hours) for glueetl and pythonshell jobs, and null
                       (unlimited) for gluestreaming jobs.
-                    type: number
+                    format: int64
+                    type: integer
                   workerType:
                     description: The type of predefined worker that is allocated when
                       a job runs. Accepts a value of Standard, G.1X, G.2X, or G.025X

@@ -57,10 +57,6 @@ type BranchInitParameters struct {
 
 	// Content Time To Live (TTL) for the website in seconds.
 	TTL *string `json:"ttl,omitempty" tf:"ttl,omitempty"`
-
-	// Key-value map of resource tags.
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 type BranchObservation struct {
@@ -211,11 +207,6 @@ type BranchParameters struct {
 	// Content Time To Live (TTL) for the website in seconds.
 	// +kubebuilder:validation:Optional
 	TTL *string `json:"ttl,omitempty" tf:"ttl,omitempty"`
-
-	// Key-value map of resource tags.
-	// +kubebuilder:validation:Optional
-	// +mapType=granular
-	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 }
 
 // BranchSpec defines the desired state of Branch

@@ -2027,7 +2027,8 @@ spec:
                                     description: One or more ports that the policy
                                       is enforced for.
                                     items:
-                                      type: number
+                                      format: int64
+                                      type: integer
                                     type: array
                                     x-kubernetes-list-type: set
                                   validation:
@@ -2107,7 +2108,8 @@ spec:
                                       description: Maximum number of inflight requests
                                         Envoy can concurrently support across hosts
                                         in upstream cluster. Minimum value of 1.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                   type: object
                                 http:
                                   description: Connection pool information for HTTP
@@ -2118,12 +2120,14 @@ spec:
                                         connections Envoy can establish concurrently
                                         with all hosts in upstream cluster. Minimum
                                         value of 1.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                     maxPendingRequests:
                                       description: Number of overflowing requests
                                         after max_connections Envoy will queue to
                                         upstream cluster. Minimum value of 1.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                   type: object
                                 http2:
                                   description: Connection pool information for HTTP2
@@ -2133,7 +2137,8 @@ spec:
                                       description: Maximum number of inflight requests
                                         Envoy can concurrently support across hosts
                                         in upstream cluster. Minimum value of 1.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                   type: object
                               type: object
                             healthCheck:
@@ -2143,11 +2148,13 @@ spec:
                                   description: Number of consecutive successful health
                                     checks that must occur before declaring listener
                                     healthy.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 intervalMillis:
                                   description: Time period in milliseconds between
                                     each health check execution.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 path:
                                   description: File path to write access logs to.
                                     You can use /dev/stdout to send access logs to
@@ -2156,7 +2163,8 @@ spec:
                                   type: string
                                 port:
                                   description: Port used for the port mapping.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 protocol:
                                   description: Protocol used for the port mapping.
                                     Valid values are http, http2, tcp and grpc.
@@ -2164,19 +2172,22 @@ spec:
                                 timeoutMillis:
                                   description: Amount of time to wait when receiving
                                     a response from the health check, in milliseconds.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 unhealthyThreshold:
                                   description: Number of consecutive failed health
                                     checks that must occur before declaring a virtual
                                     gateway unhealthy.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             portMapping:
                               description: Port mapping information for the listener.
                               properties:
                                 port:
                                   description: Port used for the port mapping.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 protocol:
                                   description: Protocol used for the port mapping.
                                     Valid values are http, http2, tcp and grpc.
@@ -2396,12 +2407,6 @@ spec:
                             type: object
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 required:
                 - region
                 type: object
@@ -2481,7 +2486,8 @@ spec:
                                     description: One or more ports that the policy
                                       is enforced for.
                                     items:
-                                      type: number
+                                      format: int64
+                                      type: integer
                                     type: array
                                     x-kubernetes-list-type: set
                                   validation:
@@ -2561,7 +2567,8 @@ spec:
                                       description: Maximum number of inflight requests
                                         Envoy can concurrently support across hosts
                                         in upstream cluster. Minimum value of 1.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                   type: object
                                 http:
                                   description: Connection pool information for HTTP
@@ -2572,12 +2579,14 @@ spec:
                                         connections Envoy can establish concurrently
                                         with all hosts in upstream cluster. Minimum
                                         value of 1.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                     maxPendingRequests:
                                       description: Number of overflowing requests
                                         after max_connections Envoy will queue to
                                         upstream cluster. Minimum value of 1.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                   type: object
                                 http2:
                                   description: Connection pool information for HTTP2
@@ -2587,7 +2596,8 @@ spec:
                                       description: Maximum number of inflight requests
                                         Envoy can concurrently support across hosts
                                         in upstream cluster. Minimum value of 1.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                   type: object
                               type: object
                             healthCheck:
@@ -2597,11 +2607,13 @@ spec:
                                   description: Number of consecutive successful health
                                     checks that must occur before declaring listener
                                     healthy.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 intervalMillis:
                                   description: Time period in milliseconds between
                                     each health check execution.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 path:
                                   description: File path to write access logs to.
                                     You can use /dev/stdout to send access logs to
@@ -2610,7 +2622,8 @@ spec:
                                   type: string
                                 port:
                                   description: Port used for the port mapping.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 protocol:
                                   description: Protocol used for the port mapping.
                                     Valid values are http, http2, tcp and grpc.
@@ -2618,19 +2631,22 @@ spec:
                                 timeoutMillis:
                                   description: Amount of time to wait when receiving
                                     a response from the health check, in milliseconds.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 unhealthyThreshold:
                                   description: Number of consecutive failed health
                                     checks that must occur before declaring a virtual
                                     gateway unhealthy.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             portMapping:
                               description: Port mapping information for the listener.
                               properties:
                                 port:
                                   description: Port used for the port mapping.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 protocol:
                                   description: Protocol used for the port mapping.
                                     Valid values are http, http2, tcp and grpc.
@@ -2850,12 +2866,6 @@ spec:
                             type: object
                         type: object
                     type: object
-                  tags:
-                    additionalProperties:
-                      type: string
-                    description: Key-value map of resource tags.
-                    type: object
-                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -3120,7 +3130,8 @@ spec:
                                     description: One or more ports that the policy
                                       is enforced for.
                                     items:
-                                      type: number
+                                      format: int64
+                                      type: integer
                                     type: array
                                     x-kubernetes-list-type: set
                                   validation:
@@ -3200,7 +3211,8 @@ spec:
                                       description: Maximum number of inflight requests
                                         Envoy can concurrently support across hosts
                                         in upstream cluster. Minimum value of 1.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                   type: object
                                 http:
                                   description: Connection pool information for HTTP
@@ -3211,12 +3223,14 @@ spec:
                                         connections Envoy can establish concurrently
                                         with all hosts in upstream cluster. Minimum
                                         value of 1.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                     maxPendingRequests:
                                       description: Number of overflowing requests
                                         after max_connections Envoy will queue to
                                         upstream cluster. Minimum value of 1.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                   type: object
                                 http2:
                                   description: Connection pool information for HTTP2
@@ -3226,7 +3240,8 @@ spec:
                                       description: Maximum number of inflight requests
                                         Envoy can concurrently support across hosts
                                         in upstream cluster. Minimum value of 1.
-                                      type: number
+                                      format: int64
+                                      type: integer
                                   type: object
                               type: object
                             healthCheck:
@@ -3236,11 +3251,13 @@ spec:
                                   description: Number of consecutive successful health
                                     checks that must occur before declaring listener
                                     healthy.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 intervalMillis:
                                   description: Time period in milliseconds between
                                     each health check execution.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 path:
                                   description: File path to write access logs to.
                                     You can use /dev/stdout to send access logs to
@@ -3249,7 +3266,8 @@ spec:
                                   type: string
                                 port:
                                   description: Port used for the port mapping.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 protocol:
                                   description: Protocol used for the port mapping.
                                     Valid values are http, http2, tcp and grpc.
@@ -3257,19 +3275,22 @@ spec:
                                 timeoutMillis:
                                   description: Amount of time to wait when receiving
                                     a response from the health check, in milliseconds.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 unhealthyThreshold:
                                   description: Number of consecutive failed health
                                     checks that must occur before declaring a virtual
                                     gateway unhealthy.
-                                  type: number
+                                  format: int64
+                                  type: integer
                               type: object
                             portMapping:
                               description: Port mapping information for the listener.
                               properties:
                                 port:
                                   description: Port used for the port mapping.
-                                  type: number
+                                  format: int64
+                                  type: integer
                                 protocol:
                                   description: Protocol used for the port mapping.
                                     Valid values are http, http2, tcp and grpc.

@@ -110,22 +110,6 @@ func (in *ReportDefinitionInitParameters) DeepCopyInto(out *ReportDefinitionInit
 		*out = new(string)
 		**out = **in
 	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
-	}
 	if in.TimeUnit != nil {
 		in, out := &in.TimeUnit, &out.TimeUnit
 		*out = new(string)
@@ -368,22 +352,6 @@ func (in *ReportDefinitionParameters) DeepCopyInto(out *ReportDefinitionParamete
 		in, out := &in.S3Region, &out.S3Region
 		*out = new(string)
 		**out = **in
-	}
-	if in.Tags != nil {
-		in, out := &in.Tags, &out.Tags
-		*out = make(map[string]*string, len(*in))
-		for key, val := range *in {
-			var outVal *string
-			if val == nil {
-				(*out)[key] = nil
-			} else {
-				inVal := (*in)[key]
-				in, out := &inVal, &outVal
-				*out = new(string)
-				**out = **in
-			}
-			(*out)[key] = outVal
-		}
 	}
 	if in.TimeUnit != nil {
 		in, out := &in.TimeUnit, &out.TimeUnit
