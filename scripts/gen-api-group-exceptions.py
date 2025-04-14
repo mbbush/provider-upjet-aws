@@ -32,10 +32,6 @@ def find_exceptions(filename: str):
         if aws_group in ["logs", "events"]:
             aws_group = "cloudwatch" + aws_group
 
-        # The vpc ipam resources don't include "vpc_" in their filenames, but it is in the terraform resource name
-        if tf_filename.startswith("ipam_"):
-            tf_filename = "vpc_" + tf_filename
-
         # Some of the ec2 resources have filenames like "ec2_<resource>.go" and others are just "<resource>.go"
         if aws_group == "ec2" and tf_filename.startswith("ec2_"):
             tf_filename = tf_filename.removeprefix("ec2_")
